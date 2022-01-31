@@ -10,7 +10,7 @@ summary: ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하는 
 :imagesdir: ../media/
 
 
-ONTAP 및 Cloud Volumes ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오.
+ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오.
 
 * link:ontap-nas-prep.html["준비"^]
 * link:ontap-nas-examples.html["구성 및 예"^]

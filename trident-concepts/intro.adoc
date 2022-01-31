@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: trident-concepts/intro.html 
 keywords: product overview, astra trident 
-summary: 'Astra Trident는 NetApp이 Astra 제품군의 일부로 유지 관리하는 완전히 지원되는 오픈 소스 프로젝트입니다. 컨테이너 스토리지 인터페이스(CSI)와 같은 업계 표준 인터페이스를 사용하여 컨테이너화된 애플리케이션의 지속성 요구를 충족하도록 설계되었습니다.' 
+summary: Astra Trident의 프로비저닝에는 두 가지 주요 단계가 있습니다. 첫 번째 단계에서는 스토리지 클래스를 적절한 백엔드 스토리지 풀 세트와 연결하고 용량 할당 전에 필요한 준비 작업으로 수행됩니다. 두 번째 단계에서는 볼륨 생성 자체를 포함하며 보류 중인 볼륨의 스토리지 클래스와 연결된 스토리지 풀에서 스토리지 풀을 선택해야 합니다. 
 ---
 = Astra Trident 소개
 :hardbreaks:
@@ -10,9 +10,9 @@ summary: 'Astra Trident는 NetApp이 Astra 제품군의 일부로 유지 관리�
 :imagesdir: ../media/
 
 
-Astra Trident는 NetApp이 의 일부로 유지 관리하는 완전히 지원되는 오픈 소스 프로젝트입니다 link:https://docs.netapp.com/us-en/astra-family/intro-family.html["Astra 제품군"^]. 컨테이너 스토리지 인터페이스(CSI)와 같은 업계 표준 인터페이스를 사용하여 컨테이너화된 애플리케이션의 지속성 요구를 충족하도록 설계되었습니다.
+Astra Trident는 NetApp에서 관리하며 완벽한 지원이 제공되는 오픈 소스 프로젝트입니다. 컨테이너 스토리지 인터페이스(CSI)와 같은 업계 표준 인터페이스를 사용하여 컨테이너화된 애플리케이션의 지속성 요구를 충족하도록 설계되었습니다.
 
-Astra Trident는 Kubernetes 클러스터에 Pod로 구축하고 Kubernetes 워크로드에 동적 스토리지 오케스트레이션 서비스를 제공합니다. 컨테이너화된 애플리케이션을 통해 ONTAP(AFF/FAS/Select/Cloud/Amazon FSx for NetApp ONTAP), Element 소프트웨어(NetApp HCI/SolidFire), Astra Data Store, Azure NetApp Files 서비스, Cloud Volumes Service on Google Cloud 및 Cloud Volumes Service on AWS를 비롯한 NetApp의 광범위한 포트폴리오에서 영구 스토리지를 빠르고 쉽게 사용할 수 있습니다.
+Astra Trident는 Kubernetes 클러스터에 Pod로 구축하고 Kubernetes 워크로드에 동적 스토리지 오케스트레이션 서비스를 제공합니다. 컨테이너화된 애플리케이션을 통해 ONTAP(AFF/FAS/Select/Cloud/Amazon FSx for NetApp ONTAP), Element 소프트웨어(NetApp HCI/SolidFire), Azure NetApp Files 서비스, Cloud Volumes Service on Google Cloud 및 Cloud Volumes Service on AWS를 비롯한 NetApp의 광범위한 포트폴리오에서 영구 스토리지를 빠르고 쉽게 사용할 수 있습니다.
 
 또한 Astra Trident는 NetApp Astra의 기본 기술로서 스냅샷, 백업, 복제 및 복제를 위한 NetApp의 업계 최고 데이터 관리 기술을 활용하여 Kubernetes 워크로드의 데이터 보호, 재해 복구, 이동성 및 마이그레이션 사용 사례를 다룹니다.
 
@@ -52,15 +52,9 @@ Astra Trident는 다음 Kubernetes 아키텍처에서 지원됩니다.
 
 Astra를 사용하면 퍼블릭 클라우드와 온프레미스 모두에서 Kubernetes에서 실행되는 데이터 기반의 컨테이너 워크로드를 손쉽게 관리, 보호 및 이동할 수 있습니다. Astra는 퍼블릭 클라우드 및 온프레미스에 있는 NetApp의 검증되고 광범위한 스토리지 포트폴리오의 Astra Trident를 사용하여 영구 컨테이너 스토리지를 프로비저닝하고 제공합니다. 또한, 스냅샷, 백업 및 복원, 활동 로그, 데이터 보호, 재해/데이터 복구, 데이터 감사, Kubernetes 워크로드의 마이그레이션 사용 사례를 위한 액티브 클론 복제와 같은 풍부한 고급 애플리케이션 인식 데이터 관리 기능을 제공합니다.
 
-Astra 페이지에서 무료 평가판을 신청하실 수 있습니다.
+지금 바로 Astra 문서를 살펴보십시오. 지금 Astra 페이지에서 무료 평가판을 신청하실 수 있습니다.
 
-
-
-== 를 참조하십시오
-
-* https://docs.netapp.com/us-en/astra-family/intro-family.html["NetApp Astra 제품군"]
-* https://docs.netapp.com/us-en/astra/get-started/intro.html["Astra Control Service 문서"^]
-* https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center 문서"^]
-* https://docs.netapp.com/us-en/astra-data-store/index.html["Astra 데이터 문서"^]
-* https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html["Astra API 설명서"^]
+* https://docs.netapp.com/us-en/astra/get-started/intro.html["Astra Control Service 소개"^]
+* https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html["Astra API를 시작하십시오"^]
+* https://docs.netapp.com/us-en/astra-control-center/concepts/intro.html["Astra Control Center에 대해 자세히 알아보십시오"^]
 

@@ -11,7 +11,7 @@ summary: Astra Trident의 REST API와 상호 작용하려는 경우 REST 엔드�
 
 
 [role="lead"]
-있습니다 link:tridentctl.html["tridentctl 명령 및 옵션"^] 는 Astra Trident의 REST API와 상호 작용하는 가장 쉬운 방법이며, 원할 경우 REST 엔드포인트를 직접 사용할 수 있습니다.
+있습니다 link:trident-reference/tridentctl.html["tridentctl 명령 및 옵션"^] 는 Astra Trident의 REST API와 상호 작용하는 가장 쉬운 방법이며, 원할 경우 REST 엔드포인트를 직접 사용할 수 있습니다.
 
 이 기능은 Kubernetes가 아닌 구축 환경에서 Astra Trident를 독립 실행형 바이너리로 사용하는 고급 설치에 유용합니다.
 

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-rn.html 
-keywords: what's new, new features, enhancements, known issues, resolved issues, troubleshooting 
+keywords: what\'s new, new features, enhancements, known issues, resolved issues, troubleshooting 
 summary: NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. 다음은 최신 버전의 Astra Trident에 포함된 최신 기능, 개선 사항 및 버그 수정 사항입니다. 
 ---
 = 릴리즈 노트
@@ -17,27 +17,11 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 
 
 
-== 21.10.1의 새로운 기능
+== 21.10의 새로운 기능
 
-NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다.
+NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident에서 사용할 수 있는 최신 기능과 특징을 소개합니다.
 
 이전 릴리스는 를 참조하십시오 https://docs.netapp.com/us-en/trident/earlier-versions.html["문서 열기용 버전"].
-
-
-
-=== Astra Trident 21.10.0 이후 변경
-
-
-WARNING: v21.10.0 릴리즈에는 노드를 제거한 다음 Kubernetes 클러스터에 다시 추가할 때 Trident 컨트롤러를 CrashLoopBackOff 상태로 전환할 수 있는 문제가 있습니다. 이 문제는 v21.10.1(GitHub 문제 669)에서 해결되었습니다.
-
-
-
-==== 수정
-
-* GCP CVS 백엔드에서 볼륨을 가져올 때 잠재적인 경쟁 조건이 수정되어 가져오지 못했습니다.
-* 노드를 제거할 때 Trident 컨트롤러를 CrashLoopBackOff 상태로 전환할 수 있는 문제를 해결한 다음 Kubernetes 클러스터(GitHub 문제 669)에 다시 추가되었습니다.
-* SVM 이름이 지정되지 않은 경우 SVM이 더 이상 검색되지 않는 문제 해결(GitHub 문제 612)
-
 
 
 

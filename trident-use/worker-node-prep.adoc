@@ -81,11 +81,7 @@ rpm -q iscsi-initiator-utils
 
 . 다중 경로 설정:
 +
-'SUDO mpathconf - -enable - -with_multipathd y - -find_multiprohs n'
-
-+
-
-NOTE: etc/multipath.conf에 debrofs 아래에 find_multiprohs no가 포함되어 있는지 확인합니다.
+'SUDO mpathconf - -enable - -with_multipathd y'
 
 . iscsid와 multipathd가 실행 중인지 확인합니다.
 +
@@ -116,11 +112,7 @@ d패키지-l open-iscsi
 
 . 다중 경로 설정:
 +
-'sudo tee /etc/multipath.conf<-'EOF' 기본값 {user_friendly_names yes find_multipath no} EOF sudo systemctl enable--now multipath-tools.service sudo service multipath-tools restart'입니다
-
-+
-
-NOTE: etc/multipath.conf에 debrofs 아래에 find_multiprohs no가 포함되어 있는지 확인합니다.
+'sudo tee /etc/multipath.conf<-'EOF' 기본값 {user_friendly_names yes find_multipath yes} EOF sudo systemctl enable--now multipath-tools.service sudo service multipath-tools restart'입니다
 
 . 'open-iscsi'와 'multirpath-tools'가 활성화되어 실행되고 있는지 확인합니다.
 +

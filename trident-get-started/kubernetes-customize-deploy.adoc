@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: trident-get-started/kubernetes-customize-deploy.html 
 keywords: deploy, trident, methods, operator, tridentctl, helm, attributes, customize, tridentorchestrator 
-summary: Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 Astra Trident가 설치되는 방식을 사용자 지정할 수 있습니다. 
+summary: Trident 연산자를 사용하면 \' Trident\' 사양의 특성을 사용하여 Astra Trident가 설치되는 방식을 사용자 지정할 수 있습니다. 
 ---
 = Trident 운영자 배포를 사용자 지정합니다
 :hardbreaks:
@@ -62,12 +62,27 @@ Trident 연산자는 '트리펜터레이터' 사양의 특성을 사용하여 As
 
 
 | 'imagePullSecrets' | 내부 레지스트리에서 이미지를 가져올 수 있는 비밀 |  
+
+
+| 'controllerPluginNodeSelector' | Trident 컨트롤러 CSI 플러그인을 실행하는 Pod용 추가 노드 선택기. pod.spec.nodeSelector 과 동일한 형식을 따릅니다. | 기본값 없음, 선택 사항 
+
+
+| '컨트롤러 PluginTolerations' | Trident 컨트롤러 CSI 플러그인을 실행하는 Pod의 허용 설정을 재정의합니다. pod.spec.Tolerations와 같은 형식을 따릅니다. | 기본값 없음, 선택 사항 
+
+
+| 노드플러거노드 선택기 | Trident Node CSI 플러그인을 실행하는 Pod용 추가 노드 선택기 pod.spec.nodeSelector 과 동일한 형식을 따릅니다. | 기본값 없음, 선택 사항 
+
+
+| 노드 PluginTolerations | Trident Node CSI 플러그인을 실행하는 Pod의 허용 설정을 재정의합니다. pod.spec.Tolerations와 같은 형식을 따릅니다. | 기본값 없음, 선택 사항 
 |===
 
 IMPORTANT: pec.namespace` 는 어느 네임스페이스 Astra Trident가 설치되어 있는지 나타내기 위해 트리엔터레이터에 지정됩니다. Astra Trident가 설치된 후에는 이 매개 변수 * 를 업데이트할 수 없습니다. 이렇게 하면 트리엔오케스트레이터 상태가 실패로 바뀝니다. Astra Trident는 네임스페이스 간에 마이그레이션할 수 없습니다.
 
 
 NOTE: 자동 작업자 노드 준비는 비생산 환경에서만 사용할 수 있는 * 베타 기능입니다.
+
+
+TIP: 포드 매개 변수 포맷에 대한 자세한 내용은 을 참조하십시오 link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/["노드에 Pod 할당"^].
 
 '트리엔오케스트레이터'를 정의할 때 위에서 설명한 속성을 사용하여 설치를 사용자 정의할 수 있습니다. 예를 들면 다음과 같습니다.
 
