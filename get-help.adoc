@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: get-help.html 
+keywords: get help, get support, knowledgebase, slack, phone, web, ticket, contact support, support ticket 
+summary: NetApp은 다양한 방법으로 Trident를 지원합니다. Slack 채널과 같은 다양한 무료 셀프 지원 옵션을 24x7 이용할 수 있습니다. 
+---
+= 지원
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+Astra Trident는 공식적으로 지원되는 NetApp 프로젝트입니다. 표준 메커니즘을 사용하여 NetApp에 연락하면 필요한 엔터프라이즈급 지원을 받을 수 있습니다.
+
+컨테이너 채널에는 컨테이너 사용자(Astra Trident 개발자 포함)의 활발한 공공 커뮤니티도 있습니다 http://netapp.io/slack["NetApp의 Slack Work"^]. 프로젝트에 대한 일반적인 질문을 하고 비슷한 생각을 가진 동료와 관련 주제를 논의할 수 있는 좋은 장소입니다.

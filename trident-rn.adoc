@@ -1,0 +1,113 @@
+---
+sidebar: sidebar 
+permalink: trident-rn.html 
+keywords: what's new, new features, enhancements, known issues, resolved issues, troubleshooting 
+summary: NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. 다음은 최신 버전의 Astra Trident에 포함된 최신 기능, 개선 사항 및 버그 수정 사항입니다. 
+---
+= 릴리즈 노트
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+릴리즈 노트 최신 버전의 Astra Trident에 새로운 기능, 개선 사항 및 버그 수정 사항에 대한 정보를 제공합니다.
+
+
+WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바이너리는 테스트되고 지원되는 버전입니다. zip 파일의 '/Extras' 부분에 제공된 'macos' 바이너리는 테스트되거나 지원되지 않습니다.
+
+
+
+== 21.10.1의 새로운 기능
+
+NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다.
+
+이전 릴리스는 를 참조하십시오 https://docs.netapp.com/us-en/trident/earlier-versions.html["문서 열기용 버전"].
+
+
+
+=== Astra Trident 21.10.0 이후 변경
+
+
+WARNING: v21.10.0 릴리즈에는 노드를 제거한 다음 Kubernetes 클러스터에 다시 추가할 때 Trident 컨트롤러를 CrashLoopBackOff 상태로 전환할 수 있는 문제가 있습니다. 이 문제는 v21.10.1(GitHub 문제 669)에서 해결되었습니다.
+
+
+
+==== 수정
+
+* GCP CVS 백엔드에서 볼륨을 가져올 때 잠재적인 경쟁 조건이 수정되어 가져오지 못했습니다.
+* 노드를 제거할 때 Trident 컨트롤러를 CrashLoopBackOff 상태로 전환할 수 있는 문제를 해결한 다음 Kubernetes 클러스터(GitHub 문제 669)에 다시 추가되었습니다.
+* SVM 이름이 지정되지 않은 경우 SVM이 더 이상 검색되지 않는 문제 해결(GitHub 문제 612)
+
+
+
+
+=== Astra Trident 21.07 이후 변경
+
+
+
+==== 수정
+
+* XFS 볼륨의 클론을 소스 볼륨과 동일한 노드에 마운트할 수 없는 문제(GitHub 문제 514)가 해결되었습니다.
+* Astra Trident에서 종료 시 심각한 오류를 기록한 문제 해결(GitHub 문제 597)
+* Kubernetes 관련 수정 사항:
++
+** ONTAP-NAS와 ONTAP-NAS-Flexgroup 드라이버(GitHub 645호)를 사용하여 스냅샷을 생성할 때 볼륨의 사용된 공간을 최소 restoreSize로 반환합니다.
+** 볼륨 크기 조정(GitHub 문제 560) 후 "파일 시스템 확장 실패" 오류가 기록된 문제 해결
+** 포드가 종단 상태로 고착되는 문제 해결(GitHub 문제 572)
+** ONTAP-SAN-E경제적인 FlexVol에 스냅샷 LUN이 포함될 수 있는 사례 해결(GitHub 문제 533)
+** 다른 이미지의 사용자 지정 YAML 설치 프로그램 문제 해결(GitHub 문제 613)
+** 스냅샷 크기 계산 수정(GitHub 문제 611)
+** 모든 Astra Trident 설치 관리자가 일반 Kubernetes를 OpenShift로 식별할 수 있는 문제 해결(GitHub 문제 639)
+** Kubernetes API 서버에 연결할 수 없는 경우 조정을 중지하도록 Trident 연산자를 수정했습니다(GitHub 문제 599).
+
+
+
+
+
+
+==== 향상된 기능
+
+* GCP-CVS 성능 볼륨에 대한 "unixPermissions" 옵션에 대한 지원이 추가되었습니다.
+* 600GiB~1TiB 범위의 GCP에서 확장성 최적화 CVS 볼륨 지원 추가
+* Kubernetes 관련 개선사항:
++
+** Kubernetes 1.22에 대한 지원이 추가되었습니다.
+** Trident 운영자 및 제어 차트를 Kubernetes 1.22(GitHub 문제 628)와 함께 사용할 수 있도록 했습니다.
+** tridentctl 이미지 명령어(GitHub 문제 570)에 운용자 이미지 추가
+
+
+
+
+
+
+==== 실험적인 개선
+
+* 'ONTAP-SAN' 드라이버에 볼륨 복제 지원이 추가되었습니다.
+* ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-NAS-이코노미 드라이버에 대한 * 기술 미리보기 * REST 지원이 추가되었습니다.
+
+
+
+
+== 알려진 문제
+
+알려진 문제점은 제품을 성공적으로 사용하지 못하게 만들 수 있는 문제를 식별합니다.
+
+* Astra Trident는 이제 StorageClass에 지정된 fsType 이 없는 볼륨에 대해 빈 fsType("fsType=""")을 적용합니다. Kubernetes 1.17 이상으로 작업할 때 Trident는 NFS 볼륨에 대한 빈 "fsType"을 제공할 수 있도록 지원합니다. iSCSI 볼륨의 경우 보안 컨텍스트를 사용하여 fsGroup을 적용할 때 StorageClass에 fsType을 설정해야 합니다.
+* 여러 Astra Trident 인스턴스에서 백엔드를 사용할 경우 각 백엔드 구성 파일의 ONTAP 백엔드에 대해 서로 다른 'toragePrefix' 값을 사용하거나 SolidFire 백엔드에 다른 'TenantName'을 사용해야 합니다. Astra Trident는 Astra Trident의 다른 인스턴스가 생성한 볼륨을 감지할 수 없습니다. Astra Trident가 볼륨 생성을 idemptent 작업으로 처리하므로 ONTAP 또는 SolidFire 백엔드에서 기존 볼륨을 생성하려고 하면 성공합니다. 'toragePrefix' 또는 'TenantName'이 서로 다를 경우 같은 백엔드에서 생성된 볼륨의 이름 충돌이 있을 수 있습니다.
+* Astra Trident('tridentctl' 또는 Trident Operator 사용)를 설치하고 tridentctl을 사용하여 Astra Trident를 관리하는 경우 'KUBEBEECONFIG' 환경 변수를 설정해야 합니다. 이는 Kubernetes 클러스터가 트리덴트틀과 연동되어야 한다는 것을 나타내기 위해 필요합니다. 여러 Kubernetes 환경에서 작업할 경우 'KUBECONFIG' 파일을 정확하게 소싱해야 합니다.
+* iSCSI PVS에 대해 온라인 공간 재확보를 수행하려면 작업자 노드의 기본 OS에 볼륨에 마운트 옵션을 전달해야 할 수 있습니다. 이는 디카드(disscard)가 필요한 RHEL/RedHat CoreOS 인스턴스에 적용됩니다 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/discarding-unused-blocks_managing-file-systems["마운트 옵션"^]에 mountmounted 폐기 옵션이 포함되어 있는지 확인합니다 온라인 블록 삭제를 지원합니다.
+* Kubernetes 클러스터당 Astra Trident 인스턴스가 두 개 이상 있는 경우, Astra Trident가 다른 인스턴스와 통신할 수 없고 자신이 생성한 다른 볼륨을 검색할 수 없기 때문에 클러스터 내에서 둘 이상의 인스턴스가 실행될 경우 예기치 않거나 잘못된 동작이 발생합니다. Kubernetes 클러스터당 하나의 Astra Trident 인스턴스만 있어야 합니다.
+* Astra Trident가 오프라인인 상태에서 Astra Trident 기반의 'torageClass' 객체를 Kubernetes에서 삭제하면, Astra Trident는 온라인 상태가 되었을 때 데이터베이스에서 해당 스토리지 클래스를 제거하지 않습니다. tridentctl이나 REST API를 사용하여 이러한 스토리지 클래스를 삭제해야 합니다.
+* 사용자가 해당 PVC를 삭제하기 전에 Astra Trident가 프로비저닝한 PV를 삭제하는 경우 Astra Trident는 백업 볼륨을 자동으로 삭제하지 않습니다. 'tridentctl' 또는 REST API를 통해 볼륨을 제거해야 합니다.
+* FlexGroup은 애그리게이트 세트가 각 프로비저닝 요청에서 고유하지 않으면 한 번에 둘 이상의 ONTAP를 동시에 프로비저닝할 수 없습니다.
+* IPv6를 통해 Astra Trident를 사용할 때는 대괄호 안의 백엔드 정의에 "managementLIF"와 "dataLIF"를 지정해야 합니다. 예: ``FD20:8b1e:b258:2000:f816:3eff:feec:0]'.
+* OpenShift 4.5와 함께 'olidfire-san' 드라이버를 사용하는 경우 기본 작업자 노드에서 md5를 CHAP 인증 알고리즘으로 사용해야 합니다.
+
+
+
+
+== 자세한 내용을 확인하십시오
+
+* https://github.com/NetApp/trident["Astra Trident GitHub를 참조하십시오"^]
+* https://netapp.io/persistent-storage-provisioner-for-kubernetes/["Astra Trident 블로그"^]
+

@@ -1,0 +1,91 @@
+---
+settings:
+  name: Astra Trident
+  platform: ''
+  internal:
+    pdf_enabled: true
+  prod:
+    pdf_enabled: true
+    harmony_enabled: false
+  langs: ko-kr,us-en,ja-jp,zh-cn
+sidebar:
+  entries:
+  - title: Astra Trident 문서
+    url: "/index.html"
+  - title: 릴리스 정보
+    url: "/trident-rn.html"
+  - section: trident-concepts
+  - section: trident-get-started
+  - section: trident-managing-k8s
+  - section: trident-use
+  - section: trident-docker
+  - title: FAQ 를 참조하십시오
+    url: "/faq.html"
+  - title: 지원
+    url: "/get-help.html"
+  - title: 문제 해결
+    url: "/troubleshooting.html"
+  - section: trident-reco
+  - section: trident-reference
+  - title: 이전 버전
+    url: "/earlier-versions.html"
+  - title: 법적 고지
+    url: "/legal.html"
+homepage:
+  tiles:
+  - title: 시작하십시오
+    links:
+    - title: Astra Trident 소개
+      url: "/trident-concepts/intro.html"
+    - title: Astra Trident 요구사항
+      url: "/trident-get-started/requirements.html"
+    - title: 새로운 소식
+      url: trident-rn.html
+    - title: 시도해 보십시오
+      url: "/trident-get-started/quickstart.html"
+    - title: FAQ 를 참조하십시오
+      url: "/faq.html"
+  - title: Astra Trident 구축
+    links:
+    - title: Trident 연산자를 사용하여 배포합니다
+      url: "/trident-get-started/kubernetes-deploy-operator.html"
+    - title: tridentctl을 사용하여 배포합니다
+      url: "/trident-get-started/kubernetes-deploy-tridentctl.html"
+    - title: Docker를 위한 Astra Trident 구축
+      url: "/trident-docker/deploy-docker.html"
+  - title: Astra Trident를 업그레이드합니다
+    links:
+    - title: Trident 연산자를 사용하여 업그레이드합니다
+      url: "/trident-managing-k8s/upgrade-operator.html"
+    - title: tridentctl로 업그레이드하십시오
+      url: "/trident-managing-k8s/upgrade-tridentctl.html"
+  - title: Astra Trident를 사용해 보십시오
+    links:
+    - title: 백엔드 구성
+      url: "/trident-use/backends.html"
+    - title: kubectl로 백엔드를 만듭니다
+      url: "/trident-use/backend-kubectl.html"
+    - title: 백엔드 관리 옵션 간 이동
+      url: "/trident-use/backend_options.html"
+    - title: 스토리지 클래스를 관리합니다
+      url: "/trident-use/manage-stor-class.html"
+    - title: 볼륨 작업을 수행합니다
+      url: "/trident-use/vol-operations.html"
+    - title: Astra Trident를 모니터링합니다
+      url: "/trident-use/monitor-trident.html"
+  - title: 데모 자습서
+    links:
+    - title: Astra Trident 비디오
+      url: https://tv.netapp.com/detail/video/5995831475001/using-trident-with-kubernetes
+  - title: 블로그 커뮤니티
+    links:
+    - title: Astra 블로그
+      url: https://cloud.netapp.com/blog/topic/astra
+    - title: Astra Trident 블로그
+      url: https://netapp.io/persistent-storage-provisioner-for-kubernetes/
+    - title: 쿠버네티스 허브
+      url: https://cloud.netapp.com/kubernetes-hub
+    - title: NetApp.IO를 참조하십시오
+      url: https://netapp.io/
+    - title: 슬랙
+      url: https://netapppub.slack.com/

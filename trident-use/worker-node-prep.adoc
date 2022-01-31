@@ -1,0 +1,136 @@
+---
+sidebar: sidebar 
+permalink: trident-use/worker-node-prep.html 
+keywords: storage class, manage storage class, storage classes, kubernetes storage classes, worker node, nfs, iscsi, kubernetes clusters 
+summary: Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저닝된 볼륨을 마운트할 수 있어야 합니다. 백엔드 중 하나에 ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup 드라이버를 사용하는 경우 작업자 노드에 NFS 툴이 필요합니다. 그렇지 않으면 iSCSI 도구가 필요합니다. 
+---
+= 작업자 노드를 준비합니다
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저닝된 볼륨을 마운트할 수 있어야 합니다. 백엔드 중 하나에 ONTAP-NAS, ONTAP-NAS-이코노미 또는 ONTAP-NAS-Flexgroup 드라이버를 사용하는 경우 작업자 노드에 NFS 툴이 필요합니다. 그렇지 않으면 iSCSI 도구가 필요합니다.
+
+최신 버전의 RedHat CoreOS에는 기본적으로 NFS와 iSCSI가 모두 설치되어 있습니다.
+
+
+WARNING: NFS 또는 iSCSI 툴을 설치한 후에는 항상 작업자 노드를 재부팅해야 하며, 그렇지 않으면 컨테이너에 볼륨을 연결할 수 없습니다.
+
+
+
+== NFS 볼륨
+
+[cols="3*"]
+|===
+| 프로토콜 | 운영 체제 | 명령 
+
+
+| NFS 를 참조하십시오  a| 
+RHEL/CentOS
+ a| 
+'SUDO yum install -y nfs-utils'
+
+
+
+| NFS 를 참조하십시오  a| 
+Ubuntu/Debian
+ a| 
+'UDO apt-get install-y nfs-common'을 선택합니다
+
+|===
+
+NOTE: 부팅 중에 NFS 서비스가 시작되었는지 확인해야 합니다.
+
+
+
+== iSCSI 볼륨
+
+iSCSI 볼륨을 사용할 때는 다음 사항을 고려하십시오.
+
+* Kubernetes 클러스터의 각 노드에는 고유한 IQN이 있어야 합니다. * 이것은 필수 전제 조건입니다 *.
+* RHCOS 버전 4.5 이상을 사용하거나 RHEL 또는 CentOS 버전 8.2 이상을 'olidfire-SAN' 드라이버로 사용하는 경우, CHAP 인증 알고리즘이 '/etc/iscsi/iscsid.conf'에서 MD5로 설정되어 있는지 확인하십시오.
+
+
+[listing]
+----
+sudo sed -i 's/^\(node.session.auth.chap_algs\).*/\1 = MD5/' /etc/iscsi/iscsid.conf
+----
+* iSCSI PVS에서 RHEL/RedHat CoreOS를 실행하는 작업자 노드를 사용하는 경우 StorageClass에서 discard 마운트 옵션을 지정하여 인라인 공간 재확보를 수행하십시오. 을 참조하십시오 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/discarding-unused-blocks_managing-file-systems["RedHat 설명서"^].
+
+
+[cols="3*"]
+|===
+| 프로토콜 | 운영 체제 | 명령 
+
+
+| iSCSI  a| 
+RHEL/CentOS
+ a| 
+. 다음 시스템 패키지를 설치합니다.
++
+'SUDO yum install -y lsscsi iscsi -initiator-utils sg3_utils device-mapper-multipath'
+
+. iscsi-initiator-utils 버전이 6.2.0.874-2.el7 이상인지 확인합니다.
++
+rpm -q iscsi-initiator-utils
+
+. 스캔을 수동으로 설정합니다.
++
+'SUDO SED-I's/^\(node.session.scan\).*/\1 = manual/'/etc/iscsi/iscsid.conf'
+
+. 다중 경로 설정:
++
+'SUDO mpathconf - -enable - -with_multipathd y - -find_multiprohs n'
+
++
+
+NOTE: etc/multipath.conf에 debrofs 아래에 find_multiprohs no가 포함되어 있는지 확인합니다.
+
+. iscsid와 multipathd가 실행 중인지 확인합니다.
++
+'SUDO systemctl enable -- now iscsid multipathd'
+
+. "iSCSI" 활성화 및 시작:
++
+'SUDO systemctl enable -- now iscsi'
+
+
+
+
+
+| iSCSI  a| 
+Ubuntu/Debian
+ a| 
+. 다음 시스템 패키지를 설치합니다.
++
+'SUDO apt-get install-y open-iscsi lsscsg3-utils multipath-tools scitools'
+
+. open-iscsi 버전이 2.0.874-5ubuntu2.10 이상(bionic) 또는 2.0.874-7.1uubuttu6.1 이상(focal)인지 확인합니다.
++
+d패키지-l open-iscsi
+
+. 스캔을 수동으로 설정합니다.
++
+'SUDO SED-I's/^\(node.session.scan\).*/\1 = manual/'/etc/iscsi/iscsid.conf'
+
+. 다중 경로 설정:
++
+'sudo tee /etc/multipath.conf<-'EOF' 기본값 {user_friendly_names yes find_multipath no} EOF sudo systemctl enable--now multipath-tools.service sudo service multipath-tools restart'입니다
+
++
+
+NOTE: etc/multipath.conf에 debrofs 아래에 find_multiprohs no가 포함되어 있는지 확인합니다.
+
+. 'open-iscsi'와 'multirpath-tools'가 활성화되어 실행되고 있는지 확인합니다.
++
+'SUDO systemctl status multipath -tools''SUDO systemctl enable -- now open-iscsi.service`'SUDO systemctl status open-iscsi'
+
+
+
+|===
+
+NOTE: Ubuntu 18.04의 경우 iSCSI 데몬이 시작되도록 "open-iscsi"를 시작하기 전에 iscsiadm"이 있는 타겟 포트를 검색해야 합니다. 또는 iSCSI 서비스를 수정하여 iscsid를 자동으로 시작할 수 있습니다.
+
+
+NOTE: 베타 기능인 작업자 노드 자동 준비에 대한 자세한 내용은 을 참조하십시오 link:automatic-workernode.html["여기"^].

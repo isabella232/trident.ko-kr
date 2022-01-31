@@ -1,0 +1,88 @@
+---
+sidebar: sidebar 
+permalink: trident-get-started/kubernetes-customize-deploy.html 
+keywords: deploy, trident, methods, operator, tridentctl, helm, attributes, customize, tridentorchestrator 
+summary: Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 Astra Trident가 설치되는 방식을 사용자 지정할 수 있습니다. 
+---
+= Trident 운영자 배포를 사용자 지정합니다
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+Trident 연산자는 '트리펜터레이터' 사양의 특성을 사용하여 Astra Trident가 설치되는 방식을 사용자 지정할 수 있도록 합니다.
+
+속성 목록은 다음 표를 참조하십시오.
+
+[cols="3"]
+|===
+| 매개 변수 | 설명 | 기본값 
+
+
+| '네임스페이스' | Astra Trident를 설치할 네임스페이스입니다 | "기본값" 
+
+
+| "버그" | Astra Trident에 대한 디버깅을 활성화합니다 | 거짓 
+
+
+| useIPv6 | IPv6를 통해 Astra Trident를 설치합니다 | 거짓 
+
+
+| k8sTimeout | Kubernetes 작업 시간이 초과되었습니다 | 30초 
+
+
+| 이제 자동 지원입니다 | AutoSupport 번들을 NetApp에 자동으로 보내지 않습니다 | 거짓 
+
+
+| "enableNodePrep"입니다 | 작업자 노드 종속성 자동 관리(* beta*) | 거짓 
+
+
+| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/트리덴트 - 자동 지원: 21.04.0" 
+
+
+| 자동 지원 프록시 | AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다 | "http://proxy.example.com:8888"[] 
+
+
+| "제거"를 선택합니다 | Astra Trident를 제거하는 데 사용되는 플래그입니다 | 거짓 
+
+
+| 로그포맷 | 사용할 Astra Trident 로깅 형식[text,json] | "텍스트" 
+
+
+| 트리덴티이미지 | 설치할 Astra Trident 이미지 | "NetApp/트리덴트: 21.04" 
+
+
+| 'imageRegistry'입니다 | '<registry FQDN>[:port][/subpath]' 형식의 내부 레지스트리 경로입니다 | "k8s.gcr.io/sig-storage(k8s 1.17+) 또는 quay.io/k8scsi" 
+
+
+| 쿠벨레트디렉토리 | 호스트의 kubelet 디렉토리에 대한 경로입니다 | “/var/lib/kubelet” 
+
+
+| "위피" | Astra Trident를 완전히 제거하기 위해 삭제할 리소스 목록입니다 |  
+
+
+| 'imagePullSecrets' | 내부 레지스트리에서 이미지를 가져올 수 있는 비밀 |  
+|===
+
+IMPORTANT: pec.namespace` 는 어느 네임스페이스 Astra Trident가 설치되어 있는지 나타내기 위해 트리엔터레이터에 지정됩니다. Astra Trident가 설치된 후에는 이 매개 변수 * 를 업데이트할 수 없습니다. 이렇게 하면 트리엔오케스트레이터 상태가 실패로 바뀝니다. Astra Trident는 네임스페이스 간에 마이그레이션할 수 없습니다.
+
+
+NOTE: 자동 작업자 노드 준비는 비생산 환경에서만 사용할 수 있는 * 베타 기능입니다.
+
+'트리엔오케스트레이터'를 정의할 때 위에서 설명한 속성을 사용하여 설치를 사용자 정의할 수 있습니다. 예를 들면 다음과 같습니다.
+
+[listing]
+----
+$ cat deploy/crds/tridentorchestrator_cr_imagepullsecrets.yaml
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  tridentImage: netapp/trident:21.04.0
+  imagePullSecrets:
+  - thisisasecret
+----
+트리벤트오케스트레이터 인수를 통해 설치를 사용자 정의하려는 경우, 필요에 따라 수정할 수 있는 맞춤형 YAML 매니페스트를 생성하기 위해 'tridentctl'을 사용하는 것이 좋습니다.

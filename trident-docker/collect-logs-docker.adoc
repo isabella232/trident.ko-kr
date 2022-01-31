@@ -1,0 +1,59 @@
+---
+sidebar: sidebar 
+permalink: trident-docker/collect-logs-docker.html 
+keywords: deploy, astra trident, trident for docker, docker, logs, binary, managed plugin 
+summary: 문제 해결에 도움이 되는 로그를 수집할 수 있습니다. 로그를 수집하는 방법은 Docker 플러그인을 실행하는 방법에 따라 다릅니다. 
+---
+= 로그를 수집합니다
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+문제 해결에 도움이 되는 로그를 수집할 수 있습니다. 로그를 수집하는 방법은 Docker 플러그인을 실행하는 방법에 따라 다릅니다.
+
+.단계
+. 권장 관리 플러그인 방법(예: docker plugin 명령 사용)을 사용하여 Astra Trident를 실행 중인 경우 다음과 같이 봅니다.
++
+[listing]
+----
+# docker plugin ls
+ID                  NAME                DESCRIPTION                          ENABLED
+4fb97d2b956b        netapp:latest       nDVP - NetApp Docker Volume Plugin   false
+# journalctl -u docker | grep 4fb97d2b956b
+----
++
+표준 로깅 수준에서는 대부분의 문제를 진단할 수 있어야 합니다. 충분하지 않은 경우 디버그 로깅을 활성화할 수 있습니다.
+
+. 디버그 로깅을 사용하려면 디버그 로깅을 사용하도록 설정한 플러그인을 설치합니다.
++
+[listing]
+----
+docker plugin install netapp/trident-plugin:<version> --alias <alias> debug=true
+----
++
+또는 플러그인이 이미 설치된 경우 디버그 로깅을 활성화합니다.
+
++
+[listing]
+----
+docker plugin disable <plugin>
+docker plugin set <plugin> debug=true
+docker plugin enable <plugin>
+----
+. 호스트에서 바이너리 자체를 실행하는 경우 호스트의 '/var/log/netapp dvp' 디렉토리에서 로그를 사용할 수 있습니다. 디버그 로깅을 사용하려면 플러그인을 실행할 때 '-debug'를 지정합니다.
+
+
+
+
+=== 일반적인 문제 해결 팁
+
+* 새 사용자가 실행하는 가장 일반적인 문제는 플러그 인을 초기화할 수 없도록 잘못 구성된 것입니다. 이 경우 플러그인을 설치하거나 활성화하려고 할 때 다음과 같은 메시지가 표시될 수 있습니다.
++
+"데몬으로부터 오류 응답: UNIX/run/docker/plugins/<id>/NetApp.sock:connect:해당 파일 또는 디렉토리 없음
+
++
+즉, 플러그인을 시작하지 못했습니다. 다행히 플러그인은 사용자가 겪을 수 있는 대부분의 문제를 진단하는 데 도움이 되는 포괄적인 로깅 기능을 갖추고 있습니다.
+
+* PV를 컨테이너에 마운트하는 데 문제가 있는 경우 rpcbind가 설치되어 실행되고 있는지 확인합니다. 호스트 OS에 필요한 패키지 관리자를 사용하고 rpcbind가 실행 중인지 확인합니다. 'stemctl status rpcbind' 또는 이와 동등한 기능을 실행하여 rpcbind 서비스의 상태를 확인할 수 있습니다.
+

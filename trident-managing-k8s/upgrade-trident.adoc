@@ -1,0 +1,83 @@
+---
+sidebar: sidebar 
+permalink: trident-managing-k8s/upgrade-trident.html 
+keywords: upgrade, trident, methods, operator, tridentctl, helm 
+summary: Astra Trident는 분기별 릴리스 케이던스를 따르며, 매년 4개의 주요 릴리즈를 제공합니다. 각 새로운 릴리스는 이전 릴리즈를 기반으로 하며 새로운 기능과 성능 향상, 버그 수정 및 개선 기능을 제공합니다. Astra Trident의 새로운 기능을 이용하려면 1년에 한 번 이상 업그레이드하는 것이 좋습니다. 
+---
+= Astra Trident를 업그레이드합니다
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+Astra Trident는 분기별 릴리스 케이던스를 따르며, 매년 4개의 주요 릴리즈를 제공합니다. 각 새로운 릴리스는 이전 릴리즈를 기반으로 하며 새로운 기능과 성능 향상, 버그 수정 및 개선 기능을 제공합니다. Astra Trident의 새로운 기능을 이용하려면 1년에 한 번 이상 업그레이드하는 것이 좋습니다.
+
+
+NOTE: 향후 5개 릴리즈인 릴리즈로 업그레이드하려면 다단계 업그레이드를 수행해야 합니다.
+
+
+
+== 업그레이드할 버전을 확인합니다
+
+* YY-1.mm 릴리스 및 모든 중간 릴리스에서 YY.mm 릴리스로 업그레이드할 수 있습니다. 예를 들어, 19.07 이상에서 20.07 이상으로 직접 업그레이드할 수 있습니다(19.07.1 등의 DOT 릴리스 포함).
+* 이전 릴리스를 사용하는 경우 다단계 업그레이드를 수행해야 합니다. 따라서 먼저 4개의 릴리즈 창에 맞는 최신 릴리즈로 업그레이드해야 합니다. 예를 들어, 18.07을 실행하고 20.07 릴리스로 업그레이드하려는 경우 다음과 같이 다단계 업그레이드 프로세스를 따르십시오.
++
+** 첫 번째 업그레이드는 18.07에서 19.07로 가능합니다. 업그레이드에 대한 자세한 내용은 각 릴리스의 설명서를 참조하십시오.
+** 그런 다음 19.07에서 20.07로 업그레이드합니다.
+
+
+
+
+
+IMPORTANT: 19.04 이전 버전의 모든 업그레이드를 수행하려면 Astra Trident의 메타데이터를 자체 "etcd"에서 CRD 개체로 마이그레이션해야 합니다. 업그레이드 작동 방식을 이해하려면 릴리즈 설명서를 확인하십시오.
+
+
+WARNING: 업그레이드 시 Astra Trident가 사용하는 scorageClades에 parameter.fsType을 제공하는 것이 중요합니다. 기존 볼륨을 방해하지 않고 'torageClasses'를 삭제하고 다시 생성할 수 있습니다. 이것은 시행에 대한 ** 요구 사항입니다 https://kubernetes.io/docs/tasks/configure-pod-container/security-context/["보안 컨텍스트"^] SAN 볼륨: 를 클릭합니다 디렉토리에는 과 같은 예가 포함되어 있습니다 및. 자세한 내용은 을 참조하십시오 link:../trident-rn.html["알려진 문제"^].
+
+
+
+== 어떤 업그레이드 경로를 선택해야 합니까?
+
+다음 경로 중 하나를 사용하여 업그레이드할 수 있습니다.
+
+* Trident 연산자 사용
+* 트리덴ctl 사용.
+
+
+
+WARNING: CSI 볼륨 스냅샷은 이제 Kubernetes 1.20부터 시작되는 GA 기능입니다. Astra Trident를 업그레이드할 때 업그레이드를 수행하기 전에 이전의 모든 알파 스냅샷 CRS 및 CRD(볼륨 스냅샷 클래스, 볼륨 스냅샷 및 볼륨 스냅샷 콘텐츠)를 제거해야 합니다. 을 참조하십시오 https://netapp.io/2020/01/30/alpha-to-beta-snapshots/["블로그입니다"^] 알파 스냅샷을 베타/GA 스펙으로 마이그레이션하는 단계에 대해 이해합니다.
+
+다음 조건이 충족될 경우 Trident 연산자를 사용하여 업그레이드할 수 있습니다.
+
+* CSI Trident(19.07 이상)를 실행하고 있습니다.
+* CRD 기반 Trident 릴리스가 있습니다(19.07 이상).
+* 사용자 지정 설치를 수행하지 않습니다(사용자 지정 YAML 사용).
+
+
+
+WARNING: "etcd" 기반의 Trident 릴리즈(19.04 이하)를 사용하는 경우 Trident를 업그레이드할 때 연산자를 사용하지 마십시오.
+
+운용자를 사용하지 않거나 운용자가 지원할 수 없는 사용자 정의 설치가 있는 경우 tridentctl을 사용하여 업그레이드할 수 있습니다. Trident 릴리즈 19.04 및 이전 버전에서 선호되는 업그레이드 방법입니다.
+
+
+
+== 조작자에 대한 변경
+
+Astra Trident의 21.01 릴리스에는 다음과 같은 몇 가지 주요 아키텍처 변경 사항이 작업자에게 도입되었습니다.
+
+* 이제 연산자가 * 클러스터 범위 * 가 됩니다. Trident 연산자(버전 20.04 - 20.10)의 이전 인스턴스는 * 네임스페이스 범위 * 였습니다. 클러스터 범위의 연산자는 다음과 같은 이유로 유용합니다.
++
+** 리소스 책임: 이제 운영자는 클러스터 수준에서 Astra Trident 설치와 관련된 리소스를 관리합니다. Astra Trident를 설치하는 과정에서 운영자는 ownerReferences를 사용하여 여러 리소스를 생성하고 유지합니다. 클러스터 범위 리소스의 ownerReferences를 유지하면 OpenShift와 같은 Kubernetes 일부 배포판에서 오류가 발생할 수 있습니다. 이 문제는 클러스터 범위 운영자를 통해 완화됩니다. Trident 리소스의 자동 복구 및 패칭은 필수 요구사항입니다.
+** 제거 중 정리: Astra Trident를 완전히 제거하려면 모든 관련 리소스를 삭제해야 합니다. 네임스페이스 범위 연산자는 클러스터 범위 리소스(예: clusterRole, ClusterRoleBinding 및 PodSecurityPolicy)를 제거하는 데 문제가 있을 수 있으며 불완전한 정리 작업을 초래할 수 있습니다. 클러스터 범위 연산자로 인해 이 문제가 발생하지 않습니다. 사용자는 Astra Trident를 완전히 제거하고 필요한 경우 새로 설치할 수 있습니다.
+
+
+* 아스트라 트리덴트(Astra Trident)를 설치 및 관리하는 데 사용되는 맞춤형 리소스인 트리젠테시너(트리젠오케스트레이터)가 교체됐습니다. 또 트리엔오케스트레이터 사양에 새로운 필드가 도입된다. 사용자는 'pec.namespace` 필드를 사용하여 네임스페이스 Trident를 설치/업그레이드하도록 지정할 수 있습니다. 예를 들어 보겠습니다 https://github.com/NetApp/trident/blob/stable/v21.01/deploy/crds/tridentorchestrator_cr.yaml["여기"^].
+
+
+
+
+== 자세한 내용을 확인하십시오
+
+* link:upgrade-operator.html["Trident 연산자를 사용하여 업그레이드합니다"^]
+* link:upgrade-tridentctl.html["tridentctl을 사용하여 업그레이드합니다"]
+

@@ -1,0 +1,39 @@
+---
+sidebar: sidebar 
+permalink: trident-get-started/kubernetes-customize-deploy-tridentctl.html 
+keywords: deploy, astra trident, methods, operator, tridentctl, helm, attributes, customize, tridentorchestrator 
+summary: Trident의 설치 프로그램을 사용하여 특성을 사용자 지정할 수 있습니다. 
+---
+= tridentctl 배포를 사용자 지정합니다
+:hardbreaks:
+:icons: font
+:imagesdir: ../media/
+
+
+Trident 설치 프로그램을 사용하여 특성을 사용자 지정할 수 있습니다. 예를 들어, Trident 이미지를 개인 저장소에 복사한 경우 '--trident-image'를 사용하여 이미지 이름을 지정할 수 있습니다. Trident 이미지와 필요한 CSI 사이드카 이미지를 개인 저장소에 복사한 경우 '<registry FQDN>[:port]' 형식을 사용하는 '--image-registry' 스위치를 사용하여 해당 리포지토리의 위치를 지정하는 것이 좋습니다.
+
+Astra Trident가 작업자 노드를 자동으로 구성하도록 하려면 '--enable-node-prep'를 사용합니다. 작동 방식에 대한 자세한 내용은 을 참조하십시오 link:../trident-use/automatic-workernode.html["여기"^].
+
+
+NOTE: 자동 작업자 노드 준비는 비생산 환경에서만 사용할 수 있는 * 베타 기능입니다.
+
+kubelet이 평소 하던 /var/lib/kubelet가 아닌 다른 경로에 데이터를 보관하는 Kubernetes 배포를 사용하는 경우 -kubelet-dir을 사용하여 대체 경로를 지정할 수 있습니다.
+
+설치 관리자의 인수 이외에 설치를 사용자 지정해야 하는 경우 배포 파일을 사용자 지정할 수도 있습니다. '--generate-custom-YAML' 파라미터를 사용하면 설치 프로그램의 '셋업' 디렉토리에 다음과 같은 YAML 파일이 생성됩니다.
+
+* 트리덴트-클러스터롤리바인딩.YAML
+* '트라이덴트 배포.YAML'
+* 트리덴트-CRD.YAML
+* 트리덴트-클러스터역할.YAML
+* 트리덴트-디멘트발병 YAML
+* '삼류 서비스.YAML'
+* '삼중인대.YAML'
+* 트라이덴트-서비스계정.YAML
+
+
+이러한 파일을 생성한 후 필요에 따라 수정한 다음 '--use-custom-YAML'을 사용하여 사용자 지정 배포를 설치할 수 있습니다.
+
+[listing]
+----
+./tridentctl install -n trident --use-custom-yaml
+----
