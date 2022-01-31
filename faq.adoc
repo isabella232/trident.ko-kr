@@ -379,7 +379,7 @@ NetApp 스토리지의 용량이 있는 경우 Kubernetes 스토리지 리소스
 
 === Astra Trident 볼륨 스냅샷을 지원하는 드라이버는 무엇입니까?
 
-현재 ONTAP-NAS, ONTAP-SAN, ONTAP-SAN-이코노미, 졸idfire-SAN, AWS-CV에서 온디맨드 스냅샷 지원을 이용할 수 있습니다. GCP-CV와 Azure-NetApp-files 백엔드 드라이버.
+현재 ONTAP-NAS, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, 졸idfire-SAN의 온디맨드 스냅샷 지원을 이용할 수 있습니다. AWS-CV, GCP-CV, Azure-NetApp-파일 백엔드 드라이버
 
 
 
