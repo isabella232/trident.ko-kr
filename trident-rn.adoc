@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-rn.html 
-keywords: what\'s new, new features, enhancements, known issues, resolved issues, troubleshooting 
+keywords: 'what"s new, new features, enhancements, known issues, resolved issues, troubleshooting' 
 summary: NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. 다음은 최신 버전의 Astra Trident에 포함된 최신 기능, 개선 사항 및 버그 수정 사항입니다. 
 ---
 = 릴리즈 노트

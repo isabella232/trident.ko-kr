@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: trident-get-started/kubernetes-customize-deploy.html 
 keywords: deploy, trident, methods, operator, tridentctl, helm, attributes, customize, tridentorchestrator 
-summary: Trident 연산자를 사용하면 \' Trident\' 사양의 특성을 사용하여 Astra Trident가 설치되는 방식을 사용자 지정할 수 있습니다. 
+summary: 'Trident 연산자를 사용하면 " Trident" 사양의 특성을 사용하여 Astra Trident가 설치되는 방식을 사용자 지정할 수 있습니다.' 
 ---
 = Trident 운영자 배포를 사용자 지정합니다
 :hardbreaks:
