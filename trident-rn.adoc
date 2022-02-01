@@ -17,15 +17,58 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 
 
 
-== 21.10의 새로운 기능
+== 22.01.0의 새로운 기능
 
-NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident에서 사용할 수 있는 최신 기능과 특징을 소개합니다.
-
-이전 릴리스는 를 참조하십시오 https://docs.netapp.com/us-en/trident/earlier-versions.html["문서 열기용 버전"].
+NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다. 이전 릴리스는 를 참조하십시오 https://docs.netapp.com/us-en/trident/earlier-versions.html["문서 열기용 버전"].
 
 
+IMPORTANT: 이전 Trident 릴리스에서 업그레이드하고 Azure NetApp Files를 사용하는 경우 이제 ''location'' config 매개 변수는 필수 싱글톤 필드입니다.
 
-=== Astra Trident 21.07 이후 변경
+
+
+=== 수정
+
+중복된 리소스 이름을 허용하고 작업을 단일 위치로 제한하도록 ANF 드라이버를 수정했습니다.
+
+
+
+=== 향상된 기능
+
+* Kubernetes의 향상된 기능:
++
+** Kubernetes 1.23 지원 추가.
+** Trident Operator 또는 Hrom을 통해 설치된 Trident Pod에 대한 예약 옵션을 추가합니다. (link:https://github.com/NetApp/trident/issues/651["GitHub 문제 #651"^])
+
+
+* GCP 드라이버에서 지역 간 볼륨을 허용합니다. (link:https://github.com/NetApp/trident/issues/633["GitHub 문제 #633"^])
+* ANF 볼륨에 'unixPermissions' 옵션에 대한 지원이 추가되었습니다. (link:https://github.com/NetApp/trident/issues/666["GitHub 문제 #666"^])
+
+
+
+
+=== 사용 중단
+
+Trident REST 인터페이스는 127.0.0.1 또는 [::1] 주소에서만 수신 및 제공할 수 있습니다
+
+
+
+=== Astra Trident 21.10.1의 변경 사항
+
+
+WARNING: v21.10.0 릴리즈에는 노드를 제거한 다음 Kubernetes 클러스터에 다시 추가할 때 Trident 컨트롤러를 CrashLoopBackOff 상태로 전환할 수 있는 문제가 있습니다. 이 문제는 v21.10.1(GitHub 문제 669)에서 해결되었습니다.
+
+
+
+==== 수정
+
+* GCP CVS 백엔드에서 볼륨을 가져올 때 잠재적인 경쟁 조건이 수정되어 가져오지 못했습니다.
+* 노드를 제거할 때 Trident 컨트롤러를 CrashLoopBackOff 상태로 전환할 수 있는 문제를 해결한 다음 Kubernetes 클러스터(GitHub 문제 669)에 다시 추가되었습니다.
+* SVM 이름이 지정되지 않은 경우 SVM이 더 이상 검색되지 않는 문제 해결(GitHub 문제 612)
+
+
+
+
+=== 21.10.0 변경(Astra Trident 21.07 이후)
 
 
 

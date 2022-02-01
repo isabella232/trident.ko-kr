@@ -48,6 +48,10 @@ Astra Trident를 구축하려면 다음과 같은 사전 요구 사항을 충족
 ----
 helm install <name> trident-operator-21.07.1.tgz --namespace <namespace you want to use for Trident>
 ----
++
+
+NOTE: Trident의 네임스페이스를 아직 만들지 않은 경우 '--create-namespace' 매개 변수를 'helm install' 명령에 추가할 수 있습니다. 그런 다음 Helm이 자동으로 네임스페이스를 만듭니다.
+
 
 
 설치 중에 구성 데이터를 전달하는 방법에는 두 가지가 있습니다.

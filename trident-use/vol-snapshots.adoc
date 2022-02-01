@@ -10,7 +10,7 @@ summary: 'Astra Trident의 20.01 릴리즈부터 Kubernetes 계층에서 PVS(영
 :imagesdir: ../media/
 
 
-Astra Trident의 20.01 릴리즈부터 Kubernetes 계층에서 PVS의 스냅샷을 생성할 수 있습니다. 이러한 스냅샷을 사용하여 Astra Trident에서 생성한 볼륨의 시점 복사본을 유지하고 추가 볼륨(클론) 생성을 예약할 수 있습니다. 볼륨 스냅샷은 'ONTAP-NAS', 'ONTAP-NAS-Flexgroup', 'ONTAP-SAN', 'ONTAP-SAN-이코노미', '솔리드파이어-SAN'에서 지원됩니다. AWS-CV, GCP-CV, Azure-NetApp-파일 드라이버 등을 지원합니다.
+Astra Trident의 20.01 릴리즈부터 Kubernetes 계층에서 PVS의 스냅샷을 생성할 수 있습니다. 이러한 스냅샷을 사용하여 Astra Trident에서 생성한 볼륨의 시점 복사본을 유지하고 추가 볼륨(클론) 생성을 예약할 수 있습니다. 볼륨 스냅샷은 'ONTAP-NAS', 'ONTAP-SAN', 'ONTAP-SAN-이코노미', 'olidfire-SAN', 'AWS-CV'에서 지원됩니다. GCP-CV와 Azure-NetApp-files의 드라이버입니다.
 
 
 NOTE: 이 기능은 Kubernetes 1.17(베타)에서 사용할 수 있으며 1.20에서 GA됩니다. 베타 버전에서 GA로 전환하는 데 따른 변경 사항을 이해하려면 를 참조하십시오 https://kubernetes.io/blog/2020/12/10/kubernetes-1.20-volume-snapshot-moves-to-ga/["릴리스 블로그"^]. GA로 졸업하면 v1 API 버전이 도입되고 v1beta1 스냅샷과 역호환됩니다.
@@ -34,13 +34,16 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 ----
 . 원하는 네임스페이스에 스냅샷 컨트롤러를 생성합니다. 아래 YAML 매니페스트를 편집하여 네임스페이스를 수정하십시오.
 +
+
+NOTE: GKE 환경에서 필요 시 볼륨 스냅샷을 설정하는 경우 스냅샷-컨트롤러를 생성하지 마십시오. GKE는 내장된 숨겨진 스냅샷 컨트롤러를 사용합니다.
+
+
+
 [listing]
 ----
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-3.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
 ----
-
-
 
 TIP: CSI Snapshotter는 를 제공합니다 https://github.com/kubernetes-csi/external-snapshotter#validating-webhook["Webhook 확인 중"^] 사용자가 기존 v1beta1 스냅샷의 유효성을 검사하고 유효한 리소스 객체인지 확인할 수 있도록 합니다. Validating webhook는 잘못된 스냅샷 개체에 자동으로 레이블을 지정하며 나중에 유효하지 않은 객체가 생성되지 않도록 합니다. Validating webhook은 Kubernetes Orchestrator에 의해 구축됩니다. 유효성을 검사하는 Webhook을 수동으로 배포하는 방법은 지침을 참조하십시오. 유효하지 않은 스냅샷 매니페스트의 예를 찾습니다.
 

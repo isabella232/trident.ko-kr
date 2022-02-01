@@ -16,7 +16,7 @@ summary: 백엔드는 Astra Trident와 스토리지 시스템 간의 관계를 �
 * link:aws.html["Cloud Volumes Service for AWS 백엔드를 구성합니다"^]
 * link:gcp.html["Google Cloud Platform 백엔드에 Cloud Volumes Service를 구성합니다"^]
 * link:element.html["NetApp HCI 또는 SolidFire 백엔드를 구성합니다"^]
-* link:ontap-nas.html["ONTAP NAS 드라이버를 사용하여 백엔드를 구성합니다"^]
-* link:ontap-san.html["ONTAP SAN 드라이버를 사용하여 백엔드를 구성합니다"^]
+* link:ontap-nas.html["ONTAP 또는 Cloud Volumes ONTAP NAS 드라이버를 사용하여 백엔드를 구성합니다"^]
+* link:ontap-san.html["ONTAP 또는 Cloud Volumes ONTAP SAN 드라이버를 사용하여 백엔드를 구성합니다"^]
 * link:trident-fsx.html["NetApp ONTAP용 Amazon FSx와 함께 Astra Trident를 사용하십시오"^]
 
