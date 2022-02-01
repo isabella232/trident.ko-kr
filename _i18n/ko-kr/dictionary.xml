@@ -949,7 +949,6 @@
   <block id="37696641960d6c73a7dadab603c1877e" category="list-text">Mirantis Kubernetes 엔진 3.4</block>
   <block id="201eb37826a33e35adff9119f25946bd" category="paragraph">Trident 연산자는 다음 릴리즈에서 지원됩니다.</block>
   <block id="5596419ed8318cabbcb138ef27fd3035" category="inline-link">버그 수정 알림</block>
-  <block id="834bb262db01800c5b2fc71ef097a803" category="admonition">Red Hat OpenShift Container Platform 사용자는 4.6.8 이하의 버전을 사용하는 경우 initiatorname.iscsi 파일이 비어 있는 것을 관찰할 수 있습니다. 이는 RedHat에서 OpenShift 4.6.8로 해결된 버그로, 자세한 내용은 다음을 참조하십시오<block ref="ac064f2337a2fc6c16c562bc9e386352" category="inline-link-rx"></block>. OpenShift 4.7 이상에서 Astra Trident를 사용하는 것이 좋습니다.</block>
   <block id="3943a2e0490c50c43f31a486978ea80b" category="paragraph">또한 Astra Trident는 Google Cloud의 GKE(Google Kubernetes Engine), AWS의 EKS(Elastic Kubernetes Service), Azure의 AKS(Azure Kubernetes Service), Rancher 등의 완전히 관리되는 Kubernetes 오퍼링과도 연동됩니다.</block>
   <block id="f787cd4b6963b13f12fa53131f58ef6c" category="section-title">지원되는 백엔드(스토리지)</block>
   <block id="843e2f0c722d25903a6010b62ac4f13b" category="paragraph">Astra Trident를 사용하려면 다음 중 하나 이상의 지원되는 백엔드가 필요합니다.</block>
@@ -959,7 +958,6 @@
   <block id="a3c559e0541e9bb860178ce6fe414224" category="list-text">GCP용 Cloud Volumes Service</block>
   <block id="ff617c70912e62b6adb0266e42f9d4f5" category="list-text">FAS/AFF/9.3 이상을 선택합니다</block>
   <block id="1d3d126b8a5bad69c46ed03734beed47" category="list-text">NetApp All SAN 어레이(ASA)</block>
-  <block id="74b7fad26c712d18ff25fc7d7ae5a7a1" category="list-text">NetApp HCI/Element 소프트웨어 8 이상</block>
   <block id="c7c7a6a5641f33e348244f9c43010e16" category="section-title">피처 요구 사항</block>
   <block id="8c67111ad59dd108156a3e7c9a32b63c" category="paragraph">아래 표에는 Astra Trident의 이번 릴리즈와 함께 사용할 수 있는 기능과 지원하는 Kubernetes 버전이 요약되어 있습니다.</block>
   <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">피처</block>
@@ -975,7 +973,6 @@
   <block id="1f7219b07d5bce7feec002a9f4dc2201" category="cell">Trident 연산자</block>
   <block id="bf0d42cfb33347700a1060d7b0cf07c1" category="cell">Auto Worker Node Prep(베타)</block>
   <block id="443432948b68bb63d707ce7ecc4a021a" category="cell">CSI 토폴로지</block>
-  <block id="10ba4d981cc0f1ae131e16a64d3c2687" category="list-text">RedHat CoreOS 4.2 및 4.3</block>
   <block id="4fa506be8cc1c8c936a3eff8a374fe26" category="list-text">RHEL 또는 CentOS 7.4 이상</block>
   <block id="2d736ed9cdbf58b500e9715daeb267e6" category="list-text">Ubuntu 18.04 이상</block>
   <block id="11ea58814ce429c3e3254a63f8cde7a4" category="paragraph">트리덴트틀(tridentctl) 유틸리티도 이 리눅스 배포판에서 실행됩니다.</block>
@@ -3061,14 +3058,8 @@
   <block id="57b3e1695eb7d16642702fbce3837b86" category="paragraph">기본적으로 Astra Trident는 컨테이너에서 실행되므로 모든 Linux 작업자에서 실행됩니다. 그러나 이러한 작업자들은 표준 NFS 클라이언트 또는 iSCSI 이니시에이터를 사용하여 Astra Trident가 제공하는 볼륨을 사용 중인 백엔드에 따라 마운트할 수 있어야 합니다.</block>
   <block id="814a65adc75608da31ab5685f9b1c1ce" category="paragraph">Astra Trident는 공식적으로 특정 운영 체제를 "지원"하지 않지만 다음과 같은 Linux 배포판이 작동하는 것으로 알려져 있습니다.</block>
   <block id="dc5ac69fee94d861f0bed64729b712cf" category="paragraph">Astra Trident는 백엔드 구성에서 사용하기 전에 스토리지 시스템을 일부 변경해야 할 수 있습니다. 을 참조하십시오 <block ref="49641f5ab61d7a6ce07b1b6ba31204f8" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
-  <block id="822b439e1640423ccbcbed4f9075999d" category="list-text">NetApp/트리덴트: 21.10.0</block>
-  <block id="098ea8d7067b53d30d17fa3828abed7b" category="list-text">NetApp/트리덴트 - 자동 지원: 21.10</block>
   <block id="b0b4b8e52878f03279584f43bc961472" category="list-text">K8s.GCR.IO/SIG-스토리지/CSI-공급자:v2.2.2</block>
-  <block id="af4499fc8818e7a77f8ba226b45359df" category="list-text">K8s.GCR.IO/SIG-storage/CSI-attacher:v3.3.0</block>
   <block id="3c8910d4db724229b566887801de96bb" category="list-text">k8s.gcr.io/sig-storage/scsi-resizer: v1.3.0</block>
-  <block id="ad51ab91499291ae184dc614edbfe7df" category="list-text">K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.3.0</block>
-  <block id="f948435808f18602f3b9e0f018da83dc" category="list-text">NetApp/트리덴트 - 작업자: 21.10.0(옵션)</block>
-  <block id="d7f860105f67679f001ef7c3ed889c0c" category="list-text">k8s.gcr.io/sig-storage/scsi-sievoner:v3.0.0</block>
   <block id="681d715b456f6d29a501b8f132e941a1" category="cell">v1.22.0</block>
   <block id="80fa8f92dc0ebf122ed30a4a88fda343" category="doc">Astra Trident 22.01 문서</block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">오픈 소스</block>
@@ -3142,4 +3133,17 @@
   <block id="a55b7ee69c26277a1088efc103e15297" category="paragraph">사용 가능한 명령 및 전역 옵션은 다음과 같습니다.</block>
   <block id="94912f7fb206038e8527957b44dfbf25" category="paragraph">그러면 모든 Trident 포드가 다시 시작됩니다. 이 작업은 몇 초 정도 걸릴 수 있습니다. 'kubeck get pod-n trident'의 출력에서 '나이' 열을 관찰하여 이를 확인할 수 있습니다.</block>
   <block id="498784627f42c14468b84a1a351bd462" category="sidebar">ADS 백엔드를 구성합니다</block>
+  <block id="d60af04250fde4c14a6e7a6a884dfbfd" category="list-text">Anthos On-Premise(VMware) 및 Anthos on Bare Metal, 1.8, 1.9</block>
+  <block id="fe3b4c5750a12d7254dee5e87c55bb40" category="list-text">Kubernetes 1.17 이상(최신: 1.23)</block>
+  <block id="10ae2729ec6b89f9c276ab2da5409336" category="list-text">OpenShift 4.7, 4.8, 4.9</block>
+  <block id="f2f0da9b50bd2001bc802c121fc76254" category="admonition">Red Hat OpenShift Container Platform 사용자는 4.6.8 이하의 버전을 사용하는 경우 initiatorname.iscsi 파일이 비어 있는 것을 관찰할 수 있습니다. 이는 RedHat에서 OpenShift 4.6.8로 해결된 버그로, 자세한 내용은 다음을 참조하십시오<block ref="ac064f2337a2fc6c16c562bc9e386352" category="inline-link-rx"></block>. OpenShift 4.6.8 이상에서 Astra Trident를 사용하는 것이 좋습니다.</block>
+  <block id="0f6e0df69462b7a5d101ec1a3fa8a376" category="list-text">NetApp HCI/Element 소프트웨어 11 이상</block>
+  <block id="597a56086e1f9d7ca5e8f55c40a0153a" category="list-text">OpenShift Container Platform에서 지원하는 RedHat CoreOS(RHCOS) 버전</block>
+  <block id="83f21d8f3725c4e4a96d4e8da9c06403" category="list-text">NetApp/트리덴트: 22.01.0</block>
+  <block id="0e3db22955e0ef2a04155e743fdcd843" category="list-text">NetApp/트리덴트 - AutoSupport: 22.01</block>
+  <block id="52d5de12f37c2ff6a4de253d20947ca2" category="list-text">K8s.GCR.IO/SIG-storage/CSI-attacher:v3.4.0</block>
+  <block id="f86452b351d644230a6ab4c2d580e193" category="list-text">K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.4.0</block>
+  <block id="9b73461bc19f14ce7a87a56f6890ca87" category="list-text">NetApp/트리덴트 - 작업자: 22.01.0(옵션)</block>
+  <block id="ad9d572821da9bfff3397f2d3260509d" category="list-text">K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.1.0</block>
+  <block id="73e93ad328287e5ce4c06228cfdba2bf" category="cell">v1.23.0</block>
 </blocks>
