@@ -1702,7 +1702,6 @@
   <block id="3cedfb797d3e1bc073ba2b0b4d2502cf" category="inline-link">Azure 문서</block>
   <block id="0d379fc2fdd52ac2845c4a58f8ab28b3" category="admonition">Azure 기본 제공 역할에 대한 자세한 내용은 를 참조하십시오<block ref="b2e35876b943de7ace62c0922ab24aca" category="inline-link-rx"></block>.</block>
   <block id="f494e4df0fff53e809d6563f8ec1782f" category="inline-link">위임된 서브넷</block>
-  <block id="96bad1a88a06c10d87cfb36e3a2e4569" category="list-text">하나 이상의 Azure 위치가 있다<block ref="c5f14b2142014dc234282a513132bad4" category="inline-link-rx"></block>.</block>
   <block id="4a836a0efc98ecae9af9c3407923eefe" category="inline-link">빠른 시작 가이드</block>
   <block id="7b0fbaf9fee0388fe8032c97b8257fdc" category="list-text">Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경우 일부 초기 구성이 필요합니다. 를 참조하십시오<block ref="713c3fd99272dda043016179a5584f00" category="inline-link-rx"></block>.</block>
   <block id="4a56a2a81941c5206604b30f5115b1ba" category="paragraph">Trident는 백엔드 구성(서브넷, 가상 네트워크, 서비스 수준 및 위치)을 기반으로 요청된 위치에서 사용 가능한 용량 풀에 ANF 볼륨을 생성하고 요청된 서비스 수준 및 서브넷과 일치시킵니다.</block>
@@ -3009,13 +3008,6 @@
   <block id="324fb1352ffffb105d10013810c42896" category="sidebar">Kubernetes 및 Astra Trident 오브젝트</block>
   <block id="f14894e4c400a400c02367258a93029a" category="sidebar">Docker를 위한 Astra Trident</block>
   <block id="e08bfc79c5202517b3814efd6e82fb2c" category="sidebar">Trident 업그레이드 또는 제거</block>
-  <block id="85bfe817bf2347bf6d5dcea4b86ade72" category="cell">앱 등록의 클라이언트 ID입니다</block>
-  <block id="a5e65d71b5d7719b3a51518133fd2538" category="cell">""(임의)</block>
-  <block id="23ef4149f946c881b1c40a6ac1510554" category="admonition">기존 백엔드의 '용량 풀' 필드를 수정하여 용량 할당에 사용되는 용량 풀의 수를 줄임으로써 용량이 용량 풀 목록에 포함되지 않은 용량 풀/풀에 용량이 더 이상 프로비저닝되는 분리된 볼륨을 만듭니다. 분리된 볼륨에 대한 클론 작업이 실패합니다.</block>
-  <block id="ae9b95a558c60bdc3b5682a1ca2625ea" category="admonition">NFS 버전 4.1을 사용하여 볼륨을 마운트하려는 경우 쉼표로 구분된 마운트 옵션 목록에 ''nfsvers=4'를 포함하여 NFS v4.1을 선택할 수 있습니다. 스토리지 클래스에 설정된 마운트 옵션은 백엔드 구성 파일에 설정된 마운트 옵션을 재정의합니다.</block>
-  <block id="fb10fd1921fe8ac41f7ce51b41dd3320" category="paragraph">이는 절대적인 최소 백엔드 구성입니다. 이 구성을 통해 Astra Trident는 전 세계 모든 위치에서 ANF에 위임된 NetApp 계정, 용량 풀 및 서브넷을 모두 검색하고 이 중 하나에 무작위로 새 볼륨을 배치합니다.</block>
-  <block id="04e5e56f251267658dc57f90ae659538" category="section-title">예 2: 단일 위치 및 특정 서비스 수준 구성</block>
-  <block id="93d594d992801662d9e5e5d1ccf8bb86" category="paragraph">이 백엔드 구성은 Azure의 "eastus" 위치에 볼륨을 "Premium" 용량 풀에 배치합니다. Astra Trident는 해당 위치의 ANF에 위임된 모든 서브넷을 자동으로 검색하여 그 중 하나에 무작위로 새 볼륨을 배치합니다.</block>
   <block id="cf282b9c05ab0f84b1690e644cd3f68e" category="list-text">ONTAP-NAS-Flexgroup 드라이버의 경우 각 PV(Persistent Volume)가 FlexGroup에 매핑됩니다. 따라서 볼륨 스냅샷이 NetApp FlexGroup 스냅샷으로 생성됩니다. NetApp의 스냅샷 기술은 경쟁 스냅샷 기술보다 뛰어난 안정성, 확장성, 복구 가능성 및 성능을 제공합니다. 이러한 스냅샷 복사본은 생성하는 데 필요한 시간과 스토리지 공간 모두에서 매우 효율적입니다.</block>
   <block id="ba9e76e1be4705136fd15fd947717d07" category="paragraph">현재 ONTAP-NAS, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, 졸idfire-SAN의 온디맨드 스냅샷 지원을 이용할 수 있습니다. AWS-CV, GCP-CV, Azure-NetApp-파일 백엔드 드라이버</block>
   <block id="b89df534de66f446ec6482f9d7898bb2" category="cell">'controllerPluginNodeSelector'</block>
@@ -3145,4 +3137,33 @@
   <block id="73e93ad328287e5ce4c06228cfdba2bf" category="cell">v1.23.0</block>
   <block id="f2fe14f2f47e170d6135f34f6214adcb" category="list-text">Anthos On-Premise(VMware) 및 Anthos의 Bare Metal 1.8, 1.9</block>
   <block id="08ee53e1d5cefb7967a295e98036598e" category="cell">스냅샷 디렉터리의 표시 여부를 제어합니다</block>
+  <block id="9837781971083d3fe119b0217014d301" category="list-text">하나 이상의 Azure 위치가 있다<block ref="c5f14b2142014dc234282a513132bad4" category="inline-link-rx"></block>. Trident 22.01부터 "location" 매개 변수는 백엔드 구성 파일의 최상위 수준에 있는 필수 필드입니다. 가상 풀에 지정된 위치 값은 무시됩니다.</block>
+  <block id="3d1c87b616fe621310b766603b6c175d" category="admonition">참고: Astra Trident는 수동 QoS 용량 풀을 지원하지 않습니다.</block>
+  <block id="016a4b469916e37291cfe2f7fab49aaf" category="cell">[재치 단체</block>
+  <block id="66d09fbe1165f3d10b368cbe0cc029f4" category="cell">검색된 자원을 필터링하기 위한 자원 그룹 목록입니다</block>
+  <block id="36cbcb8a57112362b05d06b9fe037a6e" category="cell">"[]"(필터 없음)</block>
+  <block id="d4b4343f054233d7d339bb1501425fd4" category="cell">'netap계정'</block>
+  <block id="61476ef20a8015760b9cb3c1bd0ea435" category="cell">검색된 리소스를 필터링하기 위한 NetApp 계정의 목록입니다</block>
+  <block id="722c7b4409fa4d1fe6aaa2902ae66473" category="cell">용량풀</block>
+  <block id="225abbb59bc0bbaa2a5852ada333b31b" category="cell">검색된 리소스를 필터링하기 위한 용량 풀 목록입니다</block>
+  <block id="f2a5b99a63a463017b3e5f5848444d9a" category="cell">"[]"(필터 없음, 임의)</block>
+  <block id="91b3c29beb3641dce2fcf3d2382fac4f" category="cell">문제 해결 시 사용할 디버그 플래그입니다. 예: "\{"api":false, "method":true, "discovery":true}". 문제 해결 중이 아니며 자세한 로그 덤프가 필요한 경우가 아니면 이 방법을 사용하지 마십시오.</block>
+  <block id="b025cb91ea905e0ae1a879fe81e5ff18" category="admonition">NFS 버전 4.1을 사용하여 볼륨을 마운트하려는 경우 쉼표로 구분된 마운트 옵션 목록에 ''nfsvers=4'를 포함하여 NFS v4.1을 선택할 수 있습니다. 스토리지 클래스에 설정된 마운트 옵션은 백엔드 구성 파일에 설정된 마운트 옵션을 재정의합니다.</block>
+  <block id="eaea97dbd365f00421eb397e8eabeebf" category="paragraph">"소스 그룹", "넷계정", "용량 풀", "virtualNetwork" 및 "ubnet"의 값은 짧은 이름 또는 정규화된 이름을 사용하여 지정할 수 있습니다. 짧은 이름은 이름이 같은 여러 리소스와 일치할 수 있으므로 대부분의 경우 정규화된 이름을 사용하는 것이 좋습니다. "소스 그룹", "netap계정" 및 "용량 풀" 값은 검색된 리소스 세트를 이 스토리지 백엔드에서 사용할 수 있는 리소스로 제한하며 어떤 조합으로도 지정할 수 있는 필터입니다. 정규화된 이름은 다음 형식입니다.</block>
+  <block id="520d0db389f362bf79ef56ca0af3dcab" category="cell">형식</block>
+  <block id="dde92bca1b59f0db813ef42a2688752e" category="cell">리소스 그룹</block>
+  <block id="671e72ca3ef632233f4c27dfef1ec109" category="cell">리소스 그룹&gt;</block>
+  <block id="ac252743de820aac9183d9f76d4bed67" category="cell">NetApp 계정</block>
+  <block id="2bf2783c6d0d867a9fe629138b38bd84" category="cell">리소스 그룹&gt;/&lt;NetApp 계정&gt;</block>
+  <block id="9eea1c08013c37f1499f428378764a08" category="cell">용량 풀</block>
+  <block id="01c656d6b97f45a90022ee307283ae01" category="cell">리소스 그룹&gt;/&lt;NetApp 계정&gt;/&lt;용량 풀&gt;</block>
+  <block id="bf76cafc47141522dca89c4d6e25b822" category="cell">가상 네트워크</block>
+  <block id="8c9309282517a29ad09b10443d825c7c" category="cell">리소스 그룹&gt;/&lt;가상 네트워크&gt;</block>
+  <block id="9770c6469e9d27585d6c0c389ede7bc3" category="cell">서브넷</block>
+  <block id="7addf9faaab78a084548d05b695cd2e2" category="cell">리소스 그룹&gt;/&lt;가상 네트워크&gt;/&lt;서브넷&gt;</block>
+  <block id="3e71a01ee522f366b6eeb2990e170fde" category="cell">새 볼륨의 UNIX 사용 권한(8진수 4자리)</block>
+  <block id="976a6dc52dbcabb541efa0a91e922604" category="cell">""(미리보기 기능, 가입 시 화이트리스트 필요)</block>
+  <block id="54042b89155d99a3568a196cb5ff1da8" category="paragraph">이는 절대적인 최소 백엔드 구성입니다. 이 구성을 통해 Astra Trident는 구성된 위치에서 ANF에 위임된 모든 NetApp 계정, 용량 풀 및 서브넷을 검색하고 해당 풀 및 서브넷 중 하나에 무작위로 새 볼륨을 배치합니다.</block>
+  <block id="a78703e6fcb2511d5a565496df5b2082" category="section-title">예 2: 용량 풀 필터를 사용하는 특정 서비스 수준 구성</block>
+  <block id="6da664b0342ea1be008211c33f1eb020" category="paragraph">이 백엔드 구성은 Azure의 "eastus" 위치에 볼륨을 "Ultra" 용량 풀에 배치합니다. Astra Trident는 해당 위치의 ANF에 위임된 모든 서브넷을 자동으로 검색하여 그 중 하나에 무작위로 새 볼륨을 배치합니다.</block>
 </blocks>
