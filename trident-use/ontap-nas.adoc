@@ -24,3 +24,5 @@ Astra Trident는 일반적으로 "admin" 클러스터 사용자 또는 "vsadmin"
 
 
 NOTE: 'limitAggregateUsage' 매개 변수를 사용하는 경우 클러스터 관리자 권한이 필요합니다. Astra Trident와 함께 NetApp ONTAP용 Amazon FSx를 사용하는 경우 "limitAggregateUsage" 매개 변수는 "vsadmin" 및 "fsxadmin" 사용자 계정과 작동하지 않습니다. 이 매개 변수를 지정하면 구성 작업이 실패합니다.
+
+ONTAP 내에서 Trident 드라이버가 사용할 수 있는 보다 제한적인 역할을 만들 수 있지만 권장하지 않습니다. Trident의 대부분의 새로운 릴리즈에서는 추가 API를 호출하므로 업그레이드가 어렵고 오류가 발생하기 쉽습니다.

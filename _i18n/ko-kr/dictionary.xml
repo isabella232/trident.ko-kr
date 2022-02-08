@@ -830,7 +830,6 @@
   <block id="a03102a9f58cbddc7c8c4a6a8e198bc0" category="admonition">배포 중 문제 해결에 대한 자세한 내용은 을 참조하십시오 <block ref="d5a4e07afa9c1e3e2869e1c17ce11b3d" category="inline-link-macro-rx"></block> 섹션을 참조하십시오.</block>
   <block id="13c852fce58f7c6981fa0a952dcd76af" category="summary">Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 Astra Trident가 설치되는 방식을 사용자 지정할 수 있습니다.</block>
   <block id="b9d69225e5cf4da0389ed6b1f6b66a10" category="doc">Trident 운영자 배포를 사용자 지정합니다</block>
-  <block id="541de2d8e93ee6c623dfc11938d0e83a" category="paragraph">Trident 연산자는 '트리펜터레이터' 사양의 특성을 사용하여 Astra Trident가 설치되는 방식을 사용자 지정할 수 있도록 합니다.</block>
   <block id="02e0835b3015839cde731027c217d70b" category="paragraph">속성 목록은 다음 표를 참조하십시오.</block>
   <block id="83f499a540b1323009c200d6f8cc9396" category="cell">매개 변수</block>
   <block id="7a1920d61156abc05a60135aefe8bc67" category="cell">기본값</block>
@@ -2172,9 +2171,7 @@
   <block id="b94e036fb032554ca486dd8fc2e3fafe" category="list-text"><block ref="b94e036fb032554ca486dd8fc2e3fafe" category="inline-link-rx"></block></block>
   <block id="3334dfda9735f9b3ed55a34ef316b599" category="inline-link">Astra Trident 블로그</block>
   <block id="d090b5d97388b77aa02e5d1203c037a0" category="list-text"><block ref="d090b5d97388b77aa02e5d1203c037a0" category="inline-link-rx"></block></block>
-  <block id="7a90ecd4cb81a2963b963ac8c0bba0a2" category="summary">Astra Trident는 몇 가지 명령줄 옵션을 공개하고 특정 포트를 통해 통신합니다.</block>
   <block id="7d4fab76513c90b603a722620cde60fe" category="doc">명령줄 옵션</block>
-  <block id="576f889bab2702f907ac880da895cddb" category="paragraph">Astra Trident는 몇 가지 명령줄 옵션을 제공합니다. 배포에서 수정할 수 있습니다.</block>
   <block id="8db7df66ab1d7ab5f1dc947acdb5fae4" category="section-title">로깅</block>
   <block id="7e2a14542a2613424ad88206fd2dd9aa" category="list-text">'-debug': 디버깅 출력을 활성화합니다.</block>
   <block id="55e727716c7f623987be58e50732c01e" category="list-text">'-LogLevel &lt;level&gt;': 로깅 수준(debug, info, warn, error, fatal)을 설정한다. 기본적으로 info(정보) 가 사용됩니다.</block>
@@ -3168,4 +3165,7 @@
   <block id="cce172403b73af5c2a4e93081affcc7f" category="inline-link">Astra Trident 21.10</block>
   <block id="606b9e83fb467a43b3065d4fd5037094" category="list-text"><block ref="606b9e83fb467a43b3065d4fd5037094" category="inline-link-rx"></block></block>
   <block id="ee50d481128d1543f9945b4a4f3fbe9d" category="paragraph">공기 박형 설치의 경우 다음 목록은 Astra Trident를 설치하는 데 필요한 컨테이너 이미지의 참조입니다. tridentctl images 명령을 사용하여 필요한 컨테이너 영상의 목록을 확인합니다.</block>
+  <block id="ec3f9af8f611100a0182ffb9ab2e5ef8" category="paragraph">ONTAP 내에서 Trident 드라이버가 사용할 수 있는 보다 제한적인 역할을 만들 수 있지만 권장하지 않습니다. Trident의 대부분의 새로운 릴리즈에서는 추가 API를 호출하므로 업그레이드가 어렵고 오류가 발생하기 쉽습니다.</block>
+  <block id="ee50ce7340da5b018abe62c8e613cae0" category="summary">Astra Trident는 Trident Orchestrator를 위한 여러 명령줄 옵션을 공개하고 특정 포트를 통해 통신합니다.</block>
+  <block id="94efe0c9471991c69d2a3b0970a56744" category="paragraph">Astra Trident는 Trident Orchestrator를 위한 여러 명령줄 옵션을 제공합니다. 이러한 옵션을 사용하여 배포를 수정할 수 있습니다.</block>
 </blocks>
