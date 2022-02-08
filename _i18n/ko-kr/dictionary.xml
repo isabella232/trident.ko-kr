@@ -3029,8 +3029,6 @@
   <block id="0ae0ea6967e9321db008cee4ad5f290c" category="list-text"><block ref="0ae0ea6967e9321db008cee4ad5f290c" category="inline-link-rx"></block></block>
   <block id="3a4b2c66d4bdac6ce0e3340c71a39eda" category="inline-link">Astra Control Center 문서</block>
   <block id="ea643bf7aaf130341a17f697a7009368" category="list-text"><block ref="ea643bf7aaf130341a17f697a7009368" category="inline-link-rx"></block></block>
-  <block id="668cea0790a6ca206d2c5f41d4e2bfe3" category="inline-link">Astra 데이터 문서</block>
-  <block id="774d94ad69407b5dff98038fec00368b" category="list-text"><block ref="774d94ad69407b5dff98038fec00368b" category="inline-link-rx"></block></block>
   <block id="9d6ffa6ef31bd0b92876314219f18ef5" category="inline-link">Astra API 설명서</block>
   <block id="9c2cf0e947812ecb3fc0bfccaa8b3c61" category="list-text"><block ref="9c2cf0e947812ecb3fc0bfccaa8b3c61" category="inline-link-rx"></block></block>
   <block id="4546bbd46f06879787b5670b13277b28" category="paragraph">이 단계의 일부로, 21.10.0 Trident 운영자는 기존 Astra Trident 설치를 식별하고 운영자와 동일한 버전으로 업그레이드합니다.</block>
@@ -3168,4 +3166,6 @@
   <block id="ec3f9af8f611100a0182ffb9ab2e5ef8" category="paragraph">ONTAP 내에서 Trident 드라이버가 사용할 수 있는 보다 제한적인 역할을 만들 수 있지만 권장하지 않습니다. Trident의 대부분의 새로운 릴리즈에서는 추가 API를 호출하므로 업그레이드가 어렵고 오류가 발생하기 쉽습니다.</block>
   <block id="ee50ce7340da5b018abe62c8e613cae0" category="summary">Astra Trident는 Trident Orchestrator를 위한 여러 명령줄 옵션을 공개하고 특정 포트를 통해 통신합니다.</block>
   <block id="94efe0c9471991c69d2a3b0970a56744" category="paragraph">Astra Trident는 Trident Orchestrator를 위한 여러 명령줄 옵션을 제공합니다. 이러한 옵션을 사용하여 배포를 수정할 수 있습니다.</block>
+  <block id="be1c3d3113c4023e29e8dd947523c711" category="inline-link">Astra Data Store 문서</block>
+  <block id="c54241e3258a450b02a723d6d751a4f1" category="list-text"><block ref="c54241e3258a450b02a723d6d751a4f1" category="inline-link-rx"></block></block>
 </blocks>
