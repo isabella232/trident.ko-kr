@@ -217,7 +217,7 @@ ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN
 | fsType입니다 | 문자열 | ext4, ext3, xfs 등 | 블록 볼륨의 파일 시스템 유형입니다 | solidfire-SAN, ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, eseries-iSCSI가 있습니다 | 모두 
 
 
-| allowVolumeExpansion | 부울 | 참, 거짓 | PVC 크기 증가에 대한 지원을 활성화 또는 비활성화합니다 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN, AWS-CV, GCP-CV, Azure-NetApp-파일 | 1.11+ 
+| allowVolumeExpansion | 부울 | 참, 거짓 | PVC 크기 증가에 대한 지원을 활성화 또는 비활성화합니다 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, solidfire-SAN, AWS-CV, GCP-CV, Azure-NetApp 파일 | 1.11+ 
 
 
 | 볼륨BindingMode 를 선택합니다 | 문자열 | Immediate, WaitForFirstConsumer입니다 | 볼륨 바인딩 및 동적 프로비저닝이 수행될 시기를 선택합니다 | 모두 | 1.17+ 

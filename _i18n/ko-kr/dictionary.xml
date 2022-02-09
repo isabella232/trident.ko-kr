@@ -3171,7 +3171,6 @@
   <block id="6add71a247c8f4513060920be14857bc" category="cell">allowVolumeExpansion</block>
   <block id="84e2c64f38f78ba3ea5c905ab5a2da27" category="cell">부울</block>
   <block id="675e3f37a9adfd7ab6433906c490fa06" category="cell">PVC 크기 증가에 대한 지원을 활성화 또는 비활성화합니다</block>
-  <block id="87122f0775b5e45af5241d0008c1a51f" category="cell">ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN, AWS-CV, GCP-CV, Azure-NetApp-파일</block>
   <block id="c791531450eeeb073b30215d9c306a00" category="cell">1.11+</block>
   <block id="086b513e7d83c4cf32a8bd3550679276" category="cell">볼륨BindingMode 를 선택합니다</block>
   <block id="fd656a4f359aa12808a6d0ceb5792342" category="cell">Immediate, WaitForFirstConsumer입니다</block>
@@ -3183,4 +3182,5 @@
   <block id="45d2174daba36b76955e69d2eddf26ca" category="list-text">PVC 액세스 모드는 RWO입니다.</block>
   <block id="ba5b62efad4f90a8f4bb806cba4a3ea4" category="paragraph">NFS 스토리지 드라이버의 경우 파일 시스템이 NFS 내보내기의 일부로 이미 존재합니다. fsGroup을 사용하려면 스토리지 클래스가 여전히 fsType을 지정해야 합니다. NFS 또는 null이 아닌 값으로 설정할 수 있습니다.</block>
   <block id="4811aaaf5eedea1ea9f703353903b5b5" category="list-text">을 참조하십시오 <block ref="c35b155baa39b6aa36cf9bc59eea88f3" category="inline-link-macro-rx"></block> 볼륨 확장에 대한 자세한 내용은 를 참조하십시오.</block>
+  <block id="853119066470e5145f87024e7c6accdb" category="cell">ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, solidfire-SAN, AWS-CV, GCP-CV, Azure-NetApp 파일</block>
 </blocks>
