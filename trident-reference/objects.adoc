@@ -129,6 +129,8 @@ provisioner: csi.trident.netapp.io
 mountOptions: <Mount Options>
 parameters:
   <Trident Parameters>
+allowVolumeExpansion: true
+volumeBindingMode: Immediate
 ----
 이러한 매개 변수는 Trident에만 해당되며 Trident에 클래스에 볼륨을 프로비저닝하는 방법을 알려줍니다.
 
@@ -212,10 +214,30 @@ ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN
 | 속성 | 유형 | 값 | 설명 | 관련 드라이버 | Kubernetes 버전 
 
 
-| fsType입니다 | 문자열 | ext4, ext3, xfs 등 | 블록 볼륨의 파일 시스템 유형입니다 | solidfire-SAN, ONTAP-SAN, ONTAP-SAN - 경제성, eseries-iSCSI | 모두 
-|===
-Trident 설치 프로그램 번들에는 'Sample-input/storage-class- *.YAML'의 Trident와 함께 사용할 수 있는 여러 가지 스토리지 클래스 정의가 포함되어 있습니다. Kubernetes 스토리지 클래스를 삭제하면 해당 Trident 스토리지 클래지도 삭제됩니다.
+| fsType입니다 | 문자열 | ext4, ext3, xfs 등 | 블록 볼륨의 파일 시스템 유형입니다 | solidfire-SAN, ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, eseries-iSCSI가 있습니다 | 모두 
 
+
+| allowVolumeExpansion | 부울 | 참, 거짓 | PVC 크기 증가에 대한 지원을 활성화 또는 비활성화합니다 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN, AWS-CV, GCP-CV, Azure-NetApp-파일 | 1.11+ 
+
+
+| 볼륨BindingMode 를 선택합니다 | 문자열 | Immediate, WaitForFirstConsumer입니다 | 볼륨 바인딩 및 동적 프로비저닝이 수행될 시기를 선택합니다 | 모두 | 1.17+ 
+|===
+[TIP]
+====
+* 'fsType' 매개 변수는 SAN LUN에 대해 원하는 파일 시스템 유형을 제어하는 데 사용됩니다. 또한 Kubernetes는 스토리지 클래스에 'fsType'이 있음을 사용하여 파일 시스템이 있음을 나타냅니다. fsType이 설정된 경우에만 POD의 fsGroup 보안 컨텍스트를 사용하여 볼륨 소유권을 제어할 수 있습니다. 을 참조하십시오 link:https://kubernetes.io/docs/tasks/configure-pod-container/security-context/["Kubernetes: Pod 또는 컨테이너의 보안 컨텍스트를 구성합니다"^] 'fsGroup' 컨텍스트를 사용하여 볼륨 소유권을 설정하는 방법에 대한 개요를 제공합니다. Kubernetes는 다음과 같은 경우에만 'fsGroup' 값을 적용합니다.
++
+** 스토리지 클래스에 fsType이 설정되어 있습니다.
+** PVC 액세스 모드는 RWO입니다.
+
+
++
+NFS 스토리지 드라이버의 경우 파일 시스템이 NFS 내보내기의 일부로 이미 존재합니다. fsGroup을 사용하려면 스토리지 클래스가 여전히 fsType을 지정해야 합니다. NFS 또는 null이 아닌 값으로 설정할 수 있습니다.
+
+* 을 참조하십시오 link:https://docs.netapp.com/us-en/trident/trident-use/vol-expansion.html["볼륨 확장"^] 볼륨 확장에 대한 자세한 내용은 를 참조하십시오.
+* Trident 설치 프로그램 번들에는 'Sample-input/storage-class- *.YAML'의 Trident와 함께 사용할 수 있는 여러 가지 스토리지 클래스 정의가 포함되어 있습니다. Kubernetes 스토리지 클래스를 삭제하면 해당 Trident 스토리지 클래지도 삭제됩니다.
+
+
+====
 
 
 == Kubernetes VolumeSnapshotClass 객체

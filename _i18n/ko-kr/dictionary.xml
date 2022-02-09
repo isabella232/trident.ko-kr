@@ -2345,7 +2345,6 @@
   <block id="7cfbb6f07899c8071ff38e69dca190e2" category="cell">fsType입니다</block>
   <block id="64b6d80cc167d5c657b60054dbe396ee" category="cell">ext4, ext3, xfs 등</block>
   <block id="7928a56d4874d982a06a59e3f30f6935" category="cell">블록 볼륨의 파일 시스템 유형입니다</block>
-  <block id="b74b022e90a67722f5de8016a0e5578c" category="cell">solidfire-SAN, ONTAP-SAN, ONTAP-SAN - 경제성, eseries-iSCSI</block>
   <block id="b1c94ca2fbc3e78fc30069c8d0f01680" category="cell">모두</block>
   <block id="2435c5eb0d842c13f635d4b1d6667a52" category="paragraph">Trident 설치 프로그램 번들에는 'Sample-input/storage-class- *.YAML'의 Trident와 함께 사용할 수 있는 여러 가지 스토리지 클래스 정의가 포함되어 있습니다. Kubernetes 스토리지 클래스를 삭제하면 해당 Trident 스토리지 클래지도 삭제됩니다.</block>
   <block id="6b218cef3794c1b32702bd37753ce9ef" category="section-title">Kubernetes VolumeSnapshotClass 객체</block>
@@ -3168,4 +3167,20 @@
   <block id="94efe0c9471991c69d2a3b0970a56744" category="paragraph">Astra Trident는 Trident Orchestrator를 위한 여러 명령줄 옵션을 제공합니다. 이러한 옵션을 사용하여 배포를 수정할 수 있습니다.</block>
   <block id="be1c3d3113c4023e29e8dd947523c711" category="inline-link">Astra Data Store 문서</block>
   <block id="c54241e3258a450b02a723d6d751a4f1" category="list-text"><block ref="c54241e3258a450b02a723d6d751a4f1" category="inline-link-rx"></block></block>
+  <block id="55f3fc550e9a03a95334f3a19f0920cc" category="cell">solidfire-SAN, ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, eseries-iSCSI가 있습니다</block>
+  <block id="6add71a247c8f4513060920be14857bc" category="cell">allowVolumeExpansion</block>
+  <block id="84e2c64f38f78ba3ea5c905ab5a2da27" category="cell">부울</block>
+  <block id="675e3f37a9adfd7ab6433906c490fa06" category="cell">PVC 크기 증가에 대한 지원을 활성화 또는 비활성화합니다</block>
+  <block id="87122f0775b5e45af5241d0008c1a51f" category="cell">ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN, AWS-CV, GCP-CV, Azure-NetApp-파일</block>
+  <block id="c791531450eeeb073b30215d9c306a00" category="cell">1.11+</block>
+  <block id="086b513e7d83c4cf32a8bd3550679276" category="cell">볼륨BindingMode 를 선택합니다</block>
+  <block id="fd656a4f359aa12808a6d0ceb5792342" category="cell">Immediate, WaitForFirstConsumer입니다</block>
+  <block id="5e7777e1f9cfa3a93159ee44cf3f1f5a" category="cell">볼륨 바인딩 및 동적 프로비저닝이 수행될 시기를 선택합니다</block>
+  <block id="9c26b95cff78678b07389bb95544c7b6" category="cell">1.17+</block>
+  <block id="8264769021597389583b0a7d1fa7e076" category="inline-link-macro">Kubernetes: Pod 또는 컨테이너의 보안 컨텍스트를 구성합니다</block>
+  <block id="dca8809f382a96564d64ae1525b39048" category="list-text">'fsType' 매개 변수는 SAN LUN에 대해 원하는 파일 시스템 유형을 제어하는 데 사용됩니다. 또한 Kubernetes는 스토리지 클래스에 'fsType'이 있음을 사용하여 파일 시스템이 있음을 나타냅니다. fsType이 설정된 경우에만 POD의 fsGroup 보안 컨텍스트를 사용하여 볼륨 소유권을 제어할 수 있습니다. 을 참조하십시오 <block ref="7940a62969e5aeae7f6e32b04e7a11e3" category="inline-link-macro-rx"></block> 'fsGroup' 컨텍스트를 사용하여 볼륨 소유권을 설정하는 방법에 대한 개요를 제공합니다. Kubernetes는 다음과 같은 경우에만 'fsGroup' 값을 적용합니다.</block>
+  <block id="6dd29ca7439e52dcf2fbc569066b3d67" category="list-text">스토리지 클래스에 fsType이 설정되어 있습니다.</block>
+  <block id="45d2174daba36b76955e69d2eddf26ca" category="list-text">PVC 액세스 모드는 RWO입니다.</block>
+  <block id="ba5b62efad4f90a8f4bb806cba4a3ea4" category="paragraph">NFS 스토리지 드라이버의 경우 파일 시스템이 NFS 내보내기의 일부로 이미 존재합니다. fsGroup을 사용하려면 스토리지 클래스가 여전히 fsType을 지정해야 합니다. NFS 또는 null이 아닌 값으로 설정할 수 있습니다.</block>
+  <block id="4811aaaf5eedea1ea9f703353903b5b5" category="list-text">을 참조하십시오 <block ref="c35b155baa39b6aa36cf9bc59eea88f3" category="inline-link-macro-rx"></block> 볼륨 확장에 대한 자세한 내용은 를 참조하십시오.</block>
 </blocks>
