@@ -3183,4 +3183,5 @@
   <block id="ba5b62efad4f90a8f4bb806cba4a3ea4" category="paragraph">NFS 스토리지 드라이버의 경우 파일 시스템이 NFS 내보내기의 일부로 이미 존재합니다. fsGroup을 사용하려면 스토리지 클래스가 여전히 fsType을 지정해야 합니다. NFS 또는 null이 아닌 값으로 설정할 수 있습니다.</block>
   <block id="4811aaaf5eedea1ea9f703353903b5b5" category="list-text">을 참조하십시오 <block ref="c35b155baa39b6aa36cf9bc59eea88f3" category="inline-link-macro-rx"></block> 볼륨 확장에 대한 자세한 내용은 를 참조하십시오.</block>
   <block id="853119066470e5145f87024e7c6accdb" category="cell">ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, solidfire-SAN, AWS-CV, GCP-CV, Azure-NetApp 파일</block>
+  <block id="eb5fcd9066a478d8d1c83a897726b2c0" category="paragraph">+참고: NetApp Aggregate Encryption(NAE)은 현재 Trident에서 지원되지 않습니다.</block>
 </blocks>
