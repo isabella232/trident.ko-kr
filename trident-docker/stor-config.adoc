@@ -140,7 +140,7 @@ myigroup
 
 
 
-| 리미터볼륨 크기  a| 
+| LimitVolumeSize  a| 
 최대 요청 가능 볼륨 크기 및 qtree 상위 볼륨 크기. * 이 옵션은 'ONTAP-NAS-이코노미' 드라이버의 경우 FlexVol의 크기를 추가로 제한합니다 *.
  a| 
 300g
