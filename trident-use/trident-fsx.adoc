@@ -125,9 +125,14 @@ NOTE: 파일 시스템에 연결할 수 있는 모든 위치에서 SSH를 사용
 
 NOTE: Astra Trident에서 다중 경로를 사용할 수 있도록 ONTAP-SAN 및 ONTAP-SAN-이코노미 드라이버에 대해 "LIF"를 지정하지 마십시오.
 
+[WARNING]
+.ONTAP용 Amazon FSx
+====
+* limitAggregateUsage 매개변수는 vsadmin과 fsxadmin 사용자 계정에서는 작동하지 않습니다. 이 매개 변수를 지정하면 구성 작업이 실패합니다.
+* NetApp ONTAP 볼륨용 Amazon FSx는 SnapMirror와 함께 사전 구성되어 제공됩니다. Trident는 수정하거나 분리할 수 없습니다. PVC를 삭제하려면 PV 및 FSx for NetApp ONTAP 볼륨을 수동으로 삭제해야 합니다.
 
-WARNING: Astra Trident와 함께 NetApp ONTAP용 Amazon FSx를 사용하는 경우 "limitAggregateUsage" 매개 변수는 "vsadmin" 및 "fsxadmin" 사용자 계정과 작동하지 않습니다. 이 매개 변수를 지정하면 구성 작업이 실패합니다.
 
+====
 배포 후 단계를 수행하여 을 생성합니다 link:../trident-get-started/kubernetes-postdeployment.html["스토리지 클래스, 볼륨 프로비저닝 및 POD에 볼륨 마운트"^].
 
 
