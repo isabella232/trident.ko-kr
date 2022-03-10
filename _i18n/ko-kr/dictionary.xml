@@ -3185,4 +3185,5 @@
   <block id="18cf072964a583150dd247485ba75b92" category="admonition-title">ONTAP용 Amazon FSx</block>
   <block id="fa8bc73a8436dd2f79aafaa731d248e4" category="list-text">limitAggregateUsage 매개변수는 vsadmin과 fsxadmin 사용자 계정에서는 작동하지 않습니다. 이 매개 변수를 지정하면 구성 작업이 실패합니다.</block>
   <block id="c7e012baf676feb8d925d8f535c01c02" category="list-text">NetApp ONTAP 볼륨용 Amazon FSx는 SnapMirror와 함께 사전 구성되어 제공됩니다. Trident는 수정하거나 분리할 수 없습니다. PVC를 삭제하려면 PV 및 FSx for NetApp ONTAP 볼륨을 수동으로 삭제해야 합니다.</block>
+  <block id="7b3ecf601e0eee1c9d097083281abafa" category="example-title">예를 확장합니다</block>
 </blocks>
