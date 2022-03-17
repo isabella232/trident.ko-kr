@@ -41,12 +41,17 @@ Astra Trident를 구축하려면 다음과 같은 사전 요구 사항을 충족
 
 
 .단계
-. 에서 설치 프로그램 번들을 다운로드합니다 https://github.com/netapp/trident/releases["GitTrident 허브"] 페이지. 설치 프로그램 번들에는 '/helm' 디렉토리에 헬름 차트가 들어 있습니다.
+. Trident의 제어 리포지토리 추가:
++
+[listing]
+----
+helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
+----
 . 'helm install' 명령을 사용하여 배포 이름을 지정합니다. 다음 예를 참조하십시오.
 +
 [listing]
 ----
-helm install <name> trident-operator-21.07.1.tgz --namespace <namespace you want to use for Trident>
+helm install <release-name> netapp-trident/trident-operator --version 22.1.0 --namespace <trident-namespace>
 ----
 +
 
@@ -64,7 +69,7 @@ NOTE: Trident의 네임스페이스를 아직 만들지 않은 경우 '--create-
 
 [listing]
 ----
-$ helm install <name> trident-operator-21.07.1.tgz --set tridentDebug=true
+$ helm install <name> netapp-trident/trident-operator --version 22.1.0 --set tridentDebug=true
 ----
 제어 차트의 일부인 Values.YAML 파일은 키 목록과 기본값을 제공합니다.
 
