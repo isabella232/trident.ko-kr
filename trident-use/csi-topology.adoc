@@ -10,7 +10,7 @@ summary: Astra Trident는 CSI 토폴로지 기능을 사용하여 Kubernetes 클
 :imagesdir: ../media/
 
 
-Astra Trident는 을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하여 연결할 수 있습니다 https://kubernetes-csi.github.io/docs/topology.html["CSI 토폴로지 기능"^]. CSI 토폴로지 기능을 사용하면 지역 및 가용성 영역에 따라 볼륨에 대한 액세스가 노드의 하위 집합으로 제한될 수 있습니다. 오늘날의 클라우드 공급자는 Kubernetes 관리자가 영역 기반의 노드를 생성할 수 있습니다. 노드는 가용성 영역 내의 여러 지역 또는 여러 가용성 영역에 있을 수 있습니다. Astra Trident는 다중 영역 아키텍처에서 워크로드용 볼륨 프로비저닝을 지원하기 위해 CSI 토폴로지를 사용합니다.
+Astra Trident는 을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하여 연결할 수 있습니다 https://kubernetes-csi.github.io/docs/topology.html["CSI 토폴로지 기능"^]. CSI 토폴로지 기능을 사용하면 지역 및 가용성 영역에 따라 볼륨에 대한 액세스가 노드의 하위 집합으로 제한될 수 있습니다. 오늘날의 클라우드 공급자는 Kubernetes 관리자가 영역 기반의 노드를 생성할 수 있습니다. 노드는 지역 내 또는 여러 지역의 여러 가용성 영역에 위치할 수 있습니다. Astra Trident는 다중 영역 아키텍처에서 워크로드용 볼륨 프로비저닝을 지원하기 위해 CSI 토폴로지를 사용합니다.
 
 
 TIP: CSI 토폴로지 기능에 대해 자세히 알아보십시오 https://kubernetes.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/["여기"^].

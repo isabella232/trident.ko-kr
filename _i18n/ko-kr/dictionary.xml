@@ -1732,7 +1732,6 @@
   <block id="08c4bc4ac4edd9b12963c0596478d746" category="summary">Astra Trident는 CSI 토폴로지 기능을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하고 연결할 수 있습니다.</block>
   <block id="3d4635d3cf4f27b0e87f3fe86a84744d" category="doc">CSI 토폴로지를 사용합니다</block>
   <block id="4abea6bac3b0b48d11dd8dcd02a11bf9" category="inline-link">CSI 토폴로지 기능</block>
-  <block id="d8af5701dd1ffedb08b7db3f7efcd86b" category="paragraph">Astra Trident는 을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하여 연결할 수 있습니다<block ref="80b9a4f4a1bc9851317207ee3477041a" category="inline-link-rx"></block>. CSI 토폴로지 기능을 사용하면 지역 및 가용성 영역에 따라 볼륨에 대한 액세스가 노드의 하위 집합으로 제한될 수 있습니다. 오늘날의 클라우드 공급자는 Kubernetes 관리자가 영역 기반의 노드를 생성할 수 있습니다. 노드는 가용성 영역 내의 여러 지역 또는 여러 가용성 영역에 있을 수 있습니다. Astra Trident는 다중 영역 아키텍처에서 워크로드용 볼륨 프로비저닝을 지원하기 위해 CSI 토폴로지를 사용합니다.</block>
   <block id="592af423a2f6a51f57c639ec7f7b245e" category="admonition">CSI 토폴로지 기능에 대해 자세히 알아보십시오<block ref="ff042e7f24bd2adcec09d78466034177" category="inline-link-rx"></block>.</block>
   <block id="bbdcaf9b704dc7a7cf73e6000101b65a" category="paragraph">Kubernetes는 두 가지 고유한 볼륨 바인딩 모드를 제공합니다.</block>
   <block id="93590d63acbb4fa6864a4665157fbcea" category="list-text">'VolumeBindingMode'를 'Immediate'로 설정하면 Astra Trident는 토폴로지 인식 없이 볼륨을 생성합니다. 볼륨 바인딩 및 동적 프로비저닝은 PVC가 생성될 때 처리됩니다. 이는 기본 'VolumeBindingMode'이며 토폴로지 제약 조건을 적용하지 않는 클러스터에 적합합니다. 영구 볼륨은 요청 포드의 예약 요구 사항에 의존하지 않고 생성됩니다.</block>
@@ -3195,4 +3194,5 @@
   <block id="7213ed07f5b718aa66cfac350f023a77" category="list-text">이미 가져온 볼륨을 가져오려고 하면 PVC가 보류 상태로 남겨둔 EOF가 반환되는 문제가 해결되었습니다. (<block ref="b9a2290d6389b9a605883cda4e717749" category="inline-link-macro-rx"></block>)</block>
   <block id="c28d8c94f865f3ef7e4b01a157510ef6" category="list-text">SolidFire 볼륨에 32개 이상의 스냅샷을 생성할 때 Astra Trident 성능이 느려지는 문제를 해결했습니다.</block>
   <block id="d0aaca968285d0d47ea0c5a0f7b9bab5" category="list-text">SHA-1을 SSL 인증서 생성에서 SHA-256으로 교체했습니다.</block>
+  <block id="92e6030d252cfd43e0567e282a0d2c9b" category="paragraph">Astra Trident는 을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하여 연결할 수 있습니다<block ref="80b9a4f4a1bc9851317207ee3477041a" category="inline-link-rx"></block>. CSI 토폴로지 기능을 사용하면 지역 및 가용성 영역에 따라 볼륨에 대한 액세스가 노드의 하위 집합으로 제한될 수 있습니다. 오늘날의 클라우드 공급자는 Kubernetes 관리자가 영역 기반의 노드를 생성할 수 있습니다. 노드는 지역 내 또는 여러 지역의 여러 가용성 영역에 위치할 수 있습니다. Astra Trident는 다중 영역 아키텍처에서 워크로드용 볼륨 프로비저닝을 지원하기 위해 CSI 토폴로지를 사용합니다.</block>
 </blocks>
