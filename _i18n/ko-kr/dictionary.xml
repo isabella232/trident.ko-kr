@@ -2127,7 +2127,6 @@
   <block id="5dd03e8d039863e563e049be198c3fd3" category="doc">릴리즈 노트</block>
   <block id="2e6ce374ac42de81aea6a3d682b92e33" category="paragraph">릴리즈 노트 최신 버전의 Astra Trident에 새로운 기능, 개선 사항 및 버그 수정 사항에 대한 정보를 제공합니다.</block>
   <block id="e4c4d344a524d21b898e4d04b6539aa7" category="admonition">설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바이너리는 테스트되고 지원되는 버전입니다. zip 파일의 '/Extras' 부분에 제공된 'macos' 바이너리는 테스트되거나 지원되지 않습니다.</block>
-  <block id="1b6ea3b57d23007f55ba778700bc369c" category="inline-link">문서 열기용 버전</block>
   <block id="41cf959adc98386b54829d71a6ed5d37" category="section-title">수정</block>
   <block id="a6e7aa999ba654c6844672ae59f5137a" category="list-text">XFS 볼륨의 클론을 소스 볼륨과 동일한 노드에 마운트할 수 없는 문제(GitHub 문제 514)가 해결되었습니다.</block>
   <block id="4a921ae3eb8c2695dabd4044ff81141a" category="list-text">Astra Trident에서 종료 시 심각한 오류를 기록한 문제 해결(GitHub 문제 597)</block>
@@ -3039,7 +3038,6 @@
   <block id="b0b4b8e52878f03279584f43bc961472" category="list-text">K8s.GCR.IO/SIG-스토리지/CSI-공급자:v2.2.2</block>
   <block id="3c8910d4db724229b566887801de96bb" category="list-text">k8s.gcr.io/sig-storage/scsi-resizer: v1.3.0</block>
   <block id="681d715b456f6d29a501b8f132e941a1" category="cell">v1.22.0</block>
-  <block id="80fa8f92dc0ebf122ed30a4a88fda343" category="doc">Astra Trident 22.01 문서</block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">오픈 소스</block>
   <block id="0172b29a9f5d94dc62ee592a98183f3b" category="paragraph">각 릴리스의 공지 파일에서 Astra Trident용 NetApp 소프트웨어에 사용된 타사 저작권 및 라이센스를 검토할 수 있습니다<block ref="4a3c8c5a408c6db1c44c04391a8a0a2f" category="inline-link-rx"></block>.</block>
   <block id="29db8b676d0a02f8179869506102c8ce" category="doc">ONTAP 또는 Cloud Volumes ONTAP SAN 드라이버를 사용하여 백엔드를 구성합니다</block>
@@ -3087,8 +3085,6 @@
   <block id="b53453343f074fd64ef7129def93f57d" category="section-title">예 1: 최소 백엔드 구성</block>
   <block id="8f3db75549f212e0fdab2c542531a95e" category="paragraph">이 예에서는 Astra Trident에서 생성한 모든 스토리지에 동일한 측면을 적용하는 백엔드 파일을 보여 줍니다.</block>
   <block id="a2c81e41622f2e2616b33a689e229c72" category="paragraph">다음 StorageClass 정의는 위의 스토리지 풀을 참조합니다. "parameters.selector` 필드를 사용하여 각 StorageClass에 볼륨을 호스팅하는 데 사용되는 가상 풀을 지정할 수 있습니다. 선택한 가상 풀에 볼륨이 정의되어 있습니다.</block>
-  <block id="f5037f01585529df5529040fa25eda7f" category="section-title">22.01.0의 새로운 기능</block>
-  <block id="bff57507323bddf3673af0ae7ab80e2b" category="paragraph">NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다. 이전 릴리스는 를 참조하십시오<block ref="a3e07c08f1bbcd23d8422302f837e06b" category="inline-link-rx"></block>.</block>
   <block id="7072ec708b0ea7e3243747d8b79c0d20" category="admonition">이전 Trident 릴리스에서 업그레이드하고 Azure NetApp Files를 사용하는 경우 이제 ''location'' config 매개 변수는 필수 싱글톤 필드입니다.</block>
   <block id="b956e1f58f802db57dd9f871ac59ed6c" category="paragraph">중복된 리소스 이름을 허용하고 작업을 단일 위치로 제한하도록 ANF 드라이버를 수정했습니다.</block>
   <block id="851679bec9b3e6c8e6284128fb750b1e" category="list-text">Kubernetes의 향상된 기능:</block>
@@ -3116,11 +3112,9 @@
   <block id="f2f0da9b50bd2001bc802c121fc76254" category="admonition">Red Hat OpenShift Container Platform 사용자는 4.6.8 이하의 버전을 사용하는 경우 initiatorname.iscsi 파일이 비어 있는 것을 관찰할 수 있습니다. 이는 RedHat에서 OpenShift 4.6.8로 해결된 버그로, 자세한 내용은 다음을 참조하십시오<block ref="ac064f2337a2fc6c16c562bc9e386352" category="inline-link-rx"></block>. OpenShift 4.6.8 이상에서 Astra Trident를 사용하는 것이 좋습니다.</block>
   <block id="0f6e0df69462b7a5d101ec1a3fa8a376" category="list-text">NetApp HCI/Element 소프트웨어 11 이상</block>
   <block id="597a56086e1f9d7ca5e8f55c40a0153a" category="list-text">OpenShift Container Platform에서 지원하는 RedHat CoreOS(RHCOS) 버전</block>
-  <block id="83f21d8f3725c4e4a96d4e8da9c06403" category="list-text">NetApp/트리덴트: 22.01.0</block>
   <block id="0e3db22955e0ef2a04155e743fdcd843" category="list-text">NetApp/트리덴트 - AutoSupport: 22.01</block>
   <block id="52d5de12f37c2ff6a4de253d20947ca2" category="list-text">K8s.GCR.IO/SIG-storage/CSI-attacher:v3.4.0</block>
   <block id="f86452b351d644230a6ab4c2d580e193" category="list-text">K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.4.0</block>
-  <block id="9b73461bc19f14ce7a87a56f6890ca87" category="list-text">NetApp/트리덴트 - 작업자: 22.01.0(옵션)</block>
   <block id="ad9d572821da9bfff3397f2d3260509d" category="list-text">K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.1.0</block>
   <block id="73e93ad328287e5ce4c06228cfdba2bf" category="cell">v1.23.0</block>
   <block id="08ee53e1d5cefb7967a295e98036598e" category="cell">스냅샷 디렉터리의 표시 여부를 제어합니다</block>
@@ -3185,4 +3179,20 @@
   <block id="7b3ecf601e0eee1c9d097083281abafa" category="example-title">예를 확장합니다</block>
   <block id="76df2d4e2a105a35b5db1ce7b060bbe1" category="list-text">Anthos On-Premise(VMware) 및 Anthos의 Bare Metal 1.8, 1.9, 1.10</block>
   <block id="9c99c91edd7eddead4f870a324f880bd" category="list-text">Trident의 제어 리포지토리 추가:</block>
+  <block id="b9baa6fa560066bf0c9e87d66d1c0664" category="doc">Astra Trident 22.01.1 문서</block>
+  <block id="583a5308ed42c99426f964d094ea527d" category="list-text">NetApp/트리덴트: 22.01.1</block>
+  <block id="e2393935037062665875a528ef53dd36" category="list-text">NetApp/트리덴트 - 운영자: 22.01.1(선택 사항)</block>
+  <block id="6e7239a6c6cfd378a1e55314b7490e32" category="section-title">22.01.1의 새로운 기능</block>
+  <block id="368b120a3b5f53a49dc3ab96ec9b8dbd" category="paragraph">NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다. 이전 릴리스는 를 참조하십시오<block ref="25da125dffad1d6323c21354bccf0203" category="inline-link-rx"></block>.</block>
+  <block id="a98b2ebbcbb381d3abc81e2ecfb2054c" category="inline-link-macro">GitHub 문제 #691</block>
+  <block id="61465c1d4383dd4afdf168925e15e767" category="list-text">삭제된 노드에서 볼륨 게시를 취소하는 문제 해결 (<block ref="5fee6ab43e8008edba54375694a29266" category="inline-link-macro-rx"></block>)</block>
+  <block id="e50f1057ba4b67b255c98fa09c5ba6f8" category="list-text">ONTAP API 응답에서 공간 집계에 대한 nil 필드에 액세스할 때 패닉이 수정되었습니다.</block>
+  <block id="f064e09978a6df920139de5d0ebddd77" category="section-title">22.01.0 변경(22.10.1 이후)</block>
+  <block id="3c72f47eeb46270dd13a77b32ec10dd3" category="list-text">* Kubernetes: * 대규모 클러스터의 노드 등록 백오프 재시도 시간을 늘립니다.</block>
+  <block id="0ef48234390855900384d0bc8a0a8a24" category="list-text">동일한 이름의 여러 리소스가 Azure-NetApp-files 드라이버를 혼동할 수 있는 문제 해결</block>
+  <block id="7eaa7391130c13b3bf9a7e4ae755d908" category="list-text">ONTAP SAN IPv6 데이터 LIF는 이제 대괄호와 함께 지정된 경우 작동합니다.</block>
+  <block id="404cef2e43cb97ccef52692419ad6f6b" category="inline-link-macro">GitHub 문제 #489</block>
+  <block id="7213ed07f5b718aa66cfac350f023a77" category="list-text">이미 가져온 볼륨을 가져오려고 하면 PVC가 보류 상태로 남겨둔 EOF가 반환되는 문제가 해결되었습니다. (<block ref="b9a2290d6389b9a605883cda4e717749" category="inline-link-macro-rx"></block>)</block>
+  <block id="c28d8c94f865f3ef7e4b01a157510ef6" category="list-text">SolidFire 볼륨에 32개 이상의 스냅샷을 생성할 때 Astra Trident 성능이 느려지는 문제를 해결했습니다.</block>
+  <block id="d0aaca968285d0d47ea0c5a0f7b9bab5" category="list-text">SHA-1을 SSL 인증서 생성에서 SHA-256으로 교체했습니다.</block>
 </blocks>
