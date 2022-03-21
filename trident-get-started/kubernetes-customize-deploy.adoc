@@ -99,7 +99,7 @@ spec:
   imagePullSecrets:
   - thisisasecret
 ----
-노드 선택기를 사용하여 Trident를 구축하는 방법을 보여 주는 또 다른 단풍은 다음과 같습니다.
+다음은 노드 선택기를 사용하여 Trident를 구축하는 방법을 보여 주는 또 다른 예입니다.
 
 [listing]
 ----
