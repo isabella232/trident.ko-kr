@@ -115,7 +115,7 @@ AccessGroups나 UseCHAP가 설정되지 않은 경우 다음 규칙 중 하나�
 | 이니토IFace | iSCSI 트래픽을 특정 호스트 인터페이스로 제한합니다 | “기본값” 
 
 
-| 'UseCHAP'입니다 | CHAP를 사용하여 iSCSI를 인증합니다 | "nfsvers=3" 
+| 'UseCHAP'입니다 | CHAP를 사용하여 iSCSI를 인증합니다 | 참 
 
 
 | "액세스 그룹" | 사용할 액세스 그룹 ID 목록입니다 | "트리덴트"라는 액세스 그룹의 ID를 찾습니다. 
