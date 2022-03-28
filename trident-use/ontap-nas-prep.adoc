@@ -48,7 +48,7 @@ Astra Trident는 SVM 범위/클러스터 범위 관리자에게 ONTAP 백엔드�
   "dataLIF": "10.0.0.2",
   "svm": "svm_nfs",
   "username": "vsadmin",
-  "password": "secret",
+  "password": "secret"
 }
 ----
 백엔드 정의는 자격 증명이 일반 텍스트로 저장되는 유일한 위치라는 점에 유의하십시오. 백엔드가 생성된 후 사용자 이름/암호는 Base64로 인코딩되어 Kubernetes 암호로 저장됩니다. 백엔드의 생성/업딩은 자격 증명에 대한 지식이 필요한 유일한 단계입니다. 따라서 Kubernetes/스토리지 관리자가 수행할 수 있는 관리 전용 작업입니다.
@@ -71,7 +71,7 @@ Astra Trident는 SVM 범위/클러스터 범위 관리자에게 ONTAP 백엔드�
 +
 [listing]
 ----
-openssl req -x509 -nodes -days 1095 -newkey rsa:2048 -keyout k8senv.key -out k8senv.pem -subj "/C=US/ST=NC/L=RTP/O=NetApp/CN=admin"
+openssl req -x509 -nodes -days 1095 -newkey rsa:2048 -keyout k8senv.key -out k8senv.pem -subj "/C=US/ST=NC/L=RTP/O=NetApp/CN=vsadmin"
 ----
 . 신뢰할 수 있는 CA 인증서를 ONTAP 클러스터에 추가합니다. 이는 스토리지 관리자가 이미 처리한 것일 수 있습니다. 트러스트된 CA가 사용되지 않으면 무시합니다.
 +
@@ -91,10 +91,10 @@ security ssl modify -vserver <vserver-name> -client-enabled true
 +
 [listing]
 ----
-security login create -user-or-group-name admin -application ontapi -authentication-method cert
-security login create -user-or-group-name admin -application http -authentication-method cert
+security login create -user-or-group-name vsadmin -application ontapi -authentication-method cert -vserver <vserver-name>
+security login create -user-or-group-name vsadmin -application http -authentication-method cert -vserver <vserver-name>
 ----
-. 생성된 인증서를 사용하여 인증을 테스트합니다. ONTAP 관리 LIF> 및 <SVM 이름>을 관리 LIF IP 및 SVM 이름으로 바꿉니다.
+. 생성된 인증서를 사용하여 인증을 테스트합니다. ONTAP 관리 LIF> 및 <SVM 이름>을 관리 LIF IP 및 SVM 이름으로 바꿉니다. LIF의 서비스 정책이 'default-data-management'로 설정되어 있는지 확인해야 합니다.
 +
 [listing]
 ----
@@ -120,8 +120,8 @@ $ cat cert-backend-updated.json
 "managementLIF": "1.2.3.4",
 "dataLIF": "1.2.3.8",
 "svm": "vserver_test",
-"username": "vsadmin",
-"password": "secret",
+"clientCertificate": "Faaaakkkkeeee...Vaaalllluuuueeee",
+"clientPrivateKey": "LS0tFaKE...0VaLuES0tLS0K",
 "storagePrefix": "myPrefix_"
 }
 
