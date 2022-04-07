@@ -6,6 +6,7 @@ summary: Astra Trident가 통신하는 포트에 대해 자세히 알아보십�
 ---
 = Astra Trident 포트
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

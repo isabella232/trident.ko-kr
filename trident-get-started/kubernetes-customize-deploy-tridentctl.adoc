@@ -6,6 +6,7 @@ summary: Trident의 설치 프로그램을 사용하여 특성을 사용자 지�
 ---
 = tridentctl 배포를 사용자 지정합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

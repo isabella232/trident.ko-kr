@@ -6,6 +6,7 @@ summary: Trident에 대한 간단한 액세스를 제공하는 명령줄 유틸�
 ---
 = tridentctl 명령 및 옵션
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -6,6 +6,7 @@ summary: 최신 버전을 실행하지 않는 경우 Astra Trident의 이전 릴
 ---
 = 이전 버전의 문서
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

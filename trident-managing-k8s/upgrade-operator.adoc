@@ -6,6 +6,7 @@ summary: 운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그�
 ---
 = 운영자와 함께 업그레이드하십시오
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -6,6 +6,7 @@ summary: '제공된 샘플 구성을 사용하여 Astra Trident 설치를 위해
 ---
 = Astra Data Store 백엔드를 구성합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

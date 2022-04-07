@@ -6,6 +6,7 @@ summary: 'Astra Trident는 NetApp이 Astra 제품군의 일부로 유지 관리�
 ---
 = Astra Trident 소개
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

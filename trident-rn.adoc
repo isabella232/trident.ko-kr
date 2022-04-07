@@ -6,6 +6,7 @@ summary: NetApp은 제품과 서비스를 지속적으로 개선 및 개선하�
 ---
 = 릴리즈 노트
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -6,6 +6,7 @@ summary: Astra Trident는 볼륨을 관리하는 몇 가지 기능을 제공합�
 ---
 = 볼륨 작업을 수행합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -1159,7 +1159,6 @@
   <block id="fda1b35892cb6f61447f0e49415937d9" category="paragraph">Kubernetes에서는 네임스페이스의 스토리지 클래스를 허용하지 않습니다. 그러나 Kubernetes를 사용하여 네임스페이스당 사용되는 스토리지 리소스 할당량을 사용하여 네임스페이스당 특정 스토리지 클래스의 사용을 제한할 수 있습니다. 특정 스토리지에 대한 특정 네임스페이스 액세스를 거부하려면 해당 스토리지 클래스에 대한 리소스 할당량을 0으로 설정합니다.</block>
   <block id="ea3d51fb2b16acb7cb260f25bc8965b1" category="summary">Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 공급자 및 오케스트레이터입니다. Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다.</block>
   <block id="30d965eef5ba25c6b9998ae38270b43e" category="doc">법적 고지</block>
-  <block id="c59ae8d7beeb519a23478ab048af482c" category="paragraph"><block ref="c59ae8d7beeb519a23478ab048af482c" category="inline-link-macro-rx"></block></block>
   <block id="e20acf6d4b1275a0b5d2eb01c845adff" category="summary">NetApp은 다양한 방법으로 Trident를 지원합니다. Slack 채널과 같은 다양한 무료 셀프 지원 옵션을 24x7 이용할 수 있습니다.</block>
   <block id="db5eb84117d06047c97c9a0191b5fffe" category="doc">지원</block>
   <block id="14340f3a4eb25a54f8446036d807d7c8" category="paragraph">Astra Trident는 공식적으로 지원되는 NetApp 프로젝트입니다. 표준 메커니즘을 사용하여 NetApp에 연락하면 필요한 엔터프라이즈급 지원을 받을 수 있습니다.</block>
@@ -3202,4 +3201,15 @@
   <block id="0f43ba8a9cfc14b033c2c652f53bfcb9" category="paragraph">필요한 경우 설치에 Astra Trident가 사용하는 정확한 매니페스트 파일을 로컬에서 생성하고 수정할 수 있습니다. 을 참조하십시오 <block ref="7a68296d6f600eac17d317743bea0050" category="inline-link-macro-rx"></block>.</block>
   <block id="72fec731c958562fd09df08eef5fbb89" category="paragraph">다운그레이드를 원할 경우 다양한 요소를 평가해야 합니다. 을 참조하십시오 <block ref="ea621a0de3f004c488ea799d0fd7e41d" category="inline-link-macro-rx"></block>.</block>
   <block id="da4ba399089f873246a85825f8a3e1c3" category="list-text">이 작업이 완료되면 원하는 버전의 Trident 바이너리(이 예: 20.07)를 얻고 이를 사용하여 Astra Trident를 설치합니다. 에 대한 사용자 지정 YAML을 생성할 수 있습니다 <block ref="a251ebefafa5a5d36d857b7034f07489" category="inline-link-macro-rx"></block> 필요한 경우</block>
+  <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다.</block>
+  <block id="6016a2b341113bf496b719905398ecd2" category="section-title">저작권</block>
+  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
+  <block id="126a02652da6de02962cf1b654fd6376" category="section-title">상표</block>
+  <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp, NetApp 로고, NetApp 상표 페이지에 나열된 마크는 NetApp Inc.의 상표입니다. 기타 회사 및 제품 이름은 해당 소유자의 상표일 수 있습니다.</block>
+  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
+  <block id="be89498d2f8a22ce47c02ba9795fe2af" category="section-title">특허</block>
+  <block id="d0b19d36be2c5f16e9aef46c8a452d3d" category="paragraph">NetApp 소유 특허 목록은 다음 사이트에서 확인할 수 있습니다.</block>
+  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
+  <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">개인 정보 보호 정책</block>
+  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
 </blocks>

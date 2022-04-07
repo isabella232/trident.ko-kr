@@ -6,6 +6,7 @@ summary: NetApp은 다양한 방법으로 Trident를 지원합니다. Slack 채�
 ---
 = 지원
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

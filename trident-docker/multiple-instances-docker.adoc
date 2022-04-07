@@ -6,6 +6,7 @@ summary: 여러 스토리지 구성을 동시에 사용할 수 있도록 하려�
 ---
 = 여러 Astra Trident 인스턴스를 관리합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

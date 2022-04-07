@@ -6,6 +6,7 @@ summary: kubbtl을 사용하여 백엔드 관리 작업을 수행하는 방법�
 ---
 = kubeck을 사용하여 백엔드 관리 수행
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

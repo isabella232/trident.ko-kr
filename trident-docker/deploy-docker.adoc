@@ -6,6 +6,7 @@ summary: Docker를 위한 Astra Trident는 NetApp의 스토리지 플랫폼과 A
 ---
 = Astra Trident 구축
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

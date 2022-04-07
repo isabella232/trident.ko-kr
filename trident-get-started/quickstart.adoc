@@ -6,6 +6,7 @@ summary: Kubernetes를 시작하는 경우 지침에 따라 Kubernetes를 설치
 ---
 = 시도해 보십시오
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -6,6 +6,7 @@ summary: 각 스토리지 드라이버에는 다양한 옵션이 있으며, 볼�
 ---
 = 드라이버별 볼륨 옵션
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

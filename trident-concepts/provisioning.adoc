@@ -6,6 +6,7 @@ summary: Astra Trident의 프로비저닝에는 두 가지 주요 단계가 있�
 ---
 = 프로비저닝
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

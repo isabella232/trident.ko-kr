@@ -6,6 +6,7 @@ summary: ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하는 
 ---
 = ONTAP NAS 드라이버를 사용하여 백엔드를 구성합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

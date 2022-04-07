@@ -6,6 +6,7 @@ summary: Astra Trident는 Astra Trident의 성능을 모니터링하는 데 사�
 ---
 = Astra Trident를 모니터링합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

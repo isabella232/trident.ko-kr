@@ -6,6 +6,7 @@ summary: tridentctl import를 사용하여 기존 스토리지 볼륨을 Kuberne
 ---
 = 볼륨 가져오기
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

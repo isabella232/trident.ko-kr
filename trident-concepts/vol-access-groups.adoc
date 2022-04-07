@@ -6,6 +6,7 @@ summary: Astra Trident가 볼륨 액세스 그룹을 사용하는 방법에 대�
 ---
 = 볼륨 액세스 그룹
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

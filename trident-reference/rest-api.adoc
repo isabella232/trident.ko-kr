@@ -6,6 +6,7 @@ summary: Astra Trident의 REST API와 상호 작용하려는 경우 REST 엔드�
 ---
 = Astra Trident REST API
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

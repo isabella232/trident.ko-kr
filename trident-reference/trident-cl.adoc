@@ -6,6 +6,7 @@ summary: Astra Trident는 Trident Orchestrator를 위한 여러 명령줄 옵션
 ---
 = 명령줄 옵션
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

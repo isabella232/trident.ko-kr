@@ -6,6 +6,7 @@ summary: Astra Trident의 설치, 구성, 업그레이드 및 문제 해결에 �
 ---
 = 자주 묻는 질문
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

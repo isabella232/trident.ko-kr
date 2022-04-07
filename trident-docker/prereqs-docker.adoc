@@ -6,6 +6,7 @@ summary: Astra Trident를 구축하기 전에 호스트에 필수 프로토콜 �
 ---
 = 배포를 위한 사전 요구 사항
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

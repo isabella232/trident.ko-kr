@@ -6,6 +6,7 @@ summary: Astra Trident의 이전 버전으로 다운그레이드하는 데 필�
 ---
 = Astra Trident를 다운그레이드하십시오
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -6,6 +6,7 @@ summary: Astra Trident의 설치 방식에 따라 여러 옵션을 사용하여 
 ---
 = Astra Trident를 제거합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

@@ -6,6 +6,7 @@ summary: 사용 중인 볼륨에 영향을 주지 않고 Docker용 Astra Trident
 ---
 = Astra Trident를 업그레이드하거나 제거합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

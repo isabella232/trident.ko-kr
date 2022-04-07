@@ -6,6 +6,7 @@ summary: 지원되는 프런트엔드, 백엔드 및 호스트 구성을 검토�
 ---
 = 요구 사항
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

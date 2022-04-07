@@ -6,6 +6,7 @@ summary: tridentctl을 사용하여 기존 Astra Trident 설치를 쉽게 업그
 ---
 = tridentctl로 업그레이드하십시오
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

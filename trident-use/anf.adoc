@@ -6,6 +6,7 @@ summary: 제공된 샘플 구성을 사용하여 Trident 설치를 위한 백엔
 ---
 = Azure NetApp Files 백엔드를 구성합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

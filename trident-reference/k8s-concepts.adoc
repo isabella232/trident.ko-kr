@@ -6,6 +6,7 @@ summary: Kubernetes 시스템 일부에 대해 자세히 알아보십시오.
 ---
 = Kubernetes 개념
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

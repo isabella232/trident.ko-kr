@@ -6,6 +6,7 @@ summary: Kubernetes 및 Trident, Trident 및 스토리지와 Kubernetes 및 스�
 ---
 = Kubernetes 및 Trident 오브젝트
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

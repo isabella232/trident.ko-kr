@@ -6,6 +6,7 @@ summary: 'NetApp ONTAP용 Amazon FSx와 Astra Trident를 사용하면 Amazon Ela
 ---
 = NetApp ONTAP용 Amazon FSx와 함께 Astra Trident를 사용하십시오
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

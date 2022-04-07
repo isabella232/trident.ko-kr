@@ -6,6 +6,7 @@ summary: Astra Trident 설치와 함께 Element 백엔드를 생성하고 사용
 ---
 = NetApp HCI 또는 SolidFire 백엔드를 구성합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

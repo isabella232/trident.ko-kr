@@ -6,6 +6,7 @@ summary: '백엔드는 Astra Trident와 스토리지 시스템 간의 관계를 
 ---
 = kubectl로 백엔드를 만듭니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

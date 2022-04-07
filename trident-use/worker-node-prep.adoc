@@ -6,6 +6,7 @@ summary: Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프�
 ---
 = 작업자 노드를 준비합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

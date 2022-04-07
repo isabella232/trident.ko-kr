@@ -6,6 +6,7 @@ summary: 볼륨을 생성하려면 필요한 경우 지정된 Astra Trident 드�
 ---
 = 볼륨 작업
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

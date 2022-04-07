@@ -6,6 +6,7 @@ summary: 가상 스토리지 풀은 Astra Trident의 스토리지 백엔드와 K
 ---
 = 가상 스토리지 풀
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

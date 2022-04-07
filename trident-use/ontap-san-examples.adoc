@@ -6,6 +6,7 @@ summary: Astra Trident 설치를 통해 ONTAP SAN 드라이버를 생성하고 �
 ---
 = 구성 옵션 및 예
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

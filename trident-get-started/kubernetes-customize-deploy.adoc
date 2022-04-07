@@ -6,6 +6,7 @@ summary: 'Trident 연산자를 사용하면 " Trident" 사양의 특성을 사�
 ---
 = Trident 운영자 배포를 사용자 지정합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

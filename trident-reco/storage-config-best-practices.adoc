@@ -6,6 +6,7 @@ summary: Kubernetes 클러스터는 일반적으로 두 가지 유형의 노드�
 ---
 = 스토리지 구성
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

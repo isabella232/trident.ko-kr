@@ -6,6 +6,7 @@ summary: NetApp 스토리지 플랫폼이 제공하는 데이터 보호 및 복�
 ---
 = 데이터 보호
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

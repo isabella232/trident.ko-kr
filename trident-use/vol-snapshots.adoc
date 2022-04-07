@@ -6,6 +6,7 @@ summary: 'Astra Trident의 20.01 릴리즈부터 Kubernetes 계층에서 PVS(영
 ---
 = 스냅샷 작업
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

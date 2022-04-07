@@ -6,6 +6,7 @@ summary: Astra Trident를 사용하면 Kubernetes 사용자가 볼륨을 생성�
 ---
 = 볼륨 확장
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

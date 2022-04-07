@@ -6,6 +6,7 @@ summary: ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 
 ---
 = 준비
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

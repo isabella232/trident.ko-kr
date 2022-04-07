@@ -6,6 +6,7 @@ summary: Astra Trident는 분기별 릴리스 케이던스를 따르며, 매년 
 ---
 = Astra Trident를 업그레이드합니다
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

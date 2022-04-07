@@ -7,6 +7,7 @@ summary: Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 �
 ---
 = Astra Trident 22.01.1 문서
 :hardbreaks:
+:allow-uri-read: 
 :nofooter: 
 :icons: font
 :linkattrs: 

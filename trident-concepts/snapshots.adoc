@@ -6,6 +6,7 @@ summary: Astra Trident가 드라이버를 위한 볼륨 스냅샷 생성을 어�
 ---
 = 볼륨 스냅숏
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

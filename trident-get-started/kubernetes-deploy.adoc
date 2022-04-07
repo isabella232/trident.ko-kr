@@ -6,6 +6,7 @@ summary: Trident 운영자나 tridentctl을 사용하여 Astra Trident를 배포
 ---
 = 구축 개요
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 

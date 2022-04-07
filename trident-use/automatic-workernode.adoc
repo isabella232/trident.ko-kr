@@ -6,6 +6,7 @@ summary: Astra Trident는 Kubernetes 클러스터에 있는 노드에 필요한 
 ---
 = 작업자 노드 자동 준비
 :hardbreaks:
+:allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
