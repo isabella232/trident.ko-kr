@@ -14,8 +14,23 @@ https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["NetApp
 
 파일 시스템은 Amazon FSx의 주요 리소스이며, 이는 사내 ONTAP 클러스터와 유사합니다. 각 SVM 내에서 파일 시스템에 파일과 폴더를 저장하는 데이터 컨테이너인 하나 이상의 볼륨을 생성할 수 있습니다. NetApp ONTAP용 Amazon FSx를 사용하면 클라우드에서 Data ONTAP가 관리형 파일 시스템으로 제공됩니다. 새로운 파일 시스템 유형을 * NetApp ONTAP * 라고 합니다.
 
-NetApp ONTAP용 Amazon FSx와 Astra Trident를 사용하면 Amazon Elastic Kubernetes Service(EKS)에서 실행되는 Kubernetes 클러스터가 ONTAP에서 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있습니다.
+NetApp ONTAP용 Amazon FSx와 Astra Trident를 사용하면 Amazon EKS(Elastic Kubernetes Service)에서 실행되는 Kubernetes 클러스터가 ONTAP에서 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있습니다.
 
+[WARNING]
+.ONTAP 파일 시스템용 Amazon FSx 생성
+====
+자동 백업이 설정된 Amazon FSx 파일 시스템에 생성된 볼륨은 Trident에서 삭제할 수 없습니다. PVC를 삭제하려면 ONTAP 체적에 대한 PV 및 FSx를 수동으로 삭제해야 합니다.
+
+이 문제를 방지하려면:
+
+* ** Quick create**를 사용하여 ONTAP 파일 시스템용 FSx를 생성하지 마십시오. 빠른 생성 워크플로에서는 자동 백업을 사용할 수 있으며 수신 거부 옵션은 제공하지 않습니다.
+* ** 표준 생성** 을 사용하는 경우 자동 백업을 비활성화합니다. 자동 백업을 비활성화하면 Trident는 추가적인 수동 개입 없이 볼륨을 성공적으로 삭제할 수 있습니다.
++
+image:screenshot-fsx-backup-disable.png["자동 백업을 사용하지 않도록 설정하는 AWS 콘솔 스크린샷"]
+
+
+
+====
 
 
 == Astra Trident에 대해 자세히 알아보십시오
@@ -94,7 +109,7 @@ aws fsx describe-storage-virtual-machines --region <file system region>
 ----
 
 
-. 인증을 위한 인증서를 만들고 설치합니다. 'ONTAP-SAN' 백엔드를 사용하는 경우 을 참조하십시오 link:ontap-san.html["여기"^]. 'ONTAP-NAS' 백엔드를 사용하는 경우 를 참조하십시오 .
+. 인증을 위한 인증서를 만들고 설치합니다. 'ONTAP-SAN' 백엔드를 사용하는 경우 을 참조하십시오 link:ontap-san.html["여기"^]. 'ONTAP-NAS' 백엔드를 사용하는 경우 를 참조하십시오 link:ontap-nas.html["여기"^].
 +
 
 NOTE: 파일 시스템에 연결할 수 있는 모든 위치에서 SSH를 사용하여 파일 시스템(예: 인증서 설치)에 로그인할 수 있습니다. 파일 시스템 생성 시 구성한 fsxadmin 사용자, AWS FSX 기술파일 시스템"의 관리 DNS 이름을 사용합니다.
@@ -125,14 +140,9 @@ NOTE: 파일 시스템에 연결할 수 있는 모든 위치에서 SSH를 사용
 
 NOTE: Astra Trident에서 다중 경로를 사용할 수 있도록 ONTAP-SAN 및 ONTAP-SAN-이코노미 드라이버에 대해 "LIF"를 지정하지 마십시오.
 
-[WARNING]
-.ONTAP용 Amazon FSx
-====
-* limitAggregateUsage 매개변수는 vsadmin과 fsxadmin 사용자 계정에서는 작동하지 않습니다. 이 매개 변수를 지정하면 구성 작업이 실패합니다.
-* NetApp ONTAP 볼륨용 Amazon FSx는 SnapMirror와 함께 사전 구성되어 제공됩니다. Trident는 수정하거나 분리할 수 없습니다. PVC를 삭제하려면 PV 및 FSx for NetApp ONTAP 볼륨을 수동으로 삭제해야 합니다.
 
+WARNING: limitAggregateUsage 매개변수는 vsadmin과 fsxadmin 사용자 계정에서는 작동하지 않습니다. 이 매개 변수를 지정하면 구성 작업이 실패합니다.
 
-====
 배포 후 단계를 수행하여 을 생성합니다 link:../trident-get-started/kubernetes-postdeployment.html["스토리지 클래스, 볼륨 프로비저닝 및 POD에 볼륨 마운트"^].
 
 

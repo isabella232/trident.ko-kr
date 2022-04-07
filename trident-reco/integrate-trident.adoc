@@ -312,7 +312,7 @@ OpenShift 부가 가치 클러스터 서비스는 클러스터 관리자와 호�
 
 === 레지스트리 서비스
 
-레지스트리의 스토리지 배포 및 관리는 에 설명되어 있습니다 link:https://netapp.io/["NetApp.IO를 참조하십시오"^] 에 있습니다 .
+레지스트리의 스토리지 배포 및 관리는 에 설명되어 있습니다 link:https://netapp.io/["NetApp.IO를 참조하십시오"^] 에 있습니다 link:https://netapp.io/2017/08/24/deploying-the-openshift-registry-using-netapp-storage/["블로그"^].
 
 
 

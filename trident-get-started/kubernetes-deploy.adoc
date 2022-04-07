@@ -22,7 +22,7 @@ Trident 운영자나 tridentctl을 사용하여 Astra Trident를 배포할 수 �
 
 === Trident 연산자를 사용해야 하는 이유는 무엇입니까?
 
-를 클릭합니다 link:kubernetes-deploy-operator.html["Trident 운영자"^] Astra Trident 리소스를 동적으로 관리하고 설정 단계를 자동화하는 훌륭한 방법입니다. 몇 가지 전제 조건이 충족되어야 합니다. 을 참조하십시오 .
+를 클릭합니다 link:kubernetes-deploy-operator.html["Trident 운영자"^] Astra Trident 리소스를 동적으로 관리하고 설정 단계를 자동화하는 훌륭한 방법입니다. 몇 가지 전제 조건이 충족되어야 합니다. 을 참조하십시오 link:requirements.html["설명합니다"^].
 
 Trident 운영자는 아래에 설명된 여러 가지 이점을 제공합니다.
 
@@ -106,7 +106,7 @@ Kubernetes 클러스터에서 Trident를 구축하면 Astra Trident 설치 관�
 
 === 오프라인 배포
 
-"tridentctl install"을 호출할 때 '--image-registry" 플래그를 사용하여 개인 이미지 레지스트리를 가리킬 수 있습니다. Trident 연산자를 사용하여 배포하는 경우 ' Trident' 오케스트레이터에서 's.imageRegistry'를 지정할 수도 있습니다. 이 레지스트리에는 가 포함되어 있어야 합니다 https://hub.docker.com/r/netapp/trident/["Trident 이미지"^],및 Kubernetes 버전에서 요구하는 CSI 사이드카 이미지를 참조하십시오.
+"tridentctl install"을 호출할 때 '--image-registry" 플래그를 사용하여 개인 이미지 레지스트리를 가리킬 수 있습니다. Trident 연산자를 사용하여 배포하는 경우 ' Trident' 오케스트레이터에서 's.imageRegistry'를 지정할 수도 있습니다. 이 레지스트리에는 가 포함되어 있어야 합니다 https://hub.docker.com/r/netapp/trident/["Trident 이미지"^], https://hub.docker.com/r/netapp/trident-autosupport/["Trident AutoSupport 이미지"^]및 Kubernetes 버전에서 요구하는 CSI 사이드카 이미지를 참조하십시오.
 
 배포를 사용자 지정하려면 tridentctl 을 사용하여 Trident의 리소스에 대한 매니페스트를 생성할 수 있습니다. 여기에는 구축, 개발/제거, 서비스 계정, Astra Trident가 설치의 일부로 생성한 클러스터 역할 등이 포함됩니다.
 

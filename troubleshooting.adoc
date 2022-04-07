@@ -16,7 +16,7 @@ Astra Trident를 설치 및 사용하는 동안 발생할 수 있는 문제를 �
 NOTE: Astra Trident에 대한 도움을 받으려면 'tridentctl logs-a-n tri덴트'를 사용하여 지원 번들을 생성한 후 'NetApp Support<Getting Help>'로 보내십시오.
 
 
-TIP: 문제 해결 문서의 전체 목록을 보려면 을 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Trident_Kubernetes["NetApp Knowledgebase(로그인 필요)"^]. Astra와 관련된 문제 해결에 대한 정보도 찾을 수 있습니다.
+TIP: 문제 해결 문서의 전체 목록을 보려면 을 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Trident_Kubernetes["NetApp Knowledgebase(로그인 필요)"^]. Astra와 관련된 문제 해결에 대한 정보도 찾을 수 있습니다 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["여기"^].
 
 
 
