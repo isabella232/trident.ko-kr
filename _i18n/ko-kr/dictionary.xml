@@ -206,7 +206,6 @@
   <block id="2f6881ec6a84d1ac9ef2e551f3ca8466" category="section-title">클러스터 범위 운영자 설치를 업그레이드하십시오</block>
   <block id="532223fc600c8862511462ff30738c55" category="paragraph">Trident 21.01 및 이후 * 에서 업그레이드하려면 다음 단계를 따르십시오.</block>
   <block id="238e63aecc23c1bc2611ca883f075f1f" category="list-text">현재 Astra Trident 인스턴스를 설치하는 데 사용된 Trident 연산자를 삭제합니다. 예를 들어, 21.01에서 업그레이드하는 경우 다음 명령을 실행합니다.</block>
-  <block id="caa6267a6d2c9b631544a2ce0d5e4180" category="list-text">(선택 사항) 설치 매개 변수를 수정하려면 Trident를 설치할 때 설정한 'Trident Orchestrator' 개체를 편집합니다. 컨테이너 이미지를 가져올 사용자 지정 Trident 이미지 수정, 디버그 로그 활성화 또는 이미지 풀 비밀 지정 등의 변경 사항이 있을 수 있습니다.</block>
   <block id="09b615e18699c6675b3705c00a495375" category="list-text">새로운 버전의 Trident 운영자를 설정하는 bundle.YAML 파일을 사용하여 Astra Trident를 설치합니다. 다음 명령을 실행합니다.</block>
   <block id="d06b5297af318d2581021098f6b0d44d" category="section-title">네임스페이스 범위 연산자 설치를 업그레이드합니다</block>
   <block id="ddfa75d059a999aedec16392aae03bc4" category="paragraph">네임스페이스 범위 연산자(버전 20.07 ~ 20.10)를 사용하여 설치된 Astra Trident의 인스턴스에서 업그레이드하려면 다음 단계를 따라야 합니다.</block>
@@ -3212,4 +3211,6 @@
   <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
   <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">개인 정보 보호 정책</block>
   <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
+  <block id="056b6e39cb1ae24d946674f95697989a" category="paragraph">운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그레이드할 수 있습니다.</block>
+  <block id="d10c9260fe9a1660c2f75dddda0220e4" category="list-text">(선택 사항) 설치 매개 변수를 수정하려면 Trident를 설치할 때 만든 'Trident Orchestrator' 개체를 편집합니다. 여기에는 사용자 지정 Trident 이미지 수정, 컨테이너 이미지를 가져올 전용 이미지 레지스트리, 디버그 로그 활성화 또는 이미지 풀 암호 지정 등의 변경 사항이 포함될 수 있습니다.</block>
 </blocks>
