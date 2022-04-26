@@ -942,7 +942,6 @@
   <block id="37696641960d6c73a7dadab603c1877e" category="list-text">Mirantis Kubernetes 엔진 3.4</block>
   <block id="201eb37826a33e35adff9119f25946bd" category="paragraph">Trident 연산자는 다음 릴리즈에서 지원됩니다.</block>
   <block id="5596419ed8318cabbcb138ef27fd3035" category="inline-link">버그 수정 알림</block>
-  <block id="3943a2e0490c50c43f31a486978ea80b" category="paragraph">또한 Astra Trident는 Google Cloud의 GKE(Google Kubernetes Engine), AWS의 EKS(Elastic Kubernetes Service), Azure의 AKS(Azure Kubernetes Service), Rancher 등의 완전히 관리되는 Kubernetes 오퍼링과도 연동됩니다.</block>
   <block id="f787cd4b6963b13f12fa53131f58ef6c" category="section-title">지원되는 백엔드(스토리지)</block>
   <block id="843e2f0c722d25903a6010b62ac4f13b" category="paragraph">Astra Trident를 사용하려면 다음 중 하나 이상의 지원되는 백엔드가 필요합니다.</block>
   <block id="4d82a1ec1af02725042c8c785564ee7a" category="list-text">NetApp ONTAP용 Amazon FSx</block>
@@ -3213,4 +3212,10 @@
   <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
   <block id="056b6e39cb1ae24d946674f95697989a" category="paragraph">운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그레이드할 수 있습니다.</block>
   <block id="d10c9260fe9a1660c2f75dddda0220e4" category="list-text">(선택 사항) 설치 매개 변수를 수정하려면 Trident를 설치할 때 만든 'Trident Orchestrator' 개체를 편집합니다. 여기에는 사용자 지정 Trident 이미지 수정, 컨테이너 이미지를 가져올 전용 이미지 레지스트리, 디버그 로그 활성화 또는 이미지 풀 암호 지정 등의 변경 사항이 포함될 수 있습니다.</block>
+  <block id="25c11af81bf0b01ce7b0f24ddc9f7136" category="section-title">기타 알려진 구성 옵션</block>
+  <block id="ffedfe711d36cdc8c41927063ae77027" category="paragraph">VMware Tanzu 포트폴리오 제품에 Astra Trident를 설치할 경우:</block>
+  <block id="8ded34c5caad3971bb6d0a2b202d7b32" category="list-text">클러스터는 권한이 있는 워크로드를 지원해야 합니다.</block>
+  <block id="dbe38f4f0d856b41827e6e4531720a5e" category="list-text">kubelet-dir 플래그는 kubelet 디렉토리의 위치로 설정해야 합니다. 기본적으로 이 값은 '/var/vcap/data/kubelet'입니다.</block>
+  <block id="4dc3529fbf05312075f0aa52f9c0908e" category="paragraph">Trident 연산자, Hrom 및 tridentctl 배포에서는 -kubelet -dir 을 사용하여 kubelet 위치를 지정하는 작업이 알려져 있습니다.</block>
+  <block id="8fad5c21cf613e120f249eadc62cda2f" category="paragraph">Astra Trident는 GKE(Google Kubernetes Engine), EKS(Amazon Elastic Kubernetes Service), AKS(Azure Kubernetes Service), Rancher, VMware Tanzu Portfolio를 비롯한 기타 완전 관리형 및 자체 관리 Kubernetes 오퍼링과도 작동합니다.</block>
 </blocks>
