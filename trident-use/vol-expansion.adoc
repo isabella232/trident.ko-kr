@@ -175,7 +175,7 @@ $ tridentctl get volumes -n trident
 
 == NFS 볼륨을 확장합니다
 
-Astra Trident는 ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, AWS-CV, GCP-CV에 프로비저닝된 NFS PVS의 볼륨 확장을 지원합니다. 그리고 'Azure-NetApp-files' 백엔드가 있습니다.
+Astra Trident는 ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, GCP-CV, Azure-NetApp-files 백엔드에 프로비저닝된 NFS PVS의 볼륨 확장을 지원합니다.
 
 
 

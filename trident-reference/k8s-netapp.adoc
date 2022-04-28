@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-reference/k8s-netapp.html 
-keywords: kubernetes, netapp storage, ontap, cloud columes ontap, santricity, element software, netapp hci, anf, azure netapp files, cloud volumes service for google cloud, cloud volumes service for aws, gcp, aws 
+keywords: kubernetes, netapp storage, ontap, cloud columes ontap, santricity, element software, netapp hci, anf, azure netapp files, cloud volumes service for google cloud, gcp, aws, fsx 
 summary: NetApp 스토리지 제품 포트폴리오는 Kubernetes 클러스터의 다양한 측면과 통합되어 고급 데이터 관리 기능을 제공하며, Kubernetes 구축의 기능, 기능, 성능 및 가용성을 향상합니다. 
 ---
 = Kubernetes와 통합된 NetApp 제품
@@ -56,23 +56,9 @@ NetApp HCI는 Trident에서 완전히 지원합니다. Trident는 컨테이너�
 
 
 
-== SANtricity
-
-NetApp의 E-Series 및 EF-Series 스토리지 플랫폼은 를 사용합니다 https://www.netapp.com/us/products/data-management-software/santricity-os.aspx["SANtricity"^] 어떠한 규모의 애플리케이션에도 스토리지 서비스를 제공할 수 있는, 뛰어난 가용성과 성능을 갖춘 강력한 스토리지를 제공하는 운영 체제입니다.
-
-Trident는 제품 포트폴리오에서 SANtricity 볼륨을 생성하고 관리할 수 있습니다.
-
-
-
 == Azure NetApp Files
 
 https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^] NetApp에서 제공하는 엔터프라이즈급 Azure 파일 공유 서비스입니다. Azure에서 기본적으로 가장 까다로운 파일 기반 워크로드를 실행하고 NetApp에서 기대하는 성능 및 강력한 데이터 관리를 제공할 수 있습니다.
-
-
-
-== AWS 환경을 위한 Cloud Volumes Service
-
-https://cloud.netapp.com/cloud-volumes-service-for-aws?utm_source=GitHub&utm_campaign=Trident["AWS 환경을 위한 NetApp Cloud Volumes Service"^] 는 NFS 및 SMB를 통해 NAS 볼륨을 All-Flash 성능으로 제공하는 클라우드 네이티브 파일 서비스입니다. 이 서비스를 사용하면 기존 애플리케이션을 포함한 모든 워크로드를 AWS 클라우드에서 실행할 수 있습니다. ECS(Elastic Container Service) 인스턴스에 대해 일관된 고성능, 즉각적인 클론 생성, 데이터 보호 및 보안 액세스를 제공하는 완전 관리형 서비스를 제공합니다.
 
 
 

@@ -9,8 +9,6 @@ entries:
     url: "/trident-use/anf.html"
   - title: ADS 백엔드를 구성합니다
     url: "/trident-use/ads.html"
-  - title: AWS용 CVS 백엔드를 구성합니다
-    url: "/trident-use/aws.html"
   - title: CVS for GCP 백엔드를 구성합니다
     url: "/trident-use/gcp.html"
   - title: NetApp HCI 또는 SolidFire 백엔드를 구성합니다

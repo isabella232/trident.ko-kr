@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-docker/stor-config.html 
-keywords: deploy, trident, docker, trident for docker, nfs, iscsi, protcol, nfs protocol, iscsi protocol, configure host, host config, storage config, options, variables, ontap, element, aws, cvs on gcp, cvs on aws, anf, azure netapp files 
+keywords: deploy, trident, docker, trident for docker, nfs, iscsi, protcol, nfs protocol, iscsi protocol, configure host, host config, storage config, options, variables, ontap, element, cvs on gcp, anf, azure netapp files 
 summary: Astra Trident 구성에 사용할 수 있는 구성 옵션을 확인하십시오. 
 ---
 = 스토리지 구성 옵션
@@ -34,7 +34,7 @@ Astra Trident 구성에 사용할 수 있는 구성 옵션을 확인하십시오
 | 'torageDriverName'입니다  a| 
 스토리지 드라이버 이름입니다
  a| 
-ONTAP-NAS, ONTAP-SAN, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, 졸idfire-san, Azure-NetApp-files, AWS-CV, GCP-CV
+ONTAP-NAS, ONTAP-SAN, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, 졸idfire-san, Azure-NetApp-파일, 즉 GCP-CV
 
 
 
@@ -448,127 +448,6 @@ QoS 사양
             }
         }
     ]
-}
-----
-
-
-== AWS 구성에서 CVS(Cloud Volumes Service
-
-글로벌 구성 값 외에도 AWS에서 CVS를 사용할 경우 이러한 옵션을 사용할 수 있습니다. 필요한 값은 모두 CVS 웹 사용자 인터페이스에서 사용할 수 있습니다.
-
-[cols="3*"]
-|===
-| 옵션을 선택합니다 | 설명 | 예 
-
-
-| 아피지역  a| 
-CVS 계정 지역(필수) CVS 웹 포털의 계정 설정 > API 액세스에서 찾을 수 있습니다.
- a| 
-"미국 - 동부 - 1"
-
-
-
-| "apiURL"  a| 
-CVS 계정 API URL(필수) CVS 웹 포털의 계정 설정 > API 액세스에서 찾을 수 있습니다.
- a| 
-“https://cds-aws-bundles.netapp.com:8080/v1” 참조하십시오
-
-
-
-| 아피키  a| 
-CVS 계정 API 키(필수) CVS 웹 포털의 계정 설정 > API 액세스에서 찾을 수 있습니다.
- a| 
-“Docker”
-
-
-
-| 재키  a| 
-CVS 계정 비밀 키(필수). CVS 웹 포털의 계정 설정 > API 액세스에서 찾을 수 있습니다.
- a| 
-“기본값”
-
-
-
-| proxyURL  a| 
-프록시 서버가 CVS 계정에 연결해야 하는 경우 프록시 URL입니다. 프록시 서버는 HTTP 프록시 또는 HTTPS 프록시일 수 있습니다. HTTPS 프록시의 경우 프록시 서버에서 자체 서명된 인증서를 사용할 수 있도록 인증서 유효성 검사를 건너뜁니다. * 인증이 활성화된 프록시 서버는 지원되지 않습니다 *.
- a| 
-“http://proxy-server-hostname/” 참조하십시오
-
-
-
-| nfsMountOptions를 선택합니다  a| 
-NFS 마운트 옵션, 기본값: "-o nfsvers=3"
- a| 
-“nfsvers=3, proto=tcp, timeo=600”
-
-
-
-| '저급'  a| 
-성능 수준(표준, 프리미엄, 익스트림), 기본값: "표준"
- a| 
-“프리미엄”
-
-|===
-
-NOTE: NetApp Cloud Volumes Service for AWS는 100GB 미만의 볼륨을 지원하지 않습니다. 보다 쉽게 애플리케이션을 배포할 수 있도록 작은 볼륨이 요청되는 경우 Trident가 자동으로 100GB 볼륨을 생성합니다.
-
-AWS에서 CVS를 사용하는 경우 이러한 기본 볼륨 옵션 설정을 사용할 수 있습니다.
-
-[cols="3*"]
-|===
-| 옵션을 선택합니다 | 설명 | 예 
-
-
-| 엑포트 규칙  a| 
-NFS 액세스 목록(주소 및/또는 CIDR 서브넷)의 기본값은 "0.0.0.0/0"입니다.
- a| 
-“10.0.1.0 / 24,10.0.2.100”
-
-
-
-| 나프산디렉토리  a| 
-'.snapshot' 디렉토리의 가시성을 제어합니다
- a| 
-"거짓"
-
-
-
-| 안산예비역  a| 
-스냅숏 예비 공간 비율, 기본값은 " "로, CVS 기본값을 0으로 적용합니다
- a| 
-“10”
-
-
-
-| '크기'입니다  a| 
-볼륨 크기, 기본값: "100GB"
- a| 
-“500G”
-
-|===
-
-
-=== AWS 구성 파일의 CVS 예
-
-[listing]
-----
-{
-    "version": 1,
-    "storageDriverName": "aws-cvs",
-    "apiRegion": "us-east-1",
-    "apiURL": "https://cds-aws-bundles.netapp.com:8080/v1",
-    "apiKey":    "znHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE",
-    "secretKey": "rR0rUmWXfNioN1KhtHisiSAnoTherboGuskey6pU",
-    "region": "us-east-1",
-    "proxyURL": "http://proxy-server-hostname/",
-    "serviceLevel": "premium",
-    "limitVolumeSize": "200Gi",
-    "defaults": {
-        "snapshotDir": "true",
-        "snapshotReserve": "5",
-        "exportRule": "10.0.0.0/24,10.0.1.0/24,10.0.2.100",
-        "size": "100Gi"
-    }
 }
 ----
 

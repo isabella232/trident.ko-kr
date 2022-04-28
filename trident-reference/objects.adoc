@@ -49,7 +49,7 @@ Trident는 표준 사양 외에도 사용자가 백엔드 구성에서 설정한
 | trident.netapp.io/fileSystem | 파일 시스템 | ONTAP-SAN, solidfire-san, eseries-iscsi, ONTAP-san-이코노미 
 
 
-| trident.netapp.io/cloneFromPVC | CloneSourceVolume | ONTAP-NAS, ONTAP-SAN, solidfire-san, AWS-CV, Azure-NetApp-파일, GCP-CV, ONTAP-SAN-이코노미 
+| trident.netapp.io/cloneFromPVC | CloneSourceVolume | ONTAP-NAS, ONTAP-SAN, solidfire-SAN, Azure-NetApp-파일, GCP-CV, ONTAP-SAN - 경제성 
 
 
 | trident.netapp.io/splitOnClone | SplitOnClone 을 참조하십시오 | ONTAP-NAS, ONTAP-SAN 
@@ -64,7 +64,7 @@ Trident는 표준 사양 외에도 사용자가 백엔드 구성에서 설정한
 | trident.netapp.io/snapshotPolicy | 스냅샷 정책 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN 
 
 
-| trident.netapp.io/snapshotReserve | snapshotReserve | ONTAP-NAS, ONTAP-NAS-flexgroup, ONTAP-SAN, AWS-CV, GCP-CV 
+| trident.netapp.io/snapshotReserve | snapshotReserve | ONTAP-NAS, ONTAP-NAS-flexgroup, ONTAP-SAN, GCP-CV 
 
 
 | trident.netapp.io/snapshotDirectory | 스냅샷 디렉토리 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup 
@@ -173,14 +173,14 @@ volumeBindingMode: Immediate
 
 
 | 백엔드 유형 | 문자열  a| 
-ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN, eSeries-iSCSI, AWS-CV, GCP-CV, Azure-NetApp-파일, ONTAP-SAN-이코노미
+ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN, eSeries-iSCSI, GCP-CV, Azure-NetApp-파일, ONTAP-SAN-이코노미
 | 풀이 이 백엔드 유형에 속합니다 | 백엔드가 지정되었습니다 | 모든 드라이버 
 
 
-| 스냅샷 수 | 불입니다 | 참, 거짓 | 풀은 스냅샷이 있는 볼륨을 지원합니다 | 스냅샷이 활성화된 볼륨 | ONTAP-NAS, ONTAP-SAN, solidfire-SAN, AWS-CV, GCP-CV 
+| 스냅샷 수 | 불입니다 | 참, 거짓 | 풀은 스냅샷이 있는 볼륨을 지원합니다 | 스냅샷이 활성화된 볼륨 | ONTAP-NAS, ONTAP-SAN, solidfire-SAN, GCP-CV 
 
 
-| 복제 | 불입니다 | 참, 거짓 | 풀은 볼륨 클론을 지원합니다 | 클론이 활성화된 볼륨 | ONTAP-NAS, ONTAP-SAN, solidfire-SAN, AWS-CV, GCP-CV 
+| 복제 | 불입니다 | 참, 거짓 | 풀은 볼륨 클론을 지원합니다 | 클론이 활성화된 볼륨 | ONTAP-NAS, ONTAP-SAN, solidfire-SAN, GCP-CV 
 
 
 | 암호화 | 불입니다 | 참, 거짓 | 풀은 암호화된 볼륨을 지원합니다 | 암호화가 활성화된 볼륨입니다 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroups, ONTAP-SAN 
@@ -218,7 +218,7 @@ ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN
 | fsType입니다 | 문자열 | ext4, ext3, xfs 등 | 블록 볼륨의 파일 시스템 유형입니다 | solidfire-SAN, ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, eseries-iSCSI가 있습니다 | 모두 
 
 
-| allowVolumeExpansion | 부울 | 참, 거짓 | PVC 크기 증가에 대한 지원을 활성화 또는 비활성화합니다 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, solidfire-SAN, AWS-CV, GCP-CV, Azure-NetApp 파일 | 1.11+ 
+| allowVolumeExpansion | 부울 | 참, 거짓 | PVC 크기 증가에 대한 지원을 활성화 또는 비활성화합니다 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, solidfire-SAN, GCP-CV, Azure-NetApp-파일 | 1.11+ 
 
 
 | 볼륨BindingMode 를 선택합니다 | 문자열 | Immediate, WaitForFirstConsumer입니다 | 볼륨 바인딩 및 동적 프로비저닝이 수행될 시기를 선택합니다 | 모두 | 1.17+ 
@@ -370,7 +370,7 @@ TIP: 연결된 스냅샷이 있는 PV를 삭제하면 해당 Trident 볼륨이 *
 | 내부 이름 | 문자열 | 아니요 | 스토리지 시스템에 있는 객체의 이름으로, Trident에서 생성 
 
 
-| CloneSourceVolume | 문자열 | 아니요 | ONTAP(NAS, SAN) 및 SolidFire - * 및 AWS-CV *: 복제할 볼륨의 이름입니다 
+| CloneSourceVolume | 문자열 | 아니요 | ONTAP(NAS, SAN) 및 SolidFire - *: 복제할 볼륨의 이름입니다 
 
 
 | SplitOnClone 을 참조하십시오 | 문자열 | 아니요 | ONTAP(NAS, SAN): 상위 클론에서 클론을 분할합니다 
@@ -396,7 +396,7 @@ TIP: 연결된 스냅샷이 있는 PV를 삭제하면 해당 Trident 볼륨이 *
 
 | 파일 시스템 | 문자열 | 아니요 | 파일 시스템 유형입니다 
 |===
-Trident는 볼륨을 생성할 때 'internalName'을 생성합니다. 이 단계는 두 단계로 구성됩니다. 먼저, 저장소 접두사(기본 "트리덴트" 또는 백엔드 구성의 접두사)를 볼륨 이름에 추가하여 "<prefix>-<volume-name>" 형식의 이름을 만듭니다. 그런 다음 백엔드에서 허용되지 않는 문자를 대체하여 이름을 삭제하는 작업을 진행합니다. ONTAP 백엔드의 경우 하이픈을 밑줄로 바꿉니다. 따라서 내부 이름은 "<prefix>_<volume-name>"이 됩니다. 요소 백엔드의 경우 밑줄을 하이픈으로 바꿉니다. CVS(AWS)의 경우, 고유한 볼륨 생성 토큰에 16~36자 제한이 적용되는 Trident는 각 볼륨의 내부 이름에 대한 랜덤 문자열을 생성합니다.
+Trident는 볼륨을 생성할 때 'internalName'을 생성합니다. 이 단계는 두 단계로 구성됩니다. 먼저, 저장소 접두사(기본 "트리덴트" 또는 백엔드 구성의 접두사)를 볼륨 이름에 추가하여 "<prefix>-<volume-name>" 형식의 이름을 만듭니다. 그런 다음 백엔드에서 허용되지 않는 문자를 대체하여 이름을 삭제하는 작업을 진행합니다. ONTAP 백엔드의 경우 하이픈을 밑줄로 바꿉니다. 따라서 내부 이름은 "<prefix>_<volume-name>"이 됩니다. 요소 백엔드의 경우 밑줄을 하이픈으로 바꿉니다.
 
 볼륨 구성을 사용하여 REST API를 사용하여 볼륨을 직접 프로비저닝할 수 있지만 Kubernetes 배포에서는 대부분의 사용자가 표준 Kubernetes "PersistentVolumeClaim" 방법을 사용할 것으로 예상됩니다. Trident는 프로비저닝 프로세스의 일부로 이 볼륨 개체를 자동으로 만듭니다.
 

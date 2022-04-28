@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-reco/integrate-trident.html 
-keywords: kubernetes, clusters, nodes, components, master, compute 
+keywords: kubernetes, clusters, nodes, components, master, compute, fsx, flexgroup, flexvolume, solidfire, hci, virtual storage pool, cvs, gcp, volumes 
 summary: Kubernetes 클러스터는 일반적으로 두 가지 유형의 노드로 구성되며, 각 노드는 다양한 기능의 측면을 담당합니다. 
 ---
 = Astra Trident 통합
@@ -78,7 +78,7 @@ NOTE: 졸idfire-san의 드라이버도 PVC를 클로닝할 수 있습니다.
 
 === Cloud Volumes ONTAP용 백엔드 드라이버를 선택합니다
 
-Cloud Volumes ONTAP은 NAS 및 SAN 프로토콜(NFS, SMB/CIFS 및 iSCSI)을 지원하는 파일 공유 및 블록 레벨 스토리지 등 다양한 활용 사례에 맞게 엔터프라이즈급 스토리지 기능과 함께 데이터 제어를 제공합니다. Cloud Volume ONTAP와 호환되는 드라이버는 ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-SAN, ONTAP-SAN 경제입니다. Cloud Volume ONTAP for AWS, Cloud Volume ONTAP for Azure, Cloud Volume ONTAP for GCP에 적용할 수 있습니다.
+Cloud Volumes ONTAP은 NAS 및 SAN 프로토콜(NFS, SMB/CIFS 및 iSCSI)을 지원하는 파일 공유 및 블록 레벨 스토리지 등 다양한 활용 사례에 맞게 엔터프라이즈급 스토리지 기능과 함께 데이터 제어를 제공합니다. Cloud Volume ONTAP와 호환되는 드라이버는 ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-SAN, ONTAP-SAN 경제입니다. Cloud Volume ONTAP for Azure, Cloud Volume ONTAP for GCP에 적용할 수 있습니다.
 
 
 
@@ -119,24 +119,6 @@ Astra Trident는 'Azure-NetApp-files' 드라이버를 사용하여 를 관리합
 |===
 [verse]
 각주: Yesfootnote: 1 [ ]: Astra Trident에서 관리하지 않습니다
-
-
-
-=== Cloud Volumes Service with AWS의 백엔드 드라이버를 선택합니다
-
-Astra Trident는 AWS-CVS 드라이버를 사용하여 AWS 백엔드의 Cloud Volumes Service와 연결합니다. Trident에서 AWS 백엔드를 구성하려면 백엔드 파일에 apiRegion, apiURL, apiKey, s ecretKey를 지정해야 합니다. 이러한 값은 CVS 웹 포털의 계정 설정/API 액세스에서 확인할 수 있습니다. 지원되는 서비스 수준은 CVS에 맞춰 조정되며 '표준', '프리미엄', '익스트림'도 포함됩니다. 현재 100G는 프로비저닝할 최소 볼륨 크기입니다. CVS의 향후 릴리스에서는 이 제한이 적용되지 않을 수 있습니다.
-
-[cols="20,10,10,10,10,10,10"]
-|===
-| AWS 드라이버에 대한 CV | 스냅샷 수 | 복제 | 다중 연결 | QoS를 참조하십시오 | 비즈니스 | 복제 
-
-
-| 'AWS-CV' | 예 | 예 | 예 | 예 | 예 | Yesfootnote: 1[] 
-|===
-[verse]
-각주: Yesfootnote: 1 [ ]: Astra Trident에서 관리하지 않습니다
-
-AWS-CV 드라이버는 가상 스토리지 풀을 사용합니다. 가상 스토리지 풀은 백엔드를 추상화하여 Trident가 볼륨 배치를 결정할 수 있도록 합니다. 관리자는 backend.json 파일에 있는 가상 스토리지 풀을 정의합니다. 스토리지 클래스는 레이블을 사용하여 가상 스토리지 풀을 식별합니다.
 
 
 
@@ -203,7 +185,7 @@ excludeStoragePools 매개 변수는 속성과 일치하는 나열된 풀 세트
 
 == 가상 스토리지 풀 설계
 
-백엔드를 생성하는 동안 일반적으로 매개 변수 집합을 지정할 수 있습니다. 관리자가 동일한 스토리지 자격 증명을 사용하여 다른 매개 변수 집합을 가진 다른 백엔드를 생성할 수 없었습니다. 가상 스토리지 풀의 도입으로 이 문제가 완화되었습니다. 가상 스토리지 풀은 백엔드 및 Kubernetes 스토리지 클래스 간에 도입된 레벨 추상화입니다. 따라서 관리자는 Kubernetes 스토리지 클래스를 통해 백엔드에 독립적인 방식으로 Selector로 참조할 수 있는 레이블과 함께 매개 변수를 정의할 수 있습니다. Astra Trident를 사용하여 지원되는 모든 NetApp 백엔드에 대해 가상 스토리지 풀을 정의할 수 있습니다. 해당 목록에는 SolidFire/NetApp HCI, ONTAP, Cloud Volumes Service on AWS, GCP 및 Azure NetApp Files가 포함됩니다.
+백엔드를 생성하는 동안 일반적으로 매개 변수 집합을 지정할 수 있습니다. 관리자가 동일한 스토리지 자격 증명을 사용하여 다른 매개 변수 집합을 가진 다른 백엔드를 생성할 수 없었습니다. 가상 스토리지 풀의 도입으로 이 문제가 완화되었습니다. 가상 스토리지 풀은 백엔드 및 Kubernetes 스토리지 클래스 간에 도입된 레벨 추상화입니다. 따라서 관리자는 Kubernetes 스토리지 클래스를 통해 백엔드에 독립적인 방식으로 Selector로 참조할 수 있는 레이블과 함께 매개 변수를 정의할 수 있습니다. Astra Trident를 사용하여 지원되는 모든 NetApp 백엔드에 대해 가상 스토리지 풀을 정의할 수 있습니다. 해당 목록에는 SolidFire/NetApp HCI, ONTAP, Cloud Volumes Service on GCP 및 Azure NetApp Files가 포함됩니다.
 
 
 NOTE: 가상 스토리지 풀을 정의할 때는 백엔드 정의에서 기존 가상 풀의 순서를 재정렬하지 않는 것이 좋습니다. 또한 기존 가상 풀의 속성을 편집/수정하고 대신 새 가상 풀을 정의하는 것이 좋습니다.
@@ -212,7 +194,7 @@ NOTE: 가상 스토리지 풀을 정의할 때는 백엔드 정의에서 기존 
 
 === 다양한 서비스 수준/QoS를 에뮬레이트할 수 있도록 가상 스토리지 풀을 설계합니다
 
-서비스 클래스를 에뮬레이트하기 위해 가상 스토리지 풀을 설계할 수 있습니다. Cloud Volume Service for AWS를 위한 가상 풀 구축을 사용하여 다양한 서비스 클래스를 설정하는 방법을 살펴봅시다. 다양한 성능 수준을 나타내는 여러 레이블을 사용하여 AWS-CVS 백엔드를 구성합니다. '레벨 11'을 적절한 성과 수준으로 설정하고 각 레이블 아래에 다른 필수 요소를 추가합니다. 이제 다른 가상 스토리지 풀에 매핑할 다른 Kubernetes 스토리지 클래스를 생성합니다. parameters.selector` 필드를 사용하여 각 StorageClass는 볼륨을 호스팅하는 데 사용할 수 있는 가상 풀을 호출합니다.
+서비스 클래스를 에뮬레이트하기 위해 가상 스토리지 풀을 설계할 수 있습니다. Azure NetApp Files용 Cloud Volume Service에 대한 가상 풀 구현을 사용하여 다양한 서비스 클래스를 설정하는 방법을 살펴보겠습니다. 다양한 성능 수준을 나타내는 여러 레이블을 사용하여 ANF 백엔드를 구성합니다. '레벨 11'을 적절한 성과 수준으로 설정하고 각 레이블 아래에 다른 필수 요소를 추가합니다. 이제 다른 가상 스토리지 풀에 매핑할 다른 Kubernetes 스토리지 클래스를 생성합니다. parameters.selector` 필드를 사용하여 각 StorageClass는 볼륨을 호스팅하는 데 사용할 수 있는 가상 풀을 호출합니다.
 
 
 
@@ -293,11 +275,11 @@ Astra Trident는 NFS 및 iSCSI PVS 크기를 조정할 수 있도록 지원합�
 
 === 기존 볼륨을 Kubernetes로 임포트
 
-볼륨 가져오기를 사용하면 기존 스토리지 볼륨을 Kubernetes 환경으로 가져올 수 있습니다. 이는 현재 ONTAP-NAS, ONTAP-NAS-flexgroup, solidfire-san, Azure-NetApp-files, AWS-CV가 지원하고 있습니다. 그리고 “GCP-CV”의 드라이버도 있습니다. 이 기능은 기존 애플리케이션을 Kubernetes로 포팅하거나 재해 복구 시나리오에서 유용합니다.
+볼륨 가져오기를 사용하면 기존 스토리지 볼륨을 Kubernetes 환경으로 가져올 수 있습니다. 이는 현재 ONTAP-NAS, ONTAP-NAS-Flexgroup, 졸idfire-SAN, Azure-NetApp-files, GCP-cvs 드라이버의 지원을 받고 있습니다. 이 기능은 기존 애플리케이션을 Kubernetes로 포팅하거나 재해 복구 시나리오에서 유용합니다.
 
 ONTAP 및 'solidfire-san' 드라이버를 사용하는 경우, 'tridentctl import volume <backend-name><volume-name> -f/path/PVC.YAML' 명령을 사용하여 Astra Trident에서 관리할 기존 볼륨을 Kubernetes로 가져옵니다. 볼륨 가져오기 명령에 사용되는 PVC YAML 또는 JSON 파일은 Astra Trident를 프로비저닝자로 식별하는 스토리지 클래스를 가리킵니다. NetApp HCI/SolidFire 백엔드를 사용할 경우 볼륨 이름이 고유한지 확인합니다. 볼륨 이름이 중복되면 볼륨을 고유한 이름으로 복제하여 볼륨 가져오기 기능에서 볼륨 이름을 구분할 수 있도록 합니다.
 
-'AWS-CV', 'Azure-NetApp-files' 또는 'GCP-CV' 드라이버를 사용하는 경우, 'tridentctl import volume <backend-name><volume path> -f/path/PVC.YAML' 명령을 사용하여 Astra Trident에서 관리할 Kubernetes로 볼륨을 가져오십시오. 이렇게 하면 고유한 볼륨 참조가 보장됩니다.
+'Azure-NetApp-files' 또는 'GCP-CV' 드라이버를 사용하는 경우 'tridentctl import volume <backend-name><volume path> -f/path/PVC.YAML' 명령을 사용하여 Astra Trident에서 관리할 Kubernetes로 볼륨을 가져옵니다. 이렇게 하면 고유한 볼륨 참조가 보장됩니다.
 
 위 명령을 실행하면 Astra Trident가 백엔드에서 볼륨을 찾고 해당 크기를 읽습니다. 구성된 PVC의 볼륨 크기를 자동으로 추가(필요한 경우 덮어쓰기)합니다. 그런 다음 Astra Trident가 새로운 PV를 생성하고 Kubernetes가 PVC를 PV에 결합합니다.
 
