@@ -480,7 +480,6 @@
   <block id="bf1cadd7aa4e541e255df26af5451d85" category="inline-link-macro">RedHat의 OpenShift 배포 가이드</block>
   <block id="eb502d6483a644e9b6f61ca4719276d8" category="paragraph">위의 변수와 배포 프로세스는 각 OpenShift 버전에 따라 변경될 수 있습니다. 검토 후 준수해야 합니다 <block ref="5ad72ffc1eda2c257c8947a0ad66dddb" category="inline-link-macro-rx"></block> 사용자 환경에 맞게 구성되도록 사용자의 버전에 대해.</block>
   <block id="6e8775bd755a8835ce86806d669677ea" category="doc">스토리지 구성</block>
-  <block id="4d59d193e356ef0157daf2c1fc0a6dd6" category="paragraph">NetApp 포트폴리오의 각 스토리지 플랫폼은 컨테이너식으로 애플리케이션에 이점을 제공하는 고유한 기능을 제공합니다. Trident는 ONTAP, Element, E-Series의 각 주요 플랫폼에서 작동합니다. 모든 애플리케이션과 시나리오에 적합한 플랫폼이 한 개 있는 것은 아니지만, 플랫폼을 선택할 때 애플리케이션과 장치를 관리하는 팀의 요구 사항을 고려해야 합니다.</block>
   <block id="ac5112696fd64ee051846c666ebebebe" category="paragraph">활용 중인 프로토콜을 사용하여 호스트 운영 체제의 기준 모범 사례를 따라야 합니다. 필요에 따라 특정 애플리케이션에 맞게 스토리지를 최적화할 수 있도록 백엔드, 스토리지 클래스 및 PVC 설정과 함께 사용 가능한 경우 애플리케이션 Best Practice를 통합하는 것을 고려할 수 있습니다.</block>
   <block id="efc9d085ca2f3a152c786357e9359c03" category="section-title">ONTAP 및 Cloud Volumes ONTAP 모범 사례</block>
   <block id="a3f99d5d44515cf922e6b525de736173" category="paragraph">Trident를 위한 ONTAP 및 Cloud Volumes ONTAP를 구성하기 위한 모범 사례에 대해 알아보십시오.</block>
@@ -577,14 +576,6 @@
   <block id="fc9e812321a3f9b0eab1b702a08bab4e" category="admonition">CSI 프로비저닝이 강화된 Trident는 CHAP 인증 사용을 지원합니다. VAG는 일반적인 비 CSI 작동 모드에서만 사용해야 합니다.</block>
   <block id="d23eaa75b7bd1405526da0e18b7290ac" category="paragraph">CHAP 인증(이니시에이터가 대상 볼륨 사용자인지 확인)은 계정 기반 액세스 제어에서만 지원됩니다. CHAP를 인증에 사용하는 경우 단방향 CHAP 및 양방향 CHAP의 두 가지 옵션을 사용할 수 있습니다. 단방향 CHAP는 SolidFire 계정 이름 및 이니시에이터 암호를 사용하여 볼륨 액세스를 인증합니다. 양방향 CHAP 옵션은 볼륨이 계정 이름과 이니시에이터 암호를 통해 호스트를 인증한 다음 호스트가 계정 이름과 타겟 암호를 통해 볼륨을 인증하기 때문에 볼륨을 인증하는 가장 안전한 방법을 제공합니다.</block>
   <block id="42d135bea104c1079cebd1543c89e970" category="paragraph">그러나 CHAP를 설정할 수 없고 VAG가 필요한 경우 액세스 그룹을 생성하고 호스트 이니시에이터 및 볼륨을 액세스 그룹에 추가합니다. 액세스 그룹에 추가하는 각 IQN은 CHAP 인증을 사용하거나 사용하지 않고 그룹의 각 볼륨에 액세스할 수 있습니다. iSCSI 이니시에이터가 CHAP 인증을 사용하도록 구성된 경우 계정 기반 액세스 제어가 사용됩니다. iSCSI 초기자가 CHAP 인증을 사용하도록 구성되지 않은 경우 볼륨 액세스 그룹 액세스 제어가 사용됩니다.</block>
-  <block id="f9245b5c4618640379c5b7aca1642196" category="section-title">E-Series 모범 사례</block>
-  <block id="2bd6c307c08ebf17bbd89f92953812b5" category="paragraph">Trident를 위한 E-Series 스토리지를 구성하기 위한 모범 사례에 대해 알아보십시오.</block>
-  <block id="c502c3645d40ca0e119a2434fc569207" category="section-title">E-Series 디스크 풀 및 볼륨 그룹</block>
-  <block id="91e654e42725ff5233a96730cbb8353a" category="paragraph">요구 사항에 따라 디스크 풀 및 볼륨 그룹을 생성하고 전체 스토리지 용량을 볼륨으로 구성하고 호스트 간에 공유하는 방법을 결정합니다. 디스크 풀과 볼륨 그룹은 모두 논리적으로 그룹화되고 애플리케이션 호스트에 하나 이상의 볼륨을 제공하는 드라이브 세트로 구성되어 있습니다. 디스크 풀 또는 볼륨 그룹의 모든 드라이브는 동일한 미디어 유형이어야 합니다.</block>
-  <block id="3ff82339aba03372510cbf649c88660b" category="section-title">E-Series 호스트 그룹</block>
-  <block id="1d159fb9310d2d64f0e89556f5e5e92a" category="paragraph">Trident는 호스트 그룹을 사용하여 프로비저닝하는 볼륨(LUN)에 액세스합니다. 기본적으로 Trident는 구성에 다른 호스트 그룹 이름을 지정하지 않는 한 "트리덴트"라는 호스트 그룹을 사용합니다. Trident는 자체적으로 호스트 그룹을 생성하거나 관리하지 않습니다. Trident에서 E-Series 스토리지 백엔드를 설정하기 전에 호스트 그룹을 생성해야 합니다. 모든 Kubernetes 작업자 노드 iSCSI IQN 이름이 호스트 그룹에서 업데이트되었는지 확인합니다.</block>
-  <block id="345b5f2b58b43a215fba679b4aff7483" category="section-title">E-Series의 스냅샷 스케줄입니다</block>
-  <block id="7e496222beafc240f7c54f2e86d37419" category="paragraph">필요한 간격으로 볼륨 백업을 수행할 수 있도록 스냅샷 일정을 생성하고 Trident에서 생성한 볼륨을 스냅샷 일정에 할당합니다. 스냅샷 정책에 따라 수행된 스냅샷을 기반으로 스냅샷 이미지를 기본 볼륨으로 복원하여 볼륨에 대해 롤백 작업을 수행할 수 있습니다. SANtricity 시스템 관리자를 사용하여 스냅샷 스케줄을 생성해야 합니다.</block>
   <block id="b5dd97bf7f44d6c721a9534c1b6d4390" category="section-title">스냅샷 정합성 보장 그룹</block>
   <block id="9279a0fc4d40b361df8598208a14b586" category="paragraph">스냅샷 정합성 보장 그룹을 설정하는 것도 여러 볼륨에 걸쳐 있는 애플리케이션에 적합합니다. 정합성 보장 그룹의 목적은 여러 볼륨의 동시 스냅샷 이미지를 만들어 특정 시점에 볼륨 컬렉션 복제본의 정합성이 보장되도록 하는 것입니다. SANtricity 시스템 관리자를 사용하여 일관성 그룹을 생성해야 합니다.</block>
   <block id="1ea481e04f09f7ec7132c7773f132743" category="section-title">Cloud Volumes Service for AWS 모범 사례</block>
@@ -618,9 +609,6 @@
   <block id="85bfffc1a1f7aaabd6cf58841640c308" category="list-text"><block ref="85bfffc1a1f7aaabd6cf58841640c308" category="inline-link-rx"></block></block>
   <block id="b52e411998b7d3a95ad5bd8a320bf271" category="inline-link">NetApp 배포 엔진에 액세스합니다</block>
   <block id="9d0da73b02655dd7861121905db229e2" category="list-text"><block ref="9d0da73b02655dd7861121905db229e2" category="inline-link-rx"></block></block>
-  <block id="985f6a763990196218b4750275e1f3b6" category="paragraph">E-Series * 를 통해 비즈니스 운영</block>
-  <block id="db06f9adb1b570484daf34ad3bf4e257" category="inline-link">Linux용 설치 및 구성</block>
-  <block id="a66f5507c8942de388ae63c7a177f7ab" category="list-text"><block ref="a66f5507c8942de388ae63c7a177f7ab" category="inline-link-rx"></block></block>
   <block id="9aaca8cfd79770bc4944ccc477e37141" category="paragraph">* 응용 프로그램 모범 사례 정보 *</block>
   <block id="27a5e02bc2fadee43ace94805739a0c8" category="inline-link">ONTAP 기반 MySQL의 모범 사례</block>
   <block id="40d2eaf9adabe99a601c57eabf49e4d3" category="list-text"><block ref="40d2eaf9adabe99a601c57eabf49e4d3" category="inline-link-rx"></block></block>
@@ -2393,7 +2381,6 @@
   <block id="3f7c94eec4bbf43962e1667f5a334469" category="cell">ONTAP-NAS *: 초기 UNIX 권한</block>
   <block id="4b2d5d83aef608a3fb59ec6eda8bea26" category="cell">SolidFire - *: 블록/섹터 크기</block>
   <block id="62fe71ae4f6a04a6937feb48ba5dc4f4" category="cell">파일 시스템 유형입니다</block>
-  <block id="44be9d1a43b6ec865a2264e42c53de2d" category="paragraph">Trident는 볼륨을 생성할 때 'internalName'을 생성합니다. 이 단계는 두 단계로 구성됩니다. 먼저, 저장소 접두사(기본 "트리덴트" 또는 백엔드 구성의 접두사)를 볼륨 이름에 추가하여 "&lt;prefix&gt;-&lt;volume-name&gt;" 형식의 이름을 만듭니다. 그런 다음 백엔드에서 허용되지 않는 문자를 대체하여 이름을 삭제하는 작업을 진행합니다. ONTAP 백엔드의 경우 하이픈을 밑줄로 바꿉니다. 따라서 내부 이름은 "&lt;prefix&gt;_&lt;volume-name&gt;"이 됩니다. 요소 백엔드의 경우 밑줄을 하이픈으로 바꿉니다. 모든 오브젝트 이름에 30자 제한이 적용되는 E-Series의 경우, Trident는 각 볼륨의 내부 이름에 대해 랜덤 문자열을 생성합니다. CVS(AWS)의 경우, 고유한 볼륨 생성 토큰에 16~36자 제한이 적용되는 Trident는 각 볼륨의 내부 이름에 대한 랜덤 문자열을 생성합니다.</block>
   <block id="49539689cebb34166a417b3b666818e5" category="paragraph">볼륨 구성을 사용하여 REST API를 사용하여 볼륨을 직접 프로비저닝할 수 있지만 Kubernetes 배포에서는 대부분의 사용자가 표준 Kubernetes "PersistentVolumeClaim" 방법을 사용할 것으로 예상됩니다. Trident는 프로비저닝 프로세스의 일부로 이 볼륨 개체를 자동으로 만듭니다.</block>
   <block id="cbd341b63adaa47fcb248e55d33f6eae" category="section-title">Trident 스냅샷 개체</block>
   <block id="a1b3787bbd275b7ed5812d022dd36932" category="paragraph">스냅샷은 볼륨의 시점 복제본으로, 새 볼륨을 용량 할당하거나 복구 상태를 복구하는 데 사용할 수 있습니다. Kubernetes에서는 이러한 객체가 'VolumeSnapshotContent' 객체와 직접 일치합니다. 각 스냅샷은 스냅샷에 대한 데이터의 소스인 볼륨에 연결됩니다.</block>
@@ -3218,4 +3205,6 @@
   <block id="dbe38f4f0d856b41827e6e4531720a5e" category="list-text">kubelet-dir 플래그는 kubelet 디렉토리의 위치로 설정해야 합니다. 기본적으로 이 값은 '/var/vcap/data/kubelet'입니다.</block>
   <block id="4dc3529fbf05312075f0aa52f9c0908e" category="paragraph">Trident 연산자, Hrom 및 tridentctl 배포에서는 -kubelet -dir 을 사용하여 kubelet 위치를 지정하는 작업이 알려져 있습니다.</block>
   <block id="8fad5c21cf613e120f249eadc62cda2f" category="paragraph">Astra Trident는 GKE(Google Kubernetes Engine), EKS(Amazon Elastic Kubernetes Service), AKS(Azure Kubernetes Service), Rancher, VMware Tanzu Portfolio를 비롯한 기타 완전 관리형 및 자체 관리 Kubernetes 오퍼링과도 작동합니다.</block>
+  <block id="7054a9a8c9f6d4b0bcf8cfe758a2e14d" category="paragraph">NetApp 포트폴리오의 각 스토리지 플랫폼은 컨테이너식으로 애플리케이션에 이점을 제공하는 고유한 기능을 제공합니다. Trident는 ONTAP 및 요소와 함께 작동합니다. 모든 애플리케이션과 시나리오에 적합한 플랫폼이 한 개 있는 것은 아니지만, 플랫폼을 선택할 때 애플리케이션과 장치를 관리하는 팀의 요구 사항을 고려해야 합니다.</block>
+  <block id="0f1a50993db502cac54d3679b60ad5a3" category="paragraph">Trident는 볼륨을 생성할 때 'internalName'을 생성합니다. 이 단계는 두 단계로 구성됩니다. 먼저, 저장소 접두사(기본 "트리덴트" 또는 백엔드 구성의 접두사)를 볼륨 이름에 추가하여 "&lt;prefix&gt;-&lt;volume-name&gt;" 형식의 이름을 만듭니다. 그런 다음 백엔드에서 허용되지 않는 문자를 대체하여 이름을 삭제하는 작업을 진행합니다. ONTAP 백엔드의 경우 하이픈을 밑줄로 바꿉니다. 따라서 내부 이름은 "&lt;prefix&gt;_&lt;volume-name&gt;"이 됩니다. 요소 백엔드의 경우 밑줄을 하이픈으로 바꿉니다. CVS(AWS)의 경우, 고유한 볼륨 생성 토큰에 16~36자 제한이 적용되는 Trident는 각 볼륨의 내부 이름에 대한 랜덤 문자열을 생성합니다.</block>
 </blocks>
