@@ -23,16 +23,16 @@ NOTE: Astra Trident가 사용하는 포트에 대한 자세한 내용은 를 참
 Astra Trident는 다음을 비롯한 여러 컨테이너 엔진과 오케스트레이터가 지원됩니다.
 
 * Anthos On-Premise(VMware) 및 Anthos의 Bare Metal 1.8, 1.9, 1.10
-* Kubernetes 1.17 이상(최신: 1.23)
+* Kubernetes 1.18 이상(최신: 1.23)
 * Mirantis Kubernetes 엔진 3.4
-* OpenShift 4.7, 4.8, 4.9
+* OpenShift 4.7, 4.8, 4.9, 4.10
 
 
 Trident 연산자는 다음 릴리즈에서 지원됩니다.
 
 * Anthos On-Premise(VMware) 및 Anthos의 Bare Metal 1.8, 1.9, 1.10
-* Kubernetes 1.17 이상(최신: 1.23)
-* OpenShift 4.7, 4.8, 4.9
+* Kubernetes 1.18 이상(최신: 1.23)
+* OpenShift 4.7, 4.8, 4.9, 4.10
 
 
 
@@ -168,92 +168,92 @@ Astra Trident는 백엔드 구성에서 사용하기 전에 스토리지 시스�
 
 
 | v1.17.0  a| 
-* NetApp/트리덴트: 22.01.1
-* NetApp/트리덴트 - AutoSupport: 22.01
+* NetApp/트리덴트: 22.04.0 - 맞춤형
+* NetApp/트리덴트 - 자동 지원: 22.04
 * K8s.GCR.IO/SIG-스토리지/CSI-공급자:v2.2.2
 * K8s.GCR.IO/SIG-storage/CSI-attacher:v3.4.0
-* k8s.gcr.io/sig-storage/scsi-resizer: v1.3.0
+* K8s.GCR.IO/SIG-storage/CSI-resizer: v1.4.0
 * K8s.GCR.IO/SIG-storage/CSI-snapshotter:v3.0.3
-* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.4.0
-* NetApp/트리덴트 - 운영자: 22.01.1(선택 사항)
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.0
+* NetApp/트리덴트 - 운영자: 22.04.0 - 맞춤형(옵션)
 
 
 
 
 | v1.18.0  a| 
-* NetApp/트리덴트: 22.01.1
-* NetApp/트리덴트 - AutoSupport: 22.01
+* NetApp/트리덴트: 22.04.0 - 맞춤형
+* NetApp/트리덴트 - 자동 지원: 22.04
 * K8s.GCR.IO/SIG-스토리지/CSI-공급자:v2.2.2
 * K8s.GCR.IO/SIG-storage/CSI-attacher:v3.4.0
-* k8s.gcr.io/sig-storage/scsi-resizer: v1.3.0
+* K8s.GCR.IO/SIG-storage/CSI-resizer: v1.4.0
 * K8s.GCR.IO/SIG-storage/CSI-snapshotter:v3.0.3
-* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.4.0
-* NetApp/트리덴트 - 운영자: 22.01.1(선택 사항)
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.0
+* NetApp/트리덴트 - 운영자: 22.04.0 - 맞춤형(옵션)
 
 
 
 
 | v1.19.0  a| 
-* NetApp/트리덴트: 22.01.1
-* NetApp/트리덴트 - AutoSupport: 22.01
+* NetApp/트리덴트: 22.04.0 - 맞춤형
+* NetApp/트리덴트 - 자동 지원: 22.04
 * K8s.GCR.IO/SIG-스토리지/CSI-공급자:v2.2.2
 * K8s.GCR.IO/SIG-storage/CSI-attacher:v3.4.0
-* k8s.gcr.io/sig-storage/scsi-resizer: v1.3.0
+* K8s.GCR.IO/SIG-storage/CSI-resizer: v1.4.0
 * K8s.GCR.IO/SIG-storage/CSI-snapshotter:v3.0.3
-* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.4.0
-* NetApp/트리덴트 - 운영자: 22.01.1(선택 사항)
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.0
+* NetApp/트리덴트 - 운영자: 22.04.0 - 맞춤형(옵션)
 
 
 
 
 | v1.20.0  a| 
-* NetApp/트리덴트: 22.01.1
-* NetApp/트리덴트 - AutoSupport: 22.01
-* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.1.0
+* NetApp/트리덴트: 22.04.0 - 맞춤형
+* NetApp/트리덴트 - 자동 지원: 22.04
+* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v2.2.2
 * K8s.GCR.IO/SIG-storage/CSI-attacher:v3.4.0
-* k8s.gcr.io/sig-storage/scsi-resizer: v1.3.0
+* K8s.GCR.IO/SIG-storage/CSI-resizer: v1.4.0
 * K8s.GCR.IO/SIG-storage/CSI-snapshotter:v3.0.3
-* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.4.0
-* NetApp/트리덴트 - 운영자: 22.01.1(선택 사항)
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.0
+* NetApp/트리덴트 - 운영자: 22.04.0 - 맞춤형(옵션)
 
 
 
 
 | v1.21.0  a| 
-* NetApp/트리덴트: 22.01.1
-* NetApp/트리덴트 - AutoSupport: 22.01
-* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.1.0
+* NetApp/트리덴트: 22.04.0 - 맞춤형
+* NetApp/트리덴트 - 자동 지원: 22.04
+* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v2.2.2
 * K8s.GCR.IO/SIG-storage/CSI-attacher:v3.4.0
-* k8s.gcr.io/sig-storage/scsi-resizer: v1.3.0
+* K8s.GCR.IO/SIG-storage/CSI-resizer: v1.4.0
 * K8s.GCR.IO/SIG-storage/CSI-snapshotter:v3.0.3
-* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.4.0
-* NetApp/트리덴트 - 운영자: 22.01.1(선택 사항)
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.0
+* NetApp/트리덴트 - 운영자: 22.04.0 - 맞춤형(옵션)
 
 
 
 
 | v1.22.0  a| 
-* NetApp/트리덴트: 22.01.1
-* NetApp/트리덴트 - AutoSupport: 22.01
-* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.1.0
+* NetApp/트리덴트: 22.04.0 - 맞춤형
+* NetApp/트리덴트 - 자동 지원: 22.04
+* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v2.2.2
 * K8s.GCR.IO/SIG-storage/CSI-attacher:v3.4.0
-* k8s.gcr.io/sig-storage/scsi-resizer: v1.3.0
+* K8s.GCR.IO/SIG-storage/CSI-resizer: v1.4.0
 * K8s.GCR.IO/SIG-storage/CSI-snapshotter:v3.0.3
-* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.4.0
-* NetApp/트리덴트 - 운영자: 22.01.1(선택 사항)
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.0
+* NetApp/트리덴트 - 운영자: 22.04.0 - 맞춤형(옵션)
 
 
 
 
 | v1.23.0  a| 
-* NetApp/트리덴트: 22.01.1
-* NetApp/트리덴트 - AutoSupport: 22.01
-* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.1.0
+* NetApp/트리덴트: 22.04.0 - 맞춤형
+* NetApp/트리덴트 - 자동 지원: 22.04
+* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v2.2.2
 * K8s.GCR.IO/SIG-storage/CSI-attacher:v3.4.0
-* k8s.gcr.io/sig-storage/scsi-resizer: v1.3.0
+* K8s.GCR.IO/SIG-storage/CSI-resizer: v1.4.0
 * K8s.GCR.IO/SIG-storage/CSI-snapshotter:v3.0.3
-* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.4.0
-* NetApp/트리덴트 - 운영자: 22.01.1(선택 사항)
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.0
+* NetApp/트리덴트 - 운영자: 22.04.0 - 맞춤형(옵션)
 
 
 |===

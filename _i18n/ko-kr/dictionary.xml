@@ -2923,7 +2923,6 @@
   <block id="814a65adc75608da31ab5685f9b1c1ce" category="paragraph">Astra Trident는 공식적으로 특정 운영 체제를 "지원"하지 않지만 다음과 같은 Linux 배포판이 작동하는 것으로 알려져 있습니다.</block>
   <block id="dc5ac69fee94d861f0bed64729b712cf" category="paragraph">Astra Trident는 백엔드 구성에서 사용하기 전에 스토리지 시스템을 일부 변경해야 할 수 있습니다. 을 참조하십시오 <block ref="49641f5ab61d7a6ce07b1b6ba31204f8" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="b0b4b8e52878f03279584f43bc961472" category="list-text">K8s.GCR.IO/SIG-스토리지/CSI-공급자:v2.2.2</block>
-  <block id="3c8910d4db724229b566887801de96bb" category="list-text">k8s.gcr.io/sig-storage/scsi-resizer: v1.3.0</block>
   <block id="681d715b456f6d29a501b8f132e941a1" category="cell">v1.22.0</block>
   <block id="c0227cef6f07a8cd2ac72f2945b031aa" category="section-title">오픈 소스</block>
   <block id="0172b29a9f5d94dc62ee592a98183f3b" category="paragraph">각 릴리스의 공지 파일에서 Astra Trident용 NetApp 소프트웨어에 사용된 타사 저작권 및 라이센스를 검토할 수 있습니다<block ref="4a3c8c5a408c6db1c44c04391a8a0a2f" category="inline-link-rx"></block>.</block>
@@ -2983,25 +2982,18 @@
   <block id="9f81aabbbba9f61bfecaf1340c407ed1" category="list-text">ANF 볼륨에 'unixPermissions' 옵션에 대한 지원이 추가되었습니다. (<block ref="b2ee1a79cce917ad1d60b3bec442914a" category="inline-link-macro-rx"></block>)</block>
   <block id="a4233200da50a08b295311036bb03ac1" category="section-title">사용 중단</block>
   <block id="de6284c149d2e011da3909f1ef2af627" category="paragraph">Trident REST 인터페이스는 127.0.0.1 또는 [::1] 주소에서만 수신 및 제공할 수 있습니다</block>
-  <block id="b4ffe37e7e4ec63b5a66f2d1ecdbf6c0" category="section-title">Astra Trident 21.10.1의 변경 사항</block>
   <block id="cdb544a92bee555749f43046d53ef34e" category="admonition">v21.10.0 릴리즈에는 노드를 제거한 다음 Kubernetes 클러스터에 다시 추가할 때 Trident 컨트롤러를 CrashLoopBackOff 상태로 전환할 수 있는 문제가 있습니다. 이 문제는 v21.10.1(GitHub 문제 669)에서 해결되었습니다.</block>
   <block id="cd1bf2431d703fd3c62a278b9c812d56" category="list-text">GCP CVS 백엔드에서 볼륨을 가져올 때 잠재적인 경쟁 조건이 수정되어 가져오지 못했습니다.</block>
   <block id="8e1e1dad95de3dc781f25f58483acdf3" category="list-text">노드를 제거할 때 Trident 컨트롤러를 CrashLoopBackOff 상태로 전환할 수 있는 문제를 해결한 다음 Kubernetes 클러스터(GitHub 문제 669)에 다시 추가되었습니다.</block>
   <block id="d7c32cb5ff2be4aaff3a8eaea9d18e0d" category="list-text">SVM 이름이 지정되지 않은 경우 SVM이 더 이상 검색되지 않는 문제 해결(GitHub 문제 612)</block>
-  <block id="f306ba062619a23c0afe1a50a50799f6" category="section-title">21.10.0 변경(Astra Trident 21.07 이후)</block>
   <block id="2f1ab5b99f1893144b69718c274415f4" category="paragraph">있습니다 <block ref="a3b750e7ac33c9792c64627692f306aa" category="inline-link-macro-rx"></block> 는 Astra Trident의 REST API와 상호 작용하는 가장 쉬운 방법이며, 원할 경우 REST 엔드포인트를 직접 사용할 수 있습니다.</block>
   <block id="a55b7ee69c26277a1088efc103e15297" category="paragraph">사용 가능한 명령 및 전역 옵션은 다음과 같습니다.</block>
   <block id="94912f7fb206038e8527957b44dfbf25" category="paragraph">그러면 모든 Trident 포드가 다시 시작됩니다. 이 작업은 몇 초 정도 걸릴 수 있습니다. 'kubeck get pod-n trident'의 출력에서 '나이' 열을 관찰하여 이를 확인할 수 있습니다.</block>
   <block id="498784627f42c14468b84a1a351bd462" category="sidebar">ADS 백엔드를 구성합니다</block>
-  <block id="fe3b4c5750a12d7254dee5e87c55bb40" category="list-text">Kubernetes 1.17 이상(최신: 1.23)</block>
-  <block id="10ae2729ec6b89f9c276ab2da5409336" category="list-text">OpenShift 4.7, 4.8, 4.9</block>
   <block id="f2f0da9b50bd2001bc802c121fc76254" category="admonition">Red Hat OpenShift Container Platform 사용자는 4.6.8 이하의 버전을 사용하는 경우 initiatorname.iscsi 파일이 비어 있는 것을 관찰할 수 있습니다. 이는 RedHat에서 OpenShift 4.6.8로 해결된 버그로, 자세한 내용은 다음을 참조하십시오<block ref="ac064f2337a2fc6c16c562bc9e386352" category="inline-link-rx"></block>. OpenShift 4.6.8 이상에서 Astra Trident를 사용하는 것이 좋습니다.</block>
   <block id="0f6e0df69462b7a5d101ec1a3fa8a376" category="list-text">NetApp HCI/Element 소프트웨어 11 이상</block>
   <block id="597a56086e1f9d7ca5e8f55c40a0153a" category="list-text">OpenShift Container Platform에서 지원하는 RedHat CoreOS(RHCOS) 버전</block>
-  <block id="0e3db22955e0ef2a04155e743fdcd843" category="list-text">NetApp/트리덴트 - AutoSupport: 22.01</block>
   <block id="52d5de12f37c2ff6a4de253d20947ca2" category="list-text">K8s.GCR.IO/SIG-storage/CSI-attacher:v3.4.0</block>
-  <block id="f86452b351d644230a6ab4c2d580e193" category="list-text">K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.4.0</block>
-  <block id="ad9d572821da9bfff3397f2d3260509d" category="list-text">K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.1.0</block>
   <block id="73e93ad328287e5ce4c06228cfdba2bf" category="cell">v1.23.0</block>
   <block id="08ee53e1d5cefb7967a295e98036598e" category="cell">스냅샷 디렉터리의 표시 여부를 제어합니다</block>
   <block id="9837781971083d3fe119b0217014d301" category="list-text">하나 이상의 Azure 위치가 있다<block ref="c5f14b2142014dc234282a513132bad4" category="inline-link-rx"></block>. Trident 22.01부터 "location" 매개 변수는 백엔드 구성 파일의 최상위 수준에 있는 필수 필드입니다. 가상 풀에 지정된 위치 값은 무시됩니다.</block>
@@ -3033,7 +3025,6 @@
   <block id="54042b89155d99a3568a196cb5ff1da8" category="paragraph">이는 절대적인 최소 백엔드 구성입니다. 이 구성을 통해 Astra Trident는 구성된 위치에서 ANF에 위임된 모든 NetApp 계정, 용량 풀 및 서브넷을 검색하고 해당 풀 및 서브넷 중 하나에 무작위로 새 볼륨을 배치합니다.</block>
   <block id="a78703e6fcb2511d5a565496df5b2082" category="section-title">예 2: 용량 풀 필터를 사용하는 특정 서비스 수준 구성</block>
   <block id="6da664b0342ea1be008211c33f1eb020" category="paragraph">이 백엔드 구성은 Azure의 "eastus" 위치에 볼륨을 "Ultra" 용량 풀에 배치합니다. Astra Trident는 해당 위치의 ANF에 위임된 모든 서브넷을 자동으로 검색하여 그 중 하나에 무작위로 새 볼륨을 배치합니다.</block>
-  <block id="b0f4f0ac7ea6be4c3047dd422c23539b" category="paragraph">Astra Trident 22.01을 실행하지 않는 경우 이전 릴리스에 대한 문서를 사용할 수 있습니다.</block>
   <block id="cce172403b73af5c2a4e93081affcc7f" category="inline-link">Astra Trident 21.10</block>
   <block id="606b9e83fb467a43b3065d4fd5037094" category="list-text"><block ref="606b9e83fb467a43b3065d4fd5037094" category="inline-link-rx"></block></block>
   <block id="ee50d481128d1543f9945b4a4f3fbe9d" category="paragraph">공기 박형 설치의 경우 다음 목록은 Astra Trident를 설치하는 데 필요한 컨테이너 이미지의 참조입니다. tridentctl images 명령을 사용하여 필요한 컨테이너 영상의 목록을 확인합니다.</block>
@@ -3062,15 +3053,10 @@
   <block id="7b3ecf601e0eee1c9d097083281abafa" category="example-title">예를 확장합니다</block>
   <block id="76df2d4e2a105a35b5db1ce7b060bbe1" category="list-text">Anthos On-Premise(VMware) 및 Anthos의 Bare Metal 1.8, 1.9, 1.10</block>
   <block id="9c99c91edd7eddead4f870a324f880bd" category="list-text">Trident의 제어 리포지토리 추가:</block>
-  <block id="b9baa6fa560066bf0c9e87d66d1c0664" category="doc">Astra Trident 22.01.1 문서</block>
-  <block id="583a5308ed42c99426f964d094ea527d" category="list-text">NetApp/트리덴트: 22.01.1</block>
-  <block id="e2393935037062665875a528ef53dd36" category="list-text">NetApp/트리덴트 - 운영자: 22.01.1(선택 사항)</block>
-  <block id="6e7239a6c6cfd378a1e55314b7490e32" category="section-title">22.01.1의 새로운 기능</block>
   <block id="368b120a3b5f53a49dc3ab96ec9b8dbd" category="paragraph">NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다. 이전 릴리스는 를 참조하십시오<block ref="25da125dffad1d6323c21354bccf0203" category="inline-link-rx"></block>.</block>
   <block id="a98b2ebbcbb381d3abc81e2ecfb2054c" category="inline-link-macro">GitHub 문제 #691</block>
   <block id="61465c1d4383dd4afdf168925e15e767" category="list-text">삭제된 노드에서 볼륨 게시를 취소하는 문제 해결 (<block ref="5fee6ab43e8008edba54375694a29266" category="inline-link-macro-rx"></block>)</block>
   <block id="e50f1057ba4b67b255c98fa09c5ba6f8" category="list-text">ONTAP API 응답에서 공간 집계에 대한 nil 필드에 액세스할 때 패닉이 수정되었습니다.</block>
-  <block id="f064e09978a6df920139de5d0ebddd77" category="section-title">22.01.0 변경(22.10.1 이후)</block>
   <block id="3c72f47eeb46270dd13a77b32ec10dd3" category="list-text">* Kubernetes: * 대규모 클러스터의 노드 등록 백오프 재시도 시간을 늘립니다.</block>
   <block id="0ef48234390855900384d0bc8a0a8a24" category="list-text">동일한 이름의 여러 리소스가 Azure-NetApp-files 드라이버를 혼동할 수 있는 문제 해결</block>
   <block id="7eaa7391130c13b3bf9a7e4ae755d908" category="list-text">ONTAP SAN IPv6 데이터 LIF는 이제 대괄호와 함께 지정된 경우 작동합니다.</block>
@@ -3138,4 +3124,35 @@
   <block id="c12963ed77d398c8f97e09be58a20fed" category="paragraph">Trident는 볼륨을 생성할 때 'internalName'을 생성합니다. 이 단계는 두 단계로 구성됩니다. 먼저, 저장소 접두사(기본 "트리덴트" 또는 백엔드 구성의 접두사)를 볼륨 이름에 추가하여 "&lt;prefix&gt;-&lt;volume-name&gt;" 형식의 이름을 만듭니다. 그런 다음 백엔드에서 허용되지 않는 문자를 대체하여 이름을 삭제하는 작업을 진행합니다. ONTAP 백엔드의 경우 하이픈을 밑줄로 바꿉니다. 따라서 내부 이름은 "&lt;prefix&gt;_&lt;volume-name&gt;"이 됩니다. 요소 백엔드의 경우 밑줄을 하이픈으로 바꿉니다.</block>
   <block id="ba600e29b197aa569df1df520cc4e4c9" category="paragraph">예, Astra Trident는 Azure의 Azure NetApp Files 서비스와 GCP의 Cloud Volumes Service를 지원합니다.</block>
   <block id="804a6c22698fe4782c44f1e8d446964e" category="paragraph">현재 ONTAP-NAS, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, 졸idfire-SAN의 온디맨드 스냅샷 지원을 이용할 수 있습니다. GCP-CV와 Azure-NetApp-files 백엔드 드라이버.</block>
+  <block id="65b584d1b3cd0ab857283c862b5ddc53" category="doc">Astra Trident 22.04 문서</block>
+  <block id="679683afa169f4c501ded1ebe8a942e2" category="list-text">Kubernetes 1.18 이상(최신: 1.23)</block>
+  <block id="41b5e6bb7f3d484ece37970d944243a6" category="list-text">OpenShift 4.7, 4.8, 4.9, 4.10</block>
+  <block id="d4e01cba0135fad4e9e87e274b6665ad" category="list-text">NetApp/트리덴트: 22.04.0 - 맞춤형</block>
+  <block id="2e7762de21d705936d61fb36a7138a5c" category="list-text">NetApp/트리덴트 - 자동 지원: 22.04</block>
+  <block id="b940865cd29b95c004f3c7f7ba60de73" category="list-text">K8s.GCR.IO/SIG-storage/CSI-resizer: v1.4.0</block>
+  <block id="719605430ab8445a9b97c7e6a4d03f30" category="list-text">K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.0</block>
+  <block id="b661c0f1dfe5c381a73bb09f637a6cdf" category="list-text">NetApp/트리덴트 - 운영자: 22.04.0 - 맞춤형(옵션)</block>
+  <block id="deef9d6bf4083f81d7bd15ae0c9121b6" category="admonition">22.04 릴리즈부터는 Astra Trident가 설치될 때마다 AES 키가 더 이상 다시 생성되지 않습니다. 이 릴리즈를 통해 Astra Trident는 설치 전반에 걸쳐 유지되는 새로운 비밀 객체를 설치합니다. 즉, 22.04의 tridentctl은 Trident의 이전 버전을 제거할 수 있지만 이전 버전에서는 22.04 설치를 제거할 수 없습니다.</block>
+  <block id="485e8e209b502a7975830960817b875e" category="paragraph">Astra Trident 22.04를 실행하지 않는 경우 이전 릴리스에 대한 문서를 사용할 수 있습니다.</block>
+  <block id="4af8991c21dff2f779496b8350d1124b" category="inline-link">Astra Trident 22.01</block>
+  <block id="7669b0b69333e81c7c208aea3d1a3c6f" category="list-text"><block ref="7669b0b69333e81c7c208aea3d1a3c6f" category="inline-link-rx"></block></block>
+  <block id="bef370ebb83a8a4dbadc9284705776cd" category="section-title">22.04의 새로운 기능</block>
+  <block id="6f66437376d2298f51dedcad975af0af" category="list-text">iSCSI 이니시에이터 이름의 구문 분석 기능이 향상되었습니다. (문제[#681]<block ref="5ff0c0b84f149d5e05cdbfc15134c7d3" category="inline-link-rx"></block></block>
+  <block id="ade01ecb73e019f3380c2b0afb3dfffb" category="list-text">CSI 스토리지 클래스 매개 변수가 허용되지 않는 문제를 해결했습니다. (문제[#598]<block ref="03c929eaa36e8820e6d58a181cadf31a" category="inline-link-rx"></block></block>
+  <block id="9ecc72f60e2733db28108cec786393d8" category="list-text">Trident CRD에서 중복 키 선언을 수정했습니다. (문제[#671]<block ref="39dd525b3820bd54c741d90842f0cfba" category="inline-link-rx"></block></block>
+  <block id="bc654279a27ed7dbc53dea073443c6dd" category="list-text">부정확한 CSI 스냅샷 로그를 수정했습니다. (문제[#629]<block ref="74e80876204be50984fd2b886b478da3" category="inline-link-rx"></block></block>
+  <block id="9b67ffa13416ea48750dbec9f4ad66a4" category="list-text">삭제된 노드에서 볼륨 게시를 취소하는 문제 해결 (문제[#691]<block ref="960ecda0072df209a8be9a21824adbbd" category="inline-link-rx"></block></block>
+  <block id="f30177308b538e761b8feff560b90f3b" category="list-text">블록 디바이스에서 파일 시스템 불일치를 처리하는 기능이 추가되었습니다. (문제[#656]<block ref="20be7e8a45944ca857b23f51f1b33662" category="inline-link-rx"></block></block>
+  <block id="6c2b4c2b9ff739282a9a8c949c9eba0b" category="list-text">설치 중 'imageRegistry' 플래그를 설정할 때 자동 지원 이미지를 가져오는 문제가 해결되었습니다. (문제[#715]<block ref="95a736f0b6cf1bb3063434410ab25226" category="inline-link-rx"></block></block>
+  <block id="682c6ce09c9faae3a3e22c55c8db592e" category="list-text">ANF 드라이버가 여러 내보내기 규칙을 사용하여 볼륨을 클론하지 못한 문제 해결</block>
+  <block id="b6cf920e86b3fc991f2480bd036eeb18" category="list-text">이제 Trident의 보안 끝점에 대한 인바운드 연결에는 TLS 1.3 이상이 필요합니다. (문제[#698]<block ref="d975aaa0c5042a84e62298e5fd05553c" category="inline-link-rx"></block></block>
+  <block id="723b30bcece2d0d47914a6eaf0c550cc" category="list-text">이제 Trident는 보안 엔드포인트의 응답에 HSTS 헤더를 추가합니다.</block>
+  <block id="621b9733ee07089711b96dd6b0b7861a" category="list-text">이제 Trident는 Azure NetApp Files UNIX 사용 권한 기능을 자동으로 활성화하려고 시도합니다.</block>
+  <block id="3bbc276ce14cf6f098250ed3dc320964" category="list-text">* Kubernetes *: Trident가 이제 시스템 노드 크리티컬 우선 순위 클래스에서 실행됩니다. (문제[#694]<block ref="b7e94b834f1f212aacf3741fb6fee33f" category="inline-link-rx"></block></block>
+  <block id="3f39a3207529d5f8129199a33e60ef87" category="section-title">제거</block>
+  <block id="3d0d8392962843a02a6fa979f76b5a91" category="paragraph">E-Series 드라이버(20.07 이후 비활성화됨)가 제거되었습니다.</block>
+  <block id="72387bfdb0acfd8a27877f000a3abeac" category="section-title">22.01.1의 변경 사항</block>
+  <block id="135c438d01a49275c458e22005e39c6e" category="section-title">22.01.0의 변경 사항</block>
+  <block id="58a2e8c17107cc1ca9cb1317cd0c1ee9" category="section-title">21.10.1 변경</block>
+  <block id="43e92857220d1a7ea1da88250ea5e2e3" category="section-title">21.10.0 변경</block>
 </blocks>
