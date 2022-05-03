@@ -3127,11 +3127,9 @@
   <block id="65b584d1b3cd0ab857283c862b5ddc53" category="doc">Astra Trident 22.04 문서</block>
   <block id="679683afa169f4c501ded1ebe8a942e2" category="list-text">Kubernetes 1.18 이상(최신: 1.23)</block>
   <block id="41b5e6bb7f3d484ece37970d944243a6" category="list-text">OpenShift 4.7, 4.8, 4.9, 4.10</block>
-  <block id="d4e01cba0135fad4e9e87e274b6665ad" category="list-text">NetApp/트리덴트: 22.04.0 - 맞춤형</block>
   <block id="2e7762de21d705936d61fb36a7138a5c" category="list-text">NetApp/트리덴트 - 자동 지원: 22.04</block>
   <block id="b940865cd29b95c004f3c7f7ba60de73" category="list-text">K8s.GCR.IO/SIG-storage/CSI-resizer: v1.4.0</block>
   <block id="719605430ab8445a9b97c7e6a4d03f30" category="list-text">K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.0</block>
-  <block id="b661c0f1dfe5c381a73bb09f637a6cdf" category="list-text">NetApp/트리덴트 - 운영자: 22.04.0 - 맞춤형(옵션)</block>
   <block id="deef9d6bf4083f81d7bd15ae0c9121b6" category="admonition">22.04 릴리즈부터는 Astra Trident가 설치될 때마다 AES 키가 더 이상 다시 생성되지 않습니다. 이 릴리즈를 통해 Astra Trident는 설치 전반에 걸쳐 유지되는 새로운 비밀 객체를 설치합니다. 즉, 22.04의 tridentctl은 Trident의 이전 버전을 제거할 수 있지만 이전 버전에서는 22.04 설치를 제거할 수 없습니다.</block>
   <block id="485e8e209b502a7975830960817b875e" category="paragraph">Astra Trident 22.04를 실행하지 않는 경우 이전 릴리스에 대한 문서를 사용할 수 있습니다.</block>
   <block id="4af8991c21dff2f779496b8350d1124b" category="inline-link">Astra Trident 22.01</block>
@@ -3155,4 +3153,6 @@
   <block id="135c438d01a49275c458e22005e39c6e" category="section-title">22.01.0의 변경 사항</block>
   <block id="58a2e8c17107cc1ca9cb1317cd0c1ee9" category="section-title">21.10.1 변경</block>
   <block id="43e92857220d1a7ea1da88250ea5e2e3" category="section-title">21.10.0 변경</block>
+  <block id="bd366d7eff02dab7788621c07458488c" category="list-text">NetApp/트리덴트: 22.04.0</block>
+  <block id="6c2d28c058f7c688140000721ee0d18f" category="list-text">NetApp/트리덴트 - 운영자: 22.04.0(선택 사항)</block>
 </blocks>
