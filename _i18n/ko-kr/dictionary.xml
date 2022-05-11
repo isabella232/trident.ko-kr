@@ -1343,10 +1343,6 @@
   <block id="e5879288a130fbd8d0b8682cfc375c4f" category="doc">스냅샷 작업</block>
   <block id="332138092a1597c4d5e69679199e490c" category="inline-link">릴리스 블로그</block>
   <block id="006b05a472974308122f7f05ef147e80" category="admonition">이 기능은 Kubernetes 1.17(베타)에서 사용할 수 있으며 1.20에서 GA됩니다. 베타 버전에서 GA로 전환하는 데 따른 변경 사항을 이해하려면 를 참조하십시오<block ref="02a1c904d0035e03c61e261dbe622345" category="inline-link-rx"></block>. GA로 졸업하면 v1 API 버전이 도입되고 v1beta1 스냅샷과 역호환됩니다.</block>
-  <block id="e197a057bfe0ae792bb2b9ce9a78761e" category="list-text">볼륨 스냅숏을 생성하려면 외부 스냅샷 컨트롤러와 일부 사용자 지정 리소스 정의(CRD)를 생성해야 합니다. 사용 중인 Kubernetes Orchestrator는 이 책임이 있습니다(예: Kubeadm, GKE, OpenShift).</block>
-  <block id="3923fe4170ab3f204b53d4caf958045f" category="paragraph">다음과 같이 외부 스냅샷 컨트롤러 및 스냅샷 CRD를 생성할 수 있습니다.</block>
-  <block id="7737ff29322b0df9949b5d44ad3809a9" category="list-text">볼륨 스냅샷 CRD 생성:</block>
-  <block id="7a993e4667899d0bca97d13e0bc37568" category="list-text">원하는 네임스페이스에 스냅샷 컨트롤러를 생성합니다. 아래 YAML 매니페스트를 편집하여 네임스페이스를 수정하십시오.</block>
   <block id="26c4fe55fc424c7b41b517701f54f074" category="inline-link">Webhook 확인 중</block>
   <block id="46b189b23dfbd5f3f622a1c04590b05e" category="admonition">CSI Snapshotter는 를 제공합니다<block ref="927ab0e919f8034deab1249bed53a289" category="inline-link-rx"></block> 사용자가 기존 v1beta1 스냅샷의 유효성을 검사하고 유효한 리소스 객체인지 확인할 수 있도록 합니다. Validating webhook는 잘못된 스냅샷 개체에 자동으로 레이블을 지정하며 나중에 유효하지 않은 객체가 생성되지 않도록 합니다. Validating webhook은 Kubernetes Orchestrator에 의해 구축됩니다. 유효성을 검사하는 Webhook을 수동으로 배포하는 방법은 지침을 참조하십시오<block ref="07cb3cdda0599ec9f2e82062ecd12e82" category="inline-link-rx"></block>. 유효하지 않은 스냅샷 매니페스트의 예를 찾습니다<block ref="bceda34f0850fc68d82f08741abbc69e" category="inline-link-rx"></block>.</block>
   <block id="f535be08d3997f1a801b132862d99a5c" category="paragraph">아래 예에서는 스냅샷 작업에 필요한 구조를 설명하고 스냅샷을 생성 및 사용하는 방법을 보여 줍니다.</block>
@@ -2928,7 +2924,6 @@
   <block id="0172b29a9f5d94dc62ee592a98183f3b" category="paragraph">각 릴리스의 공지 파일에서 Astra Trident용 NetApp 소프트웨어에 사용된 타사 저작권 및 라이센스를 검토할 수 있습니다<block ref="4a3c8c5a408c6db1c44c04391a8a0a2f" category="inline-link-rx"></block>.</block>
   <block id="29db8b676d0a02f8179869506102c8ce" category="doc">ONTAP 또는 Cloud Volumes ONTAP SAN 드라이버를 사용하여 백엔드를 구성합니다</block>
   <block id="133184f8c608809bdc057abf1397d10d" category="paragraph">ONTAP 및 Cloud Volumes ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오.</block>
-  <block id="311847a44163ac40ccf470fcf81e74fb" category="admonition">GKE 환경에서 필요 시 볼륨 스냅샷을 설정하는 경우 스냅샷-컨트롤러를 생성하지 마십시오. GKE는 내장된 숨겨진 스냅샷 컨트롤러를 사용합니다.</block>
   <block id="75419edaab27be09afdb3415e83d93f6" category="paragraph">'SUDO mpathconf - -enable - -with_multipathd y - -find_multiprohs n'</block>
   <block id="60c268e00db3206011b54b01705d7211" category="admonition">etc/multipath.conf에 debrofs 아래에 find_multiprohs no가 포함되어 있는지 확인합니다.</block>
   <block id="b85c80e2af7e3d7dd06b874ed048d430" category="paragraph">'sudo tee /etc/multipath.conf&lt;-'EOF' 기본값 {user_friendly_names yes find_multipath no} EOF sudo systemctl enable--now multipath-tools.service sudo service multipath-tools restart'입니다</block>
@@ -3155,4 +3150,16 @@
   <block id="43e92857220d1a7ea1da88250ea5e2e3" category="section-title">21.10.0 변경</block>
   <block id="bd366d7eff02dab7788621c07458488c" category="list-text">NetApp/트리덴트: 22.04.0</block>
   <block id="6c2d28c058f7c688140000721ee0d18f" category="list-text">NetApp/트리덴트 - 운영자: 22.04.0(선택 사항)</block>
+  <block id="67b47f9232c8507cb74ec2668b3bb75d" category="list-text">볼륨 스냅숏을 생성하려면 외부 스냅샷 컨트롤러와 사용자 지정 리소스 정의(CRD)를 만들어야 합니다. 사용 중인 Kubernetes Orchestrator는 이 책임이 있습니다(예: Kubeadm, GKE, OpenShift).</block>
+  <block id="9c87569b835a8f66b7490390d350d9a4" category="paragraph">Kubernetes 배포 시 스냅샷 컨트롤러와 CRD가 포함되지 않은 경우 다음과 같이 배포할 수 있습니다.</block>
+  <block id="469f7ca16938508b5dcb777767828b70" category="list-text">볼륨 스냅샷 CRD를 생성합니다.</block>
+  <block id="2f30b620baa463b151147c434eb1c308" category="paragraph">Kubernetes 1.20 이상의 경우 v5.0 이상의 스냅샷 구성 요소와 함께 v1 스냅샷 CRD를 사용하십시오. Kubernetes 버전 1.17-1.19의 경우 v3.0.3 스냅샷 구성요소와 함께 v1beta1을 사용하십시오.</block>
+  <block id="351d6da9c87ca81d91cd4755e4730d82" category="open-title">v5.0 구성 요소</block>
+  <block id="3d5442333756ee7fdf64adf51439d855" category="open-title">v3.0.3 구성 요소</block>
+  <block id="65b146df7d5c27b212f54a7c9980960b" category="list-text">원하는 네임스페이스에 스냅샷 컨트롤러를 생성합니다. 아래 YAML 매니페스트를 편집하여 네임스페이스를 수정하십시오.</block>
+  <block id="c99740d72de1d916747c317140dc330d" category="paragraph">Kubernetes 1.20 이상의 경우 v5.0 이상을 사용합니다. Kubernetes 버전 1.17-1.19의 경우 v3.0.3을 사용합니다</block>
+  <block id="1cfbd89d099907d91122529e677f1c71" category="admonition">GKE 환경에서 필요 시 볼륨 스냅샷을 설정하는 경우 스냅샷 컨트롤러를 생성하지 마십시오. GKE는 내장된 숨겨진 스냅샷 컨트롤러를 사용합니다.</block>
+  <block id="5e393c0ca8392e0c84201770c8b544ca" category="open-title">v5.0 컨트롤러</block>
+  <block id="ea567d0d1a58b120efa89893cae2966a" category="open-title">v3.0.3 컨트롤러</block>
+  <block id="086e6c16e3fe8e13c336612ef636aa02" category="sidebar">아스트라 트리덴트</block>
 </blocks>

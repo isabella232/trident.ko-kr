@@ -7,6 +7,19 @@ settings:
   prod:
     pdf_enabled: true
     harmony_enabled: false
+  versions:
+  - name: 아스트라 트리덴트
+    url: "/trident"
+    version-number: '22.04'
+  - name: 아스트라 트리덴트
+    url: "/trident-2201"
+    version-number: '22.01'
+  - name: 아스트라 트리덴트
+    url: "/trident-2110"
+    version-number: '21.10'
+  - name: 아스트라 트리덴트
+    url: https://docs.netapp.com/us-en/trident-2107/index.html
+    version-number: '21.07'
   langs: ko-kr,us-en,ja-jp,zh-cn,zh-tw
 sidebar:
   entries:
