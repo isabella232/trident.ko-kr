@@ -48,12 +48,12 @@ homepage:
   tiles:
   - title: 시작하십시오
     links:
+    - title: 릴리스 정보
+      url: trident-rn.html
     - title: Astra Trident 소개
       url: "/trident-concepts/intro.html"
     - title: Astra Trident 요구사항
       url: "/trident-get-started/requirements.html"
-    - title: 새로운 소식
-      url: trident-rn.html
     - title: 시도해 보십시오
       url: "/trident-get-started/quickstart.html"
     - title: FAQ 를 참조하십시오
