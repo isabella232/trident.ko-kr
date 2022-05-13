@@ -2861,7 +2861,6 @@
   <block id="7d0ee6fed10d3d4e5c9ee496729ab519" category="sidebar">릴리스 정보</block>
   <block id="93168a8084b3e838d2932c4734bd234e" category="sidebar">이전 버전</block>
   <block id="0629fb104936d0fb60cc736b6cb01caa" category="sidebar">Astra Trident 요구사항</block>
-  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">새로운 소식</block>
   <block id="1fe917b01f9a3f87fa2d7d3b7643fac1" category="sidebar">FAQ 를 참조하십시오</block>
   <block id="312b0dc38b01ff32c1b2f5f81ee1ab2d" category="sidebar">Trident 연산자를 사용하여 배포합니다</block>
   <block id="6a693eb5cd23e4e5743663c7edc37aed" category="sidebar">Docker를 위한 Astra Trident 구축</block>
@@ -3162,4 +3161,5 @@
   <block id="5e393c0ca8392e0c84201770c8b544ca" category="open-title">v5.0 컨트롤러</block>
   <block id="ea567d0d1a58b120efa89893cae2966a" category="open-title">v3.0.3 컨트롤러</block>
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="sidebar">아스트라 트리덴트</block>
+  <block id="756909f99bc1a720d318a5f5b94eb094" category="section-title">문제 해결을 위해 로그를 수집합니다</block>
 </blocks>
