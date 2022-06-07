@@ -11,7 +11,11 @@ summary: Trident 운영자와 함께 Astra Trident를 배포할 수 있습니다
 :imagesdir: ../media/
 
 
-Trident 운영자와 함께 Astra Trident를 배포할 수 있습니다. Trident 연산자는 수동으로 또는 Hrom을 사용하여 배포할 수 있습니다.
+Trident 연산자를 사용하여 Astra Trident를 배포할 수 있습니다. Trident 연산자는 다음 두 가지 방법 중 하나로 배포할 수 있습니다.
+
+* Trident 사용 link:https://artifacthub.io/packages/helm/netapp-trident/trident-operator["Helm 차트"^]: 제어 도표는 Trident 연산자를 배포하고 Trident를 한 번에 설치합니다.
+* 수동: Trident에서 를 제공합니다 link:https://github.com/NetApp/trident/blob/master/deploy/bundle.yaml["Bundle.YAML"^] 연산자를 설치하고 관련 개체를 만드는 데 사용할 수 있는 파일입니다.
+
 
 
 TIP: 에 아직 익숙하지 않은 경우 link:../trident-concepts/intro.html["기본 개념"^]이제 아주 좋은 시간입니다.
@@ -31,7 +35,7 @@ Astra Trident를 구축하려면 다음과 같은 사전 요구 사항을 충족
 
 
 
-== Hrom을 사용하여 Trident 연산자를 배포합니다
+== Trident 연산자를 구축하고 Hrom을 사용하여 Astra Trident를 설치합니다
 
 나열된 단계를 수행하여 Helm을 사용하여 Trident 연산자를 배포합니다.
 

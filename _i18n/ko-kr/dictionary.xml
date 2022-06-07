@@ -838,7 +838,6 @@
   <block id="237bc513b62b16e8ddd1661150fb7f94" category="summary">Trident 운영자와 함께 Astra Trident를 배포할 수 있습니다. Trident 연산자는 수동으로 또는 Hrom을 사용하여 배포할 수 있습니다.</block>
   <block id="cba9c445dab954e3483f9e5bef9f12c5" category="doc">Trident 연산자를 사용하여 구축</block>
   <block id="705db3afa1c1d4451f7b0f7f8552f1b5" category="list-text">Kubernetes 1.17 이상을 실행하는 지원되는 Kubernetes 클러스터에 대한 모든 권한이 있습니다.</block>
-  <block id="f9589cad119238efbce2b063d5225fb4" category="section-title">Hrom을 사용하여 Trident 연산자를 배포합니다</block>
   <block id="8a414e5c564a0c9e7a0f799a3c8cf47c" category="paragraph">나열된 단계를 수행하여 Helm을 사용하여 Trident 연산자를 배포합니다.</block>
   <block id="dc2d0674739dcd145f5287a7d619ee05" category="paragraph">위에 나열된 필수 구성 요소 외에도 Hrom을 사용하여 Trident 연산자를 구축하려면 다음이 필요합니다.</block>
   <block id="8f5e62e2d03d87aeaafa8d4776fb7a79" category="list-text">Kubernetes 1.17 이상</block>
@@ -3164,4 +3163,10 @@
   <block id="d5d195efeafde24a6a22effd3dd39339" category="list-text">자격 증명 기반: 파일 시스템에 대해 'fsxadmin' 사용자를 사용하거나 SVM용으로 구성된 'vsadmin' 사용자를 사용할 수 있습니다.</block>
   <block id="be5736bb27c63c0a404a25abaa033c45" category="admonition">백엔드를 구성하려면 'fsxadmin' 대신 'vsadmin' 사용자를 사용하는 것이 좋습니다. Astra Trident는 이 사용자 이름과 암호를 사용하여 FSx 파일 시스템과 통신합니다.</block>
   <block id="0b4a92a731cb582bd951a7aa481f0602" category="list-text">Anthos On-Premise(VMware) 및 Anthos의 Bare Metal 1.9, 1.10, 1.11</block>
+  <block id="6173739ff97dc1bdcd8c5d867134724c" category="paragraph">Trident 연산자를 사용하여 Astra Trident를 배포할 수 있습니다. Trident 연산자는 다음 두 가지 방법 중 하나로 배포할 수 있습니다.</block>
+  <block id="7d3f46589c43a64fd040e4f0e0691a86" category="inline-link-macro">Helm 차트</block>
+  <block id="5d2b4e1d078f05c18e07065fa7df166d" category="list-text">Trident 사용 <block ref="cdacb2b0d49176a3c0d8cc9d693de833" category="inline-link-macro-rx"></block>: 제어 도표는 Trident 연산자를 배포하고 Trident를 한 번에 설치합니다.</block>
+  <block id="0d472c887b61206765c1caa63a9290ec" category="inline-link-macro">Bundle.YAML</block>
+  <block id="179000091737641056a247acf2c59dc4" category="list-text">수동: Trident에서 를 제공합니다 <block ref="6f41841ada1b81573b5db54c90d512f9" category="inline-link-macro-rx"></block> 연산자를 설치하고 관련 개체를 만드는 데 사용할 수 있는 파일입니다.</block>
+  <block id="c9ffe59301b588bbc33bb004cfd312ee" category="section-title">Trident 연산자를 구축하고 Hrom을 사용하여 Astra Trident를 설치합니다</block>
 </blocks>
