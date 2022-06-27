@@ -3169,4 +3169,5 @@
   <block id="0d472c887b61206765c1caa63a9290ec" category="inline-link-macro">Bundle.YAML</block>
   <block id="179000091737641056a247acf2c59dc4" category="list-text">수동: Trident에서 를 제공합니다 <block ref="6f41841ada1b81573b5db54c90d512f9" category="inline-link-macro-rx"></block> 연산자를 설치하고 관련 개체를 만드는 데 사용할 수 있는 파일입니다.</block>
   <block id="c9ffe59301b588bbc33bb004cfd312ee" category="section-title">Trident 연산자를 구축하고 Hrom을 사용하여 Astra Trident를 설치합니다</block>
+  <block id="3f44baef815aed01560d6764fea49ebc" category="cell">CVS 볼륨에 사용되는 GCP 네트워크</block>
 </blocks>
