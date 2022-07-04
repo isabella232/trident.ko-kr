@@ -61,6 +61,12 @@ NOTE: 클러스터가 지원되지 않는 버전으로 업그레이드되면 운
 
 
 
+==== Cloud Manager를 사용하여 Kubernetes 클러스터를 관리합니다
+
+와 함께 link:https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html["Cloud Manager를 사용하는 Astra Trident"^]Astra Trident의 최신 버전으로 업그레이드하고, 스토리지 클래스를 추가 및 관리하고, 작업 환경에 연결한 다음, Cloud Backup Service를 사용하여 영구 볼륨을 백업할 수 있습니다. Cloud Manager는 Trident 연산자를 사용하여 수동으로 또는 Helm을 사용하여 Astra Trident 구축을 지원합니다.
+
+
+
 === Helm을 사용해야 하는 이유는 무엇입니까?
 
 Astra Trident 21.01부터 Helm을 사용하여 관리하는 다른 애플리케이션이 있는 경우 Helm을 사용하여 배포를 관리할 수도 있습니다.
