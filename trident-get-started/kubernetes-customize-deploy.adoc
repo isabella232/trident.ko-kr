@@ -53,7 +53,7 @@ Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 As
 | 트리덴티이미지 | 설치할 Astra Trident 이미지 | "NetApp/트리덴트: 21.04" 
 
 
-| 'imageRegistry'입니다 | '<registry FQDN>[:port][/subpath]' 형식의 내부 레지스트리 경로입니다 | "k8s.gcr.io/sig-storage(k8s 1.17+) 또는 quay.io/k8scsi" 
+| 'imageRegistry'입니다 | '<registry FQDN>[:port][/subpath]' 형식의 내부 레지스트리 경로입니다 | "k8s.gcr.io/sig-storage(k8s 1.19 이상) 또는 quay.io/k8scsi" 
 
 
 | 쿠벨레트디렉토리 | 호스트의 kubelet 디렉토리에 대한 경로입니다 | “/var/lib/kubelet” 
@@ -78,9 +78,6 @@ Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 As
 |===
 
 IMPORTANT: pec.namespace` 는 어느 네임스페이스 Astra Trident가 설치되어 있는지 나타내기 위해 트리엔터레이터에 지정됩니다. Astra Trident가 설치된 후에는 이 매개 변수 * 를 업데이트할 수 없습니다. 이렇게 하면 트리엔오케스트레이터 상태가 실패로 바뀝니다. Astra Trident는 네임스페이스 간에 마이그레이션할 수 없습니다.
-
-
-NOTE: 자동 작업자 노드 준비는 비생산 환경에서만 사용할 수 있는 * 베타 기능입니다.
 
 
 TIP: 포드 매개 변수 포맷에 대한 자세한 내용은 을 참조하십시오 link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/["노드에 Pod 할당"^].

@@ -127,7 +127,7 @@ Kubernetes 클러스터에서 Trident를 구축하면 Astra Trident 설치 관�
 
 
 
-IMPORTANT: 개인 이미지 저장소를 사용하는 경우 Kubernetes 버전 1.17 이전의 Kubernetes에서는 /k8scsi를, Kubernetes 버전 1.17 이후의 경우에는 개인 레지스트리 URL 끝에 '/sig-storage'를 추가해야 합니다. tridentctl 배포를 위해 개인 레지스트리를 사용할 때는 '--trident-image' 및 '--autosupport-image'를 '--image-registry'와 함께 사용해야 합니다. Trident 연산자를 사용하여 Astra Trident를 배포하는 경우 Orchestrator CR에 설치 매개변수에 "tridentImage" 및 "autostsupportImage"가 포함되어 있는지 확인합니다.
+IMPORTANT: 개인 이미지 리포지토리를 사용하는 경우 개인 레지스트리 URL 끝에 /sig-storage를 추가해야 합니다. tridentctl 배포를 위해 개인 레지스트리를 사용할 때는 '--trident-image' 및 '--autosupport-image'를 '--image-registry'와 함께 사용해야 합니다. Trident 연산자를 사용하여 Astra Trident를 배포하는 경우 Orchestrator CR에 설치 매개변수에 "tridentImage" 및 "autostsupportImage"가 포함되어 있는지 확인합니다.
 
 
 

@@ -2,7 +2,7 @@
 section: trident-concepts
 title: 개념
 entries:
-- title: Astra Trident 소개
+- title: Astra Trident에 대해 자세히 알아보십시오
   url: "/trident-concepts/intro.html"
 - title: ONTAP 드라이버
   url: "/trident-concepts/ontap-drivers.html"

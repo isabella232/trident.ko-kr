@@ -4,7 +4,7 @@ permalink: trident-concepts/intro.html
 keywords: product overview, astra trident, fsx, element, astra, google cloud, cvs 
 summary: 'Astra Trident는 NetApp이 Astra 제품군의 일부로 유지 관리하는 완전히 지원되는 오픈 소스 프로젝트입니다. 컨테이너 스토리지 인터페이스(CSI)와 같은 업계 표준 인터페이스를 사용하여 컨테이너화된 애플리케이션의 지속성 요구를 충족하도록 설계되었습니다.' 
 ---
-= Astra Trident 소개
+= Astra Trident에 대해 자세히 알아보십시오
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-reference/objects.html 
-keywords: kubernetes objects, trident objects, persistent volume claim, storage class, backend, snapshot 
+keywords: kubernetes objects, trident objects, persistent volume claim, storage class, backend, snapshot, priority class, system-node-critical, daemonset, resource quota, resourcequota, system node critical 
 summary: Kubernetes 및 Trident, Trident 및 스토리지와 Kubernetes 및 스토리지 간의 관계를 결정하는 몇 가지 리소스 개체가 있습니다. 이러한 오브젝트 중 일부는 Kubernetes를 통해 관리되며 나머지는 Trident를 통해 관리됩니다. 
 ---
 = Kubernetes 및 Trident 오브젝트
@@ -221,7 +221,7 @@ ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN
 | allowVolumeExpansion | 부울 | 참, 거짓 | PVC 크기 증가에 대한 지원을 활성화 또는 비활성화합니다 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, solidfire-SAN, GCP-CV, Azure-NetApp-파일 | 1.11+ 
 
 
-| 볼륨BindingMode 를 선택합니다 | 문자열 | Immediate, WaitForFirstConsumer입니다 | 볼륨 바인딩 및 동적 프로비저닝이 수행될 시기를 선택합니다 | 모두 | 1.17+ 
+| 볼륨BindingMode 를 선택합니다 | 문자열 | Immediate, WaitForFirstConsumer입니다 | 볼륨 바인딩 및 동적 프로비저닝이 수행될 시기를 선택합니다 | 모두 | 1.19-1.24 
 |===
 [TIP]
 ====
@@ -234,7 +234,7 @@ ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN
 +
 NFS 스토리지 드라이버의 경우 파일 시스템이 NFS 내보내기의 일부로 이미 존재합니다. fsGroup을 사용하려면 스토리지 클래스가 여전히 fsType을 지정해야 합니다. NFS 또는 null이 아닌 값으로 설정할 수 있습니다.
 
-* 을 참조하십시오 link:https://docs.netapp.com/us-en/trident/trident-use/vol-expansion.html["볼륨 확장"^] 볼륨 확장에 대한 자세한 내용은 를 참조하십시오.
+* 을 참조하십시오 link:https://docs.netapp.com/us-en/trident/trident-use/vol-expansion.html["볼륨 확장"] 볼륨 확장에 대한 자세한 내용은 를 참조하십시오.
 * Trident 설치 프로그램 번들에는 'Sample-input/storage-class- *.YAML'의 Trident와 함께 사용할 수 있는 여러 가지 스토리지 클래스 정의가 포함되어 있습니다. Kubernetes 스토리지 클래스를 삭제하면 해당 Trident 스토리지 클래지도 삭제됩니다.
 
 
@@ -298,7 +298,7 @@ CRD는 Kubernetes를 구성하는 것입니다. 위에 정의된 리소스의 �
 
 * Trident가 설치되면 일련의 CRD가 생성되어 다른 리소스 유형과 마찬가지로 사용할 수 있습니다.
 * Trident의 이전 버전('etcd'를 사용하여 상태를 유지 관리)에서 업그레이드할 경우 Trident 설치 프로그램이 'etcd' 키 값 데이터 저장소에서 데이터를 마이그레이션하고 해당 CRD 개체를 만듭니다.
-* tridentctl uninstall 명령을 사용하여 Trident를 제거할 때 Trident Pod는 삭제되지만 생성된 CRD는 정리되지 않습니다. 을 참조하십시오 link:../trident-managing-k8s/uninstall-trident.html["Trident를 제거합니다"^] Trident를 완전히 제거하고 처음부터 다시 구성할 수 있는 방법을 이해합니다.
+* tridentctl uninstall 명령을 사용하여 Trident를 제거할 때 Trident Pod는 삭제되지만 생성된 CRD는 정리되지 않습니다. 을 참조하십시오 link:../trident-managing-k8s/uninstall-trident.html["Trident를 제거합니다"] Trident를 완전히 제거하고 처음부터 다시 구성할 수 있는 방법을 이해합니다.
 
 
 
@@ -323,7 +323,7 @@ REST API를 사용하여 스토리지 클래스를 직접 정의하는 스토리
 
 NOTE: 이것은 직접 만들고 관리하는 두 가지 개체 유형 중 하나입니다. 다른 하나는 Kubernetes의 torageClass 오브젝트입니다.
 
-이러한 객체를 구성하는 방법에 대한 자세한 내용은 백엔드 구성 을 참조하십시오.
+이러한 개체를 구성하는 방법에 대한 자세한 내용은 을 참조하십시오 link:../trident-use/backends.html["백엔드 구성 중"].
 
 
 
@@ -441,3 +441,51 @@ Trident는 볼륨을 생성할 때 'internalName'을 생성합니다. 이 단계
 NOTE: Kubernetes에서 이러한 오브젝트는 자동으로 관리됩니다. 프로비저닝 Trident를 보려면 해당 Trident를 확인하십시오.
 
 Kubernetes 'VolumeSnapshot' 객체 요청이 생성되면 Trident는 백업 스토리지 시스템에 스냅샷 객체를 생성하여 작동합니다. 이 스냅샷 개체의 인터날Name은 볼륨 스냅샷 개체의 UID(예: 스냅샷-e8d8a0ca-9826-11e9-9807-525400f3f660)와 접두사 스냅샷-UID를 결합하여 생성됩니다. 볼륨 이름 과 볼륨 InternalName 은 백업 볼륨의 세부 정보를 가져오는 방식으로 채워집니다.
+
+
+
+== Astra Trident 리소스 할당량 개체입니다
+
+Trident에서 Deamonset을 사용하면 Kubernetes에서 가장 높은 우선 순위 클래스인 '시스템 노드 크리티컬' 우선 순위 클래스를 사용하여 Astra Trident가 정상 노드 종료 중에 볼륨을 식별 및 정리하고, Trident에서 POD를 통해 리소스 압력이 높은 클러스터에서 낮은 우선 순위로 워크로드를 사전 예방할 수 있습니다.
+
+이를 위해 Astra Trident는 'ResourceQuota' 객체를 사용하여 Trident의 "system-node-critical" 우선 순위 클래스가 충족되도록 합니다. Astra Trident는 배포 및 디멘트되기 전에 'ResourceQuota' 객체를 찾고 발견되지 않으면 적용합니다.
+
+기본 리소스 할당량 및 우선순위 클래스에 대한 더 많은 제어가 필요한 경우 'CUSTOM.YAML'을 생성하거나 제어 차트를 사용하여 'ResourceQuota' 객체를 구성할 수 있습니다.
+
+다음은 Trident 데모의 우선 순위를 지정하는 'ResourceQuota' 개체의 예입니다.
+
+[source, yaml]
+----
+apiVersion: <version>
+kind: ResourceQuota
+metadata:
+  name: trident-csi
+  labels:
+    app: node.csi.trident.netapp.io
+spec:
+  scopeSelector:
+     matchExpressions:
+       - operator : In
+         scopeName: PriorityClass
+         values: ["system-node-critical"]
+----
+리소스 할당량에 대한 자세한 내용은 을 참조하십시오 link:https://kubernetes.io/docs/concepts/policy/resource-quotas/["Kubernetes: 리소스 할당량"^].
+
+
+
+=== 설치에 실패한 경우 리소스 할당량을 정리합니다
+
+드문 경우지만 ResourceQuota 객체를 만든 후 설치가 실패하는 경우 먼저 시도해 보십시오 link:../trident-managing-k8s/uninstall-trident.html["제거 중"] 그런 다음 다시 설치합니다.
+
+이 기능이 작동하지 않으면 수동으로 ResourceQuota 객체를 제거합니다.
+
+
+
+=== 리소스 할당량을 제거합니다
+
+사용자 고유의 리소스 할당을 제어하려면 다음 명령을 사용하여 Astra Trident의 ResourceQuota 객체를 제거할 수 있습니다.
+
+[source, cli]
+----
+kubectl delete quota trident-csi -n trident
+----

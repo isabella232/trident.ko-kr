@@ -86,6 +86,9 @@ NOTE: 참고: Astra Trident는 수동 QoS 용량 풀을 지원하지 않습니�
 | '우방' | Microsoft.Netapp/volumes` 에 위임된 서브넷의 이름입니다 | "" 
 
 
+| '네트워크 기능' | 볼륨에 대한 VNET 기능 집합은 기본 또는 표준(standard)일 수 있습니다 | "" 
+
+
 | nfsMountOptions를 선택합니다 | NFS 마운트 옵션에 대한 세밀한 제어 | "nfsvers=3" 
 
 
@@ -99,6 +102,9 @@ WARNING: PVC를 생성하려고 할 때 "용량 풀을 찾을 수 없음" 오류
 
 
 NOTE: NFS 버전 4.1을 사용하여 볼륨을 마운트하려는 경우 쉼표로 구분된 마운트 옵션 목록에 ''nfsvers=4'를 포함하여 NFS v4.1을 선택할 수 있습니다. 스토리지 클래스에 설정된 마운트 옵션은 백엔드 구성 파일에 설정된 마운트 옵션을 재정의합니다.
+
+
+NOTE: 를 클릭합니다 https://docs.microsoft.com/en-us/azure/azure-netapp-files/configure-network-features["네트워크 기능"^] 기능은 일반적으로 일부 지역에서 사용할 수 없으며 구독에서 활성화해야 할 수도 있습니다. 기능이 활성화되지 않은 경우 'networkFeatures' config 옵션을 지정하면 Trident에서 볼륨 프로비저닝이 실패합니다.
 
 "소스 그룹", "넷계정", "용량 풀", "virtualNetwork" 및 "ubnet"의 값은 짧은 이름 또는 정규화된 이름을 사용하여 지정할 수 있습니다. 짧은 이름은 이름이 같은 여러 리소스와 일치할 수 있으므로 대부분의 경우 정규화된 이름을 사용하는 것이 좋습니다. "소스 그룹", "netap계정" 및 "용량 풀" 값은 검색된 리소스 세트를 이 스토리지 백엔드에서 사용할 수 있는 리소스로 제한하며 어떤 조합으로도 지정할 수 있는 필터입니다. 정규화된 이름은 다음 형식입니다.
 
@@ -210,6 +216,7 @@ NOTE: ANF 백엔드에서 생성된 모든 볼륨의 경우, Astra Trident는 �
 ],
         "virtualNetwork": "my-virtual-network",
         "subnet": "my-subnet",
+        "networkFeatures": "Standard",
         "nfsMountOptions": "vers=3,proto=tcp,timeo=600",
         "limitVolumeSize": "500Gi",
         "defaults": {
@@ -217,7 +224,6 @@ NOTE: ANF 백엔드에서 생성된 모든 볼륨의 경우, Astra Trident는 �
             "snapshotDir": "true",
             "size": "200Gi",
             "unixPermissions": "0777"
-=======
         }
     }
 ----
@@ -238,6 +244,7 @@ NOTE: ANF 백엔드에서 생성된 모든 볼륨의 경우, Astra Trident는 �
         "clientSecret": "SECRET",
         "location": "eastus",
         "resourceGroups": ["application-group-1"],
+        "networkFeatures": "Basic",
         "nfsMountOptions": "vers=3,proto=tcp,timeo=600",
         "labels": {
             "cloud": "azure"
@@ -250,7 +257,8 @@ NOTE: ANF 백엔드에서 생성된 모든 볼륨의 경우, Astra Trident는 �
                     "performance": "gold"
                 },
                 "serviceLevel": "Ultra",
-                "capacityPools": ["ultra-1", "ultra-2"]
+                "capacityPools": ["ultra-1", "ultra-2"],
+                "networkFeatures": "Standard"
             },
             {
                 "labels": {

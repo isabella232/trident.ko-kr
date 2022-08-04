@@ -52,7 +52,5 @@ entries:
     url: "/trident-use/vol-import.html"
 - title: 작업자 노드를 준비합니다
   url: "/trident-use/worker-node-prep.html"
-- title: 작업자 노드 자동 준비
-  url: "/trident-use/automatic-workernode.html"
 - title: Astra Trident를 모니터링합니다
   url: "/trident-use/monitor-trident.html"

@@ -27,7 +27,7 @@ NOTE: WaitForFirstConsumer의 바인딩 모드에는 토폴로지 레이블이 �
 
 CSI 토폴로지를 사용하려면 다음이 필요합니다.
 
-* 1.17 이상을 실행하는 Kubernetes 클러스터
+* 1.19-1.24를 실행하는 Kubernetes 클러스터
 +
 [listing]
 ----

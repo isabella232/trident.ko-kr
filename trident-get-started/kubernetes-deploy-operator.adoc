@@ -22,7 +22,7 @@ TIP: 에 아직 익숙하지 않은 경우 link:../trident-concepts/intro.html["
 
 Astra Trident를 구축하려면 다음과 같은 사전 요구 사항을 충족해야 합니다.
 
-* Kubernetes 1.17 이상을 실행하는 지원되는 Kubernetes 클러스터에 대한 모든 권한이 있습니다.
+* Kubernetes 1.19-1.24를 실행하는 지원되는 Kubernetes 클러스터에 대한 모든 권한이 있습니다.
 * 지원되는 NetApp 스토리지 시스템에 액세스할 수 있습니다.
 * 모든 Kubernetes 작업자 노드에서 볼륨을 마운트할 수 있습니다.
 * 사용할 Kubernetes 클러스터를 관리하도록 "kubbtl"(또는 OpenShift를 사용하는 경우 OC)가 설치 및 구성된 Linux 호스트를 보유하고 있습니다.
@@ -41,7 +41,7 @@ Astra Trident를 구축하려면 다음과 같은 사전 요구 사항을 충족
 
 위에 나열된 필수 구성 요소 외에도 Hrom을 사용하여 Trident 연산자를 구축하려면 다음이 필요합니다.
 
-* Kubernetes 1.17 이상
+* Kubernetes 1.19-1.24
 * Helm 버전 3
 
 
@@ -56,7 +56,7 @@ helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
 +
 [listing]
 ----
-helm install <release-name> netapp-trident/trident-operator --version 22.1.0 --namespace <trident-namespace>
+helm install <release-name> netapp-trident/trident-operator --version 22.7.0 --namespace <trident-namespace>
 ----
 +
 
@@ -74,7 +74,7 @@ NOTE: Trident의 네임스페이스를 아직 만들지 않은 경우 '--create-
 
 [listing]
 ----
-$ helm install <name> netapp-trident/trident-operator --version 22.1.0 --set tridentDebug=true
+$ helm install <name> netapp-trident/trident-operator --version 22.7.0 --set tridentDebug=true
 ----
 제어 차트의 일부인 Values.YAML 파일은 키 목록과 기본값을 제공합니다.
 
@@ -95,7 +95,7 @@ $ helm install <name> netapp-trident/trident-operator --version 22.1.0 --set tri
 
 NOTE: OpenShift에서는 뒤에 나오는 모든 예시에서 kubtl 대신 OC를 사용하고, OC login-u system:admin 또는 OC login-u kubbe-admin을 실행하여 먼저 * system:admin * 으로 로그인합니다.
 
-Kubernetes 버전이 1.17 이후인지 확인하려면 다음 명령을 실행합니다.
+Kubernetes 버전을 확인하려면 다음 명령을 실행합니다.
 
 [listing]
 ----
@@ -220,7 +220,6 @@ Status:
     Autosupport Proxy:
     Autosupport Serial Number:
     Debug:                     true
-    Enable Node Prep:          false
     Image Pull Secrets:
     Image Registry:
     k8sTimeout:           30
