@@ -889,7 +889,6 @@
   <block id="0582c93c9857a8b6d0380be79128eefc" category="admonition">Astra Trident가 사용하는 포트에 대한 자세한 내용은 를 참조하십시오 <block ref="c6b87a878d50568ac1e654ad3964af7b" category="inline-link-macro-rx"></block>.</block>
   <block id="c777be7f669397b0a376fe32ca5cd9c3" category="section-title">지원되는 프런트엔드(오케스트레이터)</block>
   <block id="74aefc05d193afd5c50a0df882997656" category="paragraph">Astra Trident는 다음을 비롯한 여러 컨테이너 엔진과 오케스트레이터가 지원됩니다.</block>
-  <block id="37696641960d6c73a7dadab603c1877e" category="list-text">Mirantis Kubernetes 엔진 3.4</block>
   <block id="201eb37826a33e35adff9119f25946bd" category="paragraph">Trident 연산자는 다음 릴리즈에서 지원됩니다.</block>
   <block id="f787cd4b6963b13f12fa53131f58ef6c" category="section-title">지원되는 백엔드(스토리지)</block>
   <block id="843e2f0c722d25903a6010b62ac4f13b" category="paragraph">Astra Trident를 사용하려면 다음 중 하나 이상의 지원되는 백엔드가 필요합니다.</block>
@@ -3313,4 +3312,5 @@
   <block id="c0f60be70f5b8a5bc6c7c8071f4481fb" category="list-text">* Kubernetes *: Trident가 이제 시스템 노드 크리티컬 우선 순위 클래스에서 실행됩니다. (<block ref="b04869f92878b510e393bc41361c825d" category="inline-link-macro-rx"></block>)</block>
   <block id="269e4d9baae2c39648f68ccfde3d8135" category="doc">Astra Trident 22.07 문서</block>
   <block id="8f5cc6430613f1c12f36965050bb7197" category="sidebar">불화</block>
+  <block id="094a6e8342b02106129112ad2ff3d374" category="list-text">Mirantis Kubernetes 엔진 3.5</block>
 </blocks>

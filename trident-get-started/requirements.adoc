@@ -24,7 +24,7 @@ Astra Trident는 다음을 비롯한 여러 컨테이너 엔진과 오케스트�
 
 * Anthos On-Premise(VMware) 및 Anthos의 Bare Metal 1.9, 1.10, 1.11
 * Kubernetes 1.19-1.24
-* Mirantis Kubernetes 엔진 3.4
+* Mirantis Kubernetes 엔진 3.5
 * OpenShift 4.7(지원 종료: 2022년 8월 24일), 4.8, 4.9, 4.10
 
 
