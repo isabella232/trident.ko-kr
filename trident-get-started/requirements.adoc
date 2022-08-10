@@ -242,4 +242,4 @@ Astra Trident는 백엔드 구성에서 사용하기 전에 스토리지 시스�
 
 |===
 
-NOTE: Kubernetes 버전 1.20 이상에서는 검증된 "regestfests.k8s.io/sig-storage/scsi-snapshotter:v4.x" 이미지를 사용하십시오. v1 버전이 "volumesnapshots.snapshot.storage.k8s.io" CRD를 지원하는 경우에만 해당됩니다. v1beta1 버전이 v1 버전 포함/없는 CRD를 지원하는 경우 검증된 regetast.k8s.io/SIG-storage/CSI-snapshotter:v3.x 이미지를 사용하십시오.
+NOTE: Kubernetes 버전 1.20 이상에서는 검증된 "regestfesting.k8s.io/sig-storage/scsi-snapshotter:v6.x" 이미지를 사용하십시오. v1 버전이 "volumesnapshots.snapshot.storage.k8s.io" CRD를 지원하는 경우에만 해당됩니다. v1beta1 버전이 v1 버전 포함/없는 CRD를 지원하는 경우 검증된 regetast.k8s.io/SIG-storage/CSI-snapshotter:v3.x 이미지를 사용하십시오.
