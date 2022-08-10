@@ -3054,7 +3054,6 @@
   <block id="ba600e29b197aa569df1df520cc4e4c9" category="paragraph">예, Astra Trident는 Azure의 Azure NetApp Files 서비스와 GCP의 Cloud Volumes Service를 지원합니다.</block>
   <block id="804a6c22698fe4782c44f1e8d446964e" category="paragraph">현재 ONTAP-NAS, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, 졸idfire-SAN의 온디맨드 스냅샷 지원을 이용할 수 있습니다. GCP-CV와 Azure-NetApp-files 백엔드 드라이버.</block>
   <block id="deef9d6bf4083f81d7bd15ae0c9121b6" category="admonition">22.04 릴리즈부터는 Astra Trident가 설치될 때마다 AES 키가 더 이상 다시 생성되지 않습니다. 이 릴리즈를 통해 Astra Trident는 설치 전반에 걸쳐 유지되는 새로운 비밀 객체를 설치합니다. 즉, 22.04의 tridentctl은 Trident의 이전 버전을 제거할 수 있지만 이전 버전에서는 22.04 설치를 제거할 수 없습니다.</block>
-  <block id="485e8e209b502a7975830960817b875e" category="paragraph">Astra Trident 22.04를 실행하지 않는 경우 이전 릴리스에 대한 문서를 사용할 수 있습니다.</block>
   <block id="4af8991c21dff2f779496b8350d1124b" category="inline-link">Astra Trident 22.01</block>
   <block id="7669b0b69333e81c7c208aea3d1a3c6f" category="list-text"><block ref="7669b0b69333e81c7c208aea3d1a3c6f" category="inline-link-rx"></block></block>
   <block id="682c6ce09c9faae3a3e22c55c8db592e" category="list-text">ANF 드라이버가 여러 내보내기 규칙을 사용하여 볼륨을 클론하지 못한 문제 해결</block>
@@ -3313,4 +3312,7 @@
   <block id="269e4d9baae2c39648f68ccfde3d8135" category="doc">Astra Trident 22.07 문서</block>
   <block id="8f5cc6430613f1c12f36965050bb7197" category="sidebar">불화</block>
   <block id="094a6e8342b02106129112ad2ff3d374" category="list-text">Mirantis Kubernetes 엔진 3.5</block>
+  <block id="adcc762b8bd0076278dedcc49cc85154" category="paragraph">Astra Trident 22.07을 실행하지 않는 경우 이전 릴리스에 대한 문서를 사용할 수 있습니다.</block>
+  <block id="c53358822905bb04d312060d1cb568af" category="inline-link">Astra Trident 22.04</block>
+  <block id="fdd380631ba8063e7b8f842282a01e40" category="list-text"><block ref="fdd380631ba8063e7b8f842282a01e40" category="inline-link-rx"></block></block>
 </blocks>
