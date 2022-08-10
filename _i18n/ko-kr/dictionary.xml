@@ -772,7 +772,6 @@
   <block id="57786106edaa9a7d85847431f0aa5559" category="section-title">2단계: 설치 프로그램을 다운로드하고 압축을 풉니다</block>
   <block id="f838f032d9e83a6229936c3a7784f752" category="admonition">Trident 설치 관리자는 Trident Pod를 생성하고 상태를 유지하는 데 사용되는 CRD 객체를 구성하며, 클러스터 호스트에 볼륨 프로비저닝 및 연결과 같은 작업을 수행하는 CSI 사이드카를 초기화합니다.</block>
   <block id="7358b1fd077fa65f88fff87888fd2547" category="inline-link">Trident 설치 프로그램 번들</block>
-  <block id="92c4cf66727cb67866ebf0c3ec416382" category="paragraph">의 최신 버전을 다운로드할 수 있습니다<block ref="e796e94083ba305bee55a53ec1dc755d" category="inline-link-rx"></block> 다운로드 섹션에서 압축을 풉니다.</block>
   <block id="31dfa917b0ab09bc8fa9aa62c5b68b9b" category="paragraph">예를 들어, 최신 버전이 21.07.1인 경우:</block>
   <block id="9b7632bed019c72ffa74193e1808fd78" category="section-title">3단계: Astra Trident 설치</block>
   <block id="326f6498f188018e71d4ea9c3a240042" category="paragraph">tridentctl install 명령을 실행하여 원하는 네임스페이스에 Astra Trident를 설치합니다.</block>
@@ -845,7 +844,6 @@
   <block id="e420b75ec3bc014e3f69c43b2383768b" category="admonition">OpenShift에서는 뒤에 나오는 모든 예시에서 kubtl 대신 OC를 사용하고, OC login-u system:admin 또는 OC login-u kubbe-admin을 실행하여 먼저 * system:admin * 으로 로그인합니다.</block>
   <block id="b51ca564a2763a36e8eff661a1e45814" category="section-title">2단계: 운영자를 다운로드하고 설정합니다</block>
   <block id="2078c81a90072659fba28be2f6863a52" category="admonition">21.01부터 Trident 연산자는 클러스터 범위입니다. Trident 연산자를 사용하여 Trident를 설치하려면 "트리엔오케스트레이터" CRD(사용자 정의 리소스 정의)를 생성하고 다른 리소스를 정의해야 합니다. Astra Trident를 설치하기 전에 다음 단계를 수행하여 운영자를 설정해야 합니다.</block>
-  <block id="76e266ddd09c36b072fda03f840a24df" category="list-text">의 최신 버전을 다운로드합니다<block ref="d4cf8040e05d7d00be7e40a7abf8ee09" category="inline-link-rx"></block> 다운로드 섹션에서 압축을 풉니다.</block>
   <block id="f3d3e6090d613a233f190256fd5f4fa3" category="list-text">적절한 CRD 매니페스트를 사용하여 '트리엔오케스트레이터' CRD를 생성합니다. 그런 다음 나중에 운영자가 설치를 인스턴스화하기 위해 '트리엔오케스트레이터' 사용자 정의 리소스를 만듭니다.</block>
   <block id="337d79852891a37d41285c9101c3fff4" category="paragraph">다음 명령을 실행합니다.</block>
   <block id="2fd9409a1ac929d355820ffd5accc531" category="list-text">'트리엔오케스트레이터' CRD가 생성된 후 운용자 배치에 필요한 다음과 같은 자원을 생성한다.</block>
@@ -1856,19 +1854,11 @@
   <block id="ff27e75635c1ff1e88fbc656b16e56ce" category="section-title">Astra Trident에 대해 자세히 알아보십시오</block>
   <block id="ac7bd35f3efc1fd44a6368cea5fa9c21" category="paragraph">Astra Trident를 처음 사용하는 경우 아래에 제공된 링크를 사용하여 숙지하십시오.</block>
   <block id="483a5da192f46e3cfe8391d3ef234fc4" category="inline-link-macro">FAQ 를 참조하십시오</block>
-  <block id="291df90d8802914b42223577bb41f627" category="list-text"><block ref="291df90d8802914b42223577bb41f627" category="inline-link-macro-rx"></block></block>
   <block id="d977410bdd2db39b51f9b9fbdbcc8061" category="inline-link-macro">Astra Trident를 사용하기 위한 요구사항</block>
-  <block id="4d644a71fe6f2b6c8e2bcc86d5aaed77" category="list-text"><block ref="4d644a71fe6f2b6c8e2bcc86d5aaed77" category="inline-link-macro-rx"></block></block>
   <block id="486632f7d2196e772b742db4a4a0ad7c" category="inline-link-macro">Astra Trident 구축</block>
-  <block id="70638242b92c90c812dfa8f50f272806" category="list-text"><block ref="70638242b92c90c812dfa8f50f272806" category="inline-link-macro-rx"></block></block>
   <block id="bec2d42d896d0905cf546e4b5ca33b97" category="inline-link-macro">NetApp ONTAP용 ONTAP, Cloud Volumes ONTAP 및 Amazon FSx를 구성하는 모범 사례</block>
-  <block id="80a1961bd7058b357bb20148eaf24ec2" category="list-text"><block ref="80a1961bd7058b357bb20148eaf24ec2" category="inline-link-macro-rx"></block></block>
-  <block id="80e431e9c3f38eb259dc9d255c8f4cf2" category="list-text"><block ref="80e431e9c3f38eb259dc9d255c8f4cf2" category="inline-link-macro-rx"></block></block>
   <block id="a479f33489c8d81410024a41c9544214" category="inline-link-macro">ONTAP SAN 백엔드 구성</block>
-  <block id="9b405a9aada0c758f606770edf5e729c" category="list-text"><block ref="9b405a9aada0c758f606770edf5e729c" category="inline-link-macro-rx"></block></block>
   <block id="3db2a44c712d8cff702c0fe05daddb2c" category="inline-link-macro">ONTAP NAS 백엔드 구성</block>
-  <block id="88cc0a1e56925a83682b7c1f999e281b" category="list-text"><block ref="88cc0a1e56925a83682b7c1f999e281b" category="inline-link-macro-rx"></block></block>
-  <block id="0606b09e12901baae5719fde5a162beb" category="paragraph">드라이버 기능에 대해 자세히 알아보십시오 <block ref="36417a02a2b8551d9a22837b23ac7abd" category="inline-link-macro-rx"></block>.</block>
   <block id="55449fd175613962d882ab450cfc5f3c" category="inline-link">FabricPool</block>
   <block id="d07e2d99267e4fc3c508f6701be977b4" category="paragraph">NetApp ONTAP용 Amazon FSx에서 사용됩니다<block ref="d1584952da6bdedb0a24d5dbd43ce0bf" category="inline-link-rx"></block> 스토리지 계층을 관리합니다. 이 기능을 사용하면 데이터의 액세스 빈도 여부에 따라 데이터를 계층에 저장할 수 있습니다.</block>
   <block id="8e64a609e66214066595e6300aaab281" category="section-title">드라이버</block>
@@ -1882,30 +1872,21 @@
   <block id="ed2536bee60113131cf25b2de3ec8734" category="list-text">인증서 기반: Astra Trident는 SVM에 설치된 인증서를 사용하여 FSx 파일 시스템의 SVM과 통신합니다.</block>
   <block id="28e8b87c947c614dcb6e6f51703815e1" category="paragraph">인증에 대한 자세한 내용은 다음 링크를 참조하십시오.</block>
   <block id="619b69dca5d7c9f1f67ec55897733162" category="inline-link-macro">ONTAP NAS를 지원합니다</block>
-  <block id="b773e97e2ae2aebea91c33b771a98316" category="list-text"><block ref="b773e97e2ae2aebea91c33b771a98316" category="inline-link-macro-rx"></block></block>
   <block id="548fedaf4074fe2826e3c53dfd92a19e" category="inline-link-macro">ONTAP SAN</block>
-  <block id="58ec862225833e810e6a7f94667d42db" category="list-text"><block ref="58ec862225833e810e6a7f94667d42db" category="inline-link-macro-rx"></block></block>
   <block id="9f6c198d85b31b573b56186f8ecc4394" category="section-title">NetApp ONTAP용 Amazon FSx를 사용하여 EKS에서 Astra Trident를 구축하고 구성합니다</block>
   <block id="80d13d3dbe137e8fb646193f275eceeb" category="list-text">kubbtl이 설치된 기존 Amazon EKS 클러스터 또는 자체 관리 Kubernetes 클러스터</block>
   <block id="52d48fdd62aa109d7f163f0ef8a31b83" category="list-text">클러스터의 작업자 노드에서 연결할 수 있는 NetApp ONTAP 파일 시스템용 기존 Amazon FSx 및 SVM(스토리지 가상 시스템)입니다.</block>
   <block id="ae9a35d29039db87d65a796241a9043d" category="inline-link-macro">NFS 및/또는 iSCSI</block>
-  <block id="26717a7ec67b264dcb09707406b962ef" category="list-text">에 대해 준비된 작업자 노드입니다 <block ref="b4b6a021fd40b8007c50db2baa5f32f0" category="inline-link-macro-rx"></block>.</block>
   <block id="fe914214000491758957f04647f8da36" category="inline-link">Amazon Machine Images(아마존 머신 이미지)</block>
   <block id="b048d74c93505355f9535fd30cba1a60" category="admonition">Amazon Linux 및 Ubuntu에 필요한 노드 준비 단계를 따라야 합니다<block ref="70013ee128d5437b3d9579d66ece4066" category="inline-link-rx"></block> (AMI) EKS AMI 유형에 따라 다릅니다.</block>
-  <block id="7b94315b87c307aaeb6180ba3d298112" category="paragraph">다른 Astra Trident 요구 사항은 를 참조하십시오 <block ref="9754671a728b750cb0063ea36c5205bc" category="inline-link-macro-rx"></block>.</block>
-  <block id="a63af3333b229a7d3d80f554369071d3" category="list-text">../triment-get-started/Kubernetes-deploy.html[배포 방법^] 중 하나를 사용하여 Astra Trident를 구축하십시오.</block>
   <block id="064bdeb131b9f896a140c3620503f952" category="list-text">다음과 같이 Astra Trident를 구성합니다.</block>
   <block id="0416f36f8f02433e530639fd76b0721d" category="list-text">SVM의 관리 LIF DNS 이름을 수집합니다. 예를 들어, AWS CLI를 사용하여 다음 명령을 실행한 후 "Endpoints" -&gt; "anagement"에서 DNSName 항목을 찾습니다.</block>
-  <block id="d4eca488acc4ec18f87e7f00d23309cd" category="list-text">인증을 위한 인증서를 만들고 설치합니다. 'ONTAP-SAN' 백엔드를 사용하는 경우 을 참조하십시오 <block ref="db35e24c08f3bb29e6d31cbaa530e9d6" category="inline-link-macro-rx"></block>. 'ONTAP-NAS' 백엔드를 사용하는 경우 를 참조하십시오 <block ref="118a5731ca660935428e52a749b9e8a6" category="inline-link-macro-rx"></block>.</block>
   <block id="3e25473814d436a2ebac91120e147b0b" category="admonition">파일 시스템에 연결할 수 있는 모든 위치에서 SSH를 사용하여 파일 시스템(예: 인증서 설치)에 로그인할 수 있습니다. 파일 시스템 생성 시 구성한 fsxadmin 사용자, AWS FSX 기술파일 시스템"의 관리 DNS 이름을 사용합니다.</block>
   <block id="860958fe641e0edbd80fe522c36d0560" category="list-text">아래 예에 표시된 대로 인증서와 관리 LIF의 DNS 이름을 사용하여 백엔드 파일을 생성합니다.</block>
   <block id="1584837635038d443115ce4eeb3b33e4" category="paragraph">백엔드 만들기에 대한 자세한 내용은 다음 링크를 참조하십시오.</block>
-  <block id="82744a46443ebff9011b85aa2468fdc2" category="list-text"><block ref="82744a46443ebff9011b85aa2468fdc2" category="inline-link-macro-rx"></block></block>
   <block id="31e8c05beab321d1465fc4c3f77e991a" category="inline-link-macro">ONTAP SAN 드라이버를 사용하여 백엔드를 구성합니다</block>
-  <block id="d1e8ff43d93982813a74a45f9b721655" category="list-text"><block ref="d1e8ff43d93982813a74a45f9b721655" category="inline-link-macro-rx"></block></block>
   <block id="408cf26cdce3db57f4b0cfb372f60739" category="admonition">Astra Trident에서 다중 경로를 사용할 수 있도록 ONTAP-SAN 및 ONTAP-SAN-이코노미 드라이버에 대해 "LIF"를 지정하지 마십시오.</block>
   <block id="d11f02b39cdb338286053b2f1315c6b4" category="inline-link-macro">스토리지 클래스, 볼륨 프로비저닝 및 POD에 볼륨 마운트</block>
-  <block id="95a5f873da165cd068ef3ec7e17364f3" category="paragraph">배포 후 단계를 수행하여 을 생성합니다 <block ref="15bf5a6bf382a8a35f58cdae8ebe845c" category="inline-link-macro-rx"></block>.</block>
   <block id="cc788b7e72b2a734dd0985bd1e0e9fe3" category="inline-link">NetApp ONTAP용 Amazon FSx 문서</block>
   <block id="fd570b75466e2daca21a032e6fd5981c" category="list-text"><block ref="fd570b75466e2daca21a032e6fd5981c" category="inline-link-rx"></block></block>
   <block id="0ef79cb4bb284d3ca9c3e95489919301" category="inline-link">NetApp ONTAP용 Amazon FSx 블로그 게시물</block>
@@ -3315,4 +3296,25 @@
   <block id="adcc762b8bd0076278dedcc49cc85154" category="paragraph">Astra Trident 22.07을 실행하지 않는 경우 이전 릴리스에 대한 문서를 사용할 수 있습니다.</block>
   <block id="c53358822905bb04d312060d1cb568af" category="inline-link">Astra Trident 22.04</block>
   <block id="fdd380631ba8063e7b8f842282a01e40" category="list-text"><block ref="fdd380631ba8063e7b8f842282a01e40" category="inline-link-rx"></block></block>
+  <block id="53f614673eb31d64cdc3c16cb7ef696f" category="list-text"><block ref="53f614673eb31d64cdc3c16cb7ef696f" category="inline-link-macro-rx"></block></block>
+  <block id="b5f63f8036cd45ad0dc5a15e89d892bf" category="list-text"><block ref="b5f63f8036cd45ad0dc5a15e89d892bf" category="inline-link-macro-rx"></block></block>
+  <block id="8143e4f4516fa5201a1d83b531123ee5" category="list-text"><block ref="8143e4f4516fa5201a1d83b531123ee5" category="inline-link-macro-rx"></block></block>
+  <block id="1f5ad17ec2adfcbcca138359dcca4309" category="list-text"><block ref="1f5ad17ec2adfcbcca138359dcca4309" category="inline-link-macro-rx"></block></block>
+  <block id="0d44cca315d52e83c252d5eed702283b" category="list-text"><block ref="0d44cca315d52e83c252d5eed702283b" category="inline-link-macro-rx"></block></block>
+  <block id="ac46d22bcca3547de74d6810bd9095bb" category="list-text"><block ref="ac46d22bcca3547de74d6810bd9095bb" category="inline-link-macro-rx"></block></block>
+  <block id="eb94455af06a2b40161cf0d3b707fca3" category="list-text"><block ref="eb94455af06a2b40161cf0d3b707fca3" category="inline-link-macro-rx"></block></block>
+  <block id="512dd8d451859a17bafc26e226ad34d1" category="paragraph">드라이버 기능에 대해 자세히 알아보십시오 <block ref="c08a919e469d70485a0d1e4b10e88988" category="inline-link-macro-rx"></block>.</block>
+  <block id="d95ad4459662eb677c0657aef7db46fc" category="list-text"><block ref="d95ad4459662eb677c0657aef7db46fc" category="inline-link-macro-rx"></block></block>
+  <block id="9d7c78d461d656f21ecd151d34bd9568" category="list-text"><block ref="9d7c78d461d656f21ecd151d34bd9568" category="inline-link-macro-rx"></block></block>
+  <block id="2a5101c9e38785c60e11907de68b4d1f" category="list-text">에 대해 준비된 작업자 노드입니다 <block ref="ee6f44b53daa58b65b5a080b473f1d0b" category="inline-link-macro-rx"></block>.</block>
+  <block id="8cbd88bfa5b70d4cd8cb86c593d7749d" category="paragraph">다른 Astra Trident 요구 사항은 를 참조하십시오 <block ref="bc9b0af11ea271e4b171d84a070646c9" category="inline-link-macro-rx"></block>.</block>
+  <block id="ccb5eb98656346cbfa0b207e7d363bef" category="inline-link-macro">배포 방법</block>
+  <block id="e2bcf5dc117f31569d413bd9b7698bf2" category="list-text">중 하나를 사용하여 Astra Trident를 배포합니다 <block ref="71cad0f2a077aa26894105299bf47b53" category="inline-link-macro-rx"></block>.</block>
+  <block id="41a3c58da2506ba6d3de6fb07fdfd7f5" category="list-text">인증을 위한 인증서를 만들고 설치합니다. 'ONTAP-SAN' 백엔드를 사용하는 경우 을 참조하십시오 <block ref="4945bdd45855343701d117c66ca7ca72" category="inline-link-macro-rx"></block>. 'ONTAP-NAS' 백엔드를 사용하는 경우 를 참조하십시오 <block ref="b79e58a81f7951e201e878065c9630a2" category="inline-link-macro-rx"></block>.</block>
+  <block id="26798b67dd2e5b4c8d4f03c4c16170c7" category="list-text"><block ref="26798b67dd2e5b4c8d4f03c4c16170c7" category="inline-link-macro-rx"></block></block>
+  <block id="85d7b73826973ab07bfe78af69bd85f4" category="list-text"><block ref="85d7b73826973ab07bfe78af69bd85f4" category="inline-link-macro-rx"></block></block>
+  <block id="781a249bcdf6c4a42778c442a1b98ff0" category="paragraph">배포 후 단계를 수행하여 을 생성합니다 <block ref="71dee6d7db1737892d8ac3c68402b3c3" category="inline-link-macro-rx"></block>.</block>
+  <block id="a1142049a82a11e90102d655bb7e234d" category="inline-link-macro">GitHub의 _Assets_섹션</block>
+  <block id="28b29acf4f44cae9d70c63d88b52ba30" category="list-text">에서 최신 버전의 Trident 설치 프로그램 번들을 다운로드하여 압축을 풉니다 <block ref="6a7c34d1e7545bd3ab5abc336e61eb7f" category="inline-link-macro-rx"></block>.</block>
+  <block id="da434b04f7985eff0b8eba0189b03041" category="paragraph">에서 최신 버전의 Trident 설치 프로그램 번들을 다운로드하여 압축을 풀 수 있습니다 <block ref="6a7c34d1e7545bd3ab5abc336e61eb7f" category="inline-link-macro-rx"></block>.</block>
 </blocks>

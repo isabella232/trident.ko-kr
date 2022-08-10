@@ -121,7 +121,7 @@ kubectl run -i --tty ping --image=busybox --restart=Never --rm -- \
 
 NOTE: 21.01부터 Trident 연산자는 클러스터 범위입니다. Trident 연산자를 사용하여 Trident를 설치하려면 "트리엔오케스트레이터" CRD(사용자 정의 리소스 정의)를 생성하고 다른 리소스를 정의해야 합니다. Astra Trident를 설치하기 전에 다음 단계를 수행하여 운영자를 설정해야 합니다.
 
-. 의 최신 버전을 다운로드합니다 https://github.com/NetApp/trident/releases/latest["Trident 설치 프로그램 번들"] 다운로드 섹션에서 압축을 풉니다.
+. 에서 최신 버전의 Trident 설치 프로그램 번들을 다운로드하여 압축을 풉니다 link:https://github.com/NetApp/trident/releases/latest["GitHub의 _Assets_섹션"^].
 +
 [listing]
 ----
