@@ -3056,7 +3056,6 @@
   <block id="5e393c0ca8392e0c84201770c8b544ca" category="open-title">v5.0 컨트롤러</block>
   <block id="ea567d0d1a58b120efa89893cae2966a" category="open-title">v3.0.3 컨트롤러</block>
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="sidebar">아스트라 트리덴트</block>
-  <block id="d24bae93d00d821b3a8e7ee57c3bd468" category="section-title">문제 해결을 위한 로그를 수집합니다</block>
   <block id="5a333b18a215ecfd4457ba0e1732654b" category="section-title">Trident가 로드 공유 미러가 구성된 SVM에서 볼륨을 프로비저닝할 수 있습니까?</block>
   <block id="0e7629426b9d7596800cd5d72f558a7f" category="paragraph">NFS를 통해 데이터를 제공하는 SVM의 루트 볼륨에 로드 공유 미러를 생성할 수 있습니다. ONTAP는 Trident에서 생성한 볼륨의 로드 공유 미러를 자동으로 업데이트합니다. 이로 인해 볼륨 마운팅이 지연될 수 있습니다. Trident를 사용하여 여러 볼륨을 생성할 경우 볼륨 프로비저닝은 ONTAP에서 로드 공유 미러 업데이트에 따라 달라집니다.</block>
   <block id="de781ae8dbfd68aeef56f40c5dc767da" category="paragraph">Astra Trident는 "vsadmin" SVM 사용자 또는 동일한 역할을 가진 다른 이름을 가진 사용자로 실행될 것으로 예상합니다. NetApp ONTAP용 Amazon FSx에는 ONTAP 'admin' 클러스터 사용자를 제한적으로 대체하는 'fsxadmin' 사용자가 있습니다. vsadmin SVM 사용자는 더 많은 Astra Trident 기능을 사용할 수 있으므로 Trident와 함께 fsxadmin 사용자를 사용하지 않는 것이 좋습니다.</block>
@@ -3317,4 +3316,5 @@
   <block id="28b29acf4f44cae9d70c63d88b52ba30" category="list-text">에서 최신 버전의 Trident 설치 프로그램 번들을 다운로드하여 압축을 풉니다 <block ref="6a7c34d1e7545bd3ab5abc336e61eb7f" category="inline-link-macro-rx"></block>.</block>
   <block id="da434b04f7985eff0b8eba0189b03041" category="paragraph">에서 최신 버전의 Trident 설치 프로그램 번들을 다운로드하여 압축을 풀 수 있습니다 <block ref="6a7c34d1e7545bd3ab5abc336e61eb7f" category="inline-link-macro-rx"></block>.</block>
   <block id="deb871bb56992a4738611a0463ca443d" category="admonition">Kubernetes 버전 1.20 이상에서는 검증된 "regestfesting.k8s.io/sig-storage/scsi-snapshotter:v6.x" 이미지를 사용하십시오. v1 버전이 "volumesnapshots.snapshot.storage.k8s.io" CRD를 지원하는 경우에만 해당됩니다. v1beta1 버전이 v1 버전 포함/없는 CRD를 지원하는 경우 검증된 regetast.k8s.io/SIG-storage/CSI-snapshotter:v3.x 이미지를 사용하십시오.</block>
+  <block id="756909f99bc1a720d318a5f5b94eb094" category="section-title">문제 해결을 위해 로그를 수집합니다</block>
 </blocks>
