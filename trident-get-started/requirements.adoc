@@ -135,7 +135,7 @@ Astra Trident를 사용하려면 다음 중 하나 이상의 지원되는 백엔
 Astra Trident는 공식적으로 특정 운영 체제를 "지원"하지 않지만 다음과 같은 Linux 배포판이 작동하는 것으로 알려져 있습니다.
 
 * OpenShift Container Platform에서 지원하는 RedHat CoreOS(RHCOS) 버전
-* RHEL 또는 CentOS 7.9 이상(최신 9.10)
+* RHEL 또는 CentOS 7
 * Ubuntu 18.04 이상(최신 22.04)
 
 

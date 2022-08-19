@@ -1535,13 +1535,11 @@
   <block id="c441ee50c88f6e5e3a7c69fc69dad8b8" category="cell">명령</block>
   <block id="3fb1c9901f28248a22f47bd3917b5dc9" category="paragraph">RHEL/CentOS</block>
   <block id="e0b19bed1baf46134f4079471e193b01" category="paragraph">'SUDO yum install -y nfs-utils'</block>
-  <block id="7eaf289636bc8d4f8b29b333a0f32dc2" category="paragraph">Ubuntu/Debian</block>
   <block id="1054b270f1635a3dd940e995cbc7ed78" category="paragraph">'UDO apt-get install-y nfs-common'을 선택합니다</block>
   <block id="31562df6c30f7b7efb939eaa0ee48415" category="admonition">부팅 중에 NFS 서비스가 시작되었는지 확인해야 합니다.</block>
   <block id="29ba980a9e9adedc9414ea868c74ebd5" category="section-title">iSCSI 볼륨</block>
   <block id="222194999a60d89dfcd0ff5867f49e88" category="paragraph">iSCSI 볼륨을 사용할 때는 다음 사항을 고려하십시오.</block>
   <block id="12fe03bf2457cc4e4e90af10a2f7092f" category="list-text">Kubernetes 클러스터의 각 노드에는 고유한 IQN이 있어야 합니다. * 이것은 필수 전제 조건입니다 *.</block>
-  <block id="aaa200e86b57cd2a527761ec2bf4b9b0" category="list-text">RHCOS 버전 4.5 이상을 사용하거나 RHEL 또는 CentOS 버전 8.2 이상을 'olidfire-SAN' 드라이버로 사용하는 경우, CHAP 인증 알고리즘이 '/etc/iscsi/iscsid.conf'에서 MD5로 설정되어 있는지 확인하십시오.</block>
   <block id="0bad70dcf33f40dcc0d528d58b9eac76" category="inline-link">RedHat 설명서</block>
   <block id="dbb4705e17a1f8ba49af109d4f366609" category="list-text">iSCSI PVS에서 RHEL/RedHat CoreOS를 실행하는 작업자 노드를 사용하는 경우 StorageClass에서 discard 마운트 옵션을 지정하여 인라인 공간 재확보를 수행하십시오. 을 참조하십시오<block ref="166e862efdc516354d90f75a38532ddd" category="inline-link-rx"></block>.</block>
   <block id="8cd5b262d8d9950185128d052d55f7c8" category="list-text">다음 시스템 패키지를 설치합니다.</block>
@@ -2530,7 +2528,6 @@
   <block id="5ff2e3e853922fdb84ef21b85ffdac2e" category="list-text">컨테이너를 시작할 때 Docker 볼륨 프로비저닝:</block>
   <block id="8f6a91f5f21d0478e3fd89095fc28ab9" category="list-text">Docker 볼륨 제거:</block>
   <block id="e63e2a2b9c9184e703ff8d93bb92508b" category="section-title">시스템 시작 시 Astra Trident를 시작합니다</block>
-  <block id="34f4e076aba0519cebd8bb63617b2f7e" category="paragraph">systemd 기반 시스템의 샘플 단위 파일은 git repo의 'eemb/trident.service.example` 에서 찾을 수 있습니다. CentOS/RHEL에서 파일을 사용하려면 다음을 수행하십시오.</block>
   <block id="5b51496da86e5a2073e0c618390c3d2a" category="list-text">파일을 올바른 위치에 복사합니다.</block>
   <block id="44103de0a164f687d305ad91e919d8ee" category="paragraph">실행 중인 인스턴스가 두 개 이상인 경우 단위 파일에 고유한 이름을 사용해야 합니다.</block>
   <block id="3223aadc84a3ccb4a3473ba01c895184" category="list-text">파일을 편집하고 설명(행 2)을 드라이버 이름과 구성 파일 경로(줄 9)에 맞게 변경하여 환경을 반영합니다.</block>
@@ -3234,7 +3231,6 @@
   <block id="ca3cbba69cf4bb9d3450c7c6c27983aa" category="list-text">OpenShift 4.7(지원 종료: 2022년 8월 24일), 4.8, 4.9, 4.10</block>
   <block id="d603df1e8927b05892b2c331ab76174c" category="list-text">Astra Data Store 22.05 이상</block>
   <block id="6b51834314ece904405eb0ce1a6e6bd8" category="list-text">NetApp HCI/Element 소프트웨어 11 이상</block>
-  <block id="948a0e05793c0c2484acb4582f13d9f0" category="list-text">RHEL 또는 CentOS 7.9 이상(최신 9.10)</block>
   <block id="6ebf7ae9dffc55cf86792ea266344b3a" category="list-text">Ubuntu 18.04 이상(최신 22.04)</block>
   <block id="ea3ab43acafe15e8b0f7e22cb2ad9cfd" category="list-text">NetApp/트리덴트: 22.07.0</block>
   <block id="3e04900915c3d18500b5db27afcc7f36" category="list-text">NetApp/트리덴트 - 자동 지원: 22.07</block>
@@ -3317,4 +3313,9 @@
   <block id="da434b04f7985eff0b8eba0189b03041" category="paragraph">에서 최신 버전의 Trident 설치 프로그램 번들을 다운로드하여 압축을 풀 수 있습니다 <block ref="6a7c34d1e7545bd3ab5abc336e61eb7f" category="inline-link-macro-rx"></block>.</block>
   <block id="deb871bb56992a4738611a0463ca443d" category="admonition">Kubernetes 버전 1.20 이상에서는 검증된 "regestfesting.k8s.io/sig-storage/scsi-snapshotter:v6.x" 이미지를 사용하십시오. v1 버전이 "volumesnapshots.snapshot.storage.k8s.io" CRD를 지원하는 경우에만 해당됩니다. v1beta1 버전이 v1 버전 포함/없는 CRD를 지원하는 경우 검증된 regetast.k8s.io/SIG-storage/CSI-snapshotter:v3.x 이미지를 사용하십시오.</block>
   <block id="756909f99bc1a720d318a5f5b94eb094" category="section-title">문제 해결을 위해 로그를 수집합니다</block>
+  <block id="98a2ec14e38e4acf26c70e52b70bf5f8" category="list-text">RHEL 또는 CentOS 7</block>
+  <block id="c5e9849ca6abd11c3d0615c338c6a231" category="paragraph">RHEL/CentOS 7</block>
+  <block id="3d945423f8e9496c429a5d8c65b4604f" category="paragraph">우분투</block>
+  <block id="269efd38c7d91afd7e1339da498a391f" category="list-text">RHCOS 버전 4.5 이상을 사용하거나 다른 RHEL 호환 Linux 배포를 'solidfire-san' 드라이버로 사용하는 경우, '/etc/iscsi/iscsid.conf'에서 CHAP 인증 알고리즘이 md5로 설정되어 있는지 확인하십시오.</block>
+  <block id="b437164523254b34902d49bbf5e996aa" category="paragraph">systemd 기반 시스템의 샘플 단위 파일은 git repo의 'eemb/trident.service.example` 에서 찾을 수 있습니다. CentOS 7/RHEL에서 파일을 사용하려면 다음을 수행하십시오.</block>
 </blocks>
