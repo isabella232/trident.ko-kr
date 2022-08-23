@@ -2834,7 +2834,6 @@
   <block id="9f687b4e8cbf2fbb623b26b30fd92717" category="admonition">21.07 이전 릴리스의 경우 레거시 문서 사이트로 리디렉션됩니다.</block>
   <block id="a93e9e44b7a375a4236260f5ff2b251e" category="inline-link">Astra Trident 21.07</block>
   <block id="3830d427e146a8a64454dc373d9b1502" category="list-text"><block ref="3830d427e146a8a64454dc373d9b1502" category="inline-link-rx"></block></block>
-  <block id="e088e1f9fcd6d6a9509bd529db24c8f3" category="admonition">Trident의 네임스페이스를 아직 만들지 않은 경우 '--create-namespace' 매개 변수를 'helm install' 명령에 추가할 수 있습니다. 그런 다음 Helm이 자동으로 네임스페이스를 만듭니다.</block>
   <block id="8035d5d39b2b48f6ec1a3133b688513c" category="list-text">Astra 데이터 저장소</block>
   <block id="af7c8216a3289efe1a298a19c00b8b8c" category="section-title">호스트 운영 체제를 테스트했습니다</block>
   <block id="57b3e1695eb7d16642702fbce3837b86" category="paragraph">기본적으로 Astra Trident는 컨테이너에서 실행되므로 모든 Linux 작업자에서 실행됩니다. 그러나 이러한 작업자들은 표준 NFS 클라이언트 또는 iSCSI 이니시에이터를 사용하여 Astra Trident가 제공하는 볼륨을 사용 중인 백엔드에 따라 마운트할 수 있어야 합니다.</block>
@@ -3318,4 +3317,5 @@
   <block id="3d945423f8e9496c429a5d8c65b4604f" category="paragraph">우분투</block>
   <block id="269efd38c7d91afd7e1339da498a391f" category="list-text">RHCOS 버전 4.5 이상을 사용하거나 다른 RHEL 호환 Linux 배포를 'solidfire-san' 드라이버로 사용하는 경우, '/etc/iscsi/iscsid.conf'에서 CHAP 인증 알고리즘이 md5로 설정되어 있는지 확인하십시오.</block>
   <block id="b437164523254b34902d49bbf5e996aa" category="paragraph">systemd 기반 시스템의 샘플 단위 파일은 git repo의 'eemb/trident.service.example` 에서 찾을 수 있습니다. CentOS 7/RHEL에서 파일을 사용하려면 다음을 수행하십시오.</block>
+  <block id="134bf17c90c90b5aeed99dde262bf14d" category="admonition">Trident에 대한 네임스페이스를 이미 만든 경우에는 '--create-namespace' 매개 변수가 추가 네임스페이스를 만들지 않습니다.</block>
 </blocks>

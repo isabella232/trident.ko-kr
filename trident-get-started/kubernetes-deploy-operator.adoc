@@ -48,19 +48,19 @@ Astra Trident를 구축하려면 다음과 같은 사전 요구 사항을 충족
 .단계
 . Trident의 제어 리포지토리 추가:
 +
-[listing]
+[source, cli]
 ----
 helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
 ----
 . 'helm install' 명령을 사용하여 배포 이름을 지정합니다. 다음 예를 참조하십시오.
 +
-[listing]
+[source, cli]
 ----
-helm install <release-name> netapp-trident/trident-operator --version 22.7.0 --namespace <trident-namespace>
+helm install <release-name> netapp-trident/trident-operator --version 22.4.0 --create-namespace <trident-namespace>
 ----
 +
 
-NOTE: Trident의 네임스페이스를 아직 만들지 않은 경우 '--create-namespace' 매개 변수를 'helm install' 명령에 추가할 수 있습니다. 그런 다음 Helm이 자동으로 네임스페이스를 만듭니다.
+NOTE: Trident에 대한 네임스페이스를 이미 만든 경우에는 '--create-namespace' 매개 변수가 추가 네임스페이스를 만들지 않습니다.
 
 
 
@@ -72,7 +72,7 @@ NOTE: Trident의 네임스페이스를 아직 만들지 않은 경우 '--create-
 
 예를 들어, 기본값인 debug를 변경하려면 다음 '--set' 명령을 실행합니다.
 
-[listing]
+[source, cli]
 ----
 $ helm install <name> netapp-trident/trident-operator --version 22.7.0 --set tridentDebug=true
 ----
@@ -97,19 +97,19 @@ NOTE: OpenShift에서는 뒤에 나오는 모든 예시에서 kubtl 대신 OC를
 
 Kubernetes 버전을 확인하려면 다음 명령을 실행합니다.
 
-[listing]
+[source, cli]
 ----
 kubectl version
 ----
 Kubernetes 클러스터 관리자 권한이 있는지 확인하려면 다음 명령을 실행합니다.
 
-[listing]
+[source, cli]
 ----
 kubectl auth can-i '*' '*' --all-namespaces
 ----
 Docker Hub에서 이미지를 사용하는 Pod를 시작하고 Pod 네트워크를 통해 스토리지 시스템에 연결할 수 있는지 확인하려면 다음 명령을 실행합니다.
 
-[listing]
+[source, cli]
 ----
 kubectl run -i --tty ping --image=busybox --restart=Never --rm -- \
   ping <management IP>
@@ -123,7 +123,7 @@ NOTE: 21.01부터 Trident 연산자는 클러스터 범위입니다. Trident 연
 
 . 에서 최신 버전의 Trident 설치 프로그램 번들을 다운로드하여 압축을 풉니다 link:https://github.com/NetApp/trident/releases/latest["GitHub의 _Assets_섹션"^].
 +
-[listing]
+[source, cli]
 ----
 wget https://github.com/NetApp/trident/releases/download/v22.04.0/trident-installer-22.04.0.tar.gz
 tar -xf trident-installer-22.04.0.tar.gz
@@ -134,7 +134,7 @@ cd trident-installer
 다음 명령을 실행합니다.
 
 +
-[listing]
+[source, cli]
 ----
 kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
 ----
@@ -148,7 +148,7 @@ kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.1
 Trident 설치 프로그램에는 이러한 리소스를 정의하는 매니페스트가 포함되어 있습니다. 기본적으로 연산자는 '삼원' 네임스페이스에 배포됩니다. 트리덴트 네임스페이스가 없으면 다음 매니페스트를 사용하여 만듭니다.
 
 +
-[listing]
+[source, cli]
 ----
 $ kubectl apply -f deploy/namespace.yaml
 ----
@@ -159,7 +159,7 @@ $ kubectl apply -f deploy/namespace.yaml
 다음 명령을 실행하여 YAML 매니페스트를 업데이트하고 '고객.YAML'을 사용하여 'bundle.YAML'을 생성합니다.
 
 +
-[listing]
+[source, cli]
 ----
 kubectl kustomize deploy/ > deploy/bundle.yaml
 ----
@@ -167,13 +167,13 @@ kubectl kustomize deploy/ > deploy/bundle.yaml
 다음 명령을 실행하여 리소스를 생성하고 연산자를 배포합니다.
 
 +
-[listing]
+[source, cli]
 ----
 kubectl create -f deploy/bundle.yaml
 ----
 . 배치한 후 작업자의 상태를 확인하려면 다음을 수행합니다.
 +
-[listing]
+[source, cli]
 ----
 $ kubectl get deployment -n <operator-namespace>
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
@@ -196,7 +196,7 @@ IMPORTANT: Kubernetes 클러스터에는 운영자의 인스턴스 * 하나가 �
 
 이제 연산자를 사용하여 Astra Trident를 설치할 준비가 되었습니다! 이 작업을 수행하려면 '트리엔오케스트레이터'를 만들어야 합니다. Trident 설치 프로그램에는 'Trident Orchestrator'를 만들기 위한 예제 정의가 포함되어 있습니다. 이렇게 하면 '삼중덴트' 네임스페이스에서 설치가 시작됩니다.
 
-[listing]
+[source, cli]
 ----
 $ kubectl create -f deploy/crds/tridentorchestrator_cr.yaml
 tridentorchestrator.trident.netapp.io/trident created
@@ -268,7 +268,7 @@ Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 As
 
 생성된 포드를 살펴보고 Astra Trident 설치가 완료되었는지 확인할 수 있습니다.
 
-[listing]
+[source, cli]
 ----
 $ kubectl get pod -n trident
 NAME                                READY   STATUS    RESTARTS   AGE
@@ -280,7 +280,7 @@ trident-operator-766f7b8658-ldzsv   1/1     Running   0           3m
 ----
 또한 'tridentctl'을 사용하여 설치된 Astra Trident의 버전을 확인할 수도 있습니다.
 
-[listing]
+[source, cli]
 ----
 $ ./tridentctl -n trident version
 +----------------+----------------+
