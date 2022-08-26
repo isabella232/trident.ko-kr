@@ -167,11 +167,11 @@ Astra Trident는 백엔드 구성에서 사용하기 전에 스토리지 시스�
 | v1.19.0  a| 
 * NetApp/트리덴트: 22.07.0
 * NetApp/트리덴트 - 자동 지원: 22.07
-* K8s.IO/SIG-스토리지/CSI-공급자: v2.2.2
-* K8s.IO/SIG-storage/CSI-attacher:v3.5.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.5.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v3.0.3
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
+* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v2.2.2
+* K8s.GCR.IO/SIG-storage/CSI-attacher:v3.5.0
+* k8s.gcr.io/sig-storage/scsi-resizer: v1.5.0
+* K8s.GCR.IO/SIG-storage/CSI-snapshotter:v3.0.3
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
 * NetApp/트리덴트 - 운영자: 22.07.0(선택 사항)
 
 
@@ -180,11 +180,11 @@ Astra Trident는 백엔드 구성에서 사용하기 전에 스토리지 시스�
 | v1.20.0  a| 
 * NetApp/트리덴트: 22.07.0
 * NetApp/트리덴트 - 자동 지원: 22.07
-* K8s.IO/SIG-스토리지/CSI-공급자: v3.2.1
-* K8s.IO/SIG-storage/CSI-attacher:v3.5.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.5.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.0.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
+* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.2.1
+* K8s.GCR.IO/SIG-storage/CSI-attacher:v3.5.0
+* k8s.gcr.io/sig-storage/scsi-resizer: v1.5.0
+* K8s.GCR.IO/SIG-storage/CSI-snapshotter:v6.0.1
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
 * NetApp/트리덴트 - 운영자: 22.07.0(선택 사항)
 
 
@@ -193,11 +193,11 @@ Astra Trident는 백엔드 구성에서 사용하기 전에 스토리지 시스�
 | v1.21.0  a| 
 * NetApp/트리덴트: 22.07.0
 * NetApp/트리덴트 - 자동 지원: 22.07
-* K8s.IO/SIG-스토리지/CSI-공급자: v3.2.1
-* K8s.IO/SIG-storage/CSI-attacher:v3.5.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.5.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.0.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
+* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.2.1
+* K8s.GCR.IO/SIG-storage/CSI-attacher:v3.5.0
+* k8s.gcr.io/sig-storage/scsi-resizer: v1.5.0
+* K8s.GCR.IO/SIG-storage/CSI-snapshotter:v6.0.1
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
 * NetApp/트리덴트 - 운영자: 22.07.0(선택 사항)
 
 
@@ -206,11 +206,11 @@ Astra Trident는 백엔드 구성에서 사용하기 전에 스토리지 시스�
 | v1.22.0  a| 
 * NetApp/트리덴트: 22.07.0
 * NetApp/트리덴트 - 자동 지원: 22.07
-* K8s.IO/SIG-스토리지/CSI-공급자: v3.2.1
-* K8s.IO/SIG-storage/CSI-attacher:v3.5.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.5.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.0.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
+* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.2.1
+* K8s.GCR.IO/SIG-storage/CSI-attacher:v3.5.0
+* k8s.gcr.io/sig-storage/scsi-resizer: v1.5.0
+* K8s.GCR.IO/SIG-storage/CSI-snapshotter:v6.0.1
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
 * NetApp/트리덴트 - 운영자: 22.07.0(선택 사항)
 
 
@@ -219,11 +219,11 @@ Astra Trident는 백엔드 구성에서 사용하기 전에 스토리지 시스�
 | v1.23.0  a| 
 * NetApp/트리덴트: 22.07.0
 * NetApp/트리덴트 - 자동 지원: 22.07
-* K8s.IO/SIG-스토리지/CSI-공급자: v3.2.1
-* K8s.IO/SIG-storage/CSI-attacher:v3.5.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.5.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.0.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
+* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.2.1
+* K8s.GCR.IO/SIG-storage/CSI-attacher:v3.5.0
+* k8s.gcr.io/sig-storage/scsi-resizer: v1.5.0
+* K8s.GCR.IO/SIG-storage/CSI-snapshotter:v6.0.1
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
 * NetApp/트리덴트 - 운영자: 22.07.0(선택 사항)
 
 
@@ -232,14 +232,14 @@ Astra Trident는 백엔드 구성에서 사용하기 전에 스토리지 시스�
 | v1.24.0  a| 
 * NetApp/트리덴트: 22.07.0
 * NetApp/트리덴트 - 자동 지원: 22.07
-* K8s.IO/SIG-스토리지/CSI-공급자: v3.2.1
-* K8s.IO/SIG-storage/CSI-attacher:v3.5.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.5.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.0.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
+* K8s.GCR.IO/SIG-스토리지/CSI-공급자:v3.2.1
+* K8s.GCR.IO/SIG-storage/CSI-attacher:v3.5.0
+* k8s.gcr.io/sig-storage/scsi-resizer: v1.5.0
+* K8s.GCR.IO/SIG-storage/CSI-snapshotter:v6.0.1
+* K8s.GCR.IO/SIG-storage/CSI-node-driver-registrar: v2.5.1
 * NetApp/트리덴트 - 운영자: 22.07.0(선택 사항)
 
 
 |===
 
-NOTE: Kubernetes 버전 1.20 이상에서는 검증된 "regestfesting.k8s.io/sig-storage/scsi-snapshotter:v6.x" 이미지를 사용하십시오. v1 버전이 "volumesnapshots.snapshot.storage.k8s.io" CRD를 지원하는 경우에만 해당됩니다. v1beta1 버전이 v1 버전 포함/없는 CRD를 지원하는 경우 검증된 regetast.k8s.io/SIG-storage/CSI-snapshotter:v3.x 이미지를 사용하십시오.
+NOTE: Kubernetes 버전 1.20 이상에서는 검증된 'regestrovests.k8s.gcr.io/sig-storage/scsi-snapshotter:v6.x'는 v1 버전이 'volumesnapshots.snapshot.storage.k8s.gcr.io'CRD를 지원하는 경우에만 사용합니다. v1beta1 버전이 v1 버전 포함/없는 CRD를 지원하는 경우 검증된 regastro.k8s.gcr.io/sig-storage/scsi-snapshotter:v3.x 이미지를 사용하십시오.
