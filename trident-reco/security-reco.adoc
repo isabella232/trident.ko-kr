@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-reco/security-reco.html 
-keywords: security, chap, trident, namespace 
+keywords: security, chap, trident, namespace, nve, nae, encryption, volume encryption, aggregate encryption 
 summary: 여기에 나열된 권장 사항을 사용하여 Astra Trident 설치가 안전한지 확인합니다. 
 ---
 = 보안
@@ -27,7 +27,7 @@ summary: 여기에 나열된 권장 사항을 사용하여 Astra Trident 설치�
 
 Astra Trident는 ONTAP SAN 워크로드에 대한 CHAP 기반 인증(ONTAP-SAN과 ONTAP-SAN 절약 드라이버 사용)을 지원합니다. 호스트와 스토리지 백엔드 간의 인증을 위해 Astra Trident와 양방향 CHAP를 사용하는 것이 좋습니다.
 
-SAN 스토리지 드라이버를 사용하는 ONTAP 백엔드의 경우 Astra Trident는 양방향 CHAP를 설정하고 "tridentctl"을 통해 CHAP 사용자 이름과 암호를 관리할 수 있습니다. 을 참조하십시오 link:../trident-use/ontap-san-prep.html["여기"^] Astra Trident가 ONTAP 백엔드에서 CHAP를 구성하는 방법을 이해합니다.
+SAN 스토리지 드라이버를 사용하는 ONTAP 백엔드의 경우 Astra Trident는 양방향 CHAP를 설정하고 "tridentctl"을 통해 CHAP 사용자 이름과 암호를 관리할 수 있습니다. 을 참조하십시오 link:../trident-use/ontap-san-prep.html["여기"] Astra Trident가 ONTAP 백엔드에서 CHAP를 구성하는 방법을 이해합니다.
 
 
 NOTE: ONTAP 백엔드에 대한 CHAP 지원은 Trident 20.04 이상에서 사용할 수 있습니다.
@@ -42,3 +42,31 @@ NOTE: ONTAP 백엔드에 대한 CHAP 지원은 Trident 20.04 이상에서 사용
 NOTE: CSI Trident에서 생성한 볼륨은 볼륨 액세스 그룹과 연결되지 않습니다.
 
 CSI가 아닌 프런트엔드에서는 작업자 노드의 디바이스로 볼륨을 연결하는 작업을 Kubernetes에서 처리합니다. 볼륨 생성 후 Astra Trident는 NetApp HCI/SolidFire 시스템에 API 호출을 통해 해당 테넌트의 암호가 아직 없는 경우 비밀을 검색합니다. 그런 다음 Astra Trident가 Kubernetes에 비밀을 전달합니다. 각 노드에 위치한 kubelet은 Kubernetes API를 통해 기밀에 액세스하고 이를 사용하여 볼륨에 액세스하는 각 노드와 볼륨이 있는 NetApp HCI/SolidFire 시스템 간에 CHAP를 실행/사용하도록 설정합니다.
+
+
+
+== Astra Trident가 NVE 및 NAE와 연동되는 방식
+
+NetApp ONTAP는 유휴 데이터 암호화를 제공하여 디스크를 도난, 반환 또는 용도 변경할 때 중요한 데이터를 보호합니다. 자세한 내용은 을 참조하십시오 link:https://docs.netapp.com/us-en/ontap/encryption-at-rest/configure-netapp-volume-encryption-concept.html["NetApp 볼륨 암호화 구성 개요"^].
+
+* 백엔드에서 NAE가 활성화된 경우 Astra Trident에 프로비저닝된 모든 볼륨은 NAE가 활성화됩니다.
+* NAE가 백엔드에서 활성화되지 않은 경우, 백엔드 구성에서 NVE 암호화 플래그를 'false'로 설정하지 않으면 Astra Trident에 프로비저닝된 모든 볼륨은 NVE를 사용할 수 있습니다.
+
+
+[NOTE]
+====
+NAE 지원 백엔드의 Astra Trident에 생성된 볼륨은 NVE 또는 NAE 암호화여야 합니다.
+
+* Trident 백엔드 구성에서 NVE 암호화 플래그를 'true'로 설정하여 NAE 암호화를 재정의하고 볼륨별로 특정 암호화 키를 사용할 수 있습니다.
+* NAE 지원 백엔드에서 NVE 암호화 플래그를 'false'로 설정하면 NAE 지원 볼륨이 생성됩니다. NVE 암호화 플래그를 'false'로 설정하여 NAE 암호화를 비활성화할 수 없습니다.
+
+
+====
+* NVE 암호화 플래그를 'true'로 명시적으로 설정하여 Astra Trident에서 NVE 볼륨을 수동으로 생성할 수 있습니다.
+
+
+백엔드 구성 옵션에 대한 자세한 내용은 다음을 참조하십시오.
+
+* link:https://docs.netapp.com/us-en/trident/trident-use/ontap-san-examples.html["ONTAP SAN 구성 옵션"]
+* link:https://docs.netapp.com/us-en/trident/trident-use/ontap-nas-examples.html["ONTAP NAS 확인 옵션"]
+
