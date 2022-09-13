@@ -386,7 +386,6 @@
   <block id="033dcaefcc578c987d32d4bdb6f6b1e2" category="paragraph">그러나 Astra Trident는 백엔드에서 볼륨을 이동하는 기능을 자동으로 지원하지 않습니다. 여기에는 동일한 클러스터, 클러스터 간 또는 다른 스토리지 플랫폼(스토리지 시스템이 Astra Trident에 연결된 SVM인 경우에도 해당 스토리지 플랫폼)에 있는 SVM이 포함됩니다.</block>
   <block id="302be77289f337115411c01846d9a489" category="paragraph">볼륨이 다른 위치에 복사되면 볼륨 가져오기 기능을 사용하여 현재 볼륨을 Astra Trident로 가져올 수 있습니다.</block>
   <block id="2243e252be826d6ec5e767668d9f961d" category="section-title">볼륨 확장</block>
-  <block id="a059bca2035a0befa11f641fdabde223" category="paragraph">Astra Trident는 NFS 및 iSCSI PVS 크기를 조정할 수 있도록 지원합니다. 따라서 사용자는 Kubernetes 계층을 통해 직접 볼륨의 크기를 조정할 수 있습니다. ONTAP, SolidFire/NetApp HCI 및 Cloud Volumes Service 백엔드를 포함한 모든 주요 NetApp 스토리지 플랫폼에서 볼륨 확장이 가능합니다. 나중에 확장을 허용하려면 볼륨과 연관된 StorageClass에서 allowVolumeExpansion을 true로 설정합니다. 영구 볼륨의 크기를 조정해야 할 때마다 영구 볼륨 클레임의 'pec.resources.requests.storage' 주석을 필요한 볼륨 크기로 편집합니다. Trident는 스토리지 클러스터의 볼륨 크기를 자동으로 조정합니다.</block>
   <block id="40a28a40c11a193f8911cf4143a6ae6a" category="section-title">기존 볼륨을 Kubernetes로 임포트</block>
   <block id="5d9f64103cac7a58da69304bc3320e98" category="paragraph">ONTAP 및 'solidfire-san' 드라이버를 사용하는 경우, 'tridentctl import volume &lt;backend-name&gt;&lt;volume-name&gt; -f/path/PVC.YAML' 명령을 사용하여 Astra Trident에서 관리할 기존 볼륨을 Kubernetes로 가져옵니다. 볼륨 가져오기 명령에 사용되는 PVC YAML 또는 JSON 파일은 Astra Trident를 프로비저닝자로 식별하는 스토리지 클래스를 가리킵니다. NetApp HCI/SolidFire 백엔드를 사용할 경우 볼륨 이름이 고유한지 확인합니다. 볼륨 이름이 중복되면 볼륨을 고유한 이름으로 복제하여 볼륨 가져오기 기능에서 볼륨 이름을 구분할 수 있도록 합니다.</block>
   <block id="cb619cd0109686b5f82562b63e44a107" category="paragraph">위 명령을 실행하면 Astra Trident가 백엔드에서 볼륨을 찾고 해당 크기를 읽습니다. 구성된 PVC의 볼륨 크기를 자동으로 추가(필요한 경우 덮어쓰기)합니다. 그런 다음 Astra Trident가 새로운 PV를 생성하고 Kubernetes가 PVC를 PV에 결합합니다.</block>
@@ -441,7 +440,6 @@
   <block id="210ecadaccb6088b0dfbd2e6a0b5d0a0" category="inline-link-macro">RedHat OpenShift Container Platform 3.11 설명서</block>
   <block id="67f3e99678cc7c568f4ed29074cdc41c" category="paragraph">하지만 초기 설치 후에 구축할 경우 구성 요소 플레이북을 Ansible에서 사용해야 합니다. 이 프로세스는 다른 버전의 OpenShift에서 약간 변경될 수 있으므로 반드시 읽고 따라야 합니다 <block ref="a2226808e95b8487c66dd3b8cbea118e" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="3dbf527ac3caf41ab150ec99a1737217" category="section-title">메트릭 서비스</block>
-  <block id="12a5438ab4c44c9ad4dec6edc191eb7a" category="paragraph">메트릭 서비스는 관리자에게 OpenShift 클러스터의 상태, 리소스 활용도 및 가용성에 대한 중요한 정보를 제공합니다. 또한 POD 자동 크기 조정 기능도 필요하며, 많은 조직에서 비용 청구 및/또는 애플리케이션 표시를 위해 메트릭 서비스의 데이터를 사용합니다.</block>
   <block id="d0ed828e153e9bad2da040ddf6ad8f45" category="paragraph">로깅 서비스 및 OpenShift와 마찬가지로 Ansible을 사용하여 메트릭 서비스를 배포합니다. 또한 로깅 서비스와 마찬가지로 메트릭 서비스는 클러스터의 초기 설정 중에 또는 구성 요소 설치 방법을 사용하여 작동 후에 배포될 수 있습니다. 다음 표에는 메트릭 서비스에 대한 영구 스토리지를 구성할 때 중요한 변수가 나와 있습니다.</block>
   <block id="69aa4440020e49c654aeb910f38c6bb9" category="admonition">아래 표에는 메트릭 서비스와 관련된 스토리지 구성과 관련된 변수만 포함되어 있습니다. 문서에 나와 있는 다른 많은 옵션은 배포 내용에 따라 검토, 구성 및 사용해야 합니다.</block>
   <block id="4f692d78f978a73b157571022c1d1ba7" category="cell">"openshift_metrics_storage_kind"</block>
@@ -2901,8 +2899,6 @@
   <block id="ec3f9af8f611100a0182ffb9ab2e5ef8" category="paragraph">ONTAP 내에서 Trident 드라이버가 사용할 수 있는 보다 제한적인 역할을 만들 수 있지만 권장하지 않습니다. Trident의 대부분의 새로운 릴리즈에서는 추가 API를 호출하므로 업그레이드가 어렵고 오류가 발생하기 쉽습니다.</block>
   <block id="ee50ce7340da5b018abe62c8e613cae0" category="summary">Astra Trident는 Trident Orchestrator를 위한 여러 명령줄 옵션을 공개하고 특정 포트를 통해 통신합니다.</block>
   <block id="94efe0c9471991c69d2a3b0970a56744" category="paragraph">Astra Trident는 Trident Orchestrator를 위한 여러 명령줄 옵션을 제공합니다. 이러한 옵션을 사용하여 배포를 수정할 수 있습니다.</block>
-  <block id="be1c3d3113c4023e29e8dd947523c711" category="inline-link">Astra Data Store 문서</block>
-  <block id="c54241e3258a450b02a723d6d751a4f1" category="list-text"><block ref="c54241e3258a450b02a723d6d751a4f1" category="inline-link-rx"></block></block>
   <block id="55f3fc550e9a03a95334f3a19f0920cc" category="cell">solidfire-SAN, ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, eseries-iSCSI가 있습니다</block>
   <block id="6add71a247c8f4513060920be14857bc" category="cell">allowVolumeExpansion</block>
   <block id="84e2c64f38f78ba3ea5c905ab5a2da27" category="cell">부울</block>
@@ -3186,7 +3182,6 @@
   <block id="d85ea0185bbd496941944ab1e486ddb8" category="list-text">Kubernetes 1.19-1.24</block>
   <block id="0b0c130cbadeba098951b51bf8268b3f" category="paragraph">Kubernetes 버전을 확인하려면 다음 명령을 실행합니다.</block>
   <block id="ca3cbba69cf4bb9d3450c7c6c27983aa" category="list-text">OpenShift 4.7(지원 종료: 2022년 8월 24일), 4.8, 4.9, 4.10</block>
-  <block id="d603df1e8927b05892b2c331ab76174c" category="list-text">Astra Data Store 22.05 이상</block>
   <block id="6b51834314ece904405eb0ce1a6e6bd8" category="list-text">NetApp HCI/Element 소프트웨어 11 이상</block>
   <block id="6ebf7ae9dffc55cf86792ea266344b3a" category="list-text">Ubuntu 18.04 이상(최신 22.04)</block>
   <block id="ea3ab43acafe15e8b0f7e22cb2ad9cfd" category="list-text">NetApp/트리덴트: 22.07.0</block>
@@ -3208,7 +3203,6 @@
   <block id="cab6f6f91105d87aa3f65650df43c553" category="inline-link-macro">GitHub 문제 #228</block>
   <block id="00ea108f36897d9ed3523b970b09e6ea" category="list-text">ONTAP 드라이버에 기술 미리 보기 자동 MetroCluster 전환 감지 기능이 추가되었습니다. (<block ref="0c9c84232975bfb33d3481050e5ef924" category="inline-link-macro-rx"></block>)</block>
   <block id="0b4fe975279063a2d1790cd061a8b8d1" category="list-text">** Kubernetes:** 최소 지원 Kubernetes를 1.19로 업데이트했습니다.</block>
-  <block id="582d0eb7263de5a3b80e9e2a917c494c" category="list-text">ADS(Astra Data Store) 드라이버가 v1beta1 CRD로 업데이트되었으므로 이 버전의 Trident에는 ADS 22.5.0 이상이 필요합니다.</block>
   <block id="108e9d089b04380952a04c1021cdad80" category="list-text">백엔드 구성은 더 이상 단일 구성에서 여러 인증 유형을 사용할 수 없습니다.</block>
   <block id="de278730ee66ed696db3f71d20aa30a5" category="list-text">AWS CVS 드라이버(22.04 이후 더 이상 사용되지 않음)가 제거되었습니다.</block>
   <block id="16cbbf51150ac75556b3850ff4a5a013" category="list-text">노드 포드에 불필요한 SYS_ADMIN 기능이 제거되었습니다.</block>
@@ -3297,4 +3291,6 @@
   <block id="1811ba2842625864e8f6233e19051566" category="paragraph">백엔드에서 NAE가 활성화된 경우 Astra Trident에 프로비저닝된 모든 볼륨은 NAE가 활성화됩니다.</block>
   <block id="cd6eb5bfdf9299ea3a76e2eb822c8293" category="paragraph">자세한 내용은 다음을 참조하십시오. <block ref="00deada136b55f176f599153703cf50d" category="inline-link-macro-rx"></block>.</block>
   <block id="2bc97a247278d92f5552529c55ab7f0d" category="paragraph">새 볼륨에 NVE(NetApp Volume Encryption)를 지원하며 기본값은 'false'입니다. 이 옵션을 사용하려면 NVE 라이센스가 클러스터에서 활성화되어 있어야 합니다.</block>
+  <block id="17d79009c5c2bb6bd570bb6f87552a2d" category="paragraph">Astra Trident는 NFS 및 iSCSI PVS 크기를 조정할 수 있도록 지원합니다. 따라서 사용자는 Kubernetes 계층을 통해 직접 볼륨의 크기를 조정할 수 있습니다. ONTAP, SolidFire/NetApp HCI 및 Cloud Volumes Service 백엔드를 포함한 모든 주요 NetApp 스토리지 플랫폼에서 볼륨 확장이 가능합니다. 나중에 확장을 허용하려면 볼륨과 연관된 StorageClass에서 allowVolumeExpansion을 true로 설정합니다. 영구 볼륨의 크기를 조정해야 할 때마다 영구 볼륨 클레임의 'pec.resources.requests.storage' 주석을 필요한 볼륨 크기로 편집합니다. Trident는 스토리지 클러스터의 볼륨 크기를 자동으로 조정합니다.</block>
+  <block id="ee3d8ea22d8bf88f2f7fcd6d6dbf26d2" category="paragraph">메트릭 서비스는 관리자에게 OpenShift 클러스터의 상태, 리소스 활용도 및 가용성에 대한 중요한 정보를 제공합니다. 또한 POD 자동 확장 기능도 필요하며, 많은 조직에서 비용 청구 및/또는 애플리케이션 표시를 위해 메트릭 서비스의 데이터를 사용합니다.</block>
 </blocks>

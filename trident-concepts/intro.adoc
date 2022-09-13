@@ -62,6 +62,5 @@ Astra 페이지에서 무료 평가판을 신청하실 수 있습니다.
 * https://docs.netapp.com/us-en/astra-family/intro-family.html["NetApp Astra 제품군"]
 * https://docs.netapp.com/us-en/astra/get-started/intro.html["Astra Control Service 문서"^]
 * https://docs.netapp.com/us-en/astra-control-center/index.html["Astra Control Center 문서"^]
-* https://docs.netapp.com/us-en/astra-data-store/index.html["Astra Data Store 문서"^]
 * https://docs.netapp.com/us-en/astra-automation/get-started/before_get_started.html["Astra API 설명서"^]
 

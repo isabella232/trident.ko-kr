@@ -45,7 +45,6 @@ Astra Trident를 사용하려면 다음 중 하나 이상의 지원되는 백엔
 
 * NetApp ONTAP용 Amazon FSx
 * Azure NetApp Files
-* Astra Data Store 22.05 이상
 * Cloud Volumes ONTAP
 * GCP용 Cloud Volumes Service
 * FAS/AFF/9.3 이상을 선택합니다

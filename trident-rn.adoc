@@ -46,7 +46,6 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 === 사용 중단
 
 * ** Kubernetes:** 최소 지원 Kubernetes를 1.19로 업데이트했습니다.
-* ADS(Astra Data Store) 드라이버가 v1beta1 CRD로 업데이트되었으므로 이 버전의 Trident에는 ADS 22.5.0 이상이 필요합니다.
 * 백엔드 구성은 더 이상 단일 구성에서 여러 인증 유형을 사용할 수 없습니다.
 
 
