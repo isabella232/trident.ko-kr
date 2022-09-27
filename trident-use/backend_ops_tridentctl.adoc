@@ -21,13 +21,13 @@ tridentctl을 사용하여 백엔드 관리 작업을 수행하는 방법에 대
 
 [listing]
 ----
-$ tridentctl create backend -f <backend-file> -n trident
+tridentctl create backend -f <backend-file> -n trident
 ----
 백엔드 생성에 실패하면 백엔드 구성에 문제가 있는 것입니다. 다음 명령을 실행하여 로그를 보고 원인을 확인할 수 있습니다.
 
 [listing]
 ----
-$ tridentctl logs -n trident
+tridentctl logs -n trident
 ----
 구성 파일의 문제를 확인하고 수정한 후에는 간단히 'create' 명령을 다시 실행할 수 있습니다.
 
@@ -41,13 +41,13 @@ Astra Trident에서 백엔드를 삭제하려면 다음을 수행합니다.
 +
 [listing]
 ----
-$ tridentctl get backend -n trident
+tridentctl get backend -n trident
 ----
 . 백엔드를 삭제합니다.
 +
 [listing]
 ----
-$ tridentctl delete backend <backend-name> -n trident
+tridentctl delete backend <backend-name> -n trident
 ----
 
 
@@ -64,13 +64,13 @@ Trident가 알고 있는 백엔드를 보려면 다음을 실행합니다.
 +
 [listing]
 ----
-$ tridentctl get backend -n trident
+tridentctl get backend -n trident
 ----
 * 모든 세부 정보를 보려면 다음 명령을 실행합니다.
 +
 [listing]
 ----
-$ tridentctl get backend -o json -n trident
+tridentctl get backend -o json -n trident
 ----
 
 
@@ -82,13 +82,13 @@ $ tridentctl get backend -o json -n trident
 
 [listing]
 ----
-$ tridentctl update backend <backend-name> -f <backend-file> -n trident
+tridentctl update backend <backend-name> -f <backend-file> -n trident
 ----
 백엔드 업데이트에 실패하면 백엔드 구성에 문제가 있거나 잘못된 업데이트를 시도했습니다. 다음 명령을 실행하여 로그를 보고 원인을 확인할 수 있습니다.
 
 [listing]
 ----
-$ tridentctl logs -n trident
+tridentctl logs -n trident
 ----
 구성 파일의 문제를 확인하고 수정한 후에는 간단히 'update' 명령을 다시 실행할 수 있습니다.
 
@@ -100,6 +100,6 @@ $ tridentctl logs -n trident
 
 [listing]
 ----
-$ tridentctl get backend -o json | jq '[.items[] | {backend: .name, storageClasses: [.storage[].storageClasses]|unique}]'
+tridentctl get backend -o json | jq '[.items[] | {backend: .name, storageClasses: [.storage[].storageClasses]|unique}]'
 ----
 이는 ' 재젠백엔드구성'을 사용하여 만든 백엔드에도 적용됩니다.

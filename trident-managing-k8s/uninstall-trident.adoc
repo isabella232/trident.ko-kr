@@ -22,12 +22,12 @@ Helm을 사용하여 Astra Trident를 설치한 경우 'helm uninstall'을 사�
 [listing]
 ----
 #List the Helm release corresponding to the Astra Trident install.
-$ helm ls -n trident
+helm ls -n trident
 NAME          NAMESPACE       REVISION        UPDATED                                 STATUS          CHART                           APP VERSION
 trident       trident         1               2021-04-20 00:26:42.417764794 +0000 UTC deployed        trident-operator-21.07.1        21.07.1
 
 #Uninstall Helm release to remove Trident
-$ helm uninstall trident -n trident
+helm uninstall trident -n trident
 release "trident" uninstalled
 ----
 
@@ -40,7 +40,7 @@ release "trident" uninstalled
 +
 [listing]
 ----
-$  kubectl patch torc <trident-orchestrator-name> --type=merge -p '{"spec":{"uninstall":true}}'
+kubectl patch torc <trident-orchestrator-name> --type=merge -p '{"spec":{"uninstall":true}}'
 ----
 +
 'uninstall' 플래그가 'true'로 설정되어 있으면 Trident 운영자가 Trident를 제거하지만 Trident 자체 자체를 제거하지 않습니다. Trident를 다시 설치하려면 해당 Trident를 정리하고 새 AgentOrchestrator를 생성해야 합니다.
@@ -50,7 +50,7 @@ $  kubectl patch torc <trident-orchestrator-name> --type=merge -p '{"spec":{"uni
 
 [listing]
 ----
-$ kubectl patch torc <trident-orchestrator-name> --type=merge -p '{"spec":{"wipeout":["crds"],"uninstall":true}}'
+kubectl patch torc <trident-orchestrator-name> --type=merge -p '{"spec":{"wipeout":["crds"],"uninstall":true}}'
 ----
 그러면 Astra Trident가 완전히 설치 제거되며, 백엔드 및 관리하는 볼륨과 관련된 모든 메타데이터가 지워집니다. 이후 설치는 새로 설치하는 것으로 처리됩니다.
 

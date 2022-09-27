@@ -33,7 +33,7 @@ Kubernetes 1.20 이상의 경우 v5.0 이상의 스냅샷 구성 요소와 함�
 --
 [source, yaml]
 ----
-$ cat snapshot-setup.sh
+cat snapshot-setup.sh
 #!/bin/bash
 # Create volume snapshot CRDs
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
@@ -45,7 +45,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 --
 [source, yaml]
 ----
-$ cat snapshot-setup.sh
+cat snapshot-setup.sh
 #!/bin/bash
 # Create volume snapshot CRDs
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/client/config/crd/snapshot.storage.k8s.io_volumesnapshotclasses.yaml
@@ -97,7 +97,7 @@ TIP: CSI Snapshotter는 를 제공합니다 https://github.com/kubernetes-csi/ex
 
 [listing]
 ----
-$ cat snap-sc.yaml
+cat snap-sc.yaml
 #Use apiVersion v1 for Kubernetes 1.20 and above. For Kubernetes 1.19, use apiVersion v1beta1.
 apiVersion: snapshot.storage.k8s.io/v1
 kind: VolumeSnapshotClass
@@ -114,7 +114,7 @@ deletionPolicy: Delete
 
 [listing]
 ----
-$ cat snap.yaml
+cat snap.yaml
 #Use apiVersion v1 for Kubernetes 1.20 and above. For Kubernetes 1.19, use apiVersion v1beta1.
 apiVersion: snapshot.storage.k8s.io/v1
 kind: VolumeSnapshot
@@ -129,10 +129,10 @@ pvc1이라는 PVC에 대해 스냅샷이 생성되고 스냅샷 이름이 pvc1-s
 
 [listing]
 ----
-$ kubectl create -f snap.yaml
+kubectl create -f snap.yaml
 volumesnapshot.snapshot.storage.k8s.io/pvc1-snap created
 
-$ kubectl get volumesnapshots
+kubectl get volumesnapshots
 NAME                   AGE
 pvc1-snap              50s
 ----
@@ -142,7 +142,7 @@ pvc1-snap VolumeSnapshot에 대한 VolumeSnapshotContent 객체를 설명하여 
 
 [listing]
 ----
-$ kubectl describe volumesnapshots pvc1-snap
+kubectl describe volumesnapshots pvc1-snap
 Name:         pvc1-snap
 Namespace:    default
 .
@@ -172,7 +172,7 @@ Status:
 
 [listing]
 ----
-$ cat pvc-from-snap.yaml
+cat pvc-from-snap.yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:

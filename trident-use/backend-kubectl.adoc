@@ -89,7 +89,7 @@ kubbeck을 사용하여 새 백엔드를 생성하려면 다음을 수행해야 
 
 [listing]
 ----
-$ kubectl -n trident create -f backend-tbc-ontap-san-secret.yaml
+kubectl -n trident create -f backend-tbc-ontap-san-secret.yaml
 apiVersion: v1
 kind: Secret
 metadata:
@@ -192,7 +192,7 @@ CHAP 타겟 이니시에이터 암호입니다. useCHAP = TRUE인 경우 필수�
 
 [listing]
 ----
-$ kubectl -n trident create -f backend-tbc-ontap-san.yaml
+kubectl -n trident create -f backend-tbc-ontap-san.yaml
 ----
 [listing]
 ----
@@ -218,7 +218,7 @@ spec:
 
 [listing]
 ----
-$ kubectl -n trident get tbc backend-tbc-ontap-san
+kubectl -n trident get tbc backend-tbc-ontap-san
 NAME                    BACKEND NAME          BACKEND UUID                           PHASE   STATUS
 backend-tbc-ontap-san   ontap-san-backend     8d24fce7-6f60-4d4a-8ef6-bab2699e6ab8   Bound   Success
 ----
@@ -259,7 +259,7 @@ backend-tbc-ontap-san   ontap-san-backend   8d24fce7-6f60-4d4a-8ef6-bab2699e6ab8
 
 [listing]
 ----
-$ kubectl -n trident get tbc backend-tbc-ontap-san -o yaml
+kubectl -n trident get tbc backend-tbc-ontap-san -o yaml
 ----
 [listing]
 ----

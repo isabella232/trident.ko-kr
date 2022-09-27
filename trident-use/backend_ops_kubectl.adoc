@@ -23,7 +23,7 @@ kubbtl을 사용하여 백엔드 관리 작업을 수행하는 방법에 대해 
 
 [listing]
 ----
-$ kubectl delete tbc <tbc-name> -n trident
+kubectl delete tbc <tbc-name> -n trident
 ----
 Astra Trident는 트리엔엔드구성에서 사용 중인 Kubernetes 비밀을 삭제하지 않습니다. Kubernetes 사용자는 기밀을 정해야 합니다. 비밀 정보를 삭제할 때는 주의해야 합니다. 암호는 백엔드에서 사용하지 않는 경우에만 삭제해야 합니다.
 
@@ -35,7 +35,7 @@ Astra Trident는 트리엔엔드구성에서 사용 중인 Kubernetes 비밀을 
 
 [listing]
 ----
-$ kubectl get tbc -n trident
+kubectl get tbc -n trident
 ----
 또한 'tridentctl get backend-n trident' 또는 'tridentctl get backend-o YAML-n trident'를 실행하여 존재하는 모든 백엔드 목록을 확인할 수 있습니다. 이 목록에는 tridentctl로 만든 백엔드 또한 포함됩니다.
 
@@ -50,20 +50,20 @@ $ kubectl get tbc -n trident
 
 [listing]
 ----
-$ kubectl apply -f <updated-secret-file.yaml> -n trident
+kubectl apply -f <updated-secret-file.yaml> -n trident
 ----
 * 매개 변수(예: 사용 중인 ONTAP SVM의 이름)를 업데이트해야 합니다. 이 경우 Kubernetes를 통해 '트리펜엔드구성' 객체를 직접 업데이트할 수 있습니다.
 
 
 [listing]
 ----
-$ kubectl apply -f <updated-backend-file.yaml>
+kubectl apply -f <updated-backend-file.yaml>
 ----
 또는 다음 명령을 실행하여 기존 '트리엔백엔드구성' CR을 변경합니다.
 
 [listing]
 ----
-$ kubectl edit tbc <tbc-name> -n trident
+kubectl edit tbc <tbc-name> -n trident
 ----
 백엔드 업데이트에 실패하면 백엔드는 마지막으로 알려진 구성으로 계속 유지됩니다. 'kubtl get tbc<tbc-name>-o YAML-n trident' 또는 'kubtl t설명해 tbc<tbc-name>-n trident'를 실행하여 로그를 보고 원인을 확인할 수 있습니다.
 

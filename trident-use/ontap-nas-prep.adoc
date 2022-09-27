@@ -116,7 +116,7 @@ base64 -w 0 trustedca.pem >> trustedca_base64
 +
 [listing]
 ----
-$ cat cert-backend-updated.json
+cat cert-backend-updated.json
 {
 "version": 1,
 "storageDriverName": "ontap-nas",
@@ -130,7 +130,7 @@ $ cat cert-backend-updated.json
 }
 
 #Update backend with tridentctl
-$ tridentctl update backend NasBackend -f cert-backend-updated.json -n trident
+tridentctl update backend NasBackend -f cert-backend-updated.json -n trident
 +------------+----------------+--------------------------------------+--------+---------+
 |    NAME    | STORAGE DRIVER |                 UUID                 | STATE  | VOLUMES |
 +------------+----------------+--------------------------------------+--------+---------+
@@ -147,7 +147,7 @@ $ tridentctl update backend NasBackend -f cert-backend-updated.json -n trident
 
 [listing]
 ----
-$ cat cert-backend-updated.json
+cat cert-backend-updated.json
 {
 "version": 1,
 "storageDriverName": "ontap-nas",
@@ -161,7 +161,7 @@ $ cat cert-backend-updated.json
 }
 
 #Update backend with tridentctl
-$ tridentctl update backend NasBackend -f cert-backend-updated.json -n trident
+tridentctl update backend NasBackend -f cert-backend-updated.json -n trident
 +------------+----------------+--------------------------------------+--------+---------+
 |    NAME    | STORAGE DRIVER |                 UUID                 | STATE  | VOLUMES |
 +------------+----------------+--------------------------------------+--------+---------+
@@ -231,7 +231,7 @@ Astra Trident가 백엔드를 생성하거나 업데이트한 후 'tridentctl' �
 
 [listing]
 ----
-$ ./tridentctl get backends ontap_nas_auto_export -n trident -o yaml
+./tridentctl get backends ontap_nas_auto_export -n trident -o yaml
 items:
 - backendUUID: 403b5326-8482-40db-96d0-d83fb3f4daec
   config:

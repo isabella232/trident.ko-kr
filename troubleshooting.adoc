@@ -34,7 +34,7 @@ TIP: 문제 해결 문서의 전체 목록을 보려면 을 참조하십시오 h
 --
 [listing]
 ----
-# kubectl patch torc trident -n <namespace> --type=merge -p '{"spec":{"debug":true}}'
+kubectl patch torc trident -n <namespace> --type=merge -p '{"spec":{"debug":true}}'
 ----
 그러면 모든 Trident 포드가 다시 시작됩니다. 이 작업은 몇 초 정도 걸릴 수 있습니다. 'kubeck get pod-n trident'의 출력에서 '나이' 열을 관찰하여 이를 확인할 수 있습니다.
 
@@ -46,7 +46,7 @@ Astra Trident 20.07 및 20.10의 경우 Torc 대신 tprov를 사용합니다.
 --
 [listing]
 ----
-$ helm upgrade <name> trident-operator-21.07.1-custom.tgz --set tridentDebug=true`
+helm upgrade <name> trident-operator-21.07.1-custom.tgz --set tridentDebug=true`
 ----
 --
 tridentctl과 함께 설치됩니다::
@@ -93,7 +93,7 @@ Trident의 설치가 실패한 이유를 이해하려면 '트리엔트오케스�
 
 [listing]
 ----
-$ kubectl describe torc trident-2
+kubectl describe torc trident-2
 Name:         trident-2
 Namespace:
 Labels:       <none>
@@ -131,7 +131,7 @@ Events:
 
 [listing]
 ----
-$ kubectl get pods -n trident
+kubectl get pods -n trident
 
 NAME                                READY   STATUS             RESTARTS   AGE
 trident-csi-4p5kq                   1/2     ImagePullBackOff   0          5m18s

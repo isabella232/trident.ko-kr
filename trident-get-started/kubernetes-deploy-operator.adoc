@@ -76,7 +76,7 @@ NOTE: Trident에 대한 네임스페이스를 이미 만든 경우에는 '--crea
 
 [source, cli]
 ----
-$ helm install <name> netapp-trident/trident-operator --version 22.7.0 --set tridentDebug=true
+helm install <name> netapp-trident/trident-operator --version 22.7.0 --set tridentDebug=true
 ----
 제어 차트의 일부인 Values.YAML 파일은 키 목록과 기본값을 제공합니다.
 
@@ -152,7 +152,7 @@ Trident 설치 프로그램에는 이러한 리소스를 정의하는 매니페�
 +
 [source, cli]
 ----
-$ kubectl apply -f deploy/namespace.yaml
+kubectl apply -f deploy/namespace.yaml
 ----
 
 
@@ -177,11 +177,11 @@ kubectl create -f deploy/bundle.yaml
 +
 [source, cli]
 ----
-$ kubectl get deployment -n <operator-namespace>
+kubectl get deployment -n <operator-namespace>
 NAME               READY   UP-TO-DATE   AVAILABLE   AGE
 trident-operator   1/1     1            1           3m
 
-$ kubectl get pods -n <operator-namespace>
+kubectl get pods -n <operator-namespace>
 NAME                              READY   STATUS             RESTARTS   AGE
 trident-operator-54cb664d-lnjxh   1/1     Running            0          3m
 ----
@@ -200,10 +200,10 @@ IMPORTANT: Kubernetes 클러스터에는 운영자의 인스턴스 * 하나가 �
 
 [source, cli]
 ----
-$ kubectl create -f deploy/crds/tridentorchestrator_cr.yaml
+kubectl create -f deploy/crds/tridentorchestrator_cr.yaml
 tridentorchestrator.trident.netapp.io/trident created
 
-$ kubectl describe torc trident
+kubectl describe torc trident
 Name:        trident
 Namespace:
 Labels:      <none>
@@ -272,7 +272,7 @@ Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 As
 
 [source, cli]
 ----
-$ kubectl get pod -n trident
+kubectl get pod -n trident
 NAME                                READY   STATUS    RESTARTS   AGE
 trident-csi-7d466bf5c7-v4cpw        5/5     Running   0           1m
 trident-csi-mr6zc                   2/2     Running   0           1m
@@ -284,7 +284,7 @@ trident-operator-766f7b8658-ldzsv   1/1     Running   0           3m
 
 [source, cli]
 ----
-$ ./tridentctl -n trident version
+./tridentctl -n trident version
 +----------------+----------------+
 | SERVER VERSION | CLIENT VERSION |
 +----------------+----------------+

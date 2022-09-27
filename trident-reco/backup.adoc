@@ -42,7 +42,7 @@ sudo docker run --rm -v /backup:/backup \
 +
 [listing]
 ----
-# etcdctl snapshot restore '/backup/etcd-snapshot-latest.db' ; mv /default.etcd/member/ /var/lib/etcd/
+etcdctl snapshot restore '/backup/etcd-snapshot-latest.db' ; mv /default.etcd/member/ /var/lib/etcd/
 ----
 . Kubernetes 클러스터를 초기화하기 전에 필요한 인증서를 모두 복사합니다.
 . ''--ignore-preflight-errors=DirAvailable--var-lib-etcd' 플래그를 사용하여 클러스터를 생성합니다.

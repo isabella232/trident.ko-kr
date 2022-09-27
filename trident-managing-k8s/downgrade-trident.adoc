@@ -68,12 +68,12 @@ Astra Trident를 클러스터 범위 운영자를 사용하는 릴리즈로 다�
 [listing]
 ----
 #Check to see if there are any tridentorchestrators present
-$ kubectl get torc
+kubectl get torc
 NAME        AGE
 trident     20h
 
 #Looks like there is a tridentorchestrator that needs deleting
-$ kubectl delete torc trident
+kubectl delete torc trident
 tridentorchestrator.trident.netapp.io "trident" deleted
 ----
 . 클러스터 범위 연산자를 삭제합니다. 이렇게 하려면 연산자를 배포하는 데 사용되는 매니페스트가 필요합니다. 여기에서 얻을 수 있습니다 https://github.com/NetApp/trident/blob/stable/v21.07/deploy/bundle.yaml["Trident Hub 저장소"^]. 필요한 분기를 사용해야 합니다.
@@ -82,10 +82,14 @@ tridentorchestrator.trident.netapp.io "trident" deleted
 [listing]
 ----
 #Check to see if ``tridentorchestrators.trident.netapp.io`` CRD is present and delete it.
-$ kubectl get crd tridentorchestrators.trident.netapp.io
+
+kubectl get crd tridentorchestrators.trident.netapp.io
+
 NAME                                     CREATED AT
 tridentorchestrators.trident.netapp.io   2021-01-21T21:11:37Z
-$ kubectl delete crd tridentorchestrators.trident.netapp.io
+
+kubectl delete crd tridentorchestrators.trident.netapp.io
+
 customresourcedefinition.apiextensions.k8s.io "tridentorchestrators.trident.netapp.io" deleted
 ----
 +
@@ -102,7 +106,7 @@ Astra Trident가 제거되었습니다.
 
 [listing]
 ----
-$ helm rollback trident [revision #]
+helm rollback trident [revision #]
 ----
 
 
@@ -125,14 +129,14 @@ NOTE: 다운그레이드를 시작하기 전에 Kubernetes 클러스터의 "etcd
 +
 [listing]
 ----
-$ tridentctl version -n trident
+tridentctl version -n trident
 +----------------+----------------+
 | SERVER VERSION | CLIENT VERSION |
 +----------------+----------------+
 | 21.07.0        | 21.07.0        |
 +----------------+----------------+
 
-$ tridentctl uninstall -n trident
+tridentctl uninstall -n trident
 INFO Deleted Trident deployment.
 INFO Deleted Trident daemonset.
 INFO Deleted Trident service.
@@ -148,8 +152,8 @@ INFO Trident uninstallation succeeded.
 +
 [listing]
 ----
-$ cd 20.07/trident-installer/
-$ ./tridentctl install -n trident-ns
+cd 20.07/trident-installer/
+./tridentctl install -n trident-ns
 INFO Created installer service account.            serviceaccount=trident-installer
 INFO Created installer cluster role.               clusterrole=trident-installer
 INFO Created installer cluster role binding.       clusterrolebinding=trident-installer

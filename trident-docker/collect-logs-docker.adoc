@@ -22,10 +22,10 @@ summary: 문제 해결에 도움이 되는 로그를 수집할 수 있습니다.
 +
 [listing]
 ----
-# docker plugin ls
+docker plugin ls
 ID                  NAME                DESCRIPTION                          ENABLED
 4fb97d2b956b        netapp:latest       nDVP - NetApp Docker Volume Plugin   false
-# journalctl -u docker | grep 4fb97d2b956b
+journalctl -u docker | grep 4fb97d2b956b
 ----
 +
 표준 로깅 수준에서는 대부분의 문제를 진단할 수 있어야 합니다. 충분하지 않은 경우 디버그 로깅을 활성화할 수 있습니다.

@@ -86,7 +86,7 @@ TIP: 포드 매개 변수 포맷에 대한 자세한 내용은 을 참조하십�
 
 [listing]
 ----
-$ cat deploy/crds/tridentorchestrator_cr_imagepullsecrets.yaml
+cat deploy/crds/tridentorchestrator_cr_imagepullsecrets.yaml
 apiVersion: trident.netapp.io/v1
 kind: TridentOrchestrator
 metadata:

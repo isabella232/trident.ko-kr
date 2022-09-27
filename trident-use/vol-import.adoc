@@ -87,7 +87,7 @@ tridentctl 클라이언트는 기존 스토리지 볼륨을 가져오는 데 사
 
 [listing]
 ----
-$ tridentctl import volume <backendName> <volumeName> -f <path-to-pvc-file>
+tridentctl import volume <backendName> <volumeName> -f <path-to-pvc-file>
 ----
 스토리지 볼륨을 가져오려면 볼륨을 포함하는 Astra Trident 백엔드의 이름과 스토리지에서 볼륨을 고유하게 식별하는 이름을 지정합니다(예: ONTAP FlexVol, Element Volume, CVS 볼륨 경로). 스토리지 볼륨은 읽기/쓰기 액세스를 허용해야 하며 지정된 Astra Trident 백엔드에서 액세스할 수 있어야 합니다. '-f' 문자열 인수가 필요하며 YAML 또는 JSON PVC 파일의 경로를 지정합니다.
 
@@ -115,7 +115,7 @@ IMPORTANT: ONTAP-NAS 드라이버는 qtree를 가져오고 관리할 수 없습�
 
 [listing]
 ----
-$ tridentctl import volume ontap_nas managed_volume -f <path-to-pvc-file>
+tridentctl import volume ontap_nas managed_volume -f <path-to-pvc-file>
 
 +------------------------------------------+---------+---------------+----------+--------------------------------------+--------+---------+
 |                   NAME                   |  SIZE   | STORAGE CLASS | PROTOCOL |             BACKEND UUID             | STATE  | MANAGED |
@@ -127,7 +127,7 @@ Trident에서 관리하지 않을 'unmanaged_volume'('ONTAP_NAS 백엔드')이�
 
 [listing]
 ----
-$ tridentctl import volume nas_blog unmanaged_volume -f <path-to-pvc-file> --no-manage
+tridentctl import volume nas_blog unmanaged_volume -f <path-to-pvc-file> --no-manage
 
 +------------------------------------------+---------+---------------+----------+--------------------------------------+--------+---------+
 |                   NAME                   |  SIZE   | STORAGE CLASS | PROTOCOL |             BACKEND UUID             | STATE  | MANAGED |
@@ -168,7 +168,7 @@ ONTAP_SAN_DEFAULT 백엔드에 존재하는 ONTAP-SAN-MANDATED FlexVol를 가져
 
 [listing]
 ----
-$ tridentctl import volume ontapsan_san_default ontap-san-managed -f pvc-basic-import.yaml -n trident -d
+tridentctl import volume ontapsan_san_default ontap-san-managed -f pvc-basic-import.yaml -n trident -d
 
 +------------------------------------------+--------+---------------+----------+--------------------------------------+--------+---------+
 |                   NAME                   |  SIZE  | STORAGE CLASS | PROTOCOL |             BACKEND UUID             | STATE  | MANAGED |
@@ -187,7 +187,7 @@ Trident를 사용하여 NetApp Element 소프트웨어/NetApp HCI 볼륨을 Kube
 
 [listing]
 ----
-$ tridentctl import volume element_default element-managed -f pvc-basic-import.yaml -n trident -d
+tridentctl import volume element_default element-managed -f pvc-basic-import.yaml -n trident -d
 
 +------------------------------------------+--------+---------------+----------+--------------------------------------+--------+---------+
 |                   NAME                   |  SIZE  | STORAGE CLASS | PROTOCOL |             BACKEND UUID             | STATE  | MANAGED |
@@ -209,7 +209,7 @@ adroit-jolly-swift 볼륨 경로를 사용하여 백엔드에서 gcpcvs_YEppr이
 
 [listing]
 ----
-$ tridentctl import volume gcpcvs_YEppr adroit-jolly-swift -f <path-to-pvc-file> -n trident
+tridentctl import volume gcpcvs_YEppr adroit-jolly-swift -f <path-to-pvc-file> -n trident
 
 +------------------------------------------+--------+---------------+----------+--------------------------------------+--------+---------+
 |                   NAME                   |  SIZE  | STORAGE CLASS | PROTOCOL |             BACKEND UUID             | STATE  | MANAGED |
@@ -228,7 +228,7 @@ NOTE: 볼륨 경로는 / 이후의 볼륨 내보내기 경로 부분입니다. �
 
 [listing]
 ----
-$ tridentctl import volume azurenetappfiles_40517 importvol1 -f <path-to-pvc-file> -n trident
+tridentctl import volume azurenetappfiles_40517 importvol1 -f <path-to-pvc-file> -n trident
 
 +------------------------------------------+---------+---------------+----------+--------------------------------------+--------+---------+
 |                   NAME                   |  SIZE   | STORAGE CLASS | PROTOCOL |             BACKEND UUID             | STATE  | MANAGED |
