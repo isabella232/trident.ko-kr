@@ -1593,7 +1593,6 @@
   <block id="725ae241ec74eed978f0b099030236b8" category="section-title">예 3: 고급 구성</block>
   <block id="a83f4a534ccef7ac1d209fb0015cd907" category="paragraph">이 백엔드 구성은 단일 서브넷에 대한 볼륨 배치 범위를 더욱 줄여주고 일부 볼륨 프로비저닝 기본값도 수정합니다.</block>
   <block id="198188b722e4e8ee2004b3bd2a9348ed" category="paragraph">이 백엔드 구성은 단일 파일에 여러 스토리지 풀을 정의합니다. 다양한 서비스 수준을 지원하는 여러 용량 풀이 있고 이를 나타내는 Kubernetes의 스토리지 클래스를 생성하려는 경우에 유용합니다.</block>
-  <block id="db471f3119123601d175fe8d2ef2dd0a" category="paragraph">다음 'torageClass' 정의는 위의 스토리지 풀을 참조합니다. parameters.selector` 필드를 사용하면 볼륨을 호스팅하는 데 사용되는 각 'torageClass'에 대해 지정할 수 있습니다. 볼륨은 선택한 풀에 정의된 측면을 갖습니다.</block>
   <block id="08c4bc4ac4edd9b12963c0596478d746" category="summary">Astra Trident는 CSI 토폴로지 기능을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하고 연결할 수 있습니다.</block>
   <block id="3d4635d3cf4f27b0e87f3fe86a84744d" category="doc">CSI 토폴로지를 사용합니다</block>
   <block id="4abea6bac3b0b48d11dd8dcd02a11bf9" category="inline-link">CSI 토폴로지 기능</block>
@@ -3294,4 +3293,5 @@
   <block id="5e5cb863d5fe17c205c3d2201a1a2235" category="paragraph">Astra Trident는 Kubernetes 클러스터에 Pod로 구축하고 Kubernetes 워크로드에 동적 스토리지 오케스트레이션 서비스를 제공합니다. 컨테이너화된 애플리케이션을 통해 ONTAP(AFF/FAS/Select/Cloud/Amazon FSx for NetApp ONTAP), Element 소프트웨어(NetApp HCI/SolidFire), Azure NetApp Files 서비스 및 Google Cloud의 Cloud Volumes Service를 비롯한 NetApp의 광범위한 포트폴리오에서 영구 스토리지를 빠르고 쉽게 사용할 수 있습니다.</block>
   <block id="e73292b954f1f9bb2feaf96e6032765a" category="paragraph">tridentctl logs를 실행하면 디버그 메시지가 표시됩니다.</block>
   <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">모든 Astra 문서</block>
+  <block id="f943c993a92ee9c5049454147c981fc1" category="paragraph">다음 'torageClass' 정의는 위의 스토리지 풀을 참조합니다. parameters.selector` 필드를 사용하면 볼륨을 호스팅하는 데 사용되는 가상 풀을 각 'torageClass'에 지정할 수 있습니다. 볼륨은 선택한 풀에 정의된 측면을 갖습니다.</block>
 </blocks>
