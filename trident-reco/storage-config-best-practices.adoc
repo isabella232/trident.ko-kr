@@ -85,7 +85,7 @@ SVM에 적용되는 ONTAP QoS 정책을 활용하여 Trident에서 프로비저�
 
 몇 가지 단계로 SVM에 대한 QoS 정책을 생성할 수 있습니다. 가장 정확한 정보는 사용 중인 ONTAP 버전 설명서를 참조하십시오. 아래 예는 SVM에 사용 가능한 총 IOPS를 5000으로 제한하는 QoS 정책을 생성합니다.
 
-[source, console]
+[listing]
 ----
 # create the policy group for the SVM
 qos policy-group create -policy-group <policy_name> -vserver <svm_name> -max-throughput 5000iops
@@ -120,7 +120,7 @@ QoS 정책 그룹을 생성할 때는 다음 사항을 고려하십시오.
 * 백엔드 구성의 "deefaults" 블록에 qosPolicy 키를 설정해야 합니다. 다음 백엔드 구성 예를 참조하십시오.
 
 
-[source, console]
+[listing]
 ----
   {
     "version": 1,

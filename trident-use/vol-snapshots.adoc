@@ -31,7 +31,7 @@ Kubernetes 1.20 이상의 경우 v5.0 이상의 스냅샷 구성 요소와 함�
 ====
 .v5.0 구성 요소
 --
-[source, yaml]
+[listing]
 ----
 cat snapshot-setup.sh
 #!/bin/bash
@@ -43,7 +43,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 --
 .v3.0.3 구성 요소
 --
-[source, yaml]
+[listing]
 ----
 cat snapshot-setup.sh
 #!/bin/bash
@@ -67,7 +67,7 @@ NOTE: GKE 환경에서 필요 시 볼륨 스냅샷을 설정하는 경우 스냅
 ====
 .v5.0 컨트롤러
 --
-[source, yaml]
+[listing]
 ----
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/release-5.0/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
@@ -75,7 +75,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 --
 .v3.0.3 컨트롤러
 --
-[source, yaml]
+[listing]
 ----
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml
 kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snapshotter/v3.0.3/deploy/kubernetes/snapshot-controller/setup-snapshot-controller.yaml
