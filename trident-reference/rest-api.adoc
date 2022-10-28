@@ -34,7 +34,7 @@ API는 다음과 같이 작동합니다.
 
 '<triment-address>/triment/v1/<object-type>': 지정된 형식의 개체를 만듭니다.
 
-* 생성할 개체의 JSON 구성이 필요합니다. 각 개체 유형의 사양은 을 참조하십시오 link:tridentctl.html["트리덴ctl의 명령과 옵션"].
+* 생성할 개체의 JSON 구성이 필요합니다. 각 개체 유형의 사양은 을 참조하십시오 link:tridentctl.html["ce87eb03803d5633c163541464e9e7f2"].
 * 개체가 이미 있는 경우 동작이 달라집니다. backends는 기존 개체를 업데이트하지만 다른 모든 개체 형식은 작업에 실패합니다.
 
 
@@ -45,6 +45,6 @@ API는 다음과 같이 작동합니다.
 삭제 <triment-address>/triment/v1/<object-type>/<object-name>': 명명된 리소스를 삭제합니다.
 
 
-NOTE: 백엔드 또는 스토리지 클래스와 연결된 볼륨은 계속 존재하므로 별도로 삭제해야 합니다. 자세한 내용은 을 참조하십시오 link:tridentctl.html["트리덴ctl의 명령과 옵션"].
+NOTE: 백엔드 또는 스토리지 클래스와 연결된 볼륨은 계속 존재하므로 별도로 삭제해야 합니다. 자세한 내용은 을 참조하십시오 link:tridentctl.html["ce87eb03803d5633c163541464e9e7f2"].
 
-이러한 API의 호출 방법에 대한 예제를 보려면 debug("-d") 플래그를 전달하십시오. 자세한 내용은 을 참조하십시오 link:tridentctl.html["트리덴ctl의 명령과 옵션"].
+이러한 API의 호출 방법에 대한 예제를 보려면 debug("-d") 플래그를 전달하십시오. 자세한 내용은 을 참조하십시오 link:tridentctl.html["ce87eb03803d5633c163541464e9e7f2"].

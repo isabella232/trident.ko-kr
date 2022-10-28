@@ -130,7 +130,7 @@ ONTAP SnapMirror 볼륨 복제는 재해 복구 기능으로, 볼륨 레벨의 �
 
 * 볼륨이 상주하는 클러스터와 볼륨의 데이터를 제공하는 SVM 간에 피어링을 설정합니다.
 * 관계의 동작을 제어하고 해당 관계에 대한 구성 특성을 지정하는 SnapMirror 정책을 생성합니다.
-* 를 사용하여 타겟 볼륨과 소스 볼륨 사이에 SnapMirror 관계를 생성합니다 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-970/snapmirror__create.html["'스냅샷 생성' 명령"^] 적절한 SnapMirror 정책을 할당합니다.
+* 를 사용하여 타겟 볼륨과 소스 볼륨 사이에 SnapMirror 관계를 생성합니다 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-cm-cmpr-970/snapmirror__create.html["d9934e78a9254dde4a227181c30fa2d2"^] 적절한 SnapMirror 정책을 할당합니다.
 * SnapMirror 관계가 생성된 후 소스 볼륨에서 타겟 볼륨으로의 기본 전송이 완료되도록 관계를 초기화합니다.
 
 

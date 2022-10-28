@@ -123,7 +123,7 @@ Kubernetes 클러스터에서 Trident를 구축하면 Astra Trident 설치 관�
 배포 사용자 지정에 대한 자세한 내용은 다음 링크를 참조하십시오.
 
 * link:kubernetes-customize-deploy.html["운영자 기반 배포를 사용자 지정합니다"^]
-* link:kubernetes-customize-deploy-tridentctl.html[""tridentctl" 기반 배포를 사용자 지정합니다"^]
+* link:kubernetes-customize-deploy-tridentctl.html["85cda507040c129ee606d4d8df583b90"^]
 
 
 

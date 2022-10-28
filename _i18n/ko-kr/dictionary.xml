@@ -163,8 +163,6 @@
   <block id="558ab0bef1894a7a726109d36632d09d" category="inline-link-macro">알려진 문제</block>
   <block id="33966eba1ed0cde6afda5a97ffaffb09" category="inline-link">보안 컨텍스트</block>
   <block id="ceb268093ddd5aa9df1769eda5d1c8cd" category="inline-link">샘플 입력</block>
-  <block id="9d267d893296d1b56789c03ad196afc8" category="inline-link">"토리지 클래스 기본형.YAML.템블"</block>
-  <block id="4e4578e23d9d48bd9338b1581f884392" category="inline-link">'Storage-class-bronze-default.YAML'을 선택합니다</block>
   <block id="1ca02e26ff81cefae18a0a8d994ca94a" category="admonition">업그레이드 시 Astra Trident가 사용하는 scorageClades에 parameter.fsType을 제공하는 것이 중요합니다. 기존 볼륨을 방해하지 않고 'torageClasses'를 삭제하고 다시 생성할 수 있습니다. 이것은 시행에 대한 ** 요구 사항입니다<block ref="cafe4c6014d8c45aaac70e49318f1a2a" category="inline-link-rx"></block> SAN 볼륨: 를 클릭합니다<block ref="25daec0b57549a6ad43dbc62a9e717ca" category="inline-link-rx"></block> 디렉토리에는 과 같은 예가 포함되어 있습니다<block ref="d308f4d12b21bf269d64643e1eceeeb2" category="inline-link-rx"></block> 및<block ref="b6ff3ec2ac914a047085c08d5843e316" category="inline-link-rx"></block>. 자세한 내용은 을 참조하십시오 <block ref="139a59f2208174d2bf825b80dc580275" category="inline-link-macro-rx"></block>.</block>
   <block id="17cfb8bd7f378fa26b63ee73d467cb82" category="section-title">어떤 업그레이드 경로를 선택해야 합니까?</block>
   <block id="46940159293e259bcf0bb4df75448100" category="paragraph">다음 경로 중 하나를 사용하여 업그레이드할 수 있습니다.</block>
@@ -187,7 +185,6 @@
   <block id="9c83e144e5481ac6766f4055e566594d" category="section-title">자세한 내용을 확인하십시오</block>
   <block id="7d224494dc0d22edaed4c965cdddffe6" category="inline-link-macro">Trident 연산자를 사용하여 업그레이드합니다</block>
   <block id="85f4fc5b4c12e5ede408e45a6d484dc1" category="list-text"><block ref="85f4fc5b4c12e5ede408e45a6d484dc1" category="inline-link-macro-rx"></block></block>
-  <block id="b41f68e89b7b02a9077fb800d31a2fbe" category="inline-link-macro">tridentctl을 사용하여 업그레이드합니다</block>
   <block id="efb20f59615d4d5ee0437ba57aecbe50" category="list-text"><block ref="efb20f59615d4d5ee0437ba57aecbe50" category="inline-link-macro-rx"></block></block>
   <block id="dec54888538ac86f51d29a3d043e6bf6" category="summary">운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그레이드할 수 있습니다.</block>
   <block id="5ff3faebb0ff710340bdbee89a4667ad" category="doc">운영자와 함께 업그레이드하십시오</block>
@@ -640,7 +637,6 @@
   <block id="19f60a36276037e5b82b5096d2ba7a5c" category="paragraph">다음은 ONTAP SnapMirror 볼륨 복제 설정 단계에 대한 개요입니다.</block>
   <block id="c4e9d0a10c58301ad78e9e9bf74f9229" category="list-text">볼륨이 상주하는 클러스터와 볼륨의 데이터를 제공하는 SVM 간에 피어링을 설정합니다.</block>
   <block id="b1c132fa6284fd6d42f93781032cd962" category="list-text">관계의 동작을 제어하고 해당 관계에 대한 구성 특성을 지정하는 SnapMirror 정책을 생성합니다.</block>
-  <block id="d9934e78a9254dde4a227181c30fa2d2" category="inline-link">'스냅샷 생성' 명령</block>
   <block id="0a30bcd5b223c18be449821765a8ec07" category="list-text">를 사용하여 타겟 볼륨과 소스 볼륨 사이에 SnapMirror 관계를 생성합니다<block ref="bfbfdbcdb00ddafcc3e3ca740d1d316b" category="inline-link-rx"></block> 적절한 SnapMirror 정책을 할당합니다.</block>
   <block id="20872623d19783e0dbe00afcdcb9ba46" category="list-text">SnapMirror 관계가 생성된 후 소스 볼륨에서 타겟 볼륨으로의 기본 전송이 완료되도록 관계를 초기화합니다.</block>
   <block id="af1fe101ed84f2b2bc465f0a9e92a35f" category="image-alt">에는 SnapMirror 볼륨 복제 설정이 나와 있습니다.</block>
@@ -718,7 +714,6 @@
   <block id="4c774e8a2d80dbc16b0bf55be6c7b358" category="paragraph">배포 사용자 지정에 대한 자세한 내용은 다음 링크를 참조하십시오.</block>
   <block id="711011f15ff69da45006043e93ed8981" category="inline-link-macro">운영자 기반 배포를 사용자 지정합니다</block>
   <block id="8f863c0ccd38c8782b36eedbea08fc5b" category="list-text"><block ref="8f863c0ccd38c8782b36eedbea08fc5b" category="inline-link-macro-rx"></block></block>
-  <block id="85cda507040c129ee606d4d8df583b90" category="inline-link-macro">"tridentctl" 기반 배포를 사용자 지정합니다</block>
   <block id="16486d6f9e6411719306bdb76f0b34fa" category="list-text"><block ref="16486d6f9e6411719306bdb76f0b34fa" category="inline-link-macro-rx"></block></block>
   <block id="47c0166da57a75ed65ddb766c838a91c" category="section-title">원격 배포</block>
   <block id="761bf14d8b8339a8f345e63dc12c36bb" category="paragraph">다음은 원격 배포 프로세스에 대한 상위 수준의 개요입니다.</block>
@@ -1309,7 +1304,6 @@
   <block id="46b189b23dfbd5f3f622a1c04590b05e" category="admonition">CSI Snapshotter는 를 제공합니다<block ref="927ab0e919f8034deab1249bed53a289" category="inline-link-rx"></block> 사용자가 기존 v1beta1 스냅샷의 유효성을 검사하고 유효한 리소스 객체인지 확인할 수 있도록 합니다. Validating webhook는 잘못된 스냅샷 개체에 자동으로 레이블을 지정하며 나중에 유효하지 않은 객체가 생성되지 않도록 합니다. Validating webhook은 Kubernetes Orchestrator에 의해 구축됩니다. 유효성을 검사하는 Webhook을 수동으로 배포하는 방법은 지침을 참조하십시오<block ref="07cb3cdda0599ec9f2e82062ecd12e82" category="inline-link-rx"></block>. 유효하지 않은 스냅샷 매니페스트의 예를 찾습니다<block ref="bceda34f0850fc68d82f08741abbc69e" category="inline-link-rx"></block>.</block>
   <block id="f535be08d3997f1a801b132862d99a5c" category="paragraph">아래 예에서는 스냅샷 작업에 필요한 구조를 설명하고 스냅샷을 생성 및 사용하는 방법을 보여 줍니다.</block>
   <block id="551730f3a084f9dee63029647e815d3a" category="section-title">1단계: VolumeSnapshotClass 설정</block>
-  <block id="d7ca7162c394dee752c35d07a92823da" category="inline-link-macro">'VolumeSnapshotClass</block>
   <block id="b91e58d7d80a51e4fa86b9ab27dca505" category="paragraph">볼륨 스냅샷을 생성하기 전에 를 설정합니다 <block ref="c740b46915208e935cb2017421ec0264" category="inline-link-macro-rx"></block>.</block>
   <block id="4744d2c82c1c470ab40280b2ebba0c08" category="paragraph">이 강물은 아스트라 트라이던트 CSI 드라이버를 가리킵니다. 정책이란 '삭제'나 '유지'가 될 수 있습니다. "유지"로 설정하면 "VolumeSnapshot" 객체가 삭제되더라도 스토리지 클러스터의 기본 물리적 스냅샷이 보존됩니다.</block>
   <block id="0ab6380edce0d0e7b8538ebf3215ebbd" category="section-title">2단계: 기존 PVC의 스냅샷을 생성합니다</block>
@@ -1989,7 +1983,6 @@
   <block id="91186d69835ccf9911e356f74938c539" category="list-text">여러 Astra Trident 인스턴스에서 백엔드를 사용할 경우 각 백엔드 구성 파일의 ONTAP 백엔드에 대해 서로 다른 'toragePrefix' 값을 사용하거나 SolidFire 백엔드에 다른 'TenantName'을 사용해야 합니다. Astra Trident는 Astra Trident의 다른 인스턴스가 생성한 볼륨을 감지할 수 없습니다. Astra Trident가 볼륨 생성을 idemptent 작업으로 처리하므로 ONTAP 또는 SolidFire 백엔드에서 기존 볼륨을 생성하려고 하면 성공합니다. 'toragePrefix' 또는 'TenantName'이 서로 다를 경우 같은 백엔드에서 생성된 볼륨의 이름 충돌이 있을 수 있습니다.</block>
   <block id="9bf4c601179068ff3574d2cf87536564" category="list-text">Astra Trident('tridentctl' 또는 Trident Operator 사용)를 설치하고 tridentctl을 사용하여 Astra Trident를 관리하는 경우 'KUBEBEECONFIG' 환경 변수를 설정해야 합니다. 이는 Kubernetes 클러스터가 트리덴트틀과 연동되어야 한다는 것을 나타내기 위해 필요합니다. 여러 Kubernetes 환경에서 작업할 경우 'KUBECONFIG' 파일을 정확하게 소싱해야 합니다.</block>
   <block id="6d791d3b45515fd8619e489b938f39e8" category="inline-link">마운트 옵션</block>
-  <block id="d4b9b9554fd820f43eae492d33e41167" category="inline-link">'원어클래스'</block>
   <block id="a5c785ee36f0f2d14349653f744c8e3b" category="list-text">iSCSI PVS에 대해 온라인 공간 재확보를 수행하려면 작업자 노드의 기본 OS에 볼륨에 마운트 옵션을 전달해야 할 수 있습니다. 이는 디카드(disscard)가 필요한 RHEL/RedHat CoreOS 인스턴스에 적용됩니다<block ref="2ee633fb26bfccf07d490458d29f92a2" category="inline-link-rx"></block>에 mountmounted 폐기 옵션이 포함되어 있는지 확인합니다<block ref="b44436f062a8f5a535d8cafcffeb70b2" category="inline-link-rx"></block> 온라인 블록 삭제를 지원합니다.</block>
   <block id="c2ebda3702872aaa7ad44122f2343d7e" category="list-text">Kubernetes 클러스터당 Astra Trident 인스턴스가 두 개 이상 있는 경우, Astra Trident가 다른 인스턴스와 통신할 수 없고 자신이 생성한 다른 볼륨을 검색할 수 없기 때문에 클러스터 내에서 둘 이상의 인스턴스가 실행될 경우 예기치 않거나 잘못된 동작이 발생합니다. Kubernetes 클러스터당 하나의 Astra Trident 인스턴스만 있어야 합니다.</block>
   <block id="294f8c33b7ccdbcbf422998b64c9c931" category="list-text">Astra Trident가 오프라인인 상태에서 Astra Trident 기반의 'torageClass' 객체를 Kubernetes에서 삭제하면, Astra Trident는 온라인 상태가 되었을 때 데이터베이스에서 해당 스토리지 클래스를 제거하지 않습니다. tridentctl이나 REST API를 사용하여 이러한 스토리지 클래스를 삭제해야 합니다.</block>
@@ -2029,7 +2022,6 @@
   <block id="c34156b367bae1b376f09b89d3be7992" category="list-text">'&lt;trident-address&gt;/trident/v1/&lt;object-type&gt;/&lt;object-name&gt;': 명명된 개체의 세부 정보를 가져옵니다.</block>
   <block id="a02439ec229d8be0e74b0c1602392310" category="section-title">게시</block>
   <block id="6692e2cd6834e6b9b2151799cac2a9f8" category="paragraph">'&lt;triment-address&gt;/triment/v1/&lt;object-type&gt;': 지정된 형식의 개체를 만듭니다.</block>
-  <block id="ce87eb03803d5633c163541464e9e7f2" category="inline-link-macro">트리덴ctl의 명령과 옵션</block>
   <block id="3d2bacacf0178e742d5abb2abc32d431" category="list-text">생성할 개체의 JSON 구성이 필요합니다. 각 개체 유형의 사양은 을 참조하십시오 <block ref="e87a326653960de9774fcc58ee9fa490" category="inline-link-macro-rx"></block>.</block>
   <block id="5b2f45c3d098b61927afda859c9144f8" category="list-text">개체가 이미 있는 경우 동작이 달라집니다. backends는 기존 개체를 업데이트하지만 다른 모든 개체 형식은 작업에 실패합니다.</block>
   <block id="32f68a60cef40faedbc6af20298c1a1e" category="section-title">삭제</block>
@@ -3294,4 +3286,6 @@
   <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">모든 Astra 문서</block>
   <block id="f943c993a92ee9c5049454147c981fc1" category="paragraph">다음 'torageClass' 정의는 위의 스토리지 풀을 참조합니다. parameters.selector` 필드를 사용하면 볼륨을 호스팅하는 데 사용되는 가상 풀을 각 'torageClass'에 지정할 수 있습니다. 볼륨은 선택한 풀에 정의된 측면을 갖습니다.</block>
   <block id="08367c27454c4c2ca57c42b7991575f7" category="list-text">OpenShift 4.8, 4.9, 4.10, 4.11</block>
+  <block id="5d40a2b5dc4a222fe46fe927bb2bb348" category="inline-link-macro">block ref="c67fd1b99934afa248dfeb285a9a4191" prefix="" category='inline-code'/&gt; 기반 구축을 사용자 지정하십시오</block>
+  <block id="d874cb235ec1b03394e3293dc2c95d44" category="inline-link-macro">block ref="c67fd1b99934afa248dfeb285a9a4191" prefix="" category='inline-code'/&gt;를 사용하여 업그레이드하십시오</block>
 </blocks>
