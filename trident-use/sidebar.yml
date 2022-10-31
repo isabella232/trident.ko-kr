@@ -9,6 +9,11 @@ entries:
   entries:
   - title: ANF 백엔드를 구성합니다
     url: "/trident-use/anf.html"
+    entries:
+    - title: ANF 백엔드 구성 준비
+      url: "/trident-use/anf-prep.html"
+    - title: ANF 구성 옵션 및 예
+      url: "/trident-use/anf-examples.html"
   - title: CVS for GCP 백엔드를 구성합니다
     url: "/trident-use/gcp.html"
   - title: NetApp HCI 또는 SolidFire 백엔드를 구성합니다
@@ -16,16 +21,16 @@ entries:
   - title: ONTAP SAN 드라이버를 사용하여 백엔드를 구성합니다
     url: "/trident-use/ontap-san.html"
     entries:
-    - title: 준비
+    - title: ONTAP SAN 드라이버를 사용하여 백엔드를 구성할 준비를 합니다
       url: "/trident-use/ontap-san-prep.html"
-    - title: 구성 옵션 및 예
+    - title: ONTAP SAN 구성 옵션 및 예
       url: "/trident-use/ontap-san-examples.html"
   - title: ONTAP NAS 드라이버를 사용하여 백엔드를 구성합니다
     url: "/trident-use/ontap-nas.html"
     entries:
-    - title: 준비
+    - title: ONTAP NAS 드라이버를 사용하여 백엔드를 구성할 준비를 합니다
       url: "/trident-use/ontap-nas-prep.html"
-    - title: 구성 옵션 및 예
+    - title: ONTAP NAS 구성 옵션 및 예
       url: "/trident-use/ontap-nas-examples.html"
   - title: NetApp ONTAP용 Amazon FSx와 함께 Astra Trident를 사용하십시오
     url: "/trident-use/trident-fsx.html"

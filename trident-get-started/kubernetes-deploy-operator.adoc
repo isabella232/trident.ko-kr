@@ -20,6 +20,23 @@ Trident 연산자를 사용하여 Astra Trident를 배포할 수 있습니다. T
 
 TIP: 에 아직 익숙하지 않은 경우 link:../trident-concepts/intro.html["기본 개념"^]이제 아주 좋은 시간입니다.
 
+
+
+== Astra Trident 22.10에 대한 중요 정보입니다
+
+* Astra Trident 22.10으로 업그레이드하기 전에 다음 중요 정보를 읽어야 합니다. *
+
+[WARNING]
+.strong>Astra Trident 22.10에 대한 중요 정보</strong>
+====
+* 이제 Trident에서 Kubernetes 1.25가 지원됩니다. Kubernetes 1.25로 업그레이드하기 전에 Astra Trident 22.10으로 업그레이드해야 합니다.
+* Astra Trident는 이제 SAN 환경에서 다중 경로 구성을 사용하도록 엄격히 적용되며 권장값은 입니다 `find_multipaths: no` 다중 경로 .conf 파일
++
+비 경로 다중화 구성 또는 의 사용 `find_multipaths: yes` 또는 `find_multipaths: smart` multipath.conf 파일의 값으로 인해 마운트 오류가 발생합니다. Trident에서 의 사용을 권장했습니다 `find_multipaths: no` 21.07 릴리스 이후.
+
+
+
+====
 Astra Trident를 구축하려면 다음과 같은 사전 요구 사항을 충족해야 합니다.
 
 * Kubernetes 1.19-1.24를 실행하는 지원되는 Kubernetes 클러스터에 대한 모든 권한이 있습니다.
@@ -127,8 +144,8 @@ NOTE: 21.01부터 Trident 연산자는 클러스터 범위입니다. Trident 연
 +
 [listing]
 ----
-wget https://github.com/NetApp/trident/releases/download/v22.04.0/trident-installer-22.04.0.tar.gz
-tar -xf trident-installer-22.04.0.tar.gz
+wget https://github.com/NetApp/trident/releases/download/v22.10.0/trident-installer-22.10.0.tar.gz
+tar -xf trident-installer-22.10.0.tar.gz
 cd trident-installer
 ----
 . 적절한 CRD 매니페스트를 사용하여 '트리엔오케스트레이터' CRD를 생성합니다. 그런 다음 나중에 운영자가 설치를 인스턴스화하기 위해 '트리엔오케스트레이터' 사용자 정의 리소스를 만듭니다.
@@ -223,7 +240,7 @@ Status:
   Current Installation Params:
     IPv6:                      false
     Autosupport Hostname:
-    Autosupport Image:         netapp/trident-autosupport:21.04
+    Autosupport Image:         netapp/trident-autosupport:22.10
     Autosupport Proxy:
     Autosupport Serial Number:
     Debug:                     true

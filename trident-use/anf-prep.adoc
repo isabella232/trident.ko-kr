@@ -1,0 +1,97 @@
+---
+sidebar: sidebar 
+permalink: trident-use/anf-prep.html 
+keywords: trident backend, azure netapp files, smb volumes, smb, windows, active directory, csi proxy 
+summary: ANF 백엔드를 구성하려면 먼저 다음 요구 사항을 충족해야 합니다. 
+---
+= Azure NetApp Files 백엔드를 구성할 준비를 합니다
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+ANF 백엔드를 구성하려면 먼저 다음 요구 사항을 충족해야 합니다.
+
+Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경우 일부 초기 구성이 필요합니다.
+
+* Azure NetApp Files를 설정하고 NFS 볼륨을 생성하려면 을 참조하십시오 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes["Azure: Azure NetApp Files를 설정하고 NFS 볼륨을 생성합니다"^].
+* Azure NetApp Files를 구성하고 SMB 볼륨을 추가하려면 다음을 참조하십시오. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-volumes-smb["Azure: Azure NetApp Files용 SMB 볼륨을 생성합니다"^].
+
+
+
+
+== 요구 사항
+
+를 구성하고 사용합니다 https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^] 백엔드, 다음이 필요합니다.
+
+* Azure NetApp Files가 활성화된 Azure 구독의 'SubscriptionID'입니다.
+* `tenantID`, `clientID`, 및 `clientSecret` 에서 link:https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal["앱 등록"^] Azure NetApp Files 서비스에 대한 충분한 권한이 있는 Azure Active Directory에서 앱 등록에서는 다음 중 하나를 사용해야 합니다.
++
+** 소유자 또는 참가자 역할입니다 link:https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles["Azure에서 사전 정의"^]
+** A link:https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles-portal["사용자 지정 참가자 역할"] 구독 레벨입니다 (`assignableScopes`) 다음 사용 권한은 Astra Trident에 필요한 권한만 가집니다. 사용자 지정 역할을 만든 후 link:https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal["Azure 포털을 사용하여 역할을 할당합니다"^].
++
+[source, JSON]
+----
+{
+    "id": "/subscriptions/<subscription-id>/providers/Microsoft.Authorization/roleDefinitions/<role-definition-id>",
+    "properties": {
+        "roleName": "custom-role-with-limited-perms",
+        "description": "custom role providing limited permissions",
+        "assignableScopes": [
+            "/subscriptions/<subscription-id>"
+        ],
+        "permissions": [
+            {
+                "actions": [
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/read",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/write",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/read",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/write",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/delete",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/read",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/write",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/snapshots/delete",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/read",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/write",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/delete",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/subvolumes/GetMetadata/action",
+                    "Microsoft.NetApp/netAppAccounts/capacityPools/volumes/MountTargets/read",
+                    "Microsoft.Network/virtualNetworks/read",
+                    "Microsoft.Network/virtualNetworks/subnets/read",
+                    "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/read",
+                    "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/write",
+                    "Microsoft.Features/featureProviders/subscriptionFeatureRegistrations/delete",
+                    "Microsoft.Features/features/read",
+                    "Microsoft.Features/operations/read",
+                    "Microsoft.Features/providers/features/read",
+                    "Microsoft.Features/providers/features/register/action",
+                    "Microsoft.Features/providers/features/unregister/action",
+                    "Microsoft.Features/subscriptionFeatureRegistrations/read"
+                ],
+                "notActions": [],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+    }
+}
+----
+
+
+* Azure를 선택합니다 `location` 하나 이상의 항목이 포함되어 있습니다 link:https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["위임된 서브넷"^]. Trident 22.01부터 `location` 매개 변수는 백엔드 구성 파일의 최상위 수준에 있는 필수 필드입니다. 가상 풀에 지정된 위치 값은 무시됩니다.
+
+
+
+
+== SMB 볼륨에 대한 추가 요구사항
+
+* Linux 컨트롤러 노드 및 Windows Server 2019를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.
+* ANF가 Active Directory에 인증할 수 있도록 Active Directory 자격 증명이 포함된 Astra Trident 암호가 하나 이상 있어야 합니다. 암호를 생성합니다 `smbcreds`:
++
+[listing]
+----
+kubectl create secret generic smbcreds --from-literal username=user --from-literal password='pw'
+----
+* Windows 서비스로 구성된 CSI 프록시. 를 구성합니다 `csi-proxy`를 참조하십시오 link:https://github.com/kubernetes-csi/csi-proxy["GitHub:CSI 프록시"^] 또는 link:https://github.com/Azure/aks-engine/blob/master/docs/topics/csi-proxy-windows.md["GitHub: Windows용 CSI 프록시"^] Windows에서 실행되는 Kubernetes 노드의 경우:
+

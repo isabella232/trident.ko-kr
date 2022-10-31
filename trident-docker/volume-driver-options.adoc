@@ -248,7 +248,7 @@ GCP 드라이버에서 CVS에 대한 볼륨 생성 옵션은 다음과 같습니
 
 
 | '크기'입니다  a| 
-볼륨 크기는 CVS - 성능 볼륨의 경우 기본적으로 100GiB, CVS 볼륨의 경우 300GiB입니다.
+볼륨의 크기는 기본적으로 100GiB입니다.
 
 
 
@@ -279,7 +279,7 @@ docker volume create -d netapp --name demo -o size=5T -o serviceLevel=premium
 ----
 
 
-CVS 성능 볼륨의 경우 최소 볼륨 크기는 100GiB, CVS 볼륨의 경우 300GiB입니다.
+최소 볼륨 크기는 100GiB입니다.
 
 
 

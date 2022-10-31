@@ -458,22 +458,16 @@ QoS 사양
 
 == GCP 구성의 Cloud Volumes Service(CVS
 
-Trident는 이제 기본 CVS 서비스 유형을 사용하여 더 작은 볼륨에 대한 지원을 제공합니다 https://cloud.google.com/architecture/partners/netapp-cloud-volumes/service-types["GCP"^]. 'torageClass=software'로 생성된 백엔드의 경우 볼륨은 이제 최소 프로비저닝 크기가 300GiB가 됩니다. * NetApp은 고객이 비운영 워크로드에 1TiB 미만의 볼륨을 사용할 것을 권장합니다 *. CVS는 현재 제어된 가용성 하에서 이 기능을 제공하며 기술 지원을 제공하지 않습니다.
+Astra Trident는 기본 CVS 서비스 유형이 ON인 볼륨을 지원합니다 https://cloud.google.com/architecture/partners/netapp-cloud-volumes/service-types["GCP"^]. Astra Trident는 CVS 서비스 유형에서 허용하는 최소값과 관계없이 100GiB 미만의 CVS 볼륨을 지원하지 않습니다. 따라서 Trident는 요청된 볼륨이 최소 크기보다 작은 경우 100GiB 볼륨을 자동으로 생성합니다.
+
+[NOTE]
+====
+* NetApp은 고객이 비운영 워크로드에 1TiB 미만의 볼륨을 사용할 것을 권장합니다.
+* 기본 CVS 서비스 유형을 사용하여 백엔드를 배포할 때 `storageClass=software`에서 GCP의 1TiB 미만의 볼륨 기능에 등록하여 관련 프로젝트 번호 및 프로젝트 ID를 확인하십시오. Trident에서 1TiB 미만의 볼륨을 프로비저닝하는 데 이 작업이 필요합니다. 그렇지 않은 경우, PVC가 600GiB 미만인 경우 용적 생성이 실패 * 됩니다.
+* link:https://docs.google.com/forms/d/e/1FAIpQLSc7_euiPtlV8bhsKWvwBl3gm9KUL4kOhD7lnbHC3LlQ7m02Dw/viewform["1TiB 미만의 볼륨에 액세스하려면 등록하십시오."]
 
 
-NOTE: 1TiB 미만의 볼륨에 액세스하려면 등록하십시오 https://docs.google.com/forms/d/e/1FAIpQLSc7_euiPtlV8bhsKWvwBl3gm9KUL4kOhD7lnbHC3LlQ7m02Dw/viewform["여기"^].
-
-
-WARNING: 기본 CVS 서비스 유형의 'torageClass=software'를 사용하여 백엔드를 배포할 때는 해당 프로젝트 번호 및 프로젝트 ID에 대해 GCP의 1TiB 미만의 볼륨 기능에 대한 액세스 권한을 얻어야 합니다. Trident에서 1TiB 미만의 볼륨을 프로비저닝하는 데 이 작업이 필요합니다. 그렇지 않은 경우, 600GiB 미만의 PVC에 대해 체적 생성 * 이 실패합니다. 를 사용하여 1TiB 미만의 볼륨에 대한 액세스 권한을 얻습니다 https://docs.google.com/forms/d/e/1FAIpQLSc7_euiPtlV8bhsKWvwBl3gm9KUL4kOhD7lnbHC3LlQ7m02Dw/viewform["이 양식입니다"^].
-
-Trident에서 기본 CVS 서비스 수준을 위해 생성한 볼륨은 다음과 같이 프로비저닝됩니다.
-
-* 300GiB보다 작은 PVC로 인해 Trident가 300GiB CVS 볼륨을 생성합니다.
-* 300GiB에서 600GiB 사이인 PVC로 인해 Trident가 요청된 크기의 CVS 볼륨을 생성합니다.
-* PVCs가 600GiB에서 1TiB 사이인 경우 Trident가 1TiB CVS 볼륨을 생성합니다.
-* 1TiB보다 큰 PVC로 인해 Trident가 요청된 크기의 CVS 볼륨을 생성합니다.
-
-
+====
 글로벌 구성 값 외에도 GCP에서 CVS를 사용할 경우 이러한 옵션을 사용할 수 있습니다.
 
 [cols="3*"]
@@ -545,9 +539,6 @@ CVS 볼륨에 사용되는 GCP 네트워크, 기본값: “기본값”
 |===
 
 NOTE: 공유 VPC 네트워크를 사용하는 경우 projectNumber와 hostProjectNumber를 모두 지정해야 합니다. 이 경우 projectNumber는 서비스 프로젝트이고 hostProjectNumber는 호스트 프로젝트입니다.
-
-
-NOTE: NetApp Cloud Volumes Service for GCP는 크기 100GiB 미만의 CVS - 성능 볼륨 또는 크기 300GiB 미만의 CVS 볼륨을 지원하지 않습니다. Trident는 애플리케이션 구축을 더 쉽게 할 수 있도록 너무 작은 볼륨을 요청하는 경우 최소 크기의 볼륨을 자동으로 생성합니다.
 
 GCP에서 CVS를 사용하는 경우 이러한 기본 볼륨 옵션 설정을 사용할 수 있습니다.
 

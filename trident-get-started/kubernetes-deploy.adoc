@@ -18,6 +18,23 @@ NOTE: 22.04 릴리즈부터는 Astra Trident가 설치될 때마다 AES 키가 �
 
 
 
+== Astra Trident 22.10에 대한 중요 정보입니다
+
+* Astra Trident 22.10으로 업그레이드하기 전에 다음 중요 정보를 읽어야 합니다. *
+
+[WARNING]
+.strong>Astra Trident 22.10에 대한 중요 정보</strong>
+====
+* 이제 Trident에서 Kubernetes 1.25가 지원됩니다. Kubernetes 1.25로 업그레이드하기 전에 Astra Trident 22.10으로 업그레이드해야 합니다.
+* Astra Trident는 이제 SAN 환경에서 다중 경로 구성을 사용하도록 엄격히 적용되며 권장값은 입니다 `find_multipaths: no` 다중 경로 .conf 파일
++
+비 경로 다중화 구성 또는 의 사용 `find_multipaths: yes` 또는 `find_multipaths: smart` multipath.conf 파일의 값으로 인해 마운트 오류가 발생합니다. Trident에서 의 사용을 권장했습니다 `find_multipaths: no` 21.07 릴리스 이후.
+
+
+
+====
+
+
 == 배포 방법을 선택합니다
 
 사용할 배포 방법을 결정하려면 다음 사항을 고려하십시오.

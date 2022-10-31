@@ -4,7 +4,7 @@ permalink: trident-use/ontap-san-prep.html
 keywords: trident backend, ontap san, ontap-san, ontap-san-economy 
 summary: ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오. 
 ---
-= 준비
+= ONTAP SAN 드라이버를 사용하여 백엔드를 구성할 준비를 합니다
 :hardbreaks:
 :allow-uri-read: 
 :icons: font

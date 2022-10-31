@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: trident-use/gcp.html 
 keywords: trident backend, cloud volumes service for google cloud platform, Google Cloud Platform 
-summary: 제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 백엔드로 Google Cloud용 Cloud Volumes Service를 구성하는 방법에 대해 알아보십시오. 
+summary: 제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 백엔드로 Google Cloud용 Cloud Volumes Service를 구성하는 방법을 알아보십시오. 
 ---
 = CVS for GCP 백엔드를 구성합니다
 :hardbreaks:
@@ -11,30 +11,24 @@ summary: 제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 
 :imagesdir: ../media/
 
 
-제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 백엔드로 NetApp CVS(Cloud Volumes Service) for Google Cloud Platform(GCP)을 구성하는 방법에 대해 알아보십시오.
+제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 백엔드로 NetApp CVS(Cloud Volumes Service) for Google Cloud Platform(GCP)을 구성하는 방법을 알아보십시오.
+
+Astra Trident는 기본 CVS 서비스 유형이 ON인 볼륨을 지원합니다 https://cloud.google.com/architecture/partners/netapp-cloud-volumes/service-types["GCP"^]. Astra Trident는 CVS 서비스 유형에서 허용하는 최소값과 관계없이 100GiB 미만의 CVS 볼륨을 지원하지 않습니다. 따라서 Trident는 요청된 볼륨이 최소 크기보다 작은 경우 100GiB 볼륨을 자동으로 생성합니다.
+
+[NOTE]
+====
+* NetApp은 고객이 비운영 워크로드에 1TiB 미만의 볼륨을 사용할 것을 권장합니다.
+* 기본 CVS 서비스 유형을 사용하여 백엔드를 배포할 때 `storageClass=software`에서 GCP의 1TiB 미만의 볼륨 기능에 등록하여 관련 프로젝트 번호 및 프로젝트 ID를 확인하십시오. Trident에서 1TiB 미만의 볼륨을 프로비저닝하는 데 이 작업이 필요합니다. 그렇지 않은 경우, PVC가 600GiB 미만인 경우 용적 생성이 실패 * 됩니다.
+* link:https://docs.google.com/forms/d/e/1FAIpQLSc7_euiPtlV8bhsKWvwBl3gm9KUL4kOhD7lnbHC3LlQ7m02Dw/viewform["1TiB 미만의 볼륨에 액세스하려면 등록하십시오."]
 
 
-NOTE: NetApp Cloud Volumes Service for Google Cloud는 CVS를 지원하지 않습니다. 크기 100GiB 미만의 성능 볼륨 또는 크기 300GiB 미만의 CVS 볼륨을 지원합니다. Astra Trident는 요청된 볼륨이 최소 크기보다 작은 경우 최소 크기의 볼륨을 자동으로 생성합니다.
-
+====
 를 구성하고 사용합니다 https://cloud.netapp.com/cloud-volumes-service-for-gcp?utm_source=NetAppTrident_ReadTheDocs&utm_campaign=Trident["Google Cloud용 Cloud Volumes Service"^] 백엔드, 다음이 필요합니다.
 
 * NetApp CVS로 구성된 Google Cloud 계정
 * Google Cloud 계정의 프로젝트 번호입니다
 * Google Cloud 서비스 계정에는 netcloudvolumes.admin 역할이 포함되어 있습니다
 * CVS 서비스 계정에 대한 API 키 파일입니다
-
-
-이제 Astra Trident에 더 작은 볼륨에 대한 지원이 기본 제공됩니다 https://cloud.google.com/architecture/partners/netapp-cloud-volumes/service-type["GCP의 CVS 서비스 유형입니다"^]. 'torageClass=software'로 생성된 백엔드의 경우 볼륨은 이제 최소 프로비저닝 크기가 300GiB가 됩니다. CVS는 현재 제어된 가용성 하에서 이 기능을 제공하며 기술 지원을 제공하지 않습니다. 사용자는 1TiB 미만의 볼륨에 액세스하려면 등록해야 합니다 https://docs.google.com/forms/d/e/1FAIpQLSc7_euiPtlV8bhsKWvwBl3gm9KUL4kOhD7lnbHC3LlQ7m02Dw/viewform["여기"^]. NetApp은 고객이** 비운영** 워크로드에 1TiB 미만의 볼륨을 사용할 것을 권장합니다.
-
-
-NOTE: 기본 CVS 서비스 유형('storageClass=software')을 사용하여 백엔드를 배포할 때 사용자는 해당 프로젝트 번호 및 프로젝트 ID에 대해 GCP에서 1TiB 미만의 볼륨 기능에 대한 액세스 권한을 얻어야 합니다. 이는 Astra Trident에서 1TiB 미만의 볼륨을 프로비저닝하는 데 필요합니다. 그렇지 않은 경우 600GiB 미만의 PVC에 대해 체적 생성에 실패합니다. 를 사용하여 1TiB 미만의 볼륨에 대한 액세스 권한을 얻습니다 https://docs.google.com/forms/d/e/1FAIpQLSc7_euiPtlV8bhsKWvwBl3gm9KUL4kOhD7lnbHC3LlQ7m02Dw/viewform["이 양식입니다"^].
-
-기본 CVS 서비스 레벨을 위해 Astra Trident에서 생성한 볼륨은 다음과 같이 프로비저닝됩니다.
-
-* 300GiB보다 작은 PVC로 인해 Astra Trident가 300GiB CVS 볼륨을 생성합니다.
-* 300GiB ~ 600GiB의 PVC로 인해 Astra Trident가 요청된 크기의 CVS 볼륨을 생성합니다.
-* 600GiB와 1TiB 사이의 PVC로 인해 Astra Trident가 1TiB CVS 볼륨을 생성합니다.
-* 1TiB보다 큰 PVC로 인해 Astra Trident가 요청된 크기의 CVS 볼륨을 생성합니다.
 
 
 

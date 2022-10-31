@@ -74,11 +74,11 @@ NOTE: 상태가 '업데이트 중'으로 표시되면 계속하기 전에 이를
 +
 [listing]
 ----
-# Download the release required [21.01]
-mkdir 21.07.1
-cd 21.07.1
-wget https://github.com/NetApp/trident/releases/download/v21.07.1/trident-installer-21.07.1.tar.gz
-tar -xf trident-installer-21.07.1.tar.gz
+# Download the release required [22.10.0]
+mkdir 22.10.0
+cd 22.10.0
+wget https://github.com/NetApp/trident/releases/download/v22.10.0/trident-installer-22.10.0.tar.gz
+tar -xf trident-installer-22.10.0.tar.gz
 cd trident-installer
 kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
 ----
@@ -134,7 +134,7 @@ kubectl patch tprov <trident-provisioner-name> -n <trident-namespace> --type=mer
 . 클러스터 범위 연산자를 설치합니다.
 +
 
-NOTE: 클러스터 범위 운영자를 설치하면 '트리펜테너' 객체가 트리펜터레이터 객체로 마이그레이션되고, 트리펜서너 CRD와 트리펜서너 객체를 삭제하고, 아스트라 Trident를 사용 중인 클러스터 범위 연산자로 업그레이드합니다. 다음 예제에서 Trident는 21.07.1로 업그레이드됩니다.
+NOTE: 클러스터 범위 연산자를 설치하면 마이그레이션이 시작됩니다 `TridentProvisioner` 개체 대상 `TridentOrchestrator` 오브젝트, 삭제 `TridentProvisioner` 개체 및 `tridentprovisioner` CRD를 사용하여 Astra Trident를 사용 중인 클러스터 범위 운영자 버전으로 업그레이드합니다. 다음 예제에서 Trident는 22.10.0으로 업그레이드됩니다.
 
 +
 
@@ -145,7 +145,7 @@ IMPORTANT: 클러스터 범위 연산자를 사용하여 Astra Trident를 업그
 ----
 #Ensure you are in the correct directory
 pwd
-/root/21.07.1/trident-installer
+/root/22.10.0/trident-installer
 
 #Install the cluster-scoped operator in the **same namespace**
 kubectl create -f deploy/bundle.yaml
@@ -176,7 +176,7 @@ kubectl describe torc trident | grep Message -A 3
 Message:                Trident installed
 Namespace:              trident
 Status:                 Installed
-Version:                v21.07.1
+Version:                v22.10.0
 ----
 
 
@@ -192,10 +192,10 @@ Version:                v21.07.1
 +
 [listing]
 ----
-helm upgrade <name> trident-operator-21.07.1.tgz
+helm upgrade <name> trident-operator-22.10.0.tgz
 ----
 +
-여기서 trident-operator-21.07.1.tgz는 업그레이드하려는 버전을 나타냅니다.
+위치 `trident-operator-22.10.0.tgz` 업그레이드하려는 버전을 반영합니다.
 
 . 'Helm list'를 실행하여 차트와 앱 버전이 모두 업그레이드되었는지 확인합니다.
 
@@ -207,7 +207,7 @@ NOTE: 업그레이드 중에 구성 데이터를 전달하려면 '--set'을 사�
 
 [listing]
 ----
-helm upgrade <name> trident-operator-21.07.1-custom.tgz --set tridentDebug=true
+helm upgrade <name> trident-operator-22.10.0-custom.tgz --set tridentDebug=true
 ----
 tridentctl logs를 실행하면 디버그 메시지가 표시됩니다.
 
@@ -225,11 +225,11 @@ NOTE: 초기 설치 중에 기본값이 아닌 옵션을 설정하는 경우 업
 +
 [listing]
 ----
-# Download the release required [21.07.1]
-mkdir 21.07.1
-cd 21.07.1
-wget https://github.com/NetApp/trident/releases/download/v21.07.1/trident-installer-21.07.1.tar.gz
-tar -xf trident-installer-21.07.1.tar.gz
+# Download the release required [22.10.0]
+mkdir 22.10.0
+cd 22.10.0
+wget https://github.com/NetApp/trident/releases/download/v22.10.0/trident-installer-22.10.0.tar.gz
+tar -xf trident-installer-22.10.0.tar.gz
 cd trident-installer
 ----
 . 매니페스트에서 트라이디오케스트레이터 CRD를 만듭니다.
@@ -283,7 +283,7 @@ kubectl describe torc trident | grep Message -A 3
 Message:                Trident installed
 Namespace:              trident
 Status:                 Installed
-Version:                v21.07.1
+Version:                v22.10.0
 ----
 
 

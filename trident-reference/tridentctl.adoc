@@ -107,6 +107,8 @@ Usage:
 * '볼륨': 아스트라 트리덴트(Astra Trident)에서 하나 이상의 볼륨을 가져옵니다.
 
 
+`volume` 플래그: * ``-h, --help`: 볼륨에 대한 도움말입니다. * `--parentOfSubordinate string`: 하위 원본 볼륨으로 쿼리를 제한합니다. * `--subordinateOf string`: 볼륨 부하로 쿼리 제한.
+
 
 
 == 이미지

@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-get-started/kubernetes-customize-deploy.html 
-keywords: deploy, trident, methods, operator, tridentctl, helm, attributes, customize, tridentorchestrator 
+keywords: deploy, trident, methods, operator, tridentctl, helm, attributes, customize, tridentorchestrator, smb, windows 
 summary: 'Trident 연산자를 사용하면 " Trident" 사양의 특성을 사용하여 Astra Trident가 설치되는 방식을 사용자 지정할 수 있습니다.' 
 ---
 = Trident 운영자 배포를 사용자 지정합니다
@@ -11,9 +11,18 @@ summary: 'Trident 연산자를 사용하면 " Trident" 사양의 특성을 사�
 :imagesdir: ../media/
 
 
-Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 Astra Trident가 설치되는 방식을 사용자 지정할 수 있습니다.
+Trident 운영자는 의 특성을 사용하여 Astra Trident 설치를 사용자 지정할 수 있습니다 `TridentOrchestrator` 사양
 
-속성 목록은 다음 표를 참조하십시오.
+설치를 사용자 지정하려면 다음을 선택합니다 `TridentOrchestrator` 인수를 사용하면 사용을 고려해야 합니다 `tridentctl` 필요에 따라 수정할 수 있는 사용자 지정 YAML 매니페스트를 생성합니다.
+
+
+WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Trident가 설치된 네임스페이스를 나타냅니다. Astra Trident가 설치된 후에는 이 매개 변수 * 를 업데이트할 수 없습니다. 이렇게 하려고 하면 가 발생합니다 `TridentOrchestrator` 변경할 상태입니다 `Failed`. Astra Trident는 네임스페이스 간에 마이그레이션되지 않습니다.
+
+
+
+== 구성 옵션
+
+이 표에 자세히 나와 있습니다 `TridentOrchestrator` 특성:
 
 [cols="3"]
 |===
@@ -24,6 +33,9 @@ Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 As
 
 
 | "버그" | Astra Trident에 대한 디버깅을 활성화합니다 | 거짓 
+
+
+| `windows` | 를 로 설정합니다 `true` Windows 작업자 노드에 설치할 수 있습니다. | 거짓 
 
 
 | 'IPv6' | IPv6를 통해 Astra Trident를 설치합니다 | 거짓 
@@ -38,7 +50,7 @@ Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 As
 | "enableNodePrep"입니다 | 작업자 노드 종속성 자동 관리(* beta*) | 거짓 
 
 
-| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/트리덴트 - 자동 지원: 21.04.0" 
+| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/트리덴트 - AutoSupport: 22.10.0" 
 
 
 | 자동 지원 프록시 | AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다 | "http://proxy.example.com:8888"[] 
@@ -77,12 +89,17 @@ Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 As
 | 노드 PluginTolerations | Trident Node CSI 플러그인을 실행하는 Pod의 허용 설정을 재정의합니다. pod.spec.Tolerations와 같은 형식을 따릅니다. | 기본값 없음, 선택 사항 
 |===
 
-IMPORTANT: pec.namespace` 는 어느 네임스페이스 Astra Trident가 설치되어 있는지 나타내기 위해 트리엔터레이터에 지정됩니다. Astra Trident가 설치된 후에는 이 매개 변수 * 를 업데이트할 수 없습니다. 이렇게 하면 트리엔오케스트레이터 상태가 실패로 바뀝니다. Astra Trident는 네임스페이스 간에 마이그레이션할 수 없습니다.
+NOTE: 포드 매개 변수 포맷에 대한 자세한 내용은 을 참조하십시오 link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/["노드에 Pod 할당"^].
 
 
-TIP: 포드 매개 변수 포맷에 대한 자세한 내용은 을 참조하십시오 link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/["노드에 Pod 할당"^].
 
-'트리엔오케스트레이터'를 정의할 때 위에서 설명한 속성을 사용하여 설치를 사용자 정의할 수 있습니다. 예를 들면 다음과 같습니다.
+== 샘플 구성
+
+정의할 때 위에서 언급한 속성을 사용할 수 있습니다 `TridentOrchestrator` 를 눌러 설치를 사용자 정의합니다.
+
+.예 1: 기본 사용자 정의 구성
+====
+다음은 기본 사용자 지정 구성의 예입니다.
 
 [listing]
 ----
@@ -97,7 +114,10 @@ spec:
   imagePullSecrets:
   - thisisasecret
 ----
-다음은 노드 선택기를 사용하여 Trident를 구축하는 방법을 보여 주는 또 다른 예입니다.
+====
+.예 2: 노드 선택기를 사용하여 배포
+====
+이 예제에서는 노드 선택기를 사용하여 Trident를 배포하는 방법을 보여 줍니다.
 
 [listing]
 ----
@@ -113,4 +133,21 @@ spec:
   nodePluginNodeSelector:
     storage: netapp
 ----
-트리벤트오케스트레이터 인수를 통해 설치를 사용자 정의하려는 경우, 필요에 따라 수정할 수 있는 맞춤형 YAML 매니페스트를 생성하기 위해 'tridentctl'을 사용하는 것이 좋습니다.
+====
+.예 3: Windows 작업자 노드에 배포
+====
+이 예제에서는 Windows 작업자 노드에 대한 배포를 보여 줍니다.
+
+[listing]
+----
+$ cat deploy/crds/tridentorchestrator_cr.yaml
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  windows: true
+----
+====

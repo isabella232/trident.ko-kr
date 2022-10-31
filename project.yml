@@ -11,6 +11,9 @@ settings:
   versions:
   - name: 아스트라 트리덴트
     url: "/trident"
+    version-number: '22.10'
+  - name: 아스트라 트리덴트
+    url: "/trident-2207"
     version-number: '22.07'
   - name: 아스트라 트리덴트
     url: "/trident-2204"
