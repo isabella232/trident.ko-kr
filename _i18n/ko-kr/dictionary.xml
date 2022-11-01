@@ -3275,7 +3275,6 @@
   <block id="2e44d2afbcec8f918cac113e6d910eea" category="list-text">이제 Trident에서 Kubernetes 1.25가 지원됩니다. Kubernetes 1.25로 업그레이드하기 전에 Astra Trident 22.10으로 업그레이드해야 합니다.</block>
   <block id="fad7d46c16a119c490585d8b68fa0362" category="list-text">Kubernetes 1.20-1.25</block>
   <block id="c44c116f5202cffacd119919cb69b584" category="paragraph">1.20-1.25</block>
-  <block id="8d28c32954820bd19810ae81faecbaba" category="list-text">NetApp/트리덴트: 22.10.0 - 맞춤형</block>
   <block id="5a4f48c8cc996f58dfb69f6cb6322641" category="list-text">NetApp/트리덴트 - AutoSupport: 22.10</block>
   <block id="205eb4d1f3dd4b4a46f8ebda17a6987a" category="list-text">K8s.IO/SIG - 스토리지/CSI - 공급자: v3.3.0</block>
   <block id="5a072765b8872c7a5b301bf26a7bcf6f" category="list-text">K8s.IO/SIG-storage/CSI-attacher:v4.0.0</block>
@@ -3436,4 +3435,5 @@
   <block id="9f010916f3fa12858d7cef8c56ca32b2" category="list-text">추가되었습니다 <block ref="79adf4cd0300f2fbcb360d22cc5460b5" category="inline-link-macro-rx"></block> 용<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> 및<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 스토리지 드라이버.</block>
   <block id="adbfe36f6399f2846983b2901604a962" category="list-text">추가되었습니다 <block ref="40be42d37bc6014716dcd0a1d368ffb5" category="inline-link-macro-rx"></block> 를 통해<block ref="bc5779a2d33eeb1304bae57f15920cfc" prefix=" " category="inline-code"></block> 스토리지 드라이버.</block>
   <block id="f18a50f02f48551895d57b81dd288142" category="sidebar">네임스페이스 전체에서 NFS 볼륨을 공유합니다</block>
+  <block id="0da21d7acd742e8c3833231cf3efcc96" category="list-text">NetApp/트리덴트: 22.10.0</block>
 </blocks>
