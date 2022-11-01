@@ -2950,9 +2950,6 @@
   <block id="179000091737641056a247acf2c59dc4" category="list-text">수동: Trident에서 를 제공합니다 <block ref="6f41841ada1b81573b5db54c90d512f9" category="inline-link-macro-rx"></block> 연산자를 설치하고 관련 개체를 만드는 데 사용할 수 있는 파일입니다.</block>
   <block id="c9ffe59301b588bbc33bb004cfd312ee" category="section-title">Trident 연산자를 구축하고 Hrom을 사용하여 Astra Trident를 설치합니다</block>
   <block id="3f44baef815aed01560d6764fea49ebc" category="cell">CVS 볼륨에 사용되는 GCP 네트워크</block>
-  <block id="6aef79110fe63635bdb5452c3a08ead7" category="section-title">Cloud Manager를 사용하여 Kubernetes 클러스터를 관리합니다</block>
-  <block id="865ec115b3646a7d42d94fd0d6f64ca5" category="inline-link-macro">Cloud Manager를 사용하는 Astra Trident</block>
-  <block id="70ef9708acb1f72d9648f625edc21d7b" category="paragraph">와 함께 <block ref="d2f4359fbe3252be146a4ecb37a6f90e" category="inline-link-macro-rx"></block>Astra Trident의 최신 버전으로 업그레이드하고, 스토리지 클래스를 추가 및 관리하고, 작업 환경에 연결한 다음, Cloud Backup Service를 사용하여 영구 볼륨을 백업할 수 있습니다. Cloud Manager는 Trident 연산자를 사용하여 수동으로 또는 Helm을 사용하여 Astra Trident 구축을 지원합니다.</block>
   <block id="1ea1b160621872df5909653ebde1bf7f" category="paragraph">자격 증명 기반 방법과 인증서 기반 방법 간에 이동하기 위해 기존 백엔드를 업데이트할 수 있습니다. 그러나 한 번에 하나의 인증 방법만 지원됩니다. 다른 인증 방법으로 전환하려면 백엔드 구성에서 기존 방법을 제거해야 합니다.</block>
   <block id="7335992f174c029a990442aca68aacbd" category="admonition">자격 증명과 인증서 * 를 모두 제공하려고 하면 구성 파일에 둘 이상의 인증 방법이 제공된다는 오류가 발생하여 백엔드 생성이 실패합니다.</block>
   <block id="d1914bc190cdc3bc9eee6db0c81021bc" category="section-title">노드 서비스 검색</block>
@@ -3436,4 +3433,7 @@
   <block id="adbfe36f6399f2846983b2901604a962" category="list-text">추가되었습니다 <block ref="40be42d37bc6014716dcd0a1d368ffb5" category="inline-link-macro-rx"></block> 를 통해<block ref="bc5779a2d33eeb1304bae57f15920cfc" prefix=" " category="inline-code"></block> 스토리지 드라이버.</block>
   <block id="f18a50f02f48551895d57b81dd288142" category="sidebar">네임스페이스 전체에서 NFS 볼륨을 공유합니다</block>
   <block id="0da21d7acd742e8c3833231cf3efcc96" category="list-text">NetApp/트리덴트: 22.10.0</block>
+  <block id="9a2de1d16997c70e89ecdce4706d67c3" category="section-title">BlueXP(이전의 Cloud Manager)를 사용하여 Kubernetes 클러스터 관리</block>
+  <block id="fd1117c82327fbe8671f26e897ceb8f4" category="inline-link-macro">BlueXP를 사용하는 Astra Trident</block>
+  <block id="a76a1e164520105317267dc41b95e8ce" category="paragraph">와 함께 <block ref="f8c16e8c21124ccc028d2db7fd32a98f" category="inline-link-macro-rx"></block>Astra Trident의 최신 버전으로 업그레이드하고, 스토리지 클래스를 추가 및 관리하고, 작업 환경에 연결한 다음, Cloud Backup Service를 사용하여 영구 볼륨을 백업할 수 있습니다. BlueXP는 Trident 연산자를 사용하여 수동으로 또는 Helm을 사용하여 Astra Trident 구축을 지원합니다.</block>
 </blocks>
