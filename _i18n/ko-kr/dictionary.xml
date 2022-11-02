@@ -207,8 +207,6 @@
   <block id="683d018a2f7c70469fd74ba0eeae2a79" category="list-text">Trident 설치 프로그램과 함께 제공된 매니페스트를 사용하여 'Trident Orchestrator' CRD를 만듭니다.</block>
   <block id="ede3d39a1c5211985b126b3f166cf601" category="inline-link">Trident 저장소</block>
   <block id="af39f09efb6e7b7133433dff92d0fffe" category="list-text">매니페스트를 사용하여 네임스페이스 범위 연산자를 삭제합니다. 이 단계를 완료하려면 네임스페이스 범위의 운영자를 배포하는 데 사용되는 "bundle.YAML" 파일이 필요합니다. 에서 Bundle.YAML을 얻을 수 있습니다<block ref="1403b813895a8a78c447fca96240f2ac" category="inline-link-rx"></block>. 해당 분기를 사용해야 합니다.</block>
-  <block id="5451265740f1553dff7af7814faa5277" category="inline-link-macro">매개 변수 목록입니다</block>
-  <block id="8afea862003d4f613fcffecc022fb20c" category="admonition">네임스페이스 범위 연산자를 삭제한 후 클러스터 범위 연산자를 설치하기 전에 Trident 설치 매개 변수(예: "tridentImage", "autostsupportImage", 개인 이미지 리포지토리 및 "imagePullSecrets" 제공)를 변경해야 합니다. 업데이트할 수 있는 전체 매개 변수 목록은 를 참조하십시오 <block ref="e5ef433069537d0999d9cf3f906affdb" category="inline-link-macro-rx"></block>.</block>
   <block id="5fbede7820945c99130183fd2fd0f4b3" category="paragraph">이 단계에서 트리덴트 - operator - xxxxxxxxxx - xxxxx'POD가 삭제됩니다.</block>
   <block id="86463d362af5835ff8c3fd6587fbd24f" category="list-text">(선택 사항) 설치 매개변수를 수정해야 하는 경우 ' TERentProvisioner' 사양을 업데이트합니다. 컨테이너 이미지를 가져올 전용 이미지 레지스트리를 수정하거나, 디버그 로그를 사용하거나, 이미지 풀 비밀을 지정하는 등의 변경 사항이 있을 수 있습니다.</block>
   <block id="df486b34cec5fdfba24de79fe6b388d4" category="list-text">클러스터 범위 연산자를 설치합니다.</block>
@@ -3436,4 +3434,6 @@
   <block id="fd1117c82327fbe8671f26e897ceb8f4" category="inline-link-macro">BlueXP를 사용하는 Astra Trident</block>
   <block id="a76a1e164520105317267dc41b95e8ce" category="paragraph">와 함께 <block ref="f8c16e8c21124ccc028d2db7fd32a98f" category="inline-link-macro-rx"></block>Astra Trident의 최신 버전으로 업그레이드하고, 스토리지 클래스를 추가 및 관리하고, 작업 환경에 연결한 다음, Cloud Backup Service를 사용하여 영구 볼륨을 백업할 수 있습니다. BlueXP는 Trident 연산자를 사용하여 수동으로 또는 Helm을 사용하여 Astra Trident 구축을 지원합니다.</block>
   <block id="6ce33e8f1e198bf1c3583bc5ef789b75" category="paragraph">백엔드 정의 파일의 암호화 매개 변수를 사용하여 Trident에서 프로비저닝한 볼륨에 대한 암호화를 설정할 수 있습니다. 자세한 내용은 다음을 참조하십시오. <block ref="3260a21902518174ce8d9bfef42be276" category="inline-link-macro-rx"></block></block>
+  <block id="cae73b6a00921ef48cee176b0d4336fe" category="inline-link-macro">구성 옵션</block>
+  <block id="094d2b2ef4b98bdb0943b10cc4e305f4" category="admonition">Trident 설치 매개 변수를 필요에 따라 변경해야 합니다(예: 의 값 변경)<block ref="d771848c80f96e5954a8658655cf79d7" prefix=" " category="inline-code"></block>,<block ref="7ecc687ea7566f05fd13fde7be607bfc" prefix=" " category="inline-code"></block>개인 이미지 저장소 및 제공<block ref="0d9b54b29da54379cca6b8782b9faae5" prefix=" " category="inline-code"></block>) 네임스페이스 범위 연산자를 삭제한 후 클러스터 범위 연산자를 설치하기 전에 먼저 . 업데이트할 수 있는 전체 매개 변수 목록은 을 참조하십시오 <block ref="d752d8869a42e1b0fd341b92b54677e0" category="inline-link-macro-rx"></block>.</block>
 </blocks>
