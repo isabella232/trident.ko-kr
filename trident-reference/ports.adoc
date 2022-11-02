@@ -1,6 +1,6 @@
 ---
 sidebar: sidebar 
-permalink: trident-reference/trident-ports.html 
+permalink: trident-reference/ports.html 
 keywords: astra trident, port, ports 
 summary: Astra Trident가 통신하는 포트에 대해 자세히 알아보십시오. 
 ---
