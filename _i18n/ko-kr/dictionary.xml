@@ -3436,4 +3436,5 @@
   <block id="6ce33e8f1e198bf1c3583bc5ef789b75" category="paragraph">백엔드 정의 파일의 암호화 매개 변수를 사용하여 Trident에서 프로비저닝한 볼륨에 대한 암호화를 설정할 수 있습니다. 자세한 내용은 다음을 참조하십시오. <block ref="3260a21902518174ce8d9bfef42be276" category="inline-link-macro-rx"></block></block>
   <block id="cae73b6a00921ef48cee176b0d4336fe" category="inline-link-macro">구성 옵션</block>
   <block id="094d2b2ef4b98bdb0943b10cc4e305f4" category="admonition">Trident 설치 매개 변수를 필요에 따라 변경해야 합니다(예: 의 값 변경)<block ref="d771848c80f96e5954a8658655cf79d7" prefix=" " category="inline-code"></block>,<block ref="7ecc687ea7566f05fd13fde7be607bfc" prefix=" " category="inline-code"></block>개인 이미지 저장소 및 제공<block ref="0d9b54b29da54379cca6b8782b9faae5" prefix=" " category="inline-code"></block>) 네임스페이스 범위 연산자를 삭제한 후 클러스터 범위 연산자를 설치하기 전에 먼저 . 업데이트할 수 있는 전체 매개 변수 목록은 을 참조하십시오 <block ref="d752d8869a42e1b0fd341b92b54677e0" category="inline-link-macro-rx"></block>.</block>
+  <block id="66f2c42a4ca561f5472459301bc7d096" category="list-text">이제 ONTAP 드라이버에 대한 자동 MetroCluster 전환 감지 기능을 사용할 수 있습니다.</block>
 </blocks>

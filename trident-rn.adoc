@@ -61,6 +61,7 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 * 추가되었습니다 link:https://docs.netapp.com/us-en/trident/trident-reco/security-reco.html#enable-per-volume-host-side-encryption-using-linux-unified-key-setup-luks["LUKS 암호화 볼륨 지원"] 용 `ontap-san` 및 `ontap-san-economy` 스토리지 드라이버.
 * Windows Server 2019 노드에 대한 지원이 추가되었습니다.
 * 추가되었습니다 link:https://docs.netapp.com/us-en/trident/trident-use/anf.html["Windows 노드에서 SMB 볼륨 지원"] 를 통해 `azure-netapp-files` 스토리지 드라이버.
+* 이제 ONTAP 드라이버에 대한 자동 MetroCluster 전환 감지 기능을 사용할 수 있습니다.
 
 
 
