@@ -11,6 +11,7 @@ summary: NetApp은 제품과 서비스를 지속적으로 개선 및 개선하�
 :imagesdir: ../media/
 
 
+[role="lead"]
 릴리즈 노트 최신 버전의 Astra Trident에 새로운 기능, 개선 사항 및 버그 수정 사항에 대한 정보를 제공합니다.
 
 

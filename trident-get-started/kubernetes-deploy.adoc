@@ -11,6 +11,7 @@ summary: Trident 운영자나 tridentctl을 사용하여 Astra Trident를 배포
 :imagesdir: ../media/
 
 
+[role="lead"]
 Trident 운영자나 tridentctl을 사용하여 Astra Trident를 배포할 수 있습니다.
 
 
@@ -41,7 +42,7 @@ NOTE: 22.04 릴리즈부터는 Astra Trident가 설치될 때마다 AES 키가 �
 
 
 
-=== Trident 연산자를 사용해야 하는 이유는 무엇입니까?
+=== Trident 연산자를 사용하는 경우
 
 를 클릭합니다 link:kubernetes-deploy-operator.html["Trident 운영자"^] Astra Trident 리소스를 동적으로 관리하고 설정 단계를 자동화하는 훌륭한 방법입니다. 몇 가지 전제 조건이 충족되어야 합니다. 을 참조하십시오 link:requirements.html["설명합니다"^].
 
@@ -84,15 +85,15 @@ NOTE: 클러스터가 지원되지 않는 버전으로 업그레이드되면 운
 
 
 
-=== Helm을 사용해야 하는 이유는 무엇입니까?
+=== 제어 사용 시기
 
 Astra Trident 21.01부터 Helm을 사용하여 관리하는 다른 애플리케이션이 있는 경우 Helm을 사용하여 배포를 관리할 수도 있습니다.
 
 
 
-=== Tribidenctl은 언제 사용해야 합니까?
+=== tridenctl을 사용하는 경우
 
-업그레이드해야 하는 기존 배포가 있거나 배포를 고도로 사용자 지정하려는 경우 를 사용하는 방법을 고려해야 합니다 link:kubernetes-deploy-tridentctl.html["tridentctl 을 선택합니다"^]. Astra Trident를 구축하는 기존 방법입니다.
+업그레이드해야 하는 기존 배포가 있거나 배포를 사용자 지정하려는 경우 을 사용하는 것이 좋습니다 link:kubernetes-deploy-tridentctl.html["tridentctl 을 선택합니다"^]. Astra Trident를 구축하는 기존 방법입니다.
 
 
 

@@ -11,7 +11,12 @@ summary: Astra Trident가 드라이버를 위한 볼륨 스냅샷 생성을 어�
 :imagesdir: ../media/
 
 
+[role="lead"]
 Astra Trident가 드라이버를 위한 볼륨 스냅샷 생성을 어떻게 처리하는지 자세히 알아보십시오.
+
+
+
+== 볼륨 스냅샷 생성에 대해 자세히 알아보십시오
 
 * ONTAP-NAS, ONTAP-SAN, GCP-CV, Azure-NetApp-파일 드라이버의 경우 각 PV(영구 볼륨)가 FlexVol에 매핑됩니다. 따라서 볼륨 스냅샷이 NetApp 스냅샷으로 생성됩니다. NetApp의 스냅샷 기술은 경쟁 스냅샷 기술보다 뛰어난 안정성, 확장성, 복구 가능성 및 성능을 제공합니다. 이러한 스냅샷 복사본은 생성하는 데 필요한 시간과 스토리지 공간 모두에서 매우 효율적입니다.
 * ONTAP-NAS-Flexgroup 드라이버의 경우 각 PV(Persistent Volume)가 FlexGroup에 매핑됩니다. 따라서 볼륨 스냅샷이 NetApp FlexGroup 스냅샷으로 생성됩니다. NetApp의 스냅샷 기술은 경쟁 스냅샷 기술보다 뛰어난 안정성, 확장성, 복구 가능성 및 성능을 제공합니다. 이러한 스냅샷 복사본은 생성하는 데 필요한 시간과 스토리지 공간 모두에서 매우 효율적입니다.

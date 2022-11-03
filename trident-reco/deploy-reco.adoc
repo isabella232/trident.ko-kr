@@ -11,6 +11,7 @@ summary: Astra Trident를 배포할 때 여기에 나열된 권장 사항을 사
 :imagesdir: ../media/
 
 
+[role="lead"]
 Astra Trident를 배포할 때 여기에 나열된 권장 사항을 사용하십시오.
 
 

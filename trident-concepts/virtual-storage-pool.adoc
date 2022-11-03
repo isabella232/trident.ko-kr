@@ -11,7 +11,12 @@ summary: 가상 스토리지 풀은 Astra Trident의 스토리지 백엔드와 K
 :imagesdir: ../media/
 
 
+[role="lead"]
 가상 스토리지 풀은 Astra Trident의 스토리지 백엔드와 Kubernetes의 'storageClades' 간의 추상화 계층을 제공합니다. 관리자는 'torageClass'를 만들지 않고 각 백엔드에 대한 위치, 성능 및 보호와 같은 측면을 일반적인 백엔드 방식으로 정의할 수 있으므로 원하는 기준을 충족하는 데 사용할 물리적 백엔드, 백엔드 풀 또는 백엔드 유형을 지정할 수 있습니다.
+
+
+
+== 가상 스토리지 풀에 대해 자세히 알아보십시오
 
 스토리지 관리자는 Astra Trident 백엔드의 가상 스토리지 풀을 JSON 또는 YAML 정의 파일로 정의할 수 있습니다.
 

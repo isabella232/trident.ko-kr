@@ -11,6 +11,7 @@ summary: 'Kubernetes Pod 보안 표준(PSS) 및 Pod 보안 정책(PSP)에서 사
 :imagesdir: ../media/
 
 
+[role="lead"]
 Kubernetes Pod 보안 표준(PSS) 및 Pod 보안 정책(PSP)에서 사용 권한 수준을 정의하고 Pod의 동작을 제한합니다. OpenShift Security Context Constraints(SCC)도 OpenShift Kubernetes Engine에 특정한 POD 제한을 정의합니다. 이러한 사용자 지정을 제공하기 위해 Astra Trident는 설치 중에 특정 권한을 활성화합니다. 다음 섹션에서는 Astra Trident에서 설정한 사용 권한에 대해 자세히 설명합니다.
 
 

@@ -11,10 +11,15 @@ summary: Astra Trident가 볼륨 액세스 그룹을 사용하는 방법에 대�
 :imagesdir: ../media/
 
 
+[role="lead"]
 Astra Trident가 사용하는 방법에 대해 자세히 알아보십시오 https://docs.netapp.com/us-en/element-software/concepts/concept_solidfire_concepts_volume_access_groups.html["볼륨 액세스 그룹"^].
 
 
 NOTE: CHAP를 사용하는 경우 이 섹션을 무시하십시오. CHAP는 관리를 단순화하고 아래 설명된 배율 제한을 피하는 것이 좋습니다. 또한 CSI 모드에서 Astra Trident를 사용하는 경우 이 섹션을 무시할 수 있습니다. Astra Trident는 향상된 CSI 구축 기능으로 설치된 경우 CHAP를 사용합니다.
+
+
+
+== 볼륨 액세스 그룹에 대해 알아보십시오
 
 Astra Trident는 볼륨 액세스 그룹을 사용하여 프로비저닝하는 볼륨에 대한 액세스를 제어할 수 있습니다. CHAP를 비활성화하면 구성에 하나 이상의 액세스 그룹 ID를 지정하지 않는 한 "트리덴트"라는 액세스 그룹을 찾을 수 있습니다.
 

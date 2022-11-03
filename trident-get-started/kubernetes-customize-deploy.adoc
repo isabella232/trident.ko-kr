@@ -11,6 +11,7 @@ summary: 'Trident 연산자를 사용하면 " Trident" 사양의 특성을 사�
 :imagesdir: ../media/
 
 
+[role="lead"]
 Trident 운영자는 의 특성을 사용하여 Astra Trident 설치를 사용자 지정할 수 있습니다 `TridentOrchestrator` 사양
 
 설치를 사용자 지정하려면 다음을 선택합니다 `TridentOrchestrator` 인수를 사용하면 사용을 고려해야 합니다 `tridentctl` 필요에 따라 수정할 수 있는 사용자 지정 YAML 매니페스트를 생성합니다.

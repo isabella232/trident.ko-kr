@@ -11,6 +11,7 @@ summary: Kubernetes 및 Trident, Trident 및 스토리지와 Kubernetes 및 스�
 :imagesdir: ../media/
 
 
+[role="lead"]
 REST API를 사용하여 리소스 객체를 읽고 쓰면서 Kubernetes 및 Trident와 상호 작용할 수 있습니다. Kubernetes 및 Trident, Trident 및 스토리지와 Kubernetes 및 스토리지 간의 관계를 결정하는 몇 가지 리소스 개체가 있습니다. 이러한 오브젝트 중 일부는 Kubernetes를 통해 관리되며 나머지는 Trident를 통해 관리됩니다.
 
 

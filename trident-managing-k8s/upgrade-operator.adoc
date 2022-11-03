@@ -11,6 +11,7 @@ summary: 운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그�
 :imagesdir: ../media/
 
 
+[role="lead"]
 운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그레이드할 수 있습니다.
 
 연산자를 사용하여 업그레이드하려면 다음 조건이 충족되어야 합니다.
@@ -19,7 +20,7 @@ summary: 운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그�
 * CRD 기반 Trident가 설치되어 있어야 합니다. 이는 19.07 이후의 모든 릴리스를 나타냅니다. CSI 기반 설치가 있는 경우 CRD 기반 설치가 있을 가능성이 높습니다.
 * CSI Trident를 제거한 후 설치 시 메타데이터가 지속되는 경우 연산자를 사용하여 업그레이드할 수 있습니다.
 * 주어진 Kubernetes 클러스터의 모든 네임스페이스에 하나의 Astra Trident 설치만 존재해야 합니다.
-* 를 실행하는 Kubernetes 클러스터를 사용해야 합니다 link:requirements.html["버전 1.19-1.24"^].
+* 를 실행하는 Kubernetes 클러스터를 사용해야 합니다 link:../trident-get-started/requirements.html["지원되는 Kubernetes 버전"].
 * 알파 스냅샷 CRD가 있는 경우 'tridentctl oblividate alpha-snapshot-CRD'로 제거해야 합니다. 그러면 알파 스냅샷 사양에 대한 CRD가 삭제됩니다. 삭제/마이그레이션해야 하는 기존 스냅샷의 경우 를 참조하십시오 https://netapp.io/2020/01/30/alpha-to-beta-snapshots/["블로그입니다"^].
 
 

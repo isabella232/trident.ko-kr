@@ -11,6 +11,7 @@ summary: Astra Trident를 설치 및 사용하는 동안 발생할 수 있는 �
 :imagesdir: ../media/
 
 
+[role="lead"]
 Astra Trident를 설치 및 사용하는 동안 발생할 수 있는 문제를 해결하려면 여기에 제공된 포인터를 사용하십시오.
 
 

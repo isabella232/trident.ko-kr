@@ -11,7 +11,12 @@ summary: Trident 설치에서 Element 백엔드를 만들고 사용하는 방법
 :imagesdir: ../media/
 
 
+[role="lead"]
 Astra Trident는 ONTAP 클러스터와 통신할 수 있도록 5개의 고유한 ONTAP 스토리지 드라이버를 제공합니다. 각 드라이버가 볼륨 생성, 액세스 제어 및 해당 기능을 처리하는 방법에 대해 자세히 알아보십시오.
+
+
+
+== ONTAP 스토리지 드라이버에 대해 알아보십시오
 
 [cols="5"]
 |===
