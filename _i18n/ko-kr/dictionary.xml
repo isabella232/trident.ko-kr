@@ -2402,17 +2402,6 @@
   <block id="d46ecc35447a8c17ef014ff6daf07bba" category="inline-link">설치 또는 업데이트합니다</block>
   <block id="1035fa0ac2c3ed19f6ba56cafe7e121f" category="list-text">지원되는 버전의 Docker가 설치되어 있는지 확인합니다. Docker 버전이 오래되었으면<block ref="0b011811ae105895ca4da9769d7e6f99" category="inline-link-rx"></block>.</block>
   <block id="7760c52227ccba10f5bc395571ca7a60" category="list-text">프로토콜 사전 요구 사항이 호스트에 설치 및 구성되어 있는지 확인합니다.</block>
-  <block id="7f50d5e5825124658e17cc8cfaa7f823" category="list-text">다중 경로 데몬을 시작합니다.</block>
-  <block id="87772a853423d643181e2b56bcb4b17f" category="paragraph">'SUDO mpathconf - -enable - -with_multipathd y'</block>
-  <block id="43ce2a55c085b27f271203155d2745e1" category="list-text">'iscsid'와 'multipathd'가 활성화되어 실행되고 있는지 확인합니다.</block>
-  <block id="04c298ec3fc67bce1115cddcc2b3b829" category="paragraph">'SUDO systemctl enable iscsid multipathd''SUDO systemctl start iscsid multipathd'</block>
-  <block id="2cfaa468af4e9de7ba9933d9e0081572" category="list-text">iSCSI 타겟 검색:</block>
-  <block id="f0c700b766cfcc86bc21496513c58391" category="paragraph">'sudo iscsiadm -m discoverydb -t st -p &lt;data_LIF_ip&gt;--discover'</block>
-  <block id="18124bf28831e04dabc4dc81d1d4e69f" category="list-text">검색된 iSCSI 대상에 로그인합니다.</block>
-  <block id="ba64ec4efdc69990967a75a918b83635" category="paragraph">'SUDO iscsiadm -m node -p &lt;data_LIF_ip&gt;--login'</block>
-  <block id="8bd830b1ea0595874b57cfd34c877123" category="paragraph">'SUDO systemctl enable iscsi''SUDO systemctl start iscsi'를 활성화합니다</block>
-  <block id="e6693412ed2252a87ece3f264fb334ed" category="paragraph">'SUDO tee /etc/multipath.conf&lt;-'EOF' 기본값 {user_friendly_names yes find_multipath yes}EOF sudo service multipath-tools restart'입니다</block>
-  <block id="0d29eaa34aa7badaae0d49b35a2a0d12" category="paragraph">'SUDO service open-iscsi start sudo service multipath-tools start'를 참조하십시오</block>
   <block id="d2eb05d1990246a079aeb2f56e3a4237" category="paragraph">Astra Trident의 여러 인스턴스를 동일한 호스트에서 동시에 실행할 수 있습니다. 이를 통해 여러 스토리지 시스템 및 스토리지 유형에 동시에 연결할 수 있으며, Docker 볼륨에 사용되는 스토리지를 사용자 지정할 수 있습니다.</block>
   <block id="89bcbd8e4ba49b7310e9fa748e878c4b" category="inline-link-macro">배포를 위한 사전 요구 사항</block>
   <block id="d1e7215d070e62d3e82e915d703ceaa9" category="paragraph">를 참조하십시오 <block ref="a51fda4654690ac4414966ed4956599c" category="inline-link-macro-rx"></block>. 필수 구성 요소가 충족되었는지 확인한 후 Astra Trident를 배포할 준비가 되었습니다.</block>
@@ -2741,7 +2730,6 @@
   <block id="ea643bf7aaf130341a17f697a7009368" category="list-text"><block ref="ea643bf7aaf130341a17f697a7009368" category="inline-link-rx"></block></block>
   <block id="9d6ffa6ef31bd0b92876314219f18ef5" category="inline-link">Astra API 설명서</block>
   <block id="9c2cf0e947812ecb3fc0bfccaa8b3c61" category="list-text"><block ref="9c2cf0e947812ecb3fc0bfccaa8b3c61" category="inline-link-rx"></block></block>
-  <block id="4546bbd46f06879787b5670b13277b28" category="paragraph">이 단계의 일부로, 21.10.0 Trident 운영자는 기존 Astra Trident 설치를 식별하고 운영자와 동일한 버전으로 업그레이드합니다.</block>
   <block id="9f687b4e8cbf2fbb623b26b30fd92717" category="admonition">21.07 이전 릴리스의 경우 레거시 문서 사이트로 리디렉션됩니다.</block>
   <block id="a93e9e44b7a375a4236260f5ff2b251e" category="inline-link">Astra Trident 21.07</block>
   <block id="3830d427e146a8a64454dc373d9b1502" category="list-text"><block ref="3830d427e146a8a64454dc373d9b1502" category="inline-link-rx"></block></block>
@@ -2934,7 +2922,6 @@
   <block id="f3aff8b93ad58c4831861213ffc9bbe7" category="paragraph">22.07부터 Astra Trident는 노드가 iSCSI 또는 NFS 서비스를 실행할 수 있는지 자동으로 감지하려고 시도합니다. Astra Trident는 검색된 서비스를 식별하기 위해 노드에 대한 이벤트를 생성합니다. 다음 명령을 사용하여 이러한 이벤트를 검토할 수 있습니다.</block>
   <block id="6a3314aee95c1c78527e5f122976ec80" category="paragraph">또한 Trident는 Trident 노드 CR의 각 노드에 대해 활성화된 서비스도 식별합니다. 검색된 서비스를 보려면 다음 명령을 사용합니다.</block>
   <block id="2b6ab5193160f5eaca51526b15f27e3a" category="admonition">노드 서비스 검색은 검색된 서비스를 식별하지만 서비스가 올바르게 구성된다고 보장하지 않습니다. 반대로 검색된 서비스가 없으면 볼륨 마운트가 실패한다고 보장할 수 없습니다.</block>
-  <block id="a8a2b2d9e5637b41609ebc0c72058699" category="list-text">1.19-1.24를 실행하는 Kubernetes 클러스터</block>
   <block id="66896c99fb06e0b6c86498b249f8217a" category="cell">요청된 볼륨 크기가 이 값보다 큰 경우 용량 할당에 실패합니다.</block>
   <block id="67183086f9356a825023b7315f5c3b99" category="cell">ONTAP REST API를 사용하는 부울 매개 변수입니다. * MetroCluster에서는 기술 미리 보기 * 가 지원되지 않습니다.</block>
   <block id="6c1cf09676baae03b976277c6c163155" category="admonition-title">코드&gt; useREST &lt;/code&gt; 고려 사항</block>
@@ -3054,7 +3041,6 @@
   <block id="402b7d2d5aea5e79576f9a964df89a32" category="cell">이 SCC를 Trident 네임스페이스의 Trident 사용자에게 바인딩하기 위해 하나의 항목이 제공됩니다.</block>
   <block id="274b68192b056e268f128ff63bfcd4a4" category="cell">해당 없음</block>
   <block id="50af2a553c2117ddd78da33865c6e35b" category="cell">hostPath, downwardAPI, 투영, emptyDir</block>
-  <block id="8401929e252299acc0120c7b139be18b" category="cell">1.19-1.24</block>
   <block id="b8f52a0e5f45341fb88241356af7f0c7" category="list-text">을 참조하십시오 <block ref="7c28a1514d14039d3824999236c4890d" category="inline-link-macro-rx"></block> 볼륨 확장에 대한 자세한 내용은 를 참조하십시오.</block>
   <block id="d63b67088a9f91802e555f6613dfc7e2" category="list-text">tridentctl uninstall 명령을 사용하여 Trident를 제거할 때 Trident Pod는 삭제되지만 생성된 CRD는 정리되지 않습니다. 을 참조하십시오 <block ref="3e5b286354565ddfee44ed92d763b424" category="inline-link-macro-rx"></block> Trident를 완전히 제거하고 처음부터 다시 구성할 수 있는 방법을 이해합니다.</block>
   <block id="6386b0f17b85463db72887bca8ae2bb7" category="inline-link-macro">백엔드 구성 중</block>
@@ -3076,8 +3062,6 @@
   <block id="1b3d6decfa71cc52ecc9b041f40a02e5" category="paragraph">또한 Astra의 컨테이너 사용자(Astra Trident 개발자 포함)로 구성된 활발한 공용 커뮤니티가 있습니다 <block ref="6130664377fa14615bb1abd5257e9714" category="inline-link-macro-rx"></block>. 프로젝트에 대한 일반적인 질문을 하고 비슷한 생각을 가진 동료와 관련 주제를 논의할 수 있는 좋은 장소입니다.</block>
   <block id="9337cac2cd1105449cd4e78ff2a353a4" category="cell">"k8s.gcr.io/sig-storage(k8s 1.19 이상) 또는 quay.io/k8scsi"</block>
   <block id="702fa57eedc6ee8490a7294016f8b14f" category="list-text">트리덴트의 지략적인 요아ML</block>
-  <block id="ff3e13aad771f1b75db023012e96d057" category="list-text">Kubernetes 1.19-1.24를 실행하는 지원되는 Kubernetes 클러스터에 대한 모든 권한이 있습니다.</block>
-  <block id="d85ea0185bbd496941944ab1e486ddb8" category="list-text">Kubernetes 1.19-1.24</block>
   <block id="0b0c130cbadeba098951b51bf8268b3f" category="paragraph">Kubernetes 버전을 확인하려면 다음 명령을 실행합니다.</block>
   <block id="6b51834314ece904405eb0ce1a6e6bd8" category="list-text">NetApp HCI/Element 소프트웨어 11 이상</block>
   <block id="6ebf7ae9dffc55cf86792ea266344b3a" category="list-text">Ubuntu 18.04 이상(최신 22.04)</block>
@@ -3454,4 +3438,10 @@
   <block id="ece92ff52ed3cf9a5447ce0db82396ed" category="list-text">를 실행하는 Kubernetes 클러스터를 사용해야 합니다 <block ref="d502dc64864e79085bee32826e6fe213" category="inline-link-macro-rx"></block>.</block>
   <block id="26dbe1fe275b741e7240a373222d3480" category="paragraph">CRD를 사용하는 Astra Trident 릴리즈로 이전할 때는 다운그레이드를 고려해야 합니다. Astra Trident는 CRD를 사용하여 상태를 유지하기 때문에 생성된 모든 스토리지 요소(백엔드, 스토리지 클래스, PV 및 볼륨 스냅샷)는 에 기록된 데이터 대신 CRD 객체를 연결합니다<block ref="47cb44be55a0dffa15dfc900a4c687be" prefix=" " category="inline-code"></block> PV(이전 설치 버전의 Astra Trident에서 사용). 새로 생성된 PVS, 백엔드 및 스토리지 클래스는 모두 CRD 객체로 유지됩니다.</block>
   <block id="06b33bc9cc124539c964174ecd43eb43" category="paragraph">CRD를 사용하여 실행되는 Astra Trident 버전에 대해서만 다운그레이드를 시도하십시오(19.07 이상). 그러면 다운그레이드가 발생한 후 현재 Astra Trident 릴리스에 대해 수행된 작업이 표시됩니다.</block>
+  <block id="c6ab9f98e5a2b50f51aba6c04795101d" category="list-text">지원되는 Kubernetes 버전을 실행 중인 지원되는 Kubernetes 클러스터에 대한 모든 권한이 있습니다. 를 검토합니다 <block ref="3675fd04b78685cacd6e23511ab11d10" category="inline-link-macro-rx"></block>.</block>
+  <block id="c27e444dab3a08bf8ec59794897c1a27" category="inline-link-macro">지원되는 Kubernetes 버전</block>
+  <block id="774b87dcd517dd9ece61db4ebf307bef" category="list-text">A <block ref="54886eff1282d00a4f74bc7c51429511" category="inline-link-macro-rx"></block></block>
+  <block id="62f6f68c0a7691973a4c0e16939d5709" category="cell">1.19 - 1.25</block>
+  <block id="279d526c0cf636b7292c2cfddc1d9957" category="list-text">를 실행하는 Kubernetes 클러스터 <block ref="54886eff1282d00a4f74bc7c51429511" category="inline-link-macro-rx"></block></block>
+  <block id="87aa97ac70530bd54af65d5fc819f906" category="paragraph">이 단계의 일부로 Trident 운영자는 기존 Astra Trident 설치를 식별하고 운영자와 동일한 버전으로 업그레이드합니다.</block>
 </blocks>
