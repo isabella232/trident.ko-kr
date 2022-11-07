@@ -54,25 +54,29 @@ RHEL/CentOS 7
 +
 'SUDO yum install -y lsscsi iscsi -initiator-utils sg3_utils device-mapper-multipath'
 
-. 다중 경로 데몬을 시작합니다.
+. iscsi-initiator-utils 버전이 6.2.0.874-2.el7 이상인지 확인합니다.
 +
-'SUDO mpathconf - -enable - -with_multipathd y'
+rpm -q iscsi-initiator-utils
 
-. 'iscsid'와 'multipathd'가 활성화되어 실행되고 있는지 확인합니다.
+. 스캔을 수동으로 설정합니다.
 +
-'SUDO systemctl enable iscsid multipathd''SUDO systemctl start iscsid multipathd'
+'SUDO SED-I's/^\(node.session.scan\).*/\1 = manual/'/etc/iscsi/iscsid.conf'
 
-. iSCSI 타겟 검색:
+. 다중 경로 설정:
 +
-'sudo iscsiadm -m discoverydb -t st -p <data_LIF_ip>--discover'
+'SUDO mpathconf - -enable - -with_multipathd y - -find_multiprohs n'
 
-. 검색된 iSCSI 대상에 로그인합니다.
 +
-'SUDO iscsiadm -m node -p <data_LIF_ip>--login'
+
+NOTE: etc/multipath.conf에 debrofs 아래에 find_multiprohs no가 포함되어 있는지 확인합니다.
+
+. iscsid와 multipathd가 실행 중인지 확인합니다.
++
+'SUDO systemctl enable -- now iscsid multipathd'
 
 . "iSCSI" 활성화 및 시작:
 +
-'SUDO systemctl enable iscsi''SUDO systemctl start iscsi'를 활성화합니다
+'SUDO systemctl enable -- now iscsi'
 
 
 
@@ -85,21 +89,25 @@ RHEL/CentOS 7
 +
 'SUDO apt-get install-y open-iscsi lsscsg3-utils multipath-tools scitools'
 
+. open-iscsi 버전이 2.0.874-5ubuntu2.10 이상(bionic) 또는 2.0.874-7.1uubuttu6.1 이상(focal)인지 확인합니다.
++
+d패키지-l open-iscsi
+
+. 스캔을 수동으로 설정합니다.
++
+'SUDO SED-I's/^\(node.session.scan\).*/\1 = manual/'/etc/iscsi/iscsid.conf'
+
 . 다중 경로 설정:
 +
-'SUDO tee /etc/multipath.conf<-'EOF' 기본값 {user_friendly_names yes find_multipath yes}EOF sudo service multipath-tools restart'입니다
+'sudo tee /etc/multipath.conf<-'EOF' 기본값 {user_friendly_names yes find_multipath no} EOF sudo systemctl enable--now multipath-tools.service sudo service multipath-tools restart'입니다
 
-. iscsid와 multipathd가 실행 중인지 확인합니다.
 +
-'SUDO service open-iscsi start sudo service multipath-tools start'를 참조하십시오
 
-. iSCSI 타겟 검색:
-+
-'sudo iscsiadm -m discoverydb -t st -p <data_LIF_ip>--discover'
+NOTE: etc/multipath.conf에 debrofs 아래에 find_multiprohs no가 포함되어 있는지 확인합니다.
 
-. 검색된 iSCSI 대상에 로그인합니다.
+. 'open-iscsi'와 'multirpath-tools'가 활성화되어 실행되고 있는지 확인합니다.
 +
-'SUDO iscsiadm -m node -p <data_LIF_ip>--login'
+'SUDO systemctl status multipath -tools''SUDO systemctl enable -- now open-iscsi.service`'SUDO systemctl status open-iscsi'
 
 
 
