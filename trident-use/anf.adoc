@@ -13,7 +13,7 @@ summary: 'Astra Trident의 백엔드로 Azure NetApp Files(ANF)를 구성할 수
 
 Astra Trident의 백엔드로 Azure NetApp Files(ANF)를 구성할 수 있습니다. ANF 백엔드를 사용하여 NAS 및 SMB 볼륨을 연결할 수 있습니다.
 
-* link:anf-examples.html["준비"]
+* link:anf-prep.html["준비"]
 * link:anf-examples.html["구성 옵션 및 예"]
 
 

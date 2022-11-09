@@ -103,14 +103,14 @@ grep "aes" /proc/cpuinfo
         "labels":{"luks": "true"},
         "zone":"us_east_1a",
         "defaults": {
-            "luksEncryption": true
+            "luksEncryption": "true"
         }
     },
     {
         "labels":{"luks": "false"},
         "zone":"us_east_1a",
         "defaults": {
-            "luksEncryption": false
+            "luksEncryption": "false"
         }
     },
 ]
@@ -126,8 +126,8 @@ metadata:
 provisioner: netapp.io/trident
 parameters:
   selector: "luks=true"
-  csi.storage.k8s.io/node-stage-secret-name: luks-\${pvc.name}
-  csi.storage.k8s.io/node-stage-secret-namespace: \${pvc.namespace}
+  csi.storage.k8s.io/node-stage-secret-name: luks-${pvc.name}
+  csi.storage.k8s.io/node-stage-secret-namespace: ${pvc.namespace}
 ----
 . LUKS 암호를 포함하는 암호를 생성합니다. 예를 들면 다음과 같습니다.
 +

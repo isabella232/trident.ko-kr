@@ -3366,7 +3366,6 @@
   <block id="c51cc3b801a879870aea846bdde1c7a3" category="section-title">백엔드를 생성합니다</block>
   <block id="7d8058d93ec1d95c673d83bf303326ff" category="doc">ONTAP NAS 구성 옵션 및 예</block>
   <block id="618a7676e411bbfbd9dbdb2411019951" category="summary">Astra Trident의 백엔드로 Azure NetApp Files(ANF)를 구성할 수 있습니다. ANF 백엔드를 사용하여 NAS 및 SMB 볼륨을 연결할 수 있습니다.</block>
-  <block id="eff2c83d669b1ff76a985e4f55a7dcdf" category="list-text"><block ref="eff2c83d669b1ff76a985e4f55a7dcdf" category="inline-link-macro-rx"></block></block>
   <block id="9d556ecfb4757173c93a34a5466447d7" category="list-text"><block ref="9d556ecfb4757173c93a34a5466447d7" category="inline-link-macro-rx"></block></block>
   <block id="ea61e2c2ff507048203824add1eb7c21" category="section-title">고려 사항</block>
   <block id="8f395c84ad002394e9f070a25937dcc4" category="list-text">Azure NetApp Files 서비스는 100GB 미만의 볼륨을 지원하지 않습니다. Astra Trident는 더 작은 볼륨을 요청하는 경우 100GB 볼륨을 자동으로 생성합니다.</block>
@@ -3444,4 +3443,5 @@
   <block id="62f6f68c0a7691973a4c0e16939d5709" category="cell">1.19 - 1.25</block>
   <block id="279d526c0cf636b7292c2cfddc1d9957" category="list-text">를 실행하는 Kubernetes 클러스터 <block ref="54886eff1282d00a4f74bc7c51429511" category="inline-link-macro-rx"></block></block>
   <block id="87aa97ac70530bd54af65d5fc819f906" category="paragraph">이 단계의 일부로 Trident 운영자는 기존 Astra Trident 설치를 식별하고 운영자와 동일한 버전으로 업그레이드합니다.</block>
+  <block id="482d7c15b1a7200b3981ee1f99a86fef" category="list-text"><block ref="482d7c15b1a7200b3981ee1f99a86fef" category="inline-link-macro-rx"></block></block>
 </blocks>
