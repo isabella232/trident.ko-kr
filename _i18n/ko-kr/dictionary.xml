@@ -69,7 +69,6 @@
   <block id="00055dac2ba112b87a95a368075b9561" category="cell">'ONTAP-NAS'</block>
   <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="paragraph">NFS 를 참조하십시오</block>
   <block id="ac52cf637478f3656a1fdee5c02324fd" category="paragraph">파일 시스템</block>
-  <block id="0d3a79885df431b0b67b50b9479e2fee" category="paragraph">RWO, rwx, ROX</block>
   <block id="9f47e55b538b64923f2ee8c19bc6887a" category="paragraph">"", NFS</block>
   <block id="cecdaed309330a9e7dea16b2076957ee" category="cell">ONTAP-NAS-이코노미</block>
   <block id="2b8ac774302bd45e0ad531e434d8cd6d" category="cell">'ONTAP-NAS-Flexgroup'</block>
@@ -77,11 +76,9 @@
   <block id="e4e1c13bb0b14f6cb7608cbecea948ef" category="paragraph">iSCSI</block>
   <block id="e1e4c8c9ccd9fc39c391da4bcd093fb2" category="paragraph">블록</block>
   <block id="aa91b58ced7ef060eb0e27ac4e1d18a8" category="paragraph">RWO, ROX, rwx</block>
-  <block id="bc2e0aeb951ff36e6703a1ff5419eb02" category="paragraph">파일 시스템이 없습니다. 원시 블록 장치</block>
   <block id="0b86d82002caac6130185da4ef1be67e" category="paragraph">RWO, ROX</block>
   <block id="a029cca698cbf05f07897f86c43cf9e8" category="paragraph">xfs, ext3, ext4</block>
   <block id="73b781a615cea2647a87ff2035e296b1" category="cell">ONTAP-SAN-이코노미</block>
-  <block id="4ff78ba07210a8b4db65f6ef62b4e1b4" category="admonition">ONTAP 백엔드는 보안 역할(사용자 이름/암호)에 대한 로그인 자격 증명을 사용하거나 ONTAP 클러스터에 설치된 개인 키와 인증서를 사용하여 인증할 수 있습니다. tridentctl 업데이트 백엔드를 사용하여 기존 백엔드를 업데이트하여 인증 모드 간에 이동할 수 있습니다.</block>
   <block id="1e209c07680392db2505687941188c9f" category="summary">Astra Trident의 이전 버전으로 다운그레이드하는 데 필요한 단계에 대해 알아보십시오.</block>
   <block id="9b51b245233e60555d569a43ebaa1b8d" category="doc">Astra Trident를 다운그레이드하십시오</block>
   <block id="f58ee9343b12a3276981187a42480ba7" category="paragraph">다음과 같은 다양한 이유로 다운그레이드를 고려할 수 있습니다.</block>
@@ -3444,4 +3441,15 @@
   <block id="482d7c15b1a7200b3981ee1f99a86fef" category="list-text"><block ref="482d7c15b1a7200b3981ee1f99a86fef" category="inline-link-macro-rx"></block></block>
   <block id="756efcb3a97cdd37e8b34de3913c3d8f" category="paragraph">를 참조하십시오 <block ref="18d5551396fb2ce2e009cfdb709e4875" category="inline-link-macro-rx"></block>. 필수 구성 요소가 충족되었는지 확인한 후 Astra Trident를 배포할 준비가 되었습니다.</block>
   <block id="0d41f8565b8b74a59fc029ccf2becd83" category="list-text">관리 플러그인 시스템을 사용하여 Astra Trident를 시작합니다. 대치<block ref="3d689bd3819ead35ed794427bd12f459" prefix=" " category="inline-code"></block> 사용 중인 플러그인 버전(xxx.xx.x)을 사용합니다.</block>
+  <block id="4f0e7dc30ffb3e25e75331c9afb2243a" category="cell">볼륨 모드</block>
+  <block id="28c142639a9bbdd526b8eb986c13907d" category="paragraph">파일 시스템이 없습니다. 원시 블록 디바이스입니다</block>
+  <block id="0453a3e06be842b09a9479fe06f0dd13" category="paragraph">파일 시스템 볼륨 모드에서는 rwx를 사용할 수 없습니다.</block>
+  <block id="04de2f1b0cab8344abeded774f82f9d5" category="admonition">ONTAP 백엔드는 보안 역할(사용자 이름/암호)에 대한 로그인 자격 증명을 사용하거나 ONTAP 클러스터에 설치된 개인 키와 인증서를 사용하여 인증할 수 있습니다. 기존 백엔드를 업데이트하여 를 사용하여 한 인증 모드에서 다른 인증 모드로 이동할 수 있습니다<block ref="defd1e55f93269ac9278afc086951ba8" prefix=" " category="inline-code"></block>.</block>
+  <block id="964ea71824e902693c3ef56b57cf78be" category="summary">Astra Trident를 사용하면 기본 네임스페이스에서 볼륨을 생성하고 하나 이상의 보조 네임스페이스에서 공유할 수 있습니다.</block>
+  <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">피처</block>
+  <block id="8ff961668c6784e84b25c265cbb629d7" category="paragraph">네임스페이스 간 볼륨 액세스에 대한 자세한 내용은 다음을 참조하십시오.</block>
+  <block id="f1cfea5f1444de607dfa549b3aa57010" category="inline-link-macro">네임스페이스 간 볼륨 공유: 네임스페이스 간 볼륨 액세스를 위해 hello를 사용합니다</block>
+  <block id="2780f690b7670efc296ac19ef3029d0c" category="list-text">를 방문하십시오 <block ref="b0d29f1b2abb2cc552e4cc47177582ef" category="inline-link-macro-rx"></block>.</block>
+  <block id="96e1384807331548bf745acde0fe1b73" category="inline-link-macro">NetAppTV를 참조하십시오</block>
+  <block id="414883f8b6ef58c7b3b37e66fbfd482f" category="list-text">데모를 시청해보시기 바랍니다 <block ref="1945a2d4809e81668f29485f6ae1bbc8" category="inline-link-macro-rx"></block>.</block>
 </blocks>

@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/volume-share.html 
-keywords: volref, volume reference, share, pvc, pv, nfs, namespace 
-summary:  
+keywords: volref, volume reference, share, pvc, pv, nfs, namespace, cvna, cross-namespace, sharing 
+summary: Astra Trident를 사용하면 기본 네임스페이스에서 볼륨을 생성하고 하나 이상의 보조 네임스페이스에서 공유할 수 있습니다. 
 ---
 = 네임스페이스 전체에서 NFS 볼륨을 공유합니다
 :hardbreaks:
@@ -10,6 +10,13 @@ summary:
 :icons: font
 :imagesdir: ../media/
 
+
+[role="lead"]
+Astra Trident를 사용하면 기본 네임스페이스에서 볼륨을 생성하고 하나 이상의 보조 네임스페이스에서 공유할 수 있습니다.
+
+
+
+== 피처
 
 Astra 트리펜볼륨 레퍼런스 CR을 사용하면 하나 이상의 Kubernetes 네임스페이스에서 ReadWriteMany(rwx) NFS 볼륨을 안전하게 공유할 수 있습니다. 이 Kubernetes 네이티브 솔루션은 다음과 같은 이점을 제공합니다.
 
@@ -150,4 +157,14 @@ Usage:
 * Astra Trident는 대상 네임스페이스가 공유 볼륨에 쓰는 것을 막을 수 없습니다. 파일 잠금 또는 기타 프로세스를 사용하여 공유 볼륨 데이터를 덮어쓰지 않도록 해야 합니다.
 * 를 제거하여 원본 PVC에 대한 액세스를 취소할 수 없습니다 `shareToNamespace` 또는 `shareFromNamepace` 주석 또는 삭제 `TridentVolumeReference` 있습니다. 액세스 권한을 취소하려면 하위 PVC를 삭제해야 합니다.
 * 하위 볼륨에서는 스냅샷, 클론 및 미러링을 사용할 수 없습니다.
+
+
+
+
+== 를 참조하십시오
+
+네임스페이스 간 볼륨 액세스에 대한 자세한 내용은 다음을 참조하십시오.
+
+* 를 방문하십시오 link:https://cloud.netapp.com/blog/astra-blg-sharing-volumes-between-namespaces-say-hello-to-cross-namespace-volume-access["네임스페이스 간 볼륨 공유: 네임스페이스 간 볼륨 액세스를 위해 hello를 사용합니다"^].
+* 데모를 시청해보시기 바랍니다 link:http://netapp.tv/cloud/details/29594?playlist_id=81&mcid=63262890210074608700682715883688763007["NetAppTV를 참조하십시오"^].
 
