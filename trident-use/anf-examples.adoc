@@ -148,6 +148,7 @@ NOTE: ANF 백엔드에서 생성된 모든 볼륨의 경우, Astra Trident는 �
 == 예제 설정
 
 .예 1: 최소 구성
+[%collapsible%open]
 ====
 이는 절대적인 최소 백엔드 구성입니다. 이 구성을 통해 Astra Trident는 구성된 위치에서 ANF에 위임된 모든 NetApp 계정, 용량 풀 및 서브넷을 검색하고 해당 풀 및 서브넷 중 하나에 무작위로 새 볼륨을 배치합니다. 왜냐하면 `nasType` 생략됩니다 `nfs` 기본값은 NFS 볼륨에 대해 백엔드가 프로비저닝됩니다.
 
@@ -167,6 +168,7 @@ NOTE: ANF 백엔드에서 생성된 모든 볼륨의 경우, Astra Trident는 �
 ----
 ====
 .예 2: 용량 풀 필터를 사용하는 특정 서비스 수준 구성
+[%collapsible%open]
 ====
 이 백엔드 구성은 Azure에 볼륨을 배치합니다 `eastus` 의 위치 `Ultra` 용량 풀. Astra Trident는 해당 위치의 ANF에 위임된 모든 서브넷을 자동으로 검색하여 그 중 하나에 무작위로 새 볼륨을 배치합니다.
 
@@ -189,6 +191,7 @@ NOTE: ANF 백엔드에서 생성된 모든 볼륨의 경우, Astra Trident는 �
 ----
 ====
 .예 3: 고급 구성
+[%collapsible%open]
 ====
 이 백엔드 구성은 단일 서브넷에 대한 볼륨 배치 범위를 더욱 줄여주고 일부 볼륨 프로비저닝 기본값도 수정합니다.
 
@@ -222,6 +225,7 @@ NOTE: ANF 백엔드에서 생성된 모든 볼륨의 경우, Astra Trident는 �
 ----
 ====
 .예 4: 가상 스토리지 풀 구성
+[%collapsible%open]
 ====
 이 백엔드 구성은 단일 파일에 여러 스토리지 풀을 정의합니다. 다양한 서비스 수준을 지원하는 여러 용량 풀이 있고 이를 나타내는 Kubernetes의 스토리지 클래스를 생성하려는 경우에 유용합니다.
 
@@ -318,6 +322,7 @@ allowVolumeExpansion: true
 사용 `nasType`, `node-stage-secret-name`, 및  `node-stage-secret-namespace`, SMB 볼륨을 지정하고 필요한 Active Directory 자격 증명을 제공할 수 있습니다.
 
 .예제 1: 기본 네임스페이스의 기본 구성
+[%collapsible%open]
 ====
 [listing]
 ----
@@ -335,6 +340,7 @@ parameters:
 ----
 ====
 .예제 2: 네임스페이스당 다른 암호 사용
+[%collapsible%open]
 ====
 [listing]
 ----
@@ -351,6 +357,7 @@ parameters:
 ----
 ====
 .예 3: 볼륨별로 다른 암호 사용
+[%collapsible%open]
 ====
 [listing]
 ----

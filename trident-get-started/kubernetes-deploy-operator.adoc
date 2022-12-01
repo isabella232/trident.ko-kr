@@ -38,7 +38,12 @@ Trident 연산자를 사용하여 Astra Trident를 배포할 수 있습니다.
 Trident 연산자는 다음 두 가지 방법 중 하나로 배포할 수 있습니다.
 
 * Trident 사용 link:https://artifacthub.io/packages/helm/netapp-trident/trident-operator["Helm 차트"^]: 제어 도표는 Trident 연산자를 배포하고 Trident를 한 번에 설치합니다.
-* 수동: Trident에서 를 제공합니다 link:https://github.com/NetApp/trident/blob/master/deploy/bundle.yaml["Bundle.YAML"^] 연산자를 설치하고 관련 개체를 만드는 데 사용할 수 있는 파일입니다.
+* 수동: Trident 연산자를 설치하고 관련 개체를 만드는 데 사용할 수 있는 파일을 제공합니다.
++
+** Kubernetes 1.24 이하 를 실행하는 클러스터의 경우, 를 사용합니다 link:https://github.com/NetApp/trident/tree/stable/v22.10/deploy/bundle_pre_1_25.yaml["Bundle_PRE_1_25.YAML"^].
+** Kubernetes 1.25 이상을 실행하는 클러스터의 경우 를 사용합니다 link:https://github.com/NetApp/trident/tree/stable/v22.10/deploy/bundle_post_1_25.yaml["Bundle_post_1_25.YAML"^].
+
+
 
 
 

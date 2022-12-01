@@ -97,14 +97,10 @@
   <block id="12a3bd4ff105bed8650ca128636a078f" category="paragraph">Astra Trident를 클러스터 범위 운영자를 사용하는 릴리즈로 다운그레이드하려면 아래에 설명된 단계를 따르십시오.</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">단계</block>
   <block id="43f17763173fe230bdd78477152f5f7d" category="inline-link-macro">Astra Trident를 제거합니다</block>
-  <block id="f472e2d2602fec8483b064616fa5f543" category="list-text"><block ref="e6c6ebb45af4a1845e181c2b5544dbb0" category="inline-link-macro-rx"></block>. ** 기존 설치를 완전히 제거하지 않는 한 CRD를 휘두리지 마십시오.**</block>
-  <block id="3864c0c37bf26f8a7686e5c04435974c" category="inline-link">Trident Hub 저장소</block>
-  <block id="78a26b79451266c6562d8d11cdb86ad0" category="list-text">클러스터 범위 연산자를 삭제합니다. 이렇게 하려면 연산자를 배포하는 데 사용되는 매니페스트가 필요합니다. 에서 구할 수 있습니다<block ref="08fa9926a4347665a77bd7911809a1ce" category="inline-link-rx"></block>. 필요한 분기를 사용해야 합니다.</block>
   <block id="44d9737dc7f423d188a4b34663c5f06e" category="list-text">원하는 버전의 Astra Trident를 설치하여 다운그레이드를 계속합니다. 원하는 릴리스에 대한 설명서를 따릅니다.</block>
   <block id="0e792058c21e7156d25e8ae8f2d784a0" category="section-title">네임스페이스 범위 연산자로 다운그레이드합니다</block>
   <block id="8ad79c030a4ebdd2f446157ba529561e" category="paragraph">이 섹션에서는 네임스페이스 범위 연산자를 사용하여 설치되는 20.07 ~ 20.10 범위의 Astra Trident 릴리스로 다운그레이드하는 단계를 요약합니다.</block>
   <block id="a7c80f52f9be4831ca776b56dc642a45" category="list-text"><block ref="e6c6ebb45af4a1845e181c2b5544dbb0" category="inline-link-macro-rx"></block>. ** 기존 설치를 완전히 제거하려는 경우가 아니면 CRD를 휘두리지 마십시오. ** 트라이덴오케스트레이터(trident오케스트레이터)가 삭제되었는지 확인합니다.</block>
-  <block id="141ed8ae2dd3c3efac0c25f12b058c87" category="list-text">클러스터 범위 연산자를 삭제합니다. 이렇게 하려면 연산자를 배포하는 데 사용되는 매니페스트가 필요합니다. 여기에서 얻을 수 있습니다<block ref="08fa9926a4347665a77bd7911809a1ce" category="inline-link-rx"></block>. 필요한 분기를 사용해야 합니다.</block>
   <block id="2389eabedca3341193952356ec53cd0c" category="list-text">트라이덴오케스트레이터 CRD를 삭제한다.</block>
   <block id="2982be9f91f77222d75873452bfc7696" category="paragraph">Astra Trident가 제거되었습니다.</block>
   <block id="0f46a51f24c3700da8c74b9a5294a22f" category="list-text">원하는 버전을 설치하여 다운그레이드를 계속합니다. 원하는 릴리스에 대한 설명서를 따릅니다.</block>
@@ -191,16 +187,12 @@
   <block id="199ed8c975e8bb544d18428ba17adbc3" category="inline-link">GitHub에 대한 발행 세부 정보</block>
   <block id="398b69b685d2969c9e5d2f8cfbff3972" category="admonition">OpenShift Container Platform에서 연산자를 사용하여 Trident를 업그레이드할 때는 Trident 21.01.1 이상으로 업그레이드해야 합니다. 21.01.0으로 릴리스된 Trident 연산자에는 21.01.1에서 해결된 알려진 문제가 포함되어 있습니다. 자세한 내용은 를 참조하십시오<block ref="bcebcdd21adcbb3d7c640d63a711c6fb" category="inline-link-rx"></block>.</block>
   <block id="2f6881ec6a84d1ac9ef2e551f3ca8466" category="section-title">클러스터 범위 운영자 설치를 업그레이드하십시오</block>
-  <block id="532223fc600c8862511462ff30738c55" category="paragraph">Trident 21.01 및 이후 * 에서 업그레이드하려면 다음 단계를 따르십시오.</block>
   <block id="238e63aecc23c1bc2611ca883f075f1f" category="list-text">현재 Astra Trident 인스턴스를 설치하는 데 사용된 Trident 연산자를 삭제합니다. 예를 들어, 21.01에서 업그레이드하는 경우 다음 명령을 실행합니다.</block>
-  <block id="09b615e18699c6675b3705c00a495375" category="list-text">새로운 버전의 Trident 운영자를 설정하는 bundle.YAML 파일을 사용하여 Astra Trident를 설치합니다. 다음 명령을 실행합니다.</block>
   <block id="d06b5297af318d2581021098f6b0d44d" category="section-title">네임스페이스 범위 연산자 설치를 업그레이드합니다</block>
   <block id="ddfa75d059a999aedec16392aae03bc4" category="paragraph">네임스페이스 범위 연산자(버전 20.07 ~ 20.10)를 사용하여 설치된 Astra Trident의 인스턴스에서 업그레이드하려면 다음 단계를 따라야 합니다.</block>
   <block id="edf5c542759186ded2c7eeaae6b340a5" category="list-text">기존 Trident 설치의 상태를 확인합니다. 이렇게 하려면 '트리펜Provisioner'의 * 상태 * 를 확인하십시오. 상태는 '설치됨'이어야 합니다.</block>
   <block id="f14a1d8e56a0cbd2826edd38778371f7" category="admonition">상태가 '업데이트 중'으로 표시되면 계속하기 전에 이를 해결해야 합니다. 가능한 상태 값 목록은 를 참조하십시오<block ref="6aefd1c9ce8e43313a8c7c92e2fac4f3" category="inline-link-rx"></block>.</block>
   <block id="683d018a2f7c70469fd74ba0eeae2a79" category="list-text">Trident 설치 프로그램과 함께 제공된 매니페스트를 사용하여 'Trident Orchestrator' CRD를 만듭니다.</block>
-  <block id="ede3d39a1c5211985b126b3f166cf601" category="inline-link">Trident 저장소</block>
-  <block id="af39f09efb6e7b7133433dff92d0fffe" category="list-text">매니페스트를 사용하여 네임스페이스 범위 연산자를 삭제합니다. 이 단계를 완료하려면 네임스페이스 범위의 운영자를 배포하는 데 사용되는 "bundle.YAML" 파일이 필요합니다. 에서 Bundle.YAML을 얻을 수 있습니다<block ref="1403b813895a8a78c447fca96240f2ac" category="inline-link-rx"></block>. 해당 분기를 사용해야 합니다.</block>
   <block id="5fbede7820945c99130183fd2fd0f4b3" category="paragraph">이 단계에서 트리덴트 - operator - xxxxxxxxxx - xxxxx'POD가 삭제됩니다.</block>
   <block id="86463d362af5835ff8c3fd6587fbd24f" category="list-text">(선택 사항) 설치 매개변수를 수정해야 하는 경우 ' TERentProvisioner' 사양을 업데이트합니다. 컨테이너 이미지를 가져올 전용 이미지 레지스트리를 수정하거나, 디버그 로그를 사용하거나, 이미지 풀 비밀을 지정하는 등의 변경 사항이 있을 수 있습니다.</block>
   <block id="df486b34cec5fdfba24de79fe6b388d4" category="list-text">클러스터 범위 연산자를 설치합니다.</block>
@@ -2848,7 +2840,6 @@
   <block id="56c34c6410dd45c5cec44149ad0ce037" category="section-title">개인 정보 보호 정책</block>
   <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
   <block id="056b6e39cb1ae24d946674f95697989a" category="paragraph">운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그레이드할 수 있습니다.</block>
-  <block id="d10c9260fe9a1660c2f75dddda0220e4" category="list-text">(선택 사항) 설치 매개 변수를 수정하려면 Trident를 설치할 때 만든 'Trident Orchestrator' 개체를 편집합니다. 여기에는 사용자 지정 Trident 이미지 수정, 컨테이너 이미지를 가져올 전용 이미지 레지스트리, 디버그 로그 활성화 또는 이미지 풀 암호 지정 등의 변경 사항이 포함될 수 있습니다.</block>
   <block id="25c11af81bf0b01ce7b0f24ddc9f7136" category="section-title">기타 알려진 구성 옵션</block>
   <block id="ffedfe711d36cdc8c41927063ae77027" category="paragraph">VMware Tanzu 포트폴리오 제품에 Astra Trident를 설치할 경우:</block>
   <block id="8ded34c5caad3971bb6d0a2b202d7b32" category="list-text">클러스터는 권한이 있는 워크로드를 지원해야 합니다.</block>
@@ -2907,8 +2898,6 @@
   <block id="0b4a92a731cb582bd951a7aa481f0602" category="list-text">Anthos On-Premise(VMware) 및 Anthos의 Bare Metal 1.9, 1.10, 1.11</block>
   <block id="7d3f46589c43a64fd040e4f0e0691a86" category="inline-link-macro">Helm 차트</block>
   <block id="5d2b4e1d078f05c18e07065fa7df166d" category="list-text">Trident 사용 <block ref="cdacb2b0d49176a3c0d8cc9d693de833" category="inline-link-macro-rx"></block>: 제어 도표는 Trident 연산자를 배포하고 Trident를 한 번에 설치합니다.</block>
-  <block id="0d472c887b61206765c1caa63a9290ec" category="inline-link-macro">Bundle.YAML</block>
-  <block id="179000091737641056a247acf2c59dc4" category="list-text">수동: Trident에서 를 제공합니다 <block ref="6f41841ada1b81573b5db54c90d512f9" category="inline-link-macro-rx"></block> 연산자를 설치하고 관련 개체를 만드는 데 사용할 수 있는 파일입니다.</block>
   <block id="c9ffe59301b588bbc33bb004cfd312ee" category="section-title">Trident 연산자를 구축하고 Hrom을 사용하여 Astra Trident를 설치합니다</block>
   <block id="3f44baef815aed01560d6764fea49ebc" category="cell">CVS 볼륨에 사용되는 GCP 네트워크</block>
   <block id="1ea1b160621872df5909653ebde1bf7f" category="paragraph">자격 증명 기반 방법과 인증서 기반 방법 간에 이동하기 위해 기존 백엔드를 업데이트할 수 있습니다. 그러나 한 번에 하나의 인증 방법만 지원됩니다. 다른 인증 방법으로 전환하려면 백엔드 구성에서 기존 방법을 제거해야 합니다.</block>
@@ -3453,4 +3442,16 @@
   <block id="96e1384807331548bf745acde0fe1b73" category="inline-link-macro">NetAppTV를 참조하십시오</block>
   <block id="414883f8b6ef58c7b3b37e66fbfd482f" category="list-text">데모를 시청해보시기 바랍니다 <block ref="1945a2d4809e81668f29485f6ae1bbc8" category="inline-link-macro-rx"></block>.</block>
   <block id="387492c079b6cb13a8ba91c4a60f67b7" category="section-title">볼륨 스냅샷 컨트롤러 배포</block>
+  <block id="6c5b68b88f6af6f28b3bf69ad9c17b70" category="list-text"><block ref="e6c6ebb45af4a1845e181c2b5544dbb0" category="inline-link-macro-rx"></block>. ** 기존 설치를 완전히 제거하지 않는 한 CRD를 삭제하지 마십시오.**</block>
+  <block id="c97d8f6272d9a08ec67b35acba91f6d3" category="list-text">Trident 연산자는 사용 중인 Trident 버전에 연결된 연산자 매니페스트를 사용하여 삭제할 수 있습니다. 예를 들면, 다음과 같습니다.<block ref="e4411f2e6de8cc67724fb259f247dc3e" prefix=" " category="inline-code"></block> 위치<block ref="7d2e512472107955c1b3fb2ce2e19bc4" prefix=" " category="inline-code"></block> 은 버전 번호입니다(예<block ref="ea99d71aa7a32717f8398c406b38b062" prefix=" " category="inline-code"></block>) 및<block ref="5765a306f9d7568469e1db22a96adfd0" prefix=" " category="inline-code"></block> 번들 YAML 파일 이름입니다.</block>
+  <block id="842f7d2dee66406b4e092b9dc8dbc5ce" category="paragraph">다음 단계에 따라 * Trident 21.01 이상에서 업그레이드합니다 *.</block>
+  <block id="913e57b3917474dfe6ca9cea5d7eff80" category="list-text">필요에 따라 를 편집할 수 있습니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> Trident를 설치할 때 생성한 객체를 선택하여 설치 매개 변수를 수정합니다. 여기에는 사용자 지정 Trident 이미지 수정, 컨테이너 이미지를 가져올 전용 이미지 레지스트리, 디버그 로그 활성화 또는 이미지 풀 암호 지정 등의 변경 사항이 포함될 수 있습니다.</block>
+  <block id="974ed9054c7bfd411e970e032a99cecc" category="list-text">사용자 환경에 맞는 올바른 번들 YAML 파일과 의 Astra Trident 버전을 사용하여 Astra Trident를 설치합니다<block ref="79243f20ce3e723d13bf0774e8348ca2" prefix=" " category="inline-code"></block> 위치<block ref="7d2e512472107955c1b3fb2ce2e19bc4" prefix=" " category="inline-code"></block> 은 버전 번호입니다(예<block ref="ea99d71aa7a32717f8398c406b38b062" prefix=" " category="inline-code"></block>) 및<block ref="32f68f45f3f6badcd1aa2343bbbce67c" prefix=" " category="inline-code"></block> 번들 YAML 파일 이름입니다.</block>
+  <block id="bd2cc8575fe69c7f775292759380c838" category="inline-link-macro">Bundle_PRE_1_25.YAML</block>
+  <block id="5864824c62bdf7d1f44d7205b8eff89c" category="list-text">Kubernetes 1.24 이하 를 실행하는 클러스터의 경우, 를 사용합니다 <block ref="8c84c30a1d2b42d50c58aaa8b58402f2" category="inline-link-macro-rx"></block>.</block>
+  <block id="5a02ebff4889c2de0379a0fb10bed282" category="inline-link-macro">Bundle_post_1_25.YAML</block>
+  <block id="418f390286f9ad416740a7939ee1ace3" category="list-text">Kubernetes 1.25 이상을 실행하는 클러스터의 경우 를 사용합니다 <block ref="ec1ceb0b8c89561ced4cfd4f0d7d3066" category="inline-link-macro-rx"></block>.</block>
+  <block id="fe3799e555192a4be0f491c2a4b889cb" category="paragraph">예를 들어, Kubernetes 1.25용 Astra Trident 22.10을 설치하는 경우 다음 명령을 실행합니다.</block>
+  <block id="6abd06de383c0d8eca2b08e0ec8775e1" category="list-text">매니페스트를 사용하여 네임스페이스 범위 연산자를 삭제합니다. 이 단계를 완료하려면 에서 네임스페이스 범위 연산자를 배포하는 데 사용되는 번들 YAML 파일이 필요합니다<block ref="79243f20ce3e723d13bf0774e8348ca2" prefix=" " category="inline-code"></block> 위치<block ref="7d2e512472107955c1b3fb2ce2e19bc4" prefix=" " category="inline-code"></block> 은 버전 번호입니다(예<block ref="ea99d71aa7a32717f8398c406b38b062" prefix=" " category="inline-code"></block>) 및<block ref="32f68f45f3f6badcd1aa2343bbbce67c" prefix=" " category="inline-code"></block> 번들 YAML 파일 이름입니다.</block>
+  <block id="ef4941fc3b8697a8f43fd6782250b64c" category="list-text">수동: Trident 연산자를 설치하고 관련 개체를 만드는 데 사용할 수 있는 파일을 제공합니다.</block>
 </blocks>
