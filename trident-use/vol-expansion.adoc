@@ -22,6 +22,7 @@ CSI 프로비저닝을 사용하여 iSCSI PV(Persistent Volume)를 확장할 수
 
 NOTE: iSCSI 볼륨 확장은 ONTAP-SAN, ONTAP-SAN-이코노미, Solidfire-SAN 드라이버로 지원되며 Kubernetes 1.16 이상이 필요합니다.
 
+.개요
 iSCSI PV를 확장하면 다음 단계가 포함됩니다.
 
 * StorageClass 정의를 편집하여 allowVolumeExpansion 필드를 true로 설정합니다.

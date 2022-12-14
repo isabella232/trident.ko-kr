@@ -62,7 +62,7 @@ CAUTION: Trident REST 인터페이스는 127.0.0.1(IPv4의 경우) 또는 [::1](
 
 
 
-== 생성
+== `create`
 
 'create' 명령을 실행하여 Astra Trident에 리소스를 추가할 수 있습니다.
 
@@ -75,7 +75,7 @@ Usage:
 
 
 
-== 삭제
+== `delete`
 
 "Delete" 명령을 실행하여 Astra Trident에서 하나 이상의 리소스를 제거할 수 있습니다.
 
@@ -94,7 +94,7 @@ Usage:
 
 
 
-== 가져오기
+== `get`
 
 "get" 명령을 실행하여 Astra Trident에서 하나 이상의 리소스를 가져올 수 있습니다.
 
@@ -115,7 +115,7 @@ Usage:
 
 
 
-== 이미지
+== `images`
 
 "images" 플래그를 실행하여 Astra Trident에 필요한 컨테이너 이미지 테이블을 인쇄할 수 있습니다.
 
@@ -128,7 +128,7 @@ Usage:
 
 
 
-== 볼륨 가져오기
+== `import volume`
 
 '볼륨 가져오기' 명령을 실행하여 기존 볼륨을 Astra Trident로 가져올 수 있습니다.
 
@@ -148,7 +148,7 @@ Usage:
 
 
 
-== 설치합니다
+== `install`
 
 설치 플래그를 실행하여 Astra Trident를 설치할 수 있습니다.
 
@@ -181,7 +181,7 @@ Usage:
 
 
 
-== 로그
+== `logs`
 
 "logs" 플래그를 실행하여 Astra Trident의 로그를 인쇄할 수 있습니다.
 
@@ -202,7 +202,7 @@ Usage:
 
 
 
-== 전송
+== `send`
 
 'send' 명령을 실행하여 Astra Trident에서 리소스를 보낼 수 있습니다.
 
@@ -215,7 +215,7 @@ Usage:
 
 
 
-== 설치 제거
+== "제거"를 선택합니다
 
 "uninstall" 플래그를 실행하여 Astra Trident를 제거할 수 있습니다.
 
@@ -228,7 +228,7 @@ Usage:
 
 
 
-== 업데이트
+== `update`
 
 'update' 명령어를 실행하여 Astra Trident에서 자원을 수정할 수 있다.
 
@@ -241,7 +241,7 @@ Usage:
 
 
 
-== 업그레이드
+== `upgrade`
 
 "업그레이드" 명령을 실행하여 Astra Trident에서 리소스를 업그레이드할 수 있습니다.
 
@@ -254,7 +254,7 @@ tridentctl upgrade [option]
 
 
 
-== 버전
+== '내전'
 
 'tridentctl' 및 실행 중인 Trident 서비스의 버전을 인쇄하려면 'rsion' 플래그를 실행할 수 있습니다.
 

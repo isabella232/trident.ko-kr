@@ -35,15 +35,19 @@ image::cross-namespace-sharing.png[네임스페이스 간 공유의 개념적 �
 
 몇 단계만으로 NFS 볼륨 공유를 설정할 수 있습니다.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-1.png["1개"] 볼륨을 공유하도록 소스 PVC를 구성합니다
 [role="quick-margin-para"]
 소스 네임스페이스 소유자는 소스 PVC의 데이터에 액세스할 수 있는 권한을 부여합니다.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-2.png["2개"] 대상 네임스페이스에서 CR을 만들 수 있는 권한을 부여합니다
 [role="quick-margin-para"]
 클러스터 관리자는 대상 네임스페이스의 소유자에게 트리엔VolumeReference CR을 생성할 수 있는 권한을 부여합니다.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-3.png["세 가지"] 대상 네임스페이스에서 트리젠VolumeReference 를 생성합니다
 [role="quick-margin-para"]
 대상 네임스페이스의 소유자는 소스 PVC를 참조하기 위해 트리엔VolumeReference CR을 생성합니다.
 
+.image:https://raw.githubusercontent.com/NetAppDocs/common/main/media/number-4.png["네"] 대상 네임스페이스에서 하위 PVC를 만듭니다
 [role="quick-margin-para"]
 대상 네임스페이스의 소유자는 원본 PVC의 데이터 소스를 사용하기 위해 하위 PVC를 만듭니다.
 
@@ -124,6 +128,7 @@ NOTE: 대상 PVC의 크기는 소스 PVC보다 작거나 같아야 합니다.
 
 
 
+.결과
 Astra Trident가 을 읽습니다 `shareFromPVC` 대상 PVC에 주석을 추가하여 대상 PV를 원본 PV를 가리키는 자체 스토리지 리소스가 없는 하위 볼륨으로 생성하고 소스 PV 스토리지 리소스를 공유합니다. 대상 PVC와 PV가 정상으로 표시됩니다.
 
 
@@ -134,7 +139,7 @@ Astra Trident가 을 읽습니다 `shareFromPVC` 대상 PVC에 주석을 추가�
 
 
 
-== tridentctl get을 사용하여 하위 볼륨을 쿼리합니다
+== 사용 `tridentctl get` 하위 볼륨을 쿼리합니다
 
 를 사용합니다[`tridentctl` 유틸리티, 를 실행할 수 있습니다 `get` 하위 볼륨을 가져오는 명령입니다. 자세한 내용은 다음 링크를 참조하십시오.../triment-reference/tridentctl.html[`tridentctl` 명령 및 옵션].
 
