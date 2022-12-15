@@ -18,15 +18,17 @@ Astra Trident를 통합하려면 다음과 같은 설계 및 아키텍처 요소
 
 == 운전자 선택 및 전개
 
+스토리지 시스템에 사용할 백엔드 드라이버를 선택하고 구축합니다.
 
 
-=== ONTAP용 백엔드 드라이버를 선택합니다
 
-ONTAP 시스템에는 4개의 서로 다른 백엔드 드라이버를 사용할 수 있습니다. 이러한 드라이버는 사용 중인 프로토콜과 스토리지 시스템에서 볼륨을 프로비저닝하는 방법에 따라 다릅니다. 따라서 어떤 드라이버를 배포할지 신중하게 고려해야 합니다.
+=== ONTAP 백엔드 드라이버
+
+ONTAP 백엔드 드라이버는 사용된 프로토콜과 스토리지 시스템에서 볼륨을 프로비저닝하는 방법에 따라 다릅니다. 따라서 배포할 드라이버를 결정할 때는 신중하게 고려해야 합니다.
 
 상위 레벨에서는 애플리케이션에 공유 스토리지가 필요한 구성 요소(동일한 PVC에 액세스하는 여러 Pod)가 있는 경우 NAS 기반 드라이버가 기본 선택이고 블록 기반 iSCSI 드라이버는 비공유 스토리지의 요구를 충족합니다. 애플리케이션의 요구사항 및 스토리지 및 인프라 팀의 편안함 수준을 기준으로 프로토콜을 선택합니다. 일반적으로 대부분의 애플리케이션에서 두 서버 간에 차이가 거의 없기 때문에 공유 스토리지(둘 이상의 POD에 동시 액세스가 필요한 경우)가 필요한지 여부에 따라 결정하는 경우가 많습니다.
 
-ONTAP 백 엔드에 대한 5개의 드라이버가 아래에 나열되어 있습니다.
+사용 가능한 ONTAP 백엔드 드라이버는 다음과 같습니다.
 
 * ONTAP-NAS: 프로비저닝되는 각 PV는 ONTAP FlexVolume입니다.
 * ONTAP-NAS-이코노미: 각 PV 프로비저닝은 qtree이며 FlexVolume당 qtree(기본값 200)를 구성할 수 있습니다.
@@ -76,19 +78,19 @@ NOTE: 졸idfire-san의 드라이버도 PVC를 클로닝할 수 있습니다.
 
 
 
-=== Cloud Volumes ONTAP용 백엔드 드라이버를 선택합니다
+=== Cloud Volumes ONTAP 백엔드 드라이버
 
 Cloud Volumes ONTAP은 NAS 및 SAN 프로토콜(NFS, SMB/CIFS 및 iSCSI)을 지원하는 파일 공유 및 블록 레벨 스토리지 등 다양한 활용 사례에 맞게 엔터프라이즈급 스토리지 기능과 함께 데이터 제어를 제공합니다. Cloud Volume ONTAP와 호환되는 드라이버는 ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-SAN, ONTAP-SAN 경제입니다. Cloud Volume ONTAP for Azure, Cloud Volume ONTAP for GCP에 적용할 수 있습니다.
 
 
 
-=== ONTAP용 Amazon FSx의 백엔드 드라이버를 선택합니다
+=== ONTAP 백엔드 드라이버용 Amazon FSx
 
 ONTAP용 Amazon FSx를 사용하면 고객이 익숙한 NetApp 기능, 성능 및 관리 기능을 활용하는 동시에, AWS에 데이터를 저장하는 간편성, 민첩성, 보안, 확장성을 활용할 수 있습니다. ONTAP용 FSX는 ONTAP의 다양한 파일 시스템 기능과 관리 API를 지원합니다. Cloud Volume ONTAP와 호환되는 드라이버는 ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN입니다.
 
 
 
-=== NetApp HCI/SolidFire의 백엔드 드라이버를 선택합니다
+=== NetApp HCI/SolidFire 백엔드 드라이버
 
 NetApp HCI/SolidFire 플랫폼과 함께 사용되는 'olidfire-SAN' 드라이버는 관리자가 QoS 제한을 기반으로 Trident에 대한 Element 백엔드를 구성하는 데 도움이 됩니다. Trident에서 프로비저닝한 볼륨에 대한 특정 QoS 제한을 설정하기 위해 백엔드를 설계하려면 백엔드 파일에 'type' 매개 변수를 사용하십시오. 또한 관리자는 'limitVolumeSize' 매개 변수를 사용하여 스토리지에 생성할 수 있는 볼륨 크기를 제한할 수 있습니다. 현재 볼륨 크기 조정 및 볼륨 복제와 같은 Element 스토리지 기능은 'olidfire-SAN' 드라이버를 통해 지원되지 않습니다. 이러한 작업은 Element 소프트웨어 웹 UI를 통해 수동으로 수행해야 합니다.
 
@@ -104,7 +106,7 @@ NetApp HCI/SolidFire 플랫폼과 함께 사용되는 'olidfire-SAN' 드라이�
 
 
 
-=== Azure NetApp Files용 백엔드 드라이버를 선택합니다
+=== Azure NetApp Files 백엔드 드라이버
 
 Astra Trident는 'Azure-NetApp-files' 드라이버를 사용하여 를 관리합니다 link:https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^] 서비스.
 
@@ -122,7 +124,7 @@ Astra Trident는 'Azure-NetApp-files' 드라이버를 사용하여 를 관리합
 
 
 
-=== Cloud Volumes Service with GCP의 백엔드 드라이버를 선택합니다
+=== Cloud Volumes Service 및 GCP 백엔드 드라이버
 
 Astra Trident는 GCP-cvs 드라이버를 사용하여 GCP 백엔드의 Cloud Volumes Service와 연결합니다. Trident에서 GCP 백엔드를 구성하려면 백엔드 파일에 projectNumber, apiRegion 및 apiKey를 지정해야 합니다. GCP 웹 포털에서 프로젝트 번호를 확인할 수 있으며, GCP에서 Cloud Volumes에 대한 API 액세스를 설정하는 동안 생성한 서비스 계정 프라이빗 키 파일에서 API 키를 가져와야 합니다. Astra Trident는 두 가지 중 하나로 CVS 볼륨을 생성할 수 있습니다 link:https://cloud.google.com/architecture/partners/netapp-cloud-volumes/service-types["서비스 유형"^]:
 
@@ -131,9 +133,6 @@ Astra Trident는 GCP-cvs 드라이버를 사용하여 GCP 백엔드의 Cloud Vol
 
 
 최소 CVS 및 CVS - 성능 볼륨 크기는 100GiB입니다.
-
-
-CAUTION: 기본 CVS 서비스 유형 ['storageClass=software']를 사용하여 백엔드를 배포할 때 사용자 * 는 해당 프로젝트 번호 및 프로젝트 ID에 대해 GCP의 1TiB 미만의 볼륨 기능에 대한 액세스 * 를 얻어야 합니다. Trident에서 1TiB 미만의 볼륨을 프로비저닝하는 데 이 작업이 필요합니다. 그렇지 않은 경우, 600GiB 미만의 PVC에 대해 체적 생성 * 이 실패합니다. 사용 link:https://docs.google.com/forms/d/e/1FAIpQLSc7_euiPtlV8bhsKWvwBl3gm9KUL4kOhD7lnbHC3LlQ7m02Dw/viewform["이 양식입니다"^] 1TiB 미만의 볼륨에 대한 액세스 권한 얻기
 
 [cols="20,10,10,10,10,10,10"]
 |===
@@ -155,7 +154,7 @@ Kubernetes Storage Class 객체를 생성하려면 개별 스토리지 클래스
 
 
 
-=== 특정 백엔드 사용률을 위한 스토리지 클래스 설계
+=== 특정 백엔드 활용도
 
 특정 스토리지 클래스 객체 내에서 필터링을 사용하여 해당 스토리지 클래스에 사용할 스토리지 풀 또는 풀 세트를 결정할 수 있습니다. Storage Class에서 'toragePools', 'additionalStoragePools', 'excludeStoragePools' 등의 세 가지 필터를 설정할 수 있습니다.
 
@@ -165,19 +164,19 @@ excludeStoragePools 매개 변수는 속성과 일치하는 나열된 풀 세트
 
 
 
-=== QoS 정책을 에뮬레이트하기 위한 스토리지 클래스 설계
+=== QoS 정책을 에뮬레이트합니다
 
 서비스 품질 정책을 에뮬레이트하기 위해 스토리지 클래스를 설계하려면 '미디어' 속성을 HDD 또는 'SSD'로 사용하여 스토리지 클래스를 생성합니다. 스토리지 클래스에 언급된 미디어 특성에 따라, Trident는 미디어 속성과 일치하도록 HDD 또는 SSD 애그리게이트를 제공하는 적절한 백엔드를 선택한 다음 볼륨 프로비저닝을 특정 애그리게이트로 전달합니다. 따라서 프리미엄 QoS 정책으로 분류될 수 있는 '미디어' 속성이 'SD'로 설정된 스토리지 클래스 Premium을 생성할 수 있습니다. 표준 QoS 정책으로 분류될 수 있는 미디어 속성을 'HDD'로 설정하는 또 다른 스토리지 클래스 표준을 생성할 수 있습니다. 또한 스토리지 클래스에서 ""IOPS"" 속성을 사용하여 QoS 정책으로 정의할 수 있는 Element 어플라이언스로 프로비저닝을 리디렉션할 수도 있습니다.
 
 
 
-=== 특정 기능을 기반으로 백엔드를 활용하는 스토리지 클래스 설계
+=== 특정 기능을 기반으로 백엔드를 활용합니다
 
 스토리지 클래스는 씬 및 일반 프로비저닝, 스냅샷, 클론 및 암호화와 같은 기능이 설정된 특정 백엔드에서 볼륨 프로비저닝을 수행하도록 설계되었습니다. 사용할 스토리지를 지정하려면 필요한 기능이 설정된 적절한 백엔드를 지정하는 스토리지 클래스를 생성합니다.
 
 
 
-=== 가상 스토리지 풀을 위한 스토리지급 설계
+=== 가상 스토리지 풀
 
 모든 Astra Trident 백엔드에 가상 스토리지 풀을 사용할 수 있습니다. Astra Trident가 제공하는 드라이버를 사용하여 백엔드에 대한 가상 스토리지 풀을 정의할 수 있습니다.
 
@@ -194,13 +193,13 @@ NOTE: 가상 스토리지 풀을 정의할 때는 백엔드 정의에서 기존 
 
 
 
-=== 다양한 서비스 수준/QoS를 에뮬레이트할 수 있도록 가상 스토리지 풀을 설계합니다
+=== 다양한 서비스 수준/QoS 에뮬레이션
 
 서비스 클래스를 에뮬레이트하기 위해 가상 스토리지 풀을 설계할 수 있습니다. Azure NetApp Files용 Cloud Volume Service에 대한 가상 풀 구현을 사용하여 다양한 서비스 클래스를 설정하는 방법을 살펴보겠습니다. 다양한 성능 수준을 나타내는 여러 레이블을 사용하여 ANF 백엔드를 구성합니다. '레벨 11'을 적절한 성과 수준으로 설정하고 각 레이블 아래에 다른 필수 요소를 추가합니다. 이제 다른 가상 스토리지 풀에 매핑할 다른 Kubernetes 스토리지 클래스를 생성합니다. parameters.selector` 필드를 사용하여 각 StorageClass는 볼륨을 호스팅하는 데 사용할 수 있는 가상 풀을 호출합니다.
 
 
 
-=== 특정 측면을 할당할 수 있도록 가상 풀을 설계합니다
+=== 특정 측면 지정
 
 특정 측면의 여러 가상 스토리지 풀을 단일 스토리지 백엔드에서 설계할 수 있습니다. 이를 위해 백엔드에 여러 레이블을 구성하고 각 레이블 아래에 필요한 측면을 설정합니다. 이제 다른 가상 스토리지 풀에 매핑될 ' parameters.selector` ' 필드를 사용하여 다른 Kubernetes 스토리지 클래스를 만들 수 있습니다. 백엔드에서 프로비저닝되는 볼륨에는 선택한 가상 스토리지 풀에 정의된 측면이 있습니다.
 

@@ -11,18 +11,15 @@ summary: 제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 
 :imagesdir: ../media/
 
 
+[role="lead"]
 제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 백엔드로 NetApp CVS(Cloud Volumes Service) for Google Cloud Platform(GCP)을 구성하는 방법을 알아보십시오.
+
+
+
+== CVS for GCP에 대한 Astra Trident 지원에 대해 알아보십시오
 
 Astra Trident는 기본 CVS 서비스 유형이 ON인 볼륨을 지원합니다 https://cloud.google.com/architecture/partners/netapp-cloud-volumes/service-types["GCP"^]. Astra Trident는 CVS 서비스 유형에서 허용하는 최소값과 관계없이 100GiB 미만의 CVS 볼륨을 지원하지 않습니다. 따라서 Trident는 요청된 볼륨이 최소 크기보다 작은 경우 100GiB 볼륨을 자동으로 생성합니다.
 
-[NOTE]
-====
-* NetApp은 고객이 비운영 워크로드에 1TiB 미만의 볼륨을 사용할 것을 권장합니다.
-* 기본 CVS 서비스 유형을 사용하여 백엔드를 배포할 때 `storageClass=software`에서 GCP의 1TiB 미만의 볼륨 기능에 등록하여 관련 프로젝트 번호 및 프로젝트 ID를 확인하십시오. Trident에서 1TiB 미만의 볼륨을 프로비저닝하는 데 이 작업이 필요합니다. 그렇지 않은 경우, PVC가 600GiB 미만인 경우 용적 생성이 실패 * 됩니다.
-* link:https://docs.google.com/forms/d/e/1FAIpQLSc7_euiPtlV8bhsKWvwBl3gm9KUL4kOhD7lnbHC3LlQ7m02Dw/viewform["1TiB 미만의 볼륨에 액세스하려면 등록하십시오."]
-
-
-====
 .필요한 것
 를 구성하고 사용합니다 https://cloud.netapp.com/cloud-volumes-service-for-gcp?utm_source=NetAppTrident_ReadTheDocs&utm_campaign=Trident["Google Cloud용 Cloud Volumes Service"^] 백엔드, 다음이 필요합니다.
 
