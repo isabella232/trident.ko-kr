@@ -15,7 +15,7 @@ summary: 지원되는 프런트엔드, 백엔드 및 호스트 구성을 검토�
 지원되는 프런트엔드, 백엔드 및 호스트 구성을 검토하여 시작하십시오.
 
 
-NOTE: Astra Trident가 사용하는 포트에 대한 자세한 내용은 를 참조하십시오 link:../trident-reference/trident-ports.html["여기"].
+NOTE: Astra Trident가 사용하는 포트에 대한 자세한 내용은 를 참조하십시오 link:../trident-reference/ports.html["여기"].
 
 
 

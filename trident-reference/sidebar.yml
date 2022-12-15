@@ -3,7 +3,7 @@ section: trident-reference
 title: 참조하십시오
 entries:
 - title: Astra Trident 포트
-  url: "/trident-reference/trident-ports.html"
+  url: "/trident-reference/ports.html"
 - title: Astra Trident REST API
   url: "/trident-reference/rest-api.html"
 - title: 명령줄 옵션
