@@ -147,14 +147,15 @@ Astra Trident를 사용하려면 다음 중 하나 이상의 지원되는 백엔
 
 == 호스트 운영 체제를 테스트했습니다
 
-기본적으로 Astra Trident는 컨테이너에서 실행되므로 모든 Linux 작업자에서 실행됩니다. 그러나 이러한 작업자들은 표준 NFS 클라이언트 또는 iSCSI 이니시에이터를 사용하여 Astra Trident가 제공하는 볼륨을 사용 중인 백엔드에 따라 마운트할 수 있어야 합니다.
-
-Astra Trident는 공식적으로 특정 운영 체제를 "지원"하지 않지만 다음과 같은 Linux 배포판이 작동하는 것으로 알려져 있습니다.
+Astra Trident는 특정 운영 체제를 공식적으로 "지원"하지 않지만 다음과 같은 운영 체제가 작동하는 것으로 알려져 있습니다.
 
 * OpenShift Container Platform에서 지원하는 RedHat CoreOS(RHCOS) 버전
 * RHEL 또는 CentOS 7
 * Ubuntu 18.04 이상(최신 22.04)
+* Windows Server 2019
 
+
+기본적으로 Astra Trident는 컨테이너에서 실행되므로 모든 Linux 작업자에서 실행됩니다. 그러나 이러한 작업자들은 표준 NFS 클라이언트 또는 iSCSI 이니시에이터를 사용하여 Astra Trident가 제공하는 볼륨을 사용 중인 백엔드에 따라 마운트할 수 있어야 합니다.
 
 트리덴트틀(tridentctl) 유틸리티도 이 리눅스 배포판에서 실행됩니다.
 
