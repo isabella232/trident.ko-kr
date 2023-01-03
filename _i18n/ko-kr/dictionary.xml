@@ -42,22 +42,17 @@
   <block id="2a778cf7220cdde142651975e1bcd90f" category="paragraph">가상 풀 목록 외부에서 지정된 모든 측면은 백엔드에 대해 전역적이며 모든 가상 풀에 적용되지만, 각 가상 풀은 하나 이상의 측면을 개별적으로 지정할 수 있습니다(백엔드-글로벌 측면 재정의).</block>
   <block id="6aefc2a02fa1ec1f6ac8e9dbd5104efe" category="admonition">가상 스토리지 풀을 정의할 때 백엔드 정의에서 기존 가상 풀의 순서를 재정렬하지 마십시오. 또한 기존 가상 풀의 속성을 편집/수정하고 대신 새 가상 풀을 정의하는 것이 좋습니다.</block>
   <block id="5a53576f0ba98311e845ad0243bed6b7" category="paragraph">대부분의 측면은 백엔드 관련 용어로 지정됩니다. 결정적으로, 종횡값은 백엔드 드라이버의 외부에 노출되지 않으며 'torageClaes'에서 일치시킬 수 없습니다. 대신 관리자는 각 가상 풀에 대해 하나 이상의 레이블을 정의합니다. 각 레이블은 키, 즉 값 쌍이며 레이블은 고유한 백엔드에서 공통일 수 있습니다. 측면과 마찬가지로 레이블을 풀별로 지정하거나 백엔드에 대해 전역으로 지정할 수 있습니다. 미리 정의된 이름과 값이 있는 측면과 달리 관리자는 필요에 따라 레이블 키와 값을 정의할 수 있습니다.</block>
-  <block id="a4d6bfb65b6541e04772c0d5180e726e" category="paragraph">'torageClass'는 선택기 매개 변수 내의 레이블을 참조하여 사용할 가상 풀을 식별합니다. 가상 풀 선택기는 6개의 연산자를 지원합니다.</block>
   <block id="e1b3ec89ead7f83a9245ed5c9cacfdbf" category="cell">운영자</block>
   <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="cell">예</block>
   <block id="b5a7adde1af5c87d7fd797b6245c2a39" category="cell">설명</block>
   <block id="499badcb6f450c7f46c51d873eb84286" category="cell">`='</block>
   <block id="354653142ec321459dfd6d71444e992e" category="cell">성능 = 프리미엄</block>
-  <block id="d2c49c25d96d87e40bc641b9d5302b36" category="cell">풀의 레이블 값이 일치해야 합니다</block>
   <block id="5a5292b0a0d0379f0f1b12801b09b266" category="cell">`!='</block>
   <block id="eccde6822783bd75209c9b6a2d357f6c" category="cell">성능!=최고</block>
-  <block id="2944853a5f146abd2671adbecd5c25a3" category="cell">풀의 레이블 값이 일치하지 않아야 합니다</block>
   <block id="ae2bef277194f73d24a36a78009aac1e" category="cell">"IN"입니다</block>
   <block id="f8cf8c23afb5459dbf7c24b685caf85b" category="cell">위치(동쪽, 서쪽)</block>
-  <block id="26aac934d614b1b3e5db46d8fc664ec6" category="cell">풀의 레이블 값은 값 집합에 있어야 합니다</block>
   <block id="1a031eecbce49366e550273b9321b909" category="cell">노신입니다</block>
   <block id="b5585f3f9b45f391fee5dd15e6516450" category="cell">성능 노트(실버, 브론즈)</block>
-  <block id="499fec8ad2646f2de982559111e26a4c" category="cell">풀의 레이블 값은 b가 아니어야 합니다</block>
   <block id="48dec026afe488df8faca35c5c3a39ea" category="summary">Trident 설치에서 Element 백엔드를 만들고 사용하는 방법에 대해 알아보십시오.</block>
   <block id="f58e95baa778c9a2bd1a4597fb49d9b7" category="doc">ONTAP 드라이버</block>
   <block id="0e842f431ce1b4dfb57598e5682e3adc" category="paragraph">Astra Trident는 ONTAP 클러스터와 통신할 수 있도록 5개의 고유한 ONTAP 스토리지 드라이버를 제공합니다. 각 드라이버가 볼륨 생성, 액세스 제어 및 해당 기능을 처리하는 방법에 대해 자세히 알아보십시오.</block>
@@ -3453,4 +3448,16 @@
   <block id="d63cadc96caf4b05f8fa532b08e889da" category="list-text"><block ref="d63cadc96caf4b05f8fa532b08e889da" category="inline-link-macro-rx"></block></block>
   <block id="2f82d12ae3ce8f940e10b062c5134f3d" category="paragraph">Astra Trident는 특정 운영 체제를 공식적으로 "지원"하지 않지만 다음과 같은 운영 체제가 작동하는 것으로 알려져 있습니다.</block>
   <block id="31f8757839909e87266f2b53482c86ef" category="list-text">Windows Server 2019</block>
+  <block id="758ef9050bcb89a046f8b79d56db9490" category="paragraph">A<block ref="e1e2a331ab1d8dccfea06fc8e04e2f5d" prefix=" " category="inline-code"></block> 선택기 매개 변수 내의 레이블을 참조하여 사용할 가상 풀을 식별합니다. 가상 풀 선택기는 다음 연산자를 지원합니다.</block>
+  <block id="3b64653c97a388d828849314b6a1b383" category="cell">풀의 레이블 값은 다음과 같아야 합니다.</block>
+  <block id="6da89265a9a8b0b28eb4946bb2ec0c6d" category="cell">일치</block>
+  <block id="ecf92052d55345fee4602d9eb8c22063" category="cell">일치하지 않습니다</block>
+  <block id="c6c1caf73b0f83d807abe5a717014ab7" category="cell">값 집합에 있어야 합니다</block>
+  <block id="8daf6b016f4033d59900c23f162c0f73" category="cell">값 집합에 있지 않습니다</block>
+  <block id="c6bfba38b789fec8271d1d1496a9ee59" category="cell"><block ref="42538adbdb6240b2b083a000a615d5bd" prefix="" category="inline-code"></block></block>
+  <block id="152f5dc0f7ac734f8e8ee17d4a482462" category="cell">보호</block>
+  <block id="7b532e697a35209f3df3956577cc3d9c" category="cell">모든 값과 함께 존재합니다</block>
+  <block id="eb0254f1d0a82e646c239d4d2e2f83ac" category="cell"><block ref="f65e5ff2a1bb1af969dccabe7dcd5cdd" prefix="" category="inline-code"></block></block>
+  <block id="67a3b723b2d9024808eb2c6e686d00a0" category="cell">! 보호</block>
+  <block id="1fde97909b90bb329db2062f7744bd45" category="cell">존재하지 않습니다</block>
 </blocks>
