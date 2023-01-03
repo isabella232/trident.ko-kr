@@ -69,7 +69,7 @@ NOTE: 부팅 중에 NFS 서비스가 시작되었는지 확인해야 합니다.
 iSCSI 볼륨을 사용할 때는 다음 사항을 고려하십시오.
 
 * Kubernetes 클러스터의 각 노드에는 고유한 IQN이 있어야 합니다. * 이것은 필수 전제 조건입니다 *.
-* RHCOS 버전 4.5 이상을 사용하거나 다른 RHEL 호환 Linux 배포를 'solidfire-san' 드라이버로 사용하는 경우, '/etc/iscsi/iscsid.conf'에서 CHAP 인증 알고리즘이 md5로 설정되어 있는지 확인하십시오.
+* RHCOS 버전 4.5 이상 또는 기타 RHEL 호환 Linux 배포를 사용하는 경우 를 참조하십시오 `solidfire-san` 드라이버 및 Element OS 12.5 이전 버전에서는 CHAP 인증 알고리즘이 에서 MD5로 설정되어 있는지 확인합니다 `/etc/iscsi/iscsid.conf`. 보안 FIPS 호환 CHAP 알고리즘 SHA1, SHA-256 및 SHA3-256은 Element 12.7에서 사용할 수 있습니다.
 +
 [listing]
 ----
