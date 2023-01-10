@@ -1582,7 +1582,6 @@
   <block id="84d2c2c768bd1900489bad5fb46b4aac" category="cell">"qosPolicy"</block>
   <block id="54b94bba5d336f4e3d5fd7e88544fad1" category="cell">생성된 볼륨에 할당할 QoS 정책 그룹입니다. 스토리지 풀/백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다</block>
   <block id="952e3a12d35e717bf86a6000b0c08976" category="cell">적응성 QosPolicy</block>
-  <block id="831924abd31e90baedabed887dbfc24c" category="cell">생성된 볼륨에 할당할 적응형 QoS 정책 그룹입니다. 스토리지 풀/백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다. ONTAP에서 지원되지 않음 - NAS - 이코노미</block>
   <block id="11f9fcd55c1d81cf352f86fe4cdfd444" category="cell">스냅샷 "0"에 예약된 볼륨의 백분율</block>
   <block id="af6626456fa359992271ea88de34094f" category="cell">"스냅샷 정책"이 "없음"이면 "없음"</block>
   <block id="4be01095ce6e500084fc427e5dec61ac" category="cell">'plitOnClone'을 선택합니다</block>
@@ -3460,4 +3459,5 @@
   <block id="1fde97909b90bb329db2062f7744bd45" category="cell">존재하지 않습니다</block>
   <block id="5eb07a7cb7d445ef6bbb17270c65cf52" category="list-text">RHCOS 버전 4.5 이상 또는 기타 RHEL 호환 Linux 배포를 사용하는 경우 를 참조하십시오<block ref="c0d2a793e71b152662b3e8cd2da00620" prefix=" " category="inline-code"></block> 드라이버 및 Element OS 12.5 이전 버전에서는 CHAP 인증 알고리즘이 에서 MD5로 설정되어 있는지 확인합니다<block ref="104f48adc29dc1e1d7c9bbe7b5dd3f8d" prefix=" " category="inline-code"></block>. 보안 FIPS 호환 CHAP 알고리즘 SHA1, SHA-256 및 SHA3-256은 Element 12.7에서 사용할 수 있습니다.</block>
   <block id="18c20e5d2e368f36f420dd39019d460f" category="list-text">를 사용하는 경우<block ref="c0d2a793e71b152662b3e8cd2da00620" prefix=" " category="inline-code"></block> OpenShift 4.5를 사용하는 드라이버 기본 작업자 노드가 CHAP 인증 알고리즘으로 MD5를 사용하는지 확인합니다. 보안 FIPS 호환 CHAP 알고리즘 SHA1, SHA-256 및 SHA3-256은 Element 12.7에서 사용할 수 있습니다.</block>
+  <block id="5896cc977dd7b9854957e18a2a5bf072" category="cell">생성된 볼륨에 할당할 적응형 QoS 정책 그룹입니다. 스토리지 풀/백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다. ONTAP에서 지원되지 않음 - NAS - 이코노미</block>
 </blocks>
