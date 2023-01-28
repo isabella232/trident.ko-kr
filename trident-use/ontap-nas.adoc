@@ -13,9 +13,12 @@ summary: ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하는 
 
 ONTAP 및 Cloud Volumes ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오.
 
-* link:ontap-nas-prep.html["준비"^]
-* link:ontap-nas-examples.html["구성 및 예"^]
+* link:ontap-nas-prep.html["준비"]
+* link:ontap-nas-examples.html["구성 및 예"]
 
+
+
+WARNING: 고객은 을 사용해야 합니다 `ontap-nas` 데이터 보호, 재해 복구 및 이동성을 필요로 하는 운영 워크로드를 위한 추진 요인 Astra Control은 로 생성된 볼륨에 대해 원활한 보호, 재해 복구 및 이동성을 제공합니다 `ontap-nas` 드라이버. 를 클릭합니다 `ontap-nas-economy` 예상 볼륨 사용이 ONTAP에서 지원하는 것보다 훨씬 높을 것으로 예상되는 제한적인 사용 사례에서 드라이버를 사용해야 하며, 예상되는 데이터 보호, 재해 복구 또는 이동성(Kubernetes 클러스터 간 볼륨 이동) 요구사항은 없습니다.
 
 
 

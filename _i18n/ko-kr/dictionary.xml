@@ -1637,8 +1637,6 @@
   <block id="d7f015aa2f1d488e17e175dac6de3149" category="list-text"><block ref="d7f015aa2f1d488e17e175dac6de3149" category="inline-link-macro-rx"></block></block>
   <block id="24ca391029d6df294c5d5b8f1fe5b4eb" category="summary">ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오.</block>
   <block id="6f95a39ae3c518928ed5e4681a0fd49b" category="doc">ONTAP NAS 드라이버를 사용하여 백엔드를 구성합니다</block>
-  <block id="df3afb1ce4cf5592326d7f536313cbc9" category="list-text"><block ref="df3afb1ce4cf5592326d7f536313cbc9" category="inline-link-macro-rx"></block></block>
-  <block id="6a60ddae29750feed1e12421a92ea824" category="list-text"><block ref="6a60ddae29750feed1e12421a92ea824" category="inline-link-macro-rx"></block></block>
   <block id="ff342df7522d6b527768cc6bfe5f9fae" category="summary">Astra Trident를 사용하면 Kubernetes 사용자가 볼륨을 생성한 후 확장할 수 있습니다. iSCSI 및 NFS 볼륨을 확장하는 데 필요한 구성에 대한 정보를 찾습니다.</block>
   <block id="15d79b565b148caa23e6f2b53813413d" category="section-title">iSCSI 볼륨을 확장합니다</block>
   <block id="0b981ab19df55a28a02578aa5f326db8" category="paragraph">CSI 프로비저닝을 사용하여 iSCSI PV(Persistent Volume)를 확장할 수 있습니다.</block>
@@ -3460,4 +3458,7 @@
   <block id="054b5072368dea4f8748909c16c7de98" category="cell">Thick: All ONTAP; Thin: All ONTAP &amp; solidfire-SAN</block>
   <block id="dbdc06f8742b98dcacdf7fdb1af111ea" category="paragraph">ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN, GCP-CV, Azure-NetApp-파일, ONTAP-SAN-이코노미</block>
   <block id="f888aa18c19e41f8c1263fa99ca8b94c" category="cell">solidfire-SAN, ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN - 경제성</block>
+  <block id="a64f78ea5d42780118e8f5c7f6cfdcbb" category="list-text"><block ref="a64f78ea5d42780118e8f5c7f6cfdcbb" category="inline-link-macro-rx"></block></block>
+  <block id="65a38da8aec2b99cf44dbf919fbd6991" category="list-text"><block ref="65a38da8aec2b99cf44dbf919fbd6991" category="inline-link-macro-rx"></block></block>
+  <block id="5e91194ed6174e8f5eb09a2fffc13dad" category="admonition">고객은 을 사용해야 합니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 데이터 보호, 재해 복구 및 이동성을 필요로 하는 운영 워크로드를 위한 추진 요인 Astra Control은 로 생성된 볼륨에 대해 원활한 보호, 재해 복구 및 이동성을 제공합니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 드라이버. 를 클릭합니다<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 예상 볼륨 사용이 ONTAP에서 지원하는 것보다 훨씬 높을 것으로 예상되는 제한적인 사용 사례에서 드라이버를 사용해야 하며, 예상되는 데이터 보호, 재해 복구 또는 이동성(Kubernetes 클러스터 간 볼륨 이동) 요구사항은 없습니다.</block>
 </blocks>
