@@ -147,8 +147,8 @@ curl -fsSL https://get.docker.com/ | sh
 +
 [listing]
 ----
-wget https://github.com/NetApp/trident/releases/download/v22.10.0/trident-installer-22.10.0.tar.gz
-tar zxf trident-installer-22.10.0.tar.gz
+wget https://github.com/NetApp/trident/releases/download/v23.01.0/trident-installer-23.01.0.tar.gz
+tar zxf trident-installer-23.01.0.tar.gz
 ----
 .. 용지함 경로의 위치로 이동:
 +
@@ -221,7 +221,7 @@ docker volume rm trident_2
 
 == 시스템 시작 시 Astra Trident를 시작합니다
 
-systemd 기반 시스템의 샘플 단위 파일은 git repo의 'eemb/trident.service.example` 에서 찾을 수 있습니다. CentOS 7/RHEL에서 파일을 사용하려면 다음을 수행하십시오.
+시스템 기반 시스템용 샘플 장치 파일은 에서 찾을 수 있습니다 `contrib/trident.service.example` Git repo에 있습니다. RHEL에서 파일을 사용하려면 다음을 수행하십시오.
 
 . 파일을 올바른 위치에 복사합니다.
 +

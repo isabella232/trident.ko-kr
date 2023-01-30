@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/worker-node-prep.html 
-keywords: storage class, manage storage class, storage classes, kubernetes storage classes, worker node, nfs, iscsi, kubernetes clusters 
+keywords: storage class, manage storage class, storage classes, kubernetes storage classes, worker node, nfs, iscsi, kubernetes clusters, self-healing, healing 
 summary: Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저닝된 볼륨을 마운트할 수 있어야 합니다. 백엔드 중 하나에 ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup 드라이버를 사용하는 경우 작업자 노드에 NFS 툴이 필요합니다. 그렇지 않으면 iSCSI 도구가 필요합니다. 
 ---
 = 작업자 노드를 준비합니다
@@ -11,63 +11,111 @@ summary: Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프�
 :imagesdir: ../media/
 
 
-Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저닝된 볼륨을 마운트할 수 있어야 합니다. 백엔드 중 하나에 ONTAP-NAS, ONTAP-NAS-이코노미 또는 ONTAP-NAS-Flexgroup 드라이버를 사용하는 경우 작업자 노드에 NFS 툴이 필요합니다. 그렇지 않으면 iSCSI 도구가 필요합니다.
+[role="lead"]
+Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저닝된 볼륨을 마운트할 수 있어야 합니다. 작업자 노드를 준비하려면 드라이버 선택에 따라 NFS 또는 iSCSI 도구를 설치해야 합니다.
 
-최신 버전의 RedHat CoreOS에는 기본적으로 NFS와 iSCSI가 모두 설치되어 있습니다.
 
 
-WARNING: NFS 또는 iSCSI 툴을 설치한 후에는 항상 작업자 노드를 재부팅해야 하며, 그렇지 않으면 컨테이너에 볼륨을 연결할 수 없습니다.
+== 올바른 도구 선택
+
+드라이버를 함께 사용하는 경우 NFS 및 iSCSI 도구를 설치해야 합니다.
+
+.NFS 툴
+다음을 사용 중인 경우 NFS 툴을 설치합니다. `ontap-nas`, `ontap-nas-economy`, `ontap-nas-flexgroup`, `azure-netapp-files`, `gcp-cvs`
+
+.iSCSI 툴
+다음을 사용하는 경우 iSCSI 도구를 설치합니다. `ontap-san`, `ontap-san-economy`, `solidfire-san`
+
+
+NOTE: 최신 버전의 RedHat CoreOS에는 기본적으로 NFS 및 iSCSI가 설치되어 있습니다.
 
 
 
 == 노드 서비스 검색
 
-22.07부터 Astra Trident는 노드가 iSCSI 또는 NFS 서비스를 실행할 수 있는지 자동으로 감지하려고 시도합니다. Astra Trident는 검색된 서비스를 식별하기 위해 노드에 대한 이벤트를 생성합니다. 다음 명령을 사용하여 이러한 이벤트를 검토할 수 있습니다.
+Astra Trident는 노드가 iSCSI 또는 NFS 서비스를 실행할 수 있는지 자동으로 감지하려고 시도합니다.
+
+
+NOTE: 노드 서비스 검색은 검색된 서비스를 식별하지만 서비스가 올바르게 구성된다고 보장하지 않습니다. 반대로 검색된 서비스가 없으면 볼륨 마운트가 실패한다고 보장할 수 없습니다.
+
+.이벤트를 검토합니다
+Astra Trident는 검색된 서비스를 식별하기 위해 노드에 대한 이벤트를 생성합니다. 이러한 이벤트를 검토하려면 다음을 실행합니다.
 
 [listing]
 ----
 kubectl get event -A --field-selector involvedObject.name=<Kubernetes node name>
 ----
-또한 Trident는 Trident 노드 CR의 각 노드에 대해 활성화된 서비스도 식별합니다. 검색된 서비스를 보려면 다음 명령을 사용합니다.
+.검색된 서비스를 검토합니다
+Astra Trident는 Trident 노드 CR의 각 노드에 대해 활성화된 서비스를 식별합니다. 검색된 서비스를 보려면 다음을 실행합니다.
 
 [listing]
 ----
 tridentctl get node -o wide -n <Trident namespace>
 ----
 
-NOTE: 노드 서비스 검색은 검색된 서비스를 식별하지만 서비스가 올바르게 구성된다고 보장하지 않습니다. 반대로 검색된 서비스가 없으면 볼륨 마운트가 실패한다고 보장할 수 없습니다.
-
-
 
 == NFS 볼륨
 
-[cols="3*"]
-|===
-| 프로토콜 | 운영 체제 | 명령 
+운영 체제의 명령을 사용하여 NFS 툴을 설치합니다. 부팅 중에 NFS 서비스가 시작되었는지 확인합니다.
 
+[role="tabbed-block"]
+====
+.RHEL 8+
+--
+[listing]
+----
+sudo yum install -y nfs-utils
+----
+--
+.우분투
+--
+[listing]
+----
+sudo apt-get install -y nfs-common
+----
+--
+====
 
-| NFS 를 참조하십시오  a| 
-RHEL/CentOS 7
- a| 
-'SUDO yum install -y nfs-utils'
-
-
-
-| NFS 를 참조하십시오  a| 
-우분투
- a| 
-'UDO apt-get install-y nfs-common'을 선택합니다
-
-|===
-
-NOTE: 부팅 중에 NFS 서비스가 시작되었는지 확인해야 합니다.
+WARNING: 볼륨에 연결할 때 오류가 발생하지 않도록 NFS 툴을 설치한 후 작업자 노드를 재부팅합니다.
 
 
 
 == iSCSI 볼륨
 
-iSCSI 볼륨을 사용할 때는 다음 사항을 고려하십시오.
+Astra Trident는 iSCSI 세션을 자동으로 설정하고, LUN을 검색하고, 다중 경로 장치를 검색하고, 포맷하고, 포드에 마운트할 수 있습니다.
 
+
+
+=== iSCSI 자동 복구 기능
+
+ONTAP 시스템의 경우, Astra Trident가 5분마다 iSCSI 자동 복구를 실행하여 다음을 수행합니다.
+
+. * 원하는 iSCSI 세션 상태와 현재 iSCSI 세션 상태를 식별합니다.
+. * 원하는 상태를 현재 상태와 비교 * 하여 필요한 수리를 확인합니다. Astra Trident는 수리 우선 순위 및 수리 시기를 결정합니다.
+. * 현재 iSCSI 세션 상태를 원하는 iSCSI 세션 상태로 되돌리는 데 필요한 복구 수행 *
+
+
+
+NOTE: 자동 복구 작업의 로그는 에 있습니다 `trident-main` 각 드로포드에 있는 용기. 로그를 보려면 을(를) 설정해야 합니다 `debug` Astra Trident를 설치하는 동안 "참"으로 표시합니다.
+
+Astra Trident iSCSI 자동 복구 기능을 사용하면 다음과 같은 문제를 방지할 수 있습니다.
+
+* 네트워크 연결 문제가 발생한 후 발생할 수 있는 오래되거나 비정상적인 iSCSI 세션. 오래된 세션의 경우 Astra Trident는 로그아웃하기 7분 전에 대기하여 포털과의 연결을 다시 설정합니다.
++
+
+NOTE: 예를 들어, 스토리지 컨트롤러에서 CHAP 암호를 회전시키고 네트워크에서 연결이 끊어지면 이전의 (_stale_) CHAP 암호가 지속될 수 있습니다. 자동 복구 기능은 이 문제를 인식하고 업데이트된 CHAP 암호를 적용하기 위해 세션을 자동으로 다시 설정할 수 있습니다.
+
+* iSCSI 세션이 누락되었습니다
+* LUN이 없습니다
+
+
+
+
+=== iSCSI 도구를 설치합니다
+
+운영 체제의 명령을 사용하여 iSCSI 도구를 설치합니다.
+
+.시작하기 전에
 * Kubernetes 클러스터의 각 노드에는 고유한 IQN이 있어야 합니다. * 이것은 필수 전제 조건입니다 *.
 * RHCOS 버전 4.5 이상 또는 기타 RHEL 호환 Linux 배포를 사용하는 경우 를 참조하십시오 `solidfire-san` 드라이버 및 Element OS 12.5 이전 버전에서는 CHAP 인증 알고리즘이 에서 MD5로 설정되어 있는지 확인합니다 `/etc/iscsi/iscsid.conf`. 보안 FIPS 호환 CHAP 알고리즘 SHA1, SHA-256 및 SHA3-256은 Element 12.7에서 사용할 수 있습니다.
 +
@@ -75,78 +123,108 @@ iSCSI 볼륨을 사용할 때는 다음 사항을 고려하십시오.
 ----
 sudo sed -i 's/^\(node.session.auth.chap_algs\).*/\1 = MD5/' /etc/iscsi/iscsid.conf
 ----
-* iSCSI PVS에서 RHEL/RedHat CoreOS를 실행하는 작업자 노드를 사용하는 경우 StorageClass에서 discard 마운트 옵션을 지정하여 인라인 공간 재확보를 수행하십시오. 을 참조하십시오 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/discarding-unused-blocks_managing-file-systems["RedHat 설명서"^].
+* iSCSI PVS에서 RHEL/RedHat CoreOS를 실행하는 작업자 노드를 사용하는 경우 를 지정합니다 `discard` StorageClass의 mountOption을 사용하여 인라인 공간 재확보를 수행합니다. 을 참조하십시오 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/discarding-unused-blocks_managing-file-systems["RedHat 설명서"^].
 
 
-[cols="3*"]
-|===
-| 프로토콜 | 운영 체제 | 명령 
-
-
-| iSCSI  a| 
-RHEL/CentOS
- a| 
+[role="tabbed-block"]
+====
+.RHEL 8+
+--
 . 다음 시스템 패키지를 설치합니다.
 +
-'SUDO yum install -y lsscsi iscsi -initiator-utils sg3_utils device-mapper-multipath'
-
+[listing]
+----
+sudo yum install -y lsscsi iscsi-initiator-utils sg3_utils device-mapper-multipath
+----
 . iscsi-initiator-utils 버전이 6.2.0.874-2.el7 이상인지 확인합니다.
 +
+[listing]
+----
 rpm -q iscsi-initiator-utils
-
+----
 . 스캔을 수동으로 설정합니다.
 +
-'SUDO SED-I's/^\(node.session.scan\).*/\1 = manual/'/etc/iscsi/iscsid.conf'
-
+[listing]
+----
+sudo sed -i 's/^\(node.session.scan\).*/\1 = manual/' /etc/iscsi/iscsid.conf
+----
 . 다중 경로 설정:
 +
-'SUDO mpathconf - -enable - -with_multipathd y - -find_multiprohs n'
-
+[listing]
+----
+sudo mpathconf --enable --with_multipathd y --find_multipaths n
+----
 +
 
 NOTE: etc/multipath.conf에 debrofs 아래에 find_multiprohs no가 포함되어 있는지 확인합니다.
 
 . iscsid와 multipathd가 실행 중인지 확인합니다.
 +
-'SUDO systemctl enable -- now iscsid multipathd'
-
+[listing]
+----
+sudo systemctl enable --now iscsid multipathd
+----
 . "iSCSI" 활성화 및 시작:
 +
-'SUDO systemctl enable -- now iscsi'
+[listing]
+----
+sudo systemctl enable --now iscsi
+----
 
 
-
-
-
-| iSCSI  a| 
-우분투
- a| 
+--
+.우분투
+--
 . 다음 시스템 패키지를 설치합니다.
 +
-'SUDO apt-get install-y open-iscsi lsscsg3-utils multipath-tools scitools'
-
+[listing]
+----
+sudo apt-get install -y open-iscsi lsscsi sg3-utils multipath-tools scsitools
+----
 . open-iscsi 버전이 2.0.874-5ubuntu2.10 이상(bionic) 또는 2.0.874-7.1uubuttu6.1 이상(focal)인지 확인합니다.
 +
-d패키지-l open-iscsi
-
+[listing]
+----
+dpkg -l open-iscsi
+----
 . 스캔을 수동으로 설정합니다.
 +
-'SUDO SED-I's/^\(node.session.scan\).*/\1 = manual/'/etc/iscsi/iscsid.conf'
-
+[listing]
+----
+sudo sed -i 's/^\(node.session.scan\).*/\1 = manual/' /etc/iscsi/iscsid.conf
+----
 . 다중 경로 설정:
 +
-'sudo tee /etc/multipath.conf<-'EOF' 기본값 {user_friendly_names yes find_multipath no} EOF sudo systemctl enable--now multipath-tools.service sudo service multipath-tools restart'입니다
-
+[listing]
+----
+sudo tee /etc/multipath.conf <<-'EOF
+defaults {
+    user_friendly_names yes
+    find_multipaths no
+}
+EOF
+sudo systemctl enable --now multipath-tools.service
+sudo service multipath-tools restart
+----
 +
 
 NOTE: etc/multipath.conf에 debrofs 아래에 find_multiprohs no가 포함되어 있는지 확인합니다.
 
 . 'open-iscsi'와 'multirpath-tools'가 활성화되어 실행되고 있는지 확인합니다.
 +
-'SUDO systemctl status multipath -tools''SUDO systemctl enable -- now open-iscsi.service`'SUDO systemctl status open-iscsi'
-
-
-
-|===
+[listing]
+----
+sudo systemctl status multipath-tools
+sudo systemctl enable --now open-iscsi.service
+sudo systemctl status open-iscsi
+----
++
 
 NOTE: Ubuntu 18.04의 경우 iSCSI 데몬이 시작되도록 "open-iscsi"를 시작하기 전에 iscsiadm"이 있는 타겟 포트를 검색해야 합니다. 또는 iSCSI 서비스를 수정하여 iscsid를 자동으로 시작할 수 있습니다.
+
+
+
+--
+====
+
+WARNING: 컨테이너에 볼륨을 연결할 때 오류가 발생하지 않도록 iSCSI 도구를 설치한 후 작업자 노드를 재부팅합니다.

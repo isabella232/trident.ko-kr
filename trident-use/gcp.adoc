@@ -1,10 +1,10 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/gcp.html 
-keywords: trident backend, cloud volumes service for google cloud platform, Google Cloud Platform 
+keywords: trident backend, cloud volumes service for google cloud platform, google cloud platform, gcp, storage pool labels, storage pool, cvs, cvs-performance, service type, service level, cloud volumes service, cloud volumes 
 summary: 제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 백엔드로 Google Cloud용 Cloud Volumes Service를 구성하는 방법을 알아보십시오. 
 ---
-= CVS for GCP 백엔드를 구성합니다
+= Google Cloud용 Cloud Volumes Service 백엔드를 구성합니다
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,28 +12,43 @@ summary: 제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 
 
 
 [role="lead"]
-제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 백엔드로 NetApp CVS(Cloud Volumes Service) for Google Cloud Platform(GCP)을 구성하는 방법을 알아보십시오.
+제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 백엔드로 NetApp Cloud Volumes Service for Google Cloud를 구성하는 방법을 알아보십시오.
 
 
 
-== CVS for GCP에 대한 Astra Trident 지원에 대해 알아보십시오
+== Cloud Volumes Service for Google Cloud를 위한 Astra Trident 지원에 대해 알아보십시오
 
-Astra Trident는 기본 CVS 서비스 유형이 ON인 볼륨을 지원합니다 https://cloud.google.com/architecture/partners/netapp-cloud-volumes/service-types["GCP"^]. Astra Trident는 CVS 서비스 유형에서 허용하는 최소값과 관계없이 100GiB 미만의 CVS 볼륨을 지원하지 않습니다. 따라서 Trident는 요청된 볼륨이 최소 크기보다 작은 경우 100GiB 볼륨을 자동으로 생성합니다.
+Astra Trident는 두 개 중 하나로 Cloud Volumes Service 볼륨을 생성할 수 있습니다 link:https://cloud.google.com/architecture/partners/netapp-cloud-volumes/service-types["서비스 유형"^]:
+
+* * CVS - 성능 *: 기본 Astra Trident 서비스 유형입니다. 이처럼 성능에 최적화된 서비스 유형은 성능을 중요시하는 운영 워크로드에 가장 적합합니다. CVS - 성능 서비스 유형은 최소 100GiB 크기의 볼륨을 지원하는 하드웨어 옵션입니다. 다음 중 하나를 선택할 수 있습니다 link:https://cloud.google.com/architecture/partners/netapp-cloud-volumes/service-levels#service_levels_for_the_cvs-performance_service_type["3가지 서비스 레벨"^]:
++
+** `standard`
+** `premium`
+** `extreme`
+
+
+* CVS *: CVS 서비스 유형은 높은 조널 가용성을 제공하며, 성능은 중간 수준으로 제한됩니다. CVS 서비스 유형은 스토리지 풀을 사용하여 1GiB의 작은 볼륨을 지원하는 소프트웨어 옵션입니다. 스토리지 풀에는 최대 50개의 볼륨이 포함될 수 있으며 이 볼륨에서 풀의 용량과 성능을 공유할 수 있습니다. 다음 중 하나를 선택할 수 있습니다 link:https://cloud.google.com/architecture/partners/netapp-cloud-volumes/service-levels#service_levels_for_the_cvs_service_type["서비스 레벨 2개"^]:
++
+** `standardsw`
+** `zoneredundantstandardsw`
+
+
+
 
 .필요한 것
 를 구성하고 사용합니다 https://cloud.netapp.com/cloud-volumes-service-for-gcp?utm_source=NetAppTrident_ReadTheDocs&utm_campaign=Trident["Google Cloud용 Cloud Volumes Service"^] 백엔드, 다음이 필요합니다.
 
-* NetApp CVS로 구성된 Google Cloud 계정
+* NetApp Cloud Volumes Service로 구성된 Google Cloud 계정
 * Google Cloud 계정의 프로젝트 번호입니다
 * Google Cloud 서비스 계정에는 netcloudvolumes.admin 역할이 포함되어 있습니다
-* CVS 서비스 계정에 대한 API 키 파일입니다
+* Cloud Volumes Service 계정에 대한 API 키 파일입니다
 
 
 
 
 == 백엔드 구성 옵션
 
-백엔드 구성 옵션은 다음 표를 참조하십시오.
+각 백엔드는 단일 Google Cloud 지역에 볼륨을 프로비저닝합니다. 다른 영역에 볼륨을 생성하려면 추가 백엔드를 정의할 수 있습니다.
 
 [cols="3"]
 |===
@@ -49,16 +64,22 @@ Astra Trident는 기본 CVS 서비스 유형이 ON인 볼륨을 지원합니다 
 | 백엔드이름 | 사용자 지정 이름 또는 스토리지 백엔드 | 드라이버 이름 + "_" + API 키의 일부 
 
 
-| '원어클래스' | 스토리지 유형입니다. 하드웨어(성능 최적화) 또는 소프트웨어(CVS 서비스 유형)를 선택합니다. |  
+| '원어클래스' | CVS 서비스 유형을 지정하는 데 사용되는 선택적 매개 변수입니다. 사용 `software` CVS 서비스 유형을 선택합니다. 그렇지 않으면 Astra Trident가 CVS - 성능 서비스 유형을 가정합니다 (`hardware`)를 클릭합니다. |  
 
 
-| '프로젝트 번호' | Google Cloud 계정 프로젝트 번호입니다. 이 값은 Google Cloud 포털의 홈 페이지에서 확인할 수 있습니다. |  
+| `storagePools` | CVS 서비스 유형만 볼륨 생성을 위한 스토리지 풀을 지정하는 데 사용되는 선택적 매개 변수입니다. |  
 
 
-| 아피지역 | CVS 계정 지역. 백엔드에서 볼륨을 프로비저닝할 영역입니다. |  
+| '프로젝트 번호' | Google Cloud 계정 프로젝트 번호입니다. 이 값은 Google Cloud 포털 홈 페이지에서 확인할 수 있습니다. |  
 
 
-| 아피키 | Google Cloud 서비스 계정의 API 키로, 'netappcloudvolumes.admin' 역할을 수행합니다. 여기에는 Google Cloud 서비스 계정의 개인 키 파일(백엔드 구성 파일에 verbatim 복사)의 JSON 형식 콘텐츠가 포함됩니다. |  
+| hostProjectNumber입니다 | 공유 VPC 네트워크를 사용하는 경우 필요합니다. 이 시나리오에서는 `projectNumber` 은(는) 서비스 프로젝트입니다 `hostProjectNumber` 는 호스트 프로젝트입니다. |  
+
+
+| 아피지역 | Astra Trident가 Cloud Volumes Service 볼륨을 생성하는 Google 클라우드 영역 지역 간 Kubernetes 클러스터를 생성할 때 에서 생성된 볼륨입니다 `apiRegion` 여러 Google Cloud 지역의 노드에 예약된 워크로드에 사용할 수 있습니다. 지역 간 트래픽에는 추가 비용이 발생합니다. |  
+
+
+| 아피키 | 를 사용하여 Google Cloud 서비스 계정에 대한 API 키입니다 `netappcloudvolumes.admin` 역할. 여기에는 Google Cloud 서비스 계정의 개인 키 파일(백엔드 구성 파일에 verbatim 복사)의 JSON 형식 콘텐츠가 포함됩니다. |  
 
 
 | proxyURL | 프록시 서버가 CVS 계정에 연결해야 하는 경우 프록시 URL입니다. 프록시 서버는 HTTP 프록시 또는 HTTPS 프록시일 수 있습니다. HTTPS 프록시의 경우 프록시 서버에서 자체 서명된 인증서를 사용할 수 있도록 인증서 유효성 검사를 건너뜁니다. 인증이 활성화된 프록시 서버는 지원되지 않습니다. |  
@@ -67,49 +88,36 @@ Astra Trident는 기본 CVS 서비스 유형이 ON인 볼륨을 지원합니다 
 | nfsMountOptions를 선택합니다 | NFS 마운트 옵션에 대한 세밀한 제어 | "nfsvers=3" 
 
 
-| LimitVolumeSize | 요청된 볼륨 크기가 이 값보다 큰 경우 용량 할당에 실패합니다 | ""(기본적으로 적용되지 않음) 
+| LimitVolumeSize | 요청된 볼륨 크기가 이 값보다 큰 경우 용량 할당에 실패합니다. | ""(기본적으로 적용되지 않음) 
 
 
-| '저급' | 새 볼륨에 대한 CVS 서비스 수준입니다. 값은 "표준", "프리미엄" 및 "익스트림"입니다. | "표준" 
+| '저급' | 새 볼륨에 대한 CVS - 성능 또는 CVS 서비스 수준 CV - 성능 값은 입니다 `standard`, `premium`, 또는 `extreme`. CV 값은 입니다 `standardsw` 또는 `zoneredundantstandardsw`. | CV - 성능 기본값은 "표준"입니다. CV 기본값은 "standardsw"입니다. 
 
 
-| 네트워크 | CVS 볼륨에 사용되는 GCP 네트워크 | “기본값” 
+| 네트워크 | Cloud Volumes Service 볼륨에 사용되는 Google Cloud 네트워크 | “기본값” 
 
 
-| debugTraceFlags를 선택합니다 | 문제 해결 시 사용할 디버그 플래그입니다. 예: "\{"api":false,"method":true}". 문제 해결 중이 아니며 자세한 로그 덤프가 필요한 경우가 아니면 이 방법을 사용하지 마십시오. | null입니다 
-|===
-공유 VPC 네트워크를 사용하는 경우 projectNumber와 hostProjectNumber를 모두 지정해야 합니다. 이 경우 projectNumber는 서비스 프로젝트이고 hostProjectNumber는 호스트 프로젝트입니다.
+| debugTraceFlags를 선택합니다 | 문제 해결 시 사용할 디버그 플래그입니다. 예: `\{"api":false, "method":true}`. 문제 해결 중이 아니며 자세한 로그 덤프가 필요한 경우가 아니면 이 방법을 사용하지 마십시오. | null입니다 
 
-아피지역(apiRegion)은 Astra Trident가 CVS 볼륨을 생성하는 GCP 지역을 나타냅니다. 지역 간 Kubernetes 클러스터를 생성할 때 "apiRegion"에서 생성된 CVS 볼륨을 여러 GCP 지역 노드에 예약된 워크로드에 사용할 수 있습니다. 지역 간 트래픽에는 추가 비용이 발생합니다.
 
-[NOTE]
-====
-* 교차 지역 액세스를 활성화하려면 "allowedTopologies"에 대한 StorageClass 정의에 모든 영역이 포함되어야 합니다. 예를 들면 다음과 같습니다.
-+
-[listing]
-----
-- key: topology.kubernetes.io/region
+| `allowedTopologies` | 지역 간 액세스를 설정하려면 에 대한 StorageClass 정의를 사용합니다 `allowedTopologies` 모든 지역을 포함해야 합니다. 예를 들면 다음과 같습니다.
+`- key: topology.kubernetes.io/region
   values:
   - us-east1
-  - europe-west1
-----
-* 'torageClass'는 원하는 항목을 선택하는 데 사용할 수 있는 선택적 매개 변수입니다 https://cloud.google.com/solutions/partners/netapp-cloud-volumes/service-types?hl=en_US["CVS 서비스 유형입니다"^]. 기본 CVS 서비스 유형('S torageClass=software') 또는 Trident에서 기본적으로 사용하는 CVS 성능 서비스 유형('torageClass=hardware')을 선택할 수 있습니다. 백엔드 정의에 각 CVS의 torageClass를 제공하는 apiRegion을 지정해야 합니다.
+  - europe-west1` |  
+|===
 
 
-====
+== 볼륨 프로비저닝 옵션
 
-CAUTION: Astra Trident가 Google Cloud에 기본 CVS 서비스 유형과 통합된 베타 기능은**, 운영 워크로드용으로 제공되지 않습니다. Trident는** CVS에서 완벽하게 지원됨- 성능 서비스 유형으로 기본적으로 사용됩니다.
-
-각 백엔드는 단일 Google Cloud 지역에 볼륨을 프로비저닝합니다. 다른 영역에 볼륨을 생성하려면 추가 백엔드를 정의할 수 있습니다.
-
-구성 파일의 특수 섹션에서 다음 옵션을 지정하여 각 볼륨의 프로비저닝 방식을 기본적으로 제어할 수 있습니다. 아래의 구성 예를 참조하십시오.
+에서 기본 볼륨 프로비저닝을 제어할 수 있습니다 `defaults` 구성 파일의 섹션입니다.
 
 [cols=",,"]
 |===
 | 매개 변수 | 설명 | 기본값 
 
 
-| 엑포트 규칙 | 새 볼륨의 내보내기 규칙 | "0.0.0.0/0" 
+| 엑포트 규칙 | 새 볼륨의 내보내기 규칙. CIDR 표기법을 사용하여 IPv4 주소 또는 IPv4 서브넷의 조합을 쉼표로 구분해야 합니다. | "0.0.0.0/0" 
 
 
 | 나프산디렉토리 | '.snapshot' 디렉토리에 액세스합니다 | "거짓" 
@@ -118,18 +126,18 @@ CAUTION: Astra Trident가 Google Cloud에 기본 CVS 서비스 유형과 통합�
 | 안산예비역 | 스냅숏용으로 예약된 볼륨의 백분율입니다 | ""(CVS 기본값 0 허용) 
 
 
-| '크기'입니다 | 새 볼륨의 크기입니다 | "100Gi" 
+| '크기'입니다 | 새 볼륨의 크기입니다. CVS - 최소 성능은 100GiB입니다. CV 최소값은 1GiB입니다. | CVS - 성능 서비스 유형의 기본값은 "100GiB"입니다. CVS 서비스 유형은 기본값을 설정하지 않지만 최소 1GiB가 필요합니다. 
 |===
-exportRule 값은 IPv4 주소 또는 IPv4 서브넷을 CIDR 표기로 조합한 쉼표로 구분된 목록이어야 합니다.
 
 
-NOTE: CVS Google Cloud 백엔드에서 생성된 모든 볼륨에 대해 Trident는 스토리지 풀에 있는 모든 레이블을 프로비저닝할 때 스토리지 볼륨에 복사합니다. 스토리지 관리자는 스토리지 풀별로 레이블을 정의하고 스토리지 풀에서 생성된 모든 볼륨을 그룹화할 수 있습니다. 이를 통해 백엔드 구성에서 제공되는 사용자 지정 가능한 레이블 세트를 기반으로 볼륨을 쉽게 구별할 수 있습니다.
+== CVS - 성능 서비스 유형의 예
 
+다음 예에서는 CVS - 성능 서비스 유형에 대한 샘플 구성을 제공합니다.
 
-
-== 예 1: 최소 구성
-
-이는 절대적인 최소 백엔드 구성입니다.
+.예 1: 최소 구성
+[%collapsible]
+====
+기본 CVS - 성능 서비스 유형과 기본 "표준" 서비스 수준을 사용하는 최소 백엔드 구성입니다.
 
 [listing]
 ----
@@ -152,39 +160,11 @@ NOTE: CVS Google Cloud 백엔드에서 생성된 모든 볼륨에 대해 Trident
     }
 }
 ----
-
-
-== 예 2: 기본 CVS 서비스 유형 구성
-
-이 예에서는 기본 CVS 서비스 유형을 사용하는 백엔드 정의를 보여 줍니다. 이는 범용 워크로드에 사용되며, 높은 조널 가용성과 함께 가벼운/중간 수준의 성능을 제공합니다.
-
-[listing]
-----
-{
-    "version": 1,
-    "storageDriverName": "gcp-cvs",
-    "projectNumber": "012345678901",
-    "storageClass": "software",
-    "apiRegion": "us-east4",
-    "apiKey": {
-        "type": "service_account",
-        "project_id": "my-gcp-project",
-        "private_key_id": "1234567890123456789012345678901234567890",
-        "private_key": "-----BEGIN PRIVATE KEY-----\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nXsYg6gyxy4zq7OlwWgLwGa==\n-----END PRIVATE KEY-----\n",
-        "client_email": "cloudvolumes-admin-sa@my-gcp-project.iam.gserviceaccount.com",
-        "client_id": "123456789012345678901",
-        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-        "token_uri": "https://oauth2.googleapis.com/token",
-        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloudvolumes-admin-sa%40my-gcp-project.iam.gserviceaccount.com"
-    }
-}
-----
-
-
-== 예 3: 단일 서비스 수준 구성
-
-이 예에서는 Google Cloud Us-west2 지역에서 Astra Trident가 생성한 모든 스토리지에 동일한 측면을 적용하는 백엔드 파일을 보여 줍니다. 이 예제에서는 백엔드 구성 파일에서 proxyURL을 사용하는 방법도 보여 줍니다.
+====
+.예 2: 서비스 수준 구성
+[%collapsible]
+====
+이 샘플에서는 서비스 수준 및 볼륨 기본값을 포함한 백엔드 구성 옵션을 보여 줍니다.
 
 [listing]
 ----
@@ -217,13 +197,13 @@ NOTE: CVS Google Cloud 백엔드에서 생성된 모든 볼륨에 대해 Trident
     }
 }
 ----
+====
+.예 3: 가상 풀 구성
+[%collapsible]
+====
+이 샘플은 를 사용합니다 `storage` 가상 풀 및 를 구성합니다 `StorageClasses` 다시 언급한다는 것입니다. 을 참조하십시오 <<스토리지 클래스 정의>> 스토리지 클래스를 정의한 방법을 확인합니다.
 
-
-== 예 4: 가상 스토리지 풀 구성
-
-이 예에서는 가상 스토리지 풀을 사용하여 구성된 백엔드 정의 파일과 이를 다시 참조하는 'torageClasses'를 보여 줍니다.
-
-아래 표시된 샘플 백엔드 정의 파일에서 모든 스토리지 풀에 대한 특정 기본값이 설정되어 있는데, 이 경우 '스냅샷 보존'이 5%로 설정되고 'exportRule'이 0.0.0.0/0으로 설정됩니다. 가상 스토리지 풀은 '스토리지' 섹션에 정의되어 있습니다. 이 예에서는 각 개별 스토리지 풀이 자체 'erviceLevel'을 설정하고 일부 풀이 기본값을 덮어씁니다.
+이 경우 를 설정하는 모든 가상 풀에 대해 특정 기본값이 설정됩니다 `snapshotReserve` 5% 및 에서 `exportRule` 를 0.0.0.0/0으로 설정합니다. 가상 풀은 에 정의되어 있습니다 `storage` 섹션을 참조하십시오. 각 개별 가상 풀은 고유한 가상 풀을 정의합니다 `serviceLevel`그리고 일부 풀은 기본값을 덮어씁니다. 가상 풀 레이블을 사용하여 에 따라 풀을 구분했습니다 `performance` 및 `protection`.
 
 [listing]
 ----
@@ -305,10 +285,16 @@ NOTE: CVS Google Cloud 백엔드에서 생성된 모든 볼륨에 대해 Trident
     ]
 }
 ----
-다음 StorageClass 정의는 위의 스토리지 풀을 참조합니다. "parameters.selector` 필드를 사용하여 각 StorageClass에 볼륨을 호스팅하는 데 사용되는 가상 풀을 지정할 수 있습니다. 볼륨은 선택한 풀에 정의된 측면을 갖습니다.
+====
 
-첫 번째 StorageClass('cvs-extreme-extra-protection')는 첫 번째 가상 스토리지 풀에 매핑됩니다. 이 풀은 스냅샷 예약 공간이 10%인 최고 성능을 제공하는 유일한 풀입니다. 마지막 StorageClass('cvs-extra-protection')는 10%의 스냅샷 예비 공간을 제공하는 스토리지 풀을 호출합니다. Astra Trident는 선택된 가상 스토리지 풀을 결정하고 스냅샷 예약 요구 사항이 충족되는지 확인합니다.
 
+=== 스토리지 클래스 정의
+
+다음 StorageClass 정의는 가상 풀 구성 예에 적용됩니다. 사용 `parameters.selector`볼륨을 호스팅하는 데 사용되는 가상 풀을 각 StorageClass에 대해 지정할 수 있습니다. 볼륨은 선택한 풀에 정의된 측면을 갖습니다.
+
+.스토리지 클래스 예
+[%collapsible]
+====
 [listing]
 ----
 apiVersion: storage.k8s.io/v1
@@ -365,6 +351,79 @@ parameters:
   selector: "protection=extra"
 allowVolumeExpansion: true
 ----
+====
+* 첫 번째 StorageClass입니다 (`cvs-extreme-extra-protection`)가 첫 번째 가상 풀에 매핑됩니다. 이 풀은 스냅샷 예약 공간이 10%인 최고 성능을 제공하는 유일한 풀입니다.
+* 마지막 StorageClass입니다 (`cvs-extra-protection`) 10%의 스냅샷 예약 공간을 제공하는 스토리지 풀을 호출합니다. Astra Trident는 선택된 가상 풀을 결정하고 스냅샷 예약 요구 사항이 충족되는지 확인합니다.
+
+
+
+
+== CVS 서비스 유형 예
+
+다음 예에서는 CVS 서비스 유형에 대한 샘플 구성을 제공합니다.
+
+.예 1: 최소 구성
+[%collapsible]
+====
+을 사용하는 최소 백엔드 구성입니다 `storageClass` CVS 서비스 유형과 기본값을 지정합니다 `standardsw` 서비스 레벨:
+
+[listing]
+----
+{
+    "version": 1,
+    "storageDriverName": "gcp-cvs",
+    "projectNumber": "012345678901",
+    "storageClass": "software",
+    "apiRegion": "us-east4",
+    "apiKey": {
+        "type": "service_account",
+        "project_id": "my-gcp-project",
+        "private_key_id": "1234567890123456789012345678901234567890",
+        "private_key": "-----BEGIN PRIVATE KEY-----\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nznHczZsrrtHisIsAbOguSaPIKeyAZNchRAGzlzZE4jK3bl/qp8B4Kws8zX5ojY9m\nXsYg6gyxy4zq7OlwWgLwGa==\n-----END PRIVATE KEY-----\n",
+        "client_email": "cloudvolumes-admin-sa@my-gcp-project.iam.gserviceaccount.com",
+        "client_id": "123456789012345678901",
+        "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+        "token_uri": "https://oauth2.googleapis.com/token",
+        "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+        "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloudvolumes-admin-sa%40my-gcp-project.iam.gserviceaccount.com"
+    }
+“serviceLevel”: “standardsw”
+}
+----
+====
+.예 2: 스토리지 풀 구성
+[%collapsible]
+====
+이 백엔드 구성은 를 사용합니다 `storagePools` 스토리지 풀을 구성하려면 다음을 수행합니다.
+
+[listing]
+----
+{
+  "version": 1,
+  "storageDriverName": "gcp-cvs",
+  "backendName": "gcp-std-so-with-pool",
+  "projectNumber": "531265380079",
+  "apiRegion": "europe-west1",
+  "apiKey": {
+    "type": "service_account",
+    "project_id": "cloud-native-data",
+    "private_key_id": "eeba413dcf54992cbbb265a369b7de6baebe88f8",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDaT+Oui9FBAw19\nL1AGEkrYU5xd9K5NlO5jMkIFND5wCD+Nv+jd1GvtFRLaLK5RvXyF5wzvztmODNS+\nqtScpQ+5cFpQkuGtv9U9+N6qtuVYYO3b504Kp5CtqVPJCgMJaK2j8pZTIqUiMum/\n5/Y9oTbZrjAHSMgJm2nHzFq2X0rqVMaHghI6ATm4DOuWx8XGWKTGIPlc0qPqJlqS\nLLaWOH4VIZQZCAyW5IUp9CAmwqHgdG0uhFNfCgMmED6PBUvVLsLvcq86X+QSWR9k\nETqElj/sGCenPF7ti1DhGBFafd9hPnxg9PZY29ArEZwY9G/ZjZQX7WPgs0VvxiNR\nDxZRC3GXAgMBAAECggEACn5c59bG/qnVEVI1CwMAalM5M2z09JFhlLlljKwntNPj\nVilw2eTW2+UE7HbJru/S7KQgA5Dnn9kvCraEahPRuddUMrD0vG4kTl/IODV6uFuk\nY0sZfbqd4jMUQ21smvGsqFzwloYWS5qzO1W83ivXH/HW/iqkmY2eW+EPRS/hwSSu\nSscR+SojI7PB0BWSJhlV4yqYf3vcD/D95el2CVHfRCkL85DKumeZ+yHEnpiXGZAE\nt8xSs4a5OOPm6NHhevCw2a/UQ95/foXNUR450HtbjieJo5o+FF6EYZQGfU2ZHZO8\n37FBKuaJkdGW5xqaI9TL7aqkGkFMF4F2qvOZM+vy8QKBgQD4oVuOkJDlhkTHP86W\nesFlw1kpWyJR9ZA7LI0g/rVpslnX+XdDq0WQf4umdLNau5hYEH9LU6ZSGs1Xk3/B\nNHwR6OXFuqEKNiu83d0zSlHhTy7PZpOZdj5a/vVvQfPDMz7OvsqLRd7YCAbdzuQ0\n+Ahq0Ztwvg0HQ64hdW0ukpYRRwKBgQDgyHj98oqswoYuIa+pP1yS0pPwLmjwKyNm\n/HayzCp+Qjiyy7Tzg8AUqlH1Ou83XbV428jvg7kDhO7PCCKFq+mMmfqHmTpb0Maq\nKpKnZg4ipsqP1yHNNEoRmcailXbwIhCLewMqMrggUiLOmCw4PscL5nK+4GKu2XE1\njLqjWAZFMQKBgFHkQ9XXRAJ1kR3XpGHoGN890pZOkCVSrqju6aUef/5KYlFCt8ew\nF/+aIxM2iQSvmWQYOvVCnhuY/F2GFaQ7d0om3decuwI0CX/xy7PjHMkLXa2uaZs4\nWR17sLduj62RqXRLX0c0QkwBiNFyHbRcpdkZJQujbYMhBa+7j7SxT4BtAoGAWMWT\nUucocRXZm/pdvz9wteNH3YDWnJLMxm1KC06qMXbBoYrliY4sm3ywJWMC+iCd/H8A\nGecxd/xVu5mA2L2N3KMq18Zhz8Th0G5DwKyDRJgOQ0Q46yuNXOoYEjlo4Wjyk8Me\n+tlQ8iK98E0UmZnhTgfSpSNElbz2AqnzQ3MN9uECgYAqdvdVPnKGfvdtZ2DjyMoJ\nE89UIC41WjjJGmHsd8W65+3X0RwMzKMT6aZc5tK9J5dHvmWIETnbM+lTImdBBFga\nNWOC6f3r2xbGXHhaWSl+nobpTuvlo56ZRJVvVk7lFMsiddzMuHH8pxfgNJemwA4P\nThDHCejv035NNV6KyoO0tA==\n-----END PRIVATE KEY-----",
+    "client_email": "cloudvolumes-admin-sa@cloud-native-data.iam.gserviceaccount.com",
+    "client_id": "107071413297115343396",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloudvolumes-admin-sa%40cloud-native-data.iam.gserviceaccount.com"
+  },
+  "storageClass": "software",
+  "zone": "europe-west1-b",
+  "network": "default",
+  "storagePools": ["1bc7f380-3314-6005-45e9-c7dc8c2d7509"],
+  "serviceLevel": "Standardsw"
+}
+----
+====
 
 
 == 다음 단계

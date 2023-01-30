@@ -46,7 +46,7 @@ kubectl delete storageclass <storage-class>
 이 스토리지 클래스를 통해 생성된 영구 볼륨은 변경되지 않으며 Astra Trident는 계속 관리합니다.
 
 
-NOTE: Astra Trident는 생성한 볼륨에 대해 빈 "fsType"을 적용합니다. iSCSI 백엔드의 경우 StorageClass 에 parameters.fsType 을 적용하는 것이 좋습니다. esixing StorageClasses를 삭제하고 parameters.fsType을 지정하여 다시 생성해야 합니다.
+NOTE: Astra Trident가 공백을 적용합니다 `fsType` 볼륨에 대해 생성할 수 있습니다. iSCSI 백엔드의 경우 적용하는 것이 좋습니다 `parameters.fsType` StorageClass에 있습니다. 기존 StorageClasses를 삭제하고 를 사용하여 다시 생성해야 합니다 `parameters.fsType` 지정됨.
 
 
 

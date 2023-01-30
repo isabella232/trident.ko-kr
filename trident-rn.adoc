@@ -19,7 +19,51 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 
 
 
-== 22.10의 새로운 기능
+== 23.01의 새로운 기능
+
+
+IMPORTANT: 이제 Trident에서 Kubernetes 1.26이 지원됩니다. Kubernetes를 업그레이드하기 전에 Trident를 업그레이드하십시오.
+
+
+
+=== 수정
+
+* Kubernetes: Helm(link:https://github.com/NetApp/trident/issues/794["문제 #783, #794"^])를 클릭합니다.
+
+
+
+
+=== 향상된 기능
+
+.쿠버네티스
+* Kubernetes 1.26에 대한 지원이 추가되었습니다.
+* 전체 Trident RBAC 리소스 활용률 향상(link:https://github.com/NetApp/trident/issues/757["문제 #757"^])를 클릭합니다.
+* 호스트 노드에서 손상되거나 유효하지 않은 iSCSI 세션을 감지하고 수정하는 자동화 기능 추가
+* LUKS 암호화 볼륨 확장을 위한 지원이 추가되었습니다.
+* Kubernetes: LUKS 암호화 볼륨에 대한 자격 증명 회전 지원 추가.
+
+
+.아스트라 트리덴트
+* ONTAP용 Amazon FSx를 사용하는 SMB 볼륨에 대한 지원을 ONTAP-NAS 스토리지 드라이버에 추가했습니다.
+* SMB 볼륨을 사용할 때 NTFS 권한에 대한 지원이 추가되었습니다.
+* CVS 서비스 수준이 있는 GCP 볼륨에 대한 스토리지 풀에 대한 지원이 추가되었습니다.
+* ONTAP-NAS-flexgroup 스토리지 드라이버를 사용하여 FlexGroups를 생성할 때 flexgroupAggregateList의 선택적 사용에 대한 지원이 추가되었습니다.
+* 여러 개의 FlexVols를 관리할 때 ONTAP-NAS-이코노미 스토리지 드라이버의 성능이 향상되었습니다.
+* 모든 ONTAP NAS 스토리지 드라이버에 대해 데이터 LIF 업데이트를 사용하도록 설정했습니다.
+* 호스트 노드 OS를 반영하도록 Trident 배포 및 DemonSet 명명 규칙을 업데이트했습니다.
+
+
+
+
+=== 사용 중단
+
+* Kubernetes: 지원되는 최소 Kubernetes를 1.21로 업데이트했습니다.
+* 구성 시 데이터 LIF를 더 이상 지정하지 않아야 합니다 `ontap-san` 또는 `ontap-san-economy` 드라이버.
+
+
+
+
+== 22.10의 변경 사항
 
 * Astra Trident 22.10으로 업그레이드하기 전에 다음 중요 정보를 읽어야 합니다. *
 
@@ -59,7 +103,7 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 
 * 모든 Trident `ontap-*` 이제 스토리지 드라이버가 ONTAP REST API에서 작동합니다.
 * 새로운 운영자 YAML 추가 (`bundle_post_1_25.yaml`)를 사용하지 않을 경우 `PodSecurityPolicy` Kubernetes 1.25를 지원합니다.
-* 추가되었습니다 link:https://docs.netapp.com/us-en/trident/trident-reco/security-reco.html#enable-per-volume-host-side-encryption-using-linux-unified-key-setup-luks["LUKS 암호화 볼륨 지원"] 용 `ontap-san` 및 `ontap-san-economy` 스토리지 드라이버.
+* 추가되었습니다 link:https://docs.netapp.com/us-en/trident/trident-reco/security-luks.html["LUKS 암호화 볼륨 지원"] 용 `ontap-san` 및 `ontap-san-economy` 스토리지 드라이버.
 * Windows Server 2019 노드에 대한 지원이 추가되었습니다.
 * 추가되었습니다 link:https://docs.netapp.com/us-en/trident/trident-use/anf.html["Windows 노드에서 SMB 볼륨 지원"] 를 통해 `azure-netapp-files` 스토리지 드라이버.
 * 이제 ONTAP 드라이버에 대한 자동 MetroCluster 전환 감지 기능을 사용할 수 있습니다.
@@ -293,6 +337,10 @@ WARNING: v21.10.0 릴리즈에는 노드를 제거한 다음 Kubernetes 클러�
 * 사용자가 해당 PVC를 삭제하기 전에 Astra Trident가 프로비저닝한 PV를 삭제하는 경우 Astra Trident는 백업 볼륨을 자동으로 삭제하지 않습니다. 'tridentctl' 또는 REST API를 통해 볼륨을 제거해야 합니다.
 * FlexGroup은 애그리게이트 세트가 각 프로비저닝 요청에서 고유하지 않으면 한 번에 둘 이상의 ONTAP를 동시에 프로비저닝할 수 없습니다.
 * IPv6를 통해 Astra Trident를 사용할 때는 대괄호 안의 백엔드 정의에 "managementLIF"와 "dataLIF"를 지정해야 합니다. 예: ``FD20:8b1e:b258:2000:f816:3eff:feec:0]'.
++
+
+NOTE: 지정할 수 없습니다 `dataLIF` ONTAP SAN 백엔드에서 Astra Trident는 사용 가능한 모든 iSCSI LIF를 검색하여 다중 경로 세션을 설정하는 데 사용합니다.
+
 * 를 사용하는 경우 `solidfire-san` OpenShift 4.5를 사용하는 드라이버 기본 작업자 노드가 CHAP 인증 알고리즘으로 MD5를 사용하는지 확인합니다. 보안 FIPS 호환 CHAP 알고리즘 SHA1, SHA-256 및 SHA3-256은 Element 12.7에서 사용할 수 있습니다.
 
 

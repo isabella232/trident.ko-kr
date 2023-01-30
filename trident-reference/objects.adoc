@@ -222,7 +222,7 @@ ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN
 | allowVolumeExpansion | 부울 | 참, 거짓 | PVC 크기 증가에 대한 지원을 활성화 또는 비활성화합니다 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, solidfire-SAN, GCP-CV, Azure-NetApp-파일 | 1.11+ 
 
 
-| 볼륨BindingMode 를 선택합니다 | 문자열 | Immediate, WaitForFirstConsumer입니다 | 볼륨 바인딩 및 동적 프로비저닝이 수행될 시기를 선택합니다 | 모두 | 1.19 - 1.25 
+| 볼륨BindingMode 를 선택합니다 | 문자열 | Immediate, WaitForFirstConsumer입니다 | 볼륨 바인딩 및 동적 프로비저닝이 수행될 시기를 선택합니다 | 모두 | 1.19-1.26 
 |===
 [TIP]
 ====

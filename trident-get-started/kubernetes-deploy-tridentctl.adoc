@@ -4,7 +4,7 @@ permalink: trident-get-started/kubernetes-deploy-tridentctl.html
 keywords: deploy, astra trident, methods, tridentctl, windows 
 summary: tridentctl을 사용하여 Astra Trident를 배포할 수 있습니다. 
 ---
-= tridentctl을 사용하여 배포합니다
+= tridentctl을 사용하여 설치합니다
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
@@ -12,19 +12,19 @@ summary: tridentctl을 사용하여 Astra Trident를 배포할 수 있습니다.
 
 
 [role="lead"]
-을 사용하여 Astra Trident를 배포할 수 있습니다 `tridentctl`. 을 숙지하는 것이 좋습니다 link:../trident-concepts/intro.html["기본 개념"]. 를 사용자 지정합니다 `tridentctl` 구축 방법은 을 참조하십시오 link:kubernetes-customize-deploy-tridentctl.html["tridentctl 배포를 사용자 지정합니다"].
+을 사용하여 Astra Trident를 설치할 수 있습니다 `tridentctl`. 이 프로세스는 Trident 및 CSI 이미지가 에 있는 설치에 적용됩니다 `docker.io` 및 `registry.k8s.io` 또는 전용, 미러된 레지스트리. 를 사용자 지정합니다 `tridentctl` 구축 방법은 을 참조하십시오 link:kubernetes-customize-deploy-tridentctl.html["tridentctl 배포를 사용자 지정합니다"].
 
 
 
-== Astra Trident 22.10에 대한 중요 정보입니다
+== Astra Trident 23.01에 대한 중요 정보입니다
 
-* Astra Trident 22.10으로 업그레이드하기 전에 다음 중요 정보를 읽어야 합니다. *
+* Astra Trident * 에 대한 다음 중요 정보를 읽어야 합니다
 
-[WARNING]
-.strong>Astra Trident 22.10에 대한 중요 정보</strong>
+.<strong> 중요 정보 Astra Trident </strong>
+[%collapsible%open]
 ====
-* 이제 Trident에서 Kubernetes 1.25가 지원됩니다. Kubernetes 1.25로 업그레이드하기 전에 Astra Trident 22.10으로 업그레이드해야 합니다.
-* Astra Trident는 이제 SAN 환경에서 다중 경로 구성을 사용하도록 엄격히 적용되며 권장값은 입니다 `find_multipaths: no` 다중 경로 .conf 파일
+* 이제 Trident에서 Kubernetes 1.26이 지원됩니다. Kubernetes를 업그레이드하기 전에 Trident를 업그레이드하십시오.
+* Astra Trident는 SAN 환경에서 다중 경로 구성을 엄격하게 사용하며 권장 값은 입니다 `find_multipaths: no` 다중 경로 .conf 파일
 +
 비 경로 다중화 구성 또는 의 사용 `find_multipaths: yes` 또는 `find_multipaths: smart` multipath.conf 파일의 값으로 인해 마운트 오류가 발생합니다. Trident에서 의 사용을 권장했습니다 `find_multipaths: no` 21.07 릴리스 이후.
 
@@ -33,75 +33,91 @@ summary: tridentctl을 사용하여 Astra Trident를 배포할 수 있습니다.
 ====
 
 
-== 필수 구성 요소를 확인합니다
+== 를 사용하여 Astra Trident를 설치합니다 `tridentctl`
 
-Astra Trident를 구축하려면 다음과 같은 사전 요구 사항을 충족해야 합니다.
+검토 link:../trident-get-started/kubernetes-deploy.html["설치 개요"] 설치 사전 요구 사항을 충족하고 환경에 맞는 올바른 설치 옵션을 선택했는지 확인합니다.
 
-* 지원되는 Kubernetes 클러스터에 대한 모든 권한
-* 지원되는 NetApp 스토리지 시스템에 대한 액세스
-* 모든 Kubernetes 작업자 노드에서 볼륨을 마운트할 수 있습니다.
-* 가 설치된 Linux 호스트 `kubectl` (또는 `oc`, OpenShift를 사용하는 경우) 사용하려는 Kubernetes 클러스터를 관리하도록 설치 및 구성한 것입니다.
-* 를 클릭합니다 `KUBECONFIG` 환경 변수는 Kubernetes 클러스터 구성을 가리킵니다.
-* 를 클릭합니다 link:requirements.html["Astra Trident에서 요구하는 기능 게이트"] 가 활성화됩니다.
-* Docker Enterprise와 함께 Kubernetes를 사용하는 경우, https://docs.docker.com/ee/ucp/user-access/cli/["다음 단계에 따라 CLI 액세스를 설정합니다"^].
+.시작하기 전에
+설치를 시작하기 전에 Linux 호스트에 로그인하여 작업 관리 여부를 확인합니다. link:requirements.html["지원되는 Kubernetes 클러스터"^] 필요한 권한이 있어야 합니다.
 
 
+NOTE: OpenShift에서는 뒤에 나오는 모든 예시에서 kubtl 대신 OC를 사용하고, OC login-u system:admin 또는 OC login-u kubbe-admin을 실행하여 먼저 * system:admin * 으로 로그인합니다.
 
-
-== 1단계: Kubernetes 클러스터 검증
-
-Linux 호스트에 로그인하여 작업을 관리하고 있는지 확인합니다. link:requirements.html["지원되는 Kubernetes 클러스터"^] 그리고 필요한 권한이 있습니다.
-
-
-NOTE: OpenShift에서는 다음 모든 예제에서 kubeck 대신 OC를 사용하며 먼저 OC login-u system:admin 또는 OC login-u kubbe-admin을 실행하여 * system:admin * 으로 로그인해야 합니다.
-
-Kubernetes 버전을 확인하려면 다음 명령을 실행합니다.
-
+[%collapsible%open]
+====
+. Kubernetes 버전 확인:
++
 [listing]
 ----
 kubectl version
 ----
-Kubernetes 클러스터 관리자 권한을 확인하려면 다음 명령을 실행합니다.
-
+. 클러스터 관리자 권한 확인:
++
 [listing]
 ----
 kubectl auth can-i '*' '*' --all-namespaces
 ----
-Docker Hub에서 이미지를 사용하는 Pod를 시작하고 Pod 네트워크를 통해 스토리지 시스템에 연결할 수 있는지 확인하려면 다음 명령을 실행합니다.
-
+. Docker Hub의 이미지를 사용하는 Pod를 시작하고 Pod 네트워크를 통해 스토리지 시스템에 연결할 수 있는지 확인합니다.
++
 [listing]
 ----
 kubectl run -i --tty ping --image=busybox --restart=Never --rm -- \
   ping <management IP>
 ----
-Kubernetes 서버 버전을 식별하십시오. Astra Trident를 설치할 때 사용합니다.
 
 
+====
 
-== 2단계: 설치 프로그램을 다운로드하고 압축을 풉니다
 
+== 1단계: Trident 설치 프로그램 패키지를 다운로드합니다
 
-NOTE: Trident 설치 관리자는 Trident Pod를 생성하고 상태를 유지하는 데 사용되는 CRD 객체를 구성하며, 클러스터 호스트에 볼륨 프로비저닝 및 연결과 같은 작업을 수행하는 CSI 사이드카를 초기화합니다.
-
-에서 최신 버전의 Trident 설치 프로그램 번들을 다운로드하여 압축을 풀 수 있습니다 link:https://github.com/NetApp/trident/releases/latest["GitHub의 _Assets_섹션"^].
-
-예를 들어, 최신 버전이 22.10.0인 경우:
+Astra Trident 설치 프로그램 패키지는 Trident Pod를 생성하고 상태를 유지하는 데 사용되는 CRD 객체를 구성하며, CSI 사이드카를 초기화하여 클러스터 호스트에 볼륨 프로비저닝 및 연결과 같은 작업을 수행합니다. 에서 최신 버전의 Trident 설치 프로그램을 다운로드하고 압축을 풉니다 link:https://github.com/NetApp/trident/releases/latest["GitHub의 _Assets_섹션"^]. 선택한 Astra Trident 버전을 사용하여 예제에서 update_<trident-installer-XX.XX.X.tar.gz>_를 선택합니다.
 
 [listing]
 ----
-wget https://github.com/NetApp/trident/releases/download/v22.10.0/trident-installer-22.10.0.tar.gz
-tar -xf trident-installer-22.10.0.tar.gz
+wget https://github.com/NetApp/trident/releases/download/v23.01.0/trident-installer-23.01.0.tar.gz
+tar -xf trident-installer-23.01.0.tar.gz
 cd trident-installer
 ----
 
 
-== 3단계: Astra Trident 설치
+== 2단계: Astra Trident 설치
 
-tridentctl install 명령을 실행하여 원하는 네임스페이스에 Astra Trident를 설치합니다.
+를 실행하여 원하는 네임스페이스에 Astra Trident를 설치합니다 `tridentctl install` 명령. 추가 인수를 추가하여 이미지 레지스트리 위치를 지정할 수 있습니다.
 
+
+NOTE: Astra Trident를 Windows 노드에서 실행하도록 설정하려면 을 추가합니다 `--windows` 설치 명령에 플래그 지정: `$ ./tridentctl install --windows -n trident`.
+
+[role="tabbed-block"]
+====
+.표준 모드
+--
 [listing]
 ----
 ./tridentctl install -n trident
+----
+--
+.하나의 미러링된 레지스트리의 Trident 및 CSI 이미지
+--
+[listing]
+----
+./tridentctl install -n trident --image-registry <your-registry> --autosupport-image <your-registry>/trident-autosupport:23.01 --trident-image <your-registry>/trident:23.01.0
+----
+--
+.다른 미러링된 레지스트리의 Trident 및 CSI 이미지
+--
+추가해야 합니다 `sig-storage` 를 누릅니다 `imageRegistry` 다른 레지스트리 위치를 사용합니다.
+
+[listing]
+----
+./tridentctl install -n trident --image-registry <your-registry>/sig-storage --autosupport-image <your-registry>/netapp/trident-autosupport:23.01 --trident-image <your-registry>/netapp/trident:23.01.0
+----
+--
+====
+설치 상태는 다음과 같습니다.
+
+[listing]
+----
 ....
 INFO Starting Trident installation.                namespace=trident
 INFO Created service account.
@@ -113,34 +129,53 @@ INFO Created Trident secret.
 INFO Created Trident deployment.
 INFO Created Trident daemonset.
 INFO Waiting for Trident pod to start.
-INFO Trident pod started.                          namespace=trident pod=trident-csi-679648bd45-cv2mx
+INFO Trident pod started.                          namespace=trident pod=trident-controller-679648bd45-cv2mx
 INFO Waiting for Trident REST interface.
-INFO Trident REST interface is up.                 version=22.10.0
+INFO Trident REST interface is up.                 version=23.01.0
 INFO Trident installation succeeded.
 ....
 ----
 
-NOTE: Astra Trident를 Windows 노드에서 실행하도록 설정하려면 을 추가합니다 `--windows` 설치 명령에 플래그 지정: `$ ./tridentctl install --windows -n trident`.
 
-설치 프로그램이 완료되면 다음과 유사한 출력이 표시됩니다. Kubernetes 클러스터의 노드 수에 따라 다음과 같은 Pod가 더 많이 있을 수 있습니다.
+== 설치를 확인합니다
+
+POD 생성 상태 또는 를 사용하여 설치를 확인할 수 있습니다 `tridentctl`.
+
+
+
+=== POD 생성 상태 사용
+
+생성된 Pod의 상태를 검토하여 Astra Trident 설치가 완료되었는지 확인할 수 있습니다.
 
 [listing]
 ----
-kubectl get pod -n trident
-NAME                           READY   STATUS    RESTARTS   AGE
-trident-csi-679648bd45-cv2mx   4/4     Running   0          5m29s
-trident-csi-vgc8n              2/2     Running   0          5m29s
+kubectl get pods -n trident
 
+NAME                                  READY   STATUS    RESTARTS   AGE
+trident-controller-679648bd45-cv2mx   6/6     Running   0          5m29s
+trident-node-linux-vgc8n              2/2     Running   0          5m29s
+----
+
+NOTE: 설치 프로그램이 성공적으로 완료되지 않거나 `trident-controller-<generated id>` (`trident-csi-<generated id>` 23.01 이전 버전에서는 * Running * 상태가 없으며 플랫폼이 설치되지 않았습니다. 사용 `-d` 를 선택합니다 link:../troubleshooting.html#troubleshooting-an-unsuccessful-trident-deployment-using-tridentctl["디버그 모드를 켭니다"] 문제를 해결합니다.
+
+
+
+=== 사용 `tridentctl`
+
+을 사용할 수 있습니다 `tridentctl` 설치된 Astra Trident의 버전을 확인합니다.
+
+[listing]
+----
 ./tridentctl -n trident version
+
 +----------------+----------------+
 | SERVER VERSION | CLIENT VERSION |
 +----------------+----------------+
-| 22.10.0        | 22.10.0        |
+| 23.01.0        | 23.01.0        |
 +----------------+----------------+
 ----
-Astra Trident 구성을 완료하려면 로 이동합니다 link:kubernetes-postdeployment.html["구축 후 작업"].
-
-설치 프로그램이 성공적으로 완료되지 않거나 `trident-csi-<generated id>` 에는 * Running * 상태가 없으며 플랫폼이 설치되지 않았습니다.
 
 
-NOTE: 배포 중 문제 해결에 대한 자세한 내용은 을 참조하십시오 link:../troubleshooting.html["문제 해결"].
+== 다음 단계
+
+이제 가능합니다 link:kubernetes-postdeployment.html["백엔드 및 스토리지 클래스를 생성하고, 볼륨을 프로비저닝하고, POD에 볼륨을 마운트합니다"].

@@ -4,7 +4,7 @@ indexpage:
     관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다. ** Astra Trident 22.10으로 업그레이드하는 데
     대한 중요 정보는 릴리스 노트를 참조하십시오.**
   tiles:
-  - title: 22.10 릴리스에 대한 중요 정보입니다
+  - title: 23.01 릴리스에 대한 중요 정보입니다
     links:
     - title: 릴리스 정보
       url: trident-rn.html

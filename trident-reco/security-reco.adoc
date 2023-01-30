@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-reco/security-reco.html 
-keywords: security, chap, trident, namespace, nve, nae, encryption, volume encryption, aggregate encryption, luks, linux unified key setup, encryption 
+keywords: security, chap, trident, namespace, nve, nae, encryption, volume encryption, aggregate encryption 
 summary: 여기에 나열된 권장 사항을 사용하여 Astra Trident 설치가 안전한지 확인합니다. 
 ---
 = 보안
@@ -70,85 +70,4 @@ NAE 지원 백엔드의 Astra Trident에 생성된 볼륨은 NVE 또는 NAE 암�
 
 * link:../trident-use/ontap-san-examples.html["ONTAP SAN 구성 옵션"]
 * link:../trident-use/ontap-nas-examples.html["ONTAP NAS 구성 옵션"]
-
-
-
-
-== Linux LUKS(Unified Key Setup)를 사용하여 볼륨별, 호스트측 암호화 활성화
-
-LUKS(Linux 통합 키 설정)를 활성화하여 Astra Trident에서 ONTAP SAN 및 ONTAP SAN 경제 볼륨을 암호화할 수 있습니다. Astra Trident에서 LUKS 암호화 볼륨은 에서 권장하는 대로 AES-XTS-ai64 cypher 및 모드를 사용합니다 link:https://csrc.nist.gov/publications/detail/sp/800-38e/final["NIST"^].
-
-ONTAP SAN의 백엔드 구성 옵션에 대한 자세한 내용은 을 참조하십시오 link:../trident-use/ontap-san-examples.html["ONTAP SAN 구성 옵션"]
-
-.시작하기 전에
-* 작업자 노드에는 Cryptsetup 2.1 이상이 설치되어 있어야 합니다. 자세한 내용은 를 참조하십시오 link:https://gitlab.com/cryptsetup/cryptsetup["Gitlab: cryptsetup"^].
-* 성능상의 이유로 작업자 노드는 AES-NI(Advanced Encryption Standard New Instructions)를 지원하는 것이 좋습니다. AES-NI 지원을 확인하려면 다음 명령을 실행합니다.
-+
-[listing]
-----
-grep "aes" /proc/cpuinfo
-----
-+
-아무 것도 반환되지 않으면 프로세서는 AES-NI를 지원하지 않습니다. AES-NI에 대한 자세한 내용은 다음 웹 사이트를 참조하십시오. link:https://www.intel.com/content/www/us/en/developer/articles/technical/advanced-encryption-standard-instructions-aes-ni.html["인텔: AES-NI(Advanced Encryption Standard Instructions)"^].
-
-
-
-.단계
-. 백엔드 구성에서 LUKS 암호화 속성을 정의합니다.
-+
-[listing]
-----
-"storage": [
-    {
-        "labels":{"luks": "true"},
-        "zone":"us_east_1a",
-        "defaults": {
-            "luksEncryption": "true"
-        }
-    },
-    {
-        "labels":{"luks": "false"},
-        "zone":"us_east_1a",
-        "defaults": {
-            "luksEncryption": "false"
-        }
-    },
-]
-----
-. 사용 `parameters.selector` LUKS 암호화를 사용하여 스토리지 풀을 정의합니다. 예를 들면 다음과 같습니다.
-+
-[listing]
-----
-apiVersion: storage.k8s.io/v1
-kind: StorageClass
-metadata:
-  name: luks
-provisioner: netapp.io/trident
-parameters:
-  selector: "luks=true"
-  csi.storage.k8s.io/node-stage-secret-name: luks-${pvc.name}
-  csi.storage.k8s.io/node-stage-secret-namespace: ${pvc.namespace}
-----
-. LUKS 암호를 포함하는 암호를 생성합니다. 예를 들면 다음과 같습니다.
-+
-[listing]
-----
-apiVersion: v1
-kind: Secret
-metadata:
-  name: luks-pvc1
-stringData:
-  luks-passphrase-name: B
-  luks-passphrase: secretB
-  previous-luks-passphrase-name: A
-  previous-luks-passphrase: secretA
-----
-
-
-
-
-=== 제한 사항
-
-* LUKS 암호화된 볼륨은 ONTAP 중복 제거 및 압축을 활용할 수 없습니다.
-* 현재 LUKS 암호 회전이 지원되지 않습니다. 암호 문구를 변경하려면 PVC 간에 데이터를 수동으로 복사합니다.
 

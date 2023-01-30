@@ -126,7 +126,7 @@ secret/backend-tbc-ontap-san-secret created
 
 * 같은 백엔드 이름은 'sepec.backendName'에 정의되어 있습니다.
 * 구성 매개 변수는 원래 백엔드와 동일합니다.
-* 가상 스토리지 풀(있는 경우)은 원래 백엔드와 동일한 순서를 유지해야 합니다.
+* 가상 풀(있는 경우)은 원래 백엔드와 동일한 순서를 유지해야 합니다.
 * 자격 증명은 일반 텍스트가 아닌 Kubernetes Secret을 통해 제공됩니다.
 
 

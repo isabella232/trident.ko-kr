@@ -34,7 +34,7 @@ docker --version
 
 
 | NFS 를 참조하십시오  a| 
-RHEL/CentOS 7
+RHEL 8+
  a| 
 'SUDO yum install -y nfs-utils'
 
@@ -48,7 +48,7 @@ RHEL/CentOS 7
 
 
 | iSCSI  a| 
-RHEL/CentOS 7
+RHEL 8+
  a| 
 . 다음 시스템 패키지를 설치합니다.
 +

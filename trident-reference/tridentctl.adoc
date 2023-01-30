@@ -224,7 +224,7 @@ Usage:
 Usage:
   tridentctl uninstall [flags]
 ----
-플래그: * ``h, - 도움말': 제거 도움말. '--silent': 제거 중 대부분의 출력을 비활성화합니다.
+플래그: * `-h, --help`: 제거 도움말입니다. * `--silent`: 제거 중 대부분의 출력을 비활성화합니다.
 
 
 

@@ -33,13 +33,13 @@ Astra Trident 설치를 통해 ONTAP SAN 드라이버를 생성하고 사용하�
 | 백엔드이름 | 사용자 지정 이름 또는 스토리지 백엔드 | 드라이버 이름 + “_” + dataLIF 
 
 
-| 마나멘타LIF | 클러스터 또는 SVM 관리 LIF의 IP 주소 MetroCluster의 원활한 전환을 위해 SVM 관리 LIF를 지정해야 합니다. | “10.0.0.1”, “[2001:1234:ABCD::fee]” 
+| 마나멘타LIF | 클러스터 또는 SVM 관리 LIF의 IP 주소 MetroCluster의 원활한 전환을 위해 SVM 관리 LIF를 지정해야 합니다. FQDN(정규화된 도메인 이름)을 지정할 수 있습니다. 을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다 `--use-ipv6` 깃발. IPv6 주소는 대괄호로 묶어야 합니다(예: [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]). | “10.0.0.1”, “[2001:1234:ABCD::fee]” 
 
 
-| 다타LIF | 프로토콜 LIF의 IP 주소입니다. IPv6의 경우 대괄호를 사용합니다. 설정한 후에는 업데이트할 수 없습니다 | 지정되지 않은 경우 SVM에서 파생됩니다 
+| 다타LIF | 프로토콜 LIF의 IP 주소입니다. * iSCSI에 대해서는 지정하지 마십시오. * Astra Trident가 사용합니다 link:https://docs.netapp.com/us-en/ontap/san-admin/selective-lun-map-concept.html["ONTAP 선택적 LUN 맵"^] 다중 경로 세션을 설정하는 데 필요한 iSCI LIF를 검색하려면 경고 발생 시 `dataLIF` 명시적으로 정의됩니다. | SVM에서 파생됩니다 
 
 
-| 'useCHAP'입니다 | CHAP를 사용하여 ONTAP SAN 드라이버에 대한 iSCSI 인증 [부울] | 거짓 
+| 'useCHAP'입니다 | CHAP를 사용하여 ONTAP SAN 드라이버에 대한 iSCSI 인증 [Boolean]. 를 로 설정합니다 `true` Astra Trident에서 백엔드에 제공된 SVM에 대한 기본 인증으로 양방향 CHAP를 구성하고 사용합니다. 을 참조하십시오 link:ontap-san-prep.html["ONTAP SAN 드라이버를 사용하여 백엔드를 구성할 준비를 합니다"] 를 참조하십시오. | 거짓 
 
 
 | 챕터시크릿 | CHAP 이니시에이터 암호입니다. useCHAP=true인 경우 필수입니다 | “” 
@@ -63,88 +63,59 @@ Astra Trident 설치를 통해 ONTAP SAN 드라이버를 생성하고 사용하�
 | 'clientPrivateKey'입니다 | Base64 - 클라이언트 개인 키의 인코딩된 값입니다. 인증서 기반 인증에 사용됩니다 | “” 
 
 
-| 신탁인증서다 | Base64 - 신뢰할 수 있는 CA 인증서의 인코딩된 값입니다. 선택 사항. 인증서 기반 인증에 사용됩니다 | “” 
+| 신탁인증서다 | Base64 - 신뢰할 수 있는 CA 인증서의 인코딩된 값입니다. 선택 사항. 인증서 기반 인증에 사용됩니다. | “” 
 
 
-| '사용자 이름' | 클러스터/SVM에 연결할 사용자 이름입니다. 자격 증명 기반 인증에 사용됩니다 | “” 
+| '사용자 이름' | ONTAP 클러스터와 통신하는 데 필요한 사용자 이름입니다. 자격 증명 기반 인증에 사용됩니다. | “” 
 
 
-| "암호" | 클러스터/SVM에 연결하는 암호 자격 증명 기반 인증에 사용됩니다 | “” 
+| "암호" | ONTAP 클러스터와 통신하는 데 필요한 암호입니다. 자격 증명 기반 인증에 사용됩니다. | “” 
 
 
 | 'VM'입니다 | 사용할 스토리지 가상 머신입니다 | SVM 'managementLIF'가 지정된 경우에 파생됩니다 
 
 
-| “인명이름”입니다 | 사용할 SAN 볼륨에 대한 igroup의 이름입니다 | “삼중 - <backend-UUID>” 
+| “인명이름”입니다 | 사용할 SAN 볼륨에 대한 igroup의 이름입니다. 을 참조하십시오  를 참조하십시오. | “삼중 - <backend-UUID>” 
 
 
-| '토르agePrefix' | SVM에서 새 볼륨을 프로비저닝할 때 사용되는 접두사 설정한 후에는 업데이트할 수 없습니다 | "삼중류" 
+| '토르agePrefix' | SVM에서 새 볼륨을 프로비저닝할 때 사용되는 접두사 나중에 수정할 수 없습니다. 이 매개 변수를 업데이트하려면 새 백엔드를 생성해야 합니다. | "삼중류" 
 
 
-| 제한선태사용법 | 사용량이 이 비율을 초과하면 프로비저닝이 실패합니다. ONTAP * 용 아마존 FSx에는 * 가 적용되지 않습니다 | “”(기본적으로 적용되지 않음) 
+| 제한선태사용법 | 사용량이 이 비율을 초과하면 프로비저닝이 실패합니다. NetApp ONTAP 백엔드에 Amazon FSx를 사용하는 경우 를 지정하지 마십시오  `limitAggregateUsage`. 제공 `fsxadmin` 및 `vsadmin` 애그리게이트 사용을 검색하고 Astra Trident를 사용하여 제한하는 데 필요한 권한이 포함되어 있지 않습니다. | “”(기본적으로 적용되지 않음) 
 
 
-| LimitVolumeSize | 요청된 볼륨 크기가 이 값보다 큰 경우 용량 할당에 실패합니다. | “”(기본적으로 적용되지 않음) 
+| LimitVolumeSize | 요청된 볼륨 크기가 이 값보다 큰 경우 용량 할당에 실패합니다. 또한 qtree 및 LUN에 대해 관리하는 볼륨의 최대 크기도 제한합니다. | “”(기본적으로 적용되지 않음) 
 
 
 | '오만유연한' | FlexVol당 최대 LUN 수는 범위[50, 200]에 있어야 합니다. | “100” 
 
 
-| debugTraceFlags를 선택합니다 | 문제 해결 시 사용할 디버그 플래그입니다. 예: {“api”:false, “method”:true} | null입니다 
+| debugTraceFlags를 선택합니다 | 문제 해결 시 사용할 디버그 플래그입니다. 예: {“api”:false, “method”:true} 문제 해결 및 자세한 로그 덤프가 필요한 경우가 아니면 사용하지 마십시오. | null입니다 
 
 
-| 'useREST' | ONTAP REST API를 사용하는 부울 매개 변수입니다. * MetroCluster에서는 기술 미리 보기 * 가 지원되지 않습니다. | 거짓 
+| 'useREST' | ONTAP REST API를 사용하는 부울 매개 변수입니다. * 기술 미리 보기 *
+`useREST` 프로덕션 작업 부하가 아닌 테스트 환경에 권장되는** 기술 미리 보기로 제공됩니다**. 를 로 설정한 경우 `true`, Astra Trident는 ONTAP REST API를 사용하여 백엔드와 통신합니다. 이 기능을 사용하려면 ONTAP 9.11.1 이상이 필요합니다. 또한 사용되는 ONTAP 로그인 역할에 에 대한 액세스 권한이 있어야 합니다 `ontap` 응용 프로그램. 이는 사전 정의된 에 의해 충족됩니다 `vsadmin` 및 `cluster-admin` 역할.
+`useREST` 는 MetroCluster에서 지원되지 않습니다. | 거짓 
 |===
-[WARNING]
-.코드> useREST </code> 고려 사항
-====
-* "useREST"는 프로덕션 워크로드가 아닌 테스트 환경에 권장되는** 기술 미리 보기로 제공됩니다. "true"로 설정하면 Astra Trident는 ONTAP REST API를 사용하여 백엔드와 통신합니다. 이 기능을 사용하려면 ONTAP 9.10 이상이 필요합니다. 또한 사용되는 ONTAP 로그인 역할은 ONTAP 애플리케이션에 대한 액세스 권한이 있어야 합니다. 이는 미리 정의된 vsadmin과 cluster-admin의 역할에서 충족됩니다.
-* MetroCluster에서는 useREST가 지원되지 않습니다.
 
 
-====
-ONTAP 클러스터와 통신하려면 인증 매개 변수를 제공해야 합니다. 보안 로그인 또는 설치된 인증서의 사용자 이름/암호일 수 있습니다.
+=== 에 대한 세부 정보 `igroupName`
 
+`igroupName` ONTAP 클러스터에서 이미 생성된 igroup으로 설정할 수 있습니다. 지정되지 않은 경우 Astra Trident가 이름이 인 igroup을 자동으로 생성합니다 `trident-<backend-UUID>`.
 
-WARNING: NetApp ONTAP 백엔드에 Amazon FSx를 사용하는 경우 'limitAggregateUsage' 매개 변수를 지정하지 마십시오. NetApp ONTAP용 Amazon FSx에서 제공하는 "fsxadmin" 및 "vsadmin" 역할에는 애그리게이트 사용을 검색하고 Astra Trident를 통해 제한하는 데 필요한 액세스 권한이 없습니다.
+미리 정의된 횟수 이름을 제공하는 경우 환경 간에 SVM을 공유하려면 Kubernetes 클러스터 당 하나의 igroup을 사용하는 것이 좋습니다. 이는 Astra Trident가 IQN 추가 및 삭제를 자동으로 유지 관리하는 데 필요합니다.
 
-
-WARNING: 문제 해결 및 자세한 로그 덤프가 필요한 경우가 아니면 debugTraceFlags를 사용하지 마십시오.
-
-'ONTAP-SAN' 드라이버의 경우, 기본값은 SVM의 모든 데이터 LIF IP를 사용하고 iSCSI 다중 경로를 사용하는 것입니다. 'ONTAP-SAN' 드라이버에 데이터 LIF의 IP 주소를 지정하면 다중 경로를 비활성화하고 지정된 주소만 사용하게 됩니다.
-
-
-NOTE: 백엔드를 생성할 때 생성 후에는 dataLIF와 toragePrefix를 수정할 수 없습니다. 이러한 매개 변수를 업데이트하려면 새 백엔드를 생성해야 합니다.
-
-'ONTAP 이름'을 클러스터에 이미 생성된 igroup으로 설정할 수 있습니다. 지정하지 않으면 Astra Trident가 트리덴트 -<backend-UUID>라는 igroup을 자동으로 생성합니다. 미리 정의된 횟수 이름을 제공하는 경우, 환경 간에 SVM을 공유하려면 Kubernetes 클러스터 당 igroup을 사용하는 것이 좋습니다. 이는 Astra Trident가 IQN 추가/삭제를 자동으로 유지 관리하는 데 필요합니다.
-
-백엔드는 또한 생성 후 igroup을 업데이트할 수 있습니다.
-
-* ACA Trident 외부의 SVM에서 생성 및 관리되는 새로운 igroup을 가리키도록 특정 igroup 이름을 업데이트할 수 있습니다.
-* 고객 이름을 생략할 수 있습니다. 이 경우 Astra Trident가 트리덴트 - <backend-UUID> igroup을 자동으로 생성하고 관리합니다.
+* `igroupName` Astra Trident 외부의 SVM에서 생성 및 관리되는 새로운 igroup을 가리키도록 업데이트할 수 있습니다.
+* `igroupName` 생략할 수 있습니다. 이 경우 Astra Trident가 이름을 가진 igroup을 생성하고 관리합니다 `trident-<backend-UUID>` 자동으로.
 
 
 두 경우 모두 볼륨 첨부 파일에 계속 액세스할 수 있습니다. 향후 볼륨 첨부 파일은 업데이트된 igroup을 사용합니다. 이 업데이트는 백엔드에 있는 볼륨에 대한 액세스를 방해하지 않습니다.
 
-'managementLIF' 옵션에 대해 FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
-
-모든 ONTAP 드라이버에 대한 manementLIF도 IPv6 주소로 설정할 수 있습니다. '--use-ipv6' 플래그를 사용하여 Trident를 설치하십시오. 대괄호 안에 'managementLIF' IPv6 주소를 정의할 때는 주의해야 합니다.
 
 
-WARNING: IPv6 주소를 사용할 때는 [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]와 같은 대괄호 안에 'managementLIF' 및 'dataLIF'(백엔드 정의에 포함된 경우)가 정의되어 있는지 확인하십시오. 다타LIF가 제공되지 않으면 Astra Trident가 SVM에서 IPv6 데이터 LIF를 가져옵니다.
+== 볼륨 프로비저닝을 위한 백엔드 구성 옵션
 
-ONTAP-SAN 드라이버가 CHAP를 사용하도록 설정하려면 백엔드 정의에서 useCHAP 매개 변수를 true로 설정합니다. 그러면 Astra Trident가 백엔드에 제공된 SVM에 대한 기본 인증으로 양방향 CHAP를 구성하고 사용합니다. 을 참조하십시오 link:ontap-san-prep.html["여기"^] 작동 방법에 대해 알아보십시오.
-
-ONTAP-SAN-이코노미 드라이버의 경우 LimitVolumeSize 옵션도 qtree 및 LUN에 대해 관리하는 볼륨의 최대 크기를 제한합니다.
-
-
-NOTE: Astra Trident는 "ONTAP-SAN" 드라이버를 사용하여 생성된 모든 볼륨의 "Comments" 필드에 제공 레이블을 설정합니다. 생성된 각 볼륨에 대해 FlexVol의 "Comments" 필드는 스토리지 풀에 있는 모든 레이블로 채워집니다. 스토리지 관리자는 스토리지 풀별로 레이블을 정의하고 스토리지 풀에서 생성된 모든 볼륨을 그룹화할 수 있습니다. 이를 통해 백엔드 구성에서 제공되는 사용자 지정 가능한 레이블 세트를 기반으로 볼륨을 쉽게 구별할 수 있습니다.
-
-
-
-=== 볼륨 프로비저닝을 위한 백엔드 구성 옵션
-
-구성의 특수 섹션에서 이러한 옵션을 사용하여 각 볼륨이 기본적으로 프로비저닝되는 방식을 제어할 수 있습니다. 예를 들어, 아래 구성 예제를 참조하십시오.
+에서 이러한 옵션을 사용하여 기본 프로비저닝을 제어할 수 있습니다 `defaults` 섹션을 참조하십시오. 예를 들어, 아래 구성 예제를 참조하십시오.
 
 [cols="3"]
 |===
@@ -160,7 +131,7 @@ NOTE: Astra Trident는 "ONTAP-SAN" 드라이버를 사용하여 생성된 모든
 | 냅샷정책 | 사용할 스냅샷 정책입니다 | "없음" 
 
 
-| "qosPolicy" | 생성된 볼륨에 할당할 QoS 정책 그룹입니다. 스토리지 풀/백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다 | “” 
+| "qosPolicy" | 생성된 볼륨에 할당할 QoS 정책 그룹입니다. 스토리지 풀/백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다. Astra Trident와 함께 QoS 정책 그룹을 사용하려면 ONTAP 9.8 이상이 필요합니다. 비공유 QoS 정책 그룹을 사용하고 정책 그룹이 각 구성요소별로 적용되도록 하는 것이 좋습니다. 공유 QoS 정책 그룹은 모든 워크로드의 총 처리량에 대해 상한을 적용합니다. | “” 
 
 
 | 적응성 QosPolicy | 생성된 볼륨에 할당할 적응형 QoS 정책 그룹입니다. 스토리지 풀/백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다 | “” 
@@ -178,7 +149,7 @@ NOTE: Astra Trident는 "ONTAP-SAN" 드라이버를 사용하여 생성된 모든
 | 암호화 | 새 볼륨에 NVE(NetApp Volume Encryption)를 사용하도록 설정하고 기본값은 'false'입니다. 이 옵션을 사용하려면 NVE 라이센스가 클러스터에서 활성화되어 있어야 합니다. 백엔드에서 NAE가 활성화된 경우 Astra Trident에 프로비저닝된 모든 볼륨은 NAE가 활성화됩니다. 자세한 내용은 다음을 참조하십시오. link:../trident-reco/security-reco.html["Astra Trident가 NVE 및 NAE와 연동되는 방식"]. | "거짓" 
 
 
-| `luksEncryption` | LUKS 암호화를 사용합니다. 을 참조하십시오 link:../trident-reco/security-reco.html#Use-Linux-Unified-Key-Setup-(LUKS)["LUKS(Linux Unified Key Setup) 사용"]. | "" 
+| `luksEncryption` | LUKS 암호화를 사용합니다. 을 참조하십시오 link:../trident-reco/security-luks.html["LUKS(Linux Unified Key Setup) 사용"]. | "" 
 
 
 | '생태성 스타일'을 참조하십시오 | 새로운 볼륨에 대한 보안 스타일 | “UNIX” 
@@ -187,7 +158,8 @@ NOTE: Astra Trident는 "ONTAP-SAN" 드라이버를 사용하여 생성된 모든
 | '계층화 정책' | "없음"을 사용하는 계층화 정책 | ONTAP 9.5 이전 SVM-DR 구성의 경우 "스냅샷 전용 
 |===
 
-NOTE: Astra Trident와 함께 QoS 정책 그룹을 사용하려면 ONTAP 9.8 이상이 필요합니다. 비공유 QoS 정책 그룹을 사용하고 정책 그룹이 각 구성요소별로 적용되었는지 확인하는 것이 좋습니다. 공유 QoS 정책 그룹은 모든 워크로드의 총 처리량에 대해 상한을 적용합니다.
+
+=== 볼륨 프로비저닝의 예
 
 다음은 기본값이 정의된 예입니다.
 
@@ -312,9 +284,11 @@ NOTE: Astra Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경�
 ----
 
 
-== 가상 스토리지 풀의 백엔드 예
+== 가상 풀의 백엔드 예
 
-아래 표시된 백엔드 정의 샘플 파일에서 'paceReserve'는 none, 'pacteAllocation'은 false, 암호화 같은 모든 스토리지 풀에 대해 특정 기본값이 설정됩니다. 가상 스토리지 풀은 스토리지 섹션에 정의됩니다.
+아래 표시된 샘플 백엔드 정의 파일에서 와 같은 모든 스토리지 풀에 대한 특정 기본값이 설정됩니다 `spaceReserve` 없음, `spaceAllocation` 거짓일 경우, 및 `encryption` 거짓일 때. 가상 풀은 스토리지 섹션에 정의됩니다.
+
+Astra Trident는 "Comments" 필드에 제공 레이블을 설정합니다. FlexVol에 주석이 설정됩니다. Astra Trident는 프로비저닝할 때 가상 풀에 있는 모든 레이블을 스토리지 볼륨에 복사합니다. 편의를 위해 스토리지 관리자는 가상 풀 및 그룹 볼륨별로 레이블을 레이블별로 정의할 수 있습니다.
 
 이 예에서는 일부 스토리지 풀이 자체 'spaceReserve', 'spaceAllocation' 및 'encryption' 값을 설정하고 일부 풀은 위에 설정된 기본값을 덮어씁니다.
 
@@ -428,16 +402,16 @@ NOTE: Astra Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경�
 
 == 백엔드를 StorageClasses에 매핑합니다
 
-다음 StorageClass 정의는 위의 가상 스토리지 풀을 참조합니다. parameters.selector` 필드를 사용하여 각 StorageClass는 볼륨을 호스팅하는 데 사용할 수 있는 가상 풀을 호출합니다. 선택한 가상 풀에 볼륨이 정의되어 있습니다.
+다음 StorageClass 정의는 위의 가상 풀을 참조합니다. 를 사용합니다 `parameters.selector` 필드에서 각 StorageClass는 볼륨을 호스팅하는 데 사용할 수 있는 가상 풀을 호출합니다. 선택한 가상 풀에 볼륨이 정의되어 있습니다.
 
-* 첫 번째 StorageClass('protection-gold')는 ONTAP-NAS-flexgroup 백엔드의 첫 번째 가상 스토리지 풀과 ONTAP-SAN 백엔드의 첫 번째 가상 스토리지 풀에 매핑됩니다. 골드 레벨 보호 기능을 제공하는 유일한 풀입니다.
-* 두 번째 StorageClass('금전 보호')는 ONTAP-NAS-Flexgroup 백엔드의 세 번째 가상 스토리지 풀과 ONTAP-SAN 백엔드의 세 번째 가상 스토리지 풀에 매핑됩니다. 금 이외의 보호 수준을 제공하는 유일한 풀입니다.
-* 세 번째 StorageClass('app-mysqldb')는 ONTAP-NAS 백엔드의 네 번째 가상 스토리지 풀과 ONTAP-SAN-이코노미 백엔드의 세 번째 가상 스토리지 풀에 매핑됩니다. mysqldb 유형 앱에 대한 스토리지 풀 구성을 제공하는 유일한 풀입니다.
-* 네 번째 StorageClass('protection-silver-creditpoints-20k')는 ONTAP-NAS-flexgroup 백엔드의 세 번째 가상 스토리지 풀과 ONTAP-SAN 백엔드의 두 번째 가상 스토리지 풀에 매핑됩니다. 20000 크레딧 포인트에서 골드 레벨 보호 기능을 제공하는 유일한 풀입니다.
-* 다섯 번째 StorageClass('크레딧점-5k')는 ONTAP-NAS-이코노미 백엔드의 두 번째 가상 스토리지 풀과 ONTAP-SAN 백엔드의 세 번째 가상 스토리지 풀에 매핑됩니다. 5000 크레딧 포인트에 있는 유일한 풀 서비스입니다.
+* 첫 번째 StorageClass입니다 (`protection-gold`)는 의 첫 번째, 두 번째 가상 풀에 매핑됩니다 `ontap-nas-flexgroup` 백엔드 및 의 첫 번째 가상 풀 `ontap-san` 백엔드. 골드 레벨 보호 기능을 제공하는 유일한 풀입니다.
+* 두 번째 StorageClass입니다 (`protection-not-gold`)는 에서 세 번째, 네 번째 가상 풀에 매핑됩니다 `ontap-nas-flexgroup` 백엔드 및 에서 세 번째 가상 풀입니다 `ontap-san` 백엔드. 금 이외의 보호 수준을 제공하는 유일한 풀입니다.
+* 세 번째 StorageClass입니다 (`app-mysqldb`)는 에서 네 번째 가상 풀에 매핑됩니다 `ontap-nas` 에 있는 백엔드 및 세 번째 가상 풀입니다 `ontap-san-economy` 백엔드. mysqldb 유형 앱에 대한 스토리지 풀 구성을 제공하는 유일한 풀입니다.
+* 네 번째 StorageClass입니다 (`protection-silver-creditpoints-20k`)는 의 세 번째 가상 풀에 매핑됩니다 `ontap-nas-flexgroup` 의 백엔드 및 두 번째 가상 풀입니다 `ontap-san` 백엔드. 20000 크레딧 포인트에서 골드 레벨 보호 기능을 제공하는 유일한 풀입니다.
+* 다섯 번째 StorageClass입니다 (`creditpoints-5k`)는 의 두 번째 가상 풀에 매핑됩니다 `ontap-nas-economy` 에 있는 백엔드 및 세 번째 가상 풀입니다 `ontap-san` 백엔드. 5000 크레딧 포인트에 있는 유일한 풀 서비스입니다.
 
 
-Astra Trident가 선택한 가상 스토리지 풀을 결정하고 스토리지 요구 사항을 충족해 줍니다.
+Astra Trident가 선택한 가상 풀을 결정하고 스토리지 요구 사항을 충족시킵니다.
 
 [listing]
 ----

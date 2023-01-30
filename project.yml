@@ -11,6 +11,9 @@ settings:
   versions:
   - name: 아스트라 트리덴트
     url: "/trident"
+    version-number: '23.01'
+  - name: 아스트라 트리덴트
+    url: "/trident-2210"
     version-number: '22.10'
   - name: 아스트라 트리덴트
     url: "/trident-2207"
@@ -21,9 +24,6 @@ settings:
   - name: 아스트라 트리덴트
     url: "/trident-2201"
     version-number: '22.01'
-  - name: 아스트라 트리덴트
-    url: "/trident-2110"
-    version-number: '21.10'
   langs: ko-kr,us-en,ja-jp,zh-cn,zh-tw,fr-fr,de-de
 sidebar:
   entries:

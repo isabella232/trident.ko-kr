@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-reference/pod-security.html 
-keywords: psp, pss, scc, pod security, pod security standards, pod security policies, security context contraints 
+keywords: psp, pss, scc, pod security, pod security standards, pod security policies, security context constraints 
 summary: 'Kubernetes Pod 보안 표준(PSS) 및 Pod 보안 정책(PSP)에서 사용 권한 수준을 정의하고 Pod의 동작을 제한합니다. OpenShift Security Context Constraints(SCC)도 OpenShift Kubernetes Engine에 특정한 POD 제한을 정의합니다. 이러한 사용자 지정을 제공하기 위해 Astra Trident는 설치 중에 특정 권한을 활성화합니다.' 
 ---
 = POD 보안 표준(PSS) 및 보안 컨텍스트 제약(SCC)
@@ -90,7 +90,7 @@ WARNING: 네임스페이스 레이블을 변경하면 포드가 예약되지 않
 | 'allowedProcMountTypes' | Trident는 'ProcMountTypes'를 사용하지 않습니다. | 비어 있습니다 
 
 
-| 'allowedUnsageSysctls' | Trident는 안전하지 않은 '스컬'을 필요로 하지 않습니다. | 비어 있습니다 
+| 'allowedUnsafeSysctls' | Trident는 안전하지 않은 '스컬'을 필요로 하지 않습니다. | 비어 있습니다 
 
 
 | "기본 추가 기능"을 참조하십시오 | 권한이 있는 컨테이너에 기능을 추가할 필요가 없습니다. | 비어 있습니다 

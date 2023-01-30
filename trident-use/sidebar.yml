@@ -7,33 +7,40 @@ entries:
 - title: 백엔드 구성
   url: "/trident-use/backends.html"
   entries:
-  - title: ANF 백엔드를 구성합니다
-    url: "/trident-use/anf.html"
+  - title: Azure NetApp Files
     entries:
-    - title: ANF 백엔드 구성 준비
+    - title: 개요
+      url: "/trident-use/anf.html"
+    - title: 구성 준비
       url: "/trident-use/anf-prep.html"
-    - title: ANF 구성 옵션 및 예
+    - title: 구성 옵션 및 예
       url: "/trident-use/anf-examples.html"
-  - title: CVS for GCP 백엔드를 구성합니다
+  - title: Google Cloud용 Cloud Volumes Service
     url: "/trident-use/gcp.html"
-  - title: NetApp HCI 또는 SolidFire 백엔드를 구성합니다
+  - title: NetApp HCI 또는 SolidFire
     url: "/trident-use/element.html"
-  - title: ONTAP SAN 드라이버를 사용하여 백엔드를 구성합니다
+  - title: ONTAP SAN 드라이버
     url: "/trident-use/ontap-san.html"
     entries:
-    - title: ONTAP SAN 드라이버를 사용하여 백엔드를 구성할 준비를 합니다
+    - title: 구성 준비
       url: "/trident-use/ontap-san-prep.html"
-    - title: ONTAP SAN 구성 옵션 및 예
+    - title: 구성 옵션 및 예
       url: "/trident-use/ontap-san-examples.html"
-  - title: ONTAP NAS 드라이버를 사용하여 백엔드를 구성합니다
+  - title: ONTAP NAS 드라이버
     url: "/trident-use/ontap-nas.html"
     entries:
-    - title: ONTAP NAS 드라이버를 사용하여 백엔드를 구성할 준비를 합니다
+    - title: 구성 준비
       url: "/trident-use/ontap-nas-prep.html"
-    - title: ONTAP NAS 구성 옵션 및 예
+    - title: 구성 옵션 및 예
       url: "/trident-use/ontap-nas-examples.html"
-  - title: NetApp ONTAP용 Amazon FSx와 함께 Astra Trident를 사용하십시오
-    url: "/trident-use/trident-fsx.html"
+  - title: NetApp ONTAP용 Amazon FSx
+    entries:
+    - title: 개요
+      url: "/trident-use/trident-fsx.html"
+    - title: ONTAP용 Amazon FSx를 통합합니다
+      url: "/trident-use/trident-fsx-prep.html"
+    - title: 구성 옵션 및 예
+      url: "/trident-use/trident-fsx-examples.html"
 - title: kubectl로 백엔드를 만듭니다
   url: "/trident-use/backend-kubectl.html"
 - title: kubeck을 사용하여 백엔드 관리 수행
