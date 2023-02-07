@@ -1345,7 +1345,6 @@
   <block id="f703d18584e163e18762e4dc13ad96a0" category="cell">'useREST'</block>
   <block id="88dce60232453383ab0d1c3c59cc931d" category="admonition">문제 해결 및 자세한 로그 덤프가 필요한 경우가 아니면 debugTraceFlags를 사용하지 마십시오.</block>
   <block id="193a49bcfb561fea878daa5efe72cad9" category="section-title">볼륨 프로비저닝을 위한 백엔드 구성 옵션</block>
-  <block id="4b162a795c1916b18df8b6a76a8fef49" category="paragraph">구성의 특수 섹션에서 이러한 옵션을 사용하여 각 볼륨이 기본적으로 프로비저닝되는 방식을 제어할 수 있습니다. 예를 들어, 아래 구성 예제를 참조하십시오.</block>
   <block id="a0ee23c5b4cbd6a28a4143933891f927" category="cell">'팩시배부</block>
   <block id="26161d08a960162cd8633d0e23058aed" category="cell">LUN에 대한 공간 할당</block>
   <block id="3be488c6a2bc52ceb7e8685ca24927d7" category="cell">"참"</block>
@@ -2638,7 +2637,6 @@
   <block id="ee3d8ea22d8bf88f2f7fcd6d6dbf26d2" category="paragraph">메트릭 서비스는 관리자에게 OpenShift 클러스터의 상태, 리소스 활용도 및 가용성에 대한 중요한 정보를 제공합니다. 또한 POD 자동 확장 기능도 필요하며, 많은 조직에서 비용 청구 및/또는 애플리케이션 표시를 위해 메트릭 서비스의 데이터를 사용합니다.</block>
   <block id="5e5cb863d5fe17c205c3d2201a1a2235" category="paragraph">Astra Trident는 Kubernetes 클러스터에 Pod로 구축하고 Kubernetes 워크로드에 동적 스토리지 오케스트레이션 서비스를 제공합니다. 컨테이너화된 애플리케이션을 통해 ONTAP(AFF/FAS/Select/Cloud/Amazon FSx for NetApp ONTAP), Element 소프트웨어(NetApp HCI/SolidFire), Azure NetApp Files 서비스 및 Google Cloud의 Cloud Volumes Service를 비롯한 NetApp의 광범위한 포트폴리오에서 영구 스토리지를 빠르고 쉽게 사용할 수 있습니다.</block>
   <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">모든 Astra 문서</block>
-  <block id="271eadf9144a35af6e28eb2db28db36c" category="summary">Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 공급자 및 오케스트레이터입니다. Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다. ** Astra Trident 22.10으로 업그레이드하는 데 대한 중요 정보는 릴리스 노트를 참조하십시오.**</block>
   <block id="06d5b814514e67e2a36b491b2493aed1" category="paragraph">여기에 나열된 권장 사항을 사용하여 Astra Trident 설치가 안전한지 확인합니다.</block>
   <block id="252ee40ccbd23adc008945e85af83513" category="section-title">NVE와 NAE가 포함된 Astra Trident를 사용하십시오</block>
   <block id="676ad90ce2543d29917d8a5a6fc02e01" category="inline-link-macro">ONTAP NAS 구성 옵션</block>
@@ -3564,4 +3562,5 @@
   <block id="58834b137fd6fa7a9ca23468a5c91fd6" category="sidebar">구성 준비</block>
   <block id="6fc0b7515ecca271c88eae4a685da613" category="sidebar">NetApp HCI 또는 SolidFire</block>
   <block id="60be48bb4b3314965bf50e88e7ae728c" category="sidebar">ONTAP용 Amazon FSx를 통합합니다</block>
+  <block id="ea3d51fb2b16acb7cb260f25bc8965b1" category="sidebar">Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 공급자 및 오케스트레이터입니다. Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다.</block>
 </blocks>
