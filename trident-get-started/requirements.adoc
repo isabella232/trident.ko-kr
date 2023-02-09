@@ -141,7 +141,7 @@ Astra Trident가 공식적으로 특정 운영 체제를 지원하지 않지만 
 
 * OpenShift Container Platform에서 지원하는 RedHat CoreOS(RHCOS) 버전
 * RHEL 8+
-* Ubuntu 18.04 이상(최신 22.04)
+* Ubuntu 22.04 이상
 * Windows Server 2019
 
 
