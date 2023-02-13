@@ -328,6 +328,7 @@ WARNING: v21.10.0 릴리즈에는 노드를 제거한 다음 Kubernetes 클러�
 
 알려진 문제점은 제품을 성공적으로 사용하지 못하게 만들 수 있는 문제를 식별합니다.
 
+* Astra Trident가 설치된 Kubernetes 클러스터를 1.24에서 1.25 이상으로 업그레이드할 경우 Values.YAML을 업데이트해야 합니다 `excludePodSecurityPolicy` 를 선택합니다 `true` 또는 을 추가합니다 `--set excludePodSecurityPolicy=true` 를 누릅니다 `helm upgrade` 명령을 먼저 실행한 후 클러스터를 업그레이드하십시오.
 * Astra Trident는 이제 StorageClass에 지정된 fsType 이 없는 볼륨에 대해 빈 fsType("fsType=""")을 적용합니다. Kubernetes 1.17 이상으로 작업할 때 Trident는 NFS 볼륨에 대한 빈 "fsType"을 제공할 수 있도록 지원합니다. iSCSI 볼륨의 경우 보안 컨텍스트를 사용하여 fsGroup을 적용할 때 StorageClass에 fsType을 설정해야 합니다.
 * 여러 Astra Trident 인스턴스에서 백엔드를 사용할 경우 각 백엔드 구성 파일의 ONTAP 백엔드에 대해 서로 다른 'toragePrefix' 값을 사용하거나 SolidFire 백엔드에 다른 'TenantName'을 사용해야 합니다. Astra Trident는 Astra Trident의 다른 인스턴스가 생성한 볼륨을 감지할 수 없습니다. Astra Trident가 볼륨 생성을 idemptent 작업으로 처리하므로 ONTAP 또는 SolidFire 백엔드에서 기존 볼륨을 생성하려고 하면 성공합니다. 'toragePrefix' 또는 'TenantName'이 서로 다를 경우 같은 백엔드에서 생성된 볼륨의 이름 충돌이 있을 수 있습니다.
 * Astra Trident('tridentctl' 또는 Trident Operator 사용)를 설치하고 tridentctl을 사용하여 Astra Trident를 관리하는 경우 'KUBEBEECONFIG' 환경 변수를 설정해야 합니다. 이는 Kubernetes 클러스터가 트리덴트틀과 연동되어야 한다는 것을 나타내기 위해 필요합니다. 여러 Kubernetes 환경에서 작업할 경우 'KUBECONFIG' 파일을 정확하게 소싱해야 합니다.

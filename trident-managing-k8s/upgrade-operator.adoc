@@ -211,6 +211,9 @@ NOTE: 를 클릭합니다 `trident-controller` 및 POD 이름은 23.01에 도입
 
 제어 기반 운영자 설치를 업그레이드하려면 다음 단계를 수행하십시오.
 
+
+WARNING: Astra Trident가 설치된 Kubernetes 클러스터를 1.24에서 1.25 이상으로 업그레이드할 경우 Values.YAML을 업데이트해야 합니다 `excludePodSecurityPolicy` 를 선택합니다 `true` 또는 을 추가합니다 `--set excludePodSecurityPolicy=true` 를 누릅니다 `helm upgrade` 명령을 먼저 실행한 후 클러스터를 업그레이드하십시오.
+
 .단계
 . 최신 Astra Trident 릴리스를 다운로드하십시오.
 . 를 사용합니다 `helm upgrade` 명령 위치 `trident-operator-23.01.0.tgz` 업그레이드하려는 버전을 반영합니다.

@@ -53,6 +53,9 @@ Trident 연산자는 다음 릴리즈에서 지원됩니다.
 Astra Trident는 GKE(Google Kubernetes Engine), EKS(Amazon Elastic Kubernetes Service), AKS(Azure Kubernetes Service), Rancher, VMware Tanzu Portfolio를 비롯한 기타 완전 관리형 및 자체 관리 Kubernetes 오퍼링과도 작동합니다.
 
 
+WARNING: Astra Trident가 설치된 Kubernetes 클러스터를 1.24에서 1.25 이상으로 업그레이드하기 전에 을 참조하십시오 link:../trident-managing-k8s/upgrade-operator.html#upgrade-a-helm-based-operator-installation["제어 기반 작업자 설치를 업그레이드합니다"].
+
+
 
 == 지원되는 백엔드(스토리지)
 
