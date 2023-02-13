@@ -123,13 +123,13 @@ NOTE: 을 참조하십시오 link:https://docs.netapp.com/us-en/ontap/smb-config
 | 매개 변수 | 설명 | 예 
 
 
-| `smbShare` | 공유 폴더 Microsoft 관리 콘솔을 사용하여 생성한 SMB 공유의 이름입니다. 예: "smb-share". * SMB 볼륨에 필요합니다. * | "SMB 공유" 
+| `smbShare` | 공유 폴더 Microsoft 관리 콘솔을 사용하여 생성한 SMB 공유의 이름입니다. 예: "smb-share". * SMB 볼륨에 필요합니다. * | `smb-share` 
 
 
-| `nasType` | * 를 로 설정해야 합니다 `smb`. * null인 경우 기본값은 로 설정됩니다 `nfs`. | "SMB" 
+| `nasType` | * 를 로 설정해야 합니다 `smb`. * null인 경우 기본값은 로 설정됩니다 `nfs`. | `smb` 
 
 
-| '생태성 스타일'을 참조하십시오 | 새로운 볼륨에 대한 보안 스타일 SMB 볼륨의 경우 * 를 "NTFS"로 설정해야 합니다. * | "NTFS" 
+| '생태성 스타일'을 참조하십시오 | 새로운 볼륨에 대한 보안 스타일 * 를 로 설정해야 합니다 `ntfs` 또는 `mixed` SMB 볼륨용. * | `ntfs` 또는 `mixed` SMB 볼륨용 
 
 
 | 유니크권한 | 모드를 선택합니다. SMB 볼륨에 대해서는 * 를 비워 두어야 합니다. * | "" 

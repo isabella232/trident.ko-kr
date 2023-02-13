@@ -371,7 +371,7 @@ parameters:
 ----
 ====
 
-NOTE: `nasType: "smb"` SMB 볼륨을 지원하는 풀에 대한 필터입니다. `nasType: "nfs"`` 또는 `nasType: "null"` NFS 풀에 대한 필터입니다.
+NOTE: `nasType: `smb` SMB 볼륨을 지원하는 풀에 대한 필터입니다. `nasType: `nfs` 또는 `nasType: `null` NFS 풀에 대한 필터입니다.
 
 
 

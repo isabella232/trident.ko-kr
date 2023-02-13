@@ -1364,7 +1364,6 @@
   <block id="b091cbafedf94db98f17823d044434bd" category="cell">암호화</block>
   <block id="a463baaf6666da7178b6fc6a3c8a3fee" category="cell">'생태성 스타일'을 참조하십시오</block>
   <block id="41da49bdd3fd88b2ddc6be7d6df1b335" category="cell">새로운 볼륨에 대한 보안 스타일</block>
-  <block id="4cda9f87625c6278fae1a50fcbbf96d3" category="cell">“UNIX”</block>
   <block id="31aa018945eb62580d68d360cba8ba54" category="cell">'계층화 정책'</block>
   <block id="592a5879ac095ef6ca504cc43a9d7939" category="cell">"없음"을 사용하는 계층화 정책</block>
   <block id="ee6508d5290be6edafccc6e0f471f120" category="cell">ONTAP 9.5 이전 SVM-DR 구성의 경우 "스냅샷 전용</block>
@@ -2131,8 +2130,6 @@
   <block id="525eba0ced0a1c122a9112c4d10fbdc2" category="paragraph">".snapshot" 디렉토리에 액세스하기 위한 NAS 옵션은 기본적으로 "false"로 설정됩니다.</block>
   <block id="b60dd25e9d373b87424c30a74da2703f" category="paragraph">사용할 NFS 엑스포트 정책의 NAS 옵션, 기본값: "기본값"</block>
   <block id="c21f969b5f03d33d43e04f8f136e7682" category="paragraph">기본값</block>
-  <block id="af6bd5b29a0589f7c6a47f47fae230c7" category="paragraph">프로비저닝된 NFS 볼륨에 액세스하기 위한 NAS 옵션, 기본값은 "UNIX"입니다.</block>
-  <block id="1d770934d44de09b0d24f04fd01708ba" category="paragraph">혼합</block>
   <block id="79c6531f572824f3178c8b1fb0f35d26" category="paragraph">파일 시스템 유형을 선택하는 SAN 옵션, 기본값은 "ext4"로 설정됩니다.</block>
   <block id="310201b6353c5f38bc039e0e51b079d3" category="paragraph">XFS</block>
   <block id="3cec6d01b4f10a61939982ecfb47fc7f" category="paragraph">사용할 계층화 정책, 기본값은 "없음", ONTAP 9.5 이전 SVM-DR 구성의 경우 "스냅샷 전용"입니다</block>
@@ -2786,7 +2783,6 @@
   <block id="6de60e9a6b0ad8adcd762a8c85d540e2" category="example-title">예제 1: 기본 네임스페이스의 기본 구성</block>
   <block id="1d8d21debc328526252944d2264246ca" category="example-title">예제 2: 네임스페이스당 다른 암호 사용</block>
   <block id="06bb6ebc4dada525717294b660ba2b3b" category="example-title">예 3: 볼륨별로 다른 암호 사용</block>
-  <block id="9ea7a115be7698c1faf58be7dd1c1525" category="admonition"><block ref="cf9584714c41fff1f543c95add5abfba" prefix="" category="inline-code"></block> SMB 볼륨을 지원하는 풀에 대한 필터입니다.<block ref="c096ee7a39f7b434b6c54679f46d93df" prefix=" " category="inline-code"></block> 또는<block ref="132dd1337fc5c16fd006eb7df262223c" prefix=" " category="inline-code"></block> NFS 풀에 대한 필터입니다.</block>
   <block id="c51cc3b801a879870aea846bdde1c7a3" category="section-title">백엔드를 생성합니다</block>
   <block id="7d8058d93ec1d95c673d83bf303326ff" category="doc">ONTAP NAS 구성 옵션 및 예</block>
   <block id="618a7676e411bbfbd9dbdb2411019951" category="summary">Astra Trident의 백엔드로 Azure NetApp Files(ANF)를 구성할 수 있습니다. ANF 백엔드를 사용하여 NAS 및 SMB 볼륨을 연결할 수 있습니다.</block>
@@ -3410,9 +3406,6 @@
   <block id="7a17b79b33ad0814114d5c433d21f0e8" category="cell">공유 폴더 Microsoft 관리 콘솔을 사용하여 생성한 SMB 공유의 이름입니다. 예: "smb-share". * SMB 볼륨에 필요합니다. *</block>
   <block id="595b9128da266e4c0415d8a11362e974" category="cell">"SMB 공유"</block>
   <block id="3b84c7b88317953423192c633a83db9f" category="cell">* 를 로 설정해야 합니다<block ref="79e0f325804dafbdaef73b3b17c0fd8d" prefix=" " category="inline-code"></block>. * null인 경우 기본값은 로 설정됩니다<block ref="2521ef5d58fc027d3121662b7d8f9ac2" prefix=" " category="inline-code"></block>.</block>
-  <block id="234b2ef6793060261788750585f4bd97" category="cell">"SMB"</block>
-  <block id="7f3a472f7fd496d171830675e5502926" category="cell">새로운 볼륨에 대한 보안 스타일 SMB 볼륨의 경우 * 를 "NTFS"로 설정해야 합니다. *</block>
-  <block id="70cb79b6185f5d91111d270bd49ff191" category="cell">"NTFS"</block>
   <block id="1928bae58ae496b53ef1a163c3dbeeb4" category="cell">모드를 선택합니다. SMB 볼륨에 대해서는 * 를 비워 두어야 합니다. *</block>
   <block id="ded47128219e64b5f24343dab357151b" category="admonition">Astra Trident가 공백을 적용합니다<block ref="7cfbb6f07899c8071ff38e69dca190e2" prefix=" " category="inline-code"></block> 볼륨에 대해 생성할 수 있습니다. iSCSI 백엔드의 경우 적용하는 것이 좋습니다<block ref="01cd995fd9a843d3ca767e057de28873" prefix=" " category="inline-code"></block> StorageClass에 있습니다. 기존 StorageClasses를 삭제하고 를 사용하여 다시 생성해야 합니다<block ref="01cd995fd9a843d3ca767e057de28873" prefix=" " category="inline-code"></block> 지정됨.</block>
   <block id="5b7532a7b48ec4e7b24ef0f5977589de" category="cell">클러스터 또는 SVM 관리 LIF의 IP 주소 MetroCluster의 원활한 전환을 위해 SVM 관리 LIF를 지정해야 합니다. FQDN(정규화된 도메인 이름)을 지정할 수 있습니다. 을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다<block ref="4a4ef9f92e69acc000120379678aadcf" prefix=" " category="inline-code"></block> 깃발. IPv6 주소는 대괄호로 묶어야 합니다(예: [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]).</block>
@@ -3459,7 +3452,6 @@
   <block id="5c8b39f8ec19acb1fddb0b5c021f090d" category="cell">문제 해결 시 사용할 디버그 플래그입니다. 예: {“api”:false, “method”:true} 사용하지 마십시오<block ref="effa2d809c72dcb6cce15a1e0b040e63" prefix=" " category="inline-code"></block> 문제 해결 및 자세한 로그 덤프가 필요한 경우를 제외하고</block>
   <block id="b660669829d401dc613c20939ed01e6e" category="cell">쉼표로 구분된 NFS 마운트 옵션 목록입니다. Kubernetes 영구 볼륨의 마운트 옵션은 일반적으로 스토리지 클래스에서 지정되지만, 스토리지 클래스에 마운트 옵션을 지정하지 않으면 Astra Trident가 스토리지 백엔드의 구성 파일에 지정된 마운트 옵션을 사용하여 로 돌아갑니다. 스토리지 클래스 또는 구성 파일에 마운트 옵션이 지정되지 않은 경우 Astra Trident는 연결된 영구 볼륨에 마운트 옵션을 설정하지 않습니다.</block>
   <block id="a2b63939d1ced2a10bc8dec4d3ef2604" category="cell">NFS 볼륨의 경우 "777", SMB 볼륨의 경우 비어 있음(해당 없음</block>
-  <block id="27bbf9cd851fa8da1709eb40594ee590" category="cell">NFS 볼륨의 경우 "UNIX", SMB 볼륨의 경우 "NTFS</block>
   <block id="97ff13c76d92207c0bae60ad6c586e7e" category="example-title">&lt;code&gt; ONTAP의 기본 옵션 - NAS - 이코노미 &lt;/code&gt;</block>
   <block id="e7a2472a002479764cade728d64dcd9e" category="example-title">인증서 기반 인증입니다</block>
   <block id="30cc3e263c594cde4b2a573283348bb1" category="example-title">자동 엑스포트 정책</block>
@@ -3498,7 +3490,6 @@
   <block id="8336fb38c3b943161d5d6e73af8f4a12" category="cell">LUKS 암호화를 사용합니다. 을 참조하십시오 <block ref="3646c7a69a11bdd94c010bf856bda313" category="inline-link-macro-rx"></block>. SAN만 해당.</block>
   <block id="8ba802b52dc84f4e82bfbbf2e2d4a807" category="cell">모드를 선택합니다. * SMB 볼륨의 경우 비워 둡니다. *</block>
   <block id="ce627e1ba8a6bccff2793f66b44012fa" category="cell">""</block>
-  <block id="8c8ef50456e6410120c074d6ee65bdb1" category="cell">새로운 볼륨에 대한 보안 스타일</block>
   <block id="88b0b88c998957f004af42563d5e5b40" category="paragraph">사용<block ref="296026821ada2ab8aebcf13547a63df5" prefix=" " category="inline-code"></block>,<block ref="e12fdd044232e643620eed06bf33c7af" prefix=" " category="inline-code"></block>, 및<block ref="1ad68a6a046942b7c1666aed825df70a" prefix=" " category="inline-code"></block>, SMB 볼륨을 지정하고 필요한 Active Directory 자격 증명을 제공할 수 있습니다. SMB 볼륨은 를 사용하여 지원됩니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 드라이버만 해당.</block>
   <block id="98e45a92edd75cce26a32a68de45f178" category="summary">백엔드는 Astra Trident와 스토리지 시스템 간의 관계를 정의합니다. Astra Trident가 스토리지 시스템과 통신하는 방법과 Astra Trident가 스토리지 시스템에서 볼륨을 프로비저닝하는 방법을 알려줍니다.</block>
   <block id="a576cff5a76e67426a0051b7e1b93331" category="paragraph">Astra Trident는 스토리지 클래스에 정의된 요구 사항과 일치하는 백엔드에서 스토리지 풀을 자동으로 제공합니다. 스토리지 시스템에 대한 백엔드를 구성하는 방법에 대해 알아봅니다.</block>
@@ -3568,4 +3559,14 @@
   <block id="a743248a7032cdf1d468935cf180bdee" category="list-text">사용<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 예상되는 볼륨 사용량이 ONTAP가 지원하는 것보다 훨씬 많을 것으로 예상됩니다.</block>
   <block id="0655cc918eb576b740cfd35bbff9c8ac" category="list-text">사용<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 예상되는 볼륨 사용량이 ONTAP에서 지원하는 것보다 훨씬 많을 것으로 예상되는 경우에만 및 입니다<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 드라이버를 사용할 수 없습니다.</block>
   <block id="df7dec428425115b59101028bbebe58c" category="list-text">사용하지 마십시오<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 데이터 보호, 재해 복구 또는 이동성이 필요할 것으로 예상되는 경우</block>
+  <block id="f5d176b3de4662ca3603a69ab08bc166" category="paragraph">프로비저닝된 NFS 볼륨에 액세스하기 위한 NAS 옵션입니다.</block>
+  <block id="053b422d907cb55ac105c173adde1080" category="paragraph">NFS를 지원합니다<block ref="1d770934d44de09b0d24f04fd01708ba" prefix=" " category="inline-code"></block> 및<block ref="4913a9178621eadcdf191db17915fbcb" prefix=" " category="inline-code"></block> 보안 스타일. 기본값은 입니다<block ref="4913a9178621eadcdf191db17915fbcb" prefix=" " category="inline-code"></block>.</block>
+  <block id="69f25314e2d927ebcaa0f19c9f2a57da" category="paragraph"><block ref="4913a9178621eadcdf191db17915fbcb" prefix="" category="inline-code"></block></block>
+  <block id="2bd69c3354973375e1abed3c9beb1eff" category="cell"><block ref="f777ab485270937cd9b9efc63021484f" prefix="" category="inline-code"></block></block>
+  <block id="767b06b78582b463da02281e05c82e45" category="cell"><block ref="79e0f325804dafbdaef73b3b17c0fd8d" prefix="" category="inline-code"></block></block>
+  <block id="11d7f0efe30199fc66cbc43c427e147d" category="cell">새로운 볼륨에 대한 보안 스타일 * 를 로 설정해야 합니다<block ref="68e98b83f5bd746f1468dff89f529d1b" prefix=" " category="inline-code"></block> 또는<block ref="1d770934d44de09b0d24f04fd01708ba" prefix=" " category="inline-code"></block> SMB 볼륨용. *</block>
+  <block id="e76ea7f2be658dc914f9c95fe8d14fcf" category="cell"><block ref="68e98b83f5bd746f1468dff89f529d1b" prefix="" category="inline-code"></block> 또는<block ref="1d770934d44de09b0d24f04fd01708ba" prefix=" " category="inline-code"></block> SMB 볼륨용</block>
+  <block id="375aa0b790f300787cdecf0f896b97f5" category="cell">새로운 볼륨에 대한 보안 스타일 NFS를 지원합니다<block ref="1d770934d44de09b0d24f04fd01708ba" prefix=" " category="inline-code"></block> 및<block ref="4913a9178621eadcdf191db17915fbcb" prefix=" " category="inline-code"></block> 보안 스타일. SMB 지원<block ref="1d770934d44de09b0d24f04fd01708ba" prefix=" " category="inline-code"></block> 및<block ref="68e98b83f5bd746f1468dff89f529d1b" prefix=" " category="inline-code"></block> 보안 스타일.</block>
+  <block id="4a359bdcdb3ce547581bdea3ce6c5bd7" category="cell">NFS 기본값은 입니다<block ref="4913a9178621eadcdf191db17915fbcb" prefix=" " category="inline-code"></block>. SMB 기본값은 입니다<block ref="68e98b83f5bd746f1468dff89f529d1b" prefix=" " category="inline-code"></block>.</block>
+  <block id="15bee4120a83692e1e575f756f0259e2" category="admonition"><block ref="ed48900d86ac476d7fed80ae1701877f" prefix="" category="inline-code"></block> SMB 볼륨을 지원하는 풀에 대한 필터입니다.<block ref="7b2498fa5e66ef102dc531d0bf5c27a4" prefix=" " category="inline-code"></block> 또는<block ref="45e1f49760c85197cd1d0fb6ee50f180" prefix=" " category="inline-code"></block> NFS 풀에 대한 필터입니다.</block>
 </blocks>

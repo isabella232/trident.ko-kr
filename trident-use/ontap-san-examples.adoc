@@ -152,7 +152,7 @@ Astra Trident 설치를 통해 ONTAP SAN 드라이버를 생성하고 사용하�
 | `luksEncryption` | LUKS 암호화를 사용합니다. 을 참조하십시오 link:../trident-reco/security-luks.html["LUKS(Linux Unified Key Setup) 사용"]. | "" 
 
 
-| '생태성 스타일'을 참조하십시오 | 새로운 볼륨에 대한 보안 스타일 | “UNIX” 
+| '생태성 스타일'을 참조하십시오 | 새로운 볼륨에 대한 보안 스타일 | `unix` 
 
 
 | '계층화 정책' | "없음"을 사용하는 계층화 정책 | ONTAP 9.5 이전 SVM-DR 구성의 경우 "스냅샷 전용 

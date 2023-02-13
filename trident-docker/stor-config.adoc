@@ -228,9 +228,11 @@ Snapshot reserve percentage, 기본값은 ""이며 ONTAP의 기본값을 사용�
 
 
 | '생태성 스타일'을 참조하십시오  a| 
-프로비저닝된 NFS 볼륨에 액세스하기 위한 NAS 옵션, 기본값은 "UNIX"입니다.
+프로비저닝된 NFS 볼륨에 액세스하기 위한 NAS 옵션입니다.
+
+NFS를 지원합니다 `mixed` 및 `unix` 보안 스타일. 기본값은 입니다 `unix`.
  a| 
-혼합
+`unix`
 
 
 
