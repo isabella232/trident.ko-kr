@@ -3455,7 +3455,6 @@
   <block id="e7a2472a002479764cade728d64dcd9e" category="example-title">인증서 기반 인증입니다</block>
   <block id="30cc3e263c594cde4b2a573283348bb1" category="example-title">자동 엑스포트 정책</block>
   <block id="41dfe08f09251bf83a4f15ec1a47eebe" category="paragraph">다음 예에서는 Astra Trident가 동적 엑스포트 정책을 사용하여 엑스포트 정책을 자동으로 생성하고 관리하도록 지시하는 방법을 보여 줍니다. 이 기능은 에 대해서도 동일하게 작동합니다<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 및<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block> 드라이버.</block>
-  <block id="e3d163236efea4513c9df89a9c1be381" category="listing-title">ONTAP - NAS - 경제적인 드라이버</block>
   <block id="0491780b1bb26f4feb8296034f975c9e" category="listing-title">&lt;code&gt; ONTAP - NAS - flexgroup &lt;/code&gt; 드라이버</block>
   <block id="85435c5aae5ecdb04ef9ad8f7d48e88a" category="example-title">IPv6 주소 사용</block>
   <block id="0275de02c3bba722f4540469d23cc535" category="paragraph">이 예에서는 를 보여 줍니다<block ref="a6ea6092cb7b9c5f31909eb4be8fa5ea" prefix=" " category="inline-code"></block> IPv6 주소 사용.</block>
@@ -3571,4 +3570,5 @@
   <block id="36b8e64fc53799e09b318940d0d01c3b" category="admonition">Astra Trident가 설치된 Kubernetes 클러스터를 1.24에서 1.25 이상으로 업그레이드하기 전에 을 참조하십시오 <block ref="b78a528fa331707807c1d5b493daab09" category="inline-link-macro-rx"></block>.</block>
   <block id="e69dee79b2104ff7c08b095e6212f492" category="list-text">Astra Trident가 설치된 Kubernetes 클러스터를 1.24에서 1.25 이상으로 업그레이드할 경우 Values.YAML을 업데이트해야 합니다<block ref="94ef2a130a825358ab3002442d6e5145" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 또는 을 추가합니다<block ref="96d5d0b9a6e3e01b2ae2ed889f75d22e" prefix=" " category="inline-code"></block> 를 누릅니다<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block> 명령을 먼저 실행한 후 클러스터를 업그레이드하십시오.</block>
   <block id="3936420db557853e037e33725ba2e1b4" category="list-text">를 사용합니다<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block> 명령 위치<block ref="13eee8d0c5cbca0f1ea5bc4275d5bc8d" prefix=" " category="inline-code"></block> 업그레이드하려는 버전을 반영합니다.</block>
+  <block id="412b252fa44d1a73e3e7bf22113f99a2" category="listing-title">ONTAP - NAS 드라이버</block>
 </blocks>

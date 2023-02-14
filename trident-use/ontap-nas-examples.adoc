@@ -246,7 +246,7 @@ NOTE: Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경우 IP 
 ====
 다음 예에서는 Astra Trident가 동적 엑스포트 정책을 사용하여 엑스포트 정책을 자동으로 생성하고 관리하도록 지시하는 방법을 보여 줍니다. 이 기능은 에 대해서도 동일하게 작동합니다 `ontap-nas-economy` 및 `ontap-nas-flexgroup` 드라이버.
 
-.ONTAP - NAS - 경제적인 드라이버
+.ONTAP - NAS 드라이버
 [listing]
 ----
 {
