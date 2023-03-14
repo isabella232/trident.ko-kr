@@ -3037,8 +3037,6 @@
   <block id="f72ba1a3a498489a96fd8774bfa9ea9d" category="example-title">&lt;/strong&gt;를 처리하는 &lt;strong&gt; 자동 Kubernetes 업그레이드</block>
   <block id="c3b2fe84f143129d7a18ad12df229bc6" category="example-title">BlueXP(이전의 Cloud Manager) &lt;/strong&gt;를 사용한 &lt;strong&gt; Kubernetes 클러스터 관리</block>
   <block id="152d763e6dc0313ce9b449d200613a5f" category="section-title">사용<block ref="26df55f7460e08309d510282499b6b1d" prefix=" " category="inline-code"></block></block>
-  <block id="9572d5e218b06cdccf02985efd1e22d3" category="inline-link-macro">tridentctl을 사용하여 설치합니다</block>
-  <block id="87e3a0ec03a6ec1b426ef99e6436161e" category="paragraph">업그레이드해야 하는 기존 배포가 있거나 배포를 사용자 지정하려는 경우 고려해야 합니다 <block ref="1d8d1486a21051f79115d6882092358e" category="inline-link-macro-rx"></block>. Astra Trident를 구축하는 기존 방법입니다.</block>
   <block id="4c24a3b9facf2ea9fc7ed2ca52dab45d" category="inline-link-macro">&lt;block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category='inline-code'/&gt; 설치를 사용자 지정합니다</block>
   <block id="40beff6895ce0eeff65f9568dd5c7247" category="paragraph">가능합니다 <block ref="d16089dfa270d6679e80d43ec8b5c378" category="inline-link-macro-rx"></block> Trident 리소스에 대한 매니페스트를 생성합니다. 여기에는 구축, 개발/제거, 서비스 계정, Astra Trident가 설치의 일부로 생성한 클러스터 역할 등이 포함됩니다.</block>
   <block id="cb024a74bf03f9ba7a9433337492808e" category="admonition">22.04 릴리즈부터는 Astra Trident가 설치될 때마다 AES 키가 더 이상 다시 생성되지 않습니다. 이 릴리즈를 통해 Astra Trident는 설치 전반에 걸쳐 유지되는 새로운 비밀 객체를 설치합니다. 즉,<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 22.04에서는 Trident의 이전 버전을 제거할 수 있지만 이전 버전에서는 22.04 설치를 제거할 수 없습니다. 적절한 installation_method_를 선택합니다.</block>
@@ -3571,4 +3569,6 @@
   <block id="e69dee79b2104ff7c08b095e6212f492" category="list-text">Astra Trident가 설치된 Kubernetes 클러스터를 1.24에서 1.25 이상으로 업그레이드할 경우 Values.YAML을 업데이트해야 합니다<block ref="94ef2a130a825358ab3002442d6e5145" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 또는 을 추가합니다<block ref="96d5d0b9a6e3e01b2ae2ed889f75d22e" prefix=" " category="inline-code"></block> 를 누릅니다<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block> 명령을 먼저 실행한 후 클러스터를 업그레이드하십시오.</block>
   <block id="3936420db557853e037e33725ba2e1b4" category="list-text">를 사용합니다<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block> 명령 위치<block ref="13eee8d0c5cbca0f1ea5bc4275d5bc8d" prefix=" " category="inline-code"></block> 업그레이드하려는 버전을 반영합니다.</block>
   <block id="412b252fa44d1a73e3e7bf22113f99a2" category="listing-title">ONTAP - NAS 드라이버</block>
+  <block id="f39486d0f9f7ffc885eca61e8823ea0a" category="inline-link-macro">tridentctl을 사용하여 설치하는 중입니다</block>
+  <block id="ea71d8757e4d8afc8f6253684f5a7f1c" category="paragraph">업그레이드해야 하는 기존 배포가 있거나 배포를 사용자 지정하려는 경우 고려해야 합니다 <block ref="004ed44e395c472642e5a257ee453413" category="inline-link-macro-rx"></block>. Astra Trident를 구축하는 기존 방법입니다.</block>
 </blocks>
