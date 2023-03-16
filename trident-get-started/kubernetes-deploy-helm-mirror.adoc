@@ -49,18 +49,18 @@ Trident 사용 link:https://artifacthub.io/packages/helm/netapp-trident/trident-
 ----
 helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
 ----
-. 사용 `helm install` 다음 예제와 같이 배포 및 이미지 레지스트리 위치 또는 위치의 이름을 지정합니다. 예를 들어, `23.01.0` 는 설치 중인 Astra Trident의 버전입니다.
+. 사용 `helm install` 배포 및 이미지 레지스트리 위치의 이름을 지정합니다. 귀사의 link:../trident-get-started/requirements.html#container-images-and-corresponding-kubernetes-versions["Trident 및 CSI 이미지"] 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 예를 들어, `23.01.0` 는 설치 중인 Astra Trident의 버전입니다.
 +
 [role="tabbed-block"]
 ====
-.하나의 레지스트리에 Trident 및 CSI 이미지
+.하나의 레지스트리에 있는 이미지
 --
 [listing]
 ----
 helm install <name> netapp-trident/trident-operator --version 23.01.0 --set imageRegistry=<your-registry> --create-namespace --namespace <trident-namespace>
 ----
 --
-.다른 레지스트리의 Trident 및 CSI 이미지
+.다른 레지스트리의 이미지
 --
 추가해야 합니다 `sig-storage` 를 누릅니다 `imageRegistry` 다른 레지스트리 위치를 사용합니다.
 

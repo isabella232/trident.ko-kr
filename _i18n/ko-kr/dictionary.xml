@@ -589,7 +589,6 @@
   <block id="f1347677de6873f8ddce6d736cba9a63" category="list-text">'삼중인대.YAML'</block>
   <block id="2539c7e25ada2a2cdae0eb4c4633b893" category="list-text">트라이덴트-서비스계정.YAML</block>
   <block id="385d099ed91e83dbe20ea05fbed68e22" category="paragraph">이러한 파일을 생성한 후 필요에 따라 수정한 다음 '--use-custom-YAML'을 사용하여 사용자 지정 배포를 설치할 수 있습니다.</block>
-  <block id="aa452927f1dec9709a523a0de496d6c5" category="summary">tridentctl을 사용하여 Astra Trident를 배포할 수 있습니다.</block>
   <block id="e0e3d7f1aacdf4a8196132549709430c" category="doc">tridentctl을 사용하여 배포합니다</block>
   <block id="4a052772dca278b7be31d54ca9f21831" category="inline-link-macro">기본 개념</block>
   <block id="dd3de2609b612d76ef4c71b97b8d6100" category="inline-link">다음 단계에 따라 CLI 액세스를 설정합니다</block>
@@ -3107,9 +3106,7 @@
   <block id="e0755e6cf0a80c2d8535ac3b7eae0b4b" category="section-title">2단계: 을 작성합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> CRD</block>
   <block id="04bed90b9e7d65b6d7dd48211e0a9f6c" category="paragraph">를 생성합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 사용자 정의 리소스 정의(CRD). 을(를) 생성합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 나중에 사용자 지정 리소스. 에서 적절한 CRD YAML 버전을 사용하십시오<block ref="91ff3926f7c7983bb4a56689f631e6c9" prefix=" " category="inline-code"></block> 를 작성합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> CRD:</block>
   <block id="ad9aaefb573cd08d43c2b039449b1f0e" category="section-title">3단계: 운영자의 레지스트리 위치를 업데이트합니다</block>
-  <block id="694dbbe2d19406bc64c44e8f6458ce7a" category="paragraph">인치<block ref="9fa80de5781893b057ff1d535201893b" prefix=" " category="inline-code"></block>, 업데이트<block ref="f9fa807329a3c6418caaaa1874b599f4" prefix=" " category="inline-code"></block> 이미지 레지스트리의 위치를 반영합니다. 예:.</block>
   <block id="7becac85824dceb67af52a0fe0415be5" category="list-text"><block ref="18256f9d9de108b07ce48faa1d8de290" prefix="" category="inline-code"></block> 이미지가 모두 하나의 레지스트리에 있는 경우</block>
-  <block id="cd378ec6ef8ecebc3a4659986728ae7e" category="list-text"><block ref="7dcfa8a76be931076dc77a59f6470141" prefix="" category="inline-code"></block> Trident 및 CSI 이미지가 다른 레지스트리에 있는 경우</block>
   <block id="7e1c8354fb2b2ecb65abfa6a63e08970" category="section-title">3단계: Trident 연산자를 배포합니다</block>
   <block id="bb336dd58b442c31f8bab7909d55dd42" category="paragraph">Trident 설치 관리자는 에 연산자를 배포합니다<block ref="47cb44be55a0dffa15dfc900a4c687be" prefix=" " category="inline-code"></block> 네임스페이스. 를 누릅니다<block ref="47cb44be55a0dffa15dfc900a4c687be" prefix=" " category="inline-code"></block> 네임스페이스가 없습니다. 를 사용하십시오<block ref="fd71c571b96c493189b63aa659012e87" prefix=" " category="inline-code"></block> 를 눌러 만듭니다.</block>
   <block id="81ba9d708af383a3ede5475fabdd91bf" category="paragraph">를 제외한 네임스페이스에 연산자를 배포합니다<block ref="47cb44be55a0dffa15dfc900a4c687be" prefix=" " category="inline-code"></block> 네임스페이스, 업데이트<block ref="8610cac3beb01fb0b43bc94c587a807d" prefix=" " category="inline-code"></block>,<block ref="a3df76a4fb69b2a5e9ec42d242e90ea3" prefix=" " category="inline-code"></block> 및<block ref="9fa80de5781893b057ff1d535201893b" prefix=" " category="inline-code"></block> 오퍼레이터 배치 전.</block>
@@ -3118,12 +3115,7 @@
   <block id="e8972e07c1fa789317997dff35db7e78" category="list-text">Kubernetes 1.24 이하 를 실행하는 클러스터의 경우, 를 사용합니다<block ref="bd2cc8575fe69c7f775292759380c838" prefix=" " category="inline-code"></block>.</block>
   <block id="a615299877ce0660ab19510814b9dedd" category="list-text">Kubernetes 1.25 이상을 실행하는 클러스터의 경우 를 사용합니다<block ref="5a02ebff4889c2de0379a0fb10bed282" prefix=" " category="inline-code"></block>.</block>
   <block id="64458d8f3e4ba02b2bf50e5a1ad00c81" category="list-text">작업자가 배치되었는지 확인합니다.</block>
-  <block id="57847ee4f12e28355134067e1b928b9b" category="section-title">4단계: 에서 이미지 레지스트리 위치를 업데이트합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block></block>
-  <block id="1f13432df75f47eb32309278571c5983" category="paragraph">Trident 및 CSI 이미지는 하나의 레지스트리 또는 다른 레지스트리에 위치할 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 업데이트<block ref="7b4b81fb05ca7f2a09fe73526ac95482" prefix=" " category="inline-code"></block> 레지스트리 구성에 따라 추가 위치 사양을 추가하려면 다음을 수행합니다.</block>
-  <block id="0ac14b025f53f0b1dc50b2632045e4ce" category="open-title">하나의 레지스트리에 Trident 및 CSI 이미지</block>
-  <block id="4ab5d35b32e3d4a3ca86f398bec0e486" category="open-title">다른 레지스트리의 Trident 및 CSI 이미지</block>
   <block id="69301f05825d437597b636d8b7e9d918" category="paragraph">추가해야 합니다<block ref="4134d52569bb4a6545ebff1e4c83f2bc" prefix=" " category="inline-code"></block> 를 누릅니다<block ref="990dc1a09e10c7b5378e6bc8a1956cb8" prefix=" " category="inline-code"></block> 다른 레지스트리 위치를 사용합니다.</block>
-  <block id="fb4fb1e73c66032be5f92dd05f69cff3" category="section-title">5단계: 을 작성합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> Trident를 설치합니다</block>
   <block id="78f538d1739cfd8c70698ec72269da17" category="inline-link-macro">Trident 설치를 사용자 지정합니다</block>
   <block id="60b02b15eaf058a3b9da12633792321f" category="paragraph">이제 를 만들 수 있습니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> Astra Trident를 설치합니다. 원하는 경우 더 추가할 수 있습니다 <block ref="af79c767b326b6188dbe7366c85a8007" category="inline-link-macro-rx"></block> 의 속성을 사용합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 사양 다음 예에서는 Trident 및 CSI 이미지가 다른 레지스트리에 있는 설치를 보여 줍니다.</block>
   <block id="9c0f95d6de9186b24cce94c1c19ad0bb" category="section-title">설치를 확인합니다</block>
@@ -3140,17 +3132,13 @@
   <block id="9023b4b442239b429817bc22fb401e02" category="summary">Trident 연산자를 구축하고 Hrom을 사용하여 Astra Trident를 설치할 수 있습니다. 이 프로세스는 Astra Trident에 필요한 컨테이너 이미지가 개인 레지스트리에 저장된 설치에 적용됩니다.</block>
   <block id="3e8935de45b1559e2ec2b01c1bbb06c2" category="doc">H제어(오프라인 모드)를 사용하여 Trident 연산자 배포</block>
   <block id="dc0316b52aa2ab6526bdaee13c162530" category="paragraph">Trident 연산자를 구축하고 Hrom을 사용하여 Astra Trident를 설치할 수 있습니다. 이 프로세스는 Astra Trident에 필요한 컨테이너 이미지가 개인 레지스트리에 저장된 설치에 적용됩니다. 개인 이미지 레지스트리가 없는 경우 를 사용합니다 <block ref="2230544d14bc4ba0c61a5a1b2030a1d4" category="inline-link-macro-rx"></block>.</block>
-  <block id="266321104888c2174d7545226d7adc9b" category="list-text">사용<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> 다음 예제와 같이 배포 및 이미지 레지스트리 위치 또는 위치의 이름을 지정합니다. 예를 들어,<block ref="93edfe5491b7772fd10045fef48289e7" prefix=" " category="inline-code"></block> 는 설치 중인 Astra Trident의 버전입니다.</block>
   <block id="3d289dfc040026f9fd5fd0d307821b6c" category="doc">tridentctl을 사용하여 설치합니다</block>
-  <block id="925c7af7f037e06594c62d6b07e51aa4" category="paragraph">을 사용하여 Astra Trident를 설치할 수 있습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>. 이 프로세스는 Trident 및 CSI 이미지가 에 있는 설치에 적용됩니다<block ref="0b505db73d92bac18356fa3feb3cf7e3" prefix=" " category="inline-code"></block> 및<block ref="95d6355f896a633ab07c528c03b44c8e" prefix=" " category="inline-code"></block> 또는 전용, 미러된 레지스트리. 를 사용자 지정합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 구축 방법은 을 참조하십시오 <block ref="8e7a26c9800a78fa0b68fb2423ba3fb4" category="inline-link-macro-rx"></block>.</block>
   <block id="61697702c419c08b19643e7defded065" category="section-title">를 사용하여 Astra Trident를 설치합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block></block>
   <block id="953aeeea088f5f969f2eba121ae81f15" category="paragraph">설치를 시작하기 전에 Linux 호스트에 로그인하여 작업 관리 여부를 확인합니다. <block ref="ac355729d1ddc95a290738ca862fed08" category="inline-link-macro-rx"></block> 필요한 권한이 있어야 합니다.</block>
   <block id="8e00e0acac84eb708bf35882acdffca9" category="paragraph">Astra Trident 설치 프로그램 패키지는 Trident Pod를 생성하고 상태를 유지하는 데 사용되는 CRD 객체를 구성하며, CSI 사이드카를 초기화하여 클러스터 호스트에 볼륨 프로비저닝 및 연결과 같은 작업을 수행합니다. 에서 최신 버전의 Trident 설치 프로그램을 다운로드하고 압축을 풉니다 <block ref="6a7c34d1e7545bd3ab5abc336e61eb7f" category="inline-link-macro-rx"></block>. 선택한 Astra Trident 버전을 사용하여 예제에서 update_&lt;trident-installer-XX.XX.X.tar.gz&gt;_를 선택합니다.</block>
   <block id="4fba6bba4e54639c0f1d19c0a5679833" category="section-title">2단계: Astra Trident 설치</block>
   <block id="c0e89c01626a7378d795a618051fccbf" category="paragraph">를 실행하여 원하는 네임스페이스에 Astra Trident를 설치합니다<block ref="430bf77bee6c59d385d4194f84c21b16" prefix=" " category="inline-code"></block> 명령. 추가 인수를 추가하여 이미지 레지스트리 위치를 지정할 수 있습니다.</block>
   <block id="53c512e9599c71e1a585d636a5229820" category="open-title">표준 모드</block>
-  <block id="8fbc0757e481d43e9851a350de41bf97" category="open-title">하나의 미러링된 레지스트리의 Trident 및 CSI 이미지</block>
-  <block id="300ff219aca64776fed1d1675a5011fa" category="open-title">다른 미러링된 레지스트리의 Trident 및 CSI 이미지</block>
   <block id="ca5380881d4e3b38f359d5d05acd6163" category="paragraph">설치 상태는 다음과 같습니다.</block>
   <block id="c5e8fc3926c956e64487a70aa036ec8c" category="paragraph">POD 생성 상태 또는 를 사용하여 설치를 확인할 수 있습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>.</block>
   <block id="5ba19178fb1b2111306714e923b35945" category="inline-link-macro">디버그 모드를 켭니다</block>
@@ -3571,4 +3559,16 @@
   <block id="412b252fa44d1a73e3e7bf22113f99a2" category="listing-title">ONTAP - NAS 드라이버</block>
   <block id="f39486d0f9f7ffc885eca61e8823ea0a" category="inline-link-macro">tridentctl을 사용하여 설치하는 중입니다</block>
   <block id="ea71d8757e4d8afc8f6253684f5a7f1c" category="paragraph">업그레이드해야 하는 기존 배포가 있거나 배포를 사용자 지정하려는 경우 고려해야 합니다 <block ref="004ed44e395c472642e5a257ee453413" category="inline-link-macro-rx"></block>. Astra Trident를 구축하는 기존 방법입니다.</block>
+  <block id="b3735f022036728c24121c449da97183" category="inline-link-macro">Trident 및 CSI 이미지</block>
+  <block id="0f01246331dd1197a1889bf13d7131a8" category="list-text">사용<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> 배포 및 이미지 레지스트리 위치의 이름을 지정합니다. 귀사의 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 예를 들어,<block ref="93edfe5491b7772fd10045fef48289e7" prefix=" " category="inline-code"></block> 는 설치 중인 Astra Trident의 버전입니다.</block>
+  <block id="c4ffea098f78924a9b9331b8f5e9c8b4" category="open-title">하나의 레지스트리에 있는 이미지</block>
+  <block id="4847c552b2ff9251806e41c8fa907e19" category="open-title">다른 레지스트리의 이미지</block>
+  <block id="7a958030f69f08aa24ff2b440556c305" category="summary">을 사용하여 Astra Trident를 설치할 수 있습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>. 이 프로세스는 Astra Trident에 필요한 컨테이너 이미지가 개인 레지스트리에 저장되거나 저장되지 않은 설치에 적용됩니다.</block>
+  <block id="9b809d56a3bb0caddcd0793e74d8e636" category="paragraph">을 사용하여 Astra Trident를 설치할 수 있습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>. 이 프로세스는 Astra Trident에 필요한 컨테이너 이미지가 개인 레지스트리에 저장되거나 저장되지 않은 설치에 적용됩니다. 를 사용자 지정합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 구축 방법은 을 참조하십시오 <block ref="8e7a26c9800a78fa0b68fb2423ba3fb4" category="inline-link-macro-rx"></block>.</block>
+  <block id="88177d8e2425600f2b95afd270e60008" category="paragraph">인치<block ref="02f3115b006f7541a477d52ea8c0f861" prefix=" " category="inline-code"></block>, 업데이트<block ref="f9fa807329a3c6418caaaa1874b599f4" prefix=" " category="inline-code"></block> 이미지 레지스트리의 위치를 반영합니다. 귀사의 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 예를 들면 다음과 같습니다.</block>
+  <block id="791b3a9990d4b0b2af1866f25ede97d6" category="list-text"><block ref="7dcfa8a76be931076dc77a59f6470141" prefix="" category="inline-code"></block> Trident 이미지가 CSI 이미지와 다른 레지스트리에 있는 경우</block>
+  <block id="7a79f435dcaa0ca2322cde1d80c13868" category="section-title">4단계: Trident 연산자를 배포합니다</block>
+  <block id="579b44412770c0d6b65bc3fd9bf7c61c" category="section-title">5단계: 에서 이미지 레지스트리 위치를 업데이트합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block></block>
+  <block id="d0ebde94f92d8c1bae0c6660a5847bba" category="paragraph">귀사의 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 업데이트<block ref="7b4b81fb05ca7f2a09fe73526ac95482" prefix=" " category="inline-code"></block> 레지스트리 구성에 따라 추가 위치 사양을 추가하려면 다음을 수행합니다.</block>
+  <block id="5295ac8fb520b71deb8a1b57857b2562" category="section-title">6단계: 을 작성합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> Trident를 설치합니다</block>
 </blocks>

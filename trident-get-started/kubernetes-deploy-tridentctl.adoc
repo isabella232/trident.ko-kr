@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: trident-get-started/kubernetes-deploy-tridentctl.html 
 keywords: deploy, astra trident, methods, tridentctl, windows 
-summary: tridentctl을 사용하여 Astra Trident를 배포할 수 있습니다. 
+summary: '을 사용하여 Astra Trident를 설치할 수 있습니다 `tridentctl`. 이 프로세스는 Astra Trident에 필요한 컨테이너 이미지가 개인 레지스트리에 저장되거나 저장되지 않은 설치에 적용됩니다.' 
 ---
 = tridentctl을 사용하여 설치합니다
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: tridentctl을 사용하여 Astra Trident를 배포할 수 있습니다.
 
 
 [role="lead"]
-을 사용하여 Astra Trident를 설치할 수 있습니다 `tridentctl`. 이 프로세스는 Trident 및 CSI 이미지가 에 있는 설치에 적용됩니다 `docker.io` 및 `registry.k8s.io` 또는 전용, 미러된 레지스트리. 를 사용자 지정합니다 `tridentctl` 구축 방법은 을 참조하십시오 link:kubernetes-customize-deploy-tridentctl.html["tridentctl 배포를 사용자 지정합니다"].
+을 사용하여 Astra Trident를 설치할 수 있습니다 `tridentctl`. 이 프로세스는 Astra Trident에 필요한 컨테이너 이미지가 개인 레지스트리에 저장되거나 저장되지 않은 설치에 적용됩니다. 를 사용자 지정합니다 `tridentctl` 구축 방법은 을 참조하십시오 link:kubernetes-customize-deploy-tridentctl.html["tridentctl 배포를 사용자 지정합니다"].
 
 
 
@@ -97,14 +97,14 @@ NOTE: Astra Trident를 Windows 노드에서 실행하도록 설정하려면 을 
 ./tridentctl install -n trident
 ----
 --
-.하나의 미러링된 레지스트리의 Trident 및 CSI 이미지
+.하나의 레지스트리에 있는 이미지
 --
 [listing]
 ----
 ./tridentctl install -n trident --image-registry <your-registry> --autosupport-image <your-registry>/trident-autosupport:23.01 --trident-image <your-registry>/trident:23.01.0
 ----
 --
-.다른 미러링된 레지스트리의 Trident 및 CSI 이미지
+.다른 레지스트리의 이미지
 --
 추가해야 합니다 `sig-storage` 를 누릅니다 `imageRegistry` 다른 레지스트리 위치를 사용합니다.
 
