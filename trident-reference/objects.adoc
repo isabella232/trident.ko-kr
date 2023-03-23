@@ -123,7 +123,7 @@ Trident를 사용하는 Kubernetes의 torageClass 개체는 다음과 같습니�
 
 [listing]
 ----
-apiVersion: storage.k8s.io/v1beta1
+apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: <Name>
@@ -250,7 +250,7 @@ NFS 스토리지 드라이버의 경우 파일 시스템이 NFS 내보내기의 
 
 [listing]
 ----
-apiVersion: snapshot.storage.k8s.io/v1beta1
+apiVersion: snapshot.storage.k8s.io/v1
 kind: VolumeSnapshotClass
 metadata:
   name: csi-snapclass
