@@ -111,9 +111,9 @@ NOTE: 클러스터가 지원되지 않는 버전으로 업그레이드되면 운
 ====
 
 
-=== 사용 `tridenctl`
+=== 사용 `tridentctl`
 
-업그레이드해야 하는 기존 배포가 있거나 배포를 사용자 지정하려는 경우 고려해야 합니다 link:kubernetes-deploy-tridentctl.html["tridentctl을 사용하여 설치하는 중입니다"]. Astra Trident를 구축하는 기존 방법입니다.
+업그레이드해야 하는 기존 배포가 있거나 배포를 사용자 지정하려는 경우 고려해야 합니다 . Astra Trident를 구축하는 기존 방법입니다.
 
 가능합니다  Trident 리소스에 대한 매니페스트를 생성합니다. 여기에는 구축, 개발/제거, 서비스 계정, Astra Trident가 설치의 일부로 생성한 클러스터 역할 등이 포함됩니다.
 

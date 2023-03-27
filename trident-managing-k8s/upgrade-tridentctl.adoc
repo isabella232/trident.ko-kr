@@ -94,7 +94,7 @@ Source:
 +
 PV는 NetApp.IO/트리덴트(triment) 프로비저닝을 사용하여 생성되었으며 NFS 유형입니다. Astra Trident에서 제공하는 모든 새로운 기능을 지원하려면 이 PV를 CSI 유형으로 업그레이드해야 합니다.
 
-. 'tridenctl upgrade volume <name-of-trident-volume>' 명령을 실행하여 레거시 Astra Trident 볼륨을 CSI 사양으로 업그레이드합니다.
+. 를 실행합니다 `tridentctl upgrade volume <name-of-trident-volume>` 레거시 Astra Trident 볼륨을 CSI 사양으로 업그레이드하는 명령입니다.
 +
 [listing]
 ----

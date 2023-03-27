@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/vol-import.html 
-keywords: volumes, on-demand volume snapshots, import volumes, drivers, tridenctl import, pv, persistent volumes 
+keywords: volumes, on-demand volume snapshots, import volumes, drivers, tridentctl import, pv, persistent volumes 
 summary: tridentctl import를 사용하여 기존 스토리지 볼륨을 Kubernetes PV로 가져올 수 있습니다. 
 ---
 = 볼륨 가져오기

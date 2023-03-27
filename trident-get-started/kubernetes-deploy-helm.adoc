@@ -49,11 +49,11 @@ Trident 사용 link:https://artifacthub.io/packages/helm/netapp-trident/trident-
 ----
 helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
 ----
-. 사용 `helm install` 다음 예제에서와 같이 배포 이름을 지정합니다 `23.01.0` 는 설치 중인 Astra Trident의 버전입니다.
+. 사용 `helm install` 다음 예제에서와 같이 배포 이름을 지정합니다 `23.01.1` 는 설치 중인 Astra Trident의 버전입니다.
 +
 [listing]
 ----
-helm install <name> netapp-trident/trident-operator --version 23.01.0 --create-namespace --namespace <trident-namespace>
+helm install <name> netapp-trident/trident-operator --version 23.01.1 --create-namespace --namespace <trident-namespace>
 ----
 +
 
@@ -83,11 +83,11 @@ NOTE: Trident에 대한 네임스페이스를 이미 만든 경우에는 '--crea
 명령줄에 overrides를 지정합니다.
 
 |===
-예를 들어, 의 기본값을 변경합니다 `debug`에서 다음을 실행합니다 `--set` 명령 위치 `23.01.0` 설치 중인 Astra Trident의 버전입니다.
+예를 들어, 의 기본값을 변경합니다 `debug`에서 다음을 실행합니다 `--set` 명령 위치 `23.01.1` 설치 중인 Astra Trident의 버전입니다.
 
 [listing]
 ----
-helm install <name> netapp-trident/trident-operator --version 23.01.0  --create-namespace --namespace --set tridentDebug=true
+helm install <name> netapp-trident/trident-operator --version 23.01.1  --create-namespace --namespace --set tridentDebug=true
 ----
 
 NOTE: 제어 차트의 일부인 Values.YAML 파일은 키 목록과 기본값을 제공합니다.

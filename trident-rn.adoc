@@ -19,10 +19,25 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 
 
 
-== 23.01의 새로운 기능
+== 23.01.1의 새로운 기능
 
 
-IMPORTANT: 이제 Trident에서 Kubernetes 1.26이 지원됩니다. Kubernetes를 업그레이드하기 전에 Trident를 업그레이드하십시오.
+
+=== 수정
+
+* SPEC에 지정된 경우 설치에 IPv6 localhost를 사용하도록 고정 Trident Operator가 수정되었습니다.
+* 번들 권한과 동기화되는 고정 Trident 운영자 클러스터 역할 권한 link:https://github.com/NetApp/trident/issues/799["문제 #799"^].
+* 외부 프로세스가 완료될 때까지 실행되도록 하는 수정 사항이 추가되었습니다.
+* rwx 모드에서 여러 노드에 원시 블록 볼륨을 연결하는 문제 해결
+* SMB 볼륨에 대한 FlexGroup 클론 복제 지원 및 볼륨 가져오기 수정
+
+
+
+
+== 23.01의 변경 사항
+
+
+IMPORTANT: 이제 Trident에서 Kubernetes 1.26이 지원됩니다. Kubernetes를 업그레이드하기 전에 Astra Trident를 업그레이드하십시오.
 
 
 

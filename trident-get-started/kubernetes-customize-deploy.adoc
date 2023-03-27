@@ -51,7 +51,7 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 | "enableNodePrep"입니다 | 작업자 노드 종속성 자동 관리(* beta*) | 거짓 
 
 
-| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/트리덴트 - AutoSupport: 23.01.0" 
+| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/트리덴트 - AutoSupport: 23.01" 
 
 
 | 자동 지원 프록시 | AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다 | "http://proxy.example.com:8888"[] 
