@@ -216,7 +216,7 @@ NOTE: Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경우 IP 
     "dataLIF": "10.0.0.2",
     "svm": "svm_nfs",
     "username": "vsadmin",
-    "password": "secret"
+    "password": "password"
 }
 ----
 ====
@@ -259,7 +259,7 @@ NOTE: Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경우 IP 
     "autoExportPolicy": true,
     "autoExportCIDRs": ["10.0.0.0/24"],
     "username": "admin",
-    "password": "secret",
+    "password": "password",
     "nfsMountOptions": "nfsvers=4",
 }
 ----
@@ -274,7 +274,7 @@ NOTE: Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경우 IP 
     "labels": {"k8scluster": "test-cluster-east-1b", "backend": "test1-ontap-cluster"},
     "svm": "svm_nfs",
     "username": "vsadmin",
-    "password": "secret",
+    "password": "password",
 }
 ----
 ====
@@ -293,7 +293,7 @@ NOTE: Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경우 IP 
  "labels": {"k8scluster": "test-cluster-east-1a", "backend": "test1-ontap-ipv6"},
  "svm": "nas_ipv6_svm",
  "username": "vsadmin",
- "password": "netapp123"
+ "password": "password"
 }
 ----
 ====
@@ -310,7 +310,7 @@ NOTE: Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경우 IP 
     "dataLIF": "10.0.0.2",
     "svm": "svm_nfs",
     "username": "vsadmin",
-    "password": "secret"
+    "password": "password"
 }
 ----
 
@@ -356,7 +356,7 @@ Astra Trident는 "Comments" 필드에 제공 레이블을 설정합니다. 설�
     "dataLIF": "10.0.0.2",
     "svm": "svm_nfs",
     "username": "admin",
-    "password": "secret",
+    "password": "password",
     "nfsMountOptions": "nfsvers=4",
 
     "defaults": {
@@ -420,7 +420,7 @@ Astra Trident는 "Comments" 필드에 제공 레이블을 설정합니다. 설�
     "dataLIF": "10.0.0.2",
     "svm": "svm_nfs",
     "username": "vsadmin",
-    "password": "secret",
+    "password": "password",
 
     "defaults": {
           "spaceReserve": "none",
@@ -481,7 +481,7 @@ Astra Trident는 "Comments" 필드에 제공 레이블을 설정합니다. 설�
     "dataLIF": "10.0.0.2",
     "svm": "svm_nfs",
     "username": "vsadmin",
-    "password": "secret",
+    "password": "password",
 
     "defaults": {
           "spaceReserve": "none",

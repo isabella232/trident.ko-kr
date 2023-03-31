@@ -258,7 +258,7 @@ NOTE: Astra Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경�
     "chapUsername": "uh2aNCLSd6cNwxyz",
     "igroupName": "trident",
     "username": "vsadmin",
-    "password": "secret"
+    "password": "password"
 }
 ----
 
@@ -279,7 +279,7 @@ NOTE: Astra Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경�
     "chapUsername": "uh2aNCLSd6cNwxyz",
     "igroupName": "trident",
     "username": "vsadmin",
-    "password": "secret"
+    "password": "password"
 }
 ----
 
@@ -307,7 +307,7 @@ Astra Trident는 "Comments" 필드에 제공 레이블을 설정합니다. FlexV
     "chapUsername": "uh2aNCLSd6cNwxyz",
     "igroupName": "trident",
     "username": "vsadmin",
-    "password": "secret",
+    "password": "password",
 
     "defaults": {
           "spaceAllocation": "false",
@@ -362,7 +362,7 @@ Astra Trident는 "Comments" 필드에 제공 레이블을 설정합니다. FlexV
     "chapUsername": "uh2aNCLSd6cNwxyz",
     "igroupName": "trident",
     "username": "vsadmin",
-    "password": "secret",
+    "password": "password",
 
     "defaults": {
           "spaceAllocation": "false",

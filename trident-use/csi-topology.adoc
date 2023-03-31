@@ -64,7 +64,7 @@ Astra Trident 스토리지 백엔드는 가용성 영역에 따라 볼륨을 선
  "managementLIF": "192.168.27.5",
  "svm": "iscsi_svm",
  "username": "admin",
- "password": "xxxxxxxxxxxx",
+ "password": "password",
  "supportedTopologies": [
 {"topology.kubernetes.io/region": "us-east1", "topology.kubernetes.io/zone": "us-east1-a"},
 {"topology.kubernetes.io/region": "us-east1", "topology.kubernetes.io/zone": "us-east1-b"}
@@ -84,7 +84,7 @@ NOTE: 'SupportedTopologies'는 백엔드 당 지역 및 영역 목록을 제공�
 "managementLIF": "172.16.238.5",
 "svm": "nfs_svm",
 "username": "admin",
-"password": "Netapp123",
+"password": "password",
 "supportedTopologies": [
       {"topology.kubernetes.io/region": "us-central1", "topology.kubernetes.io/zone": "us-central1-a"},
       {"topology.kubernetes.io/region": "us-central1", "topology.kubernetes.io/zone": "us-central1-b"}

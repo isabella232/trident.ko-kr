@@ -52,7 +52,7 @@ Astra Trident는 SVM 범위/클러스터 범위 관리자에게 ONTAP 백엔드�
   "dataLIF": "10.0.0.2",
   "svm": "svm_nfs",
   "username": "vsadmin",
-  "password": "secret"
+  "password": "password"
 }
 ----
 백엔드 정의는 자격 증명이 일반 텍스트로 저장되는 유일한 위치라는 점에 유의하십시오. 백엔드가 생성된 후 사용자 이름/암호는 Base64로 인코딩되어 Kubernetes 암호로 저장됩니다. 백엔드의 생성/업딩은 자격 증명에 대한 지식이 필요한 유일한 단계입니다. 따라서 Kubernetes/스토리지 관리자가 수행할 수 있는 관리 전용 작업입니다.
@@ -156,7 +156,7 @@ cat cert-backend-updated.json
 "dataLIF": "1.2.3.8",
 "svm": "vserver_test",
 "username": "vsadmin",
-"password": "secret",
+"password": "password",
 "storagePrefix": "myPrefix_"
 }
 
@@ -209,7 +209,7 @@ NOTE: CSI Trident에만 내보내기 정책의 동적 관리를 사용할 수 �
     "managementLIF": "192.168.0.135",
     "svm": "svm1",
     "username": "vsadmin",
-    "password": "FaKePaSsWoRd",
+    "password": "password",
     "autoExportCIDRs": ["192.168.0.0/24"],
     "autoExportPolicy": true
 }
