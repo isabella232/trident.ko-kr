@@ -3577,4 +3577,5 @@
   <block id="21b2b5bca26be7b23af4468b85c68b34" category="list-text">SMB 볼륨에 대한 FlexGroup 클론 복제 지원 및 볼륨 가져오기 수정</block>
   <block id="190a9f9a8311c8a23bff1fd7a5693342" category="section-title">23.01의 변경 사항</block>
   <block id="8b418db90259290a719e83f1a2509366" category="admonition">이제 Trident에서 Kubernetes 1.26이 지원됩니다. Kubernetes를 업그레이드하기 전에 Astra Trident를 업그레이드하십시오.</block>
+  <block id="1cb76b1c7887cad1e077a4cbdc765b9b" category="list-text">Astra Trident 버전 확인:</block>
 </blocks>

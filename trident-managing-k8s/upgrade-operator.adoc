@@ -43,6 +43,12 @@ summary: 운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그�
 클러스터 범위 Trident 운영자 설치를 업그레이드하려면 다음 단계를 수행하십시오. Astra Trident 버전 21.01 이상에서는 클러스터 범위 연산자를 사용합니다.
 
 .단계
+. Astra Trident 버전 확인:
++
+[listing]
+----
+./tridentctl -n trident version
+----
 . 현재 Astra Trident 인스턴스를 설치하는 데 사용된 Trident 연산자를 삭제합니다. 예를 들어, 22.01에서 업그레이드하는 경우 다음 명령을 실행합니다.
 +
 [listing]
@@ -116,7 +122,7 @@ pwd
 /root/20.10.1/trident-installer
 
 #Delete the namespace-scoped operator
-kubectl delete -f deploy/<BUNDLE.YAML>
+kubectl delete -f deploy/<BUNDLE.YAML> -n trident
 serviceaccount "trident-operator" deleted
 clusterrole.rbac.authorization.k8s.io "trident-operator" deleted
 clusterrolebinding.rbac.authorization.k8s.io "trident-operator" deleted
