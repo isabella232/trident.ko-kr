@@ -12,18 +12,28 @@ summary: 'Trident 연산자를 사용하면 " Trident" 사양의 특성을 사�
 
 
 [role="lead"]
-Trident 운영자는 의 특성을 사용하여 Astra Trident 설치를 사용자 지정할 수 있습니다 `TridentOrchestrator` 사양
-
-설치를 사용자 지정하려면 다음을 선택합니다 `TridentOrchestrator` 인수를 사용하면 사용을 고려해야 합니다 `tridentctl` 필요에 따라 수정할 수 있는 사용자 지정 YAML 매니페스트를 생성합니다.
+Trident 운영자는 의 특성을 사용하여 Astra Trident 설치를 사용자 지정할 수 있습니다 `TridentOrchestrator` 사양 설치를 사용자 지정하려면 다음을 선택합니다 `TridentOrchestrator` 인수를 사용할 수 있습니다. 을 사용하는 것이 좋습니다 `tridentctl` 필요에 따라 수정할 사용자 지정 YAML 매니페스트를 생성합니다.
 
 
-WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Trident가 설치된 네임스페이스를 나타냅니다. Astra Trident가 설치된 후에는 이 매개 변수 * 를 업데이트할 수 없습니다. 이렇게 하려고 하면 가 발생합니다 `TridentOrchestrator` 변경할 상태입니다 `Failed`. Astra Trident는 네임스페이스 간에 마이그레이션되지 않습니다.
+
+== 컨트롤러 Pod 및 노드 포드 이해
+
+Astra Trident는 단일 컨트롤러 POD와 클러스터의 각 작업자 노드에 노드 POD를 더한 형태로 실행됩니다. Astra Trident 볼륨을 마운트하려는 호스트에서 노드 포드가 실행되고 있어야 합니다.
+
+쿠버네티스 link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/["노드 선택기"^] 및 link:https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/["관용과 오해"^] 포드를 특정 노드 또는 기본 노드에서 실행하도록 제한하는 데 사용됩니다. ControllerPlugin과 을 사용합니다 `NodePlugin`구속 조건과 덮어쓰기를 지정할 수 있습니다.
+
+* 컨트롤러 플러그인은 스냅샷 및 크기 조정과 같은 볼륨 프로비저닝 및 관리를 처리합니다.
+* 노드 플러그인은 스토리지에 노드를 연결하는 작업을 처리합니다.
+
 
 
 
 == 구성 옵션
 
-이 표에 자세히 나와 있습니다 `TridentOrchestrator` 특성:
+
+WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Trident가 설치된 네임스페이스를 나타냅니다. Astra Trident가 설치된 후에는 이 매개 변수 * 를 업데이트할 수 없습니다. 이렇게 하려고 하면 가 발생합니다 `TridentOrchestrator` 변경할 상태입니다 `Failed`. Astra Trident는 네임스페이스 간에 마이그레이션되지 않습니다.
+
+이 표에 자세히 나와 있습니다 `TridentOrchestrator` 속성.
 
 [cols="3"]
 |===
@@ -84,16 +94,16 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 `Never` 이미지를 당기지 않습니다. | `IfNotPresent` 
 
 
-| 'controllerPluginNodeSelector' | Trident 컨트롤러 CSI 플러그인을 실행하는 Pod용 추가 노드 선택기. pod.spec.nodeSelector 과 동일한 형식을 따릅니다. | 기본값 없음, 선택 사항 
+| 'controllerPluginNodeSelector' | Pod용 추가 노드 선택기 pod.spec.nodeSelector 과 동일한 형식을 따릅니다. | 기본값 없음, 선택 사항 
 
 
-| '컨트롤러 PluginTolerations' | Trident 컨트롤러 CSI 플러그인을 실행하는 Pod의 허용 설정을 재정의합니다. pod.spec.Tolerations와 같은 형식을 따릅니다. | 기본값 없음, 선택 사항 
+| '컨트롤러 PluginTolerations' | Pod에 대한 Kubernetes 허용 설정을 재정의합니다. pod.spec.Tolerations와 같은 형식을 따릅니다. | 기본값 없음, 선택 사항 
 
 
-| 노드플러거노드 선택기 | Trident Node CSI 플러그인을 실행하는 Pod용 추가 노드 선택기 pod.spec.nodeSelector 과 동일한 형식을 따릅니다. | 기본값 없음, 선택 사항 
+| 노드플러거노드 선택기 | Pod용 추가 노드 선택기 pod.spec.nodeSelector 과 동일한 형식을 따릅니다. | 기본값 없음, 선택 사항 
 
 
-| 노드 PluginTolerations | Trident Node CSI 플러그인을 실행하는 Pod의 허용 설정을 재정의합니다. pod.spec.Tolerations와 같은 형식을 따릅니다. | 기본값 없음, 선택 사항 
+| 노드 PluginTolerations | Pod에 대한 Kubernetes 허용 설정을 재정의합니다. pod.spec.Tolerations와 같은 형식을 따릅니다. | 기본값 없음, 선택 사항 
 |===
 
 NOTE: 포드 매개 변수 포맷에 대한 자세한 내용은 을 참조하십시오 link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/["노드에 Pod 할당"^].

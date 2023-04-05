@@ -1,0 +1,15 @@
+---
+sidebar: sidebar 
+permalink: trident-concepts/architecture.html 
+keywords: trident backend, AFF, FAS, ONTAP Select, Cloud, Amazon FSx for NetApp ONTAP, drivers, ONTAP drivers 
+summary: Astra Trident가 Kubernetes 클러스터에서 실행되는 방법을 알아보십시오. 
+---
+= Astra Trident 아키텍처
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Astra Trident가 Kubernetes 클러스터에서 실행되는 방법을 알아보십시오.
