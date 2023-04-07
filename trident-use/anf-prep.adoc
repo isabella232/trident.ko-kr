@@ -11,24 +11,24 @@ summary: ANF 백엔드를 구성하려면 먼저 다음 요구 사항을 충족�
 :imagesdir: ../media/
 
 
+[role="lead"]
 Azure NetApp Files 백엔드를 구성하기 전에 다음 요구 사항이 충족되는지 확인해야 합니다.
 
-Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경우 일부 초기 구성이 필요합니다.
 
-* Azure NetApp Files를 설정하고 NFS 볼륨을 생성하려면 을 참조하십시오 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes["Azure: Azure NetApp Files를 설정하고 NFS 볼륨을 생성합니다"^].
-* Azure NetApp Files를 구성하고 SMB 볼륨을 추가하려면 다음을 참조하십시오. https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-create-volumes-smb["Azure: Azure NetApp Files용 SMB 볼륨을 생성합니다"^].
+NOTE: Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경우 Azure NetApp Files를 설정하고 NFS 볼륨을 생성하려면 몇 가지 초기 구성이 필요합니다. 을 참조하십시오 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes["Azure: Azure NetApp Files를 설정하고 NFS 볼륨을 생성합니다"^].
 
 
 
-
-== 요구 사항
+== NFS 및 SMB 볼륨의 사전 요구 사항
 
 를 구성하고 사용합니다 https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^] 백엔드, 다음이 필요합니다.
 
+* 용량 풀입니다. 을 참조하십시오 link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool["Microsoft: Azure NetApp Files에 대한 용량 풀을 생성합니다"^].
+* Azure NetApp Files에 위임된 서브넷. 을 참조하십시오 link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["Microsoft: Azure NetApp Files에 서브넷을 위임합니다"^].
 * Azure NetApp Files가 활성화된 Azure 구독의 'SubscriptionID'입니다.
 * `tenantID`, `clientID`, 및 `clientSecret` 에서 link:https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal["앱 등록"^] Azure NetApp Files 서비스에 대한 충분한 권한이 있는 Azure Active Directory에서 앱 등록에서는 다음 중 하나를 사용해야 합니다.
 +
-** 소유자 또는 참가자 역할입니다 link:https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles["Azure에서 사전 정의"^]
+** 소유자 또는 참가자 역할입니다 link:https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles["Azure에서 사전 정의"^].
 ** A link:https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles-portal["사용자 지정 참가자 역할"] 구독 레벨입니다 (`assignableScopes`) 다음 사용 권한은 Astra Trident에 필요한 권한만 가집니다. 사용자 지정 역할을 만든 후 link:https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal["Azure 포털을 사용하여 역할을 할당합니다"^].
 +
 [source, JSON]
@@ -86,8 +86,11 @@ Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경�
 
 == SMB 볼륨에 대한 추가 요구사항
 
+SMB 볼륨을 생성하려면 다음이 있어야 합니다.
+
+* Active Directory가 구성되어 Azure NetApp Files에 연결되었습니다. 을 참조하십시오 link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/create-active-directory-connections["Microsoft: Azure NetApp Files에 대한 Active Directory 연결을 만들고 관리합니다"^].
 * Linux 컨트롤러 노드 및 Windows Server 2019를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.
-* ANF가 Active Directory에 인증할 수 있도록 Active Directory 자격 증명이 포함된 Astra Trident 암호가 하나 이상 있어야 합니다. 암호를 생성합니다 `smbcreds`:
+* Azure NetApp Files가 Active Directory에 인증할 수 있도록 Active Directory 자격 증명이 포함된 Astra Trident 암호가 하나 이상 있어야 합니다. 암호를 생성합니다 `smbcreds`:
 +
 [listing]
 ----

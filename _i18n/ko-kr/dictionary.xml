@@ -2717,21 +2717,15 @@
   <block id="3908892c437778f8b161a2ca006782cd" category="list-text">하위 볼륨에서는 스냅샷, 클론 및 미러링을 사용할 수 없습니다.</block>
   <block id="e6fe09cae66ba22c6abbd2511f660545" category="summary">ANF 백엔드를 구성하려면 먼저 다음 요구 사항을 충족해야 합니다.</block>
   <block id="aec47cf6a0cb83824b504b756eb4b71c" category="doc">Azure NetApp Files 백엔드를 구성할 준비를 합니다</block>
-  <block id="fafa3c0a3cb069057415a83c6ebcceba" category="paragraph">Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경우 일부 초기 구성이 필요합니다.</block>
   <block id="97d64245613ba751b698ce77fd51779a" category="inline-link">Azure: Azure NetApp Files를 설정하고 NFS 볼륨을 생성합니다</block>
-  <block id="2aa05cb8290726bf399391736b2c3515" category="list-text">Azure NetApp Files를 설정하고 NFS 볼륨을 생성하려면 을 참조하십시오<block ref="b6e93c3bfc36cf835c63e42e55586d97" category="inline-link-rx"></block>.</block>
-  <block id="a2d5857c3b9121391e94a67cf08493ee" category="inline-link">Azure: Azure NetApp Files용 SMB 볼륨을 생성합니다</block>
-  <block id="04c87c2db0b97d613ced591af56ad5bb" category="list-text">Azure NetApp Files를 구성하고 SMB 볼륨을 추가하려면 다음을 참조하십시오.<block ref="c33ad357613bf495746b18bdb4ed3ee8" category="inline-link-rx"></block>.</block>
   <block id="caa7dc98c21b44b17c214508b9b0fa3c" category="list-text"><block ref="bc54592d6183695b841c6d1880ec0bf8" prefix="" category="inline-code"></block>,<block ref="93c5bebdea9c94a0740fe6fd9bb250f0" prefix=" " category="inline-code"></block>, 및<block ref="2b53761249254ce6b502f521e5cc0683" prefix=" " category="inline-code"></block> 에서 <block ref="63405c89f422580946169fa59c41e7ae" category="inline-link-macro-rx"></block> Azure NetApp Files 서비스에 대한 충분한 권한이 있는 Azure Active Directory에서 앱 등록에서는 다음 중 하나를 사용해야 합니다.</block>
   <block id="ee495045d2c4c5131217a0248a404b4d" category="inline-link-macro">Azure에서 사전 정의</block>
-  <block id="0b0da58ea52df6ff74bcbb53ae7ba931" category="list-text">소유자 또는 참가자 역할입니다 <block ref="76b3209c91e1786a477c35a6e91cf55f" category="inline-link-macro-rx"></block></block>
   <block id="2fbc632d5939633cc9c3b254d116080f" category="inline-link-macro">사용자 지정 참가자 역할</block>
   <block id="b0ee19cc46a4fb3df97c1c676c0a5d57" category="inline-link-macro">Azure 포털을 사용하여 역할을 할당합니다</block>
   <block id="993c1a80e778c965961521eeb4afd398" category="list-text">A <block ref="8ad3956583058d3582a7dd1281d1f882" category="inline-link-macro-rx"></block> 구독 레벨입니다 <block ref="e023f2926fb9af676f2809a760efeb14" prefix="(" category="inline-code"></block>) 다음 사용 권한은 Astra Trident에 필요한 권한만 가집니다. 사용자 지정 역할을 만든 후 <block ref="af58105ed429db29198b767444ed6d0d" category="inline-link-macro-rx"></block>.</block>
   <block id="daba51cb28ea016a4e85ad77defc5a2c" category="list-text">Azure를 선택합니다<block ref="d5189de027922f81005951e6efe0efd5" prefix=" " category="inline-code"></block> 하나 이상의 항목이 포함되어 있습니다 <block ref="e2df5d3690a644a8599397d798c15f56" category="inline-link-macro-rx"></block>. Trident 22.01부터<block ref="d5189de027922f81005951e6efe0efd5" prefix=" " category="inline-code"></block> 매개 변수는 백엔드 구성 파일의 최상위 수준에 있는 필수 필드입니다. 가상 풀에 지정된 위치 값은 무시됩니다.</block>
   <block id="77a4a369d552f7d3be163bda86f9113f" category="section-title">SMB 볼륨에 대한 추가 요구사항</block>
   <block id="1f43150a13f29c496f07ed4a9750b2ff" category="list-text">Linux 컨트롤러 노드 및 Windows Server 2019를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.</block>
-  <block id="43950c84ce08a6b99dc3b224bc37d814" category="list-text">ANF가 Active Directory에 인증할 수 있도록 Active Directory 자격 증명이 포함된 Astra Trident 암호가 하나 이상 있어야 합니다. 암호를 생성합니다<block ref="e47a193687dde960f6b6f80d394142a3" prefix=" " category="inline-code"></block>:</block>
   <block id="7595de66780a622cdd37b4823afebc07" category="inline-link-macro">GitHub:CSI 프록시</block>
   <block id="c680a0c023a6d45186b9752a07e9938c" category="inline-link-macro">GitHub: Windows용 CSI 프록시</block>
   <block id="2d6b406e65ac91f2af09f4228e3efe4f" category="list-text">Windows 서비스로 구성된 CSI 프록시. 를 구성합니다<block ref="0f8126c17871ed45f2a848f15d96a1bb" prefix=" " category="inline-code"></block>를 참조하십시오 <block ref="3ca23c6eadaac7aa23a492aef5e5d012" category="inline-link-macro-rx"></block> 또는 <block ref="0b56a9ad79a8fef177779e7d3d856994" category="inline-link-macro-rx"></block> Windows에서 실행되는 Kubernetes 노드의 경우:</block>
@@ -3585,4 +3579,15 @@
   <block id="d4cc4428c9a6422247c8ff288ea4b5eb" category="cell">Pod용 추가 노드 선택기 pod.spec.nodeSelector 과 동일한 형식을 따릅니다.</block>
   <block id="a5353a10ead2905c577659fdd805af0a" category="summary">Astra Trident가 Kubernetes 클러스터에서 실행되는 방법을 알아보십시오.</block>
   <block id="c350769115c3c8e4132e9c428b166b12" category="doc">Astra Trident 아키텍처</block>
+  <block id="d90582d42d65d5af05c3d40ad0eb4987" category="admonition">Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경우 Azure NetApp Files를 설정하고 NFS 볼륨을 생성하려면 몇 가지 초기 구성이 필요합니다. 을 참조하십시오<block ref="b6e93c3bfc36cf835c63e42e55586d97" category="inline-link-rx"></block>.</block>
+  <block id="84444089b52eed627a838de74ae8d652" category="section-title">NFS 및 SMB 볼륨의 사전 요구 사항</block>
+  <block id="99c7065ab76131a7b7763287bb5b6735" category="inline-link-macro">Microsoft: Azure NetApp Files에 대한 용량 풀을 생성합니다</block>
+  <block id="ee59ecaa79882c8dc8f7f897c113094a" category="list-text">용량 풀입니다. 을 참조하십시오 <block ref="96caced282b604468ab13f86483cd9f6" category="inline-link-macro-rx"></block>.</block>
+  <block id="7ed0731ff411d37210b51a78b95c1fc3" category="inline-link-macro">Microsoft: Azure NetApp Files에 서브넷을 위임합니다</block>
+  <block id="c896cfae248dc2b000cc04c39d8a8de6" category="list-text">Azure NetApp Files에 위임된 서브넷. 을 참조하십시오 <block ref="795b5e8f62d2267a0996a3b260968048" category="inline-link-macro-rx"></block>.</block>
+  <block id="856955b6cbc3fe2168b2dcd43fb0a5dd" category="list-text">소유자 또는 참가자 역할입니다 <block ref="76b3209c91e1786a477c35a6e91cf55f" category="inline-link-macro-rx"></block>.</block>
+  <block id="227e516e7258b6dcab3e7bcb4148f7f1" category="paragraph">SMB 볼륨을 생성하려면 다음이 있어야 합니다.</block>
+  <block id="d8c74c31c4550aed073521ba0fb8984a" category="inline-link-macro">Microsoft: Azure NetApp Files에 대한 Active Directory 연결을 만들고 관리합니다</block>
+  <block id="6bb7e9dc5268dcbdde1a91b151d9a94b" category="list-text">Active Directory가 구성되어 Azure NetApp Files에 연결되었습니다. 을 참조하십시오 <block ref="2f3bcda54aaf4e8e45316bb04708293f" category="inline-link-macro-rx"></block>.</block>
+  <block id="3742b45a8312c4721cad63322a4932ac" category="list-text">Azure NetApp Files가 Active Directory에 인증할 수 있도록 Active Directory 자격 증명이 포함된 Astra Trident 암호가 하나 이상 있어야 합니다. 암호를 생성합니다<block ref="e47a193687dde960f6b6f80d394142a3" prefix=" " category="inline-code"></block>:</block>
 </blocks>
