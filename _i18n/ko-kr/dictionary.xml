@@ -3658,4 +3658,5 @@
   <block id="0a08ed3de9d17e8644d3e57dc374c3ea" category="cell">힘 분리 기능을 활성화합니다.</block>
   <block id="632a46acdaa26f30f25b11d5c83eaa58" category="cell"><block ref="94ef2a130a825358ab3002442d6e5145" prefix="" category="inline-code"></block></block>
   <block id="ad77b466842808c8dce5116073a3e52b" category="cell">운영자 POD 보안 정책을 생성할 수 없습니다.</block>
+  <block id="31aae55e68bb5034f8f948ec526b9ff3" category="paragraph">다른 인증 방법을 사용하거나 자격 증명을 회전하도록 기존 백엔드를 업데이트할 수 있습니다. 이렇게 하면 사용자 이름/암호를 사용하는 백엔드를 인증서를 사용하도록 업데이트할 수 있고 인증서를 사용하는 백엔드는 사용자 이름/암호 기반으로 업데이트할 수 있습니다. 이렇게 하려면 기존 인증 방법을 제거하고 새 인증 방법을 추가해야 합니다. 그런 다음 실행할 필수 매개 변수가 포함된 업데이트된 backend.json 파일을 사용합니다<block ref="defd1e55f93269ac9278afc086951ba8" prefix=" " category="inline-code"></block>.</block>
 </blocks>
