@@ -110,7 +110,7 @@ NetApp HCI/SolidFire 플랫폼과 함께 사용되는 'olidfire-SAN' 드라이�
 
 Astra Trident는 'Azure-NetApp-files' 드라이버를 사용하여 를 관리합니다 link:https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^] 서비스.
 
-이 드라이버 및 구성 방법에 대한 자세한 내용은 에서 찾을 수 있습니다 link:https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files를 위한 Astra Trident 백엔드 구성입니다"^].
+이 드라이버 및 구성 방법에 대한 자세한 내용은 에서 찾을 수 있습니다 link:https://docs.netapp.com/us-en/trident/trident-use/anf.html["Azure NetApp Files를 위한 Astra Trident 백엔드 구성입니다"^].
 
 [cols="20,10,10,10,10,10,10"]
 |===
