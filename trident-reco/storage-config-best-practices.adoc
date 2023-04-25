@@ -129,32 +129,25 @@ QoS 정책 그룹을 생성할 때는 다음 사항을 고려하십시오.
 
 [listing]
 ----
-  {
-    "version": 1,
-    "storageDriverName": "ontap-nas",
-    "managementLIF": "0.0.0.0",
-    "dataLIF": "0.0.0.0",
-    "svm": "svm0",
-    "username": "user",
-    "password": "pass",
-    "defaults": {
-      "qosPolicy": "standard-pg"
-    },
-    "storage": [
-      {
-        "labels": {"performance": "extreme"},
-        "defaults": {
-          "adaptiveQosPolicy": "extremely-adaptive-pg"
-        }
-      },
-      {
-        "labels": {"performance": "premium"},
-        "defaults": {
-          "qosPolicy": "premium-pg"
-        }
-      }
-    ]
-  }
+  ---
+version: 1
+storageDriverName: ontap-nas
+managementLIF: 0.0.0.0
+dataLIF: 0.0.0.0
+svm: svm0
+username: user
+password: pass
+defaults:
+  qosPolicy: standard-pg
+storage:
+- labels:
+    performance: extreme
+  defaults:
+    adaptiveQosPolicy: extremely-adaptive-pg
+- labels:
+    performance: premium
+  defaults:
+    qosPolicy: premium-pg
 ----
 * 각 볼륨이 정책 그룹에서 지정한 전체 처리량을 얻을 수 있도록 볼륨별로 정책 그룹을 적용해야 합니다. 공유 정책 그룹은 지원되지 않습니다.
 

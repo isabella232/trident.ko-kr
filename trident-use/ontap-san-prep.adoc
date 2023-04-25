@@ -40,6 +40,16 @@ Astra Trident는 SVM 범위/클러스터 범위 관리자에게 ONTAP 백엔드�
 
 백엔드 정의의 예는 다음과 같습니다.
 
+[role="tabbed-block"]
+====
+.YAML
+--
+'''
+버전: 1 backendName: ExampleBackend storageDriverName: ONTAP-SAN 관리 LIF: 10.0.0.1 dataLIF: 10.0.0.2 svm:svm_nfs 사용자 이름: vsadmin 암호: password
+
+--
+.JSON을 참조하십시오
+--
 [listing]
 ----
 {
@@ -50,9 +60,12 @@ Astra Trident는 SVM 범위/클러스터 범위 관리자에게 ONTAP 백엔드�
   "dataLIF": "10.0.0.2",
   "svm": "svm_nfs",
   "username": "vsadmin",
-  "password": "password",
+  "password": "password"
 }
+
 ----
+--
+====
 백엔드 정의는 자격 증명이 일반 텍스트로 저장되는 유일한 위치라는 점에 유의하십시오. 백엔드가 생성된 후 사용자 이름/암호는 Base64로 인코딩되어 Kubernetes 암호로 저장됩니다. 백엔드의 생성 또는 업데이트는 자격 증명에 대한 지식이 필요한 유일한 단계입니다. 따라서 Kubernetes/스토리지 관리자가 수행할 수 있는 관리 전용 작업입니다.
 
 
@@ -194,25 +207,24 @@ Astra Trident가 CSI Provisioner로 실행되지 않을 경우, Kubernetes 클�
 
 == 양방향 CHAP를 사용하여 연결을 인증합니다
 
-Astra Trident는 ONTAP-SAN과 ONTAP-SAN 절약 드라이버에 양방향 CHAP를 사용하여 iSCSI 세션을 인증할 수 있습니다. 이를 위해서는 백엔드 정의에서 'useCHAP' 옵션을 사용해야 합니다. "true"로 설정하면 Astra Trident가 SVM의 기본 이니시에이터 보안을 양방향 CHAP로 구성하고 백엔드 파일의 사용자 이름과 암호를 설정합니다. 양방향 CHAP를 사용하여 연결을 인증하는 것이 좋습니다. 다음 샘플 구성을 참조하십시오.
+Astra Trident는 의 양방향 CHAP를 사용하여 iSCSI 세션을 인증할 수 있습니다 `ontap-san` 및 `ontap-san-economy` 드라이버. 이를 위해서는 가 활성화되어야 합니다 `useCHAP` 백엔드 정의에서 선택할 수 있습니다. 를 로 설정한 경우 `true`, Astra Trident는 SVM의 기본 이니시에이터 보안을 양방향 CHAP로 구성하고 백엔드 파일의 사용자 이름과 암호를 설정합니다. 양방향 CHAP를 사용하여 연결을 인증하는 것이 좋습니다. 다음 샘플 구성을 참조하십시오.
 
 [listing]
 ----
-{
-    "version": 1,
-    "storageDriverName": "ontap-san",
-    "backendName": "ontap_san_chap",
-    "managementLIF": "192.168.0.135",
-    "svm": "ontap_iscsi_svm",
-    "useCHAP": true,
-    "username": "vsadmin",
-    "password": "password",
-    "igroupName": "trident",
-    "chapInitiatorSecret": "cl9qxIm36DKyawxy",
-    "chapTargetInitiatorSecret": "rqxigXgkesIpwxyz",
-    "chapTargetUsername": "iJF4heBRT0TCwxyz",
-    "chapUsername": "uh2aNCLSd6cNwxyz",
-}
+---
+version: 1
+storageDriverName: ontap-san
+backendName: ontap_san_chap
+managementLIF: 192.168.0.135
+svm: ontap_iscsi_svm
+useCHAP: true
+username: vsadmin
+password: password
+igroupName: trident
+chapInitiatorSecret: cl9qxIm36DKyawxy
+chapTargetInitiatorSecret: rqxigXgkesIpwxyz
+chapTargetUsername: iJF4heBRT0TCwxyz
+chapUsername: uh2aNCLSd6cNwxyz
 ----
 
 WARNING: useCHAP는 한 번만 설정할 수 있는 Boolean 옵션이다. 기본적으로 false로 설정되어 있습니다. true 로 설정한 후에는 false 로 설정할 수 없습니다.

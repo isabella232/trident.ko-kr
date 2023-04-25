@@ -59,6 +59,25 @@ NOTE: 파일 시스템에 연결할 수 있는 모든 위치에서 SSH를 사용
 
 . 아래 예에 표시된 대로 인증서와 관리 LIF의 DNS 이름을 사용하여 백엔드 파일을 생성합니다.
 +
+[role="tabbed-block"]
+====
+.YAML
+--
+[listing]
+----
+---
+version: 1
+storageDriverName: ontap-san
+backendName: customBackendName
+managementLIF: svm-XXXXXXXXXXXXXXXXX.fs-XXXXXXXXXXXXXXXXX.fsx.us-east-2.aws.internal
+svm: svm01
+clientCertificate: ZXR0ZXJwYXB...ICMgJ3BhcGVyc2
+clientPrivateKey: vciwKIyAgZG...0cnksIGRlc2NyaX
+trustedCACertificate: zcyBbaG...b3Igb3duIGNsYXNz
+----
+--
+.JSON을 참조하십시오
+--
 [listing]
 ----
 {
@@ -69,9 +88,12 @@ NOTE: 파일 시스템에 연결할 수 있는 모든 위치에서 SSH를 사용
   "svm": "svm01",
   "clientCertificate": "ZXR0ZXJwYXB...ICMgJ3BhcGVyc2",
   "clientPrivateKey": "vciwKIyAgZG...0cnksIGRlc2NyaX",
-  "trustedCACertificate": "zcyBbaG...b3Igb3duIGNsYXNz",
+  "trustedCACertificate": "zcyBbaG...b3Igb3duIGNsYXNz"
  }
+
 ----
+--
+====
 +
 백엔드 만들기에 대한 자세한 내용은 다음 링크를 참조하십시오.
 

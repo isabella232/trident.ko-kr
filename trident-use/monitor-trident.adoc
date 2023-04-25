@@ -148,27 +148,22 @@ Astra Trident에서 보낸 페이로드의 예는 다음과 같습니다.
 
 [listing]
 ----
-{
-  "items": [
-    {
-      "backendUUID": "ff3852e1-18a5-4df4-b2d3-f59f829627ed",
-      "protocol": "file",
-      "config": {
-        "version": 1,
-        "storageDriverName": "ontap-nas",
-        "debug": false,
-        "debugTraceFlags": null,
-        "disableDelete": false,
-        "serialNumbers": [
-          "nwkvzfanek_SN"
-        ],
-        "limitVolumeSize": ""
-      },
-      "state": "online",
-      "online": true
-    }
-  ]
-}
+---
+items:
+- backendUUID: ff3852e1-18a5-4df4-b2d3-f59f829627ed
+  protocol: file
+  config:
+    version: 1
+    storageDriverName: ontap-nas
+    debug: false
+    debugTraceFlags:
+    disableDelete: false
+    serialNumbers:
+    - nwkvzfanek_SN
+    limitVolumeSize: ''
+  state: online
+  online: true
+
 ----
 * AutoSupport 메시지는 NetApp의 AutoSupport 엔드포인트로 전송됩니다. 개인 레지스트리를 사용하여 컨테이너 이미지를 저장하는 경우 '--image-registry' 플래그를 사용할 수 있습니다.
 * 또한 설치 YAML 파일을 생성하여 프록시 URL을 구성할 수도 있습니다. 이는 트라이덴트ctl install --generate-custom-YAML을 이용해 YAML 파일을 생성하고 트리덴트 배포(trident-deployment)의 트리덴트 자동 지원 컨테이너에 대한 '--proxy-url' 주장을 추가하는 방식으로 가능하다.

@@ -55,6 +55,29 @@ Astra Trident 스토리지 백엔드는 가용성 영역에 따라 볼륨을 선
 
 다음은 백엔드 정의의 예입니다.
 
+[role="tabbed-block"]
+====
+.YAML
+--
+[listing]
+----
+---
+version: 1
+storageDriverName: ontap-san
+backendName: san-backend-us-east1
+managementLIF: 192.168.27.5
+svm: iscsi_svm
+username: admin
+password: password
+supportedTopologies:
+- topology.kubernetes.io/region: us-east1
+  topology.kubernetes.io/zone: us-east1-a
+- topology.kubernetes.io/region: us-east1
+  topology.kubernetes.io/zone: us-east1-b
+----
+--
+.JSON을 참조하십시오
+--
 [listing]
 ----
 {
@@ -71,6 +94,8 @@ Astra Trident 스토리지 백엔드는 가용성 영역에 따라 볼륨을 선
 ]
 }
 ----
+--
+====
 
 NOTE: 'SupportedTopologies'는 백엔드 당 지역 및 영역 목록을 제공하는 데 사용됩니다. 이러한 영역 및 영역은 StorageClass 에서 제공할 수 있는 허용 가능한 값의 목록을 나타냅니다. 백엔드에서 제공되는 지역 및 영역의 하위 집합이 포함된 StorageClasses의 경우 Astra Trident는 백엔드에 볼륨을 생성합니다.
 
@@ -78,36 +103,34 @@ NOTE: 'SupportedTopologies'는 백엔드 당 지역 및 영역 목록을 제공�
 
 [listing]
 ----
-{"version": 1,
-"storageDriverName": "ontap-nas",
-"backendName": "nas-backend-us-central1",
-"managementLIF": "172.16.238.5",
-"svm": "nfs_svm",
-"username": "admin",
-"password": "password",
-"supportedTopologies": [
-      {"topology.kubernetes.io/region": "us-central1", "topology.kubernetes.io/zone": "us-central1-a"},
-      {"topology.kubernetes.io/region": "us-central1", "topology.kubernetes.io/zone": "us-central1-b"}
-    ]
-"storage": [
-   {
-       "labels": {"workload":"production"},
-        "region": "Iowa-DC",
-        "zone": "Iowa-DC-A",
-        "supportedTopologies": [
-            {"topology.kubernetes.io/region": "us-central1", "topology.kubernetes.io/zone": "us-central1-a"}
-        ]
-    },
-    {
-        "labels": {"workload":"dev"},
-         "region": "Iowa-DC",
-         "zone": "Iowa-DC-B",
-         "supportedTopologies": [
-             {"topology.kubernetes.io/region": "us-central1", "topology.kubernetes.io/zone": "us-central1-b"}
-         ]
-     }
-]
-}
+---
+version: 1
+storageDriverName: ontap-nas
+backendName: nas-backend-us-central1
+managementLIF: 172.16.238.5
+svm: nfs_svm
+username: admin
+password: password
+supportedTopologies:
+- topology.kubernetes.io/region: us-central1
+  topology.kubernetes.io/zone: us-central1-a
+- topology.kubernetes.io/region: us-central1
+  topology.kubernetes.io/zone: us-central1-b
+storage:
+- labels:
+    workload: production
+  region: Iowa-DC
+  zone: Iowa-DC-A
+  supportedTopologies:
+  - topology.kubernetes.io/region: us-central1
+    topology.kubernetes.io/zone: us-central1-a
+- labels:
+    workload: dev
+  region: Iowa-DC
+  zone: Iowa-DC-B
+  supportedTopologies:
+  - topology.kubernetes.io/region: us-central1
+    topology.kubernetes.io/zone: us-central1-b
 ----
 이 예에서는 "reGion" 및 "zone" 레이블이 스토리지 풀의 위치를 나타냅니다. "topology.Kubernetes.io/region" 및 "topology.Kubernetes.io/zone"은 스토리지 풀을 사용할 수 있는 위치를 지정합니다.
 
