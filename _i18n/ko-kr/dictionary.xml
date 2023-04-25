@@ -3625,7 +3625,6 @@
   <block id="bd4b2f0d545a83fd434f5ba1f17dd087" category="paragraph">다음은 백엔드 정의의 예입니다.</block>
   <block id="9463f87bbed1fcdacfb8d40e185ca2bc" category="open-title">YAML</block>
   <block id="0ecd11c1d7a287401d148a23bbd7a2f8" category="open-title">JSON을 참조하십시오</block>
-  <block id="0f327c9851416d260b583dd9a4140a04" category="paragraph">버전: 1 backendName: ExampleBackend storageDriverName: ONTAP-SAN 관리 LIF: 10.0.0.1 dataLIF: 10.0.0.2 svm:svm_nfs 사용자 이름: vsadmin 암호: password</block>
   <block id="1bb09b46ddb492f0798a5793d23a63c9" category="paragraph">Astra Trident는 의 양방향 CHAP를 사용하여 iSCSI 세션을 인증할 수 있습니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> 및<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 드라이버. 이를 위해서는 가 활성화되어야 합니다<block ref="099cb468880f266cba40b49391fa46bc" prefix=" " category="inline-code"></block> 백엔드 정의에서 선택할 수 있습니다. 를 로 설정한 경우<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, Astra Trident는 SVM의 기본 이니시에이터 보안을 양방향 CHAP로 구성하고 백엔드 파일의 사용자 이름과 암호를 설정합니다. 양방향 CHAP를 사용하여 연결을 인증하는 것이 좋습니다. 다음 샘플 구성을 참조하십시오.</block>
   <block id="4bf283d1d1c781fbb7e90b237dc80ac4" category="paragraph">을(를) 생성합니다<block ref="913a4b06671d1e04e6582a85afe3abbe" prefix=" " category="inline-code"></block> 이 경우 기존 백엔드에 바인딩되므로 백엔드 구성을 확보해야 합니다. 이 예에서는 다음과 같은 JSON 정의를 사용하여 백엔드를 생성했다고 가정합니다.</block>
   <block id="2043559d67ba802541907de326b5ecdd" category="paragraph">다음은 기본값이 정의된 예입니다.</block>
@@ -3662,4 +3661,5 @@
   <block id="6cd4bb7e4d59531066c198c531ea267a" category="paragraph">사용할 계층화 정책, 기본값은 입니다<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block>;<block ref="8805d416ce540c5f2df34af5b18d742b" prefix=" " category="inline-code"></block> ONTAP 9.5 이전 SVM-DR 구성용</block>
   <block id="c1fd85851a162222ab0690383666bd47" category="paragraph"><block ref="05b6053c41a2130afd6fc3b158bda4e6" prefix="" category="inline-code"></block></block>
   <block id="bf0a8b77dbb95465376fb2cfec90b422" category="paragraph"><block ref="76bb7251da6a3c88e629c03a402b9d15" prefix="" category="inline-code"></block></block>
+  <block id="fa12f478676fc33d2385cf4e955c7023" category="paragraph">버전: 1 backendName: ExampleBackend storageDriverName: ONTAP-SAN 관리 LIF: 10.0.0.1 svm:svm_nfs 사용자 이름: vsadmin 암호: password</block>
 </blocks>
