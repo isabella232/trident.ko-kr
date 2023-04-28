@@ -20,15 +20,17 @@ entries:
   - title: NetApp HCI 또는 SolidFire
     url: "/trident-use/element.html"
   - title: ONTAP SAN 드라이버
-    url: "/trident-use/ontap-san.html"
     entries:
+    - title: 개요
+      url: "/trident-use/ontap-san.html"
     - title: 구성 준비
       url: "/trident-use/ontap-san-prep.html"
     - title: 구성 옵션 및 예
       url: "/trident-use/ontap-san-examples.html"
   - title: ONTAP NAS 드라이버
-    url: "/trident-use/ontap-nas.html"
     entries:
+    - title: 개요
+      url: "/trident-use/ontap-nas.html"
     - title: 구성 준비
       url: "/trident-use/ontap-nas-prep.html"
     - title: 구성 옵션 및 예

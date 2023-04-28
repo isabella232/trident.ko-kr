@@ -141,9 +141,13 @@ NFS 마운트 옵션을 세밀하게 제어합니다. 기본값은 "-o nfsvers=3
 
 
 | “인명이름”입니다  a| 
-플러그인에서 사용되는 igroup. 기본값은 입니다 `netappdvp`. * ONTAP-SAN driver * 에서만 사용 가능.
+Astra Trident는 노드당 작성 및 관리합니다 `igroups` 현재 `netappdvp`.
+
+이 값은 변경하거나 생략할 수 없습니다.
+
+* 에서만 사용할 수 있습니다 `ontap-san` 드라이버 *.
  a| 
-`myigroup`
+`netappdvp`
 
 
 
@@ -348,7 +352,7 @@ FlexGroups에 적합한 FlexGroups 및 워크로드에 대한 자세한 내용�
     "username": "vsadmin",
     "password": "password",
     "aggregate": "aggr1",
-    "igroupName": "myigroup"
+    "igroupName": "netappdvp"
 }
 ----
 * 'ONTAP-SAN-이코노미' 드라이버용 NFS 예시 *
@@ -364,7 +368,7 @@ FlexGroups에 적합한 FlexGroups 및 워크로드에 대한 자세한 내용�
     "username": "vsadmin",
     "password": "password",
     "aggregate": "aggr1",
-    "igroupName": "myigroup"
+    "igroupName": "netappdvp"
 }
 ----
 

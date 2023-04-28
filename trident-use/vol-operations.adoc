@@ -11,7 +11,14 @@ summary: Astra Trident는 볼륨을 관리하는 몇 가지 기능을 제공합�
 :imagesdir: ../media/
 
 
+[role="lead"]
 볼륨 관리를 위한 Astra Trident의 기능에 대해 알아보십시오.
+
+
+
+== 볼륨 관리
+
+Astra Trident를 사용하여 볼륨을 관리하는 방법에 대한 자세한 내용은 다음을 참조하십시오.
 
 * link:csi-topology.html["CSI 토폴로지를 사용합니다"^]
 * link:vol-snapshots.html["스냅샷 작업"^]

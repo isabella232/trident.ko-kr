@@ -180,22 +180,6 @@
   <block id="193bfae1ebda99fb7289c66fa69395a0" category="list-text"><block ref="193bfae1ebda99fb7289c66fa69395a0" category="inline-link-rx"></block></block>
   <block id="cba2c660d905f83e39a0d1771286c9e7" category="inline-link">Astra Trident 21.01</block>
   <block id="97f32ab1a5165dc49105dca53b9f4de7" category="list-text"><block ref="97f32ab1a5165dc49105dca53b9f4de7" category="inline-link-rx"></block></block>
-  <block id="727d2d1e15a5c7260e90c50b1c250a4c" category="inline-link">Astra Trident 20.10</block>
-  <block id="8a0315074645cbbab67a7445dcdf42f2" category="list-text"><block ref="8a0315074645cbbab67a7445dcdf42f2" category="inline-link-rx"></block></block>
-  <block id="bad2b8fa41c05085668e48d7c14968dc" category="inline-link">Astra Trident 20.07</block>
-  <block id="449d7e957347de63ee3d9841c40b4e7f" category="list-text"><block ref="449d7e957347de63ee3d9841c40b4e7f" category="inline-link-rx"></block></block>
-  <block id="7c0a09ca9ea4472728e4661755a43c6b" category="inline-link">Astra Trident 20.04</block>
-  <block id="8a72b28486832ed8c725617460afbdcb" category="list-text"><block ref="8a72b28486832ed8c725617460afbdcb" category="inline-link-rx"></block></block>
-  <block id="1dc5429c6c86712d7628beb5652a0e2e" category="inline-link">Astra Trident 20.01</block>
-  <block id="23204facdc38bad335a6afce81db0827" category="list-text"><block ref="23204facdc38bad335a6afce81db0827" category="inline-link-rx"></block></block>
-  <block id="5b2d210bf907d26b59abbaa0e22fbbe6" category="inline-link">아스트라 트리덴트 19.10</block>
-  <block id="3377906a52734323c44c8f31b2d29e63" category="list-text"><block ref="3377906a52734323c44c8f31b2d29e63" category="inline-link-rx"></block></block>
-  <block id="f1d7fe87216a18ff3ffcfa98d6065689" category="inline-link">Astra Trident 19.07</block>
-  <block id="12e29d431cea2700aa9d89e0c89e67bc" category="list-text"><block ref="12e29d431cea2700aa9d89e0c89e67bc" category="inline-link-rx"></block></block>
-  <block id="fe4bdabecc64b786523a3d86bb1f9cfd" category="inline-link">아스트라 트리덴트 19.04</block>
-  <block id="e43783d5a51a10670edf444f0b58b6af" category="list-text"><block ref="e43783d5a51a10670edf444f0b58b6af" category="inline-link-rx"></block></block>
-  <block id="5e152ff33f3262612abc4b942db27ad1" category="inline-link">아스트라 트리덴트 19.01</block>
-  <block id="977636e26059252def0425dca74811ef" category="list-text"><block ref="977636e26059252def0425dca74811ef" category="inline-link-rx"></block></block>
   <block id="d59b86d1714966230da7a00672e40912" category="summary">여기에 나열된 권장 사항을 사용하여 Astra Trident 설치가 안전한지 확인합니다.</block>
   <block id="2fae32629d4ef4fc6341f1751b405e45" category="doc">보안</block>
   <block id="44a736677691eaca5e5d3d6b5c770b22" category="section-title">자체 네임스페이스에서 Astra Trident를 실행합니다</block>
@@ -594,42 +578,18 @@
   <block id="13c852fce58f7c6981fa0a952dcd76af" category="summary">Trident 연산자를 사용하면 ' Trident' 사양의 특성을 사용하여 Astra Trident가 설치되는 방식을 사용자 지정할 수 있습니다.</block>
   <block id="83f499a540b1323009c200d6f8cc9396" category="cell">매개 변수</block>
   <block id="7a1920d61156abc05a60135aefe8bc67" category="cell">기본값</block>
-  <block id="f3f30d479f6e3b393d917a3b2f88c770" category="cell">'네임스페이스'</block>
-  <block id="c9db68ea6cff44f42ac5acbbfccec399" category="cell">Astra Trident를 설치할 네임스페이스입니다</block>
-  <block id="9aa82da0cffe247b84587c1cc8e32746" category="cell">"기본값"</block>
   <block id="a67cf6b087ff88dbfacec8375928995c" category="cell">"버그"</block>
   <block id="4f72bc786a1a01d5a1a8bc09d33334cc" category="cell">Astra Trident에 대한 디버깅을 활성화합니다</block>
   <block id="68934a3e9455fa72420237eb05902327" category="cell">거짓</block>
-  <block id="3dd791c4864e77ae6cf11572e2d7b374" category="cell">IPv6를 통해 Astra Trident를 설치합니다</block>
-  <block id="077e99fe42ced522b462656cffffe09c" category="cell">k8sTimeout</block>
-  <block id="4448b73eac083e33b7142f0e5790fac5" category="cell">Kubernetes 작업 시간이 초과되었습니다</block>
-  <block id="e4d71bf2abad047425f4463e27bb83b0" category="cell">30초</block>
-  <block id="42cf123e93ecc5c0297652edbc547fc0" category="cell">이제 자동 지원입니다</block>
-  <block id="4a213b7c3b997ffb0794b25909381d16" category="cell">AutoSupport 번들을 NetApp에 자동으로 보내지 않습니다</block>
-  <block id="34d0f4a447cd1d7f59000d3be2c39320" category="cell">"enableNodePrep"입니다</block>
-  <block id="2472256a6487b0917d32f6a044a4e0ac" category="cell">작업자 노드 종속성 자동 관리(* beta*)</block>
   <block id="2bccac20e55391730a985f9819e1cc41" category="cell">자동 지원 이미지</block>
   <block id="84448c234dfdfd2a7367341fd4b56a80" category="cell">AutoSupport 텔레메트리 컨테이너 이미지입니다</block>
   <block id="f4a6821b04b9ce6b90148068341347b6" category="cell">자동 지원 프록시</block>
-  <block id="7f54ca385f028308d19e228ce0534a47" category="cell">AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다</block>
   <block id="256acfe307251e7444859851d87d5735" category="cell"><block ref="256acfe307251e7444859851d87d5735" category="inline-link-rx"></block></block>
   <block id="e9f06180af644cfa6e5d20bd67c03bc5" category="cell">"제거"를 선택합니다</block>
-  <block id="076bc379a24183ce77834bac007ca852" category="cell">Astra Trident를 제거하는 데 사용되는 플래그입니다</block>
-  <block id="cad060d2f14dbf08315c20014ed31daa" category="cell">로그포맷</block>
-  <block id="acfc4a8e6d53bad27d4e2d393bfff61e" category="cell">사용할 Astra Trident 로깅 형식[text,json]</block>
-  <block id="20cd815523e5806aec29a57282b0d49f" category="cell">"텍스트"</block>
   <block id="7610c5cc7910022402c4fbd450d889ce" category="cell">트리덴티이미지</block>
-  <block id="20f408a3276af1f7f1bf02ba374786ca" category="cell">설치할 Astra Trident 이미지</block>
-  <block id="896185b87765c519346253a5f54ecbe4" category="cell">"NetApp/트리덴트: 21.04"</block>
   <block id="8088435dc0e1c8b85217d850d3e7a602" category="cell">'imageRegistry'입니다</block>
-  <block id="4f25f4cca5c1939f4a728d2678e719f7" category="cell">'&lt;registry FQDN&gt;[:port][/subpath]' 형식의 내부 레지스트리 경로입니다</block>
   <block id="e6b96cbb467923e86672bb25db5ecebb" category="cell">쿠벨레트디렉토리</block>
-  <block id="31aad37dce0c28e12908582a0d63736a" category="cell">호스트의 kubelet 디렉토리에 대한 경로입니다</block>
-  <block id="5b9febd4bd647dae5abfddaf99b9c540" category="cell">“/var/lib/kubelet”</block>
-  <block id="b6e0e2c4168573f0ed61c842470342ba" category="cell">"위피"</block>
-  <block id="4e33345575b5a443dec89767624a1ee8" category="cell">Astra Trident를 완전히 제거하기 위해 삭제할 리소스 목록입니다</block>
   <block id="2d30d1348c4d2533a165827a22516caa" category="cell">'imagePullSecrets'</block>
-  <block id="f73bb4a0bc9913e7fc6db5f9e5f2afeb" category="cell">내부 레지스트리에서 이미지를 가져올 수 있는 비밀</block>
   <block id="2e1b3f44683eee188be985693c4af5e1" category="list-text">Helm 버전 3</block>
   <block id="e366a20246a41520da551be510c1d658" category="paragraph">설치 중에 구성 데이터를 전달하는 방법에는 두 가지가 있습니다.</block>
   <block id="e420b75ec3bc014e3f69c43b2383768b" category="admonition">OpenShift에서는 뒤에 나오는 모든 예시에서 kubtl 대신 OC를 사용하고, OC login-u system:admin 또는 OC login-u kubbe-admin을 실행하여 먼저 * system:admin * 으로 로그인합니다.</block>
@@ -846,15 +806,10 @@
   <block id="db5eb84117d06047c97c9a0191b5fffe" category="doc">지원</block>
   <block id="14340f3a4eb25a54f8446036d807d7c8" category="paragraph">Astra Trident는 공식적으로 지원되는 NetApp 프로젝트입니다. 표준 메커니즘을 사용하여 NetApp에 연락하면 필요한 엔터프라이즈급 지원을 받을 수 있습니다.</block>
   <block id="ef1161058705470bb877fbce688eea9e" category="summary">ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오.</block>
-  <block id="9a5f09cf66e692efdae493ce4c9aa64f" category="inline-link-macro">준비</block>
-  <block id="6c728e8788471413351ba9fcd26ca76e" category="list-text"><block ref="6c728e8788471413351ba9fcd26ca76e" category="inline-link-macro-rx"></block></block>
-  <block id="e5fc4f2bd89271cfb112e8b768f74dde" category="inline-link-macro">구성 및 예</block>
-  <block id="874216718c1d50bbd2aa417449058e46" category="list-text"><block ref="874216718c1d50bbd2aa417449058e46" category="inline-link-macro-rx"></block></block>
   <block id="ce8828fc10a926c196951c9bdd0d534d" category="section-title">사용자 권한</block>
   <block id="96c17dbe45e7351fb2a4f71956c25e0c" category="paragraph">Astra Trident는 일반적으로 "admin" 클러스터 사용자 또는 "vsadmin" SVM 사용자를 사용하거나 동일한 역할을 가진 다른 이름을 가진 사용자를 사용하여 ONTAP 또는 SVM 관리자로 실행될 것으로 예상합니다. NetApp ONTAP 구축을 위한 Amazon FSx의 경우 Astra Trident는 클러스터 'fsxadmin' 사용자 또는 'vsadmin' SVM 사용자 또는 동일한 역할을 가진 다른 이름의 사용자를 사용하여 ONTAP 또는 SVM 관리자로 실행될 것으로 예상합니다. 'fsxadmin' 사용자는 클러스터 관리자 사용자에게 제한된 교체품입니다.</block>
   <block id="4937b52eb2cb058f225b69b2caafaf29" category="admonition">'limitAggregateUsage' 매개 변수를 사용하는 경우 클러스터 관리자 권한이 필요합니다. Astra Trident와 함께 NetApp ONTAP용 Amazon FSx를 사용하는 경우 "limitAggregateUsage" 매개 변수는 "vsadmin" 및 "fsxadmin" 사용자 계정과 작동하지 않습니다. 이 매개 변수를 지정하면 구성 작업이 실패합니다.</block>
   <block id="8f828c7344e7fe65d66237a25193068b" category="summary">ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오.</block>
-  <block id="b5c795328aa98beaf5bdc15b54a533c1" category="paragraph">ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오. 모든 ONTAP 백엔드의 경우, Astra Trident는 SVM에 하나 이상의 Aggregate가 할당되어 있어야 합니다.</block>
   <block id="5475028f502d04bc17cdfdf613d28cbf" category="paragraph">또한 둘 이상의 드라이버를 실행하고 둘 중 하나를 가리키는 스토리지 클래스를 생성할 수도 있습니다. 예를 들어, ONTAP-SAN 드라이버와 ONTAP-SAN-이코노미 클래스를 사용하는 '기본 클래스'를 사용하는 'san-dev' 클래스를 구성할 수 있습니다.</block>
   <block id="c75f7811d70d17dbcd88e9d03752cbed" category="section-title">인증</block>
   <block id="51e35cec1e001fb8abfbe474a18dd282" category="paragraph">Astra Trident는 ONTAP 백엔드를 인증하는 두 가지 모드를 제공합니다.</block>
@@ -880,13 +835,6 @@
   <block id="2ab8ad0fce083cd02635b9126cf4353c" category="section-title">인증 방법을 업데이트하거나 자격 증명을 회전합니다</block>
   <block id="5e36c3d66bd47ae551071244dc48df17" category="admonition">암호를 회전할 때 스토리지 관리자는 먼저 ONTAP에서 사용자의 암호를 업데이트해야 합니다. 그 다음에는 백엔드 업데이트가 있습니다. 인증서를 회전할 때 여러 인증서를 사용자에게 추가할 수 있습니다. 그런 다음 백엔드가 업데이트되어 새 인증서를 사용합니다. 그러면 ONTAP 클러스터에서 이전 인증서를 삭제할 수 있습니다.</block>
   <block id="6819218365fe3a3d66752f663feecddb" category="paragraph">백엔드를 업데이트해도 이미 생성된 볼륨에 대한 액세스가 중단되거나 이후에 생성된 볼륨 연결에 영향을 미치지 않습니다. 백엔드 업데이트가 성공적이면 Astra Trident가 ONTAP 백엔드와 통신하고 향후 볼륨 작업을 처리할 수 있음을 나타냅니다.</block>
-  <block id="93a4f17ec735c794a2d38eb0d9dc736b" category="section-title">Igroup을 지정합니다</block>
-  <block id="f66329c2f28d3aade033dade4fa02359" category="paragraph">Astra Trident에서 igroup을 사용하여 프로비저닝하는 볼륨(LUN)에 대한 액세스를 제어합니다. 관리자는 백엔드에 대한 igroup을 지정할 때 다음 두 가지 옵션을 사용할 수 있습니다.</block>
-  <block id="caf7ba3262c90c77b09b7d53946b7be4" category="list-text">Astra Trident는 백엔드에 따라 igroup을 자동으로 생성하고 관리할 수 있습니다. 만약 'triviName'이 백엔드 정의에 포함되지 않으면, Astra Trident는 SVM에 'trident-&lt;backend-UUID&gt;'라는 igroup을 생성합니다. 그러면 각 백엔드에 전용 igroup이 있고 Kubernetes 노드 IQN의 자동 추가/삭제를 처리합니다.</block>
-  <block id="b325b5680680ba28771d11978100bf3a" category="list-text">또는 미리 생성된 igroup을 백엔드 정의로 제공할 수도 있습니다. 이 작업은 'show'(이름) config 매개 변수를 사용하여 수행할 수 있습니다. Astra Trident가 기존 igroup에 Kubernetes 노드 IQN을 추가/삭제합니다.</block>
-  <block id="ccdb9f53393401f058dcfc9c1de74547" category="paragraph">'인명이름'이 정의된 백엔드의 경우, '인명이름'을 '트리멘틀백엔드 업데이트'를 사용하여 삭제하고 Astra Trident에서 Igroup을 자동 처리할 수 있습니다. 이 경우 워크로드에 이미 연결된 볼륨에 대한 액세스가 중단되지 않습니다. 생성된 igroup Astra Trident를 사용하여 향후 연결을 처리할 것입니다.</block>
-  <block id="8841675f2e0dbba5719034b41ac52435" category="admonition">Astra Trident의 각 고유 인스턴스에 대해 igroup을 할당하는 것은 Kubernetes 관리자 및 스토리지 관리자에게 유용한 모범 사례입니다. CSI Trident는 클러스터 노드 IQN을 igroup에 추가 및 제거하여 관리를 크게 단순화합니다. 전용 igroup을 사용하여 Kubernetes 환경(및 Astra Trident 설치)에서 동일한 SVM을 사용할 경우 한 Kubernetes 클러스터의 변경 사항이 다른 Kubernetes 클러스터와 관련된 igroup에 영향을 미치지 않도록 합니다. 또한 Kubernetes 클러스터의 각 노드에 고유한 IQN이 있는지 확인하는 것도 중요합니다. 위에 언급한 바와 같이, Astra Trident는 IQN의 추가 및 제거를 자동으로 처리합니다. 호스트 간에 IQN을 재사용하면 호스트가 서로 잘못 인식되어 LUN에 대한 액세스가 거부되는 바람직하지 않은 시나리오가 발생할 수 있습니다.</block>
-  <block id="3882232e20d620974a87db190a124fe7" category="paragraph">Astra Trident가 CSI Provisioner로 실행되지 않을 경우, Kubernetes 클러스터의 모든 작업자 노드에서 iSCSI IQN을 포함하도록 igroup을 수동으로 업데이트해야 합니다. Kubernetes 클러스터에 참여하는 노드의 IQN을 igroup에 추가해야 합니다. 마찬가지로, Kubernetes 클러스터에서 제거된 노드의 IQN을 igroup에서 제거해야 합니다.</block>
   <block id="42f93278b0d15c8d0f6613813bf586d5" category="section-title">양방향 CHAP를 사용하여 연결을 인증합니다</block>
   <block id="12dd7bfa072b5a1eecf975f6a5a6eaa7" category="admonition">useCHAP는 한 번만 설정할 수 있는 Boolean 옵션이다. 기본적으로 false로 설정되어 있습니다. true 로 설정한 후에는 false 로 설정할 수 없습니다.</block>
   <block id="bc601528678aeeb582101ed205a054bc" category="paragraph">useCHAP=true 외에, chapInitatorSecret, chapTargetInitialatorSecret, chapchTargetUsername, chapUsername 필드가 백엔드 정의에 포함되어야 합니다. tridentctl update를 실행하여 백엔드를 생성한 후 비밀을 변경할 수 있다.</block>
@@ -980,7 +928,6 @@
   <block id="c732962a4a01ea5f406ec66e50e98903" category="admonition">tridentctl을 사용하여 연결된 'TrientBackendConfig' 객체가 포함된 백엔드는 업데이트하거나 삭제할 수 없습니다. tridentctl과 트리멘BackendConfig의 전환 단계를 이해하려면 <block ref="8d6bc70a41f48e3f72c3f5ea8752090b" category="inline-link-macro-rx"></block>.</block>
   <block id="bc960ce53bb0d62c44b5a3f212c279d3" category="summary">스토리지 클래스를 생성하고, 스토리지 클래스를 삭제하고, 기존 스토리지 클래스를 볼 수 있습니다.</block>
   <block id="e8b9c3a9859a62e9a58431c3b61f75d5" category="doc">스토리지 클래스를 관리합니다</block>
-  <block id="5802c976ee5f858f76699af5294812e6" category="paragraph">스토리지 클래스 생성, 스토리지 클래스 삭제 및 기존 스토리지 클래스 보기에 대한 정보를 찾을 수 있습니다.</block>
   <block id="e123173acd76721f31496874fd778eca" category="section-title">스토리지 클래스를 설계합니다</block>
   <block id="a9a4b52c93b141ba28676afe58a5900d" category="paragraph">을 참조하십시오 <block ref="5a81d2db77288939223c6a591fc3991d" category="inline-link-macro-rx"></block> 스토리지 클래스의 정의 및 구성 방법에 대한 자세한 내용은 를 참조하십시오.</block>
   <block id="14f4c7abe09c4481722f1fa6563f2604" category="section-title">스토리지 클래스를 생성합니다</block>
@@ -1006,7 +953,6 @@
   <block id="dc0742ede78913414129866d60898f67" category="paragraph">이 예는 Astra Trident 백엔드 객체에 대해 tridentctl이 출력하는 JSON으로 답할 수 있는 질문의 예입니다. 먼저 설치해야 할 JQ 유틸리티가 사용됩니다.</block>
   <block id="bee1e2306bc7054ee443dc651eae90de" category="summary">Astra Trident는 Astra Trident의 성능을 모니터링하는 데 사용할 수 있는 Prometheus 메트릭 엔드포인트 세트를 제공합니다.</block>
   <block id="44a004cad6eb7ea8839aaa8754ead178" category="doc">Astra Trident를 모니터링합니다</block>
-  <block id="3f8e7343fbab71427901476dc4eb0cf3" category="paragraph">Astra Trident는 Astra Trident의 성능을 모니터링하는 데 사용할 수 있는 Prometheus 메트릭 엔드포인트 세트를 제공합니다.</block>
   <block id="c827f266cf12e05adc1fe95215415abf" category="paragraph">Astra Trident에서 제공하는 메트릭을 통해 다음을 수행할 수 있습니다.</block>
   <block id="6111d709595b0a106ff313a249eb9d92" category="list-text">Astra Trident의 상태 및 구성을 계속 확인하십시오. 성공적인 작업이 어떻게 이루어지는지, 예상대로 백엔드와 통신할 수 있는지 확인할 수 있습니다.</block>
   <block id="64dbac0ca36d9b1f6a8cf1e8a0123261" category="list-text">백엔드 사용 정보를 검토하고 백엔드에서 프로비저닝되는 볼륨 수와 사용된 공간 등을 파악합니다.</block>
@@ -1117,7 +1063,6 @@
   <block id="a61ed3c1ecae587dbee1f2c0ace81e3b" category="paragraph">백엔드 생성에 실패하면 백엔드 구성에 문제가 있는 것입니다. 다음 명령을 실행하여 로그를 보고 원인을 확인할 수 있습니다.</block>
   <block id="8427b84145b88f048d5caa532324cd11" category="paragraph">구성 파일의 문제를 확인하고 수정한 후 create 명령을 다시 실행할 수 있습니다.</block>
   <block id="e4f61797b38c111b04c612b285a06659" category="summary">ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오.</block>
-  <block id="9bc537b16cee9c42d1e2aa0048a2c426" category="paragraph">ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오. 모든 ONTAP 백엔드의 경우, Astra Trident는 SVM에 하나 이상의 Aggregate가 할당되어 있어야 합니다.</block>
   <block id="00b8b321c68facfb94b31690cbd23e00" category="paragraph">모든 ONTAP 백엔드의 경우, Astra Trident는 SVM에 하나 이상의 Aggregate가 할당되어 있어야 합니다.</block>
   <block id="c6cd2f38be30f5256f7116692ab56edd" category="paragraph">또한 둘 이상의 드라이버를 실행하고 둘 중 하나를 가리키는 스토리지 클래스를 생성할 수도 있습니다. 예를 들어, 'ONTAP-NAS' 드라이버와 'ONTAP-NAS-이코노미'을 사용하는 Bronze 클래스를 사용하는 Gold 클래스를 구성할 수 있습니다.</block>
   <block id="07b434b23f63ca6490df33b213599320" category="section-title">NFS 엑스포트 정책을 관리합니다</block>
@@ -1180,7 +1125,6 @@
   <block id="e395471eab1d4c8fbc8452e98a95d0c5" category="list-text">가져올 FlexVol의 이름을 입력합니다. 이 FlexVol에는 가져와야 하는 LUN이 하나만 포함되어 있습니다.</block>
   <block id="9e6bd670c6fd6b2808fae744834b7675" category="list-text">'-f' 플래그와 함께 사용해야 하는 PVC 정의 경로를 제공합니다.</block>
   <block id="36b577af0f959f68e5e66336695e816c" category="list-text">PVC 관리 또는 비관리형 중에서 선택합니다. 기본적으로 Trident는 PVC를 관리하고 백엔드에서 FlexVol 및 LUN의 이름을 바꿉니다. 관리되지 않는 볼륨으로 가져오려면 '--no-manage' 플래그를 전달합니다.</block>
-  <block id="f898748ff73fc5faf70687cbb0051311" category="admonition">관리되지 않는 'ONTAP-SAN' 볼륨을 가져올 때는 FlexVol의 LUN이 'LUN0'으로 명명되고 원하는 이니시에이터가 있는 igroup에 매핑되어 있는지 확인해야 합니다. Astra Trident에서 관리되는 가져오기를 위해 이 작업을 자동으로 처리합니다.</block>
   <block id="66f7455d3b73d0f9938704ee67b1f38a" category="paragraph">그러면 Astra Trident가 FlexVol를 가져와 PVC 정의와 연결합니다. Astra Trident는 FlexVol의 이름을 PVC-&lt;uuid&gt; 형식으로 바꾸고 FlexVol 내의 LUN은 LUN0으로 바꿉니다.</block>
   <block id="2d37ad5bcf7d115e10de14a38db72232" category="admonition">기존 활성 연결이 없는 볼륨을 가져오는 것이 좋습니다. 사용 중인 볼륨을 가져오려는 경우 먼저 볼륨을 클론한 다음 가져오기를 수행합니다.</block>
   <block id="72b3664e6e381ccc62031c13f7ad6df9" category="paragraph">ONTAP_SAN_DEFAULT 백엔드에 존재하는 ONTAP-SAN-MANDATED FlexVol를 가져오려면 tridentctl import 명령을 다음과 같이 실행합니다.</block>
@@ -1319,7 +1263,6 @@
   <block id="972abf48cbbadbcd573754140d35e19a" category="cell">사용할 스토리지 가상 머신입니다</block>
   <block id="ef65dd3301d78701f7cfcf8a01834f2f" category="cell">SVM 'managementLIF'가 지정된 경우에 파생됩니다</block>
   <block id="3b890f58db76bb3003ada171cd18c4db" category="cell">“인명이름”입니다</block>
-  <block id="1c59f4b76e4f9bf529f88205cd0a8ac6" category="cell">“삼중 - &lt;backend-UUID&gt;”</block>
   <block id="c08068da3c5d19547544c4bd424a6b76" category="cell">'토르agePrefix'</block>
   <block id="e3f688f3aa653574b3253640aa98f47c" category="cell">SVM에서 새 볼륨을 프로비저닝할 때 사용되는 접두사 설정한 후에는 업데이트할 수 없습니다</block>
   <block id="a996d2f8e072c583d6cc26aa1e4aba87" category="cell">"삼중류"</block>
@@ -1420,7 +1363,6 @@
   <block id="e59001176f4360988f5d774a8405b4b9" category="cell">엑포트정책</block>
   <block id="8b7b728c6a1e7accd6148646ba730e77" category="summary">Astra Trident에서 백엔드를 관리하는 다양한 방법에 대해 알아보십시오.</block>
   <block id="4342473e01edd2e1440b8b76076f4c9e" category="doc">백엔드 관리 옵션 간 이동</block>
-  <block id="207aacc2f1990ce861bf20cfcd0ca067" category="paragraph">Astra Trident에서 백엔드를 관리하는 다양한 방법에 대해 알아보십시오. 트리젠백엔드구성이 도입됨에 따라 관리자는 이제 두 가지 방법으로 백엔드를 관리할 수 있게 되었습니다. 이 질문은 다음과 같습니다.</block>
   <block id="a7b407f571446f9f4a30f63e8160784a" category="list-text">tridentctl을 사용하여 만든 백엔드는 트리엔백엔드구성을 사용하여 관리할 수 있습니까?</block>
   <block id="3e1fc11d05c13404995af2b9fda64675" category="list-text">트리덴ctl을 사용하여 트리엔디Config를 사용하여 만든 백엔드를 관리할 수 있습니까?</block>
   <block id="d6da18e16f248df47ee8e5139ef0156a" category="paragraph">이 섹션에서는 'Tridentctl' 객체를 만들어 Kubernetes 인터페이스를 통해 직접 생성된 백엔드를 관리하는 데 필요한 단계에 대해 설명합니다.</block>
@@ -1449,7 +1391,6 @@
   <block id="1ad97e0f65ef91102831baaa31630c76" category="admonition">'정책'이 '유지'로 설정되어 있지 않으면 다음 단계로 진행하지 마십시오.</block>
   <block id="8313f77478cb0df464604ae4435acce2" category="paragraph">마지막 단계는 트리엔디Config CR을 삭제하는 것이다. '정책'이 '유지'로 설정되어 있는지 확인한 후 삭제를 계속 수행할 수 있습니다.</block>
   <block id="c1493b6d6e05639a816e5772bbb491af" category="paragraph">트리젠벤트Config 객체를 삭제하면 Astra Trident는 백엔드 자체를 삭제하지 않고 간단히 해당 객체를 제거합니다.</block>
-  <block id="99c7791f20f0d41bd8f14c11e666a405" category="summary">NetApp ONTAP용 Amazon FSx와 Astra Trident를 사용하면 Amazon Elastic Kubernetes Service(EKS)에서 실행되는 Kubernetes 클러스터에서 ONTAP가 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있습니다.</block>
   <block id="7eb620c879218a348ba0e9afaedf6b01" category="paragraph">파일 시스템은 Amazon FSx의 주요 리소스이며, 이는 사내 ONTAP 클러스터와 유사합니다. 각 SVM 내에서 파일 시스템에 파일과 폴더를 저장하는 데이터 컨테이너인 하나 이상의 볼륨을 생성할 수 있습니다. NetApp ONTAP용 Amazon FSx를 사용하면 클라우드에서 Data ONTAP가 관리형 파일 시스템으로 제공됩니다. 새로운 파일 시스템 유형을 * NetApp ONTAP * 라고 합니다.</block>
   <block id="ff27e75635c1ff1e88fbc656b16e56ce" category="section-title">Astra Trident에 대해 자세히 알아보십시오</block>
   <block id="483a5da192f46e3cfe8391d3ef234fc4" category="inline-link-macro">FAQ 를 참조하십시오</block>
@@ -1485,7 +1426,6 @@
   <block id="e3f84c141fd3f4682dfb31e0d71c7f5f" category="cell">인바운드 사용자 이름입니다. useCHAP=true인 경우 필수입니다</block>
   <block id="62fbbf4cfd0cc0a82f953199d14a61e3" category="cell">'chapTargetUsername'입니다</block>
   <block id="a379a576b788ab047d5e6405ff4f3511" category="cell">대상 사용자 이름입니다. useCHAP=true인 경우 필수입니다</block>
-  <block id="73e65f4bf1c67cf81e3531ab80adee7e" category="paragraph">두 경우 모두 볼륨 첨부 파일에 계속 액세스할 수 있습니다. 향후 볼륨 첨부 파일은 업데이트된 igroup을 사용합니다. 이 업데이트는 백엔드에 있는 볼륨에 대한 액세스를 방해하지 않습니다.</block>
   <block id="036c0eabd455d8a92d350429f2f5747e" category="cell">생성된 볼륨에 할당할 적응형 QoS 정책 그룹입니다. 스토리지 풀/백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다</block>
   <block id="fab51d2bc90465982b0994bc86e69db9" category="admonition">'ONTAP-SAN' 드라이버를 사용하여 생성된 모든 볼륨의 경우, Astra Trident가 FlexVol에 10%의 용량을 추가하여 LUN 메타데이터를 수용합니다. LUN은 사용자가 PVC에서 요청하는 정확한 크기로 프로비저닝됩니다. Astra Trident가 FlexVol에 10%를 더합니다(ONTAP에서 사용 가능한 크기로 표시). 이제 사용자가 요청한 가용 용량을 얻을 수 있습니다. 또한 이 변경으로 인해 사용 가능한 공간이 완전히 활용되지 않는 한 LUN이 읽기 전용이 되는 것을 방지할 수 있습니다. ONTAP-SAN-경제에는 적용되지 않습니다.</block>
   <block id="824d88f50ab9e39778b0ef5bc2516b2f" category="paragraph">'스냅샷 보존'을 정의하는 백엔드의 경우 Astra Trident는 다음과 같이 볼륨의 크기를 계산합니다.</block>
@@ -1532,7 +1472,6 @@
   <block id="56661e701892ff873e44b62ffeec85e5" category="list-text"><block ref="56661e701892ff873e44b62ffeec85e5" category="inline-link-macro-rx"></block></block>
   <block id="c0417f5bbd54c5dc1c3704d6b566fcf3" category="list-text"><block ref="c0417f5bbd54c5dc1c3704d6b566fcf3" category="inline-link-macro-rx"></block></block>
   <block id="0f5dc79c8003190ab8f758b1748ba0d8" category="summary">NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. 다음은 최신 버전의 Astra Trident에 포함된 최신 기능, 개선 사항 및 버그 수정 사항입니다.</block>
-  <block id="5dd03e8d039863e563e049be198c3fd3" category="doc">릴리즈 노트</block>
   <block id="2e6ce374ac42de81aea6a3d682b92e33" category="paragraph">릴리즈 노트 최신 버전의 Astra Trident에 새로운 기능, 개선 사항 및 버그 수정 사항에 대한 정보를 제공합니다.</block>
   <block id="e4c4d344a524d21b898e4d04b6539aa7" category="admonition">설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바이너리는 테스트되고 지원되는 버전입니다. zip 파일의 '/Extras' 부분에 제공된 'macos' 바이너리는 테스트되거나 지원되지 않습니다.</block>
   <block id="41cf959adc98386b54829d71a6ed5d37" category="section-title">수정</block>
@@ -2253,7 +2192,6 @@
   <block id="d7c32cb5ff2be4aaff3a8eaea9d18e0d" category="list-text">SVM 이름이 지정되지 않은 경우 SVM이 더 이상 검색되지 않는 문제 해결(GitHub 문제 612)</block>
   <block id="a55b7ee69c26277a1088efc103e15297" category="paragraph">사용 가능한 명령 및 전역 옵션은 다음과 같습니다.</block>
   <block id="94912f7fb206038e8527957b44dfbf25" category="paragraph">그러면 모든 Trident 포드가 다시 시작됩니다. 이 작업은 몇 초 정도 걸릴 수 있습니다. 'kubeck get pod-n trident'의 출력에서 '나이' 열을 관찰하여 이를 확인할 수 있습니다.</block>
-  <block id="597a56086e1f9d7ca5e8f55c40a0153a" category="list-text">OpenShift Container Platform에서 지원하는 RedHat CoreOS(RHCOS) 버전</block>
   <block id="73e93ad328287e5ce4c06228cfdba2bf" category="cell">v1.23.0</block>
   <block id="08ee53e1d5cefb7967a295e98036598e" category="cell">스냅샷 디렉터리의 표시 여부를 제어합니다</block>
   <block id="016a4b469916e37291cfe2f7fab49aaf" category="cell">[재치 단체</block>
@@ -2307,8 +2245,6 @@
   <block id="7213ed07f5b718aa66cfac350f023a77" category="list-text">이미 가져온 볼륨을 가져오려고 하면 PVC가 보류 상태로 남겨둔 EOF가 반환되는 문제가 해결되었습니다. (<block ref="b9a2290d6389b9a605883cda4e717749" category="inline-link-macro-rx"></block>)</block>
   <block id="c28d8c94f865f3ef7e4b01a157510ef6" category="list-text">SolidFire 볼륨에 32개 이상의 스냅샷을 생성할 때 Astra Trident 성능이 느려지는 문제를 해결했습니다.</block>
   <block id="d0aaca968285d0d47ea0c5a0f7b9bab5" category="list-text">SHA-1을 SSL 인증서 생성에서 SHA-256으로 교체했습니다.</block>
-  <block id="92e6030d252cfd43e0567e282a0d2c9b" category="paragraph">Astra Trident는 을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하여 연결할 수 있습니다<block ref="80b9a4f4a1bc9851317207ee3477041a" category="inline-link-rx"></block>. CSI 토폴로지 기능을 사용하면 지역 및 가용성 영역에 따라 볼륨에 대한 액세스가 노드의 하위 집합으로 제한될 수 있습니다. 오늘날의 클라우드 공급자는 Kubernetes 관리자가 영역 기반의 노드를 생성할 수 있습니다. 노드는 지역 내 또는 여러 지역의 여러 가용성 영역에 위치할 수 있습니다. Astra Trident는 다중 영역 아키텍처에서 워크로드용 볼륨 프로비저닝을 지원하기 위해 CSI 토폴로지를 사용합니다.</block>
-  <block id="d293f031e5664526b25f3a65012401b7" category="cell">'IPv6'</block>
   <block id="997cff957213b9212a22d7cac2b4275d" category="list-text">생성된 인증서를 사용하여 인증을 테스트합니다. ONTAP 관리 LIF&gt; 및 &lt;SVM 이름&gt;을 관리 LIF IP 및 SVM 이름으로 바꿉니다. LIF의 서비스 정책이 'default-data-management'로 설정되어 있는지 확인해야 합니다.</block>
   <block id="1e6c7220f5d4eb181d67b4d5043336f5" category="paragraph">NetApp ONTAP용 Amazon FSx와 Astra Trident를 사용하면 Amazon EKS(Elastic Kubernetes Service)에서 실행되는 Kubernetes 클러스터가 ONTAP에서 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있습니다.</block>
   <block id="10b862795141355be1c179a2f878f507" category="list-text">** Quick create**를 사용하여 ONTAP 파일 시스템용 FSx를 생성하지 마십시오. 빠른 생성 워크플로에서는 자동 백업을 사용할 수 있으며 수신 거부 옵션은 제공하지 않습니다.</block>
@@ -2373,7 +2309,6 @@
   <block id="5a333b18a215ecfd4457ba0e1732654b" category="section-title">Trident가 로드 공유 미러가 구성된 SVM에서 볼륨을 프로비저닝할 수 있습니까?</block>
   <block id="0e7629426b9d7596800cd5d72f558a7f" category="paragraph">NFS를 통해 데이터를 제공하는 SVM의 루트 볼륨에 로드 공유 미러를 생성할 수 있습니다. ONTAP는 Trident에서 생성한 볼륨의 로드 공유 미러를 자동으로 업데이트합니다. 이로 인해 볼륨 마운팅이 지연될 수 있습니다. Trident를 사용하여 여러 볼륨을 생성할 경우 볼륨 프로비저닝은 ONTAP에서 로드 공유 미러 업데이트에 따라 달라집니다.</block>
   <block id="d5d195efeafde24a6a22effd3dd39339" category="list-text">자격 증명 기반: 파일 시스템에 대해 'fsxadmin' 사용자를 사용하거나 SVM용으로 구성된 'vsadmin' 사용자를 사용할 수 있습니다.</block>
-  <block id="0b4a92a731cb582bd951a7aa481f0602" category="list-text">Anthos On-Premise(VMware) 및 Anthos의 Bare Metal 1.9, 1.10, 1.11</block>
   <block id="7d3f46589c43a64fd040e4f0e0691a86" category="inline-link-macro">Helm 차트</block>
   <block id="c9ffe59301b588bbc33bb004cfd312ee" category="section-title">Trident 연산자를 구축하고 Hrom을 사용하여 Astra Trident를 설치합니다</block>
   <block id="1ea1b160621872df5909653ebde1bf7f" category="paragraph">자격 증명 기반 방법과 인증서 기반 방법 간에 이동하기 위해 기존 백엔드를 업데이트할 수 있습니다. 그러나 한 번에 하나의 인증 방법만 지원됩니다. 다른 인증 방법으로 전환하려면 백엔드 구성에서 기존 방법을 제거해야 합니다.</block>
@@ -2384,7 +2319,6 @@
   <block id="412427d9207c4cc4b01539aff3c50e7c" category="cell">'네트워크 기능'</block>
   <block id="6dc4cb19f2792a3eadfa64d4b4b6d177" category="paragraph">모든 Kubernetes 작업자 노드에 적절한 NFS 툴이 설치되어 있어야 합니다. 을 참조하십시오 <block ref="f1f954e59a21e3ffe189e77dd2ee9f86" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="6adbf3424e5de1b4e2baad3b4d632c4a" category="paragraph">다른 인증 방법을 사용하거나 자격 증명을 회전하도록 기존 백엔드를 업데이트할 수 있습니다. 이렇게 하면 사용자 이름/암호를 사용하는 백엔드를 인증서를 사용하도록 업데이트할 수 있고 인증서를 사용하는 백엔드는 사용자 이름/암호 기반으로 업데이트할 수 있습니다. 이렇게 하려면 기존 인증 방법을 제거하고 새 인증 방법을 추가해야 합니다. 그런 다음 필요한 매개 변수가 포함된 업데이트된 backend.json 파일을 사용하여 'tridentctl backend update'를 실행합니다.</block>
-  <block id="da5e3ce6518bd669264e1e0768c2d9f1" category="paragraph">모든 Kubernetes 작업자 노드에는 적절한 iSCSI 툴이 설치되어 있어야 합니다. 을 참조하십시오 <block ref="f1f954e59a21e3ffe189e77dd2ee9f86" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="4169ad079be240db45893881a795d255" category="paragraph">에서 문제를 만듭니다<block ref="e71a8230f1c77ee7d957187295b859e4" category="inline-link-rx"></block> 제목에 * RFE * 를 기재하고 문제에 대한 설명을 기재하십시오.</block>
   <block id="a7cfd917113a9ee9c1e789887d1d809f" category="inline-link-macro">불화 채널</block>
   <block id="c0ecc0f40acc112b78de6c3fd3c29e83" category="paragraph">질문, 문제 또는 요청이 있을 경우 Astra를 통해 문의해 주십시오 <block ref="6130664377fa14615bb1abd5257e9714" category="inline-link-macro-rx"></block> 또는 GitHub 를 선택합니다.</block>
@@ -2508,7 +2442,6 @@
   <block id="ba991f2f6d0f733e9b8a2136cedc99b2" category="paragraph">사용자 고유의 리소스 할당을 제어하려면 다음 명령을 사용하여 Astra Trident의 ResourceQuota 객체를 제거할 수 있습니다.</block>
   <block id="c217b0ac2dd5504f79ba78b220a9c358" category="summary">NetApp은 다양한 방법으로 Trident를 지원합니다. 불협화채널 등 광범위한 자아 지원 옵션이 연중 무휴로 제공됩니다.</block>
   <block id="1b3d6decfa71cc52ecc9b041f40a02e5" category="paragraph">또한 Astra의 컨테이너 사용자(Astra Trident 개발자 포함)로 구성된 활발한 공용 커뮤니티가 있습니다 <block ref="6130664377fa14615bb1abd5257e9714" category="inline-link-macro-rx"></block>. 프로젝트에 대한 일반적인 질문을 하고 비슷한 생각을 가진 동료와 관련 주제를 논의할 수 있는 좋은 장소입니다.</block>
-  <block id="9337cac2cd1105449cd4e78ff2a353a4" category="cell">"k8s.gcr.io/sig-storage(k8s 1.19 이상) 또는 quay.io/k8scsi"</block>
   <block id="702fa57eedc6ee8490a7294016f8b14f" category="list-text">트리덴트의 지략적인 요아ML</block>
   <block id="6b51834314ece904405eb0ce1a6e6bd8" category="list-text">NetApp HCI/Element 소프트웨어 11 이상</block>
   <block id="468bc1e7f7712a8dc9b91d063523cdff" category="cell">v1.24.0</block>
@@ -2518,7 +2451,6 @@
   <block id="0ae28ee1c5edfd4bee3e296a8261ed8b" category="inline-link-macro">GitHub 문제 #736</block>
   <block id="69ce5488c3078e15fc6e51116d1d17ba" category="list-text">CHAP가 아닌 경로에서 발생하는 오류를 처리하는 문제를 수정함으로써 kubelet이 실패한 경우 다시 시도합니다. <block ref="a21b5d75e3a2341288a5ed769d7d4ca2" category="inline-link-macro-rx"></block>)</block>
   <block id="701ba87ab75dde70f4604769defc7d00" category="list-text">k8s.gcr.io에서 registry.k8s.io로 CSI 이미지의 기본 레지스트리로 전환합니다</block>
-  <block id="95b61962ec35cc252a4791e4101c5aaa" category="list-text">ONTAP-SAN 볼륨은 이제 노드별 igroup을 사용하며 해당 노드에 능동적으로 게시되는 LUN만 igroup에 매핑하여 보안 상태를 향상합니다. Trident가 활성 워크로드에 영향을 주지 않고 안전하게 수행할 수 있다고 판단하면 기존 볼륨이 새로운 igroup 체계로 자동으로 전환됩니다.</block>
   <block id="90e3cd7cff1c9f6f4b8d2a509b127d44" category="list-text">Trident 설치에 리소스 할당량을 포함함으로써 PriorityClass 소비가 기본적으로 제한될 때 Trident DemonSet이 예약되도록 합니다.</block>
   <block id="838a6d7e89b7c366cfc25d3b2115b901" category="inline-link-macro">GitHub 문제 #717</block>
   <block id="83a65beedcdd811d7b3b4fe9d2c4614f" category="list-text">ANF 드라이버에 네트워크 기능에 대한 지원이 추가되었습니다. (<block ref="e0e89f8bd936a5eb3adce74cac88eab0" category="inline-link-macro-rx"></block>)</block>
@@ -2625,10 +2557,8 @@
   <block id="071d9becf308917b53d70c09e7da51b6" category="list-text">지원되는 NetApp 스토리지 시스템에 대한 액세스</block>
   <block id="19eb712f406fc64109f96d9cf4055cb9" category="list-text">모든 Kubernetes 작업자 노드에서 볼륨을 마운트할 수 있습니다.</block>
   <block id="5f35b91e200cda68bf700d65b89c2c73" category="list-text">가 설치된 Linux 호스트<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block> (또는<block ref="fb024832e51eb5f6da9113a745f1eb59" prefix=" " category="inline-code"></block>, OpenShift를 사용하는 경우) 사용하려는 Kubernetes 클러스터를 관리하도록 설치 및 구성한 것입니다.</block>
-  <block id="c1c8ac442a800bb41f1cc1dc1350132e" category="admonition">Astra Trident를 Windows 노드에서 실행하도록 설정하려면 을 추가합니다<block ref="636d7cccc33f77beafb20be9cf83cd53" prefix=" " category="inline-code"></block> 설치 명령에 플래그 지정:<block ref="a240440622dae805c5d62a3c17f5f51e" prefix=" " category="inline-code"></block>.</block>
   <block id="50f33d14f129e4548c1c270fd6725a78" category="section-title">구성 옵션</block>
   <block id="05f901da7fdacb9ca59e3d7e2d40f98d" category="cell"><block ref="0f4137ed1502b5045d6083aa258b5c42" prefix="" category="inline-code"></block></block>
-  <block id="fbbd7b4b14060c4fdb02f92c4c08e702" category="cell">를 로 설정합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> Windows 작업자 노드에 설치할 수 있습니다.</block>
   <block id="a3ff66cf5848a34d56915c8e879a5d52" category="section-title">샘플 구성</block>
   <block id="a6ba054ae6c021e3bc8a173393842c3d" category="paragraph">정의할 때 위에서 언급한 속성을 사용할 수 있습니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 를 눌러 설치를 사용자 정의합니다.</block>
   <block id="3dabf672facbe8c5e2eeff030c2b8520" category="example-title">예 1: 기본 사용자 정의 구성</block>
@@ -2690,7 +2620,6 @@
   <block id="eb89f16d07a93fa10a31ec6309045fe9" category="doc">ONTAP SAN 구성 옵션 및 예</block>
   <block id="b8ae61dc50cf8e8b79e68bc4a8d36393" category="cell"><block ref="0f179ba2bc32ab5d8f60692f5b800c86" prefix="" category="inline-code"></block></block>
   <block id="a56dcba8eacdac67fb510e1434d560d8" category="inline-link-macro">LUKS(Linux Unified Key Setup) 사용</block>
-  <block id="8f145066de3f0e0a9d2e9cc5bf6f09f5" category="doc">ONTAP NAS 백엔드를 구성합니다</block>
   <block id="fd05c90de484dbc1cb963df796886af4" category="doc">ONTAP NAS 드라이버를 사용하여 백엔드를 구성할 준비를 합니다</block>
   <block id="481e993a13f6d4f981acc2da60465e2a" category="summary">ANF에 대한 NFS 및 SMB 백엔드 구성 옵션에 대해 알아보고 구성 예를 검토하십시오.</block>
   <block id="17a48ec106d5505e674ccdf56fce1058" category="doc">Azure NetApp Files 백엔드 구성 옵션 및 예</block>
@@ -2726,11 +2655,9 @@
   <block id="c51cc3b801a879870aea846bdde1c7a3" category="section-title">백엔드를 생성합니다</block>
   <block id="7d8058d93ec1d95c673d83bf303326ff" category="doc">ONTAP NAS 구성 옵션 및 예</block>
   <block id="618a7676e411bbfbd9dbdb2411019951" category="summary">Astra Trident의 백엔드로 Azure NetApp Files(ANF)를 구성할 수 있습니다. ANF 백엔드를 사용하여 NAS 및 SMB 볼륨을 연결할 수 있습니다.</block>
-  <block id="9d556ecfb4757173c93a34a5466447d7" category="list-text"><block ref="9d556ecfb4757173c93a34a5466447d7" category="inline-link-macro-rx"></block></block>
   <block id="ea61e2c2ff507048203824add1eb7c21" category="section-title">고려 사항</block>
   <block id="8f395c84ad002394e9f070a25937dcc4" category="list-text">Azure NetApp Files 서비스는 100GB 미만의 볼륨을 지원하지 않습니다. Astra Trident는 더 작은 볼륨을 요청하는 경우 100GB 볼륨을 자동으로 생성합니다.</block>
   <block id="1cf44a6bee7fa333861e5d0042926fb5" category="list-text">Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.</block>
-  <block id="279096894abe6299537e865410f3d494" category="list-text">Astra Trident는 Windows ARM 아키텍처를 지원하지 않습니다.</block>
   <block id="ef0f938ae67a04ac3370fe516c2a6baf" category="list-text">Kubernetes 1.25 지원 추가. Kubernetes 1.25로 업그레이드하기 전에 Astra Trident를 22.10으로 업그레이드해야 합니다.</block>
   <block id="d041a310ba7cc2599250e64801594107" category="list-text">에 대한 지원이 추가되었습니다 <block ref="ca184a2eda203b6d98158bdf24e5cf7d" category="inline-link-macro-rx"></block>.</block>
   <block id="adbfe36f6399f2846983b2901604a962" category="list-text">추가되었습니다 <block ref="40be42d37bc6014716dcd0a1d368ffb5" category="inline-link-macro-rx"></block> 를 통해<block ref="bc5779a2d33eeb1304bae57f15920cfc" prefix=" " category="inline-code"></block> 스토리지 드라이버.</block>
@@ -2775,7 +2702,6 @@
   <block id="26dbe1fe275b741e7240a373222d3480" category="paragraph">CRD를 사용하는 Astra Trident 릴리즈로 이전할 때는 다운그레이드를 고려해야 합니다. Astra Trident는 CRD를 사용하여 상태를 유지하기 때문에 생성된 모든 스토리지 요소(백엔드, 스토리지 클래스, PV 및 볼륨 스냅샷)는 에 기록된 데이터 대신 CRD 객체를 연결합니다<block ref="47cb44be55a0dffa15dfc900a4c687be" prefix=" " category="inline-code"></block> PV(이전 설치 버전의 Astra Trident에서 사용). 새로 생성된 PVS, 백엔드 및 스토리지 클래스는 모두 CRD 객체로 유지됩니다.</block>
   <block id="06b33bc9cc124539c964174ecd43eb43" category="paragraph">CRD를 사용하여 실행되는 Astra Trident 버전에 대해서만 다운그레이드를 시도하십시오(19.07 이상). 그러면 다운그레이드가 발생한 후 현재 Astra Trident 릴리스에 대해 수행된 작업이 표시됩니다.</block>
   <block id="c27e444dab3a08bf8ec59794897c1a27" category="inline-link-macro">지원되는 Kubernetes 버전</block>
-  <block id="482d7c15b1a7200b3981ee1f99a86fef" category="list-text"><block ref="482d7c15b1a7200b3981ee1f99a86fef" category="inline-link-macro-rx"></block></block>
   <block id="756efcb3a97cdd37e8b34de3913c3d8f" category="paragraph">를 참조하십시오 <block ref="18d5551396fb2ce2e009cfdb709e4875" category="inline-link-macro-rx"></block>. 필수 구성 요소가 충족되었는지 확인한 후 Astra Trident를 배포할 준비가 되었습니다.</block>
   <block id="0d41f8565b8b74a59fc029ccf2becd83" category="list-text">관리 플러그인 시스템을 사용하여 Astra Trident를 시작합니다. 대치<block ref="3d689bd3819ead35ed794427bd12f459" prefix=" " category="inline-code"></block> 사용 중인 플러그인 버전(xxx.xx.x)을 사용합니다.</block>
   <block id="4f0e7dc30ffb3e25e75331c9afb2243a" category="cell">볼륨 모드</block>
@@ -2824,7 +2750,6 @@
   <block id="81801ea9aa153d054652d45bc18af0a7" category="section-title"><block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix="" category="inline-code"></block> 양방향 CHAP가 있는 드라이버</block>
   <block id="5d49eece8e9afa44ffdead9ff18462be" category="section-title"><block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix="" category="inline-code"></block> 드라이버</block>
   <block id="19ef07597f79648211dbed100709836b" category="section-title">포함할 백엔드를 업데이트합니다<block ref="1f2a94e142bf020b1f7c6297ec12413f" prefix=" " category="inline-code"></block></block>
-  <block id="004d3e2a4856b16f30a875347fa180b1" category="paragraph-title">알아야 할 내용</block>
   <block id="891d26d5e7410db6c0a971245c6025c0" category="section-title">예 1: 에 대한 백엔드 구성<block ref="c0d2a793e71b152662b3e8cd2da00620" prefix=" " category="inline-code"></block> 세 가지 볼륨 유형을 가진 드라이버</block>
   <block id="4a8519b09a0b2a70d40200e88ec2c5dc" category="section-title"><block ref="caafdf62a2c609bfa5316118231a1007" prefix="" category="inline-code"></block> 드라이버</block>
   <block id="454631312fab234fc91bb2f85a751fac" category="section-title"><block ref="913a4b06671d1e04e6582a85afe3abbe" prefix="" category="inline-code"></block></block>
@@ -2886,7 +2811,6 @@
   <block id="35aa4a2a819e526c2e930e487df8d423" category="list-text"><block ref="35aa4a2a819e526c2e930e487df8d423" category="inline-link-macro-rx"></block></block>
   <block id="19476662cd814e0aa085eca121de89b8" category="inline-link-macro">VolumeSnapshotClass</block>
   <block id="d63cadc96caf4b05f8fa532b08e889da" category="list-text"><block ref="d63cadc96caf4b05f8fa532b08e889da" category="inline-link-macro-rx"></block></block>
-  <block id="31f8757839909e87266f2b53482c86ef" category="list-text">Windows Server 2019</block>
   <block id="3b64653c97a388d828849314b6a1b383" category="cell">풀의 레이블 값은 다음과 같아야 합니다.</block>
   <block id="6da89265a9a8b0b28eb4946bb2ec0c6d" category="cell">일치</block>
   <block id="ecf92052d55345fee4602d9eb8c22063" category="cell">일치하지 않습니다</block>
@@ -2905,8 +2829,6 @@
   <block id="054b5072368dea4f8748909c16c7de98" category="cell">Thick: All ONTAP; Thin: All ONTAP &amp; solidfire-SAN</block>
   <block id="dbdc06f8742b98dcacdf7fdb1af111ea" category="paragraph">ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN, GCP-CV, Azure-NetApp-파일, ONTAP-SAN-이코노미</block>
   <block id="f888aa18c19e41f8c1263fa99ca8b94c" category="cell">solidfire-SAN, ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN - 경제성</block>
-  <block id="a64f78ea5d42780118e8f5c7f6cfdcbb" category="list-text"><block ref="a64f78ea5d42780118e8f5c7f6cfdcbb" category="inline-link-macro-rx"></block></block>
-  <block id="65a38da8aec2b99cf44dbf919fbd6991" category="list-text"><block ref="65a38da8aec2b99cf44dbf919fbd6991" category="inline-link-macro-rx"></block></block>
   <block id="05a2712653dfbf7d695c18242d9848e6" category="paragraph">RHEL 8+</block>
   <block id="bba4e1b8d8614fe9da2d67e2dcef4b52" category="paragraph"><block ref="8321592ce24c8a122ecf26a63cfca407" prefix="" category="inline-code"></block>,<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>,<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block>,<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block>,<block ref="c0d2a793e71b152662b3e8cd2da00620" prefix=" " category="inline-code"></block></block>
   <block id="c95cada2a569592345ebc18e5ef4c7aa" category="paragraph">프로토콜 LIF의 IP 주소입니다.</block>
@@ -2926,7 +2848,6 @@
   <block id="9899a49139c92dc0ebfa6808b9d83291" category="section-title">Astra Trident 23.01에 대한 중요 정보입니다</block>
   <block id="d883ab5f686800bc89cab8e6bd776c10" category="paragraph">* Astra Trident * 에 대한 다음 중요 정보를 읽어야 합니다</block>
   <block id="92b6d6e1b0bf78702d88ede445c4256f" category="example-title">&lt;strong&gt; 중요 정보 Astra Trident &lt;/strong&gt;</block>
-  <block id="bdae2123f4237558f3521f7e74c70955" category="list-text">이제 Trident에서 Kubernetes 1.26이 지원됩니다. Kubernetes를 업그레이드하기 전에 Trident를 업그레이드하십시오.</block>
   <block id="7416271d47db3d82227ab2164e43c75c" category="list-text">Astra Trident는 SAN 환경에서 다중 경로 구성을 엄격하게 사용하며 권장 값은 입니다<block ref="db729c5c8df447087e5a84b961df14f6" prefix=" " category="inline-code"></block> 다중 경로 .conf 파일</block>
   <block id="2f5480efe7a0a4b0cffbf110abec11c2" category="paragraph">Trident 사용 <block ref="cdacb2b0d49176a3c0d8cc9d693de833" category="inline-link-macro-rx"></block> Trident 연산자를 구축하고 Trident를 한 번에 설치할 수 있습니다.</block>
   <block id="3342f1a2f74c6062a39d3076c35c5a5b" category="inline-link-macro">설치 개요</block>
@@ -3003,11 +2924,9 @@
   <block id="aa7d43663995cc5a82e0608e61443ac2" category="list-text">대신 를 제거하고 대신 사용할 운영자 기반 배포가 있는 경우<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> Astra Trident를 배포하려면 먼저 편집해야 합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 그리고 설정합니다<block ref="f41a95848a012f4f1a6550ce79c588aa" prefix=" " category="inline-code"></block> Astra Trident를 제거합니다. 그런 다음 삭제합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 및 작업자 배포. 그런 다음 를 사용하여 를 설치할 수 있습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>.</block>
   <block id="e77325ac6e155cf5d14c756f1d64333f" category="list-text">작업자 기반의 수동 배포를 사용하고 H제어 기반 Trident 연산자 배포를 사용하려는 경우 먼저 수동으로 연산자를 제거한 다음 Helm 설치를 수행해야 합니다. 이를 통해 Helm은 필요한 레이블 및 주석을 사용하여 Trident 연산자를 배포할 수 있습니다. 이렇게 하지 않으면 레이블 유효성 검사 오류 및 주석 유효성 검사 오류와 함께 H제어 기반 Trident 연산자 배포가 실패합니다. 가 있는 경우<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>기반 배포에서는 문제 없이 Helm 기반 배포를 사용할 수 있습니다.</block>
   <block id="901977c62370814085e1228ede1e5919" category="summary">Astra Trident를 설치하기 전에 이러한 일반 시스템 요구 사항을 검토해야 합니다. 특정 백엔드에 추가 요구 사항이 있을 수 있습니다.</block>
-  <block id="40d52435469b4eba3a63775d6170cf3e" category="list-text">Kubernetes 1.21-1.26</block>
   <block id="020762714bd7a4355a1abeca3c382c18" category="list-text">OpenShift 4.9-4.12</block>
   <block id="0ffed9ae8c0b8e64c5dc8cba81c4fe34" category="list-text">FAS/AFF/9.5 이상을 선택합니다</block>
   <block id="6286d1b386e84c92fae11f2bcb9ceecd" category="paragraph">아래 표에는 Astra Trident의 이번 릴리즈와 함께 사용할 수 있는 기능과 지원하는 Kubernetes 버전이 요약되어 있습니다.</block>
-  <block id="db9435acb142577b87827261ece9f934" category="paragraph">1.21-1.26</block>
   <block id="6726c1f070eb0e4315bf3ec874a13f78" category="paragraph">Astra Trident가 공식적으로 특정 운영 체제를 지원하지 않지만 다음과 같은 운영 체제가 작동하는 것으로 알려져 있습니다.</block>
   <block id="f8b1c66e563136ad12055c2d31964acc" category="paragraph">Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저닝된 볼륨을 마운트할 수 있어야 합니다. 작업자 노드를 준비하려면 드라이버 선택에 따라 NFS 또는 iSCSI 도구를 설치해야 합니다.</block>
   <block id="f36d25716a4b2c466ddcb8065bef3ae6" category="paragraph"><block ref="f36d25716a4b2c466ddcb8065bef3ae6" category="inline-link-macro-rx"></block></block>
@@ -3015,9 +2934,6 @@
   <block id="50823ee9226376c44bfb71c334ee2f3f" category="paragraph"><block ref="50823ee9226376c44bfb71c334ee2f3f" category="inline-link-macro-rx"></block></block>
   <block id="29dcef620f05a3eaaf13d29d1f14e860" category="paragraph">Astra Trident는 통신을 위해 특정 포트에 액세스해야 합니다.</block>
   <block id="b2dabe4b341f1e163a7ba3f3553d6b1b" category="paragraph"><block ref="b2dabe4b341f1e163a7ba3f3553d6b1b" category="inline-link-macro-rx"></block></block>
-  <block id="9f523c82aa6c2773a498c832177d2ae0" category="list-text">NetApp/트리덴트 - AutoSupport: 23.01</block>
-  <block id="3cfdc4b11ed575c2d8bbcea1746d0976" category="list-text">K8s.IO/SIG - 스토리지/CSI - 공급자: v3.4.0</block>
-  <block id="57ad3884258dc4fe04c11750b8222daa" category="list-text">K8s.IO/SIG-storage/CSI-attacher:v4.1.0</block>
   <block id="7f7b6bf613e5a94b472dc4003c3c9d47" category="list-text">K8s.IO/SIG-storage/CSI-resizer: v1.7.0</block>
   <block id="bc5a94d13573ba35693929cfc2df5614" category="list-text">K8s.IO/SIG-storage/CSI-snapshotter:v6.2.1</block>
   <block id="938a05d206d8fc8b1d8a4342f0a74da0" category="list-text">K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.7.0</block>
@@ -3115,7 +3031,6 @@
   <block id="c5fbf8cba91fd09257dab41143773a09" category="paragraph">Astra Trident는 분기별 릴리스 케이던스를 따르며, 매년 4개의 주요 릴리즈를 제공합니다. 각 새로운 릴리스는 이전 릴리즈를 기반으로 하며 새로운 기능과 성능 향상, 버그 수정 및 개선 기능을 제공합니다. Astra Trident의 새로운 기능을 이용하려면 1년에 한 번 이상 업그레이드하시기 바랍니다.</block>
   <block id="61f660050f0deffc4b168fe9b8118e83" category="section-title">버전을 선택합니다</block>
   <block id="ecab08714a2cb76336fb5fe50c888c56" category="paragraph">Astra Trident 버전은 날짜를 기반으로 합니다<block ref="fb6921a005d395f9482cdac0306d4935" prefix=" " category="inline-code"></block> 이름 지정 규칙. 여기서 "YY"는 연도의 마지막 두 자리이고 "MM"은 월입니다. DOT 릴리스는 a를 따릅니다<block ref="d93ec759c4a0e8c1cf9c7653b2939656" prefix=" " category="inline-code"></block> 규칙. 여기서 "X"는 패치 수준입니다. 업그레이드할 버전에 따라 업그레이드할 버전을 선택합니다.</block>
-  <block id="b6d54dfe9998fc2d718d82ced3bad520" category="list-text">설치된 버전의 4 릴리스 창 내에 있는 모든 대상 릴리스에 대해 직접 업그레이드를 수행할 수 있습니다. 예를 들어 22.01에서 23.01로 직접 업그레이드할 수 있습니다(22.01.1과 같은 도트 릴리스 포함).</block>
   <block id="3c64b9fcc6316f2fb3e86bb37ec1e046" category="list-text">이전 버전이 설치되어 있는 경우, 특정 지침은 해당 릴리스의 설명서를 사용하여 다단계 업그레이드를 수행해야 합니다. 따라서 먼저 4개의 릴리즈 창에 맞는 최신 릴리즈로 업그레이드해야 합니다. 예를 들어 18.07을 실행하고 20.07 릴리스로 업그레이드하려는 경우 다음과 같이 다단계 업그레이드 프로세스를 따르십시오.</block>
   <block id="b42882f59822357cae71c7deef14a306" category="list-text">첫 번째 업그레이드는 18.07에서 19.07로 가능합니다.</block>
   <block id="3cf66ab24f2bf4b09d48a150a9e60aff" category="list-text">버전 19.04 및 이전 버전의 모든 업그레이드를 수행하려면 IT에서 Astra Trident 메타데이터를 마이그레이션해야 합니다<block ref="a226e9fbdfc1c8dd7e7fef4d333f86ed" prefix=" " category="inline-code"></block> CRD 개체. 업그레이드 작동 방식을 이해하려면 릴리즈 설명서를 확인하십시오.</block>
@@ -3137,7 +3052,6 @@
   <block id="50bfc8fc0d5fc544b43965b0746d1411" category="paragraph">클러스터 범위 Trident 운영자 설치를 업그레이드하려면 다음 단계를 수행하십시오. Astra Trident 버전 21.01 이상에서는 클러스터 범위 연산자를 사용합니다.</block>
   <block id="811eaf5a7a011a3e3c605acd9ea6d5fb" category="list-text">현재 Astra Trident 인스턴스를 설치하는 데 사용된 Trident 연산자를 삭제합니다. 예를 들어, 22.01에서 업그레이드하는 경우 다음 명령을 실행합니다.</block>
   <block id="bdae3121e140e5325fd05919c86dd97f" category="list-text">를 사용하여 초기 설치를 사용자 지정한 경우<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 속성을 편집할 수 있습니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 설치 매개 변수를 수정하는 개체입니다. 여기에는 오프라인 모드에 대해 미러링된 Trident 및 CSI 이미지 레지스트리를 지정하는 변경 사항, 디버그 로그 활성화 또는 이미지 풀 비밀을 지정하는 변경 사항이 포함될 수 있습니다.</block>
-  <block id="bd4060a8e80dfbd6f1540226cbeae99b" category="list-text">사용자 환경과 Astra Trident 버전에 맞는 올바른 번들 YAML 파일을 사용하여 Astra Trident를 설치합니다. 예를 들어, Kubernetes 1.26용 Astra Trident 23.01을 설치하는 경우 다음 명령을 실행합니다.</block>
   <block id="40b88899eb3616ad98776b847e919324" category="paragraph">Trident는 운영자를 설치하고 Kubernetes 버전용 관련 개체를 생성하는 데 사용할 수 있는 번들 파일을 제공합니다.</block>
   <block id="c80acc2d3549dd5f3d193892334b8fae" category="paragraph">Trident 운영자는 기존 Astra Trident 설치를 식별하고 운영자와 동일한 버전으로 업그레이드합니다.</block>
   <block id="1e09cc3768e537466d645c037041bffc" category="paragraph">네임스페이스 범위 연산자(버전 20.07 ~ 20.10)를 사용하여 설치된 Astra Trident의 인스턴스에서 업그레이드하려면 다음 단계를 수행하십시오.</block>
@@ -3148,7 +3062,6 @@
   <block id="b0f8c567e856516aabf80f916e995d4f" category="paragraph">초기 설치 중에 기본값이 아닌 옵션을 설정한 경우(예: Trident 및 CSI 이미지에 대한 전용, 미러 레지스트리 지정) 를 사용합니다<block ref="8b5806248570dbb13e7d3bc5e6c0ee37" prefix=" " category="inline-code"></block> 이러한 옵션이 업그레이드 명령에 포함되도록 하려면 값이 기본값으로 재설정됩니다.</block>
   <block id="3d0107bfa0874592e9dc04f9869b604b" category="list-text">실행<block ref="cd4140d3de30b520500459331d08d2bf" prefix=" " category="inline-code"></block> 차트와 앱 버전이 모두 업그레이드되었는지 확인합니다. 실행<block ref="3e725291d4b17065fdcd321172fcfae3" prefix=" " category="inline-code"></block> 디버그 메시지를 검토합니다.</block>
   <block id="d72f42539c286d006f46f1ddbcfc9ad0" category="paragraph">에서 Trident 운영자의 최신 릴리즈로 업그레이드할 수 있습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 설치:</block>
-  <block id="ce56959e2e76e7128bc8744171874942" category="paragraph">Astra Trident 23.01을 실행하지 않는 경우 이전 릴리스에 대한 문서를 사용할 수 있습니다. 버전 선택기를 사용하여 최신 버전과 이전 버전 4개를 탐색하거나 아래 링크를 사용할 수 있습니다.</block>
   <block id="3fe5d266a33f137293c314a2e334b611" category="inline-link">Astra Trident 22.10</block>
   <block id="9fefe9ff51badc61edd8a36c8240aa29" category="list-text"><block ref="9fefe9ff51badc61edd8a36c8240aa29" category="inline-link-rx"></block></block>
   <block id="55559f520040667d3f8931728b37ef07" category="paragraph">21.07 이전의 릴리스는 기존 문서 사이트로 리디렉션합니다.</block>
@@ -3314,8 +3227,6 @@
   <block id="e4f84f59067aa8e22119bf499379385a" category="inline-link-macro">ONTAP 구성 옵션 및 예제용 FSX</block>
   <block id="ca088cbb36bbab4b23e57d63d95a628c" category="list-text">백엔드를 생성할 때 SMB 볼륨을 지정하려면 다음을 구성해야 합니다. 모든 ONTAP 백엔드 구성 옵션에 대한 자세한 내용은 을 참조하십시오 <block ref="dd05fa371cf4b2c8377b8b4b261a8edd" category="inline-link-macro-rx"></block>.</block>
   <block id="7bb910e3cf11d0b34ca215aa399d3f23" category="cell"><block ref="5910159ef86741f119f7574a9064b5b0" prefix="" category="inline-code"></block></block>
-  <block id="7a17b79b33ad0814114d5c433d21f0e8" category="cell">공유 폴더 Microsoft 관리 콘솔을 사용하여 생성한 SMB 공유의 이름입니다. 예: "smb-share". * SMB 볼륨에 필요합니다. *</block>
-  <block id="595b9128da266e4c0415d8a11362e974" category="cell">"SMB 공유"</block>
   <block id="3b84c7b88317953423192c633a83db9f" category="cell">* 를 로 설정해야 합니다<block ref="79e0f325804dafbdaef73b3b17c0fd8d" prefix=" " category="inline-code"></block>. * null인 경우 기본값은 로 설정됩니다<block ref="2521ef5d58fc027d3121662b7d8f9ac2" prefix=" " category="inline-code"></block>.</block>
   <block id="1928bae58ae496b53ef1a163c3dbeeb4" category="cell">모드를 선택합니다. SMB 볼륨에 대해서는 * 를 비워 두어야 합니다. *</block>
   <block id="ded47128219e64b5f24343dab357151b" category="admonition">Astra Trident가 공백을 적용합니다<block ref="7cfbb6f07899c8071ff38e69dca190e2" prefix=" " category="inline-code"></block> 볼륨에 대해 생성할 수 있습니다. iSCSI 백엔드의 경우 적용하는 것이 좋습니다<block ref="01cd995fd9a843d3ca767e057de28873" prefix=" " category="inline-code"></block> StorageClass에 있습니다. 기존 StorageClasses를 삭제하고 를 사용하여 다시 생성해야 합니다<block ref="01cd995fd9a843d3ca767e057de28873" prefix=" " category="inline-code"></block> 지정됨.</block>
@@ -3326,17 +3237,11 @@
   <block id="2da9f60cc5b99a5987580c38e6db0842" category="cell">Base64 - 신뢰할 수 있는 CA 인증서의 인코딩된 값입니다. 선택 사항. 인증서 기반 인증에 사용됩니다.</block>
   <block id="394d848f17683e31e21f6cde5fd9e3e4" category="cell">ONTAP 클러스터와 통신하는 데 필요한 사용자 이름입니다. 자격 증명 기반 인증에 사용됩니다.</block>
   <block id="6f0acf4836d44b03512e1caa0d774777" category="cell">ONTAP 클러스터와 통신하는 데 필요한 암호입니다. 자격 증명 기반 인증에 사용됩니다.</block>
-  <block id="389db483158927a67353b09e0ce89d85" category="cell">사용할 SAN 볼륨에 대한 igroup의 이름입니다. 을 참조하십시오 <block ref="6e67b5ef9818d5ee50372d568636cd92" category="inline-xref-macro-rx"></block> 를 참조하십시오.</block>
   <block id="a0de2cc0c77c388210e1f48423eea29c" category="cell">SVM에서 새 볼륨을 프로비저닝할 때 사용되는 접두사 나중에 수정할 수 없습니다. 이 매개 변수를 업데이트하려면 새 백엔드를 생성해야 합니다.</block>
   <block id="e54cbd8ca5da26dc7e4be3bbfd23467e" category="cell">사용량이 이 비율을 초과하면 프로비저닝이 실패합니다. NetApp ONTAP 백엔드에 Amazon FSx를 사용하는 경우 를 지정하지 마십시오 <block ref="d57551b1efacf8a7be84b4d10c5a6e99" prefix=" " category="inline-code"></block>. 제공<block ref="679500f227997b45be97e3ca8115c678" prefix=" " category="inline-code"></block> 및<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> 애그리게이트 사용을 검색하고 Astra Trident를 사용하여 제한하는 데 필요한 권한이 포함되어 있지 않습니다.</block>
   <block id="f804cd6668c0728e26448509210268d3" category="cell">요청된 볼륨 크기가 이 값보다 큰 경우 용량 할당에 실패합니다. 또한 qtree 및 LUN에 대해 관리하는 볼륨의 최대 크기도 제한합니다.</block>
   <block id="b3a74fee006256ec5d63fe251b553f1d" category="cell">문제 해결 시 사용할 디버그 플래그입니다. 예: {“api”:false, “method”:true} 문제 해결 및 자세한 로그 덤프가 필요한 경우가 아니면 사용하지 마십시오.</block>
   <block id="cc30671ec52693851659adb7020e02b1" category="cell">ONTAP REST API를 사용하는 부울 매개 변수입니다. * 기술 미리 보기 *<block ref="14d839191d1ecf387a15b5b0c802a8ae" prefix=" " category="inline-code"></block> 프로덕션 작업 부하가 아닌 테스트 환경에 권장되는** 기술 미리 보기로 제공됩니다**. 를 로 설정한 경우<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, Astra Trident는 ONTAP REST API를 사용하여 백엔드와 통신합니다. 이 기능을 사용하려면 ONTAP 9.11.1 이상이 필요합니다. 또한 사용되는 ONTAP 로그인 역할에 에 대한 액세스 권한이 있어야 합니다<block ref="a9ba4dc88fa11d44cc7c0c918d174778" prefix=" " category="inline-code"></block> 응용 프로그램. 이는 사전 정의된 에 의해 충족됩니다<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> 및<block ref="fdb6ba311fad29ec53069808f10ebef4" prefix=" " category="inline-code"></block> 역할.<block ref="14d839191d1ecf387a15b5b0c802a8ae" prefix=" " category="inline-code"></block> 는 MetroCluster에서 지원되지 않습니다.</block>
-  <block id="ceff62705abadd1abc0e2d8f1a40ea35" category="section-title">에 대한 세부 정보<block ref="9d8592d88bbb76c68c01d830f091dacc" prefix=" " category="inline-code"></block></block>
-  <block id="7038c8ee6b987228eae45aa3f990a3de" category="paragraph"><block ref="9d8592d88bbb76c68c01d830f091dacc" prefix="" category="inline-code"></block> ONTAP 클러스터에서 이미 생성된 igroup으로 설정할 수 있습니다. 지정되지 않은 경우 Astra Trident가 이름이 인 igroup을 자동으로 생성합니다<block ref="7c79ab6d4da823d54e29bcbb64f38eef" prefix=" " category="inline-code"></block>.</block>
-  <block id="60f33a20147fc20d3d7707e50d1c0a9a" category="paragraph">미리 정의된 횟수 이름을 제공하는 경우 환경 간에 SVM을 공유하려면 Kubernetes 클러스터 당 하나의 igroup을 사용하는 것이 좋습니다. 이는 Astra Trident가 IQN 추가 및 삭제를 자동으로 유지 관리하는 데 필요합니다.</block>
-  <block id="3f4c75b40f8732fcb4f838d7f1b21a76" category="list-text"><block ref="9d8592d88bbb76c68c01d830f091dacc" prefix="" category="inline-code"></block> Astra Trident 외부의 SVM에서 생성 및 관리되는 새로운 igroup을 가리키도록 업데이트할 수 있습니다.</block>
-  <block id="1b4b9a9a67369e93e8c38ee61a36dd5d" category="list-text"><block ref="9d8592d88bbb76c68c01d830f091dacc" prefix="" category="inline-code"></block> 생략할 수 있습니다. 이 경우 Astra Trident가 이름을 가진 igroup을 생성하고 관리합니다<block ref="7c79ab6d4da823d54e29bcbb64f38eef" prefix=" " category="inline-code"></block> 자동으로.</block>
   <block id="c59183b2f668b355e81e7bb1256f92b3" category="paragraph">에서 이러한 옵션을 사용하여 기본 프로비저닝을 제어할 수 있습니다<block ref="a4a918a45181164207929d52aec36aec" prefix=" " category="inline-code"></block> 섹션을 참조하십시오. 예를 들어, 아래 구성 예제를 참조하십시오.</block>
   <block id="d4fbfa2dd496728ba6294eb840ce25eb" category="cell">생성된 볼륨에 할당할 QoS 정책 그룹입니다. 스토리지 풀/백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다. Astra Trident와 함께 QoS 정책 그룹을 사용하려면 ONTAP 9.8 이상이 필요합니다. 비공유 QoS 정책 그룹을 사용하고 정책 그룹이 각 구성요소별로 적용되도록 하는 것이 좋습니다. 공유 QoS 정책 그룹은 모든 워크로드의 총 처리량에 대해 상한을 적용합니다.</block>
   <block id="b71ccf1062cee8c376a7eb37e3c42603" category="cell">LUKS 암호화를 사용합니다. 을 참조하십시오 <block ref="569f9f91cdcc19909b8acbf6f423daf7" category="inline-link-macro-rx"></block>.</block>
@@ -3384,16 +3289,11 @@
   <block id="b8c7e19ba614c29878588409008e29c6" category="cell">클러스터 또는 SVM에 연결할 사용자 이름입니다. 자격 증명 기반 인증에 사용됩니다. 예: vsadmin.</block>
   <block id="9a2486a943ad2a4c99f2797d6984f3d0" category="cell">클러스터 또는 SVM에 연결하는 암호 자격 증명 기반 인증에 사용됩니다.</block>
   <block id="6018b4c39d938c6589decae81b54c6f0" category="cell">SVM 관리 LIF가 지정된 경우에 파생됩니다.</block>
-  <block id="6b249375261ddb13a77410698978d6e4" category="cell">사용할 SAN 볼륨에 대한 igroup의 이름입니다. 을 참조하십시오 <block ref="6e67b5ef9818d5ee50372d568636cd92" category="inline-xref-macro-rx"></block>.</block>
   <block id="4cba35e041b22828be7c835295ee9102" category="cell">SVM에서 새 볼륨을 프로비저닝할 때 사용되는 접두사 생성 후에는 수정할 수 없습니다. 이 매개 변수를 업데이트하려면 새 백엔드를 생성해야 합니다.</block>
   <block id="2b3e2c0490ded1bc79028dd367358b9d" category="cell">* NetApp ONTAP * 용 Amazon FSx는 지정하지 마십시오<block ref="679500f227997b45be97e3ca8115c678" prefix=" " category="inline-code"></block> 및<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> 애그리게이트 사용을 검색하고 Astra Trident를 사용하여 제한하는 데 필요한 권한이 포함되어 있지 않습니다.</block>
   <block id="86f4c9647fe8f4c500055c772753cc6f" category="cell">사용하지 마십시오.</block>
   <block id="bd4c4a75acd87c86694e9aca1e4050e2" category="cell">FlexVol당 최대 LUN 수는 [50, 200] 범위 내에 있어야 합니다. SAN만 해당.</block>
-  <block id="e70237f69c6dce25fd2312b8d7f00b1e" category="cell">"100"</block>
   <block id="e939be085c2babe4ff0f08e09d0cdfd2" category="cell">NFS 또는 SMB 볼륨 생성을 구성합니다. 옵션은 입니다<block ref="2521ef5d58fc027d3121662b7d8f9ac2" prefix=" " category="inline-code"></block>,<block ref="79e0f325804dafbdaef73b3b17c0fd8d" prefix=" " category="inline-code"></block>또는 null입니다. * 를 로 설정해야 합니다<block ref="79e0f325804dafbdaef73b3b17c0fd8d" prefix=" " category="inline-code"></block> SMB 볼륨의 경우. * null로 설정하면 기본적으로 NFS 볼륨이 설정됩니다.</block>
-  <block id="b993677cdfb69bee31dd375d27acbb2d" category="cell">"NFS"</block>
-  <block id="89ffa293e05655bd6be9d422345be38a" category="cell">"200"</block>
-  <block id="be01424702282a8710bfaa63381e0ef3" category="cell">공유 폴더 Microsoft 관리 콘솔을 사용하여 생성한 SMB 공유의 이름입니다. * SMB 볼륨에 필요합니다. *</block>
   <block id="2ab2b81dde76a2ec7ed3798f1538f823" category="cell">ONTAP REST API를 사용하는 부울 매개 변수입니다. * 기술 미리 보기 *<block ref="14d839191d1ecf387a15b5b0c802a8ae" prefix=" " category="inline-code"></block> 프로덕션 작업 부하가 아닌 테스트 환경에 권장되는** 기술 미리 보기로 제공됩니다**. 를 로 설정한 경우<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, Astra Trident는 ONTAP REST API를 사용하여 백엔드와 통신합니다. 이 기능을 사용하려면 ONTAP 9.11.1 이상이 필요합니다. 또한 사용되는 ONTAP 로그인 역할에 에 대한 액세스 권한이 있어야 합니다<block ref="a9ba4dc88fa11d44cc7c0c918d174778" prefix=" " category="inline-code"></block> 응용 프로그램. 이는 사전 정의된 에 의해 충족됩니다<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> 및<block ref="fdb6ba311fad29ec53069808f10ebef4" prefix=" " category="inline-code"></block> 역할.</block>
   <block id="f9d8bcec134b3ae3cb7aaac7048373ee" category="cell">생성된 볼륨에 할당할 QoS 정책 그룹입니다. 스토리지 풀 또는 백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다. Astra Trident와 함께 QoS 정책 그룹을 사용하려면 ONTAP 9.8 이상이 필요합니다. 비공유 QoS 정책 그룹을 사용하고 정책 그룹이 각 구성요소별로 적용되도록 하는 것이 좋습니다. 공유 QoS 정책 그룹은 모든 워크로드의 총 처리량에 대해 상한을 적용합니다.</block>
   <block id="a8fe789c9febc6b76736fb83c90df2b7" category="cell">생성된 볼륨에 할당할 적응형 QoS 정책 그룹입니다. 스토리지 풀 또는 백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다. ONTAP에서 지원되지 않음 - NAS - 이코노미</block>
@@ -3444,9 +3344,6 @@
   <block id="8a6b9ec0e0eb9c6a3e520af66cffd466" category="paragraph">아래 표시된 샘플 백엔드 정의 파일에서 특정 기본값은 를 설정하는 모든 스토리지 풀에 대해 설정됩니다<block ref="599dcce2998a6b40b1e38e8c6006cb0a" prefix=" " category="inline-code"></block> 실버. 가상 풀은 에 정의되어 있습니다<block ref="ddecebdea58b5f264d27f1f7909bab74" prefix=" " category="inline-code"></block> 섹션을 참조하십시오. 이 예에서는 일부 스토리지 풀이 자체 유형을 설정하고 일부 풀은 위에 설정된 기본값을 덮어씁니다.</block>
   <block id="d17a2942ee77aa1532660a5f0cf0d6e5" category="paragraph">첫 번째 StorageClass입니다 <block ref="166028d9a95f5465a6ae917e6e089ce6" prefix="(" category="inline-code"></block>)는 첫 번째 가상 풀에 매핑합니다. 이 수영장은 골드 성능을 제공하는 유일한 수영장입니다<block ref="89bf6c97f9a3eaea76c86df0086361bc" prefix=" " category="inline-code"></block> 않습니다. 마지막 StorageClass입니다 <block ref="b4457b3eeca98cadb51648f8fcef36cb" prefix="(" category="inline-code"></block>) 은 뛰어난 성능을 제공하는 스토리지 풀을 호출합니다. Astra Trident가 선택한 가상 풀을 결정하고 스토리지 요구 사항을 충족시킵니다.</block>
   <block id="7ac6994e44af62a9075fd956e72ee6fb" category="paragraph">백엔드 정의는 자격 증명이 일반 텍스트로 저장되는 유일한 위치라는 점에 유의하십시오. 백엔드가 생성된 후 사용자 이름/암호는 Base64로 인코딩되어 Kubernetes 암호로 저장됩니다. 백엔드의 생성 또는 업데이트는 자격 증명에 대한 지식이 필요한 유일한 단계입니다. 따라서 Kubernetes/스토리지 관리자가 수행할 수 있는 관리 전용 작업입니다.</block>
-  <block id="35bcb7d2979b78f60085f17523608cf1" category="paragraph">Astra Trident가 CSI Provisioner로 작동하도록 구성된 경우 Kubernetes 노드 IQN이 igroup에 자동으로 추가/제거됩니다. Kubernetes 클러스터에 노드를 추가할 경우,<block ref="d9585690fd147c34fbd50c487a3520de" prefix=" " category="inline-code"></block> DemonSet가 포드를 전개합니다 <block ref="0acec1d7908eca40437167858e728fbb" prefix="(" category="inline-code"></block> 23.01 또는 이전 버전<block ref="15c091a8dab608815c71eeaab69b4bef" prefix=" " category="inline-code"></block> 23.01 이상에서)를 새로 추가한 노드에 추가하고 볼륨을 연결할 수 있는 새 노드를 등록합니다. 노드 IQN도 백엔드의 igroup에 추가됩니다. 이와 유사한 일련의 단계에서는 Kubernetes에서 노드에 코드로닝, 드레이닝 및 삭제가 발생하는 경우 IQN 제거를 처리합니다.</block>
-  <block id="f94dd4e5d427f6c27039ff57630f0cac" category="list-text">에 이니시에이터 추가 관리<block ref="9d8592d88bbb76c68c01d830f091dacc" prefix=" " category="inline-code"></block> 백엔드에서 제공됩니다. 지정되지 않은 경우 이 기본값은 입니다<block ref="47cb44be55a0dffa15dfc900a4c687be" prefix=" " category="inline-code"></block>.</block>
-  <block id="02ef3639dafcd40b1745b539a10d1cae" category="sidebar">23.01 릴리스에 대한 중요 정보입니다</block>
   <block id="f1fe71442cd08e74d342114df7ee1551" category="sidebar">Astra Trident를 설치합니다</block>
   <block id="46921a75e8534ad7d1c379a9e3aec033" category="sidebar">설치 개요</block>
   <block id="3183dc3907c0b67930b221a316c94cb2" category="sidebar">Trident 연산자를 사용하여 설치합니다</block>
@@ -3460,7 +3357,6 @@
   <block id="6fc0b7515ecca271c88eae4a685da613" category="sidebar">NetApp HCI 또는 SolidFire</block>
   <block id="60be48bb4b3314965bf50e88e7ae728c" category="sidebar">ONTAP용 Amazon FSx를 통합합니다</block>
   <block id="ea3d51fb2b16acb7cb260f25bc8965b1" category="sidebar">Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 공급자 및 오케스트레이터입니다. Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다.</block>
-  <block id="784060ce5e49eff75eaca62337b5ff53" category="list-text">Ubuntu 22.04 이상</block>
   <block id="e267c2490c7d73d0ffa909b77267cfaf" category="inline-link-macro">Astra Control 복제 사전 요구 사항</block>
   <block id="9814801b0db6e324ebd72f671418de64" category="paragraph">Astra Control은 로 생성한 볼륨을 위해 원활한 보호, 재해 복구, 이동성(Kubernetes 클러스터 간에 볼륨 이동)을 제공합니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block>,<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block>, 및<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> 드라이버. 을 참조하십시오 <block ref="dfc981ac97be73172a3119f3b831eaf8" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="783c2760a502e1f1537de458c9dceb7a" category="list-text">를 사용해야 합니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 데이터 보호, 재해 복구 및 이동성을 필요로 하는 운영 워크로드에 적합합니다.</block>
@@ -3490,26 +3386,10 @@
   <block id="d0ebde94f92d8c1bae0c6660a5847bba" category="paragraph">귀사의 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 업데이트<block ref="7b4b81fb05ca7f2a09fe73526ac95482" prefix=" " category="inline-code"></block> 레지스트리 구성에 따라 추가 위치 사양을 추가하려면 다음을 수행합니다.</block>
   <block id="5295ac8fb520b71deb8a1b57857b2562" category="section-title">6단계: 을 작성합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> Trident를 설치합니다</block>
   <block id="4498f168dfd139c5a90c6acd3ab09109" category="summary">PVS(Persistent Volumes)의 Kubernetes VolumeSnapshots(볼륨 스냅샷)을 생성하여 Astra Trident 볼륨의 시점 복제본을 유지할 수 있습니다. 또한 기존 볼륨 스냅샷에서 _clone_이라고도 하는 새 볼륨을 생성할 수 있습니다. 에서 볼륨 스냅샷을 지원합니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block>,<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block>,<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>,<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block>,<block ref="c0d2a793e71b152662b3e8cd2da00620" prefix=" " category="inline-code"></block>,<block ref="5935ea92cdd7d975b4e764b429f21c01" prefix=" " category="inline-code"></block>, 및<block ref="bc5779a2d33eeb1304bae57f15920cfc" prefix=" " category="inline-code"></block> 드라이버.</block>
-  <block id="92b68d4329b2a9fc7b9ee50887fa9ec6" category="list-text">Kubernetes 1.24 이하 를 실행하는 클러스터의 경우, 를 사용합니다 <block ref="2c09ae1e37416ff80fc94f3f18fdf365" category="inline-link-macro-rx"></block>.</block>
-  <block id="03b6416b48c9b688f320942620efba7e" category="list-text">Kubernetes 1.25 이상을 실행하는 클러스터의 경우 를 사용합니다 <block ref="5ca76d6130b1f129b38438a336b9aeba" category="inline-link-macro-rx"></block>.</block>
-  <block id="6ec38de91afa570e5d065616a4c39792" category="admonition">클러스터 범위 연산자를 설치하면 마이그레이션이 시작됩니다<block ref="4cb15aa30ce0ec4747b372d6d2a5e637" prefix=" " category="inline-code"></block> 개체 대상<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 오브젝트, 삭제<block ref="4cb15aa30ce0ec4747b372d6d2a5e637" prefix=" " category="inline-code"></block> 개체 및<block ref="297dc4adc64c26ae2fd6a1039d00ccb0" prefix=" " category="inline-code"></block> CRD를 사용하여 Astra Trident를 사용 중인 클러스터 범위 운영자 버전으로 업그레이드합니다. 다음 예제에서 Trident는 23.01.1로 업그레이드됩니다.</block>
-  <block id="612553699f2d5ae7962eb8012bc5c571" category="list-text">를 사용합니다<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block> 명령 위치<block ref="66cf366135b1928fa4812c3e0e41d022" prefix=" " category="inline-code"></block> 업그레이드하려는 버전을 반영합니다.</block>
   <block id="a6074ca03f6e3e76478b45e15e021b31" category="list-text">를 실행합니다<block ref="9936810e5a43f0fece4628cd1a22fb4d" prefix=" " category="inline-code"></block> 레거시 Astra Trident 볼륨을 CSI 사양으로 업그레이드하는 명령입니다.</block>
   <block id="ea7cc85727ac6a0761c52685cce336be" category="list-text">이전 버전의 Trident로 다운그레이드하려는 경우 먼저 을 실행합니다<block ref="ac8650577d1b744589a6a11b60ac38c7" prefix=" " category="inline-code"></block> Trident를 제거하는 명령입니다. 원하는 를 다운로드합니다<block ref="f3d78353f8dac3e49bbefeb5f6a2383b" category="inline-link-rx"></block> 를 사용하여 를 설치합니다<block ref="430bf77bee6c59d385d4194f84c21b16" prefix=" " category="inline-code"></block> 명령. 새로 생성된 PVS가 없고 기존 PVS/백엔드/스토리지 클래스가 변경되지 않은 경우에만 다운그레이드를 고려하십시오. 이제 Trident는 CRD를 사용하여 상태를 유지하므로 생성된 모든 스토리지 요소(백엔드, 스토리지 클래스, PVS 및 볼륨 스냅샷)에는 가 있습니다<block ref="816158c49c5f4417bf3b0f9c644e722e" prefix=" " category="inline-code"></block> 이전의 설치된 Trident 버전에서 사용한 PV에 기록된 데이터 대신 * 이전 버전으로 되돌릴 때 새로 생성된 PVS를 사용할 수 없습니다. * * 다운그레이드 시 백엔드, PVS, 스토리지 클래스 및 볼륨 스냅샷(생성/업데이트/삭제)과 같은 객체에 대한 변경 사항은 Trident에 표시되지 않습니다 *. 설치된 Trident의 이전 버전에서 사용된 PV는 여전히 Trident에 표시됩니다. 이전 버전으로 돌아가면 업그레이드되지 않은 경우 이전 릴리즈를 사용하여 이미 생성된 PVS에 대한 액세스가 중단되지 않습니다.</block>
-  <block id="1ee41f7caab6c354f41f4a101afa7e89" category="summary">Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 공급자 및 오케스트레이터입니다. Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다. ** Astra Trident 23.01.1로 업그레이드하는 데 대한 중요 정보는 릴리스 노트를 참조하십시오.**</block>
-  <block id="386e03ca533890432e529f451049f72e" category="doc">Astra Trident 23.01.1 설명서</block>
-  <block id="f312617dd7f60d9446faf3c7633872e1" category="cell">"NetApp/트리덴트 - AutoSupport: 23.01"</block>
-  <block id="7cbcc2cc19b88ed72e268f9d84bb67af" category="list-text">사용<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> 배포 및 이미지 레지스트리 위치의 이름을 지정합니다. 귀사의 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 예를 들어,<block ref="5035e9d03d7081c7c67f5a557f1b864f" prefix=" " category="inline-code"></block> 는 설치 중인 Astra Trident의 버전입니다.</block>
-  <block id="a6427845d2f49762a708df9e6cda9fea" category="paragraph">예를 들어, 의 기본값을 변경합니다<block ref="ad42f6697b035b7580e4fef93be20b4d" prefix=" " category="inline-code"></block>에서 다음을 실행합니다<block ref="8b5806248570dbb13e7d3bc5e6c0ee37" prefix=" " category="inline-code"></block> 명령 위치<block ref="5035e9d03d7081c7c67f5a557f1b864f" prefix=" " category="inline-code"></block> 설치 중인 Astra Trident의 버전입니다.</block>
   <block id="43e6c0a141c1737a96917c56c7e22a73" category="inline-link-macro">&lt;block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category='inline-code'/&gt;를 사용하여 설치</block>
   <block id="1a2de31d648d8c09e5c2a9257a5ad67b" category="paragraph">업그레이드해야 하는 기존 배포가 있거나 배포를 사용자 지정하려는 경우 고려해야 합니다 <block ref="e214bf159dbaf6573cfe15f1373b92db" category="inline-link-macro-rx"></block>. Astra Trident를 구축하는 기존 방법입니다.</block>
-  <block id="71611ffeb9c4b65c1c227f6f6840db4e" category="paragraph">인치<block ref="02f3115b006f7541a477d52ea8c0f861" prefix=" " category="inline-code"></block>, 업데이트<block ref="82a0d8d270200f472862eabbfab72b13" prefix=" " category="inline-code"></block> 이미지 레지스트리의 위치를 반영합니다. 귀사의 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 예를 들면 다음과 같습니다.</block>
-  <block id="938ddddcbba42304d938dc5b673d0202" category="list-text"><block ref="e76c7fdd8a19469fd094094b1b37cd96" prefix="" category="inline-code"></block> 이미지가 모두 하나의 레지스트리에 있는 경우</block>
-  <block id="4072e310ea82b48de23cd7a2e5dd7f30" category="list-text"><block ref="73f61ffa3e846a43a284493b64e0b302" prefix="" category="inline-code"></block> Trident 이미지가 CSI 이미지와 다른 레지스트리에 있는 경우</block>
-  <block id="3b8d0cc1623ab5e024e4c6c92a96c0a3" category="list-text">사용<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> 다음 예제에서와 같이 배포 이름을 지정합니다<block ref="5035e9d03d7081c7c67f5a557f1b864f" prefix=" " category="inline-code"></block> 는 설치 중인 Astra Trident의 버전입니다.</block>
-  <block id="5e3673cc108f69c1b1e37872c6e40a61" category="list-text">NetApp/트리덴트: 23.01.1</block>
-  <block id="f4be622ffc379faa9b3471e5e49fce94" category="list-text">NetApp/트리덴트 - 운영자: 23.01.1(선택 사항)</block>
-  <block id="76013b8f9b5c6b4b507fa479343e856f" category="section-title">23.01.1의 새로운 기능</block>
   <block id="19466ff921af5aa01da62b42cdaaf617" category="list-text">SPEC에 지정된 경우 설치에 IPv6 localhost를 사용하도록 고정 Trident Operator가 수정되었습니다.</block>
   <block id="5b313836498a7a26e99e4f084ee1baec" category="inline-link-macro">문제 #799</block>
   <block id="b2fc842cefdc715af09b8d184e09db56" category="list-text">번들 권한과 동기화되는 고정 Trident 운영자 클러스터 역할 권한 <block ref="25d51e363866fb30c759c73e05114b0d" category="inline-link-macro-rx"></block>.</block>
@@ -3517,7 +3397,6 @@
   <block id="3a35c66b59df0fa02e2490983b964261" category="list-text">rwx 모드에서 여러 노드에 원시 블록 볼륨을 연결하는 문제 해결</block>
   <block id="21b2b5bca26be7b23af4468b85c68b34" category="list-text">SMB 볼륨에 대한 FlexGroup 클론 복제 지원 및 볼륨 가져오기 수정</block>
   <block id="190a9f9a8311c8a23bff1fd7a5693342" category="section-title">23.01의 변경 사항</block>
-  <block id="8b418db90259290a719e83f1a2509366" category="admonition">이제 Trident에서 Kubernetes 1.26이 지원됩니다. Kubernetes를 업그레이드하기 전에 Astra Trident를 업그레이드하십시오.</block>
   <block id="1cb76b1c7887cad1e077a4cbdc765b9b" category="list-text">Astra Trident 버전 확인:</block>
   <block id="705dbdc50888270bf4b0230d75c7ae1d" category="paragraph">Trident 운영자는 의 특성을 사용하여 Astra Trident 설치를 사용자 지정할 수 있습니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 사양 설치를 사용자 지정하려면 다음을 선택합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 인수를 사용할 수 있습니다. 을 사용하는 것이 좋습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 필요에 따라 수정할 사용자 지정 YAML 매니페스트를 생성합니다.</block>
   <block id="a5199cf0d9f113491f9efa18f3bee2e1" category="section-title">컨트롤러 Pod 및 노드 포드 이해</block>
@@ -3636,8 +3515,6 @@
   <block id="fc3424ba1777889d0d49ea7f5a675c9e" category="paragraph"><block ref="70d2c7701d2837552c0a38c02a326592" prefix="" category="inline-code"></block></block>
   <block id="e84b7103384d0a3393c0847330716669" category="paragraph"><block ref="f819de81247be4a5428dc0e169de28b8" prefix="" category="inline-code"></block></block>
   <block id="7dd39afeb1c0b05aac5f4bf6fbd94990" category="paragraph"><block ref="301c869c551e12d862ab0291837102a0" prefix="" category="inline-code"></block></block>
-  <block id="cddf719b813056497a40cf1934f91af3" category="paragraph">플러그인에서 사용되는 igroup. 기본값은 입니다<block ref="e77a1bd34ff5793aca292b38d23bc2c9" prefix=" " category="inline-code"></block>. * ONTAP-SAN driver * 에서만 사용 가능.</block>
-  <block id="53f20dcb83975ae9823682474c74acd6" category="paragraph"><block ref="79e762988462f6f8da9becfbfd789755" prefix="" category="inline-code"></block></block>
   <block id="98ce75f2128e52057c9dbf00a9eb2736" category="paragraph"><block ref="f07e606cfe25ac6fb07d9c4af941d9a2" prefix="" category="inline-code"></block></block>
   <block id="1ae6e291c93a6d5962af8004aecd9c4c" category="paragraph"><block ref="94f6d7e04a4d452035300f18b984988c" prefix="" category="inline-code"></block></block>
   <block id="af2bffb136dd0c22342ad9cb06187197" category="paragraph">공간 예약 모드;<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block> (씬 프로비저닝됨) 또는 을 클릭합니다<block ref="210ab9e731c9c36c2c38db15c28a8d1c" prefix=" " category="inline-code"></block> (두꺼운)</block>
@@ -3660,4 +3537,121 @@
   <block id="419c95e5a9e44d427f99debdcf0550c7" category="list-text">에서 Trident를 사용할 때 일반적으로 발생할 수 있는 문제입니다<block ref="4568986ef6397d7c901269fc0e190ede" category="inline-link-rx"></block> 테넌트 및 클라이언트 암호가 권한이 부족한 앱 등록에서 나오는 경우 입니다. Trident 요구사항의 전체 목록은 를 참조하십시오 <block ref="cd38c25b6345abc8733d2ef72739cd97" category="inline-link-macro-rx"></block> 구성.</block>
   <block id="39f6252eef9409d5d917e183e971d71d" category="list-text">업그레이드할 때 제공하는 것이 중요합니다<block ref="f6e7f85d8aee15940665bf722f7afac2" prefix=" " category="inline-code"></block> 인치<block ref="f652904c3bfb48fb25a0a75f485f0ff6" prefix=" " category="inline-code"></block> Astra Trident에서 사용 삭제하고 다시 만들 수 있습니다<block ref="f652904c3bfb48fb25a0a75f485f0ff6" prefix=" " category="inline-code"></block> 기존 볼륨을 그대로 사용합니다. 이것은 SAN 볼륨에 대해 https://kubernetes.io/docs/tasks/configure-pod-container/security-context/[security 컨텍스트^]를 적용하기 위한 ** 요구 사항입니다. https://github.com/NetApp/trident/tree/master/trident-installer/sample-input[sample input^] 디렉토리에는 https://github.com/NetApp/trident/blob/master/trident-installer/sample-input/storage-class-samples/storage-class-basic.yaml.templ 같은 예제가 포함되어 있습니다<block ref="9abb8c7777ddb413820ee07d5d93aa4a" prefix="[" category="inline-code"></block>^] 및 링크: https://github.com/NetApp/trident/blob/master/trident-installer/sample-input/storage-class-samples/storage-class-bronze-default.yaml<block ref="69ae2d9a6d831af7488e53fec053b77e" prefix="[" category="inline-code"></block>^]. 자세한 내용은 을 참조하십시오 <block ref="04cf7258a315ca08f4b436c194fef69d" category="inline-link-macro-rx"></block>.</block>
   <block id="1dedbfd605df8b562acc8f759a8e9acc" category="list-text">를 실행하는 Kubernetes 클러스터 <block ref="229e1052bb9ecd8cf2680d6f44691174" category="inline-link-macro-rx"></block></block>
+  <block id="17c5eeb01739643b5aef94fe18b6c849" category="paragraph">버전 선택기를 사용하여 최신 버전과 이전 버전 4개를 탐색하거나 아래 링크를 사용할 수 있습니다.</block>
+  <block id="78038c97749fe61b1148a68a71c14a02" category="inline-link-macro">Astra Trident 릴리즈 및 지원 주기</block>
+  <block id="3a1fdf1059d780b17a5dd3ecba99371d" category="paragraph">Astra Trident 23.04를 실행하지 않는 경우 에 따라 이전 릴리즈의 문서를 사용할 수 있습니다 <block ref="ec2082dc40596525d1bb212183949428" category="inline-link-macro-rx"></block>.</block>
+  <block id="4693b2393d80830cd4f198db20bf2b72" category="inline-link">Astra Trident 23.01</block>
+  <block id="cd494508ccf1cdc45163d6d9d0f401ff" category="list-text"><block ref="cd494508ccf1cdc45163d6d9d0f401ff" category="inline-link-rx"></block></block>
+  <block id="eab0706ece21a2a7fba820bf95d759fe" category="section-title">Astra Trident 23.04에 대한 중요 정보</block>
+  <block id="2122a8acb599837078e6b76436e892c4" category="list-text">이제 Trident에서 Kubernetes 1.27이 지원됩니다. Kubernetes를 업그레이드하기 전에 Trident를 업그레이드하십시오.</block>
+  <block id="5934d78c1e4b16833d855fae6656a994" category="list-text">사용<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> 다음 예제에서와 같이 배포 이름을 지정합니다<block ref="fc54aba0c9f6c2fff98f4890349f656c" prefix=" " category="inline-code"></block> 는 설치 중인 Astra Trident의 버전입니다.</block>
+  <block id="177f0526bba4e516b4db5c3a74252bbd" category="paragraph">예를 들어, 의 기본값을 변경합니다<block ref="ad42f6697b035b7580e4fef93be20b4d" prefix=" " category="inline-code"></block>에서 다음을 실행합니다<block ref="8b5806248570dbb13e7d3bc5e6c0ee37" prefix=" " category="inline-code"></block> 명령 위치<block ref="fc54aba0c9f6c2fff98f4890349f656c" prefix=" " category="inline-code"></block> 설치 중인 Astra Trident의 버전입니다.</block>
+  <block id="40991bba76926bfbcf7fb0b9c207187f" category="list-text">Anthos 온프레미스(VMware) 및 Anthos의 Bare Metal 1.12</block>
+  <block id="10ba3564f65dbf6cec8650972c26ea30" category="list-text">Kubernetes 1.21-1.27</block>
+  <block id="fe74bcccaeacaddf91b58dec28fef5be" category="paragraph">1.21-1.27</block>
+  <block id="362997bacf08e019288e372d8ae1f070" category="list-text">OpenShift Container Platform(AMD64 및 ARM64)에서 지원하는 RedHat CoreOS(RHCOS) 버전</block>
+  <block id="a3460163c4a2854c79a419dda57ac917" category="list-text">RHEL 8+(AMD64 및 ARM64)</block>
+  <block id="f51a58a0cffb9f9953edce6411578b53" category="list-text">Ubuntu 22.04 이상(AMD64 및 ARM64)</block>
+  <block id="1285a056fd837828136d15f7e76d09cc" category="list-text">Windows Server 2019(AMD64)</block>
+  <block id="491d412c8451b30af0235ea14c6884ce" category="list-text">NetApp/트리덴트: 23.04.0</block>
+  <block id="e1c8364426dfd7c124c013720fd79184" category="list-text">NetApp/트리덴트 - AutoSupport: 23.04</block>
+  <block id="f74c1ba486136c87105b3ee7c6b4a588" category="list-text">K8s.IO/SIG - 스토리지/CSI - 공급자: v3.4.1</block>
+  <block id="69e020afa682d186164750d700cc7b94" category="list-text">K8s.IO/SIG-storage/CSI-attacher:v4.2.0</block>
+  <block id="1ee49b3835b8025abda346d6f4263ac9" category="list-text">NetApp/트리덴트 - 운영자: 23.04.0(옵션)</block>
+  <block id="b38420e98813aed20daa115db2ac94a9" category="cell">v1.27.0</block>
+  <block id="1ff1fd258a61bd04eee000a1fb6131fa" category="example-title">예 1: Windows 노드에서 Astra Trident를 실행하도록 설정합니다</block>
+  <block id="f53514cf8829a41463c245b088ae732e" category="paragraph">Astra Trident를 Windows 노드에서 실행하려면 다음을 수행합니다.</block>
+  <block id="a921baa9e8c81f13d59fed4fce57ec88" category="example-title">예 2: 강제 분리 사용</block>
+  <block id="c5b5b00ff1b3a892c8694ab932cbf9ca" category="paragraph">강제 분리에 대한 자세한 내용은 을 참조하십시오 <block ref="63cac71755fb6ef1f1fea34cf4037121" category="inline-link-macro-rx"></block>.</block>
+  <block id="27855a2d0ff79cc3ecf0f08e67257b0a" category="list-text">사용<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> 배포 및 이미지 레지스트리 위치의 이름을 지정합니다. 귀사의 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 예를 들어,<block ref="fc54aba0c9f6c2fff98f4890349f656c" prefix=" " category="inline-code"></block> 는 설치 중인 Astra Trident의 버전입니다.</block>
+  <block id="59bc75fa0b7e5b671e40873619ac96a7" category="cell">"NetApp/트리덴트 - AutoSupport: 23.04.0"</block>
+  <block id="85be37285c336ae757f07d58eb0d7ea2" category="cell">AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다</block>
+  <block id="33fb79e5ddc4ef005332c52292e20c59" category="cell">Trident 컨트롤러 CSI 플러그인을 실행하는 Pod용 추가 노드 선택기. 는 와 동일한 형식을 따릅니다<block ref="6ae8be3433bfc36ced79a1271e6ebf11" prefix=" " category="inline-code"></block>.</block>
+  <block id="4a1522be236156dbc873375541a627e1" category="cell">Trident 컨트롤러 CSI 플러그인을 실행하는 Pod의 허용 설정을 재정의합니다. 는 와 동일한 형식을 따릅니다<block ref="f1fa64fcf5077601cb803e995a51fa4f" prefix=" " category="inline-code"></block>.</block>
+  <block id="30042512b273723cf2eec336b6576d84" category="cell"><block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix="" category="inline-code"></block> 및<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 만 해당. Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 관리자가 마운트된 볼륨이 있는 워크로드를 노드가 정상 상태가 아닌 경우 새 노드로 안전하게 마이그레이션할 수 있도록 합니다. * 이것은 23.04의 실험 기능입니다. * 를 참조하십시오 <block ref="620ff2552a2d798650bb027eb1271b17" category="inline-xref-macro-rx"></block> 을 참조하십시오.</block>
+  <block id="38a0b9f59e6fe23e1617dc0e78498afe" category="section-title">강제 분리에 대한 세부 정보</block>
+  <block id="20c0c9efee2da2645ec0eefaf3c75d8c" category="inline-link-macro">Kubernetes: 노드 정상 종료 아님</block>
+  <block id="c2b73a5f3aeb6a0120f6d516eaedfceb" category="paragraph">에 대해 강제 분리를 사용할 수 있습니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> 및<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 만 해당. 강제 분리를 활성화하기 전에 Kubernetes 클러스터에서 비정상 노드 종료(ngns)를 활성화해야 합니다. 자세한 내용은 을 참조하십시오 <block ref="1da18b4f36c698c06b8a402542c42858" category="inline-link-macro-rx"></block>.</block>
+  <block id="388f611a7cb1d3b4a55895211f24e657" category="admonition">Astra Trident는 Kubernetes ngns에 의존하므로 제거하지 마십시오<block ref="2ea3337d8d7fc43880e82df308aa0f16" prefix=" " category="inline-code"></block> 허용 불가능한 모든 작업 부하가 재조정될 때까지 상태가 불량한 노드에서 오인합니다. 무모하게 타트를 적용하거나 제거하면 백엔드 데이터 보호가 위태롭게 될 수 있습니다.</block>
+  <block id="0490d92bd49cf4ca0e3d1454b8166318" category="paragraph">Kubernetes 클러스터 관리자가 를 적용했을 때<block ref="7b58fe53e2e4b586e9605f1371e1ebf3" prefix=" " category="inline-code"></block> 노드 및 에 대한 태트<block ref="badc795d88a7db6cc65d56bc758b3ea4" prefix=" " category="inline-code"></block> 가 로 설정되어 있습니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, Astra Trident에서 노드 상태를 확인하고 다음을 수행합니다.</block>
+  <block id="5a46bcb638ad3abfd754aecfb450a781" category="list-text">해당 노드에 마운트된 볼륨에 대한 백엔드 입출력 액세스를 중단합니다.</block>
+  <block id="9e359eb51c11b0162faa185a9f2e6132" category="list-text">Astra Trident 노드 객체를 로 표시합니다<block ref="32478ef751ab0a81974a3aa8569607b9" prefix=" " category="inline-code"></block> (새 발행물에는 안전하지 않음).</block>
+  <block id="dea3db0d9b1c1d5a2c070829016eb1d9" category="admonition">Trident 컨트롤러는 노드가 재검증될 때까지(로 표시된 후) 새로운 게시 볼륨 요청을 거부합니다<block ref="32478ef751ab0a81974a3aa8569607b9" prefix=" " category="inline-code"></block>) Trident 노드 POD를 사용합니다. 클러스터 노드가 정상 상태가 되고 준비된 후에도 마운트된 PVC로 예약된 워크로드는 Astra Trident가 노드를 확인할 때까지 허용되지 않습니다<block ref="123402c04dcfb6625f688f771a5fc05d" prefix=" " category="inline-code"></block> (새 출판물에 대해 안전).</block>
+  <block id="2f2c77c0463a5147779a2fe92fffee6d" category="paragraph">노드 상태가 복원되고 Tint가 제거되면 Astra Trident는 다음을 수행합니다.</block>
+  <block id="8f57f52b7233aecf56728bcd48d3a51c" category="list-text">노드에서 오래된 게시된 경로를 식별하고 제거합니다.</block>
+  <block id="a36983f9842a4a5cf4db7f9d23253de0" category="list-text">노드가 에 있는 경우<block ref="4304fb35c4cdfa886970499304f2aaba" prefix=" " category="inline-code"></block> 상태(Out-of-service taint가 제거되었으며 노드가 IN 상태입니다<block ref="e7d31fc0602fb2ede144d18cdffd816b" prefix=" " category="inline-code"></block> State) 및 게시된 모든 경로가 깨끗하며, Astra Trident가 노드를 다시 입원 처리하는 역할을 합니다<block ref="123402c04dcfb6625f688f771a5fc05d" prefix=" " category="inline-code"></block> 노드에 게시된 새 볼륨을 허용합니다.</block>
+  <block id="00be8b5bb428d40a01f22c5dfaced5bc" category="paragraph">인치<block ref="02f3115b006f7541a477d52ea8c0f861" prefix=" " category="inline-code"></block>, 업데이트<block ref="5e146ae3f34d00ee9d9dfd14adb077b2" prefix=" " category="inline-code"></block> 이미지 레지스트리의 위치를 반영합니다. 귀사의 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 예를 들면 다음과 같습니다.</block>
+  <block id="e93860a0ea424a0e69abe92f2da77d80" category="list-text"><block ref="7c512d5013550eab761c07cf420c0618" prefix="" category="inline-code"></block> 이미지가 모두 하나의 레지스트리에 있는 경우</block>
+  <block id="a986eb4e954c9ef61b993f620528b25b" category="list-text"><block ref="2e87742ef58dd6e98b2afaaddbe68076" prefix="" category="inline-code"></block> Trident 이미지가 CSI 이미지와 다른 레지스트리에 있는 경우</block>
+  <block id="ff2f82c9a6feb21071dcbdc520c67b89" category="list-text">사용자 환경과 Astra Trident 버전에 맞는 올바른 번들 YAML 파일을 사용하여 Astra Trident를 설치합니다. 예를 들어, Kubernetes 1.27용 Astra Trident 23.04를 설치하는 경우 다음 명령을 실행합니다.</block>
+  <block id="8242b9562bf03173e7ab7ebe91136717" category="list-text">Kubernetes 1.24 이하 를 실행하는 클러스터의 경우, 를 사용합니다 <block ref="fca96f50bbc5cba400ec0352141eeed0" category="inline-link-macro-rx"></block>.</block>
+  <block id="9d09cc8d1806a36c8229ace5be55429d" category="list-text">Kubernetes 1.25 이상을 실행하는 클러스터의 경우 를 사용합니다 <block ref="3f9cbdeaab0f584d6abcc4282318bea8" category="inline-link-macro-rx"></block>.</block>
+  <block id="5d52721879cc96347aaf4163e6a19e02" category="admonition">클러스터 범위 연산자를 설치하면 마이그레이션이 시작됩니다<block ref="4cb15aa30ce0ec4747b372d6d2a5e637" prefix=" " category="inline-code"></block> 개체 대상<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 오브젝트, 삭제<block ref="4cb15aa30ce0ec4747b372d6d2a5e637" prefix=" " category="inline-code"></block> 개체 및<block ref="297dc4adc64c26ae2fd6a1039d00ccb0" prefix=" " category="inline-code"></block> CRD를 사용하여 Astra Trident를 사용 중인 클러스터 범위 운영자 버전으로 업그레이드합니다. 다음 예제에서 Trident는 23.04.0으로 업그레이드됩니다.</block>
+  <block id="ad3ec9af70c3860794540db75d9807c6" category="list-text">를 사용합니다<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block> 명령 위치<block ref="56c028cf1def4066f6a4728f90b9dbf8" prefix=" " category="inline-code"></block> 업그레이드하려는 버전을 반영합니다.</block>
+  <block id="17a3cc50f8070f6f8ca4c0aaf627cd51" category="list-text">설치된 버전의 4 릴리스 창 내에 있는 모든 대상 릴리스에 대해 직접 업그레이드를 수행할 수 있습니다. 예를 들어 22.04에서 23.04로 직접 업그레이드할 수 있습니다(22.04.1과 같은 도트 릴리스 포함).</block>
+  <block id="beee3e754bb36e7321f32ad13d4ac60a" category="paragraph">모든 Kubernetes 작업자 노드에는 적절한 iSCSI 툴이 설치되어 있어야 합니다. 을 참조하십시오 <block ref="9e8cf70fcb465bf1907b585f74e9e1a6" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
+  <block id="37225474f75e9da42c0f924ba87b113a" category="cell"><block ref="8321592ce24c8a122ecf26a63cfca407" prefix="" category="inline-code"></block>,<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block>,<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block>,<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block>,<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block></block>
+  <block id="56d1e7863190cbf5e7689e2821d0959e" category="cell"><block ref="47cb44be55a0dffa15dfc900a4c687be" prefix="" category="inline-code"></block></block>
+  <block id="3bc2d9079510db6d0570883494bc5984" category="cell"><block ref="f899139df5e1059396431415e770c6dd" prefix="" category="inline-code"></block></block>
+  <block id="06daeb0fdb584c4694891d290310e1ed" category="cell"><block ref="3644a684f98ea8fe223c713b77189a77" prefix="" category="inline-code"></block></block>
+  <block id="429970b7b8d395eb00181a72bc544fba" category="cell">공유 폴더 Microsoft 관리 콘솔을 사용하여 생성한 SMB 공유의 이름을 지정하거나 Astra Trident가 SMB 공유를 생성할 수 있도록 공유 이름을 지정할 수 있습니다. 또는 매개 변수를 비워 두면 볼륨에 대한 공통 공유 액세스를 방지할 수 있습니다.</block>
+  <block id="996a57df5a7c8752e8bc23b6af020be4" category="cell">If(경우<block ref="0a236e7685e50a59df980d0a30929d6c" prefix=" " category="inline-code"></block> 있습니다<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block>,<block ref="2954e92a9b4d0e998fe4893f8141649a" prefix=" " category="inline-code"></block> “”</block>
+  <block id="58c09f2c9581bc7c58c32116266b6d8f" category="cell">사용할 계층화 정책<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block></block>
+  <block id="49ed5b3ecd0e966bec6b74083f06599e" category="cell"><block ref="8805d416ce540c5f2df34af5b18d742b" prefix="" category="inline-code"></block> ONTAP 9.5 이전 SVM-DR 구성용</block>
+  <block id="6792aad2d8c086a9d25f5ad8ec090f35" category="paragraph">Element 백엔드를 생성하기 전에 다음이 필요합니다.</block>
+  <block id="4e121ce555fa114069539035adefe18e" category="section-title">볼륨 모드</block>
+  <block id="690b3c7311638da5eef87f5e07aa1258" category="section-title">볼륨 관리</block>
+  <block id="24da0fbaaa9930515c555e7019db09d2" category="paragraph">Astra Trident를 사용하여 볼륨을 관리하는 방법에 대한 자세한 내용은 다음을 참조하십시오.</block>
+  <block id="00a9bbaf4185978435bd4d6cb7aba6c4" category="summary">NetApp ONTAP용 Amazon FSx와 Astra Trident를 사용하면 Amazon EKS(Elastic Kubernetes Service)에서 실행되는 Kubernetes 클러스터가 ONTAP에서 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있습니다.</block>
+  <block id="5178ad00e596ece0be9aceff179b4303" category="paragraph">Astra Trident는 Astra Trident 성능을 모니터링하는 데 사용할 수 있는 Prometheus 메트릭 엔드포인트 세트를 제공합니다.</block>
+  <block id="51e6d748c5af856ade589011dc2c7e85" category="cell"><block ref="37a6259cc0c1dae299a7866489dff0bd" prefix="" category="inline-code"></block></block>
+  <block id="ddbd2735bfb88c5da807f77f6fe5f6c8" category="doc">ONTAP NAS 드라이버 개요</block>
+  <block id="dd972e44915c7a0884edd58e9d839295" category="section-title">ONTAP NAS 드라이버에 대한 중요 정보입니다</block>
+  <block id="482723983a4f2af954e36ff41e567451" category="section-title">알려진 제한 사항</block>
+  <block id="1faffcbb00c529812b5526b1b22b2b56" category="paragraph">SVM에서 NFS 및 SMB/CIFS 프로토콜을 모두 구성하여 을 생성해야 합니다<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> ONTAP 사내를 위한 SMB 볼륨 이 두 프로토콜 중 하나를 구성하지 않으면 SMB 볼륨 생성에 실패합니다.</block>
+  <block id="5cc1e28c0d7b6c40ca94aacb554b31ca" category="doc">ONTAP SAN 드라이버 개요</block>
+  <block id="7771a46320e96de2bde6598540ad4d52" category="section-title">ONTAP SAN 드라이버에 대한 중요한 정보</block>
+  <block id="904628b57a33f3a2f6d71a6d991e15c6" category="paragraph">Astra Trident는 을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하여 연결할 수 있습니다<block ref="80b9a4f4a1bc9851317207ee3477041a" category="inline-link-rx"></block>.</block>
+  <block id="3eba7c2a6bd35cbac350dcbfb90408f6" category="paragraph">CSI 토폴로지 기능을 사용하면 지역 및 가용성 영역에 따라 볼륨에 대한 액세스가 노드의 하위 집합으로 제한될 수 있습니다. 오늘날의 클라우드 공급자는 Kubernetes 관리자가 영역 기반의 노드를 생성할 수 있습니다. 노드는 지역 내 또는 여러 지역의 여러 가용성 영역에 위치할 수 있습니다. Astra Trident는 다중 영역 아키텍처에서 워크로드용 볼륨 프로비저닝을 지원하기 위해 CSI 토폴로지를 사용합니다.</block>
+  <block id="4ba6a75e6aacbc3737630ba55916cd27" category="section-title">백엔드 관리 옵션</block>
+  <block id="798f4548a52b3c91b25609a82ff6a12e" category="paragraph">을 소개합니다<block ref="913a4b06671d1e04e6582a85afe3abbe" prefix=" " category="inline-code"></block>이제 관리자는 두 가지 고유한 방식으로 백엔드를 관리할 수 있습니다. 이 질문은 다음과 같습니다.</block>
+  <block id="8e523fab738ccb6504fc60551cbaefdf" category="paragraph">Astra Trident는 노드당 작성 및 관리합니다<block ref="58f3779afe9da9ffdc085dc3064306f7" prefix=" " category="inline-code"></block> 현재<block ref="e77a1bd34ff5793aca292b38d23bc2c9" prefix=" " category="inline-code"></block>.</block>
+  <block id="0ee19d4be17e297cfb39c398cb268b5e" category="paragraph">이 값은 변경하거나 생략할 수 없습니다.</block>
+  <block id="07d41595da50d0c332f22902db2f76d8" category="paragraph">* 에서만 사용할 수 있습니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> 드라이버 *.</block>
+  <block id="684a16b15a51568bcdd546607176bd57" category="paragraph"><block ref="e77a1bd34ff5793aca292b38d23bc2c9" prefix="" category="inline-code"></block></block>
+  <block id="ab946346d7b6ebd4a84d96bb78dcd833" category="section-title">LUKS 볼륨을 가져오기 위한 백엔드 구성입니다</block>
+  <block id="6159e851594f646ce383a87fc615fbd1" category="paragraph">LUKS 볼륨을 가져오려면 을 설정해야 합니다<block ref="0f179ba2bc32ab5d8f60692f5b800c86" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> 백엔드에서. 를 클릭합니다<block ref="0f179ba2bc32ab5d8f60692f5b800c86" prefix=" " category="inline-code"></block> 옵션은 볼륨이 LUKS를 준수하는지 Astra Trident에 알려줍니다 <block ref="b326b5062b2f0e69046810717534cb09" prefix="(" category="inline-code"></block>) 또는 LUKS를 준수하지 않습니다 <block ref="68934a3e9455fa72420237eb05902327" prefix="(" category="inline-code"></block>)를 참조하십시오.</block>
+  <block id="240fa413bb5a8b96728ba9bb20f953bc" category="summary">Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 공급자 및 오케스트레이터입니다. Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다. ** Astra Trident 23.04로 업그레이드에 대한 중요 정보는 릴리스 노트를 참조하십시오.**</block>
+  <block id="75a6a3af601d4175be90ebfbdcaead5f" category="doc">Astra Trident 23.04 문서</block>
+  <block id="490414e0366b091220802d406e52c076" category="doc">새로운 기능</block>
+  <block id="0dcdbeca28e29fdc0076d56763410520" category="section-title">23.04의 새로운 기능</block>
+  <block id="3317f97754f7308b6a0e2a12c0241d39" category="admonition">ONTAP-SAN * 볼륨의 강제 볼륨 분리 기능은 비우아한 노드 종료 기능 게이트가 활성화된 Kubernetes 버전에서만 지원됩니다. 설치 시 를 사용하여 강제 분리를 활성화해야 합니다<block ref="d75e90115a6343745df96039920422fc" prefix=" " category="inline-code"></block> Trident 설치 관리자 플래그입니다.</block>
+  <block id="8743cc1328bba53ea356fd3e593a3f9c" category="list-text">번들 권한(<block ref="25d51e363866fb30c759c73e05114b0d" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
+  <block id="c16e7ed05955f3a772cc5e37988626a6" category="inline-link-macro">문제 #811</block>
+  <block id="c8b742414af3be73bd16e0c1ed978ae5" category="list-text">Trident 컨트롤러가 즉시 종료되지 않는 문제 해결(<block ref="6916c682464f601a812aa726b7255568" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
+  <block id="e82b00f6dda8d75f6267522d6e8e21b3" category="list-text">ONTAP-SAN- * 드라이버를 사용하여 프로비저닝된 지정된 LUN과 관련된 igroup의 모든 이름을 나열하는 수정 사항이 추가되었습니다.</block>
+  <block id="3f32e3199847516d3773942171a3320e" category="inline-link-macro">문제 #537</block>
+  <block id="8ac5248178b612abfaaec81ca7b06c94" category="list-text">s390 아키텍처(<block ref="a2e3737cce03fa6e94f8357a427b1da2" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
+  <block id="70d039054d2873e8b0f28587cb19086a" category="inline-link-macro">문제 #781</block>
+  <block id="48b91d8b8b87d6d8c95cbc34bbae12e7" category="list-text">볼륨 마운트 작업 중 잘못된 로깅 수준 수정(<block ref="8bb65f034421623db4038f879681c20b" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
+  <block id="6c85ef6d99d7dc6999989d8228ad56d9" category="inline-link-macro">문제 # 802</block>
+  <block id="6edadfcf2d991f369cdf934677bb161a" category="list-text">잠재적 유형 어설션 오류(<block ref="e6bc1d779eb6c87e7246c3841e50b482" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
+  <block id="afcf8fa41398f15ad38c5874372e9b4c" category="list-text">Kubernetes 1.27에 대한 지원이 추가되었습니다.</block>
+  <block id="67db0e94c8905c93eda71f86cb532e07" category="list-text">LUKS 볼륨 가져오기에 대한 지원이 추가되었습니다.</block>
+  <block id="6de845032edacfacdf7599428fce6ce3" category="list-text">ReadWriteOncePod PVC 액세스 모드에 대한 지원이 추가되었습니다.</block>
+  <block id="9297bb6ec4e523b7875643c53cc9f528" category="list-text">비우아한 노드 종료 시나리오 중에 ONTAP-SAN- * 볼륨에 대한 강제 분리 지원 추가.</block>
+  <block id="bf75c88234d165d6aa37891adda4465a" category="inline-link-macro">문제 #758</block>
+  <block id="8ba74f6fd31160a630f1dc4eeb7d2e20" category="list-text">이제 모든 ONTAP-SAN- * 볼륨에 노드당 Igroup이 사용됩니다. LUN은 igroup에 매핑되며 해당 노드에 적극적으로 게시되므로 보안 상태가 향상됩니다. Trident가 활성 워크로드( 에 영향을 주지 않고 안전하게 수행할 수 있다고 판단하면 기존 볼륨이 새로운 igroup 체계로 기회적으로 전환됩니다<block ref="9c63b965233843690f19867523ba780c" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
+  <block id="79e79d7d8fe825308bd0e601daaa1131" category="list-text">ONTAP-SAN- * 백엔드에서 사용하지 않는 Trident 관리 igroup을 정리하여 Trident 보안을 개선했습니다.</block>
+  <block id="18596399dedf47a387f514e9c9862876" category="list-text">ONTAP-NAS-이코노미 및 ONTAP-NAS-Flexgroup 스토리지 드라이버에 Amazon FSx를 포함한 SMB 볼륨 지원을 추가했습니다.</block>
+  <block id="42bbebea36c49138518f54240583f571" category="list-text">ONTAP-NAS, ONTAP-NAS-이코노미 및 ONTAP-NAS-Flexgroup 스토리지 드라이버와 SMB 공유에 대한 지원을 추가했습니다.</block>
+  <block id="4332590e7a6bcbdc2a06dc0e18c0731b" category="inline-link-macro">문제 #732</block>
+  <block id="5a8fc8277a0f6ed003c225aa1e7c48b6" category="list-text">arm64 노드(<block ref="c2778c70230759cdeecc0357ca334a05" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
+  <block id="69ef45b431e1a60332ee3ce7e1a67645" category="list-text">API 서버를 먼저 비활성화하여 Trident 종료 절차 개선(<block ref="6916c682464f601a812aa726b7255568" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
+  <block id="be70537c794b0fc1d909e1bf6ffbbc59" category="list-text">Makefile에 Windows 및 arm64 호스트에 대한 교차 플랫폼 빌드 지원 추가; build.md 참조.</block>
+  <block id="6f03549bdf867b6dbabec83da444ffcf" category="paragraph">** Kubernetes:** ONTAP-SAN 및 ONTAP-SAN-이코노미 드라이버를 구성할 때 백엔드 범위의 igroup이 더 이상 생성되지 않습니다(<block ref="9c63b965233843690f19867523ba780c" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
+  <block id="7558c614baceb6010756b848dd26325e" category="section-title">23.01.1의 변경 사항</block>
+  <block id="d7393ea674321a4e126b601e3097f2ec" category="admonition">이제 Trident에서 Kubernetes 1.27이 지원됩니다. Kubernetes를 업그레이드하기 전에 Astra Trident를 업그레이드하십시오.</block>
+  <block id="99836a64b28c522e35a15aa0a4b39257" category="list-text">ONTAP-SAN 볼륨은 이제 노드별 igroup을 사용하며 해당 노드에 능동적으로 게시되는 LUN만 igroup에 매핑하여 보안 상태를 향상합니다. Astra Trident가 활성 워크로드에 영향을 주지 않고 안전하게 수행할 수 있다고 판단하면 기존 볼륨이 새로운 igroup 체계로 자동으로 전환됩니다.</block>
+  <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">새로운 소식</block>
 </blocks>

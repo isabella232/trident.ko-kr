@@ -11,6 +11,7 @@ summary: tridentctl을 사용하여 백엔드 관리 작업을 수행하는 방�
 :imagesdir: ../media/
 
 
+[role="lead"]
 tridentctl을 사용하여 백엔드 관리 작업을 수행하는 방법에 대해 알아보십시오.
 
 

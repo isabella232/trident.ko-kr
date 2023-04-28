@@ -11,7 +11,12 @@ summary: Astra Trident는 Astra Trident의 성능을 모니터링하는 데 사�
 :imagesdir: ../media/
 
 
-Astra Trident는 Astra Trident의 성능을 모니터링하는 데 사용할 수 있는 Prometheus 메트릭 엔드포인트 세트를 제공합니다.
+[role="lead"]
+Astra Trident는 Astra Trident 성능을 모니터링하는 데 사용할 수 있는 Prometheus 메트릭 엔드포인트 세트를 제공합니다.
+
+
+
+== 개요
 
 Astra Trident에서 제공하는 메트릭을 통해 다음을 수행할 수 있습니다.
 

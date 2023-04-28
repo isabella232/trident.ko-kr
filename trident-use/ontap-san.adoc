@@ -4,21 +4,20 @@ permalink: trident-use/ontap-san.html
 keywords: trident backend, ontap san, ontap-san, ontap-san-economy, fsx 
 summary: ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오. 
 ---
-= ONTAP SAN 드라이버를 사용하여 백엔드를 구성합니다
+= ONTAP SAN 드라이버 개요
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
+[role="lead"]
 ONTAP 및 Cloud Volumes ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오.
 
-* link:ontap-san-prep.html["준비"^]
-* link:ontap-san-examples.html["구성 및 예"^]
 
 
-[WARNING]
-====
+== ONTAP SAN 드라이버에 대한 중요한 정보
+
 Astra Control은 로 생성한 볼륨을 위해 원활한 보호, 재해 복구, 이동성(Kubernetes 클러스터 간에 볼륨 이동)을 제공합니다 `ontap-nas`, `ontap-nas-flexgroup`, 및 `ontap-san` 드라이버. 을 참조하십시오 link:https://docs.netapp.com/us-en/astra-control-center/use/replicate_snapmirror.html#replication-prerequisites["Astra Control 복제 사전 요구 사항"^] 를 참조하십시오.
 
 * 를 사용해야 합니다 `ontap-nas` 데이터 보호, 재해 복구 및 이동성을 필요로 하는 운영 워크로드에 적합합니다.
@@ -27,7 +26,6 @@ Astra Control은 로 생성한 볼륨을 위해 원활한 보호, 재해 복구,
 * 사용하지 마십시오 `ontap-nas-economy` 데이터 보호, 재해 복구 또는 이동성이 필요할 것으로 예상되는 경우
 
 
-====
 
 
 == 사용자 권한

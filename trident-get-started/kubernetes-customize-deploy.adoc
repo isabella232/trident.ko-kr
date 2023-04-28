@@ -40,52 +40,22 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 | 매개 변수 | 설명 | 기본값 
 
 
-| '네임스페이스' | Astra Trident를 설치할 네임스페이스입니다 | "기본값" 
-
-
-| "버그" | Astra Trident에 대한 디버깅을 활성화합니다 | 거짓 
-
-
-| `windows` | 를 로 설정합니다 `true` Windows 작업자 노드에 설치할 수 있습니다. | 거짓 
-
-
-| 'IPv6' | IPv6를 통해 Astra Trident를 설치합니다 | 거짓 
-
-
-| k8sTimeout | Kubernetes 작업 시간이 초과되었습니다 | 30초 
-
-
-| 이제 자동 지원입니다 | AutoSupport 번들을 NetApp에 자동으로 보내지 않습니다 | 거짓 
-
-
-| "enableNodePrep"입니다 | 작업자 노드 종속성 자동 관리(* beta*) | 거짓 
-
-
-| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/트리덴트 - AutoSupport: 23.01" 
+| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/트리덴트 - AutoSupport: 23.04.0" 
 
 
 | 자동 지원 프록시 | AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다 | "http://proxy.example.com:8888"[] 
 
 
-| "제거"를 선택합니다 | Astra Trident를 제거하는 데 사용되는 플래그입니다 | 거짓 
+| 'controllerPluginNodeSelector' | Trident 컨트롤러 CSI 플러그인을 실행하는 Pod용 추가 노드 선택기. 는 와 동일한 형식을 따릅니다 `pod.spec.nodeSelector`. | 기본값 없음, 선택 사항 
 
 
-| 로그포맷 | 사용할 Astra Trident 로깅 형식[text,json] | "텍스트" 
+| '컨트롤러 PluginTolerations' | Trident 컨트롤러 CSI 플러그인을 실행하는 Pod의 허용 설정을 재정의합니다. 는 와 동일한 형식을 따릅니다 `pod.spec.Tolerations`. | 기본값 없음, 선택 사항 
 
 
-| 트리덴티이미지 | 설치할 Astra Trident 이미지 | "NetApp/트리덴트: 21.04" 
+| "버그" | Astra Trident에 대한 디버깅을 활성화합니다 | 거짓입니다 
 
 
-| 'imageRegistry'입니다 | '<registry FQDN>[:port][/subpath]' 형식의 내부 레지스트리 경로입니다 | "k8s.gcr.io/sig-storage(k8s 1.19 이상) 또는 quay.io/k8scsi" 
-
-
-| 쿠벨레트디렉토리 | 호스트의 kubelet 디렉토리에 대한 경로입니다 | “/var/lib/kubelet” 
-
-
-| "위피" | Astra Trident를 완전히 제거하기 위해 삭제할 리소스 목록입니다 |  
-
-
-| 'imagePullSecrets' | 내부 레지스트리에서 이미지를 가져올 수 있는 비밀 |  
+| `enableForceDetach` | `ontap-san` 및 `ontap-san-economy` 만 해당. Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 관리자가 마운트된 볼륨이 있는 워크로드를 노드가 정상 상태가 아닌 경우 새 노드로 안전하게 마이그레이션할 수 있도록 합니다. * 이것은 23.04의 실험 기능입니다. * 를 참조하십시오 <<강제 분리에 대한 세부 정보>> 을 참조하십시오. | 거짓입니다 
 
 
 | `imagePullPolicy` | Trident 운영자의 이미지 풀 정책을 설정합니다. 유효한 값은 다음과 같습니다.
@@ -107,6 +77,31 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 |===
 
 NOTE: 포드 매개 변수 포맷에 대한 자세한 내용은 을 참조하십시오 link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/["노드에 Pod 할당"^].
+
+
+
+=== 강제 분리에 대한 세부 정보
+
+에 대해 강제 분리를 사용할 수 있습니다 `ontap-san` 및 `ontap-san-economy` 만 해당. 강제 분리를 활성화하기 전에 Kubernetes 클러스터에서 비정상 노드 종료(ngns)를 활성화해야 합니다. 자세한 내용은 을 참조하십시오 link:https://kubernetes.io/docs/concepts/architecture/nodes/#non-graceful-node-shutdown["Kubernetes: 노드 정상 종료 아님"^].
+
+
+WARNING: Astra Trident는 Kubernetes ngns에 의존하므로 제거하지 마십시오 `out-of-service` 허용 불가능한 모든 작업 부하가 재조정될 때까지 상태가 불량한 노드에서 오인합니다. 무모하게 타트를 적용하거나 제거하면 백엔드 데이터 보호가 위태롭게 될 수 있습니다.
+
+Kubernetes 클러스터 관리자가 를 적용했을 때 `node.kubernetes.io/out-of-service=nodeshutdown:NoExecute` 노드 및 에 대한 태트 `enableForceDetach` 가 로 설정되어 있습니다 `true`, Astra Trident에서 노드 상태를 확인하고 다음을 수행합니다.
+
+. 해당 노드에 마운트된 볼륨에 대한 백엔드 입출력 액세스를 중단합니다.
+. Astra Trident 노드 객체를 로 표시합니다 `dirty` (새 발행물에는 안전하지 않음).
++
+
+NOTE: Trident 컨트롤러는 노드가 재검증될 때까지(로 표시된 후) 새로운 게시 볼륨 요청을 거부합니다 `dirty`) Trident 노드 POD를 사용합니다. 클러스터 노드가 정상 상태가 되고 준비된 후에도 마운트된 PVC로 예약된 워크로드는 Astra Trident가 노드를 확인할 때까지 허용되지 않습니다 `clean` (새 출판물에 대해 안전).
+
+
+
+노드 상태가 복원되고 Tint가 제거되면 Astra Trident는 다음을 수행합니다.
+
+. 노드에서 오래된 게시된 경로를 식별하고 제거합니다.
+. 노드가 에 있는 경우 `cleanable` 상태(Out-of-service taint가 제거되었으며 노드가 IN 상태입니다 `Ready` State) 및 게시된 모든 경로가 깨끗하며, Astra Trident가 노드를 다시 입원 처리하는 역할을 합니다 `clean` 노드에 게시된 새 볼륨을 허용합니다.
+
 
 
 

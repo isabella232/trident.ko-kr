@@ -11,6 +11,7 @@ summary: Astra Trident 설치를 통해 ONTAP NAS 드라이버를 생성하고 �
 :imagesdir: ../media/
 
 
+[role="lead"]
 Astra Trident 설치를 통해 ONTAP NAS 드라이버를 생성하고 사용하는 방법에 대해 알아보십시오. 이 섹션에서는 백엔드 구성 예제 및 백엔드를 StorageClasses에 매핑하는 방법에 대한 세부 정보를 제공합니다.
 
 
@@ -84,10 +85,16 @@ Astra Trident 설치를 통해 ONTAP NAS 드라이버를 생성하고 사용하�
 | debugTraceFlags를 선택합니다 | 문제 해결 시 사용할 디버그 플래그입니다. 예: {“api”:false, “method”:true} 사용하지 마십시오 `debugTraceFlags` 문제 해결 및 자세한 로그 덤프가 필요한 경우를 제외하고 | null입니다 
 
 
+| `nasType` | NFS 또는 SMB 볼륨 생성을 구성합니다. 옵션은 입니다 `nfs`, `smb` 또는 null입니다. Null로 설정하면 기본적으로 NFS 볼륨이 설정됩니다. | `nfs` 
+
+
 | nfsMountOptions를 선택합니다 | 쉼표로 구분된 NFS 마운트 옵션 목록입니다. Kubernetes 영구 볼륨의 마운트 옵션은 일반적으로 스토리지 클래스에서 지정되지만, 스토리지 클래스에 마운트 옵션을 지정하지 않으면 Astra Trident가 스토리지 백엔드의 구성 파일에 지정된 마운트 옵션을 사용하여 로 돌아갑니다. 스토리지 클래스 또는 구성 파일에 마운트 옵션이 지정되지 않은 경우 Astra Trident는 연결된 영구 볼륨에 마운트 옵션을 설정하지 않습니다. | “” 
 
 
 | "케트리스퍼플랙스볼륨" | FlexVol당 최대 qtree, 범위 [50, 300]에 있어야 함 | “200” 
+
+
+| `smbShare` | 공유 폴더 Microsoft 관리 콘솔을 사용하여 생성한 SMB 공유의 이름을 지정하거나 Astra Trident가 SMB 공유를 생성할 수 있도록 공유 이름을 지정할 수 있습니다. 또는 매개 변수를 비워 두면 볼륨에 대한 공통 공유 액세스를 방지할 수 있습니다. | `smb-share` 
 
 
 | 'useREST' | ONTAP REST API를 사용하는 부울 매개 변수입니다. * 기술 미리 보기 *

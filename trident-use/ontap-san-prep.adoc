@@ -11,11 +11,18 @@ summary: ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 
 :imagesdir: ../media/
 
 
-ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오. 모든 ONTAP 백엔드의 경우, Astra Trident는 SVM에 하나 이상의 Aggregate가 할당되어 있어야 합니다.
+[role="lead"]
+ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오.
+
+
+
+== 개요
+
+모든 ONTAP 백엔드의 경우, Astra Trident는 SVM에 하나 이상의 Aggregate가 할당되어 있어야 합니다.
 
 또한 둘 이상의 드라이버를 실행하고 둘 중 하나를 가리키는 스토리지 클래스를 생성할 수도 있습니다. 예를 들어, ONTAP-SAN 드라이버와 ONTAP-SAN-이코노미 클래스를 사용하는 '기본 클래스'를 사용하는 'san-dev' 클래스를 구성할 수 있습니다.
 
-모든 Kubernetes 작업자 노드에는 적절한 iSCSI 툴이 설치되어 있어야 합니다. 을 참조하십시오 link:worker-node-prep.html["여기"] 를 참조하십시오.
+모든 Kubernetes 작업자 노드에는 적절한 iSCSI 툴이 설치되어 있어야 합니다. 을 참조하십시오 link:worker-node-prep.html["작업자 노드를 준비합니다"] 를 참조하십시오.
 
 
 
@@ -183,25 +190,6 @@ NOTE: 암호를 회전할 때 스토리지 관리자는 먼저 ONTAP에서 사�
 
 
 
-== Igroup을 지정합니다
-
-Astra Trident에서 igroup을 사용하여 프로비저닝하는 볼륨(LUN)에 대한 액세스를 제어합니다. 관리자는 백엔드에 대한 igroup을 지정할 때 다음 두 가지 옵션을 사용할 수 있습니다.
-
-* Astra Trident는 백엔드에 따라 igroup을 자동으로 생성하고 관리할 수 있습니다. 만약 'triviName'이 백엔드 정의에 포함되지 않으면, Astra Trident는 SVM에 'trident-<backend-UUID>'라는 igroup을 생성합니다. 그러면 각 백엔드에 전용 igroup이 있고 Kubernetes 노드 IQN의 자동 추가/삭제를 처리합니다.
-* 또는 미리 생성된 igroup을 백엔드 정의로 제공할 수도 있습니다. 이 작업은 'show'(이름) config 매개 변수를 사용하여 수행할 수 있습니다. Astra Trident가 기존 igroup에 Kubernetes 노드 IQN을 추가/삭제합니다.
-
-
-'인명이름'이 정의된 백엔드의 경우, '인명이름'을 '트리멘틀백엔드 업데이트'를 사용하여 삭제하고 Astra Trident에서 Igroup을 자동 처리할 수 있습니다. 이 경우 워크로드에 이미 연결된 볼륨에 대한 액세스가 중단되지 않습니다. 생성된 igroup Astra Trident를 사용하여 향후 연결을 처리할 것입니다.
-
-
-IMPORTANT: Astra Trident의 각 고유 인스턴스에 대해 igroup을 할당하는 것은 Kubernetes 관리자 및 스토리지 관리자에게 유용한 모범 사례입니다. CSI Trident는 클러스터 노드 IQN을 igroup에 추가 및 제거하여 관리를 크게 단순화합니다. 전용 igroup을 사용하여 Kubernetes 환경(및 Astra Trident 설치)에서 동일한 SVM을 사용할 경우 한 Kubernetes 클러스터의 변경 사항이 다른 Kubernetes 클러스터와 관련된 igroup에 영향을 미치지 않도록 합니다. 또한 Kubernetes 클러스터의 각 노드에 고유한 IQN이 있는지 확인하는 것도 중요합니다. 위에 언급한 바와 같이, Astra Trident는 IQN의 추가 및 제거를 자동으로 처리합니다. 호스트 간에 IQN을 재사용하면 호스트가 서로 잘못 인식되어 LUN에 대한 액세스가 거부되는 바람직하지 않은 시나리오가 발생할 수 있습니다.
-
-Astra Trident가 CSI Provisioner로 작동하도록 구성된 경우 Kubernetes 노드 IQN이 igroup에 자동으로 추가/제거됩니다. Kubernetes 클러스터에 노드를 추가할 경우, `trident-csi` DemonSet가 포드를 전개합니다 (`trident-csi-xxxxx` 23.01 또는 이전 버전 `trident-node<operating system>-xxxx` 23.01 이상에서)를 새로 추가한 노드에 추가하고 볼륨을 연결할 수 있는 새 노드를 등록합니다. 노드 IQN도 백엔드의 igroup에 추가됩니다. 이와 유사한 일련의 단계에서는 Kubernetes에서 노드에 코드로닝, 드레이닝 및 삭제가 발생하는 경우 IQN 제거를 처리합니다.
-
-Astra Trident가 CSI Provisioner로 실행되지 않을 경우, Kubernetes 클러스터의 모든 작업자 노드에서 iSCSI IQN을 포함하도록 igroup을 수동으로 업데이트해야 합니다. Kubernetes 클러스터에 참여하는 노드의 IQN을 igroup에 추가해야 합니다. 마찬가지로, Kubernetes 클러스터에서 제거된 노드의 IQN을 igroup에서 제거해야 합니다.
-
-
-
 == 양방향 CHAP를 사용하여 연결을 인증합니다
 
 Astra Trident는 의 양방향 CHAP를 사용하여 iSCSI 세션을 인증할 수 있습니다 `ontap-san` 및 `ontap-san-economy` 드라이버. 이를 위해서는 가 활성화되어야 합니다 `useCHAP` 백엔드 정의에서 선택할 수 있습니다. 를 로 설정한 경우 `true`, Astra Trident는 SVM의 기본 이니시에이터 보안을 양방향 CHAP로 구성하고 백엔드 파일의 사용자 이름과 암호를 설정합니다. 양방향 CHAP를 사용하여 연결을 인증하는 것이 좋습니다. 다음 샘플 구성을 참조하십시오.
@@ -241,7 +229,6 @@ useCHAP=true 외에, chapInitatorSecret, chapTargetInitialatorSecret, chapchTarg
 
 
 * CHAP 이니시에이터 및 타겟 사용자 이름과 암호를 구성합니다. 이러한 옵션은 백엔드 구성에 지정해야 합니다(위 참조).
-* 에 이니시에이터 추가 관리 `igroupName` 백엔드에서 제공됩니다. 지정되지 않은 경우 이 기본값은 입니다 `trident`.
 
 
 백엔드가 생성된 후 Astra Trident는 해당 'tridentbackend' CRD를 생성하고 CHAP 비밀과 사용자 이름을 Kubernetes 비밀로 저장합니다. 이 백엔드에서 Astra Trident에 의해 생성된 모든 PVS는 CHAP를 통해 마운트되고 연결됩니다.
@@ -267,7 +254,6 @@ cat backend-san.json
     "useCHAP": true,
     "username": "vsadmin",
     "password": "password",
-    "igroupName": "trident",
     "chapInitiatorSecret": "cl9qxUpDaTeD",
     "chapTargetInitiatorSecret": "rqxigXgkeUpDaTeD",
     "chapTargetUsername": "iJF4heBRT0TCwxyz",

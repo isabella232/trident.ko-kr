@@ -10,6 +10,9 @@ settings:
   versions:
   - name: 아스트라 트리덴트
     url: "/trident"
+    version-number: '23.04'
+  - name: 아스트라 트리덴트
+    url: "/trident-2301"
     version-number: '23.01'
   - name: 아스트라 트리덴트
     url: "/trident-2210"
@@ -20,16 +23,17 @@ settings:
   - name: 아스트라 트리덴트
     url: "/trident-2204"
     version-number: '22.04'
-  - name: 아스트라 트리덴트
-    url: "/trident-2201"
-    version-number: '22.01'
   langs: ko-kr,us-en,ja-jp,zh-cn,zh-tw,de-de,es-es,fr-fr
 sidebar:
   entries:
   - title: Astra Trident 문서
     url: "/index.html"
   - title: 릴리스 정보
-    url: "/trident-rn.html"
+    entries:
+    - title: 새로운 소식
+      url: "/trident-rn.html"
+    - title: 이전 버전
+      url: "/earlier-versions.html"
   - section: trident-concepts
   - section: trident-get-started
   - section: trident-managing-k8s
@@ -43,8 +47,6 @@ sidebar:
     url: "/troubleshooting.html"
   - section: trident-reco
   - section: trident-reference
-  - title: 이전 버전
-    url: "/earlier-versions.html"
   - title: 법적 고지
     url: "/legal-notices.html"
 product-family:

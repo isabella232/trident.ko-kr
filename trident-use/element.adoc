@@ -11,15 +11,24 @@ summary: Astra Trident 설치와 함께 Element 백엔드를 생성하고 사용
 :imagesdir: ../media/
 
 
+[role="lead"]
 Astra Trident 설치와 함께 Element 백엔드를 생성하고 사용하는 방법에 대해 알아보십시오.
 
-.필요한 것
+
+
+== 시작하기 전에
+
+Element 백엔드를 생성하기 전에 다음이 필요합니다.
+
 * Element 소프트웨어를 실행하는 지원되는 스토리지 시스템
 * 볼륨을 관리할 수 있는 NetApp HCI/SolidFire 클러스터 관리자 또는 테넌트 사용자에 대한 자격 증명
 * 모든 Kubernetes 작업자 노드에 적절한 iSCSI 툴이 설치되어 있어야 합니다. 을 참조하십시오 link:../trident-use/worker-node-prep.html["작업자 노드 준비 정보"].
 
 
-.알아야 할 내용
+
+
+== 볼륨 모드
+
 '솔드파이어-SAN' 스토리지 드라이버는 파일 및 블록의 볼륨 모드를 모두 지원합니다. 파일 시스템 볼륨 코드의 경우 Astra Trident가 볼륨을 생성하고 파일 시스템을 생성합니다. 파일 시스템 유형은 StorageClass에 의해 지정됩니다.
 
 [cols="5"]

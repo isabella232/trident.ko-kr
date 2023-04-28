@@ -145,7 +145,7 @@ NOTE: 을 참조하십시오 link:https://docs.netapp.com/us-en/ontap/smb-config
 | 매개 변수 | 설명 | 예 
 
 
-| `smbShare` | 공유 폴더 Microsoft 관리 콘솔을 사용하여 생성한 SMB 공유의 이름입니다. 예: "smb-share". * SMB 볼륨에 필요합니다. * | `smb-share` 
+| `smbShare` | 공유 폴더 Microsoft 관리 콘솔을 사용하여 생성한 SMB 공유의 이름을 지정하거나 Astra Trident가 SMB 공유를 생성할 수 있도록 공유 이름을 지정할 수 있습니다. 또는 매개 변수를 비워 두면 볼륨에 대한 공통 공유 액세스를 방지할 수 있습니다. | `smb-share` 
 
 
 | `nasType` | * 를 로 설정해야 합니다 `smb`. * null인 경우 기본값은 로 설정됩니다 `nfs`. | `smb` 
