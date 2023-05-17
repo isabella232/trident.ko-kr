@@ -19,7 +19,7 @@ Astra Trident를 구축하기 전에 호스트에 필수 프로토콜 사전 요
 == 요구 사항을 확인합니다
 
 * 배포가 모든 를 충족하는지 확인합니다 link:../trident-get-started/requirements.html["요구 사항"].
-* 지원되는 버전의 Docker가 설치되어 있는지 확인합니다. Docker 버전이 오래되었으면 https://docs.docker.com/engine/install/["설치 또는 업데이트합니다"^].
+* 지원되는 버전의 Docker가 설치되어 있는지 확인합니다. Docker 버전이 오래되었으면 https://["설치 또는 업데이트합니다"^].
 +
 [listing]
 ----

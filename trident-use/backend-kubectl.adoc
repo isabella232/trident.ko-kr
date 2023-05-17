@@ -49,7 +49,7 @@ spec:
   credentials:
     name: backend-tbc-ontap-san-secret
 ----
-의 예를 살펴볼 수도 있습니다 https://github.com/NetApp/trident/tree/stable/v21.07/trident-installer/sample-input/backends-samples["Trident - 장착 공구"^] 원하는 스토리지 플랫폼/서비스의 샘플 구성을 위한 디렉토리입니다.
+의 예를 살펴볼 수도 있습니다 https://["Trident - 장착 공구"^] 원하는 스토리지 플랫폼/서비스의 샘플 구성을 위한 디렉토리입니다.
 
 이 'pec'은 백엔드 구성 매개 변수를 사용합니다. 이 예에서는 백엔드에서 'ONTAP-SAN' 스토리지 드라이버를 사용하고 여기에 표로 제공된 구성 매개 변수를 사용합니다. 원하는 스토리지 드라이버에 대한 구성 옵션 목록은 를 참조하십시오 link:backends.html["스토리지 드라이버에 대한 백엔드 구성 정보입니다"^].
 
@@ -76,7 +76,7 @@ TIP: tridentctl로 만든 백엔드에는 관련된 트리젠BackendConfig 객�
 
 kubbeck을 사용하여 새 백엔드를 생성하려면 다음을 수행해야 합니다.
 
-. 을 생성합니다 https://kubernetes.io/docs/concepts/configuration/secret/["쿠버네티스 비밀"^]. 비밀에는 Astra Trident가 스토리지 클러스터/서비스와 통신하는 데 필요한 자격 증명이 포함되어 있습니다.
+. 을 생성합니다 https://["쿠버네티스 비밀"^]. 비밀에는 Astra Trident가 스토리지 클러스터/서비스와 통신하는 데 필요한 자격 증명이 포함되어 있습니다.
 . '트리멘백엔드구성' 객체를 만듭니다. 스토리지 클러스터/서비스에 대한 자세한 내용과 이전 단계에서 생성한 암호를 참조하십시오.
 
 

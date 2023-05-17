@@ -141,7 +141,7 @@ Astra Trident는 오픈 소스이며 무료로 제공되지만, NetApp 백엔드
 지원 케이스를 제기하려면 다음 중 하나를 수행합니다.
 
 . 지원 어카운트 매니저에게 연락하여 티켓을 발급하는 데 도움을 받으십시오.
-. 에 연락하여 지원 케이스를 제출하십시오 https://www.netapp.com/company/contact-us/support/["NetApp 지원"^].
+. 에 연락하여 지원 케이스를 제출하십시오 https://["NetApp 지원"^].
 
 
 
@@ -154,13 +154,13 @@ tridentctl logs-a를 실행하여 지원 번들을 생성할 수 있습니다. �
 
 === 새 기능에 대한 요청을 제기해야 하는 경우 어떻게 해야 합니까?
 
-에서 문제를 만듭니다 https://github.com/NetApp/trident["Astra Trident GitHub를 참조하십시오"^] 제목에 * RFE * 를 기재하고 문제에 대한 설명을 기재하십시오.
+에서 문제를 만듭니다 https://["Astra Trident GitHub를 참조하십시오"^] 제목에 * RFE * 를 기재하고 문제에 대한 설명을 기재하십시오.
 
 
 
 === 결함은 어디에서 제기합니까?
 
-에서 문제를 만듭니다 https://github.com/NetApp/trident["Astra Trident GitHub를 참조하십시오"^]. 문제와 관련된 모든 필수 정보와 로그를 포함해야 합니다.
+에서 문제를 만듭니다 https://["Astra Trident GitHub를 참조하십시오"^]. 문제와 관련된 모든 필수 정보와 로그를 포함해야 합니다.
 
 
 

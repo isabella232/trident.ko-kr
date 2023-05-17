@@ -32,7 +32,7 @@ REST API를 사용하여 리소스 객체를 읽고 쓰면서 Kubernetes 및 Tri
 
 
 
-TIP: Kubernetes 객체에 대한 자세한 내용은 를 읽는 것이 좋습니다 https://kubernetes.io/docs/concepts/storage/persistent-volumes/["영구 볼륨"^] 섹션을 참조하십시오.
+TIP: Kubernetes 객체에 대한 자세한 내용은 를 읽는 것이 좋습니다 https://["영구 볼륨"^] 섹션을 참조하십시오.
 
 
 

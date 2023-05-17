@@ -2303,7 +2303,6 @@
   <block id="43e92857220d1a7ea1da88250ea5e2e3" category="section-title">21.10.0 변경</block>
   <block id="9c87569b835a8f66b7490390d350d9a4" category="paragraph">Kubernetes 배포 시 스냅샷 컨트롤러와 CRD가 포함되지 않은 경우 다음과 같이 배포할 수 있습니다.</block>
   <block id="469f7ca16938508b5dcb777767828b70" category="list-text">볼륨 스냅샷 CRD를 생성합니다.</block>
-  <block id="65b146df7d5c27b212f54a7c9980960b" category="list-text">원하는 네임스페이스에 스냅샷 컨트롤러를 생성합니다. 아래 YAML 매니페스트를 편집하여 네임스페이스를 수정하십시오.</block>
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="sidebar">아스트라 트리덴트</block>
   <block id="5a333b18a215ecfd4457ba0e1732654b" category="section-title">Trident가 로드 공유 미러가 구성된 SVM에서 볼륨을 프로비저닝할 수 있습니까?</block>
   <block id="0e7629426b9d7596800cd5d72f558a7f" category="paragraph">NFS를 통해 데이터를 제공하는 SVM의 루트 볼륨에 로드 공유 미러를 생성할 수 있습니다. ONTAP는 Trident에서 생성한 볼륨의 로드 공유 미러를 자동으로 업데이트합니다. 이로 인해 볼륨 마운팅이 지연될 수 있습니다. Trident를 사용하여 여러 볼륨을 생성할 경우 볼륨 프로비저닝은 ONTAP에서 로드 공유 미러 업데이트에 따라 달라집니다.</block>
@@ -3654,4 +3653,6 @@
   <block id="99836a64b28c522e35a15aa0a4b39257" category="list-text">ONTAP-SAN 볼륨은 이제 노드별 igroup을 사용하며 해당 노드에 능동적으로 게시되는 LUN만 igroup에 매핑하여 보안 상태를 향상합니다. Astra Trident가 활성 워크로드에 영향을 주지 않고 안전하게 수행할 수 있다고 판단하면 기존 볼륨이 새로운 igroup 체계로 자동으로 전환됩니다.</block>
   <block id="33871b6190a8d5adbe8b15282054766c" category="sidebar">새로운 소식</block>
   <block id="ffd4000c9e43a23d97e231d47f99dcd4" category="list-text">둘 이상의 드라이버를 실행하고 둘 중 하나를 가리키는 스토리지 클래스를 생성할 수 있습니다. 예를 들어, 을 사용하는 Gold 클래스를 구성할 수 있습니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 드라이버 및 를 사용하는 Bronze 클래스<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 1개.</block>
+  <block id="a571dbb3887a364b4b4dcb82a5fa6ec9" category="list-text">스냅샷 컨트롤러를 생성합니다.</block>
+  <block id="ae3ba2e438847d5fb2abc16b3c73ccab" category="admonition">필요한 경우 를 엽니다<block ref="31a2c725707ce238c3eb4dd82c7e3af9" prefix=" " category="inline-code"></block> 및 업데이트<block ref="89801e9e98979062e84647433a8ed3e9" prefix=" " category="inline-code"></block> 네임스페이스로.</block>
 </blocks>

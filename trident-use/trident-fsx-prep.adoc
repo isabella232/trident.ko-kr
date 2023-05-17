@@ -22,7 +22,7 @@ Amazon Elastic Kubernetes Service(EKS)에서 실행되는 Kubernetes 클러스�
 * 에 대해 준비된 작업자 노드입니다 link:worker-node-prep.html["NFS 또는 iSCSI"].
 +
 
-NOTE: Amazon Linux 및 Ubuntu에 필요한 노드 준비 단계를 따라야 합니다 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html["Amazon Machine Images(아마존 머신 이미지)"^] (AMI) EKS AMI 유형에 따라 다릅니다.
+NOTE: Amazon Linux 및 Ubuntu에 필요한 노드 준비 단계를 따라야 합니다 https://["Amazon Machine Images(아마존 머신 이미지)"^] (AMI) EKS AMI 유형에 따라 다릅니다.
 
 
 

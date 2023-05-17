@@ -47,7 +47,7 @@ systemctl restart docker
 docker --version
 ----
 +
-버전이 최신 버전이 아니면 https://docs.docker.com/engine/install/["설치를 설치하거나 업데이트합니다"^].
+버전이 최신 버전이 아니면 https://["설치를 설치하거나 업데이트합니다"^].
 
 
 
@@ -135,7 +135,7 @@ docker --version
 curl -fsSL https://get.docker.com/ | sh
 ----
 +
-또는, https://docs.docker.com/engine/install/["배포 지침을 따릅니다"^].
+또는, https://["배포 지침을 따릅니다"^].
 
 . 시스템에 NFS 및/또는 iSCSI가 구성되어 있는지 확인합니다.
 

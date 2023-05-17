@@ -19,9 +19,9 @@ Azure NetApp Files 백엔드를 구성하기 전에 다음 요구 사항이 충�
 == NFS 및 SMB 볼륨의 사전 요구 사항
 
 
-NOTE: Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경우 Azure NetApp Files를 설정하고 NFS 볼륨을 생성하려면 몇 가지 초기 구성이 필요합니다. 을 참조하십시오 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes["Azure: Azure NetApp Files를 설정하고 NFS 볼륨을 생성합니다"^].
+NOTE: Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경우 Azure NetApp Files를 설정하고 NFS 볼륨을 생성하려면 몇 가지 초기 구성이 필요합니다. 을 참조하십시오 https://["Azure: Azure NetApp Files를 설정하고 NFS 볼륨을 생성합니다"^].
 
-를 구성하고 사용합니다 https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^] 백엔드, 다음이 필요합니다.
+를 구성하고 사용합니다 https://["Azure NetApp Files"^] 백엔드, 다음이 필요합니다.
 
 * 용량 풀입니다. 을 참조하십시오 link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool["Microsoft: Azure NetApp Files에 대한 용량 풀을 생성합니다"^].
 * Azure NetApp Files에 위임된 서브넷. 을 참조하십시오 link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["Microsoft: Azure NetApp Files에 서브넷을 위임합니다"^].

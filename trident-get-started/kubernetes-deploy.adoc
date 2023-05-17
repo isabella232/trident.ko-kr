@@ -42,7 +42,7 @@ Astra Trident를 다양한 환경과 조직에 설치할 수 있도록 NetApp은
 * 모든 Kubernetes 작업자 노드에서 볼륨을 마운트할 수 있습니다.
 * 가 설치된 Linux 호스트 `kubectl` (또는 `oc`, OpenShift를 사용하는 경우) 사용하려는 Kubernetes 클러스터를 관리하도록 설치 및 구성한 것입니다.
 * 를 클릭합니다 `KUBECONFIG` Kubernetes 클러스터 구성을 가리키도록 설정된 환경 변수입니다.
-* Docker Enterprise와 함께 Kubernetes를 사용하는 경우, https://docs.docker.com/ee/ucp/user-access/cli/["다음 단계에 따라 CLI 액세스를 설정합니다"^].
+* Docker Enterprise와 함께 Kubernetes를 사용하는 경우, https://["다음 단계에 따라 CLI 액세스를 설정합니다"^].
 
 
 

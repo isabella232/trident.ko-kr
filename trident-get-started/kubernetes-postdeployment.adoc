@@ -48,7 +48,7 @@ vi backend.json
 
 == 2단계: 스토리지 클래스를 생성합니다
 
-Kubernetes 사용자는 가 지정된 영구 PVC(Volume Claim)를 사용하여 볼륨을 프로비저닝합니다 https://kubernetes.io/docs/concepts/storage/storage-classes/["스토리지 클래스"^] 이름별. 세부 정보는 사용자로부터 숨겨지지만 스토리지 클래스는 해당 클래스에 사용되는 공급자(이 경우 Trident)와 해당 클래스가 프로비저닝자로부터 의미하는 바를 식별합니다.
+Kubernetes 사용자는 가 지정된 영구 PVC(Volume Claim)를 사용하여 볼륨을 프로비저닝합니다 https://["스토리지 클래스"^] 이름별. 세부 정보는 사용자로부터 숨겨지지만 스토리지 클래스는 해당 클래스에 사용되는 공급자(이 경우 Trident)와 해당 클래스가 프로비저닝자로부터 의미하는 바를 식별합니다.
 
 Kubernetes 스토리지 클래스를 생성할 때 볼륨을 지정할 시기를 지정하십시오. 수업 구성에서는 이전 단계에서 생성한 백엔드를 모델링해야 하므로 Astra Trident가 이를 사용하여 새 볼륨을 프로비저닝합니다.
 
@@ -111,7 +111,7 @@ basic-csi    csi.trident.netapp.io   15h
 
 == 3단계: 첫 번째 볼륨을 프로비저닝합니다
 
-이제 첫 번째 볼륨을 동적으로 프로비저닝할 준비가 되었습니다. 이 작업은 Kubernetes를 생성하여 수행합니다 https://kubernetes.io/docs/concepts/storage/persistent-volumes["영구적 볼륨 클레임"^] (PVC) 개체.
+이제 첫 번째 볼륨을 동적으로 프로비저닝할 준비가 되었습니다. 이 작업은 Kubernetes를 생성하여 수행합니다 https://["영구적 볼륨 클레임"^] (PVC) 개체.
 
 방금 만든 저장소 클래스를 사용하는 볼륨에 대해 PVC를 생성합니다.
 

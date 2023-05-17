@@ -12,7 +12,7 @@ summary: Astra Trident는 CSI 토폴로지 기능을 사용하여 Kubernetes 클
 
 
 [role="lead"]
-Astra Trident는 을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하여 연결할 수 있습니다 https://kubernetes-csi.github.io/docs/topology.html["CSI 토폴로지 기능"^].
+Astra Trident는 을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하여 연결할 수 있습니다 https://["CSI 토폴로지 기능"^].
 
 
 
@@ -21,7 +21,7 @@ Astra Trident는 을 사용하여 Kubernetes 클러스터에 있는 노드를 �
 CSI 토폴로지 기능을 사용하면 지역 및 가용성 영역에 따라 볼륨에 대한 액세스가 노드의 하위 집합으로 제한될 수 있습니다. 오늘날의 클라우드 공급자는 Kubernetes 관리자가 영역 기반의 노드를 생성할 수 있습니다. 노드는 지역 내 또는 여러 지역의 여러 가용성 영역에 위치할 수 있습니다. Astra Trident는 다중 영역 아키텍처에서 워크로드용 볼륨 프로비저닝을 지원하기 위해 CSI 토폴로지를 사용합니다.
 
 
-TIP: CSI 토폴로지 기능에 대해 자세히 알아보십시오 https://kubernetes.io/blog/2018/10/11/topology-aware-volume-provisioning-in-kubernetes/["여기"^].
+TIP: CSI 토폴로지 기능에 대해 자세히 알아보십시오 https://["여기"^].
 
 Kubernetes는 두 가지 고유한 볼륨 바인딩 모드를 제공합니다.
 
@@ -289,8 +289,8 @@ pvc-san   Bound    pvc-ecb1e1a0-840c-463b-8b65-b3d033e2e62b   300Mi      RWO    
 
 == 자세한 내용을 확인하십시오
 
-* https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/["컨테이너에 대한 리소스를 관리합니다"^]
-* https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#nodeselector["노드 선택기"^]
-* https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity["친화성 및 반친화성"^]
-* https://kubernetes.io/docs/concepts/scheduling-eviction/taint-and-toleration/["오염과 내약입니다"^]
+* https://["컨테이너에 대한 리소스를 관리합니다"^]
+* https://["노드 선택기"^]
+* https://["친화성 및 반친화성"^]
+* https://["오염과 내약입니다"^]
 
