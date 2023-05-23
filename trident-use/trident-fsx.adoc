@@ -12,7 +12,7 @@ summary: 'NetApp ONTAP용 Amazon FSx와 Astra Trident를 사용하면 Amazon EKS
 
 
 [role="lead"]
-https://["NetApp ONTAP용 Amazon FSx"^] NetApp ONTAP 스토리지 운영 체제가 제공하는 파일 시스템을 실행하고 실행할 수 있도록 완벽하게 관리되는 AWS 서비스입니다. ONTAP용 FSX를 사용하면 익숙한 NetApp 기능, 성능 및 관리 기능을 활용하는 동시에, AWS에 데이터를 저장하는 데 따른 단순성, 민첩성, 보안, 확장성을 활용할 수 있습니다. ONTAP용 FSX는 ONTAP 파일 시스템 기능 및 관리 API를 지원합니다.
+https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["NetApp ONTAP용 Amazon FSx"^] NetApp ONTAP 스토리지 운영 체제가 제공하는 파일 시스템을 실행하고 실행할 수 있도록 완벽하게 관리되는 AWS 서비스입니다. ONTAP용 FSX를 사용하면 익숙한 NetApp 기능, 성능 및 관리 기능을 활용하는 동시에, AWS에 데이터를 저장하는 데 따른 단순성, 민첩성, 보안, 확장성을 활용할 수 있습니다. ONTAP용 FSX는 ONTAP 파일 시스템 기능 및 관리 API를 지원합니다.
 
 
 
@@ -22,7 +22,7 @@ https://["NetApp ONTAP용 Amazon FSx"^] NetApp ONTAP 스토리지 운영 체제�
 
 NetApp ONTAP용 Amazon FSx와 Astra Trident를 사용하면 Amazon EKS(Elastic Kubernetes Service)에서 실행되는 Kubernetes 클러스터가 ONTAP에서 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있습니다.
 
-NetApp ONTAP용 Amazon FSx에서 사용됩니다 https://["FabricPool"^] 스토리지 계층을 관리합니다. 이 기능을 사용하면 데이터의 액세스 빈도 여부에 따라 데이터를 계층에 저장할 수 있습니다.
+NetApp ONTAP용 Amazon FSx에서 사용됩니다 https://docs.netapp.com/ontap-9/topic/com.netapp.doc.dot-mgng-stor-tier-fp/GUID-5A78F93F-7539-4840-AB0B-4A6E3252CF84.html["FabricPool"^] 스토리지 계층을 관리합니다. 이 기능을 사용하면 데이터의 액세스 빈도 여부에 따라 데이터를 계층에 저장할 수 있습니다.
 
 
 
@@ -86,6 +86,6 @@ WARNING: Astra Trident는 한 대로 실행될 것으로 예상합니다 `vsadmi
 
 == 자세한 내용을 확인하십시오
 
-* https://["NetApp ONTAP용 Amazon FSx 문서"^]
-* https://["NetApp ONTAP용 Amazon FSx 블로그 게시물"^]
+* https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/what-is-fsx-ontap.html["NetApp ONTAP용 Amazon FSx 문서"^]
+* https://www.netapp.com/blog/amazon-fsx-for-netapp-ontap/["NetApp ONTAP용 Amazon FSx 블로그 게시물"^]
 

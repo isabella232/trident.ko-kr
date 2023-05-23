@@ -47,7 +47,7 @@ Astra Trident를 업그레이드할 수 있는 두 가지 옵션이 있습니다
 
 
 
-WARNING: CSI 볼륨 스냅샷은 이제 Kubernetes 1.20부터 시작되는 GA 기능입니다. Astra Trident를 업그레이드할 때 업그레이드를 수행하기 전에 이전의 모든 알파 스냅샷 CRS 및 CRD(볼륨 스냅샷 클래스, 볼륨 스냅샷 및 볼륨 스냅샷 콘텐츠)를 제거해야 합니다. 을 참조하십시오 https://["블로그입니다"^] 알파 스냅샷을 베타/GA 스펙으로 마이그레이션하는 단계에 대해 이해합니다.
+WARNING: CSI 볼륨 스냅샷은 이제 Kubernetes 1.20부터 시작되는 GA 기능입니다. Astra Trident를 업그레이드할 때 업그레이드를 수행하기 전에 이전의 모든 알파 스냅샷 CRS 및 CRD(볼륨 스냅샷 클래스, 볼륨 스냅샷 및 볼륨 스냅샷 콘텐츠)를 제거해야 합니다. 을 참조하십시오 https://netapp.io/2020/01/30/alpha-to-beta-snapshots/["블로그입니다"^] 알파 스냅샷을 베타/GA 스펙으로 마이그레이션하는 단계에 대해 이해합니다.
 
 
 
@@ -61,5 +61,5 @@ Astra Trident의 21.01 릴리스에는 다음과 같은 몇 가지 주요 아키
 ** 제거 중 정리: Astra Trident를 완전히 제거하려면 모든 관련 리소스를 삭제해야 합니다. 네임스페이스 범위 연산자는 클러스터 범위 리소스(예: clusterRole, ClusterRoleBinding 및 PodSecurityPolicy)를 제거하는 데 문제가 있을 수 있으며 불완전한 정리 작업을 초래할 수 있습니다. 클러스터 범위 연산자로 인해 이 문제가 발생하지 않습니다. 사용자는 Astra Trident를 완전히 제거하고 필요한 경우 새로 설치할 수 있습니다.
 
 
-* 아스트라 트리덴트(Astra Trident)를 설치 및 관리하는 데 사용되는 맞춤형 리소스인 트리젠테시너(트리젠오케스트레이터)가 교체됐습니다. 또 트리엔오케스트레이터 사양에 새로운 필드가 도입된다. 사용자는 'pec.namespace` 필드를 사용하여 네임스페이스 Trident를 설치/업그레이드하도록 지정할 수 있습니다. 예를 들어 보겠습니다 https://["여기"^].
+* 아스트라 트리덴트(Astra Trident)를 설치 및 관리하는 데 사용되는 맞춤형 리소스인 트리젠테시너(트리젠오케스트레이터)가 교체됐습니다. 또 트리엔오케스트레이터 사양에 새로운 필드가 도입된다. 사용자는 'pec.namespace` 필드를 사용하여 네임스페이스 Trident를 설치/업그레이드하도록 지정할 수 있습니다. 예를 들어 보겠습니다 https://github.com/NetApp/trident/blob/stable/v21.01/deploy/crds/tridentorchestrator_cr.yaml["여기"^].
 

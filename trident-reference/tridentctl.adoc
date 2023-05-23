@@ -12,7 +12,7 @@ summary: Trident에 대한 간단한 액세스를 제공하는 명령줄 유틸�
 
 
 [role="lead"]
-를 클릭합니다 https://["Trident 설치 프로그램 번들"^] Astra Trident에 대한 간단한 액세스를 제공하는 명령줄 유틸리티인 tridentctl이 포함되어 있습니다. 충분한 권한을 가진 Kubernetes 사용자는 이를 사용하여 Astra Trident를 설치할 뿐 아니라 직접 상호 작용하여 Astra Trident Pod가 포함된 네임스페이스를 관리할 수 있습니다.
+를 클릭합니다 https://github.com/NetApp/trident/releases["Trident 설치 프로그램 번들"^] Astra Trident에 대한 간단한 액세스를 제공하는 명령줄 유틸리티인 tridentctl이 포함되어 있습니다. 충분한 권한을 가진 Kubernetes 사용자는 이를 사용하여 Astra Trident를 설치할 뿐 아니라 직접 상호 작용하여 Astra Trident Pod가 포함된 네임스페이스를 관리할 수 있습니다.
 
 
 

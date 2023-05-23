@@ -134,7 +134,7 @@ ONTAP 관리 LIF의 IP 주소입니다. FQDN(정규화된 도메인 이름)을 �
 
 
 | nfsMountOptions를 선택합니다  a| 
-NFS 마운트 옵션을 세밀하게 제어합니다. 기본값은 "-o nfsvers=3"입니다. * ONTAP-NAS 및 ONTAP-NAS-이코노미 드라이버에만 사용 가능 *. https://["NFS 호스트 구성 정보는 여기 를 참조하십시오"^].
+NFS 마운트 옵션을 세밀하게 제어합니다. 기본값은 "-o nfsvers=3"입니다. * ONTAP-NAS 및 ONTAP-NAS-이코노미 드라이버에만 사용 가능 *. https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf["NFS 호스트 구성 정보는 여기 를 참조하십시오"^].
  a| 
 `-o nfsvers=4`
 
@@ -277,7 +277,7 @@ ONTAP-SAN-이코노미 드라이버는 자동으로 관리되는 FlexVol의 공�
 * FlexGroup 볼륨에 대해서는 클론 생성이 지원되지 않습니다.
 
 
-FlexGroups에 적합한 FlexGroups 및 워크로드에 대한 자세한 내용은 를 참조하십시오 https://["NetApp FlexGroup 볼륨 모범 사례 및 구현 가이드 를 참조하십시오"^].
+FlexGroups에 적합한 FlexGroups 및 워크로드에 대한 자세한 내용은 를 참조하십시오 https://www.netapp.com/pdf.html?item=/media/12385-tr4571pdf.pdf["NetApp FlexGroup 볼륨 모범 사례 및 구현 가이드 를 참조하십시오"^].
 
 같은 환경에서 고급 기능과 대규모 확장을 위해 ONTAP-NAS를 사용하는 Docker Volume Plugin과 ONTAP-NAS-E경제적인 인스턴스를 여러 개 실행할 수 있습니다.
 

@@ -36,7 +36,7 @@ Astra Trident는 두 개 중 하나로 Cloud Volumes Service 볼륨을 생성할
 
 
 .필요한 것
-를 구성하고 사용합니다 https://["Google Cloud용 Cloud Volumes Service"^] 백엔드, 다음이 필요합니다.
+를 구성하고 사용합니다 https://cloud.netapp.com/cloud-volumes-service-for-gcp?utm_source=NetAppTrident_ReadTheDocs&utm_campaign=Trident["Google Cloud용 Cloud Volumes Service"^] 백엔드, 다음이 필요합니다.
 
 * NetApp Cloud Volumes Service로 구성된 Google Cloud 계정
 * Google Cloud 계정의 프로젝트 번호입니다

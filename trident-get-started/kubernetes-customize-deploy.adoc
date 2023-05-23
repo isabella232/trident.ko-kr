@@ -43,7 +43,7 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 | 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/트리덴트 - AutoSupport: 23.04.0" 
 
 
-| 자동 지원 프록시 | AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다 | "http://[] 
+| 자동 지원 프록시 | AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다 | "http://proxy.example.com:8888"[] 
 
 
 | 'controllerPluginNodeSelector' | Trident 컨트롤러 CSI 플러그인을 실행하는 Pod용 추가 노드 선택기. 는 와 동일한 형식을 따릅니다 `pod.spec.nodeSelector`. | 기본값 없음, 선택 사항 

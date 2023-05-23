@@ -239,7 +239,7 @@ IMPORTANT: 이제 Trident에서 Kubernetes 1.27이 지원됩니다. Kubernetes�
 
 == 22.04의 변경
 
-NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다. 이전 릴리스는 를 참조하십시오 https://["이전 버전의 문서"].
+NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다. 이전 릴리스는 를 참조하십시오 https://docs.netapp.com/us-en/trident/earlier-versions.html["이전 버전의 문서"].
 
 
 IMPORTANT: 이전 Trident 릴리스에서 업그레이드하고 Azure NetApp Files를 사용하는 경우 이제 ''location'' config 매개 변수는 필수 싱글톤 필드입니다.
@@ -397,7 +397,7 @@ WARNING: v21.10.0 릴리즈에는 노드를 제거한 다음 Kubernetes 클러�
 * Astra Trident는 이제 StorageClass에 지정된 fsType 이 없는 볼륨에 대해 빈 fsType("fsType=""")을 적용합니다. Kubernetes 1.17 이상으로 작업할 때 Trident는 NFS 볼륨에 대한 빈 "fsType"을 제공할 수 있도록 지원합니다. iSCSI 볼륨의 경우 보안 컨텍스트를 사용하여 fsGroup을 적용할 때 StorageClass에 fsType을 설정해야 합니다.
 * 여러 Astra Trident 인스턴스에서 백엔드를 사용할 경우 각 백엔드 구성 파일의 ONTAP 백엔드에 대해 서로 다른 'toragePrefix' 값을 사용하거나 SolidFire 백엔드에 다른 'TenantName'을 사용해야 합니다. Astra Trident는 Astra Trident의 다른 인스턴스가 생성한 볼륨을 감지할 수 없습니다. Astra Trident가 볼륨 생성을 idemptent 작업으로 처리하므로 ONTAP 또는 SolidFire 백엔드에서 기존 볼륨을 생성하려고 하면 성공합니다. 'toragePrefix' 또는 'TenantName'이 서로 다를 경우 같은 백엔드에서 생성된 볼륨의 이름 충돌이 있을 수 있습니다.
 * Astra Trident('tridentctl' 또는 Trident Operator 사용)를 설치하고 tridentctl을 사용하여 Astra Trident를 관리하는 경우 'KUBEBEECONFIG' 환경 변수를 설정해야 합니다. 이는 Kubernetes 클러스터가 트리덴트틀과 연동되어야 한다는 것을 나타내기 위해 필요합니다. 여러 Kubernetes 환경에서 작업할 경우 'KUBECONFIG' 파일을 정확하게 소싱해야 합니다.
-* iSCSI PVS에 대해 온라인 공간 재확보를 수행하려면 작업자 노드의 기본 OS에 볼륨에 마운트 옵션을 전달해야 할 수 있습니다. 이는 디카드(disscard)가 필요한 RHEL/RedHat CoreOS 인스턴스에 적용됩니다 https://["마운트 옵션"^]에 mountmounted 폐기 옵션이 포함되어 있는지 확인합니다 https://["d4b9b9554fd820f43eae492d33e41167"^] 온라인 블록 삭제를 지원합니다.
+* iSCSI PVS에 대해 온라인 공간 재확보를 수행하려면 작업자 노드의 기본 OS에 볼륨에 마운트 옵션을 전달해야 할 수 있습니다. 이는 디카드(disscard)가 필요한 RHEL/RedHat CoreOS 인스턴스에 적용됩니다 https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/8/html/managing_file_systems/discarding-unused-blocks_managing-file-systems["마운트 옵션"^]에 mountmounted 폐기 옵션이 포함되어 있는지 확인합니다 https://kubernetes.io/docs/concepts/storage/storage-classes/["d4b9b9554fd820f43eae492d33e41167"^] 온라인 블록 삭제를 지원합니다.
 * Kubernetes 클러스터당 Astra Trident 인스턴스가 두 개 이상 있는 경우, Astra Trident가 다른 인스턴스와 통신할 수 없고 자신이 생성한 다른 볼륨을 검색할 수 없기 때문에 클러스터 내에서 둘 이상의 인스턴스가 실행될 경우 예기치 않거나 잘못된 동작이 발생합니다. Kubernetes 클러스터당 하나의 Astra Trident 인스턴스만 있어야 합니다.
 * Astra Trident가 오프라인인 상태에서 Astra Trident 기반의 'torageClass' 객체를 Kubernetes에서 삭제하면, Astra Trident는 온라인 상태가 되었을 때 데이터베이스에서 해당 스토리지 클래스를 제거하지 않습니다. tridentctl이나 REST API를 사용하여 이러한 스토리지 클래스를 삭제해야 합니다.
 * 사용자가 해당 PVC를 삭제하기 전에 Astra Trident가 프로비저닝한 PV를 삭제하는 경우 Astra Trident는 백업 볼륨을 자동으로 삭제하지 않습니다. 'tridentctl' 또는 REST API를 통해 볼륨을 제거해야 합니다.
@@ -414,6 +414,6 @@ NOTE: 지정할 수 없습니다 `dataLIF` ONTAP SAN 백엔드에서 Astra Tride
 
 == 자세한 내용을 확인하십시오
 
-* https://["Astra Trident GitHub를 참조하십시오"^]
-* https://["Astra Trident 블로그"^]
+* https://github.com/NetApp/trident["Astra Trident GitHub를 참조하십시오"^]
+* https://netapp.io/persistent-storage-provisioner-for-kubernetes/["Astra Trident 블로그"^]
 
