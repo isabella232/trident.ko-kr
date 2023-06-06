@@ -51,9 +51,17 @@ Astra Trident는 SVM 범위/클러스터 범위 관리자에게 ONTAP 백엔드�
 ====
 .YAML
 --
-'''
-버전: 1 backendName: ExampleBackend storageDriverName: ONTAP-SAN 관리 LIF: 10.0.0.1 svm:svm_nfs 사용자 이름: vsadmin 암호: password
-
+[listing]
+----
+---
+version: 1
+backendName: ExampleBackend
+storageDriverName: ontap-san
+managementLIF: 10.0.0.1
+svm: svm_nfs
+username: vsadmin
+password: password
+----
 --
 .JSON을 참조하십시오
 --
