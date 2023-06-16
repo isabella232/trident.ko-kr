@@ -188,92 +188,92 @@ link:../trident-reference/ports.html["Astra Trident 포트"]
 
 
 | v1.21.0  a| 
-* NetApp/트리덴트: 23.04.0
-* NetApp/트리덴트 - AutoSupport: 23.04
-* K8s.IO/SIG - 스토리지/CSI - 공급자: v3.4.1
-* K8s.IO/SIG-storage/CSI-attacher:v4.2.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.7.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.2.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.7.0
-* NetApp/트리덴트 - 운영자: 23.04.0(옵션)
+* Docker.IO/NetApp/트리덴트: 23.04.0
+* Docker.IO/NetApp/트리덴트 - 자동 지원: 23.04
+* registry.k8s.io/SIG-storage/CSI-v3.4.1
+* registry.k8s.io/SIG-storage/CSI-attacher:v4.2.0
+* registry.k8s.io/SIG-storage/CSI-resizer: v1.7.0
+* registry.k8s.io/SIG-storage/CSI-snapshotter:v6.2.1
+* registry.k8s.io/SIG-storage/CSI-node-driver-registrar: v2.7.0
+* Docker.IO/NetApp/트리덴트 - 운영자: 23.04.0(옵션)
 
 
 
 
 | v1.22.0  a| 
-* NetApp/트리덴트: 23.04.0
-* NetApp/트리덴트 - AutoSupport: 23.04
-* K8s.IO/SIG - 스토리지/CSI - 공급자: v3.4.1
-* K8s.IO/SIG-storage/CSI-attacher:v4.2.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.7.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.2.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.7.0
-* NetApp/트리덴트 - 운영자: 23.04.0(옵션)
+* Docker.IO/NetApp/트리덴트: 23.04.0
+* Docker.IO/NetApp/트리덴트 - 자동 지원: 23.04
+* registry.k8s.io/SIG-storage/CSI-v3.4.1
+* registry.k8s.io/SIG-storage/CSI-attacher:v4.2.0
+* registry.k8s.io/SIG-storage/CSI-resizer: v1.7.0
+* registry.k8s.io/SIG-storage/CSI-snapshotter:v6.2.1
+* registry.k8s.io/SIG-storage/CSI-node-driver-registrar: v2.7.0
+* Docker.IO/NetApp/트리덴트 - 운영자: 23.04.0(옵션)
 
 
 
 
 | v1.23.0  a| 
-* NetApp/트리덴트: 23.04.0
-* NetApp/트리덴트 - AutoSupport: 23.04
-* K8s.IO/SIG - 스토리지/CSI - 공급자: v3.4.1
-* K8s.IO/SIG-storage/CSI-attacher:v4.2.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.7.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.2.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.7.0
-* NetApp/트리덴트 - 운영자: 23.04.0(옵션)
+* Docker.IO/NetApp/트리덴트: 23.04.0
+* Docker.IO/NetApp/트리덴트 - 자동 지원: 23.04
+* registry.k8s.io/SIG-storage/CSI-v3.4.1
+* registry.k8s.io/SIG-storage/CSI-attacher:v4.2.0
+* registry.k8s.io/SIG-storage/CSI-resizer: v1.7.0
+* registry.k8s.io/SIG-storage/CSI-snapshotter:v6.2.1
+* registry.k8s.io/SIG-storage/CSI-node-driver-registrar: v2.7.0
+* Docker.IO/NetApp/트리덴트 - 운영자: 23.04.0(옵션)
 
 
 
 
 | v1.24.0  a| 
-* NetApp/트리덴트: 23.04.0
-* NetApp/트리덴트 - AutoSupport: 23.04
-* K8s.IO/SIG - 스토리지/CSI - 공급자: v3.4.1
-* K8s.IO/SIG-storage/CSI-attacher:v4.2.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.7.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.2.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.7.0
-* NetApp/트리덴트 - 운영자: 23.04.0(옵션)
+* Docker.IO/NetApp/트리덴트: 23.04.0
+* Docker.IO/NetApp/트리덴트 - 자동 지원: 23.04
+* registry.k8s.io/SIG-storage/CSI-v3.4.1
+* registry.k8s.io/SIG-storage/CSI-attacher:v4.2.0
+* registry.k8s.io/SIG-storage/CSI-resizer: v1.7.0
+* registry.k8s.io/SIG-storage/CSI-snapshotter:v6.2.1
+* registry.k8s.io/SIG-storage/CSI-node-driver-registrar: v2.7.0
+* Docker.IO/NetApp/트리덴트 - 운영자: 23.04.0(옵션)
 
 
 
 
 | v1.25.0  a| 
-* NetApp/트리덴트: 23.04.0
-* NetApp/트리덴트 - AutoSupport: 23.04
-* K8s.IO/SIG - 스토리지/CSI - 공급자: v3.4.1
-* K8s.IO/SIG-storage/CSI-attacher:v4.2.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.7.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.2.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.7.0
-* NetApp/트리덴트 - 운영자: 23.04.0(옵션)
+* Docker.IO/NetApp/트리덴트: 23.04.0
+* Docker.IO/NetApp/트리덴트 - 자동 지원: 23.04
+* registry.k8s.io/SIG-storage/CSI-v3.4.1
+* registry.k8s.io/SIG-storage/CSI-attacher:v4.2.0
+* registry.k8s.io/SIG-storage/CSI-resizer: v1.7.0
+* registry.k8s.io/SIG-storage/CSI-snapshotter:v6.2.1
+* registry.k8s.io/SIG-storage/CSI-node-driver-registrar: v2.7.0
+* Docker.IO/NetApp/트리덴트 - 운영자: 23.04.0(옵션)
 
 
 
 
 | v1.26.0  a| 
-* NetApp/트리덴트: 23.04.0
-* NetApp/트리덴트 - AutoSupport: 23.04
-* K8s.IO/SIG - 스토리지/CSI - 공급자: v3.4.1
-* K8s.IO/SIG-storage/CSI-attacher:v4.2.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.7.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.2.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.7.0
-* NetApp/트리덴트 - 운영자: 23.04.0(옵션)
+* Docker.IO/NetApp/트리덴트: 23.04.0
+* Docker.IO/NetApp/트리덴트 - 자동 지원: 23.04
+* registry.k8s.io/SIG-storage/CSI-v3.4.1
+* registry.k8s.io/SIG-storage/CSI-attacher:v4.2.0
+* registry.k8s.io/SIG-storage/CSI-resizer: v1.7.0
+* registry.k8s.io/SIG-storage/CSI-snapshotter:v6.2.1
+* registry.k8s.io/SIG-storage/CSI-node-driver-registrar: v2.7.0
+* Docker.IO/NetApp/트리덴트 - 운영자: 23.04.0(옵션)
 
 
 
 
 | v1.27.0  a| 
-* NetApp/트리덴트: 23.04.0
-* NetApp/트리덴트 - AutoSupport: 23.04
-* K8s.IO/SIG - 스토리지/CSI - 공급자: v3.4.1
-* K8s.IO/SIG-storage/CSI-attacher:v4.2.0
-* K8s.IO/SIG-storage/CSI-resizer: v1.7.0
-* K8s.IO/SIG-storage/CSI-snapshotter:v6.2.1
-* K8s.IO/SIG-storage/CSI-node-driver-registrar: v2.7.0
-* NetApp/트리덴트 - 운영자: 23.04.0(옵션)
+* Docker.IO/NetApp/트리덴트: 23.04.0
+* Docker.IO/NetApp/트리덴트 - 자동 지원: 23.04
+* registry.k8s.io/SIG-storage/CSI-v3.4.1
+* registry.k8s.io/SIG-storage/CSI-attacher:v4.2.0
+* registry.k8s.io/SIG-storage/CSI-resizer: v1.7.0
+* registry.k8s.io/SIG-storage/CSI-snapshotter:v6.2.1
+* registry.k8s.io/SIG-storage/CSI-node-driver-registrar: v2.7.0
+* Docker.IO/NetApp/트리덴트 - 운영자: 23.04.0(옵션)
 
 
 |===

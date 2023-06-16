@@ -38,7 +38,7 @@ metadata:
 driver: csi.trident.netapp.io
 deletionPolicy: Delete
 ----
-이 강물은 아스트라 트라이던트 CSI 드라이버를 가리킵니다. 정책이란 '삭제'나 '유지'가 될 수 있습니다. "유지"로 설정하면 "VolumeSnapshot" 객체가 삭제되더라도 스토리지 클러스터의 기본 물리적 스냅샷이 보존됩니다.
+를 클릭합니다 `driver` Astra Trident CSI 드라이버를 가리킵니다. `deletionPolicy` 있을 수 있습니다 `Delete` 또는 `Retain`. 를 로 설정한 경우 `Retain`, 스토리지 클러스터의 기본 물리적 스냅샷은 가 있는 경우에도 유지됩니다 `VolumeSnapshot` 객체가 삭제되었습니다.
 
 자세한 내용은 LINK:./trident-reference/objects.html#Kubernetes-volumesshotshotclass-objects를 참조하십시오[`VolumeSnapshotClass`].
 
