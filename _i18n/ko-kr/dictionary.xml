@@ -46,9 +46,7 @@
   <block id="f8cf8c23afb5459dbf7c24b685caf85b" category="cell">위치(동쪽, 서쪽)</block>
   <block id="1a031eecbce49366e550273b9321b909" category="cell">노신입니다</block>
   <block id="b5585f3f9b45f391fee5dd15e6516450" category="cell">성능 노트(실버, 브론즈)</block>
-  <block id="48dec026afe488df8faca35c5c3a39ea" category="summary">Trident 설치에서 Element 백엔드를 만들고 사용하는 방법에 대해 알아보십시오.</block>
   <block id="f58e95baa778c9a2bd1a4597fb49d9b7" category="doc">ONTAP 드라이버</block>
-  <block id="0e842f431ce1b4dfb57598e5682e3adc" category="paragraph">Astra Trident는 ONTAP 클러스터와 통신할 수 있도록 5개의 고유한 ONTAP 스토리지 드라이버를 제공합니다. 각 드라이버가 볼륨 생성, 액세스 제어 및 해당 기능을 처리하는 방법에 대해 자세히 알아보십시오.</block>
   <block id="48cf24486d9a8e65a142b25682f19949" category="cell">드라이버</block>
   <block id="888a77f5ac0748b6c8001822417df8b6" category="cell">프로토콜</block>
   <block id="1b5e109e8afd1f9b7f5bbf951eea3442" category="cell">볼륨 모드</block>
@@ -2572,7 +2570,6 @@
   <block id="38b6e376f2701385062dee4bb00e03d2" category="summary">Astra Trident 설치 프로그램을 사용하여 배포를 사용자 지정할 수 있습니다.</block>
   <block id="0dabff490bbf6c7e308950959cc5a024" category="section-title">설치 프로그램에 대해 알아보십시오</block>
   <block id="1637137b97f70f3de86dbf02ba8c262b" category="paragraph">Astra Trident 설치 프로그램을 사용하여 특성을 사용자 지정할 수 있습니다. 예를 들어, Trident 이미지를 개인 저장소에 복사한 경우 를 사용하여 이미지 이름을 지정할 수 있습니다<block ref="00e6ff45e8bcc6b9e35e9c68d8d5135c" prefix=" " category="inline-code"></block>. Trident 이미지와 필요한 CSI 사이드카 이미지를 개인 저장소에 복사한 경우 를 사용하여 해당 저장소의 위치를 지정하는 것이 좋습니다<block ref="53b228c1c8295f49b0c35325e14fcd6a" prefix=" " category="inline-code"></block> 스위치를 누릅니다<block ref="c4c34dc2c7d5cb25c084ca11127ba1c6" prefix=" " category="inline-code"></block>.</block>
-  <block id="5e3a3cabc9ba472e33de86a5a8f32dcd" category="section-title">ONTAP 스토리지 드라이버에 대해 알아보십시오</block>
   <block id="99c850b82f45e568828f2a8c5ab8f94d" category="section-title">볼륨 액세스 그룹에 대해 알아보십시오</block>
   <block id="7c14ddfe8f627e4786f4da7cd4cea9ba" category="section-title">스토리지 클래스 연결</block>
   <block id="ab4589eca69db942d79a0dbbd9ec8399" category="section-title">볼륨 생성</block>
@@ -2595,7 +2592,6 @@
   <block id="4f0e7dc30ffb3e25e75331c9afb2243a" category="cell">볼륨 모드</block>
   <block id="28c142639a9bbdd526b8eb986c13907d" category="paragraph">파일 시스템이 없습니다. 원시 블록 디바이스입니다</block>
   <block id="0453a3e06be842b09a9479fe06f0dd13" category="paragraph">파일 시스템 볼륨 모드에서는 rwx를 사용할 수 없습니다.</block>
-  <block id="04de2f1b0cab8344abeded774f82f9d5" category="admonition">ONTAP 백엔드는 보안 역할(사용자 이름/암호)에 대한 로그인 자격 증명을 사용하거나 ONTAP 클러스터에 설치된 개인 키와 인증서를 사용하여 인증할 수 있습니다. 기존 백엔드를 업데이트하여 를 사용하여 한 인증 모드에서 다른 인증 모드로 이동할 수 있습니다<block ref="defd1e55f93269ac9278afc086951ba8" prefix=" " category="inline-code"></block>.</block>
   <block id="964ea71824e902693c3ef56b57cf78be" category="summary">Astra Trident를 사용하면 기본 네임스페이스에서 볼륨을 생성하고 하나 이상의 보조 네임스페이스에서 공유할 수 있습니다.</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">피처</block>
   <block id="8ff961668c6784e84b25c265cbb629d7" category="paragraph">네임스페이스 간 볼륨 액세스에 대한 자세한 내용은 다음을 참조하십시오.</block>
@@ -3659,4 +3655,11 @@
   <block id="8eb8a41b260e1d77c7ffe733b87d87a1" category="list-text">Docker.IO/NetApp/트리덴트 - 운영자: 23.04.0(옵션)</block>
   <block id="0b8ca2be5f4fe564fb8e843cbc53703d" category="admonition">GKE 환경에서 필요 시 볼륨 스냅샷을 생성할 경우 스냅샷 컨트롤러를 생성하지 마십시오. GKE는 내장된 숨겨진 스냅샷 컨트롤러를 사용합니다.</block>
   <block id="dfbfe722a0ce7e388b78027f9cfed8dd" category="paragraph">를 클릭합니다<block ref="e2d45d57c7e2941b65c6ccd64af4223e" prefix=" " category="inline-code"></block> Astra Trident CSI 드라이버를 가리킵니다.<block ref="98e7d6463271d7848db255ae6467817a" prefix=" " category="inline-code"></block> 있을 수 있습니다<block ref="f2a6c498fb90ee345d997f888fce3b18" prefix=" " category="inline-code"></block> 또는<block ref="afece4245269582cb2f1009d4fb52047" prefix=" " category="inline-code"></block>. 를 로 설정한 경우<block ref="afece4245269582cb2f1009d4fb52047" prefix=" " category="inline-code"></block>, 스토리지 클러스터의 기본 물리적 스냅샷은 가 있는 경우에도 유지됩니다<block ref="310a3378435f31620fbc3e7831ac7286" prefix=" " category="inline-code"></block> 객체가 삭제되었습니다.</block>
+  <block id="1f0c7a14cb87fb29a7346e9b4c770751" category="summary">Astra Trident는 ONTAP 클러스터와 통신할 수 있도록 5개의 고유한 ONTAP 스토리지 드라이버를 제공합니다.</block>
+  <block id="99379de626bf97f4e3e66d3a8cdb8802" category="section-title">Astra Control이 드라이버를 지원했습니다</block>
+  <block id="9e5914532c650440b8c559c303ae8e04" category="section-title">ONTAP용 Astra Trident 스토리지 드라이버</block>
+  <block id="bff3ebc4ae5702fb7f811ba9acabc13a" category="paragraph">Astra Trident는 다음 스토리지 드라이버를 제공하여 ONTAP 클러스터와 통신합니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.</block>
+  <block id="ad90b7d29d0d8a9c746868fe1f38ca90" category="paragraph">RWO, ROX, rwx, RWOP</block>
+  <block id="96b38cb92e67a8f09c2d13169b8bb555" category="paragraph">RWO, ROX, RWOP</block>
+  <block id="a38f7647d54be4cddc3f0b8e4c746caa" category="admonition">ONTAP 백엔드는 보안 역할(사용자 이름/암호) 또는 개인 키와 ONTAP 클러스터에 설치된 인증서를 위한 로그인 자격 증명을 사용하여 인증할 수 있습니다. 기존 백엔드를 업데이트하여 를 사용하여 한 인증 모드에서 다른 인증 모드로 이동할 수 있습니다<block ref="defd1e55f93269ac9278afc086951ba8" prefix=" " category="inline-code"></block>.</block>
 </blocks>
