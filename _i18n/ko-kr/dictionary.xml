@@ -932,7 +932,6 @@
   <block id="b3841b02d7da01fde480332e3295a08e" category="paragraph">'스냅샷 컨텐츠 이름'은 이 스냅샷을 제공하는 VolumeSnapshotContent 객체를 식별합니다. Ready to Use 매개변수는 스냅샷이 새 PVC를 생성하는 데 사용될 수 있음을 나타냅니다.</block>
   <block id="7957320b126678e9b713ef146b3ac009" category="section-title">3단계: VolumeSnapshots에서 PVC를 생성합니다</block>
   <block id="2592284f87bba60e4c05337a134ef047" category="paragraph">"다소스"는 데이터 소스로 "pvc1-snap"이라는 VolumeSnapshot을 사용하여 PVC를 생성해야 함을 나타냅니다. 이렇게 하면 Astra Trident가 스냅샷에서 PVC를 생성하도록 지시합니다. PVC가 생성된 후 POD에 부착하여 다른 PVC와 마찬가지로 사용할 수 있습니다.</block>
-  <block id="bda01e3aa44c411129a6fbf29445bfb4" category="admonition">연결된 스냅샷이 있는 영구 볼륨을 삭제하면 해당 Trident 볼륨이 "삭제 상태"로 업데이트됩니다. Astra Trident 볼륨을 삭제하려면 볼륨의 스냅샷을 제거해야 합니다.</block>
   <block id="72a5926b7fb086fe87e93771f6620556" category="summary">tridentctl을 사용하여 백엔드 관리 작업을 수행하는 방법에 대해 알아보십시오.</block>
   <block id="748a22b5f1312291ad55429ba4b809a0" category="doc">tridentctl을 사용하여 백엔드 관리를 수행합니다</block>
   <block id="aeeb03235358f0f4bf3be628bed08721" category="section-title">백엔드를 생성합니다</block>
@@ -2683,7 +2682,6 @@
   <block id="ce43eda1a51d5de70f422e14ca195db3" category="paragraph">자세한 내용은 LINK:./trident-reference/objects.html#Kubernetes-volumesshotshotclass-objects를 참조하십시오<block ref="19476662cd814e0aa085eca121de89b8" prefix="[" category="inline-code"></block>].</block>
   <block id="a599393b295f7ad56a8c7f1d327290de" category="paragraph">이 예에서는 기존 PVC의 스냅샷을 생성합니다.</block>
   <block id="4191daf22334ac03a54cdf8adbfd6dfe" category="paragraph">이 예제에서는 이름이 인 PVC에 대해 스냅샷이 생성됩니다<block ref="30520f4f96804df83914260b79f55962" prefix=" " category="inline-code"></block> 스냅샷 이름이 로 설정되어 있습니다<block ref="2599ab7993e15386327b6345bc1cc4e1" prefix=" " category="inline-code"></block>.</block>
-  <block id="b2b2f8b28370c274887f8aa2f82bb5d4" category="paragraph">다음은 스냅샷을 사용하여 PVC를 생성하는 예제입니다.</block>
   <block id="f6bd0d7447ff66cc6b859603a88fbde9" category="section-title">관련 링크</block>
   <block id="35aa4a2a819e526c2e930e487df8d423" category="list-text"><block ref="35aa4a2a819e526c2e930e487df8d423" category="inline-link-macro-rx"></block></block>
   <block id="19476662cd814e0aa085eca121de89b8" category="inline-link-macro">VolumeSnapshotClass</block>
@@ -3662,4 +3660,8 @@
   <block id="ad90b7d29d0d8a9c746868fe1f38ca90" category="paragraph">RWO, ROX, rwx, RWOP</block>
   <block id="96b38cb92e67a8f09c2d13169b8bb555" category="paragraph">RWO, ROX, RWOP</block>
   <block id="a38f7647d54be4cddc3f0b8e4c746caa" category="admonition">ONTAP 백엔드는 보안 역할(사용자 이름/암호) 또는 개인 키와 ONTAP 클러스터에 설치된 인증서를 위한 로그인 자격 증명을 사용하여 인증할 수 있습니다. 기존 백엔드를 업데이트하여 를 사용하여 한 인증 모드에서 다른 인증 모드로 이동할 수 있습니다<block ref="defd1e55f93269ac9278afc086951ba8" prefix=" " category="inline-code"></block>.</block>
+  <block id="ec777b0a7c2a3d6602a440dae083b7c3" category="paragraph">이 예제에서는 스냅샷을 사용하여 PVC를 생성합니다.</block>
+  <block id="5e4708ea6e1c08a91834bc9405f43f5d" category="admonition">PVC는 해당 네임스페이스와 동일한 네임스페이스에서 만들어야 합니다<block ref="d9d448f70687a1aa1f12b2f5ddaa4977" prefix=" " category="inline-code"></block>.</block>
+  <block id="32945bec28dab31706e6de80b1c28cc4" category="section-title">스냅샷이 있는 PV 삭제</block>
+  <block id="f28228f84cb57be6c4037bf94a6afbd2" category="paragraph">연결된 스냅샷이 있는 영구 볼륨을 삭제하면 해당 Trident 볼륨이 "삭제 상태"로 업데이트됩니다. Astra Trident 볼륨을 삭제하려면 볼륨 스냅샷을 제거하십시오.</block>
 </blocks>
