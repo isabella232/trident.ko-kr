@@ -12,27 +12,22 @@ summary: 운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그�
 
 
 [role="lead"]
-운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그레이드할 수 있습니다.
-
-.시작하기 전에
-연산자를 사용하여 업그레이드하려면 다음 조건이 충족되어야 합니다.
-
-* CSI 기반 Astra Trident가 설치되어 있어야 합니다. 의 19.07에서 모든 릴리스는 CSI 기반입니다. Trident 네임스페이스에서 Pod를 검사하여 확인할 수 있습니다.
-+
-** 23.01 이전 버전의 POD 이름 지정은 A 뒤에 옵니다 `trident-csi-*` 컨벤션.
-** 23.01 이상에서 포드 이름 지정 시 사용: `trident-controller-<generated id>` 컨트롤러 포드의 경우 `trident-node-<operating system>-<generated id>` 노드 포드의 경우, `trident-operator-<generated id>` 작업자 포드의 경우
+수동으로 또는 Hrom을 사용하여 기존 Astra Trident 설치를 간편하게 업그레이드할 수 있습니다.
 
 
-* CSI Trident를 제거한 후 설치 시 메타데이터가 지속되는 경우 연산자를 사용하여 업그레이드할 수 있습니다.
-* 주어진 Kubernetes 클러스터의 모든 네임스페이스에 하나의 Astra Trident 설치만 존재해야 합니다.
-* 를 실행하는 Kubernetes 클러스터를 사용해야 합니다 link:../trident-get-started/requirements.html["지원되는 Kubernetes 버전"].
-* 알파 스냅샷 CRD가 있는 경우 'tridentctl oblividate alpha-snapshot-CRD'로 제거해야 합니다. 그러면 알파 스냅샷 사양에 대한 CRD가 삭제됩니다. 삭제/마이그레이션해야 하는 기존 스냅샷의 경우 를 참조하십시오 https://netapp.io/2020/01/30/alpha-to-beta-snapshots/["블로그입니다"^].
 
+== Trident 연산자를 사용하여 업그레이드합니다
 
-[WARNING]
+일반적으로 처음 설치하는 데 사용한 것과 동일한 방법으로 Astra Trident를 업그레이드해야 합니다. 검토 link:upgrade-trident.html#select-an-upgrade-method["업그레이드 방법을 선택합니다"] Trident 연산자를 사용하여 업그레이드를 시도하기 전.
+
+[IMPORTANT]
 ====
-* OpenShift Container Platform에서 연산자를 사용하여 Trident를 업그레이드할 때는 Trident 21.01.1 이상으로 업그레이드해야 합니다. 21.01.0으로 릴리스된 Trident 연산자에는 21.01.1에서 해결된 알려진 문제가 포함되어 있습니다. 자세한 내용은 를 참조하십시오 https://github.com/NetApp/trident/issues/517["GitHub에 대한 발행 세부 정보"^].
-* "etcd" 기반의 Trident 릴리즈(19.04 이하)를 사용하는 경우 Trident를 업그레이드할 때 연산자를 사용하지 마십시오.
+Namespace 범위 연산자(버전 20.07 ~ 20.10)를 사용하여 설치된 Astra Trident의 인스턴스에서 업그레이드할 경우 Trident 연산자는 자동으로 다음을 수행합니다.
+
+* 마이그레이션 `tridentProvisioner` A로 `tridentOrchestrator` 같은 이름의 개체,
+* 삭제 `TridentProvisioner` 개체 및 `tridentprovisioner` CRD
+* Astra Trident를 사용 중인 클러스터 범위 운영자 버전으로 업그레이드합니다
+* 원래 설치된 곳에 Astra Trident 동일한 네임스페이스를 설치합니다
 
 
 ====
@@ -40,7 +35,10 @@ summary: 운영자를 사용하여 기존 Astra Trident 설치를 쉽게 업그�
 
 == 클러스터 범위 Trident 운영자 설치를 업그레이드합니다
 
-클러스터 범위 Trident 운영자 설치를 업그레이드하려면 다음 단계를 수행하십시오. Astra Trident 버전 21.01 이상에서는 클러스터 범위 연산자를 사용합니다.
+클러스터 범위 Trident 운영자 설치를 업그레이드할 수 있습니다. Astra Trident 버전 21.01 이상에서는 클러스터 범위 연산자를 사용합니다.
+
+.시작하기 전에
+실행 중인 Kubernetes 클러스터를 사용하고 있는지 확인합니다 link:../trident-get-started/requirements.html["지원되는 Kubernetes 버전"].
 
 .단계
 . Astra Trident 버전 확인:
@@ -67,7 +65,7 @@ kubectl create -f 23.04.0/trident-installer/deploy/bundle_post_1_25.yaml -n trid
 ====
 Trident는 운영자를 설치하고 Kubernetes 버전용 관련 개체를 생성하는 데 사용할 수 있는 번들 파일을 제공합니다.
 
-** Kubernetes 1.24 이하 를 실행하는 클러스터의 경우, 를 사용합니다 link:https://github.com/NetApp/trident/tree/stable/v23.04/deploy/bundle_pre_1_25.yaml["Bundle_PRE_1_25.YAML"^].
+** Kubernetes 1.24 이하 버전을 실행하는 클러스터의 경우, 를 사용합니다 link:https://github.com/NetApp/trident/tree/stable/v23.04/deploy/bundle_pre_1_25.yaml["Bundle_PRE_1_25.YAML"^].
 ** Kubernetes 1.25 이상을 실행하는 클러스터의 경우 를 사용합니다 link:https://github.com/NetApp/trident/tree/stable/v23.04/deploy/bundle_post_1_25.yaml["Bundle_post_1_25.YAML"^].
 
 
@@ -81,14 +79,18 @@ Trident 운영자는 기존 Astra Trident 설치를 식별하고 운영자와 �
 
 == 네임스페이스 범위 연산자 설치를 업그레이드합니다
 
-네임스페이스 범위 연산자(버전 20.07 ~ 20.10)를 사용하여 설치된 Astra Trident의 인스턴스에서 업그레이드하려면 다음 단계를 수행하십시오.
+네임스페이스 범위 연산자(버전 20.07 ~ 20.10)를 사용하여 설치된 Astra Trident의 인스턴스에서 클러스터 범위 운영자 설치로 업그레이드할 수 있습니다.
+
+.시작하기 전에
+네임스페이스 범위 운영자를 배포하는 데 사용되는 번들 YAML 파일이 필요합니다 `\https://github.com/NetApp/trident/tree/stable/_vXX.XX_/deploy/_BUNDLE.YAML_` 위치 `_vXX.XX_` 은(는) 버전 번호입니다 `_BUNDLE.YAML_` 번들 YAML 파일 이름입니다.
 
 .단계
-. 기존 Trident 설치의 상태를 확인합니다. 이렇게 하려면 '트리펜Provisioner'의 * 상태 * 를 확인하십시오. 상태는 '설치됨'이어야 합니다.
+. 를 확인합니다 `TridentProvisioner` 기존 Trident 설치의 상태는 입니다 `Installed`.
 +
 [listing]
 ----
 kubectl describe tprov trident -n trident | grep Message: -A 3
+
 Message:  Trident installed
 Status:   Installed
 Version:  v20.10.1
@@ -109,28 +111,33 @@ tar -xf trident-installer-23.04.0.tar.gz
 cd trident-installer
 kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
 ----
-. 매니페스트를 사용하여 네임스페이스 범위 연산자를 삭제합니다. 이 단계를 완료하려면 에서 네임스페이스 범위 연산자를 배포하는 데 사용되는 번들 YAML 파일이 필요합니다 `\https://github.com/NetApp/trident/tree/stable/_vXX.XX_/deploy/_BUNDLE.YAML_` 위치 `_vXX.XX_` 은(는) 버전 번호입니다 `_BUNDLE.YAML_` 번들 YAML 파일 이름입니다.
+. 매니페스트를 사용하여 네임스페이스 범위 연산자를 삭제합니다.
 +
-
-NOTE: Trident 설치 매개 변수를 필요에 따라 변경해야 합니다(예: 의 값 변경) `tridentImage`, `autosupportImage`개인 이미지 저장소 및 제공 `imagePullSecrets`) 네임스페이스 범위 연산자를 삭제한 후 클러스터 범위 연산자를 설치하기 전에 먼저 . 업데이트할 수 있는 전체 매개 변수 목록은 을 참조하십시오 link:https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-customize-deploy.html#configuration-options["구성 옵션"].
-
+.. 올바른 디렉토리에 있는지 확인하십시오.
 +
 [listing]
 ----
-#Ensure you are in the right directory
 pwd
 /root/20.10.1/trident-installer
-
-#Delete the namespace-scoped operator
+----
+.. 네임스페이스 범위 연산자를 삭제합니다.
++
+[listing]
+----
 kubectl delete -f deploy/<BUNDLE.YAML> -n trident
+
 serviceaccount "trident-operator" deleted
 clusterrole.rbac.authorization.k8s.io "trident-operator" deleted
 clusterrolebinding.rbac.authorization.k8s.io "trident-operator" deleted
 deployment.apps "trident-operator" deleted
 podsecuritypolicy.policy "tridentoperatorpods" deleted
-
-#Confirm the Trident operator was removed
+----
+.. Trident 운영자가 제거되었는지 확인합니다.
++
+[listing]
+----
 kubectl get all -n trident
+
 NAME                               READY   STATUS    RESTARTS   AGE
 pod/trident-csi-68d979fb85-dsrmn   6/6     Running   12         99d
 pod/trident-csi-8jfhf              2/2     Running   6          105d
@@ -149,33 +156,39 @@ deployment.apps/trident-csi   1/1     1            1           105d
 NAME                                     DESIRED   CURRENT   READY   AGE
 replicaset.apps/trident-csi-68d979fb85   1         1         1       105d
 ----
-+
-이 단계에서 트리덴트 - operator - xxxxxxxxxx - xxxxx'POD가 삭제됩니다.
 
-. (선택 사항) 설치 매개변수를 수정해야 하는 경우 ' TERentProvisioner' 사양을 업데이트합니다. 컨테이너 이미지를 가져올 전용 이미지 레지스트리를 수정하거나, 디버그 로그를 사용하거나, 이미지 풀 비밀을 지정하는 등의 변경 사항이 있을 수 있습니다.
+
+. (선택 사항) 설치 매개 변수를 수정해야 하는 경우 를 업데이트합니다 `TridentProvisioner` 사양 여기에는 의 값 변경과 같은 변경 사항이 포함될 수 있습니다 `tridentImage`, `autosupportImage`개인 이미지 저장소 및 제공 `imagePullSecrets`) 네임스페이스 범위 연산자를 삭제한 후 클러스터 범위 연산자를 설치하기 전에 먼저 . 업데이트할 수 있는 전체 매개 변수 목록은 을 참조하십시오 link:https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-customize-deploy.html#configuration-options["구성 옵션"].
 +
 [listing]
 ----
 kubectl patch tprov <trident-provisioner-name> -n <trident-namespace> --type=merge -p '{"spec":{"debug":true}}'
 ----
-. Trident 연산자를 설치합니다.
+. Trident 클러스터 범위 연산자를 설치합니다.
 +
-
-NOTE: 클러스터 범위 연산자를 설치하면 마이그레이션이 시작됩니다 `TridentProvisioner` 개체 대상 `TridentOrchestrator` 오브젝트, 삭제 `TridentProvisioner` 개체 및 `tridentprovisioner` CRD를 사용하여 Astra Trident를 사용 중인 클러스터 범위 운영자 버전으로 업그레이드합니다. 다음 예제에서 Trident는 23.04.0으로 업그레이드됩니다.
-
-+
-
-IMPORTANT: Trident 연산자를 사용하여 Astra Trident를 업그레이드하면 가 마이그레이션됩니다 `tridentProvisioner` A로 `tridentOrchestrator` 같은 이름의 개체입니다. 이 작업은 작업자가 자동으로 처리합니다. 업그레이드에는 이전과 동일한 네임스페이스에 Astra Trident도 설치됩니다.
-
+.. 올바른 디렉토리에 있는지 확인하십시오.
 +
 [listing]
 ----
-#Ensure you are in the correct directory
 pwd
 /root/23.04.0/trident-installer
+----
+.. 클러스터 범위 연산자를 같은 네임스페이스에 설치합니다.
++
+[NOTE]
+====
+Trident는 운영자를 설치하고 Kubernetes 버전용 관련 개체를 생성하는 데 사용할 수 있는 번들 파일을 제공합니다.
 
-#Install the cluster-scoped operator in the **same namespace**
+*** Kubernetes 1.24 이하 버전을 실행하는 클러스터의 경우, 를 사용합니다 link:https://github.com/NetApp/trident/tree/stable/v23.04/deploy/bundle_pre_1_25.yaml["Bundle_PRE_1_25.YAML"^].
+*** Kubernetes 1.25 이상을 실행하는 클러스터의 경우 를 사용합니다 link:https://github.com/NetApp/trident/tree/stable/v23.04/deploy/bundle_post_1_25.yaml["Bundle_post_1_25.YAML"^].
+
+
+====
++
+[listing]
+----
 kubectl create -f deploy/<BUNDLE.YAML>
+
 serviceaccount/trident-operator created
 clusterrole.rbac.authorization.k8s.io/trident-operator created
 clusterrolebinding.rbac.authorization.k8s.io/trident-operator created
@@ -190,24 +203,29 @@ Error from server (NotFound): Unable to list "trident.netapp.io/v1, Resource=tri
 kubectl get torc
 NAME      AGE
 trident   13s
-
-#Examine Trident pods in the namespace
+----
+.. 네임스페이스에서 Trident Pod를 검사합니다. 를 클릭합니다 `trident-controller` 및 POD 이름은 23.01에 도입된 명명 규칙을 반영합니다.
++
+[listing]
+----
 kubectl get pods -n trident
+
 NAME                                     READY   STATUS    RESTARTS   AGE
 trident-controller-79df798bdc-m79dc      6/6     Running   0          1m41s
 trident-node-linux-xrst8                 2/2     Running   0          1m41s
 trident-operator-5574dbbc68-nthjv        1/1     Running   0          1m52s
-
-#Confirm Trident has been updated to the desired version
+----
+.. Trident가 의도한 버전으로 업데이트되었는지 확인합니다.
++
+[listing]
+----
 kubectl describe torc trident | grep Message -A 3
 Message:                Trident installed
 Namespace:              trident
 Status:                 Installed
 Version:                v23.04.0
 ----
-+
 
-NOTE: 를 클릭합니다 `trident-controller` 및 POD 이름은 23.01에 도입된 명명 규칙을 반영합니다.
 
 
 
@@ -270,12 +288,12 @@ cd trident-installer
 ----
 kubectl create -f deploy/crds/trident.netapp.io_tridentorchestrators_crd_post1.16.yaml
 ----
-. 연산자를 전개합니다.
+. 클러스터 범위 연산자를 같은 네임스페이스에 구현합니다.
 +
 [listing]
 ----
-#Install the cluster-scoped operator in the **same namespace**
 kubectl create -f deploy/<BUNDLE.YAML>
+
 serviceaccount/trident-operator created
 clusterrole.rbac.authorization.k8s.io/trident-operator created
 clusterrolebinding.rbac.authorization.k8s.io/trident-operator created
@@ -292,7 +310,6 @@ trident-operator-5574dbbc68-nthjv     1/1     Running   0          1m30s
 +
 [listing]
 ----
-#Create a tridentOrchestrator to initiate a Trident install
 cat deploy/crds/tridentorchestrator_cr.yaml
 apiVersion: trident.netapp.io/v1
 kind: TridentOrchestrator
@@ -309,9 +326,13 @@ NAME                                READY   STATUS    RESTARTS   AGE
 trident-csi-79df798bdc-m79dc        6/6     Running   0          1m
 trident-csi-xrst8                   2/2     Running   0          1m
 trident-operator-5574dbbc68-nthjv   1/1     Running   0          5m41s
-
-#Confirm Trident was upgraded to the desired version
+----
+. Trident가 의도한 버전으로 업그레이드되었는지 확인합니다.
++
+[listing]
+----
 kubectl describe torc trident | grep Message -A 3
+
 Message:                Trident installed
 Namespace:              trident
 Status:                 Installed

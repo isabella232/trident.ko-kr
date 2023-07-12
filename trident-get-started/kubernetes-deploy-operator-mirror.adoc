@@ -118,7 +118,7 @@ kubectl kustomize deploy/ > deploy/<BUNDLE>.yaml
 ====
 Astra Trident 설치 관리자는 연산자를 설치하고 관련 개체를 만드는 데 사용할 수 있는 번들 파일을 제공합니다. 번들 파일은 기본 구성을 사용하여 운영자를 구축하고 Astra Trident를 설치하는 간편한 방법입니다.
 
-** Kubernetes 1.24 이하 를 실행하는 클러스터의 경우, 를 사용합니다 `bundle_pre_1_25.yaml`.
+** Kubernetes 1.24 이하 버전을 실행하는 클러스터의 경우, 를 사용합니다 `bundle_pre_1_25.yaml`.
 ** Kubernetes 1.25 이상을 실행하는 클러스터의 경우 를 사용합니다 `bundle_post_1_25.yaml`.
 
 
