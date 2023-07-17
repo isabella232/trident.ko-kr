@@ -5,8 +5,9 @@ entries:
 - title: 작업자 노드를 준비합니다
   url: "/trident-use/worker-node-prep.html"
 - title: 백엔드 구성
-  url: "/trident-use/backends.html"
   entries:
+  - title: 개요
+    url: "/trident-use/backends.html"
   - title: Azure NetApp Files
     entries:
     - title: 개요
