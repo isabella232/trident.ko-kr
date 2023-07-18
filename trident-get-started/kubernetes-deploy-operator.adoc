@@ -99,7 +99,30 @@ Astra Trident 설치 관리자는 연산자를 설치하고 관련 개체를 만
 * Kubernetes 1.25 이상을 실행하는 클러스터의 경우 를 사용합니다 `bundle_post_1_25.yaml`.
 
 
-Trident 설치 관리자는 에 연산자를 배포합니다 `trident` 네임스페이스. 를 누릅니다 `trident` 네임스페이스가 없습니다. 를 사용하십시오 `kubectl apply -f deploy/namespace.yaml` 를 눌러 만듭니다.
+.시작하기 전에
+* 기본적으로 Trident 설치 관리자는 에 연산자를 배포합니다 `trident` 네임스페이스. 를 누릅니다 `trident` 네임스페이스가 없습니다. 다음을 사용하여 생성합니다.
++
+[listing]
+----
+kubectl apply -f deploy/namespace.yaml
+----
+* 를 제외한 네임스페이스에 연산자를 배포합니다 `trident` 네임스페이스, 업데이트 `serviceaccount.yaml`, `clusterrolebinding.yaml` 및 `operator.yaml` 을 사용하여 번들 파일을 생성합니다 `kustomization.yaml`.
++
+.. 를 생성합니다 `kustomization.yaml` 다음 명령을 사용합니다. 여기서 _<bundle>_는 입니다 `bundle_pre_1_25` 또는 `bundle_post_1_25` Kubernetes 버전을 기반으로 합니다.
++
+[listing]
+----
+cp kustomization_<bundle>.yaml kustomization.yaml
+----
+.. Where_<bundle>_is 명령을 사용하여 번들을 컴파일합니다 `bundle_pre_1_25` 또는 `bundle_post_1_25` Kubernetes 버전을 기반으로 합니다.
++
+[listing]
+----
+kubectl kustomize deploy/ > deploy/<bundle>.yaml
+----
+
+
+
 
 .단계
 . 리소스를 생성하고 연산자를 배포합니다.
@@ -108,24 +131,11 @@ Trident 설치 관리자는 에 연산자를 배포합니다 `trident` 네임스
 ----
 kubectl create -f deploy/<bundle>.yaml
 ----
-+
-[NOTE]
-====
-를 제외한 네임스페이스에 연산자를 배포합니다 `trident` 네임스페이스, 업데이트 `serviceaccount.yaml`, `clusterrolebinding.yaml` 및 `operator.yaml` 을 사용하여 번들 파일을 생성합니다 `kustomization.yaml`:
-
-[listing]
-----
-kubectl kustomize deploy/ > deploy/<bundle>.yaml
-----
-====
-. 작업자가 배치되었는지 확인합니다.
+. 운영자, 배포 및 복제 생성 여부를 확인합니다.
 +
 [listing]
 ----
-kubectl get deployment -n <operator-namespace>
-
-NAME               READY   UP-TO-DATE   AVAILABLE   AGE
-trident-operator   1/1     1            1           3m
+kubectl get all -n <operator-namespace>
 ----
 
 
