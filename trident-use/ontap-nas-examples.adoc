@@ -94,7 +94,11 @@ Astra Trident 설치를 통해 ONTAP NAS 드라이버를 생성하고 사용하�
 | "케트리스퍼플랙스볼륨" | FlexVol당 최대 qtree, 범위 [50, 300]에 있어야 함 | “200” 
 
 
-| `smbShare` | 공유 폴더 Microsoft 관리 콘솔을 사용하여 생성한 SMB 공유의 이름을 지정하거나 Astra Trident가 SMB 공유를 생성할 수 있도록 공유 이름을 지정할 수 있습니다. 또는 매개 변수를 비워 두면 볼륨에 대한 공통 공유 액세스를 방지할 수 있습니다. | `smb-share` 
+| `smbShare` | 다음 중 하나를 지정할 수 있습니다. Microsoft 관리 콘솔 또는 ONTAP CLI를 사용하여 생성된 SMB 공유의 이름, Astra Trident가 SMB 공유를 생성할 수 있도록 하는 이름 또는 볼륨에 대한 공통 공유 액세스를 방지하기 위해 매개 변수를 비워 둘 수 있습니다.
+
+이 매개 변수는 사내 ONTAP의 경우 선택 사항입니다.
+
+이 매개변수는 ONTAP 백엔드에 대한 아마존 FSx에 필요하며 비워둘 수 없습니다. | `smb-share` 
 
 
 | 'useREST' | ONTAP REST API를 사용하는 부울 매개 변수입니다. * 기술 미리 보기 *
@@ -210,11 +214,9 @@ image::../media/volume-show-nas.png[에는 volume show 명령의 출력이 나�
 
 NOTE: Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경우 IP 주소 대신 LIF에 대한 DNS 이름을 지정하는 것이 좋습니다.
 
-.ONTAP NAS 경제성 최소 구성 예
+.에 대한 최소 구성 <code>ontap-nas-economy</code>
 [%collapsible%open]
 ====
-이것은 를 사용하는 기본 구성입니다 `ontap-nas-economy` 드라이버.
-
 [listing]
 ----
 ---
@@ -224,14 +226,12 @@ managementLIF: 10.0.0.1
 dataLIF: 10.0.0.2
 svm: svm_nfs
 username: vsadmin
-password: <password>
+password: password
 ----
 ====
-.ONTAP NAS FlexGroup 최소 구성 예
+.에 대한 최소 구성 <code>ontap-nas-flexgroup</code>
 [%collapsible%open]
 ====
-이것은 를 사용하는 기본 구성입니다 `ontap-nas-flexgroup` 드라이버.
-
 [listing]
 ----
 ---
@@ -241,13 +241,33 @@ managementLIF: 10.0.0.1
 dataLIF: 10.0.0.2
 svm: svm_nfs
 username: vsadmin
-password: <password>
+password: password
 ----
 ====
-.인증서 기반 인증의 예
+.SMB 볼륨을 위한 최소 구성
 [%collapsible%open]
 ====
-이 기본 구성 예에서 `clientCertificate`, `clientPrivateKey`, 및 `trustedCACertificate` (신뢰할 수 있는 CA를 사용하는 경우 선택 사항)는 에 채워집니다 `backend.json` 그리고 각각 클라이언트 인증서, 개인 키 및 신뢰할 수 있는 CA 인증서의 base64로 인코딩된 값을 사용합니다.
+[listing]
+----
+
+---
+version: 1
+backendName: ExampleBackend
+storageDriverName: ontap-nas
+managementLIF: 10.0.0.1
+nasType: smb
+securityStyle: ntfs
+unixPermissions: ""
+dataLIF: 10.0.0.2
+svm: svm_nfs
+username: vsadmin
+password: password
+----
+====
+.인증서 기반 인증입니다
+[%collapsible%open]
+====
+이는 최소 백엔드 구성의 예입니다. `clientCertificate`, `clientPrivateKey`, 및 `trustedCACertificate` (신뢰할 수 있는 CA를 사용하는 경우 선택 사항)는 에 채워집니다 `backend.json` 그리고 각각 클라이언트 인증서, 개인 키 및 신뢰할 수 있는 CA 인증서의 base64로 인코딩된 값을 사용합니다.
 
 [listing]
 ----
@@ -264,10 +284,10 @@ trustedCACertificate: zcyBbaG...b3Igb3duIGNsYXNz
 storagePrefix: myPrefix_
 ----
 ====
-.자동 엑스포트 정책의 예
+.자동 엑스포트 정책
 [%collapsible%open]
 ====
-이 예에서는 Astra Trident가 동적 엑스포트 정책을 사용하여 엑스포트 정책을 자동으로 생성하고 관리하도록 지시합니다. 이 기능은 에 대해서도 동일하게 작동합니다 `ontap-nas-economy` 및 `ontap-nas-flexgroup` 드라이버.
+이 예에서는 Astra Trident가 동적 엑스포트 정책을 사용하여 엑스포트 정책을 자동으로 생성하고 관리하도록 지시하는 방법을 보여 줍니다. 이 기능은 에 대해서도 동일하게 작동합니다 `ontap-nas-economy` 및 `ontap-nas-flexgroup` 드라이버.
 
 [listing]
 ----
@@ -284,11 +304,11 @@ autoExportPolicy: true
 autoExportCIDRs:
 - 10.0.0.0/24
 username: admin
-password: <password>
+password: password
 nfsMountOptions: nfsvers=4
 ----
 ====
-.IPv6 주소 사용 예
+.IPv6 주소 사용
 [%collapsible%open]
 ====
 이 예에서는 를 보여 줍니다 `managementLIF` IPv6 주소 사용.
@@ -305,14 +325,13 @@ labels:
   backend: test1-ontap-ipv6
 svm: nas_ipv6_svm
 username: vsadmin
-password: <password>
-
+password: password
 ----
 ====
-.SMB 볼륨을 사용하는 ONTAP용 Amazon FSx의 예
+.SMB 볼륨을 사용하는 ONTAP용 Amazon FSx
 [%collapsible%open]
 ====
-이 예에서는 SMB 볼륨을 사용하여 ONTAP 백엔드에 대한 Amazon FSx를 생성합니다.
+를 클릭합니다 `smbShare` SMB 볼륨을 사용하는 ONTAP용 FSx에 매개 변수가 필요합니다.
 
 [listing]
 ----
@@ -324,6 +343,7 @@ managementLIF: example.mgmt.fqdn.aws.com
 nasType: smb
 dataLIF: 10.0.0.15
 svm: nfs_svm
+smbShare: smb-share
 clientCertificate: ZXR0ZXJwYXB...ICMgJ3BhcGVyc2
 clientPrivateKey: vciwKIyAgZG...0cnksIGRlc2NyaX
 trustedCACertificate: zcyBbaG...b3Igb3duIGNsYXNz

@@ -14,27 +14,20 @@ summary: 'Amazon Elastic Kubernetes Service(EKS)에서 실행되는 Kubernetes �
 [role="lead"]
 Amazon Elastic Kubernetes Service(EKS)에서 실행되는 Kubernetes 클러스터가 ONTAP에서 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있도록 NetApp ONTAP 파일 시스템용 Amazon FSx를 Astra Trident와 통합할 수 있습니다.
 
-.시작하기 전에
+
+
+== 요구 사항
+
 또한 link:../trident-get-started/requirements.html["Astra Trident 요구사항"], ONTAP용 FSx와 Astra Trident를 통합하려면 다음이 필요합니다.
 
 * kubbtl이 설치된 기존 Amazon EKS 클러스터 또는 자체 관리 Kubernetes 클러스터
-* 클러스터의 작업자 노드에서 연결할 수 있는 NetApp ONTAP 파일 시스템용 기존 Amazon FSx 및 SVM(스토리지 가상 시스템)입니다.
+* 클러스터의 작업자 노드에서 연결할 수 있는 NetApp ONTAP 파일 시스템용 기존 Amazon FSx 및 SVM(Storage Virtual Machine).
 * 에 대해 준비된 작업자 노드입니다 link:worker-node-prep.html["NFS 또는 iSCSI"].
 +
 
 NOTE: Amazon Linux 및 Ubuntu에 필요한 노드 준비 단계를 따라야 합니다 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html["Amazon Machine Images(아마존 머신 이미지)"^] (AMI) EKS AMI 유형에 따라 다릅니다.
 
-
-
-.SMB 볼륨에 대한 추가 요구사항
-* Linux 컨트롤러 노드 및 Windows Server 2019를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.
-* Active Directory 자격 증명이 포함된 Astra Trident 암호가 하나 이상 있어야 합니다. 암호를 생성합니다 `smbcreds`:
-+
-[listing]
-----
-kubectl create secret generic smbcreds --from-literal username=user --from-literal password='password'
-----
-* Windows 서비스로 구성된 CSI 프록시. 를 구성합니다 `csi-proxy`를 참조하십시오 link:https://github.com/kubernetes-csi/csi-proxy["GitHub:CSI 프록시"^] 또는 link:https://github.com/Azure/aks-engine/blob/master/docs/topics/csi-proxy-windows.md["GitHub: Windows용 CSI 프록시"^] Windows에서 실행되는 Kubernetes 노드의 경우:
+* Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다. 을 참조하십시오 <<SMB 볼륨 프로비저닝을 위한 준비>> 를 참조하십시오.
 
 
 
@@ -113,6 +106,19 @@ trustedCACertificate: zcyBbaG...b3Igb3duIGNsYXNz
 
 를 사용하여 SMB 볼륨을 프로비저닝할 수 있습니다 `ontap-nas` 드라이버. 를 누릅니다 <<ONTAP SAN 및 NAS 드라이버 통합>> 다음 단계를 완료합니다.
 
+.시작하기 전에
+를 사용하여 SMB 볼륨을 프로비저닝하기 전에 `ontap-nas` 드라이버, 다음이 있어야 합니다.
+
+* Linux 컨트롤러 노드 및 Windows Server 2019를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.
+* Active Directory 자격 증명이 포함된 Astra Trident 암호가 하나 이상 있어야 합니다. 암호를 생성합니다 `smbcreds`:
++
+[listing]
+----
+kubectl create secret generic smbcreds --from-literal username=user --from-literal password='password'
+----
+* Windows 서비스로 구성된 CSI 프록시. 를 구성합니다 `csi-proxy`를 참조하십시오 link:https://github.com/kubernetes-csi/csi-proxy["GitHub:CSI 프록시"^] 또는 link:https://github.com/Azure/aks-engine/blob/master/docs/topics/csi-proxy-windows.md["GitHub: Windows용 CSI 프록시"^] Windows에서 실행되는 Kubernetes 노드의 경우:
+
+
 .단계
 . SMB 공유를 생성합니다. 다음 두 가지 방법 중 하나로 SMB 관리자 공유를 생성할 수 있습니다 link:https://learn.microsoft.com/en-us/troubleshoot/windows-server/system-management-components/what-is-microsoft-management-console["Microsoft 관리 콘솔"^] 공유 폴더 스냅인 또는 ONTAP CLI 사용 ONTAP CLI를 사용하여 SMB 공유를 생성하려면 다음을 따르십시오.
 +
@@ -145,7 +151,9 @@ NOTE: 을 참조하십시오 link:https://docs.netapp.com/us-en/ontap/smb-config
 | 매개 변수 | 설명 | 예 
 
 
-| `smbShare` | 공유 폴더 Microsoft 관리 콘솔을 사용하여 생성한 SMB 공유의 이름을 지정하거나 Astra Trident가 SMB 공유를 생성할 수 있도록 공유 이름을 지정할 수 있습니다. 또는 매개 변수를 비워 두면 볼륨에 대한 공통 공유 액세스를 방지할 수 있습니다. | `smb-share` 
+| `smbShare` | Microsoft 관리 콘솔 또는 ONTAP CLI를 사용하여 생성된 SMB 공유의 이름 또는 Astra Trident가 SMB 공유를 생성할 수 있도록 이름을 지정할 수 있습니다.
+
+이 매개변수는 ONTAP 백엔드에 대한 Amazon FSx에 필요합니다. | `smb-share` 
 
 
 | `nasType` | * 를 로 설정해야 합니다 `smb`. * null인 경우 기본값은 로 설정됩니다 `nfs`. | `smb` 
