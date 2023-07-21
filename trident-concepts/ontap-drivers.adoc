@@ -56,7 +56,7 @@ NFS 를 참조하십시오
  a| 
 파일 시스템
  a| 
-RWO, ROX, rwx
+RWO, ROX, rwx, RWOP
  a| 
 "", NFS
 
