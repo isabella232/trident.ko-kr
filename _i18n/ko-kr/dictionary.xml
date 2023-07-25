@@ -55,7 +55,6 @@
   <block id="00055dac2ba112b87a95a368075b9561" category="cell">'ONTAP-NAS'</block>
   <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="paragraph">NFS 를 참조하십시오</block>
   <block id="ac52cf637478f3656a1fdee5c02324fd" category="paragraph">파일 시스템</block>
-  <block id="9f47e55b538b64923f2ee8c19bc6887a" category="paragraph">"", NFS</block>
   <block id="cecdaed309330a9e7dea16b2076957ee" category="cell">ONTAP-NAS-이코노미</block>
   <block id="2b8ac774302bd45e0ad531e434d8cd6d" category="cell">'ONTAP-NAS-Flexgroup'</block>
   <block id="cd17e7ed84c40a0ff5ecb8b625b1f186" category="cell">'ONTAP-SAN'</block>
@@ -3737,4 +3736,7 @@
   <block id="7d159230ccaa721872f31bf9be31afeb" category="paragraph">Trident 드라이버가 사용할 수 있는 더 제한적인 역할을 ONTAP 내에 만들 수 있지만 권장하지 않습니다. Trident의 대부분의 새로운 릴리즈에서는 추가 API를 호출하므로 업그레이드가 어렵고 오류가 발생하기 쉽습니다.</block>
   <block id="37a679c38162162811d93d22ba8f5b4a" category="paragraph">ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하기 위한 요구 사항 및 인증 옵션을 이해합니다.</block>
   <block id="7fbe6e40125b7d1b2f5c5c05044e7526" category="section-title">인증서 기반 인증을 사용합니다</block>
+  <block id="3262251091b863054cfabf046c0e3493" category="paragraph">NFS 를 참조하십시오
+중소기업</block>
+  <block id="7f4a1ee6a22ce0658ba6215c997ba8d8" category="paragraph">"", NFS, SMB</block>
 </blocks>

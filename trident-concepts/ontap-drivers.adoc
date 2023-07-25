@@ -42,34 +42,37 @@ Astra Trident는 다음 스토리지 드라이버를 제공하여 ONTAP 클러�
 
 | 'ONTAP-NAS'  a| 
 NFS 를 참조하십시오
+중소기업
  a| 
 파일 시스템
  a| 
 RWO, ROX, rwx, RWOP
  a| 
-"", NFS
+"", NFS, SMB
 
 
 
 | ONTAP-NAS-이코노미  a| 
 NFS 를 참조하십시오
+중소기업
  a| 
 파일 시스템
  a| 
 RWO, ROX, rwx, RWOP
  a| 
-"", NFS
+"", NFS, SMB
 
 
 
 | 'ONTAP-NAS-Flexgroup'  a| 
 NFS 를 참조하십시오
+중소기업
  a| 
 파일 시스템
  a| 
 RWO, ROX, rwx, RWOP
  a| 
-"", NFS
+"", NFS, SMB
 
 
 
