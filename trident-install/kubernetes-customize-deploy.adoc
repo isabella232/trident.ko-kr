@@ -40,7 +40,7 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 | 매개 변수 | 설명 | 기본값 
 
 
-| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/트리덴트 - AutoSupport: 23.04.0" 
+| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/trident-autosupport:23.07.0" 
 
 
 | 자동 지원 프록시 | AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다 | "http://proxy.example.com:8888"[] 

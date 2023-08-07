@@ -16,7 +16,7 @@ Astra Trident를 다양한 환경과 조직에 설치할 수 있도록 NetApp은
 
 
 
-== Astra Trident 23.04에 대한 중요 정보
+== Astra Trident 23.07에 대한 중요 정보
 
 * Astra Trident * 에 대한 다음 중요 정보를 읽어야 합니다
 
@@ -74,6 +74,12 @@ Trident 운영자가 Kubernetes 버전에 대해 다음 오브젝트를 자동�
 
 
 ====
+.<strong> 리소스 책임 </strong>
+[%collapsible]
+====
+클러스터 범위 Trident 운전자가 클러스터 수준에서 Astra Trident 설치와 관련된 리소스를 관리합니다. 이렇게 하면 네임스페이스 범위 연산자를 사용하여 클러스터 범위 리소스를 유지 관리할 때 발생할 수 있는 오류가 줄어듭니다. 이는 자가 복구 및 패치에 필수적입니다.
+
+====
 .<strong> 자동 복구 기능 </strong>
 [%collapsible]
 ====
@@ -91,7 +97,13 @@ Trident 운영자가 Kubernetes 버전에 대해 다음 오브젝트를 자동�
 ----
 kubectl patch torc <trident-orchestrator-name> -n trident --type=merge -p '{"spec":{"debug":true}}'
 ----
-'트리엔오케스트레이터'가 업데이트된 후, 운용자는 기존 설치 시 업데이트 및 패치를 처리한다. 이렇게 하면 새 포드가 생성되어 설치를 적절하게 수정할 수 있습니다.
+이후 `TridentOrchestrator` 이 업데이트되면 운영자가 업데이트를 처리하고 기존 설치를 패치합니다. 이 경우 새 Pod가 생성되어 적절히 설치가 수정될 수 있습니다.
+
+====
+.<strong> Clean </strong> 재설치
+[%collapsible]
+====
+클러스터 범위 Trident 운영자를 사용하면 클러스터 범위 리소스를 깨끗이 제거할 수 있습니다. 사용자는 Astra Trident를 완전히 제거하고 다시 설치할 수 있습니다.
 
 ====
 .</strong>를 처리하는 <strong> 자동 Kubernetes 업그레이드

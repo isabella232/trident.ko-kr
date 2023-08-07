@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: trident-managing-k8s/uninstall-trident.html 
-keywords: uninstall, astra trident, methods, operator, tridentctl, helm 
-summary: Astra Trident의 설치 방식에 따라 여러 옵션을 사용하여 제거할 수 있습니다. 
+keywords: uninstall, astra trident, methods, operator, tridentctl, helm, downgrade, obliviate, crds, wipeout, downgrade 
+summary: Astra Trident를 설치하는 데 사용한 Astra Trident를 제거하는 데 동일한 방법을 사용해야 합니다. 업그레이드, 종속성 문제 또는 실패 또는 불완전한 업그레이드 후에 관찰된 버그에 대한 수정이 필요한 경우 Astra Trident를 제거하고 해당 버전에 대한 구체적인 지침에 따라 이전 버전을 다시 설치해야 합니다. 
 ---
 = Astra Trident를 제거합니다
 :hardbreaks:
@@ -12,11 +12,77 @@ summary: Astra Trident의 설치 방식에 따라 여러 옵션을 사용하여 
 
 
 [role="lead"]
-Astra Trident의 설치 방식에 따라 여러 옵션을 사용하여 제거할 수 있습니다.
+Astra Trident를 설치하는 데 사용한 Astra Trident를 제거하는 데 동일한 방법을 사용해야 합니다.
+
+
+NOTE: 업그레이드, 종속성 문제 또는 실패 또는 불완전한 업그레이드 후에 관찰된 버그에 대한 수정이 필요한 경우 Astra Trident를 제거하고 해당 지침에 따라 이전 버전을 다시 설치해야 합니다 link:../earlier-versions.html["버전"]. 이전 버전으로 _download_하는 유일한 권장 방법입니다.
+
+.시작하기 전에
+Kubernetes 클러스터를 사용 중단하는 경우, 를 제거하기 전에 Astra Trident에서 생성된 볼륨을 사용하는 모든 애플리케이션을 삭제해야 합니다. 따라서 PVC가 삭제되기 전에 Kubernetes 노드에 게시되지 않습니다.
 
 
 
-== Helm을 사용하여 제거합니다
+== 원래 설치 방법을 확인합니다
+
+Astra Trident를 설치할 때 사용한 것과 동일한 방법을 사용하여 제거해야 합니다. 제거하기 전에 Astra Trident를 원래 설치할 때 사용한 버전을 확인하십시오.
+
+. 사용 `kubectl get pods -n trident` 를 눌러 포드를 검사합니다.
++
+** 운영자 POD가 없는 경우, 를 사용하여 Astra Trident를 설치했습니다 `tridentctl`.
+** 운영자 포드가 있는 경우, Trident 연산자를 사용하여 수동으로 또는 Hrom을 사용하여 Astra Trident를 설치했습니다.
+
+
+. 작업자 포드가 있는 경우 를 사용합니다 `kubectl describe tproc trident` Helm을 사용하여 Astra Trident가 설치되었는지 확인합니다.
++
+** H제어 레이블이 있는 경우, Hrom을 사용하여 Astra Trident를 설치했습니다.
+** H제어 레이블이 없는 경우 Trident 연산자를 사용하여 Astra Trident를 수동으로 설치했습니다.
+
+
+
+
+
+
+== Trident 운영자 설치를 제거합니다
+
+수동 또는 Helm을 사용하여 트라이덴트 작업자 설치를 제거할 수 있습니다.
+
+
+
+=== 수동 설치를 제거합니다
+
+운영자를 사용하여 Astra Trident를 설치한 경우 다음 중 하나를 수행하여 제거할 수 있습니다.
+
+* ** 편집 `TridentOrchestrator` 제거 플래그를 설정하려면: ** 편집할 수 있습니다 `TridentOrchestrator` 그리고 설정합니다 `spec.uninstall=true`.
++
+** 를 편집합니다 `TridentOrchestrator` 를 사용하여 를 설정합니다 `uninstall` 아래에 표시된 대로 플래그 지정:
++
+[listing]
+----
+kubectl patch torc <trident-orchestrator-name> --type=merge -p '{"spec":{"uninstall":true}}'
+----
+** 'uninstall' 플래그가 'true'로 설정되어 있으면 Trident 운영자가 Trident를 제거하지만 Trident 자체 자체를 제거하지 않습니다. Trident를 다시 설치하려면 해당 Trident를 정리하고 새 AgentOrchestrator를 생성해야 합니다.
+
+
+* ** 삭제 `TridentOrchestrator`: ** 를 제거하여 `TridentOrchestrator` Astra Trident를 배포하는 데 사용된 CR은 작업자에게 Trident를 제거하도록 지시합니다.
++
+** 작업자가 의 제거를 처리합니다 `TridentOrchestrator` 그런 다음 Astra Trident 구축과 디멘시작을 제거하고 설치의 일부로 생성한 Trident 포드를 삭제합니다.
+** Astra Trident를 제거하고 Astra Trident(생성되는 CRD 포함)를 완전히 제거하려면 를 편집합니다 `TridentOrchestrator` 을 전달합니다 `wipeout` 옵션을 선택합니다. 후속 설치는 새 설치로 처리됩니다.
++
+[listing]
+----
+kubectl patch torc <trident-orchestrator-name> --type=merge -p '{"spec":{"wipeout":["crds"],"uninstall":true}}'
+----
++
+
+WARNING: 이 작업은 취소할 수 없습니다. Astra Trident를 새로 설치하려는 경우가 아니라면 CRD를 지우지 마십시오. 예를 들어, 바로 이전 버전이 아닌 다른 버전으로 이동하는 경우를 들 수 있습니다.
+
+
+
+
+
+
+
+=== Helm 설치를 제거합니다
 
 Helm을 사용하여 Astra Trident를 설치한 경우 'helm uninstall'을 사용하여 제거할 수 있습니다.
 
@@ -33,36 +99,9 @@ release "trident" uninstalled
 ----
 
 
-== Trident 연산자를 사용하여 제거합니다
+== 를 제거합니다 `tridentctl` 설치
 
-운영자를 사용하여 Astra Trident를 설치한 경우 다음 중 하나를 수행하여 제거할 수 있습니다.
-
-* ** 제거 플래그를 설정하려면 '트리젠터레이터'를 편집하여 '트리젠터레이터'를 편집하고 'Spec.uninstall=true'를 설정할 수 있습니다. 다음 그림과 같이 '트리엔오케스트레이터' CR을 편집하고 '제거' 플래그를 설정합니다.
-+
-[listing]
-----
-kubectl patch torc <trident-orchestrator-name> --type=merge -p '{"spec":{"uninstall":true}}'
-----
-+
-'uninstall' 플래그가 'true'로 설정되어 있으면 Trident 운영자가 Trident를 제거하지만 Trident 자체 자체를 제거하지 않습니다. Trident를 다시 설치하려면 해당 Trident를 정리하고 새 AgentOrchestrator를 생성해야 합니다.
-
-* ** "트리펜터레이터" 삭제: ** Astra Trident를 배포하는 데 사용된 '트리엔오케스트레이터' CR을 제거하여 운영자에게 Trident를 제거하도록 지시합니다. 운영자는 '트리펜터레이터'의 제거를 처리하고 Astra Trident 구축 및 디포드를 제거하여 설치의 일부로 생성한 Trident 포드를 삭제합니다. Astra Trident(CRD 생성 포함)를 완전히 제거하고 슬레이트 클린을 효과적으로 닦기 위해 '트리펜터레이터'를 편집하여 '와이프아웃' 옵션을 통과할 수 있습니다. 다음 예를 참조하십시오.
-
-
-[listing]
-----
-kubectl patch torc <trident-orchestrator-name> --type=merge -p '{"spec":{"wipeout":["crds"],"uninstall":true}}'
-----
-그러면 Astra Trident가 완전히 설치 제거되며, 백엔드 및 관리하는 볼륨과 관련된 모든 메타데이터가 지워집니다. 이후 설치는 새로 설치하는 것으로 처리됩니다.
-
-
-WARNING: 전체 제거를 수행할 때에만 CRD를 지우는 것을 고려해야 합니다. 이 작업은 취소할 수 없습니다. ** 처음부터 새로 Astra Trident 설치를 생성하기 위해 사용하지 않는 한 CRD를 지우지 마십시오**.
-
-
-
-== 을 사용하여 를 제거합니다 `tridentctl`
-
-다음과 같이 tridentctl에서 'uninstall' 명령을 실행하면 CRD 및 관련 객체를 제외한 Astra Trident와 관련된 모든 리소스가 제거되므로 설치 프로그램을 다시 쉽게 실행하여 최신 버전으로 업데이트할 수 있습니다.
+를 사용합니다 `uninstall` 명령을 입력합니다 `tridentctl` CRD 및 관련 객체를 제외한 Astra Trident와 연결된 모든 리소스를 제거합니다. 이렇게 하면 설치 프로그램을 다시 실행하여 최신 버전으로 간단하게 업데이트할 수 있습니다.
 
 [listing]
 ----

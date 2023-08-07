@@ -15,12 +15,6 @@ summary: Astra Trident를 설치 및 사용하는 동안 발생할 수 있는 �
 Astra Trident를 설치 및 사용하는 동안 발생할 수 있는 문제를 해결하려면 여기에 제공된 포인터를 사용하십시오.
 
 
-NOTE: Astra Trident에 대한 도움을 받으려면 'tridentctl logs-a-n tri덴트'를 사용하여 지원 번들을 생성한 후 'NetApp Support<Getting Help>'로 보내십시오.
-
-
-TIP: 문제 해결 문서의 전체 목록을 보려면 을 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Trident_Kubernetes["NetApp Knowledgebase(로그인 필요)"^]. Astra와 관련된 문제 해결에 대한 정보도 찾을 수 있습니다 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["여기"^].
-
-
 
 == 일반 문제 해결
 
@@ -66,7 +60,6 @@ tridentctl과 함께 설치됩니다::
 * 에서 Trident를 사용할 때 일반적으로 발생할 수 있는 문제입니다 https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"] 테넌트 및 클라이언트 암호가 권한이 부족한 앱 등록에서 나오는 경우 입니다. Trident 요구사항의 전체 목록은 를 참조하십시오 link:../trident-use/anf.html["Azure NetApp Files"] 구성.
 * PV를 컨테이너에 마운트하는 데 문제가 있는 경우 rpcbind가 설치되어 실행되고 있는지 확인합니다. 호스트 OS에 필요한 패키지 관리자를 사용하고 rpcbind가 실행 중인지 확인합니다. 'stemctl status rpcbind' 또는 이와 동등한 기능을 실행하여 rpcbind 서비스의 상태를 확인할 수 있습니다.
 * Trident 백엔드가 이전에 작업을 수행했음에도 불구하고 "실패" 상태에 있다고 보고할 경우 백엔드와 연결된 SVM/관리 자격 증명을 변경하면 원인일 수 있습니다. 'tridentctl update backend'를 사용하여 백엔드 정보를 업데이트하거나 Trident POD를 바운딩하면 이 문제가 해결됩니다.
-* 베타 볼륨 스냅샷을 사용하도록 Kubernetes 클러스터 및/또는 Trident를 업그레이드할 경우 기존의 모든 알파 스냅샷 CRS가 완전히 제거되었는지 확인합니다. 그런 다음 "tridentctl oblividate alpha-snapshot-crd" 명령을 사용하여 알파 스냅샷 CRD를 삭제할 수 있습니다. 을 참조하십시오 https://netapp.io/2020/01/30/alpha-to-beta-snapshots/["블로그입니다"] 알파 스냅샷 마이그레이션 단계를 이해합니다.
 * Docker를 컨테이너 런타임으로 사용하여 Trident를 설치할 때 권한 문제가 발생하면 '--in cluster=false' 플래그를 사용하여 Trident를 설치해 보십시오. 설치자 포드는 사용하지 않고 설치자 이용으로 인한 권한 문제를 피한다.
 * 실패한 실행 후 정리 작업을 위해 'uninstall parameter <uninstall Trident>'를 사용합니다. 기본적으로 이 스크립트는 Trident에서 만든 CRD를 제거하지 않으므로 실행 중인 구축에서도 안전하게 제거한 후 다시 설치할 수 있습니다.
 * 이전 버전의 Trident로 다운그레이드하려는 경우 먼저 을 실행합니다 `tridentctl uninstall` Trident를 제거하는 명령입니다. 원하는 를 다운로드합니다 https://github.com/NetApp/trident/releases["Trident 버전"] 를 사용하여 를 설치합니다 `tridentctl install` 명령. 새로 생성된 PVS가 없고 기존 PVS/백엔드/스토리지 클래스가 변경되지 않은 경우에만 다운그레이드를 고려하십시오. 이제 Trident는 CRD를 사용하여 상태를 유지하므로 생성된 모든 스토리지 요소(백엔드, 스토리지 클래스, PVS 및 볼륨 스냅샷)에는 가 있습니다 `associated CRD objects <Kubernetes CustomResourceDefinition Objects>` 이전의 설치된 Trident 버전에서 사용한 PV에 기록된 데이터 대신 * 이전 버전으로 되돌릴 때 새로 생성된 PVS를 사용할 수 없습니다. * * 다운그레이드 시 백엔드, PVS, 스토리지 클래스 및 볼륨 스냅샷(생성/업데이트/삭제)과 같은 객체에 대한 변경 사항은 Trident에 표시되지 않습니다 *. 설치된 Trident의 이전 버전에서 사용된 PV는 여전히 Trident에 표시됩니다. 이전 버전으로 돌아가면 업그레이드되지 않은 경우 이전 릴리즈를 사용하여 이미 생성된 PVS에 대한 액세스가 중단되지 않습니다.

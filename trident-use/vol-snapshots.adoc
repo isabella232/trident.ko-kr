@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/vol-snapshots.html 
-keywords: volumes, on-demand volume snapshots, create snapshots, backends, kubernetes, create PVCs, PVCs 
-summary: 'PVS(Persistent Volumes)의 Kubernetes VolumeSnapshots(볼륨 스냅샷)을 생성하여 Astra Trident 볼륨의 시점 복제본을 유지할 수 있습니다. 또한 기존 볼륨 스냅샷에서 _clone_이라고도 하는 새 볼륨을 생성할 수 있습니다. 에서 볼륨 스냅샷을 지원합니다 `ontap-nas`, `ontap-nas-flexgroup`, `ontap-san`, `ontap-san-economy`, `solidfire-san`, `gcp-cvs`, 및 `azure-netapp-files` 드라이버.' 
+keywords: volumes, on-demand volume snapshots, create snapshots, backends, kubernetes, create PVCs, PVCs, snapshot, volume snapshot, import snapshot, recover data 
+summary: '영구 볼륨(PVS)의 Kubernetes 볼륨 스냅샷은 볼륨의 시점 복사본을 지원합니다. Astra Trident를 사용하여 생성된 볼륨의 스냅샷을 생성하고, Astra Trident 외부에서 생성된 스냅샷을 가져오고, 기존 스냅샷에서 새 볼륨을 생성하고, 스냅샷에서 볼륨 데이터를 복구할 수 있습니다.' 
 ---
 = 스냅샷 작업
 :hardbreaks:
@@ -12,22 +12,33 @@ summary: 'PVS(Persistent Volumes)의 Kubernetes VolumeSnapshots(볼륨 스냅샷
 
 
 [role="lead"]
-PVS(Persistent Volumes)의 Kubernetes VolumeSnapshots(볼륨 스냅샷)을 생성하여 Astra Trident 볼륨의 시점 복제본을 유지할 수 있습니다. 또한 기존 볼륨 스냅샷에서 _clone_이라고도 하는 새 볼륨을 생성할 수 있습니다. 에서 볼륨 스냅샷을 지원합니다 `ontap-nas`, `ontap-nas-flexgroup`, `ontap-san`, `ontap-san-economy`, `solidfire-san`, `gcp-cvs`, 및 `azure-netapp-files` 드라이버.
+영구 볼륨(PVS)의 Kubernetes 볼륨 스냅샷은 볼륨의 시점 복사본을 지원합니다. Astra Trident를 사용하여 생성된 볼륨의 스냅샷을 생성하고, Astra Trident 외부에서 생성된 스냅샷을 가져오고, 기존 스냅샷에서 새 볼륨을 생성하고, 스냅샷에서 볼륨 데이터를 복구할 수 있습니다.
+
+
+
+== 개요
+
+에서 볼륨 스냅샷을 지원합니다 `ontap-nas`, `ontap-nas-flexgroup`, `ontap-san`, `ontap-san-economy`, `solidfire-san`, `gcp-cvs`, 및 `azure-netapp-files` 드라이버.
 
 .시작하기 전에
-외부 스냅샷 컨트롤러와 사용자 정의 리소스 정의(CRD)가 있어야 합니다. Kubernetes Orchestrator의 책임입니다(예: Kubeadm, GKE, OpenShift).
+스냅샷을 사용하려면 외부 스냅샷 컨트롤러와 CRD(사용자 정의 리소스 정의)가 있어야 합니다. Kubernetes Orchestrator의 책임입니다(예: Kubeadm, GKE, OpenShift).
 
-Kubernetes 배포 시 스냅샷 컨트롤러 및 CRD가 포함되지 않은 경우 를 참조하십시오 <<볼륨 스냅샷 컨트롤러 배포>>.
+Kubernetes 배포 시 스냅샷 컨트롤러 및 CRD가 포함되지 않은 경우 를 참조하십시오 <<볼륨 스냅샷 컨트롤러를 배포합니다>>.
 
 
 NOTE: GKE 환경에서 필요 시 볼륨 스냅샷을 생성할 경우 스냅샷 컨트롤러를 생성하지 마십시오. GKE는 내장된 숨겨진 스냅샷 컨트롤러를 사용합니다.
 
 
 
-== 1단계: 을 작성합니다 `VolumeSnapshotClass`
+== 볼륨 스냅샷을 생성합니다
 
-이 예에서는 볼륨 스냅샷 클래스를 생성합니다.
-
+.단계
+. 을 생성합니다 `VolumeSnapshotClass`. 자세한 내용은 을 참조하십시오 link:../trident-reference/objects.html#kubernetes-volumesnapshotclass-objects["VolumeSnapshotClass"].
++
+** 를 클릭합니다 `driver` Astra Trident CSI 드라이버를 가리킵니다.
+** `deletionPolicy` 있을 수 있습니다 `Delete` 또는 `Retain`. 를 로 설정한 경우 `Retain`, 스토리지 클러스터의 기본 물리적 스냅샷은 가 있는 경우에도 유지됩니다 `VolumeSnapshot` 객체가 삭제되었습니다.
++
+.예
 [listing]
 ----
 cat snap-sc.yaml
@@ -38,16 +49,13 @@ metadata:
 driver: csi.trident.netapp.io
 deletionPolicy: Delete
 ----
-를 클릭합니다 `driver` Astra Trident CSI 드라이버를 가리킵니다. `deletionPolicy` 있을 수 있습니다 `Delete` 또는 `Retain`. 를 로 설정한 경우 `Retain`, 스토리지 클러스터의 기본 물리적 스냅샷은 가 있는 경우에도 유지됩니다 `VolumeSnapshot` 객체가 삭제되었습니다.
-
-자세한 내용은 LINK:./trident-reference/objects.html#Kubernetes-volumesshotshotclass-objects를 참조하십시오[`VolumeSnapshotClass`].
 
 
-
-== 2단계: 기존 PVC의 스냅샷을 생성합니다
-
-이 예에서는 기존 PVC의 스냅샷을 생성합니다.
-
+. 기존 PVC의 스냅샷을 생성합니다.
++
+.예
+** 이 예에서는 기존 PVC의 스냅샷을 생성합니다.
++
 [listing]
 ----
 cat snap.yaml
@@ -60,8 +68,8 @@ spec:
   source:
     persistentVolumeClaimName: pvc1
 ----
-이 예제에서는 이름이 인 PVC에 대해 스냅샷이 생성됩니다 `pvc1` 스냅샷 이름이 로 설정되어 있습니다 `pvc1-snap`.
-
+** 이 예에서는 라는 PVC에 대한 볼륨 스냅샷 객체를 생성합니다 `pvc1` 스냅샷 이름이 로 설정되어 있습니다 `pvc1-snap`. VolumeSnapshot은 PVC와 유사하며 와 관련이 있습니다 `VolumeSnapshotContent` 실제 스냅샷을 나타내는 객체입니다.
++
 [listing]
 ----
 kubectl create -f snap.yaml
@@ -71,10 +79,8 @@ kubectl get volumesnapshots
 NAME                   AGE
 pvc1-snap              50s
 ----
-이로 인해 'VolumeSnapshot' 객체가 생성되었습니다. VolumeSnapshot은 PVC와 유사하며 실제 스냅샷을 나타내는 'VolumeSnapshotContent' 객체와 연결됩니다.
-
-pvc1-snap VolumeSnapshot에 대한 VolumeSnapshotContent 객체를 설명하여 식별할 수 있다.
-
+** 를 식별할 수 있습니다 `VolumeSnapshotContent` 의 개체 `pvc1-snap` VolumeSnapshot을 설명합니다. 를 클릭합니다 `Snapshot Content Name` 이 스냅샷을 제공하는 VolumeSnapshotContent 객체를 식별합니다. 를 클릭합니다 `Ready To Use` 매개 변수는 스냅샷을 사용하여 새 PVC를 생성할 수 있음을 나타냅니다.
++
 [listing]
 ----
 kubectl describe volumesnapshots pvc1-snap
@@ -97,13 +103,17 @@ Status:
 .
 .
 ----
-'스냅샷 컨텐츠 이름'은 이 스냅샷을 제공하는 VolumeSnapshotContent 객체를 식별합니다. Ready to Use 매개변수는 스냅샷이 새 PVC를 생성하는 데 사용될 수 있음을 나타냅니다.
 
 
 
-== 3단계: VolumeSnapshots에서 PVC를 생성합니다
 
-이 예제에서는 스냅샷을 사용하여 PVC를 생성합니다.
+
+
+== 볼륨 스냅샷에서 PVC를 생성합니다
+
+을 사용할 수 있습니다 `dataSource` 이름이 인 VolumeSnapshot을 사용하여 PVC를 생성합니다 `<pvc-name>` 데이터 소스로 사용됩니다. PVC가 생성된 후 POD에 부착하여 다른 PVC와 마찬가지로 사용할 수 있습니다.
+
+다음 예에서는 를 사용하여 PVC를 작성합니다 `pvc1-snap` 를 데이터 소스로 사용합니다.
 
 [listing]
 ----
@@ -124,20 +134,127 @@ spec:
     kind: VolumeSnapshot
     apiGroup: snapshot.storage.k8s.io
 ----
-"다소스"는 데이터 소스로 "pvc1-snap"이라는 VolumeSnapshot을 사용하여 PVC를 생성해야 함을 나타냅니다. 이렇게 하면 Astra Trident가 스냅샷에서 PVC를 생성하도록 지시합니다. PVC가 생성된 후 POD에 부착하여 다른 PVC와 마찬가지로 사용할 수 있습니다.
-
 
 WARNING: PVC는 해당 네임스페이스와 동일한 네임스페이스에서 만들어야 합니다 `dataSource`.
 
 
 
-== 스냅샷이 있는 PV 삭제
+== 볼륨 스냅샷을 가져옵니다
+
+Astra Trident가 를 지원합니다 link:https://kubernetes.io/docs/concepts/storage/volume-snapshots/#static["Kubernetes 사전 프로비저닝된 스냅샷 프로세스"^] 클러스터 관리자가 을(를) 생성할 수 있도록 하려면 `VolumeSnapshotContent` Astra Trident 외부에서 생성된 스냅샷을 사용할 수 있도록 합니다.
+
+볼륨 스냅샷을 가져오기 위해 Astra Trident는 PV 이름과 VolumeSnapshotContent 주석을 사용하여 내부 스냅샷을 찾고 생성된 TridentSnapshot CR 이름을 지정합니다.
+
+
+NOTE: 스냅샷에 상위 볼륨이 있어야 합니다.
+
+.단계
+. * 클러스터 관리자: * 를 생성합니다 `VolumeSnapshotContent` 백엔드 스냅샷을 참조합니다.
++
+** 를 클릭합니다 `VolumeSnapshotContent` 주석은 이어야 합니다 `trident.netapp.io/internalSnapshotName: <backend-snapshot-name>`.
+** 를 클릭합니다 `snapshotHandle` 은(는) 이어야 합니다 `<pv-name>/<VolumeSnapshotContent-name>`. 이 정보는 의 외부 스냅샷 생성자가 Astra Trident에 제공하는 유일한 정보입니다 `ListSnapshots` 통화.
++
+.예
+다음 예제에서는 를 만듭니다 `VolumeSnapshotContent` 백 엔드 스냅샷의 경우 이름이 지정됩니다 `snap-01` 및 `volumeSnapshotRef` 이름 지정 `test-snapshot`.
+
++
+[listing]
+----
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshotContent
+metadata:
+  name: my-trident-snapshot-content
+  annotations:
+    trident.netapp.io/internalSnapshotName: snap-01  # This represents the name of the snapshot on the backend
+spec:
+  deletionPolicy: Retain
+  driver: csi.trident.netapp.io
+  source:
+    snapshotHandle: pvc-3e5cda7a-200b-46ab-b5d0-c9cd8db2cc01/my-trident-snapshot-content  # This is the only information provided to Trident in the ListSnapshots call
+  volumeSnapshotRef:
+    name: test-snapshot
+    namespace: default
+----
++
+
+NOTE: 를 클릭합니다 `volumeSnapshotRef` CR 명명 제약 조건으로 인해 이름이 백엔드 스냅샷 이름과 항상 일치할 수 없습니다.
+
+
+
+. * 클러스터 관리자: * 바인딩 `VolumeSnapshot` 를 누릅니다 `VolumeSnapshotContent` 위치 `volumeSnapshotContentName` 에서 지정한 이름입니다 `volumeSnapshotRef`.
++
+.예
+다음 예에서는 볼륨 스냅샷을 바인딩합니다 `test-snapshot` 를 누릅니다 `VolumeSnapshotContent` 이름 지정 `my-trident-snapshot-content`.
+
++
+[listing]
+----
+apiVersion: snapshot.storage.k8s.io/v1
+kind: VolumeSnapshot
+metadata:
+  name: test-snapshot
+  namespace: default
+spec:
+  source:
+    volumeSnapshotContentName: my-trident-snapshot-content
+----
+. * 내부 처리(작업 필요 없음): * 외부 스냅샷 프로그램은 새로 생성된 VolumeSnapshotContent를 보고 를 실행합니다 `ListSnapshots` 통화. Astra Trident가 을 생성합니다 `TridentSnapshot`.
++
+** 외부 스냅숏 작성기가 를 설정합니다 `VolumeSnapshotContent` 를 선택합니다 `readyToUse` 볼륨 스냅숏을 에 추가합니다 `true`.
+** Trident가 돌아왔습니다 `readyToUse=true`.
+
+
+. * 모든 사용자: * 를 생성합니다 `PersistentVolumeClaim` 를 눌러 새 를 참조합니다 `VolumeSnapshot`, 위치 `spec.dataSource` (또는 `spec.dataSourceRef`) name 은 입니다 `VolumeSnapshot` 이름.
++
+.예
+다음 예에서는 를 참조하는 PVC를 작성합니다 `test-snapshot` 볼륨 스냅샷
+
++
+[listing]
+----
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-from-snap
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: simple-sc
+  resources:
+    requests:
+      storage: 1Gi
+  dataSource:
+    name: test-snapshot
+    namespace: default
+    kind: VolumeSnapshot
+    apiGroup: snapshot.storage.k8s.io
+----
+
+
+
+
+== 스냅샷을 사용하여 볼륨 데이터를 복구합니다
+
+스냅샷 디렉토리는 를 사용하여 프로비저닝된 볼륨의 최대 호환성을 지원하기 위해 기본적으로 숨겨져 있습니다 `ontap-nas` 및 `ontap-nas-economy` 드라이버. 를 활성화합니다 `.snapshot` 스냅샷으로부터 직접 데이터를 복구할 디렉토리입니다.
+
+볼륨 스냅샷 복원 ONTAP CLI를 사용하여 볼륨을 이전 스냅숏에 기록된 상태로 복원합니다.
+
+[listing]
+----
+cluster1::*> volume snapshot restore -vserver vs0 -volume vol3 -snapshot vol3_snap_archive
+----
+
+NOTE: 스냅샷 복사본을 복원하면 기존 볼륨 구성이 덮어쓰여집니다. 스냅샷 복사본이 생성된 후 볼륨 데이터에 대한 변경 사항은 손실됩니다.
+
+
+
+== 연결된 스냅샷이 있는 PV를 삭제합니다
 
 연결된 스냅샷이 있는 영구 볼륨을 삭제하면 해당 Trident 볼륨이 "삭제 상태"로 업데이트됩니다. Astra Trident 볼륨을 삭제하려면 볼륨 스냅샷을 제거하십시오.
 
 
 
-== 볼륨 스냅샷 컨트롤러 배포
+== 볼륨 스냅샷 컨트롤러를 배포합니다
 
 Kubernetes 배포 시 스냅샷 컨트롤러와 CRD가 포함되지 않은 경우 다음과 같이 배포할 수 있습니다.
 
@@ -165,21 +282,6 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes-csi/external-snaps
 NOTE: 필요한 경우 를 엽니다 `deploy/kubernetes/snapshot-controller/rbac-snapshot-controller.yaml` 및 업데이트 `namespace` 네임스페이스로.
 
 
-
-
-
-== 스냅샷을 사용하여 볼륨 데이터를 복구합니다
-
-스냅샷 디렉토리는 를 사용하여 프로비저닝된 볼륨의 최대 호환성을 지원하기 위해 기본적으로 숨겨져 있습니다 `ontap-nas` 및 `ontap-nas-economy` 드라이버. 를 활성화합니다 `.snapshot` 스냅샷으로부터 직접 데이터를 복구할 디렉토리입니다.
-
-볼륨 스냅샷 복원 ONTAP CLI를 사용하여 볼륨을 이전 스냅숏에 기록된 상태로 복원합니다.
-
-[listing]
-----
-cluster1::*> volume snapshot restore -vserver vs0 -volume vol3 -snapshot vol3_snap_archive
-----
-
-NOTE: 스냅샷 복사본을 복원하면 기존 볼륨 구성이 덮어쓰여집니다. 스냅샷 복사본이 생성된 후 볼륨 데이터에 대한 변경 사항은 손실됩니다.
 
 
 

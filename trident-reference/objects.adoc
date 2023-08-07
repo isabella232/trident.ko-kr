@@ -80,10 +80,7 @@ Trident는 표준 사양 외에도 사용자가 백엔드 구성에서 설정한
 
 Trident는 CSI 사양을 사용하여 볼륨 스냅샷 생성을 지원합니다. 볼륨 스냅샷을 생성하고 이를 데이터 소스로 사용하여 기존 PVC를 복제할 수 있습니다. 이렇게 하면 PVS의 시점 복제본을 스냅샷 형태로 Kubernetes에 표시할 수 있습니다. 그런 다음 스냅샷을 사용하여 새 PVS를 생성할 수 있습니다. 이 기능이 어떻게 동작하는지 알아보려면 "+주문형 볼륨 스냅샷+"를 살펴보십시오.
 
-또한 Trident는 클론 생성을 위한 "cloneFromPVC" 및 "plitOnClone" 주석을 제공합니다. 이러한 주석을 사용하여 Kubernetes 1.13 이하 버전에서 CSI 구현을 사용하지 않고 PVC를 복제하거나 Kubernetes 릴리스가 베타 볼륨 스냅샷(Kubernetes 1.16 이하)을 지원하지 않을 경우 사용할 수 있습니다. Trident 19.10은 PVC를 통한 클론 생성을 위한 CSI 워크플로우를 지원합니다.
-
-
-NOTE: CSI Trident와 기존 비 CSI 프런트엔드 및 CLoneFromPVC와 'PlitOnClone' 주석을 사용할 수 있습니다.
+Trident는 도 제공합니다 `cloneFromPVC` 및 `splitOnClone` 클론 생성을 위한 주석. CSI 구현을 사용하지 않고도 이러한 주석을 사용하여 PVC를 복제할 수 있습니다.
 
 예를 들어 이미 mysql이라는 PVC가 있는 사용자는 trident.netapp.io/cloneFromPVC: mysql 같은 주석을 사용해 mysqlclone이라는 새로운 PVC를 만들 수 있습니다. 이 주석을 설정하면 Trident가 볼륨을 처음부터 프로비저닝하는 대신 MySQL PVC에 해당하는 볼륨을 클론합니다.
 
@@ -94,7 +91,7 @@ NOTE: CSI Trident와 기존 비 CSI 프런트엔드 및 CLoneFromPVC와 'PlitOnC
 * ONTAP-NAS와 ONTAP-SAN 드라이버를 함께 사용하면 trident.netapp.io/splitOnClone` 과 함께 PVC 주석 trident.netapp.io/cloneFromPVC` 을 설정하는 것이 바람직할 수 있습니다. Trident는 trident.netapp.io/splitOnClone` 를 true로 설정하면 상위 볼륨에서 복제된 볼륨을 분할하여 복제된 볼륨의 수명 주기를 부모 볼륨에서 완전히 분리하여 스토리지 효율성을 잃게 됩니다. trident.netapp.io/splitOnClone` 를 설정하지 않거나 "false"로 설정하지 않으면 상위 볼륨과 클론 볼륨 간의 종속성을 생성하여 클론이 먼저 삭제되지 않으면 상위 볼륨을 삭제할 수 없게 되어 백엔드에서 공간 소비가 줄어듭니다. 클론을 분할하는 것이 올바른 시나리오는 빈 데이터베이스 볼륨을 복제하여 볼륨과 해당 클론이 크게 달라질 것으로 예상되며 ONTAP에서 제공하는 스토리지 효율성의 이점을 얻지 못하는 경우입니다.
 
 
-'ample-input' 디렉토리에는 Trident와 함께 사용할 PVC 정의의 예가 포함되어 있습니다. Trident 볼륨과 관련된 매개 변수 및 설정에 대한 자세한 설명은 Trident Volume 개체를 참조하십시오.
+를 클릭합니다 `sample-input` 디렉토리에는 Trident와 함께 사용할 PVC 정의의 예가 포함되어 있습니다. 을 참조하십시오  Trident 볼륨과 관련된 매개 변수 및 설정에 대한 자세한 설명을 확인하십시오.
 
 
 
@@ -291,20 +288,19 @@ Kubernetes 사용자 지정 리소스는 관리자가 정의하며 비슷한 객
 
 사용자 정의 리소스 정의(CRD) 및 관련 오브젝트 메타데이터는 Kubernetes에서 메타데이터 저장소에 저장됩니다. 따라서 Trident를 위한 별도의 저장소가 필요하지 않습니다.
 
-19.07 릴리스부터 Trident는 다양한 "CustomResourceDefinition" 개체를 사용하여 Trident 백 엔드, Trident 스토리지 클래스 및 Trident 볼륨과 같은 Trident 개체의 ID를 보존합니다. 이러한 오브젝트는 Trident에서 관리합니다. 또한 CSI 볼륨 스냅샷 프레임워크는 볼륨 스냅샷을 정의하는 데 필요한 일부 CRD를 소개합니다.
+Astra Trident가 사용합니다 `CustomResourceDefinition` Trident 백 엔드, Trident 스토리지 클래스, Trident 볼륨과 같은 Trident 개체의 ID를 보존할 개체입니다. 이러한 오브젝트는 Trident에서 관리합니다. 또한 CSI 볼륨 스냅샷 프레임워크는 볼륨 스냅샷을 정의하는 데 필요한 일부 CRD를 소개합니다.
 
 CRD는 Kubernetes를 구성하는 것입니다. 위에 정의된 리소스의 객체는 Trident에 의해 생성됩니다. 간단히 예로, 'tridentctl'을 사용하여 백엔드를 생성할 때 해당하는 'tridentbackends' CRD 객체는 Kubernetes에서 사용할 수 있도록 생성됩니다.
 
 다음은 Trident의 CRD에 대해 고려해야 할 몇 가지 사항입니다.
 
 * Trident가 설치되면 일련의 CRD가 생성되어 다른 리소스 유형과 마찬가지로 사용할 수 있습니다.
-* Trident의 이전 버전('etcd'를 사용하여 상태를 유지 관리)에서 업그레이드할 경우 Trident 설치 프로그램이 'etcd' 키 값 데이터 저장소에서 데이터를 마이그레이션하고 해당 CRD 개체를 만듭니다.
 * tridentctl uninstall 명령을 사용하여 Trident를 제거할 때 Trident Pod는 삭제되지만 생성된 CRD는 정리되지 않습니다. 을 참조하십시오 link:../trident-managing-k8s/uninstall-trident.html["Trident를 제거합니다"] Trident를 완전히 제거하고 처음부터 다시 구성할 수 있는 방법을 이해합니다.
 
 
 
 
-== 트라이던트 `StorageClass` 오브젝트
+== 아스트라 트리덴트 `StorageClass` 오브젝트
 
 Trident는 Kubernetes의 torageClass 오브젝트에 대해 공급자 필드에 csi.trident.netapp.io`/`netapp.io/trident` 를 지정하는 일치하는 스토리지 클래스를 만듭니다. 스토리지 클래스 이름은 이 이름이 나타내는 Kubernetes의 torageClass 개체와 일치합니다.
 
@@ -317,7 +313,7 @@ REST API를 사용하여 스토리지 클래스를 직접 정의하는 스토리
 
 
 
-== Trident 백엔드 객체
+== Astra Trident 백엔드 개체
 
 백엔드는 Trident가 볼륨을 프로비저닝하는 스토리지 공급자를 나타냅니다. 단일 Trident 인스턴스가 원하는 수의 백엔드를 관리할 수 있습니다.
 
@@ -328,7 +324,7 @@ NOTE: 이것은 직접 만들고 관리하는 두 가지 개체 유형 중 하�
 
 
 
-== 트라이던트 `StoragePool` 오브젝트
+== 아스트라 트리덴트 `StoragePool` 오브젝트
 
 스토리지 풀은 각 백엔드에서 용량 할당에 사용할 수 있는 고유한 위치를 나타냅니다. ONTAP의 경우 SVM에 있는 애그리게이트와 대응합니다. NetApp HCI/SolidFire의 경우 관리자 지정 QoS 밴드에 해당합니다. Cloud Volumes Service의 경우 클라우드 공급자 지역에 해당합니다. 각 스토리지 풀에는 고유한 스토리지 특성 세트가 있으며, 이 특성 집합은 성능 특성과 데이터 보호 특성을 정의합니다.
 
@@ -336,16 +332,17 @@ NOTE: 이것은 직접 만들고 관리하는 두 가지 개체 유형 중 하�
 
 
 
-== 트라이던트 `Volume` 오브젝트
+== 아스트라 트리덴트 `Volume` 오브젝트
 
 볼륨은 NFS 공유 및 iSCSI LUN과 같은 백엔드 엔드포인트로 구성된 기본 프로비저닝 단위입니다. Kubernetes에서는 이러한 항목이 "PersistentVolumes"에 직접 해당합니다. 볼륨을 생성할 때 볼륨의 용량을 할당할 수 있는 위치와 크기를 결정하는 스토리지 클래스가 있는지 확인합니다.
 
+[NOTE]
+====
+* Kubernetes에서 이러한 오브젝트는 자동으로 관리됩니다. 프로비저닝 Trident를 보려면 해당 Trident를 확인하십시오.
+* 연결된 스냅샷이 있는 PV를 삭제하면 해당 Trident 볼륨이 * Deleting * 상태로 업데이트됩니다. Trident 볼륨을 삭제하려면 볼륨의 스냅샷을 제거해야 합니다.
 
-NOTE: Kubernetes에서 이러한 오브젝트는 자동으로 관리됩니다. 프로비저닝 Trident를 보려면 해당 Trident를 확인하십시오.
 
-
-TIP: 연결된 스냅샷이 있는 PV를 삭제하면 해당 Trident 볼륨이 * Deleting * 상태로 업데이트됩니다. Trident 볼륨을 삭제하려면 볼륨의 스냅샷을 제거해야 합니다.
-
+====
 볼륨 구성은 프로비저닝된 볼륨에 있어야 하는 속성을 정의합니다.
 
 [cols=",,,"]
@@ -403,7 +400,7 @@ Trident는 볼륨을 생성할 때 'internalName'을 생성합니다. 이 단계
 
 
 
-== 트라이던트 `Snapshot` 오브젝트
+== 아스트라 트리덴트 `Snapshot` 오브젝트
 
 스냅샷은 볼륨의 시점 복제본으로, 새 볼륨을 용량 할당하거나 복구 상태를 복구하는 데 사용할 수 있습니다. Kubernetes에서는 이러한 객체가 'VolumeSnapshotContent' 객체와 직접 일치합니다. 각 스냅샷은 스냅샷에 대한 데이터의 소스인 볼륨에 연결됩니다.
 

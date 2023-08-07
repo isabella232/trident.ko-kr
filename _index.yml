@@ -12,13 +12,11 @@ indexpage:
   - title: 시작하십시오
     links:
     - title: Astra Trident에 대해 자세히 알아보십시오
-      url: "/trident-concepts/intro.html"
+      url: "/trident-get-started/intro.html"
     - title: 요구 사항
       url: "/trident-get-started/requirements.html"
-    - title: 시도해 보십시오
+    - title: 빠른 시작
       url: "/trident-get-started/quickstart.html"
-    - title: FAQ 를 참조하십시오
-      url: "/faq.html"
   - title: Astra Trident 구축
     links:
     - title: Trident 연산자를 사용하여 배포합니다
@@ -43,8 +41,6 @@ indexpage:
       url: "/trident-use/manage-stor-class.html"
     - title: 볼륨 작업을 수행합니다
       url: "/trident-use/vol-operations.html"
-    - title: Astra Trident를 모니터링합니다
-      url: "/trident-use/monitor-trident.html"
   - title: 데모 자습서
     links:
     - title: Astra Trident 비디오

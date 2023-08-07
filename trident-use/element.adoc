@@ -80,18 +80,6 @@ xfs, ext3, ext4
 
 |===
 
-NOTE: Astra Trident는 향상된 CSI Provisioner로 작동할 때 CHAP를 사용합니다. CHAP(CSI의 기본값)를 사용하는 경우 추가 준비가 필요하지 않습니다. 비 CSI Trident와 CHAP를 사용하려면 명시적으로 UseCHAP 옵션을 설정하는 것이 좋습니다. 그렇지 않으면 를 참조하십시오 link:../trident-concepts/vol-access-groups.html["여기"^].
-
-
-WARNING: 볼륨 액세스 그룹은 Astra Trident의 기존 비 CSI 프레임워크에서만 지원됩니다. CSI 모드에서 작동하도록 구성된 경우 Astra Trident는 CHAP를 사용합니다.
-
-AccessGroups나 UseCHAP가 설정되지 않은 경우 다음 규칙 중 하나가 적용됩니다.
-
-* 기본 '트리덴트' 액세스 그룹이 감지되면 액세스 그룹이 사용됩니다.
-* 액세스 그룹이 감지되지 않고 Kubernetes 버전이 1.7 이상인 경우 CHAP가 사용됩니다.
-
-
-
 
 == 백엔드 구성 옵션
 
@@ -126,7 +114,7 @@ AccessGroups나 UseCHAP가 설정되지 않은 경우 다음 규칙 중 하나�
 | 이니토IFace | iSCSI 트래픽을 특정 호스트 인터페이스로 제한합니다 | “기본값” 
 
 
-| 'UseCHAP'입니다 | CHAP를 사용하여 iSCSI를 인증합니다 | 참 
+| 'UseCHAP'입니다 | CHAP를 사용하여 iSCSI를 인증합니다. Astra Trident는 CHAP를 사용합니다. | 참 
 
 
 | "액세스 그룹" | 사용할 액세스 그룹 ID 목록입니다 | "트리덴트"라는 액세스 그룹의 ID를 찾습니다. 

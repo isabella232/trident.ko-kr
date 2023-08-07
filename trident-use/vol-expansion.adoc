@@ -23,24 +23,11 @@ CSI 프로비저닝을 사용하여 iSCSI PV(Persistent Volume)를 확장할 수
 
 NOTE: iSCSI 볼륨 확장은 ONTAP-SAN, ONTAP-SAN-이코노미, Solidfire-SAN 드라이버로 지원되며 Kubernetes 1.16 이상이 필요합니다.
 
-.개요
-iSCSI PV를 확장하면 다음 단계가 포함됩니다.
-
-* StorageClass 정의를 편집하여 allowVolumeExpansion 필드를 true로 설정합니다.
-* PVC 정의 편집 및 'pec.resources.requests.storage'를 업데이트하여 원래 크기보다 큰 새로 원하는 크기를 반영한다.
-* 크기를 조절하려면 PV를 포드에 부착해야 합니다. iSCSI PV의 크기를 조정할 때 두 가지 시나리오가 있습니다.
-+
-** PV가 포드에 연결된 경우 Astra Trident는 스토리지 백엔드의 볼륨을 확장하고 디바이스를 다시 검사하며 파일 시스템의 크기를 조정합니다.
-** 연결되지 않은 PV의 크기를 조정하려고 하면 Astra Trident가 스토리지 백엔드의 볼륨을 확장합니다. PVC가 POD에 바인딩되면 Trident가 디바이스를 다시 검사해 파일 시스템의 크기를 조정합니다. 그런 다음 확장 작업이 성공적으로 완료된 후 Kubernetes에서 PVC 크기를 업데이트합니다.
-
-
-
-
-아래 예에서는 iSCSI PVS의 확장 작동 방식을 보여 줍니다.
-
 
 
 === 1단계: 볼륨 확장을 지원하도록 StorageClass를 구성합니다
+
+StorageClass 정의를 편집하여 를 설정합니다 `allowVolumeExpansion` 필드를 눌러 로 이동합니다 `true`.
 
 [listing]
 ----
@@ -60,6 +47,8 @@ allowVolumeExpansion: True
 
 
 === 2단계: 생성한 StorageClass를 사용하여 PVC를 생성합니다
+
+PVC 정의를 편집하고 를 업데이트합니다 `spec.resources.requests.storage` 원래 크기보다 커야 하는 새로 원하는 크기를 반영합니다.
 
 [listing]
 ----
@@ -91,6 +80,12 @@ pvc-8a814d62-bd58-4253-b0d1-82f2885db671   1Gi        RWO            Delete     
 
 
 === 3단계: PVC를 부착하는 POD를 정의합니다
+
+크기를 조정할 수 있도록 PV를 포드에 연결합니다. iSCSI PV의 크기를 조정할 때 두 가지 시나리오가 있습니다.
+
+* PV가 포드에 연결된 경우 Astra Trident는 스토리지 백엔드의 볼륨을 확장하고 디바이스를 다시 검사하며 파일 시스템의 크기를 조정합니다.
+* 연결되지 않은 PV의 크기를 조정하려고 하면 Astra Trident가 스토리지 백엔드의 볼륨을 확장합니다. PVC가 POD에 바인딩되면 Trident가 디바이스를 다시 검사해 파일 시스템의 크기를 조정합니다. 그런 다음 확장 작업이 성공적으로 완료된 후 Kubernetes에서 PVC 크기를 업데이트합니다.
+
 
 이 예제에서는 'AN-PVC'를 사용하는 POD가 생성됩니다.
 

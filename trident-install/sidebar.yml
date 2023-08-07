@@ -1,0 +1,24 @@
+---
+section: trident-install
+title: Astra Trident를 설치합니다
+entries:
+- title: 설치 개요
+  url: "/trident-get-started/kubernetes-deploy.html"
+- title: Trident 연산자를 사용하여 설치합니다
+  entries:
+  - title: Trident 연산자 수동 배포(표준)
+    url: "/trident-get-started/kubernetes-deploy-operator.html"
+  - title: Trident 연산자 수동 배포(오프라인)
+    url: "/trident-get-started/kubernetes-deploy-operator-mirror.html"
+  - title: Trident 제어 차트(표준) 사용
+    url: "/trident-get-started/kubernetes-deploy-helm.html"
+  - title: Trident 제어 차트(오프라인) 사용
+    url: "/trident-get-started/kubernetes-deploy-helm-mirror.html"
+  - title: Trident 운영자 설치를 사용자 지정합니다
+    url: "/trident-get-started/kubernetes-customize-deploy.html"
+- title: tridentctl을 사용하여 설치합니다
+  entries:
+  - title: tridentctl을 사용하여 설치합니다
+    url: "/trident-get-started/kubernetes-deploy-tridentctl.html"
+  - title: tridentctl 설치를 사용자 지정합니다
+    url: "/trident-get-started/kubernetes-customize-deploy-tridentctl.html"

@@ -12,6 +12,110 @@ summary: NetApp은 다양한 방법으로 Trident를 지원합니다. 불협화�
 
 
 [role="lead"]
-Astra Trident는 공식적으로 지원되는 NetApp 프로젝트입니다. 표준 메커니즘을 사용하여 NetApp에 연락하면 필요한 엔터프라이즈급 지원을 받을 수 있습니다.
+NetApp은 Astra Trident를 다양한 방법으로 지원합니다. 기술 자료(KB) 기사 및 불화 채널 같은 광범위한 무료 셀프 지원 옵션이 24x7 제공됩니다.
 
-또한 Astra의 컨테이너 사용자(Astra Trident 개발자 포함)로 구성된 활발한 공용 커뮤니티가 있습니다 link:https://discord.gg/NetApp["불화 채널"^]. 프로젝트에 대한 일반적인 질문을 하고 비슷한 생각을 가진 동료와 관련 주제를 논의할 수 있는 좋은 장소입니다.
+
+
+== Astra Trident 지원 라이프사이클
+
+Astra Trident는 버전에 따라 3가지 수준의 지원을 제공합니다. 을 참조하십시오 link:https://mysupport.netapp.com/site/info/version-support["정의를 위한 NetApp 소프트웨어 버전 지원"^].
+
+완벽한 지원:: Astra Trident는 릴리즈부터 12개월간 모든 지원을 제공합니다.
+제한된 지원:: Astra Trident는 릴리즈부터 13~24개월까지 제한적으로 지원을 제공합니다.
+자가 지원:: Astra Trident 문서는 릴리즈일로부터 25~36개월 동안 사용할 수 있습니다.
+
+
+[cols="1, 1, 1, 1"]
+|===
+| 버전 | 완벽한 지원 | 제한된 지원 | 자가 지원 
+
+
+ a| 
+link:https://docs.netapp.com/us-en/trident/index.html["2007년 3월"^]
+| 2024년 7월 | 2025년 7월 | 2026년 7월 
+
+
+ a| 
+link:https://docs.netapp.com/us-en/trident-2304/index.html["23.04"^]
+| 2024년 4월 | 2025년 4월 | 2026년 4월 
+
+
+ a| 
+link:https://docs.netapp.com/us-en/trident-2301/index.html["23.01"^]
+| 2024년 1월 | 2025년 1월 | 2026년 1월 
+
+
+ a| 
+link:https://docs.netapp.com/us-en/trident-2210/index.html["22.10"^]
+| 2023년 10월 | 2024년 10월 | 2025년 10월 
+
+
+ a| 
+link:https://docs.netapp.com/us-en/trident-2207/index.html["22.07"^]
+| -- | 2024년 7월 | 2025년 7월 
+
+
+ a| 
+link:https://docs.netapp.com/us-en/trident-2204/index.html["22.04"^]
+| -- | 2024년 4월 | 2025년 4월 
+
+
+ a| 
+link:https://docs.netapp.com/us-en/trident-2201/index.html["22.01"^]
+| -- | 2024년 1월 | 2025년 1월 
+
+
+ a| 
+link:https://docs.netapp.com/us-en/trident-2110/index.html["21.10"^]
+| -- | 2023년 10월 | 2024년 10월 
+
+
+ a| 
+link:https://docs.netapp.com/us-en/trident-2107/index.html["21.07입니다"^]
+| -- | -- | 2024년 7월 
+
+
+ a| 
+link:https://netapp-trident.readthedocs.io/en/stable-v21.04/["21.04"^]
+| -- | -- | 2024년 4월 
+
+
+ a| 
+link:https://netapp-trident.readthedocs.io/en/stable-v21.01/["21.01"^]
+| -- | -- | 2024년 1월 
+
+
+ a| 
+link:https://netapp-trident.readthedocs.io/en/stable-v20.11/["20.10"^]
+| -- | -- | 2023년 10월 
+|===
+
+NOTE: 21.07 이전의 릴리스는 기존 문서 사이트로 리디렉션합니다.
+
+
+
+== 자가 지원
+
+문제 해결 문서의 전체 목록을 보려면 을 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Trident_Kubernetes["NetApp Knowledgebase(로그인 필요)"^]. Astra와 관련된 문제 해결에 대한 정보도 찾을 수 있습니다 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["여기"^].
+
+
+
+== 커뮤니티 지원
+
+Astra에는 컨테이너 사용자의 활발한 공공 커뮤니티(Astra Trident 개발자 포함)가 있습니다 link:https://discord.gg/NetApp["불화 채널"^]. 프로젝트에 대한 일반적인 질문을 하고 비슷한 생각을 가진 동료와 관련 주제를 논의할 수 있는 좋은 장소입니다.
+
+
+
+== NetApp 기술 지원
+
+Astra Trident에 대한 도움을 받으려면 'tridentctl logs-a-n tri덴트'를 사용하여 지원 번들을 생성한 후 'NetApp Support<Getting Help>'로 보내십시오.
+
+
+
+== 를 참조하십시오
+
+* link:https://cloud.netapp.com/blog/topic/astra["Astra 블로그"^]
+* link:https://netapp.io/persistent-storage-provisioner-for-kubernetes/["Astra Trident 블로그"^]
+* link:https://cloud.netapp.com/kubernetes-hub["쿠버네티스 허브"^]
+* link:https://netapp.io/["NetApp.IO를 참조하십시오"^]
+

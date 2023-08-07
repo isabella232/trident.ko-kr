@@ -97,9 +97,6 @@ trustedCACertificate: zcyBbaG...b3Igb3duIGNsYXNz
 
 
 
-.결과
-배포 후에는 을 만들 수 있습니다 link:../trident-get-started/kubernetes-postdeployment.html["스토리지 클래스, 볼륨 프로비저닝 및 POD에 볼륨 마운트"].
-
 
 
 == SMB 볼륨 프로비저닝을 위한 준비

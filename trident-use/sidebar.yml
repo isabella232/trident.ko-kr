@@ -4,7 +4,7 @@ title: Astra Trident를 사용해 보십시오
 entries:
 - title: 작업자 노드를 준비합니다
   url: "/trident-use/worker-node-prep.html"
-- title: 백엔드 구성
+- title: 백엔드 구성 및 관리
   entries:
   - title: 개요
     url: "/trident-use/backends.html"
@@ -44,27 +44,33 @@ entries:
       url: "/trident-use/trident-fsx-prep.html"
     - title: 구성 옵션 및 예
       url: "/trident-use/trident-fsx-examples.html"
-- title: kubectl로 백엔드를 만듭니다
-  url: "/trident-use/backend-kubectl.html"
-- title: kubeck을 사용하여 백엔드 관리 수행
-  url: "/trident-use/backend_ops_kubectl.html"
-- title: tridentctl을 사용하여 백엔드 관리를 수행합니다
-  url: "/trident-use/backend_ops_tridentctl.html"
-- title: 백엔드 관리 옵션 간 이동
-  url: "/trident-use/backend_options.html"
-- title: 스토리지 클래스를 관리합니다
-  url: "/trident-use/manage-stor-class.html"
-- title: 볼륨 작업을 수행합니다
+  - title: kubectl로 백엔드를 만듭니다
+    url: "/trident-use/backend-kubectl.html"
+  - title: 백엔드 관리
+    entries:
+    - title: kubectl로 백엔드를 관리합니다
+      url: "/trident-use/backend_ops_kubectl.html"
+    - title: tridentctl로 백엔드를 관리합니다
+      url: "/trident-use/backend_ops_tridentctl.html"
+    - title: 백엔드 관리 옵션 간 이동
+      url: "/trident-use/backend_options.html"
+- title: 스토리지 클래스를 생성하고 관리합니다
   entries:
-  - title: CSI 토폴로지를 사용합니다
-    url: "/trident-use/csi-topology.html"
-  - title: 스냅샷 작업
-    url: "/trident-use/vol-snapshots.html"
+  - title: 스토리지 클래스를 생성합니다
+    url: "/trident-use/create-stor-class.html"
+  - title: 스토리지 클래스를 관리합니다
+    url: "/trident-use/manage-stor-class.html"
+- title: 볼륨을 프로비저닝하고 관리합니다
+  entries:
+  - title: 볼륨을 프로비저닝합니다
+    url: "/trident-use/vol-provision.html"
   - title: 볼륨 확장
     url: "/trident-use/vol-expansion.html"
   - title: 볼륨 가져오기
     url: "/trident-use/vol-import.html"
-- title: 네임스페이스 전체에서 NFS 볼륨을 공유합니다
-  url: "/trident-use/volume-share.html"
-- title: Astra Trident를 모니터링합니다
-  url: "/trident-use/monitor-trident.html"
+  - title: 네임스페이스 전체에서 NFS 볼륨을 공유합니다
+    url: "/trident-use/volume-share.html"
+  - title: CSI 토폴로지를 사용합니다
+    url: "/trident-use/csi-topology.html"
+  - title: 스냅샷을 사용합니다
+    url: "/trident-use/vol-snapshots.html"

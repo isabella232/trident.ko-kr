@@ -16,24 +16,12 @@ Astra Trident는 ONTAP 클러스터와 통신할 수 있도록 5개의 고유한
 
 
 
-== Astra Control이 드라이버를 지원했습니다
-
-Astra Control은 로 생성한 볼륨을 위해 원활한 보호, 재해 복구, 이동성(Kubernetes 클러스터 간에 볼륨 이동)을 제공합니다 `ontap-nas`, `ontap-nas-flexgroup`, 및 `ontap-san` 드라이버. 을 참조하십시오 link:https://docs.netapp.com/us-en/astra-control-center/use/replicate_snapmirror.html#replication-prerequisites["Astra Control 복제 사전 요구 사항"^] 를 참조하십시오.
-
-[WARNING]
-====
-* 를 사용해야 합니다 `ontap-nas` 데이터 보호, 재해 복구 및 이동성을 필요로 하는 운영 워크로드에 적합합니다.
-* 사용 `ontap-san-economy` 예상되는 볼륨 사용량이 ONTAP가 지원하는 것보다 훨씬 많을 것으로 예상됩니다.
-* 사용 `ontap-nas-economy` 예상되는 볼륨 사용량이 ONTAP에서 지원하는 것보다 훨씬 많을 것으로 예상되는 경우에만 및 입니다 `ontap-san-economy` 드라이버를 사용할 수 없습니다.
-* 사용하지 마십시오 `ontap-nas-economy` 데이터 보호, 재해 복구 또는 이동성이 필요할 것으로 예상되는 경우
-
-
-====
-
-
 == ONTAP용 Astra Trident 스토리지 드라이버
 
 Astra Trident는 다음 스토리지 드라이버를 제공하여 ONTAP 클러스터와 통신합니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.
+
+
+IMPORTANT: 보호, 복구 및 이동성을 위해 Astra Control을 사용하는 경우 를 참조하십시오 <<Astra Control 드라이버 호환성>>.
 
 [cols="2, 1, 1, 2, 2"]
 |===
@@ -124,4 +112,20 @@ xfs, ext3, ext4
 
 |===
 
-NOTE: ONTAP 백엔드는 보안 역할(사용자 이름/암호) 또는 개인 키와 ONTAP 클러스터에 설치된 인증서를 위한 로그인 자격 증명을 사용하여 인증할 수 있습니다. 기존 백엔드를 업데이트하여 를 사용하여 한 인증 모드에서 다른 인증 모드로 이동할 수 있습니다 `tridentctl update backend`.
+NOTE: ONTAP 백엔드는 보안 역할(사용자 이름/암호)에 대한 로그인 자격 증명 또는 ONTAP 클러스터에 설치된 개인 키 및 인증서에 대해 인증할 수 있습니다. 기존 백엔드를 업데이트하여 를 사용하여 한 인증 모드에서 다른 인증 모드로 이동할 수 있습니다 `tridentctl update backend`.
+
+
+
+== Astra Control 드라이버 호환성
+
+Astra Control은 로 생성한 볼륨을 위해 원활한 보호, 재해 복구, 이동성(Kubernetes 클러스터 간에 볼륨 이동)을 제공합니다 `ontap-nas`, `ontap-nas-flexgroup`, 및 `ontap-san` 드라이버. 을 참조하십시오 link:https://docs.netapp.com/us-en/astra-control-center/use/replicate_snapmirror.html#replication-prerequisites["Astra Control 복제 사전 요구 사항"^] 를 참조하십시오.
+
+[WARNING]
+====
+* 를 사용해야 합니다 `ontap-nas` 데이터 보호, 재해 복구 및 이동성을 필요로 하는 운영 워크로드에 적합합니다.
+* 사용 `ontap-san-economy` 예상되는 볼륨 사용량이 ONTAP가 지원하는 것보다 훨씬 많을 것으로 예상됩니다.
+* 사용 `ontap-nas-economy` 예상되는 볼륨 사용량이 ONTAP에서 지원하는 것보다 훨씬 많을 것으로 예상되는 경우에만 및 입니다 `ontap-san-economy` 드라이버를 사용할 수 없습니다.
+* 사용하지 마십시오 `ontap-nas-economy` 데이터 보호, 재해 복구 또는 이동성이 필요할 것으로 예상되는 경우
+
+
+====

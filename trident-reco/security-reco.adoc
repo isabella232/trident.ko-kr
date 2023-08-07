@@ -31,18 +31,13 @@ Astra Trident는 ONTAP SAN 워크로드에 대한 CHAP 기반 인증(ONTAP-SAN�
 SAN 스토리지 드라이버를 사용하는 ONTAP 백엔드의 경우 Astra Trident는 양방향 CHAP를 설정하고 "tridentctl"을 통해 CHAP 사용자 이름과 암호를 관리할 수 있습니다. 을 참조하십시오 link:../trident-use/ontap-san-prep.html["여기"] Astra Trident가 ONTAP 백엔드에서 CHAP를 구성하는 방법을 이해합니다.
 
 
-NOTE: ONTAP 백엔드에 대한 CHAP 지원은 Trident 20.04 이상에서 사용할 수 있습니다.
-
-
 
 == NetApp HCI 및 SolidFire 백엔드에서 CHAP 인증을 사용합니다
 
-양방향 CHAP를 구축하여 호스트와 NetApp HCI 및 SolidFire 백엔드 간의 인증을 보장하는 것이 좋습니다. Astra Trident는 테넌트당 2개의 CHAP 암호를 포함하는 비밀 객체를 사용합니다. Trident를 CSI 구축 담당자로 설치하면 CHAP 암호를 관리하고 해당 PV의 "tridentvolume" CR 객체로 저장합니다. PV를 생성할 때 CSI Astra Trident는 CHAP 암호를 사용하여 iSCSI 세션을 시작하고 CHAP를 통해 NetApp HCI 및 SolidFire 시스템과 통신합니다.
+양방향 CHAP를 구축하여 호스트와 NetApp HCI 및 SolidFire 백엔드 간의 인증을 보장하는 것이 좋습니다. Astra Trident는 테넌트당 2개의 CHAP 암호를 포함하는 비밀 객체를 사용합니다. Astra Trident가 설치되면 CHAP 암호를 관리하고 에 저장합니다 `tridentvolume` 해당 PV에 대한 CR 개체입니다. PV를 생성할 때 Astra Trident는 CHAP 암호를 사용하여 iSCSI 세션을 시작하고 CHAP를 통해 NetApp HCI 및 SolidFire 시스템과 통신합니다.
 
 
-NOTE: CSI Trident에서 생성한 볼륨은 볼륨 액세스 그룹과 연결되지 않습니다.
-
-CSI가 아닌 프런트엔드에서는 작업자 노드의 디바이스로 볼륨을 연결하는 작업을 Kubernetes에서 처리합니다. 볼륨 생성 후 Astra Trident는 NetApp HCI/SolidFire 시스템에 API 호출을 통해 해당 테넌트의 암호가 아직 없는 경우 비밀을 검색합니다. 그런 다음 Astra Trident가 Kubernetes에 비밀을 전달합니다. 각 노드에 위치한 kubelet은 Kubernetes API를 통해 기밀에 액세스하고 이를 사용하여 볼륨에 액세스하는 각 노드와 볼륨이 있는 NetApp HCI/SolidFire 시스템 간에 CHAP를 실행/사용하도록 설정합니다.
+NOTE: Astra Trident에서 생성된 볼륨은 볼륨 액세스 그룹과 관련이 없습니다.
 
 
 
