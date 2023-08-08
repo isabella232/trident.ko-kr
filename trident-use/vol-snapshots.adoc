@@ -113,6 +113,9 @@ Status:
 
 을 사용할 수 있습니다 `dataSource` 이름이 인 VolumeSnapshot을 사용하여 PVC를 생성합니다 `<pvc-name>` 데이터 소스로 사용됩니다. PVC가 생성된 후 POD에 부착하여 다른 PVC와 마찬가지로 사용할 수 있습니다.
 
+
+WARNING: PVC는 해당 네임스페이스와 동일한 네임스페이스에서 만들어야 합니다 `dataSource`.
+
 다음 예에서는 를 사용하여 PVC를 작성합니다 `pvc1-snap` 를 데이터 소스로 사용합니다.
 
 [listing]
@@ -134,9 +137,6 @@ spec:
     kind: VolumeSnapshot
     apiGroup: snapshot.storage.k8s.io
 ----
-
-WARNING: PVC는 해당 네임스페이스와 동일한 네임스페이스에서 만들어야 합니다 `dataSource`.
-
 
 
 == 볼륨 스냅샷을 가져옵니다
