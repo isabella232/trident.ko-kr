@@ -3111,7 +3111,6 @@
   <block id="cd494508ccf1cdc45163d6d9d0f401ff" category="list-text"><block ref="cd494508ccf1cdc45163d6d9d0f401ff" category="inline-link-rx"></block></block>
   <block id="2122a8acb599837078e6b76436e892c4" category="list-text">이제 Trident에서 Kubernetes 1.27이 지원됩니다. Kubernetes를 업그레이드하기 전에 Trident를 업그레이드하십시오.</block>
   <block id="40991bba76926bfbcf7fb0b9c207187f" category="list-text">Anthos 온프레미스(VMware) 및 Anthos의 Bare Metal 1.12</block>
-  <block id="fe74bcccaeacaddf91b58dec28fef5be" category="paragraph">1.21-1.27</block>
   <block id="362997bacf08e019288e372d8ae1f070" category="list-text">OpenShift Container Platform(AMD64 및 ARM64)에서 지원하는 RedHat CoreOS(RHCOS) 버전</block>
   <block id="a3460163c4a2854c79a419dda57ac917" category="list-text">RHEL 8+(AMD64 및 ARM64)</block>
   <block id="f51a58a0cffb9f9953edce6411578b53" category="list-text">Ubuntu 22.04 이상(AMD64 및 ARM64)</block>
@@ -3803,4 +3802,5 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
   <block id="143c9ea21ac76ba425aa94411fbba07b" category="sidebar">Astra Trident 개요</block>
   <block id="ab09b43d2faaea1b49257d5a973eae0e" category="sidebar">Astra Trident를 관리 및 모니터링하십시오</block>
   <block id="ee4c63201b5c5c6c9da139c0a39bcb7b" category="summary">Astra Trident for Docker는 NetApp 스토리지 플랫폼을 위한 Docker 에코시스템과 직접 통합됩니다. 또한 향후 추가 플랫폼을 추가할 수 있도록 스토리지 플랫폼에서 Docker 호스트에 이르는 스토리지 리소스의 프로비저닝 및 관리를 지원합니다.</block>
+  <block id="5d22e3d2d8e7ef4a3b8d79728779c6d8" category="paragraph">1.22-1.27</block>
 </blocks>
