@@ -3297,7 +3297,6 @@
   <block id="412d430c2de2722ad4f878fba9145e3f" category="paragraph">를 사용할 때<block ref="e2b9359adf7cdd62fc784b5090c3c452" prefix=" " category="inline-code"></block> argument, Astra Trident는 볼륨의 이름을 바꾸지 않습니다.</block>
   <block id="30690ec57cb4844d007f7d2e2c9393a2" category="paragraph">다음 예에서는 를 가져옵니다<block ref="60d9e6d88af815fe67aed90572f53184" prefix=" " category="inline-code"></block> 를 누릅니다<block ref="b0253ee501e433d48faea12f8e40ef28" prefix=" " category="inline-code"></block> 백엔드:</block>
   <block id="548fedaf4074fe2826e3c53dfd92a19e" category="section-title">ONTAP SAN</block>
-  <block id="d18d16cddcd0f06bf7df2391e6b26e69" category="paragraph">Astra Trident는 를 사용하여 볼륨 가져오기를 지원합니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> 드라이버.</block>
   <block id="30bb262b9fe2f6c714c560a0608899dc" category="paragraph">Astra Trident는 단일 LUN이 포함된 ONTAP SAN FlexVol을 가져올 수 있습니다. 이는 와 일치합니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> 드라이버 - 각 PVC 및 FlexVol 내의 LUN에 대한 FlexVol를 생성합니다. Astra Trident는 FlexVol를 불러와 PVC 정의와 연결합니다.</block>
   <block id="854d516b7e1eddbead5cbea0b17dac88" category="paragraph-title">ONTAP SAN 예</block>
   <block id="eb87428bc7ec6d211f503b31240aec94" category="paragraph">관리 볼륨의 경우 Astra Trident가 FlexVol의 이름을 로 바꿉니다<block ref="b1a57c8f543d163276a264ab84f98485" prefix=" " category="inline-code"></block> 및 FlexVol 내의 LUN을 에 포맷합니다<block ref="1793051c27c3288cfb3a1c86e4e41b41" prefix=" " category="inline-code"></block>.</block>
@@ -3803,4 +3802,5 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
   <block id="ab09b43d2faaea1b49257d5a973eae0e" category="sidebar">Astra Trident를 관리 및 모니터링하십시오</block>
   <block id="ee4c63201b5c5c6c9da139c0a39bcb7b" category="summary">Astra Trident for Docker는 NetApp 스토리지 플랫폼을 위한 Docker 에코시스템과 직접 통합됩니다. 또한 향후 추가 플랫폼을 추가할 수 있도록 스토리지 플랫폼에서 Docker 호스트에 이르는 스토리지 리소스의 프로비저닝 및 관리를 지원합니다.</block>
   <block id="5d22e3d2d8e7ef4a3b8d79728779c6d8" category="paragraph">1.22-1.27</block>
+  <block id="3e0f4d44c9c86926852e66ee127c5d3d" category="paragraph">Astra Trident는 를 사용하여 볼륨 가져오기를 지원합니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> 드라이버. 에서는 볼륨 가져오기가 지원되지 않습니다<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 드라이버.</block>
 </blocks>
