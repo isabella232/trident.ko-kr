@@ -29,7 +29,7 @@ ID                  NAME                DESCRIPTION                          ENA
 journalctl -u docker | grep 4fb97d2b956b
 ----
 +
-표준 로깅 수준에서는 대부분의 문제를 진단할 수 있어야 합니다. 충분하지 않은 경우 디버그 로깅을 활성화할 수 있습니다.
+표준 로깅 수준에서는 대부분의 문제를 진단할 수 있어야 합니다. 이 방법으로는 충분하지 않으면 디버그 로깅을 활성화할 수 있습니다.
 
 . 디버그 로깅을 사용하려면 디버그 로깅을 사용하도록 설정한 플러그인을 설치합니다.
 +
@@ -47,7 +47,7 @@ docker plugin disable <plugin>
 docker plugin set <plugin> debug=true
 docker plugin enable <plugin>
 ----
-. 호스트에서 바이너리 자체를 실행하는 경우 호스트의 '/var/log/netapp dvp' 디렉토리에서 로그를 사용할 수 있습니다. 디버그 로깅을 사용하려면 플러그인을 실행할 때 '-debug'를 지정합니다.
+. 호스트에서 바이너리 자체를 실행하는 경우 호스트의 에서 로그를 사용할 수 있습니다 `/var/log/netappdvp` 디렉토리. 디버그 로깅을 활성화하려면 를 지정합니다 `-debug` 플러그인을 실행할 때
 
 
 

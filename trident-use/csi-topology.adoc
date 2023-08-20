@@ -25,7 +25,7 @@ TIP: CSI 토폴로지 기능에 대해 자세히 알아보십시오 https://kube
 
 Kubernetes는 두 가지 고유한 볼륨 바인딩 모드를 제공합니다.
 
-* 'VolumeBindingMode'를 'Immediate'로 설정하면 Astra Trident는 토폴로지 인식 없이 볼륨을 생성합니다. 볼륨 바인딩 및 동적 프로비저닝은 PVC가 생성될 때 처리됩니다. 이는 기본 'VolumeBindingMode'이며 토폴로지 제약 조건을 적용하지 않는 클러스터에 적합합니다. 영구 볼륨은 요청 포드의 예약 요구 사항에 의존하지 않고 생성됩니다.
+* 와 함께 `VolumeBindingMode` 를 로 설정합니다 `Immediate`, Astra Trident는 토폴로지 인식 없이 볼륨을 생성합니다. 볼륨 바인딩 및 동적 프로비저닝은 PVC가 생성될 때 처리됩니다. 이것이 기본값입니다 `VolumeBindingMode` 또한 토폴로지 제약 조건을 적용하지 않는 클러스터에 적합합니다. 영구 볼륨은 요청 Pod의 예약 요구사항에 종속되지 않고 생성됩니다.
 * VolumeBindingMode를 WaitForFirstConsumer로 설정하면 PVC를 사용하는 POD가 예약 및 생성될 때까지 PVC에 대한 영구 볼륨의 생성 및 바인딩이 지연됩니다. 이렇게 하면 토폴로지 요구 사항에 따라 적용되는 일정 제한을 충족하기 위해 볼륨이 생성됩니다.
 
 

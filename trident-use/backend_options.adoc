@@ -32,7 +32,7 @@ Astra Trident에서 백엔드를 관리하는 다양한 방법에 대해 알아�
 
 이 내용은 다음 시나리오에 적용됩니다.
 
-* tridentctl로 만든 트리젠백엔드구성이 없는 기존 백엔드입니다.
+* 가 없는 기존 백엔드가 있습니다 `TridentBackendConfig` 을 사용하여 생성되었기 때문입니다 `tridentctl`.
 * tridentctl로 만든 새 백엔드와 다른 트리젠BackendConfig 개체가 있습니다.
 
 
@@ -229,7 +229,7 @@ tridentctl get backend ontap-san-backend -n trident
 | ontap-san-backend | ontap-san      | 81abcb27-ea63-49bb-b606-0a5315ac5f82 | online |      33 |
 +-------------------+----------------+--------------------------------------+--------+---------+
 ----
-출력으로부터 '(트리젠백엔드구성) '이(가) 성공적으로 생성되었으며 백엔드에 바인딩되어 있습니다 [백엔드의 UUID 확인].
+출력에서 해당 결과가 표시됩니다 `TridentBackendConfig` 성공적으로 생성되었으며 백엔드에 바인딩되었습니다 [백엔드의 UUID 관찰].
 
 
 
