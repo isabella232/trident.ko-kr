@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/ontap-nas.html 
-keywords: trident backend, ontap nas, ontap-nas, ontap-nas-economy, ontap-nas-flexgroups, fsx 
+keywords: trident backend, ontap nas, ontap-nas, ontap-nas-economy, ontap-nas-flexgroups, fsx, drivers, access modes, rwo, rwx, rwp, rwop, file system 
 summary: ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오. 
 ---
 = ONTAP NAS 드라이버 개요
@@ -16,7 +16,56 @@ ONTAP 및 Cloud Volumes ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드�
 
 
 
-== ONTAP NAS 드라이버에 대한 중요 정보입니다
+== ONTAP NAS 드라이버 세부 정보입니다
+
+Astra Trident는 ONTAP 클러스터와 통신하기 위해 다음과 같은 NAS 스토리지 드라이버를 제공합니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.
+
+
+IMPORTANT: 보호, 복구 및 이동성을 위해 Astra Control을 사용하는 경우 를 참조하십시오 <<Astra Control 드라이버 호환성>>.
+
+[cols="2, 1, 1, 2, 2"]
+|===
+| 드라이버 | 프로토콜 | 볼륨 모드 | 액세스 모드가 지원됩니다 | 지원되는 파일 시스템 
+
+
+| 'ONTAP-NAS'  a| 
+NFS 를 참조하십시오
+중소기업
+ a| 
+파일 시스템
+ a| 
+RWO, ROX, rwx, RWOP
+ a| 
+"", `nfs`, `smb`
+
+
+
+| ONTAP-NAS-이코노미  a| 
+NFS 를 참조하십시오
+중소기업
+ a| 
+파일 시스템
+ a| 
+RWO, ROX, rwx, RWOP
+ a| 
+"", `nfs`, `smb`
+
+
+
+| 'ONTAP-NAS-Flexgroup'  a| 
+NFS 를 참조하십시오
+중소기업
+ a| 
+파일 시스템
+ a| 
+RWO, ROX, rwx, RWOP
+ a| 
+"", `nfs`, `smb`
+
+|===
+
+
+=== Astra Control 드라이버 호환성
 
 Astra Control은 로 생성한 볼륨을 위해 원활한 보호, 재해 복구, 이동성(Kubernetes 클러스터 간에 볼륨 이동)을 제공합니다 `ontap-nas`, `ontap-nas-flexgroup`, 및 `ontap-san` 드라이버. 을 참조하십시오 link:https://docs.netapp.com/us-en/astra-control-center/use/replicate_snapmirror.html#replication-prerequisites["Astra Control 복제 사전 요구 사항"^] 를 참조하십시오.
 

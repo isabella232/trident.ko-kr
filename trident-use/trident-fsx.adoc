@@ -58,7 +58,7 @@ image:screenshot-fsx-backup-disable.png["자동 백업을 사용하지 않도록
 * 'ONTAP-NAS-flexgroup': 프로비저닝되는 각 PV는 NetApp ONTAP FlexGroup 볼륨에 대한 전체 Amazon FSx입니다.
 
 
-드라이버 세부 정보는 를 참조하십시오 link:../trident-concepts/ontap-drivers.html["ONTAP 드라이버"].
+드라이버 세부 정보는 를 참조하십시오 link:../trident-use/ontap-nas.html.html["NAS 드라이버"] 및 link:../trident-use/ontap-san.html.html["SAN 드라이버"].
 
 
 

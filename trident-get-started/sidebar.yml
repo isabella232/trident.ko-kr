@@ -10,8 +10,6 @@ entries:
     url: "/trident-get-started/architecture.html"
   - title: 개념
     entries:
-    - title: ONTAP 드라이버
-      url: "/trident-concepts/ontap-drivers.html"
     - title: 프로비저닝
       url: "/trident-concepts/provisioning.html"
     - title: 볼륨 스냅숏

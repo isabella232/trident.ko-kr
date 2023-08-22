@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/ontap-san.html 
-keywords: trident backend, ontap san, ontap-san, ontap-san-economy, fsx 
+keywords: trident backend, ontap san, ontap-san, ontap-san-economy, fsx, drivers, access modes, rwo, rwx, rwp, rwop, file system 
 summary: ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오. 
 ---
 = ONTAP SAN 드라이버 개요
@@ -16,7 +16,68 @@ ONTAP 및 Cloud Volumes ONTAP SAN 드라이버를 사용하여 ONTAP 백엔드�
 
 
 
-== ONTAP SAN 드라이버에 대한 중요한 정보
+== ONTAP SAN 드라이버 세부 정보입니다
+
+Astra Trident는 ONTAP 클러스터와 통신할 수 있는 다음과 같은 SAN 스토리지 드라이버를 제공합니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.
+
+
+IMPORTANT: 보호, 복구 및 이동성을 위해 Astra Control을 사용하는 경우 를 참조하십시오 <<Astra Control 드라이버 호환성>>.
+
+[cols="2, 1, 1, 2, 2"]
+|===
+| 드라이버 | 프로토콜 | 볼륨 모드 | 액세스 모드가 지원됩니다 | 지원되는 파일 시스템 
+
+
+| 'ONTAP-SAN'  a| 
+iSCSI
+ a| 
+블록
+ a| 
+RWO, ROX, rwx, RWOP
+ a| 
+파일 시스템이 없습니다. 원시 블록 디바이스입니다
+
+
+
+| 'ONTAP-SAN'  a| 
+iSCSI
+ a| 
+파일 시스템
+ a| 
+RWO, 공화당
+
+파일 시스템 볼륨 모드에서는 ROX 및 rwx를 사용할 수 없습니다.
+ a| 
+xfs, ext3, ext4
+
+
+
+| ONTAP-SAN-이코노미  a| 
+iSCSI
+ a| 
+블록
+ a| 
+RWO, ROX, rwx, RWOP
+ a| 
+파일 시스템이 없습니다. 원시 블록 디바이스입니다
+
+
+
+| ONTAP-SAN-이코노미  a| 
+iSCSI
+ a| 
+파일 시스템
+ a| 
+RWO, 공화당
+
+파일 시스템 볼륨 모드에서는 ROX 및 rwx를 사용할 수 없습니다.
+ a| 
+xfs, ext3, ext4
+
+|===
+
+
+=== Astra Control 드라이버 호환성
 
 Astra Control은 로 생성한 볼륨을 위해 원활한 보호, 재해 복구, 이동성(Kubernetes 클러스터 간에 볼륨 이동)을 제공합니다 `ontap-nas`, `ontap-nas-flexgroup`, 및 `ontap-san` 드라이버. 을 참조하십시오 link:https://docs.netapp.com/us-en/astra-control-center/use/replicate_snapmirror.html#replication-prerequisites["Astra Control 복제 사전 요구 사항"^] 를 참조하십시오.
 

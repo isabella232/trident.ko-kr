@@ -279,7 +279,7 @@ IMPORTANT: 이제 Trident에서 Kubernetes 1.27이 지원됩니다. Kubernetes�
 * k8s.gcr.io에서 registry.k8s.io로 CSI 이미지의 기본 레지스트리로 전환합니다
 * ONTAP-SAN 볼륨은 이제 노드별 igroup을 사용하며 해당 노드에 능동적으로 게시되는 LUN만 igroup에 매핑하여 보안 상태를 향상합니다. Astra Trident가 활성 워크로드에 영향을 주지 않고 안전하게 수행할 수 있다고 판단하면 기존 볼륨이 새로운 igroup 체계로 자동으로 전환됩니다.
 * Trident 설치에 리소스 할당량을 포함함으로써 PriorityClass 소비가 기본적으로 제한될 때 Trident DemonSet이 예약되도록 합니다.
-* ANF 드라이버에 네트워크 기능에 대한 지원이 추가되었습니다. (link:https://github.com/NetApp/trident/issues/717["GitHub 문제 #717"^])
+* Azure NetApp Files 드라이버에 네트워크 기능에 대한 지원이 추가되었습니다. (link:https://github.com/NetApp/trident/issues/717["GitHub 문제 #717"^])
 * ONTAP 드라이버에 기술 미리 보기 자동 MetroCluster 전환 감지 기능이 추가되었습니다. (link:https://github.com/NetApp/trident/issues/228["GitHub 문제 #228"^])
 
 
@@ -330,7 +330,7 @@ IMPORTANT: 이전 Trident 릴리스에서 업그레이드하고 Azure NetApp Fil
 * 삭제된 노드에서 볼륨 게시를 취소하는 문제 해결 (link:https://github.com/NetApp/trident/issues/691["GitHub 문제 #691"^])
 * 블록 디바이스에서 파일 시스템 불일치를 처리하는 기능이 추가되었습니다. (link:https://github.com/NetApp/trident/issues/656["GitHub 문제 #656"^])
 * 설치 중 'imageRegistry' 플래그를 설정할 때 자동 지원 이미지를 가져오는 문제가 해결되었습니다. (link:https://github.com/NetApp/trident/issues/715["GitHub 문제 #715"^])
-* ANF 드라이버가 여러 내보내기 규칙을 사용하여 볼륨을 클론하지 못한 문제 해결
+* Azure NetApp Files 드라이버가 여러 내보내기 규칙을 사용하여 볼륨을 복제하지 못하는 문제가 해결되었습니다.
 
 
 
@@ -375,8 +375,8 @@ E-Series 드라이버(20.07 이후 비활성화됨)가 제거되었습니다.
 * 이미 가져온 볼륨을 가져오려고 하면 PVC가 보류 상태로 남겨둔 EOF가 반환되는 문제가 해결되었습니다. (link:https://github.com/NetApp/trident/issues/489["GitHub 문제 #489"])
 * SolidFire 볼륨에 32개 이상의 스냅샷을 생성할 때 Astra Trident 성능이 느려지는 문제를 해결했습니다.
 * SHA-1을 SSL 인증서 생성에서 SHA-256으로 교체했습니다.
-* 중복된 리소스 이름을 허용하고 작업을 단일 위치로 제한하도록 ANF 드라이버를 수정했습니다.
-* 중복된 리소스 이름을 허용하고 작업을 단일 위치로 제한하도록 ANF 드라이버를 수정했습니다.
+* Azure NetApp Files 드라이버를 수정하여 중복된 리소스 이름을 허용하고 단일 위치로 작업을 제한했습니다.
+* Azure NetApp Files 드라이버를 수정하여 중복된 리소스 이름을 허용하고 단일 위치로 작업을 제한했습니다.
 
 
 
@@ -390,7 +390,7 @@ E-Series 드라이버(20.07 이후 비활성화됨)가 제거되었습니다.
 
 
 * GCP 드라이버에서 지역 간 볼륨을 허용합니다. (link:https://github.com/NetApp/trident/issues/633["GitHub 문제 #633"^])
-* ANF 볼륨에 'unixPermissions' 옵션에 대한 지원이 추가되었습니다. (link:https://github.com/NetApp/trident/issues/666["GitHub 문제 #666"^])
+* Azure NetApp Files 볼륨에 'unixPermissions' 옵션 지원이 추가되었습니다. (link:https://github.com/NetApp/trident/issues/666["GitHub 문제 #666"^])
 
 
 

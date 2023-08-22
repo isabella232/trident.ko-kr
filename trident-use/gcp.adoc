@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/gcp.html 
-keywords: trident backend, cloud volumes service for google cloud platform, google cloud platform, gcp, storage pool labels, storage pool, cvs, cvs-performance, service type, service level, cloud volumes service, cloud volumes 
+keywords: trident backend, cloud volumes service for google cloud platform, google cloud platform, gcp, storage pool labels, storage pool, cvs, cvs-performance, service type, service level, cloud volumes service, cloud volumes, drivers, access modes, rwo, rwx, rwp, rwop, file system 
 summary: 제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 백엔드로 Google Cloud용 Cloud Volumes Service를 구성하는 방법을 알아보십시오. 
 ---
 = Google Cloud용 Cloud Volumes Service 백엔드를 구성합니다
@@ -14,6 +14,27 @@ summary: 제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 
 [role="lead"]
 제공된 샘플 구성을 사용하여 Astra Trident 설치를 위한 백엔드로 NetApp Cloud Volumes Service for Google Cloud를 구성하는 방법을 알아보십시오.
 
+
+
+== Google Cloud 드라이버 세부 정보입니다
+
+Astra Trident가 제공하는 것은 다음과 같습니다 `gcp-cvs` 클러스터와 통신하는 드라이버입니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.
+
+[cols="1, 1, 1, 2, 2"]
+|===
+| 드라이버 | 프로토콜 | 볼륨 모드 | 액세스 모드가 지원됩니다 | 지원되는 파일 시스템 
+
+
+| GCP-CV  a| 
+NFS 를 참조하십시오
+ a| 
+파일 시스템
+ a| 
+RWO, ROX, rwx, RWOP
+ a| 
+`nfs`
+
+|===
 
 
 == Cloud Volumes Service for Google Cloud를 위한 Astra Trident 지원에 대해 알아보십시오
@@ -50,7 +71,7 @@ Astra Trident는 두 개 중 하나로 Cloud Volumes Service 볼륨을 생성할
 
 각 백엔드는 단일 Google Cloud 지역에 볼륨을 프로비저닝합니다. 다른 영역에 볼륨을 생성하려면 추가 백엔드를 정의할 수 있습니다.
 
-[cols="3"]
+[cols="1, 2, 1"]
 |===
 | 매개 변수 | 설명 | 기본값 
 
@@ -94,7 +115,7 @@ Astra Trident는 두 개 중 하나로 Cloud Volumes Service 볼륨을 생성할
 | '저급' | 새 볼륨에 대한 CVS - 성능 또는 CVS 서비스 수준 CV - 성능 값은 입니다 `standard`, `premium`, 또는 `extreme`. CV 값은 입니다 `standardsw` 또는 `zoneredundantstandardsw`. | CV - 성능 기본값은 "표준"입니다. CV 기본값은 "standardsw"입니다. 
 
 
-| 네트워크 | Cloud Volumes Service 볼륨에 사용되는 Google Cloud 네트워크 | “기본값” 
+| 네트워크 | Cloud Volumes Service 볼륨에 사용되는 Google Cloud 네트워크 | "기본값" 
 
 
 | debugTraceFlags를 선택합니다 | 문제 해결 시 사용할 디버그 플래그입니다. 예: `\{"api":false, "method":true}`. 문제 해결 중이 아니며 자세한 로그 덤프가 필요한 경우가 아니면 이 방법을 사용하지 마십시오. | null입니다 

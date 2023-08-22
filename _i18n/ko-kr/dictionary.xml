@@ -53,8 +53,6 @@
   <block id="cd17e7ed84c40a0ff5ecb8b625b1f186" category="cell">'ONTAP-SAN'</block>
   <block id="e4e1c13bb0b14f6cb7608cbecea948ef" category="paragraph">iSCSI</block>
   <block id="e1e4c8c9ccd9fc39c391da4bcd093fb2" category="paragraph">블록</block>
-  <block id="aa91b58ced7ef060eb0e27ac4e1d18a8" category="paragraph">RWO, ROX, rwx</block>
-  <block id="0b86d82002caac6130185da4ef1be67e" category="paragraph">RWO, ROX</block>
   <block id="a029cca698cbf05f07897f86c43cf9e8" category="paragraph">xfs, ext3, ext4</block>
   <block id="73b781a615cea2647a87ff2035e296b1" category="cell">ONTAP-SAN-이코노미</block>
   <block id="f3a29486bed19a90f2da6d007818b427" category="list-title">단계</block>
@@ -904,7 +902,6 @@
   <block id="a1fa27779242b4902f7ae3bdd5c6d508" category="cell">유형</block>
   <block id="e5ac299cc3b14e1fac29518569ca9bb1" category="cell">새 볼륨의 기본 크기입니다</block>
   <block id="ce46e8f3fc6eaddbe03115e0d62090ac" category="cell">유니크권한</block>
-  <block id="e43b3577dd4b74a4cfa994a56e8138b8" category="paragraph">이 구성은 ANF를 사용하여 지금 막 시작하는 데 이상적이지만, 실제로 용량 할당을 수행하는 볼륨에 대한 추가적인 범위 지정을 제공하려는 경우에 적합합니다.</block>
   <block id="725ae241ec74eed978f0b099030236b8" category="section-title">예 3: 고급 구성</block>
   <block id="a83f4a534ccef7ac1d209fb0015cd907" category="paragraph">이 백엔드 구성은 단일 서브넷에 대한 볼륨 배치 범위를 더욱 줄여주고 일부 볼륨 프로비저닝 기본값도 수정합니다.</block>
   <block id="08c4bc4ac4edd9b12963c0596478d746" category="summary">Astra Trident는 CSI 토폴로지 기능을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하고 연결할 수 있습니다.</block>
@@ -1127,7 +1124,6 @@
   <block id="d1d184cecc23825cff20fabf3cdfb862" category="list-text">Element 소프트웨어를 실행하는 지원되는 스토리지 시스템</block>
   <block id="4055116469942da7f6ed83abcf57d0a4" category="list-text">볼륨을 관리할 수 있는 NetApp HCI/SolidFire 클러스터 관리자 또는 테넌트 사용자에 대한 자격 증명</block>
   <block id="d5fa5f22855b065d96647dfb0c06d685" category="inline-link-macro">작업자 노드 준비 정보</block>
-  <block id="c443982ebc2d61b1fdf8348209939f8b" category="paragraph">'솔드파이어-SAN' 스토리지 드라이버는 파일 및 블록의 볼륨 모드를 모두 지원합니다. 파일 시스템 볼륨 코드의 경우 Astra Trident가 볼륨을 생성하고 파일 시스템을 생성합니다. 파일 시스템 유형은 StorageClass에 의해 지정됩니다.</block>
   <block id="02017e70674a0c740b2b95fbb0cc2aa1" category="paragraph">파일 시스템이 없습니다. 원시 블록 장치.</block>
   <block id="2353a0a3a06283f07550efc7bad8a90e" category="cell">항상 "solidfire-san"</block>
   <block id="f4210b28f3cf7c1f7e6e328bb42c6060" category="cell">“SolidFire_” + 스토리지(iSCSI) IP 주소입니다</block>
@@ -1629,7 +1625,6 @@
   <block id="03fe5b0d58270efa87041677cac72ad7" category="list-text">NetApp Docker Volume Plugin 설치 및 구성:</block>
   <block id="f45f5a64dae951d3e37c9bd382201b06" category="list-text">응용 프로그램 다운로드 및 압축 풀기:</block>
   <block id="b255d9e06a4ca8e9f5bc31c9198426ad" category="list-text">용지함 경로의 위치로 이동:</block>
-  <block id="d3fa61f14ead6cf1cf1d584cf0b6c4e1" category="admonition">지정하지 않는 한 볼륨 드라이버의 기본 이름은 "NetApp"입니다.</block>
   <block id="9ad37c975c341297c49c69353516a727" category="paragraph">데몬이 시작된 후에는 Docker CLI 인터페이스를 사용하여 볼륨을 생성하고 관리할 수 있습니다</block>
   <block id="e3dec3f86b9a3b1be209ab63855ce432" category="list-text">볼륨 생성:</block>
   <block id="5ff2e3e853922fdb84ef21b85ffdac2e" category="list-text">컨테이너를 시작할 때 Docker 볼륨 프로비저닝:</block>
@@ -1675,7 +1670,6 @@
   <block id="b22d82aea9557ba6aa7b915d40309d9b" category="paragraph">이러한 구성 옵션은 사용 중인 스토리지 플랫폼에 관계없이 모든 Astra Trident 구성에 적용됩니다.</block>
   <block id="63b276a6c28274ed5e553d4ce3fe7eb1" category="paragraph">구성 파일 버전 번호입니다</block>
   <block id="ac5eb8fcbd1ed9c85a98d91e10e26a38" category="paragraph">스토리지 드라이버 이름입니다</block>
-  <block id="fcf783284187f1e80e772eacd9266ee1" category="paragraph">볼륨 크기에 대한 선택적 제한. 기본값: ""(강제 적용 안 됨)</block>
   <block id="3eed2a7dac1f2329f3a9574a68e5e1c4" category="admonition">요소 백엔드에 'toragePrefix'(기본값 포함)를 사용하지 마십시오. 기본적으로 '졸idfire-san' 드라이버는 이 설정을 무시하고 접두어를 사용하지 않습니다. Docker 볼륨 매핑에 특정 tenantID를 사용하거나 이름 문지가 사용된 경우 Docker의 Docker 버전, 드라이버 정보 및 원시 이름으로 채워진 특성 데이터를 사용하는 것이 좋습니다.</block>
   <block id="0863f9e97e159e3ea1ce46bdb49b1254" category="paragraph">생성하는 모든 볼륨에서 기본 옵션을 지정하지 않아도 됩니다. '크기' 옵션은 모든 컨트롤러 유형에 사용할 수 있습니다. 기본 볼륨 크기를 설정하는 방법은 ONTAP 구성 섹션을 참조하십시오.</block>
   <block id="0353522b39b87d54d40d3f09ec668851" category="section-title">ONTAP 구성</block>
@@ -1829,7 +1823,6 @@
   <block id="4d80e2460d711b841338dfbeea2ca8c1" category="paragraph">ONTAP 및 Cloud Volumes ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하는 방법에 대해 알아보십시오.</block>
   <block id="9d4568c009d203ab10e33ea9953a0264" category="cell">""</block>
   <block id="7072ec708b0ea7e3243747d8b79c0d20" category="admonition">이전 Trident 릴리스에서 업그레이드하고 Azure NetApp Files를 사용하는 경우 이제 ''location'' config 매개 변수는 필수 싱글톤 필드입니다.</block>
-  <block id="b956e1f58f802db57dd9f871ac59ed6c" category="paragraph">중복된 리소스 이름을 허용하고 작업을 단일 위치로 제한하도록 ANF 드라이버를 수정했습니다.</block>
   <block id="851679bec9b3e6c8e6284128fb750b1e" category="list-text">Kubernetes의 향상된 기능:</block>
   <block id="2767b461b2b49786f390c9e0509d2d12" category="list-text">Kubernetes 1.23 지원 추가.</block>
   <block id="7f10502f6f15537f180f07f0c89d2642" category="inline-link-macro">GitHub 문제 #651</block>
@@ -1837,7 +1830,6 @@
   <block id="90fdd892e78b26eb18a250c9c1bc19ff" category="inline-link-macro">GitHub 문제 #633</block>
   <block id="3ff8e54aa1f3735deb64771c4c65c420" category="list-text">GCP 드라이버에서 지역 간 볼륨을 허용합니다. (<block ref="efd445659801b6abfdba2997e23e5f4f" category="inline-link-macro-rx"></block>)</block>
   <block id="fef8c75d6cd00955b0f1c84d40af01aa" category="inline-link-macro">GitHub 문제 #666</block>
-  <block id="9f81aabbbba9f61bfecaf1340c407ed1" category="list-text">ANF 볼륨에 'unixPermissions' 옵션에 대한 지원이 추가되었습니다. (<block ref="b2ee1a79cce917ad1d60b3bec442914a" category="inline-link-macro-rx"></block>)</block>
   <block id="a4233200da50a08b295311036bb03ac1" category="section-title">사용 중단</block>
   <block id="de6284c149d2e011da3909f1ef2af627" category="paragraph">Trident REST 인터페이스는 127.0.0.1 또는 [::1] 주소에서만 수신 및 제공할 수 있습니다</block>
   <block id="cdb544a92bee555749f43046d53ef34e" category="admonition">v21.10.0 릴리즈에는 노드를 제거한 다음 Kubernetes 클러스터에 다시 추가할 때 Trident 컨트롤러를 CrashLoopBackOff 상태로 전환할 수 있는 문제가 있습니다. 이 문제는 v21.10.1(GitHub 문제 669)에서 해결되었습니다.</block>
@@ -1935,7 +1927,6 @@
   <block id="804a6c22698fe4782c44f1e8d446964e" category="paragraph">현재 ONTAP-NAS, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, 졸idfire-SAN의 온디맨드 스냅샷 지원을 이용할 수 있습니다. GCP-CV와 Azure-NetApp-files 백엔드 드라이버.</block>
   <block id="4af8991c21dff2f779496b8350d1124b" category="inline-link">Astra Trident 22.01</block>
   <block id="7669b0b69333e81c7c208aea3d1a3c6f" category="list-text"><block ref="7669b0b69333e81c7c208aea3d1a3c6f" category="inline-link-rx"></block></block>
-  <block id="682c6ce09c9faae3a3e22c55c8db592e" category="list-text">ANF 드라이버가 여러 내보내기 규칙을 사용하여 볼륨을 클론하지 못한 문제 해결</block>
   <block id="723b30bcece2d0d47914a6eaf0c550cc" category="list-text">이제 Trident는 보안 엔드포인트의 응답에 HSTS 헤더를 추가합니다.</block>
   <block id="621b9733ee07089711b96dd6b0b7861a" category="list-text">이제 Trident는 Azure NetApp Files UNIX 사용 권한 기능을 자동으로 활성화하려고 시도합니다.</block>
   <block id="3f39a3207529d5f8129199a33e60ef87" category="section-title">제거</block>
@@ -2093,7 +2084,6 @@
   <block id="701ba87ab75dde70f4604769defc7d00" category="list-text">k8s.gcr.io에서 registry.k8s.io로 CSI 이미지의 기본 레지스트리로 전환합니다</block>
   <block id="90e3cd7cff1c9f6f4b8d2a509b127d44" category="list-text">Trident 설치에 리소스 할당량을 포함함으로써 PriorityClass 소비가 기본적으로 제한될 때 Trident DemonSet이 예약되도록 합니다.</block>
   <block id="838a6d7e89b7c366cfc25d3b2115b901" category="inline-link-macro">GitHub 문제 #717</block>
-  <block id="83a65beedcdd811d7b3b4fe9d2c4614f" category="list-text">ANF 드라이버에 네트워크 기능에 대한 지원이 추가되었습니다. (<block ref="e0e89f8bd936a5eb3adce74cac88eab0" category="inline-link-macro-rx"></block>)</block>
   <block id="cab6f6f91105d87aa3f65650df43c553" category="inline-link-macro">GitHub 문제 #228</block>
   <block id="00ea108f36897d9ed3523b970b09e6ea" category="list-text">ONTAP 드라이버에 기술 미리 보기 자동 MetroCluster 전환 감지 기능이 추가되었습니다. (<block ref="0c9c84232975bfb33d3481050e5ef924" category="inline-link-macro-rx"></block>)</block>
   <block id="0b4fe975279063a2d1790cd061a8b8d1" category="list-text">** Kubernetes:** 최소 지원 Kubernetes를 1.19로 업데이트했습니다.</block>
@@ -2241,7 +2231,6 @@
   <block id="92c22bb3853554f94f513a2d2f36e8ef" category="list-text"><block ref="aed2a4a749284f757648f1057abf44cd" prefix="" category="inline-code"></block>: 볼륨 부하로 쿼리 제한.</block>
   <block id="3ad6cc2d4a6ad6fbd07574653275a161" category="list-text">Astra Trident는 대상 네임스페이스가 공유 볼륨에 쓰는 것을 막을 수 없습니다. 파일 잠금 또는 기타 프로세스를 사용하여 공유 볼륨 데이터를 덮어쓰지 않도록 해야 합니다.</block>
   <block id="3908892c437778f8b161a2ca006782cd" category="list-text">하위 볼륨에서는 스냅샷, 클론 및 미러링을 사용할 수 없습니다.</block>
-  <block id="e6fe09cae66ba22c6abbd2511f660545" category="summary">ANF 백엔드를 구성하려면 먼저 다음 요구 사항을 충족해야 합니다.</block>
   <block id="aec47cf6a0cb83824b504b756eb4b71c" category="doc">Azure NetApp Files 백엔드를 구성할 준비를 합니다</block>
   <block id="97d64245613ba751b698ce77fd51779a" category="inline-link">Azure: Azure NetApp Files를 설정하고 NFS 볼륨을 생성합니다</block>
   <block id="caa7dc98c21b44b17c214508b9b0fa3c" category="list-text"><block ref="bc54592d6183695b841c6d1880ec0bf8" prefix="" category="inline-code"></block>,<block ref="93c5bebdea9c94a0740fe6fd9bb250f0" prefix=" " category="inline-code"></block>, 및<block ref="2b53761249254ce6b502f521e5cc0683" prefix=" " category="inline-code"></block> 에서 <block ref="63405c89f422580946169fa59c41e7ae" category="inline-link-macro-rx"></block> Azure NetApp Files 서비스에 대한 충분한 권한이 있는 Azure Active Directory에서 앱 등록에서는 다음 중 하나를 사용해야 합니다.</block>
@@ -2260,11 +2249,8 @@
   <block id="b8ae61dc50cf8e8b79e68bc4a8d36393" category="cell"><block ref="0f179ba2bc32ab5d8f60692f5b800c86" prefix="" category="inline-code"></block></block>
   <block id="a56dcba8eacdac67fb510e1434d560d8" category="inline-link-macro">LUKS(Linux Unified Key Setup) 사용</block>
   <block id="fd05c90de484dbc1cb963df796886af4" category="doc">ONTAP NAS 드라이버를 사용하여 백엔드를 구성할 준비를 합니다</block>
-  <block id="481e993a13f6d4f981acc2da60465e2a" category="summary">ANF에 대한 NFS 및 SMB 백엔드 구성 옵션에 대해 알아보고 구성 예를 검토하십시오.</block>
   <block id="17a48ec106d5505e674ccdf56fce1058" category="doc">Azure NetApp Files 백엔드 구성 옵션 및 예</block>
-  <block id="4bb587d1662752a66d32e629a36d70c0" category="paragraph">Astra Trident는 백엔드 구성(서브넷, 가상 네트워크, 서비스 수준 및 위치)을 사용하여 요청된 위치에서 사용할 수 있고 요청된 서비스 수준 및 서브넷과 일치하는 용량 풀에 ANF 볼륨을 생성합니다.</block>
   <block id="5fe26149fa172056aee5f841415c55fa" category="admonition">Astra Trident는 수동 QoS 용량 풀을 지원하지 않습니다.</block>
-  <block id="1a5743e0279e48054d3f9bb1ebc7e266" category="paragraph">ANF 백엔드는 이러한 구성 옵션을 제공합니다.</block>
   <block id="55eaeeb515ba1b8a42eb736b0e58f41f" category="cell">볼륨에 대한 VNET 기능 집합은 일 수 있습니다<block ref="972e73b7a882d0802a4e3a16946a2f94" prefix=" " category="inline-code"></block> 또는<block ref="eb6d8ae6f20283755b339c0dc273988b" prefix=" " category="inline-code"></block>. 일부 지역에서는 네트워크 기능을 사용할 수 없으며 구독에서 활성화해야 할 수도 있습니다. 지정 <block ref="b0fdc9c7b96e4249152c61b506703142" prefix=" " category="inline-code"></block> 이 기능을 사용하지 않으면 볼륨 프로비저닝이 실패합니다.</block>
   <block id="cc3d42de123c784e8d8e3c8404b943be" category="cell">NFS 마운트 옵션에 대한 세밀한 제어 SMB 볼륨에 대해 무시됩니다. NFS 버전 4.1을 사용하여 볼륨을 마운트하려면 을 포함합니다 <block ref="c72da907ddca73ee114d92e5e098ce0e" prefix=" " category="inline-code"></block> 쉼표로 구분된 마운트 옵션 목록에서 NFS v4.1을 선택합니다. 스토리지 클래스 정의에 설정된 마운트 옵션은 백엔드 구성에 설정된 마운트 옵션을 재정의합니다.</block>
   <block id="f0873081464f48da27a1068215270c60" category="cell"><block ref="296026821ada2ab8aebcf13547a63df5" prefix="" category="inline-code"></block></block>
@@ -2280,8 +2266,6 @@
   <block id="ea221277b2f168f5e17d112765f4a1c0" category="cell">새 볼륨에 대한 엑스포트 규칙<block ref="c72971f17465d2a32345bc872af62a34" prefix=" " category="inline-code"></block> CIDR 표기법을 사용하여 IPv4 주소 또는 IPv4 서브넷의 조합을 쉼표로 구분해야 합니다. SMB 볼륨에 대해 무시됩니다.</block>
   <block id="21590b83460bd480131384ef53bdccc4" category="cell">새 볼륨의 UNIX 사용 권한(8진수 4자리) SMB 볼륨에 대해 무시됩니다.</block>
   <block id="10c0eb6973453da95b4ef937f19ddb6c" category="section-title">예제 설정</block>
-  <block id="36867df20f9068f37b26d3120d5e7ba4" category="paragraph">이는 절대적인 최소 백엔드 구성입니다. 이 구성을 통해 Astra Trident는 구성된 위치에서 ANF에 위임된 모든 NetApp 계정, 용량 풀 및 서브넷을 검색하고 해당 풀 및 서브넷 중 하나에 무작위로 새 볼륨을 배치합니다. 왜냐하면<block ref="296026821ada2ab8aebcf13547a63df5" prefix=" " category="inline-code"></block> 생략됩니다<block ref="2521ef5d58fc027d3121662b7d8f9ac2" prefix=" " category="inline-code"></block> 기본값은 NFS 볼륨에 대해 백엔드가 프로비저닝됩니다.</block>
-  <block id="9c1aa30bfee58070482e646ad5d8bb4b" category="paragraph">이 백엔드 구성은 Azure에 볼륨을 배치합니다<block ref="6356111305f5daab178fa6051b7a8ae7" prefix=" " category="inline-code"></block> 의 위치<block ref="7057376a419b3334cc7b8b7a9f064abb" prefix=" " category="inline-code"></block> 용량 풀. Astra Trident는 해당 위치의 ANF에 위임된 모든 서브넷을 자동으로 검색하여 그 중 하나에 무작위로 새 볼륨을 배치합니다.</block>
   <block id="c0b04213f295bd61098649d5dec24291" category="section-title">스토리지 클래스 정의</block>
   <block id="cad675ae3fb846705512fe460e615ac3" category="paragraph">다음 사항을 참조하십시오<block ref="e1e2a331ab1d8dccfea06fc8e04e2f5d" prefix=" " category="inline-code"></block> 정의는 위의 스토리지 풀을 참조합니다.</block>
   <block id="1abbfd87ab307af55b755fd27ce60191" category="paragraph">사용<block ref="4d859186a09b1da3597e5901157d9400" prefix=" " category="inline-code"></block> 각각에 대해 지정할 수 있습니다<block ref="e1e2a331ab1d8dccfea06fc8e04e2f5d" prefix=" " category="inline-code"></block> 볼륨을 호스팅하는 데 사용되는 가상 풀입니다. 볼륨은 선택한 풀에 정의된 측면을 갖습니다.</block>
@@ -2292,7 +2276,6 @@
   <block id="06bb6ebc4dada525717294b660ba2b3b" category="example-title">예 3: 볼륨별로 다른 암호 사용</block>
   <block id="c51cc3b801a879870aea846bdde1c7a3" category="section-title">백엔드를 생성합니다</block>
   <block id="7d8058d93ec1d95c673d83bf303326ff" category="doc">ONTAP NAS 구성 옵션 및 예</block>
-  <block id="618a7676e411bbfbd9dbdb2411019951" category="summary">Astra Trident의 백엔드로 Azure NetApp Files(ANF)를 구성할 수 있습니다. ANF 백엔드를 사용하여 NAS 및 SMB 볼륨을 연결할 수 있습니다.</block>
   <block id="ea61e2c2ff507048203824add1eb7c21" category="section-title">고려 사항</block>
   <block id="8f395c84ad002394e9f070a25937dcc4" category="list-text">Azure NetApp Files 서비스는 100GB 미만의 볼륨을 지원하지 않습니다. Astra Trident는 더 작은 볼륨을 요청하는 경우 100GB 볼륨을 자동으로 생성합니다.</block>
   <block id="1cf44a6bee7fa333861e5d0042926fb5" category="list-text">Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.</block>
@@ -2640,7 +2623,6 @@
   <block id="46eefe0a9f18e4edef4d602d3868ad26" category="section-title">가상 풀 설계</block>
   <block id="b8c8132a188c589a80147f1e0b22bf92" category="paragraph">백엔드를 생성하는 동안 일반적으로 매개 변수 집합을 지정할 수 있습니다. 관리자가 동일한 스토리지 자격 증명을 사용하여 다른 매개 변수 집합을 가진 다른 백엔드를 생성할 수 없었습니다. 가상 풀이 도입됨에 따라 이 문제가 완화되었습니다. 가상 풀은 백엔드 및 Kubernetes 스토리지 클래스 간에 도입된 레벨 추상화입니다. 따라서 관리자는 Kubernetes 스토리지 클래스를 통해 백엔드에 독립적인 방식으로 Selector로 참조할 수 있는 레이블과 함께 매개 변수를 정의할 수 있습니다. Astra Trident를 사용하여 지원되는 모든 NetApp 백엔드에 가상 풀을 정의할 수 있습니다. 해당 목록에는 SolidFire/NetApp HCI, ONTAP, Cloud Volumes Service on GCP 및 Azure NetApp Files가 포함됩니다.</block>
   <block id="e531eef4bc68547759b647c917ac2567" category="admonition">가상 풀을 정의할 때는 백엔드 정의에서 기존 가상 풀의 순서를 재정렬하지 않는 것이 좋습니다. 또한 기존 가상 풀의 속성을 편집/수정하고 대신 새 가상 풀을 정의하는 것이 좋습니다.</block>
-  <block id="12a04174d46f1d73ff741b222e009596" category="paragraph">서비스 클래스를 에뮬레이트하기 위한 가상 풀을 설계할 수 있습니다. Azure NetApp Files용 Cloud Volume Service에 대한 가상 풀 구현을 사용하여 다양한 서비스 클래스를 설정하는 방법을 살펴보겠습니다. 다양한 성능 수준을 나타내는 여러 레이블을 사용하여 ANF 백엔드를 구성합니다. 설정<block ref="28277e44c5db61612accdf326d137e96" prefix=" " category="inline-code"></block> 적절한 성과 수준에 맞게 종횡비를 지정하고 각 레이블 아래에 다른 필요한 요소를 추가합니다. 이제 다른 가상 풀에 매핑할 다른 Kubernetes 스토리지 클래스를 생성합니다. 를 사용합니다<block ref="bed471c4a88e25ac9a7e4a7b980700a8" prefix=" " category="inline-code"></block> 필드에서 각 StorageClass는 볼륨을 호스팅하는 데 사용할 수 있는 가상 풀을 호출합니다.</block>
   <block id="f274bdd304a8c3825a2766a1f8ff8fa7" category="paragraph">특정 측면의 여러 가상 풀을 단일 스토리지 백엔드에서 설계할 수 있습니다. 이를 위해 백엔드에 여러 레이블을 구성하고 각 레이블 아래에 필요한 측면을 설정합니다. 이제 를 사용하여 다양한 Kubernetes Storage 클래스를 생성할 수 있습니다<block ref="bed471c4a88e25ac9a7e4a7b980700a8" prefix=" " category="inline-code"></block> 다른 가상 풀에 매핑될 필드입니다. 백엔드에서 프로비저닝되는 볼륨에는 선택한 가상 풀에 정의된 측면이 있습니다.</block>
   <block id="77392d80c7d8caad401b2619f5dd4581" category="paragraph">요청된 스토리지 클래스 이외의 일부 매개 변수는 PVC 생성 시 Astra Trident 프로비저닝 결정 프로세스에 영향을 줄 수 있습니다.</block>
   <block id="5425c134e042a4473f453cbfaaf776df" category="summary">LUKS(Linux 통합 키 설정)를 활성화하여 Astra Trident에서 ONTAP SAN 및 ONTAP SAN 경제 볼륨을 암호화할 수 있습니다. Astra Trident는 LUKS 암호화 볼륨에 대한 볼륨 크기 조정 및 키(암호) 회전을 지원합니다.</block>
@@ -2690,7 +2672,6 @@
   <block id="cf201a9e802aa6e35997590206919b1a" category="list-text">SMB 볼륨은 를 사용하여 지원됩니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 드라이버만 해당.</block>
   <block id="b184cfad0a2d14c9220db3d72006958c" category="list-text">자동 백업이 설정된 Amazon FSx 파일 시스템에서 생성된 볼륨은 Trident에서 삭제할 수 없습니다. PVC를 삭제하려면 ONTAP 체적에 대한 PV 및 FSx를 수동으로 삭제해야 합니다. 이 문제를 방지하려면:</block>
   <block id="867730e819742e7e493081f160c42c61" category="paragraph">다음 드라이버를 사용하여 Astra Trident를 NetApp ONTAP용 Amazon FSx와 통합할 수 있습니다.</block>
-  <block id="90e87fa57067732a25774f917230f72b" category="paragraph">드라이버 세부 정보는 를 참조하십시오 <block ref="5222b6b9484ba2027cf88dd24062e5fc" category="inline-link-macro-rx"></block>.</block>
   <block id="676f29c1b0b3626bc959bdc6ebc8953b" category="paragraph">Astra Trident는 두 가지 인증 모드를 제공합니다.</block>
   <block id="2dc4717be6b9cdf676df17aa86465f02" category="admonition">Astra Trident는 한 대로 실행될 것으로 예상합니다<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> SVM 사용자 또는 동일한 역할을 가진 다른 이름의 사용자 NetApp ONTAP용 Amazon FSx에는 가 있습니다<block ref="679500f227997b45be97e3ca8115c678" prefix=" " category="inline-code"></block> ONTAP의 제한된 교체인 사용자입니다<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> 클러스터 사용자. 을 사용하는 것이 좋습니다<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> Astra Trident와 함께.</block>
   <block id="43c502a16d6b21dc6eb26a2067154e11" category="paragraph">자격 증명 기반 방법과 인증서 기반 방법 간에 이동하도록 백엔드를 업데이트할 수 있습니다. 그러나 * 자격 증명 및 인증서 * 를 제공하려고 하면 백엔드 생성이 실패합니다. 다른 인증 방법으로 전환하려면 백엔드 구성에서 기존 방법을 제거해야 합니다.</block>
@@ -2806,7 +2787,6 @@
   <block id="065b7cc24b33be7af1e15f59024402d2" category="paragraph">Astra Trident가 선택한 가상 풀을 결정하고 스토리지 요구 사항을 충족시킵니다.</block>
   <block id="c632eed28bf53466df8b8a33aedab3af" category="list-text">가상 풀(있는 경우)은 원래 백엔드와 동일한 순서를 유지해야 합니다.</block>
   <block id="87a522ecb9df14bf978f6f1da8a654a8" category="list-text">를 제거하여 원본 PVC에 대한 액세스를 취소할 수 없습니다<block ref="287f26e3328f9ac0f3f4da2cdaddd3e2" prefix=" " category="inline-code"></block> 또는<block ref="11650d25d20af47978d85fd6e19c89aa" prefix=" " category="inline-code"></block> 주석 또는 삭제<block ref="d6995f631b22fb3f8e94aad1b40d1280" prefix=" " category="inline-code"></block> 있습니다. 액세스 권한을 취소하려면 하위 PVC를 삭제해야 합니다.</block>
-  <block id="1b9b62ce5b41c05a88e439d4ddbaf2c3" category="paragraph">Astra Trident의 백엔드로 Azure NetApp Files(ANF)를 구성할 수 있습니다. ANF 백엔드를 사용하여 NFS 및 SMB 볼륨을 연결할 수 있습니다.</block>
   <block id="41a45a3b55b7354dab0d81bb0ad06493" category="cell">프로토콜 LIF의 IP 주소입니다. 지정할 것을 권장합니다<block ref="ea76b2438eb5996eb2c347e7341ed59a" prefix=" " category="inline-code"></block>. 제공되지 않는 경우 Astra Trident는 SVM에서 데이터 LIF를 가져옵니다. NFS 마운트 작업에 사용할 FQDN(정규화된 도메인 이름)을 지정하면 여러 데이터 LIF에서 로드 밸런싱을 위해 라운드 로빈 DNS를 생성할 수 있습니다. 초기 설정 후에 변경할 수 있습니다. 을 참조하십시오 <block ref="b2c939cb81e81d99a25f4be74f517f2f" category="inline-xref-macro-rx"></block>. 을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다<block ref="4a4ef9f92e69acc000120379678aadcf" prefix=" " category="inline-code"></block> 깃발. IPv6 주소는 대괄호로 묶어야 합니다(예: [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]).</block>
   <block id="ae8df8316f5c485b7db4e7141e899701" category="cell">지정되지 않은 경우 SVM에서 지정 주소 또는 파생(권장하지 않음)</block>
   <block id="ad898a5f5863162f9c13e958485877d5" category="cell">자동 엑스포트 정책 생성 및 업데이트 [Boolean] 활성화 를 사용합니다<block ref="323e871cfe2e70ead9c713e8f3164f8f" prefix=" " category="inline-code"></block> 및<block ref="b9c40fbe9daa81e40e06509d5bbd5a6c" prefix=" " category="inline-code"></block> 옵션, Astra Trident는 엑스포트 정책을 자동으로 관리할 수 있습니다.</block>
@@ -3101,17 +3081,14 @@
   <block id="58c09f2c9581bc7c58c32116266b6d8f" category="cell">사용할 계층화 정책<block ref="334c4a4c42fdb79d7ebc3e73b517e6f8" prefix=" " category="inline-code"></block></block>
   <block id="49ed5b3ecd0e966bec6b74083f06599e" category="cell"><block ref="8805d416ce540c5f2df34af5b18d742b" prefix="" category="inline-code"></block> ONTAP 9.5 이전 SVM-DR 구성용</block>
   <block id="6792aad2d8c086a9d25f5ad8ec090f35" category="paragraph">Element 백엔드를 생성하기 전에 다음이 필요합니다.</block>
-  <block id="4e121ce555fa114069539035adefe18e" category="section-title">볼륨 모드</block>
   <block id="690b3c7311638da5eef87f5e07aa1258" category="section-title">볼륨 관리</block>
   <block id="24da0fbaaa9930515c555e7019db09d2" category="paragraph">Astra Trident를 사용하여 볼륨을 관리하는 방법에 대한 자세한 내용은 다음을 참조하십시오.</block>
   <block id="00a9bbaf4185978435bd4d6cb7aba6c4" category="summary">NetApp ONTAP용 Amazon FSx와 Astra Trident를 사용하면 Amazon EKS(Elastic Kubernetes Service)에서 실행되는 Kubernetes 클러스터가 ONTAP에서 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있습니다.</block>
   <block id="5178ad00e596ece0be9aceff179b4303" category="paragraph">Astra Trident는 Astra Trident 성능을 모니터링하는 데 사용할 수 있는 Prometheus 메트릭 엔드포인트 세트를 제공합니다.</block>
   <block id="51e6d748c5af856ade589011dc2c7e85" category="cell"><block ref="37a6259cc0c1dae299a7866489dff0bd" prefix="" category="inline-code"></block></block>
   <block id="ddbd2735bfb88c5da807f77f6fe5f6c8" category="doc">ONTAP NAS 드라이버 개요</block>
-  <block id="dd972e44915c7a0884edd58e9d839295" category="section-title">ONTAP NAS 드라이버에 대한 중요 정보입니다</block>
   <block id="1faffcbb00c529812b5526b1b22b2b56" category="paragraph">SVM에서 NFS 및 SMB/CIFS 프로토콜을 모두 구성하여 을 생성해야 합니다<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> ONTAP 사내를 위한 SMB 볼륨 이 두 프로토콜 중 하나를 구성하지 않으면 SMB 볼륨 생성에 실패합니다.</block>
   <block id="5cc1e28c0d7b6c40ca94aacb554b31ca" category="doc">ONTAP SAN 드라이버 개요</block>
-  <block id="7771a46320e96de2bde6598540ad4d52" category="section-title">ONTAP SAN 드라이버에 대한 중요한 정보</block>
   <block id="904628b57a33f3a2f6d71a6d991e15c6" category="paragraph">Astra Trident는 을 사용하여 Kubernetes 클러스터에 있는 노드를 선택적으로 생성하여 연결할 수 있습니다<block ref="80b9a4f4a1bc9851317207ee3477041a" category="inline-link-rx"></block>.</block>
   <block id="3eba7c2a6bd35cbac350dcbfb90408f6" category="paragraph">CSI 토폴로지 기능을 사용하면 지역 및 가용성 영역에 따라 볼륨에 대한 액세스가 노드의 하위 집합으로 제한될 수 있습니다. 오늘날의 클라우드 공급자는 Kubernetes 관리자가 영역 기반의 노드를 생성할 수 있습니다. 노드는 지역 내 또는 여러 지역의 여러 가용성 영역에 위치할 수 있습니다. Astra Trident는 다중 영역 아키텍처에서 워크로드용 볼륨 프로비저닝을 지원하기 위해 CSI 토폴로지를 사용합니다.</block>
   <block id="4ba6a75e6aacbc3737630ba55916cd27" category="section-title">백엔드 관리 옵션</block>
@@ -3805,4 +3782,41 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
   <block id="00b454d2ba2e8d34f65f8a714304a598" category="admonition">아래 표에는 로깅 서비스와 관련된 스토리지 구성과 관련된 변수만 나와 있습니다. 에서 다른 옵션을 찾을 수 있습니다 <block ref="e81826ec3b15492352776daada114990" category="inline-link-macro-rx"></block> 배포 내용에 따라 검토, 구성 및 사용해야 합니다.</block>
   <block id="b8e4ea2ed30f2f3a9f05ef8e1cc243db" category="paragraph">로깅 서비스 및 OpenShift와 마찬가지로 Ansible을 사용하여 메트릭 서비스를 배포합니다. 또한 로깅 서비스와 마찬가지로 클러스터 초기 설정 중에 또는 구성 요소 설치 방법을 사용하여 작동 후에 메트릭 서비스를 구축할 수 있습니다. 다음 표에는 메트릭 서비스에 대한 영구 스토리지를 구성할 때 중요한 변수가 나와 있습니다.</block>
   <block id="db7ae7f1cfb23bf788607032d443c26c" category="paragraph">호스트/인벤토리 파일에 정의된 적절한 Ansible 변수를 사용하여 서비스를 구축하십시오. OpenShift 설치 시 배포하는 경우 PV가 자동으로 생성되고 사용됩니다. 구성 요소 플레이북을 사용하여 구축하는 경우, OpenShift 설치 후 Ansible에서 필요한 PVC를 생성하고 Astra Trident가 이를 위한 스토리지를 프로비저닝한 후 서비스를 배포합니다.</block>
+  <block id="8198f2a0f41303e214bcb5ab7d9e9ef4" category="section-title">ONTAP NAS 드라이버 세부 정보입니다</block>
+  <block id="147be9e86dbd052c1f2b490f1e9b9897" category="paragraph">Astra Trident는 ONTAP 클러스터와 통신하기 위해 다음과 같은 NAS 스토리지 드라이버를 제공합니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.</block>
+  <block id="2b5fc47d5a68b6070472f3a239fc77f3" category="paragraph">"",<block ref="2521ef5d58fc027d3121662b7d8f9ac2" prefix=" " category="inline-code"></block>,<block ref="79e0f325804dafbdaef73b3b17c0fd8d" prefix=" " category="inline-code"></block></block>
+  <block id="f353c2f2ba62c120d68a9fde333ef59f" category="summary">Azure NetApp Files에 대한 NFS 및 SMB 백엔드 구성 옵션에 대해 알아보고 구성 예제를 검토합니다.</block>
+  <block id="19b571f96ec7d28e6329f9c52fab7424" category="paragraph">Astra Trident는 백엔드 구성(서브넷, 가상 네트워크, 서비스 수준 및 위치)을 사용하여 요청된 위치에서 사용할 수 있고 요청된 서비스 수준 및 서브넷과 일치하는 용량 풀에 Azure NetApp Files 볼륨을 생성합니다.</block>
+  <block id="b9acebca540d60eef74f6ffc3e4aa2e7" category="paragraph">Azure NetApp Files 백엔드는 이러한 구성 옵션을 제공합니다.</block>
+  <block id="5cda3f51d6458740b40a6f4c0aab02f0" category="paragraph">이는 절대적인 최소 백엔드 구성입니다. 이 구성을 통해 Astra Trident는 구성된 위치에서 Azure NetApp Files에 위임된 모든 NetApp 계정, 용량 풀 및 서브넷을 검색하고 이러한 풀과 서브넷 중 하나에 무작위로 새 볼륨을 배치합니다. 왜냐하면<block ref="296026821ada2ab8aebcf13547a63df5" prefix=" " category="inline-code"></block> 생략됩니다<block ref="2521ef5d58fc027d3121662b7d8f9ac2" prefix=" " category="inline-code"></block> 기본값은 NFS 볼륨에 대해 백엔드가 프로비저닝됩니다.</block>
+  <block id="639aa44ce5a6709a5719b427993c9657" category="paragraph">이 구성은 Azure NetApp Files를 시작하여 시험할 때 이상적이지만, 실제로는 프로비저닝한 볼륨에 대해 추가 범위를 제공하고 싶을 것입니다.</block>
+  <block id="62679c3777af7cf9f6af4e6aa0e7cfc4" category="paragraph">이 백엔드 구성은 Azure에 볼륨을 배치합니다<block ref="6356111305f5daab178fa6051b7a8ae7" prefix=" " category="inline-code"></block> 의 위치<block ref="7057376a419b3334cc7b8b7a9f064abb" prefix=" " category="inline-code"></block> 용량 풀. Astra Trident는 해당 위치에서 Azure NetApp Files에 위임된 모든 서브넷을 자동으로 검색하여 이 중 하나에 무작위로 새 볼륨을 배치합니다.</block>
+  <block id="a493eb50acc1b5a276034b914c4ce10d" category="section-title">ONTAP SAN 드라이버 세부 정보입니다</block>
+  <block id="7fd570aee3c81c5db028704e5fdf5b52" category="paragraph">Astra Trident는 ONTAP 클러스터와 통신할 수 있는 다음과 같은 SAN 스토리지 드라이버를 제공합니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.</block>
+  <block id="fcd147679464b9eda6367f4e90e16ff8" category="paragraph">RWO, 공화당</block>
+  <block id="94188b3f68e7baf5ef4a1f721857e77c" category="paragraph">파일 시스템 볼륨 모드에서는 ROX 및 rwx를 사용할 수 없습니다.</block>
+  <block id="2acadf30bbdf69b0408eadef287eb346" category="summary">Azure NetApp Files를 Astra Trident의 백엔드로 구성할 수 있습니다. Azure NetApp Files 백엔드를 사용하여 NAS 및 SMB 볼륨을 연결할 수 있습니다.</block>
+  <block id="8094785ba6188e7e62aca54731d06963" category="paragraph">Azure NetApp Files를 Astra Trident의 백엔드로 구성할 수 있습니다. Azure NetApp Files 백엔드를 사용하여 NFS 및 SMB 볼륨을 연결할 수 있습니다.</block>
+  <block id="2f73efb41160e66d2e4f5b500c984de8" category="section-title">Azure NetApp Files 드라이버 세부 정보입니다</block>
+  <block id="4ba3000579192de0298587f58861a12e" category="paragraph">Astra Trident는 클러스터와 통신할 수 있도록 다음과 같은 Azure NetApp Files 스토리지 드라이버를 제공합니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.</block>
+  <block id="7e7d2470a40e817070cd42bd81713c7b" category="paragraph"><block ref="2521ef5d58fc027d3121662b7d8f9ac2" prefix="" category="inline-code"></block>,<block ref="79e0f325804dafbdaef73b3b17c0fd8d" prefix=" " category="inline-code"></block></block>
+  <block id="a26f7ba5e57155f8df4df121d4527158" category="cell"><block ref="43f09bc16eaf24131ea82903259878ac" prefix="" category="inline-code"></block></block>
+  <block id="52dcf826fbc73c7b9f555d6b50423f98" category="paragraph"><block ref="310201b6353c5f38bc039e0e51b079d3" prefix="" category="inline-code"></block><block ref="66f137c5dc684da2a6a65917c86edd67" prefix="," category="inline-code"></block>,<block ref="40d1d2ce03569076bd0dc1e0ff90aa4c" prefix=" " category="inline-code"></block></block>
+  <block id="62233a6f2ba54c1dcede120348a6f595" category="paragraph">Astra Trident 설치 시 Element 백엔드를 생성하고 사용하는 방법을 알아보십시오.</block>
+  <block id="4e7d6286f837d54a4e4154d4b21b0659" category="section-title">요소 드라이버 세부 정보</block>
+  <block id="9fc6992cc8e273b3f7d317fc2a54e18c" category="paragraph">Astra Trident가 제공하는 것은 다음과 같습니다<block ref="c0d2a793e71b152662b3e8cd2da00620" prefix=" " category="inline-code"></block> 클러스터와 통신하는 스토리지 드라이버입니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.</block>
+  <block id="2d5e7b30bb6eb1bd6091005422150b91" category="paragraph">를 클릭합니다<block ref="c0d2a793e71b152662b3e8cd2da00620" prefix=" " category="inline-code"></block> 스토리지 드라이버는 _FILE_AND_BLOCK_VOLUME 모드를 지원합니다. 의 경우<block ref="ac52cf637478f3656a1fdee5c02324fd" prefix=" " category="inline-code"></block> 볼륨 코드, Astra Trident가 볼륨을 생성하고 파일 시스템을 생성합니다. 파일 시스템 유형은 StorageClass에 의해 지정됩니다.</block>
+  <block id="f5aa1832e32f2b8d7a7f22d8e36a4617" category="inline-link-macro">NAS 드라이버</block>
+  <block id="de9e7e8f2c463ef15bebdbf8d2d1aa6d" category="inline-link-macro">SAN 드라이버</block>
+  <block id="b49ccad583187aa8103775031d346d4a" category="paragraph">드라이버 세부 정보는 를 참조하십시오 <block ref="94749ac9904f861b1290f2feae976582" category="inline-link-macro-rx"></block> 및 <block ref="5475edaa4f9b7b7cc2309add6d5e3cd5" category="inline-link-macro-rx"></block>.</block>
+  <block id="8126e96f64b1a5de24d4cf6e4b09b986" category="section-title">Google Cloud 드라이버 세부 정보입니다</block>
+  <block id="9393948ed1be0af0cfb3d99e3248301a" category="paragraph">Astra Trident가 제공하는 것은 다음과 같습니다<block ref="5935ea92cdd7d975b4e764b429f21c01" prefix=" " category="inline-code"></block> 클러스터와 통신하는 드라이버입니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.</block>
+  <block id="9aa82da0cffe247b84587c1cc8e32746" category="cell">"기본값"</block>
+  <block id="dfb6135042da6e8fbf367d9cf13431ef" category="paragraph">볼륨 크기에 대한 선택적 제한. 기본값:""(적용 안 됨)</block>
+  <block id="4846d107d8ddb5051591d14dcbddba8c" category="admonition">지정되지 않은 경우 볼륨 드라이버의 기본 이름은 "NetApp"입니다.</block>
+  <block id="5ab207578468b7bbc201024492654253" category="list-text">Azure NetApp Files 드라이버에 네트워크 기능에 대한 지원이 추가되었습니다. (<block ref="e0e89f8bd936a5eb3adce74cac88eab0" category="inline-link-macro-rx"></block>)</block>
+  <block id="302e5f91d375f03821f8fd6340563539" category="list-text">Azure NetApp Files 드라이버가 여러 내보내기 규칙을 사용하여 볼륨을 복제하지 못하는 문제가 해결되었습니다.</block>
+  <block id="1d61f4e1411b6940bc918fb56346f64d" category="list-text">Azure NetApp Files 드라이버를 수정하여 중복된 리소스 이름을 허용하고 단일 위치로 작업을 제한했습니다.</block>
+  <block id="409ee85d2342bf416b29a45a7b9c4e59" category="list-text">Azure NetApp Files 볼륨에 'unixPermissions' 옵션 지원이 추가되었습니다. (<block ref="b2ee1a79cce917ad1d60b3bec442914a" category="inline-link-macro-rx"></block>)</block>
+  <block id="9f65455ce006fe56e7588e4e14f1edb8" category="paragraph">서비스 클래스를 에뮬레이트하기 위한 가상 풀을 설계할 수 있습니다. Azure NetApp Files용 Cloud Volume Service에 대한 가상 풀 구현을 사용하여 다양한 서비스 클래스를 설정하는 방법을 살펴보겠습니다. 다양한 성능 수준을 나타내는 여러 레이블을 사용하여 Azure NetApp Files 백엔드를 구성합니다. 설정<block ref="28277e44c5db61612accdf326d137e96" prefix=" " category="inline-code"></block> 적절한 성과 수준에 맞게 종횡비를 지정하고 각 레이블 아래에 다른 필요한 요소를 추가합니다. 이제 다른 가상 풀에 매핑할 다른 Kubernetes 스토리지 클래스를 생성합니다. 를 사용합니다<block ref="bed471c4a88e25ac9a7e4a7b980700a8" prefix=" " category="inline-code"></block> 필드에서 각 StorageClass는 볼륨을 호스팅하는 데 사용할 수 있는 가상 풀을 호출합니다.</block>
 </blocks>

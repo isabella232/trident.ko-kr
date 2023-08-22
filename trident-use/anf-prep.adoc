@@ -2,7 +2,7 @@
 sidebar: sidebar 
 permalink: trident-use/anf-prep.html 
 keywords: trident backend, azure netapp files, smb volumes, smb, windows, active directory, csi proxy 
-summary: ANF 백엔드를 구성하려면 먼저 다음 요구 사항을 충족해야 합니다. 
+summary: Azure NetApp Files 백엔드를 구성하기 전에 다음 요구 사항이 충족되는지 확인해야 합니다. 
 ---
 = Azure NetApp Files 백엔드를 구성할 준비를 합니다
 :hardbreaks:
