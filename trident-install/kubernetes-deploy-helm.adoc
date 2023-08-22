@@ -87,7 +87,7 @@ NOTE: Trident에 대한 네임스페이스를 이미 만든 경우에는 '--crea
 
 [listing]
 ----
-helm install <name> netapp-trident/trident-operator --version 23.07.0  --create-namespace --namespace --set tridentDebug=true
+helm install <name> netapp-trident/trident-operator --version 23.07.0  --create-namespace --namespace trident --set tridentDebug=true
 ----
 
 
