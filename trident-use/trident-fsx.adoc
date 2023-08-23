@@ -47,7 +47,7 @@ image:screenshot-fsx-backup-disable.png["자동 백업을 사용하지 않도록
 
 
 
-== 드라이버
+== FSx for ONTAP 드라이버 세부 정보
 
 다음 드라이버를 사용하여 Astra Trident를 NetApp ONTAP용 Amazon FSx와 통합할 수 있습니다.
 
@@ -58,7 +58,7 @@ image:screenshot-fsx-backup-disable.png["자동 백업을 사용하지 않도록
 * 'ONTAP-NAS-flexgroup': 프로비저닝되는 각 PV는 NetApp ONTAP FlexGroup 볼륨에 대한 전체 Amazon FSx입니다.
 
 
-드라이버 세부 정보는 를 참조하십시오 link:../trident-use/ontap-nas.html.html["NAS 드라이버"] 및 link:../trident-use/ontap-san.html.html["SAN 드라이버"].
+드라이버 세부 정보는 를 참조하십시오 link:../trident-use/ontap-nas.html["NAS 드라이버"] 및 link:../trident-use/ontap-san.html["SAN 드라이버"].
 
 
 

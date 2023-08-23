@@ -1088,7 +1088,6 @@
   <block id="486632f7d2196e772b742db4a4a0ad7c" category="inline-link-macro">Astra Trident 구축</block>
   <block id="55449fd175613962d882ab450cfc5f3c" category="inline-link">FabricPool</block>
   <block id="d07e2d99267e4fc3c508f6701be977b4" category="paragraph">NetApp ONTAP용 Amazon FSx에서 사용됩니다<block ref="d1584952da6bdedb0a24d5dbd43ce0bf" category="inline-link-rx"></block> 스토리지 계층을 관리합니다. 이 기능을 사용하면 데이터의 액세스 빈도 여부에 따라 데이터를 계층에 저장할 수 있습니다.</block>
-  <block id="8e64a609e66214066595e6300aaab281" category="section-title">드라이버</block>
   <block id="79a4618bb191cb293c330f8189531a13" category="list-text">'ONTAP-SAN': 프로비저닝되는 각 PV는 NetApp ONTAP 볼륨용 자체 Amazon FSx 내에 있는 LUN입니다.</block>
   <block id="b8f98ceeb9b158e8af3527fce91e9e57" category="list-text">'ONTAP-SAN-이코노미': 프로비저닝되는 각 PV는 NetApp ONTAP 볼륨에 대해 Amazon FSx당 구성 가능한 LUN 수를 가진 LUN입니다.</block>
   <block id="a5bc2c9e7628ac6c73838f9fea0e6ed6" category="list-text">ONTAP-NAS: 프로비저닝되는 각 PV는 NetApp ONTAP 볼륨용 전체 Amazon FSx입니다.</block>
@@ -3808,7 +3807,6 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
   <block id="2d5e7b30bb6eb1bd6091005422150b91" category="paragraph">를 클릭합니다<block ref="c0d2a793e71b152662b3e8cd2da00620" prefix=" " category="inline-code"></block> 스토리지 드라이버는 _FILE_AND_BLOCK_VOLUME 모드를 지원합니다. 의 경우<block ref="ac52cf637478f3656a1fdee5c02324fd" prefix=" " category="inline-code"></block> 볼륨 코드, Astra Trident가 볼륨을 생성하고 파일 시스템을 생성합니다. 파일 시스템 유형은 StorageClass에 의해 지정됩니다.</block>
   <block id="f5aa1832e32f2b8d7a7f22d8e36a4617" category="inline-link-macro">NAS 드라이버</block>
   <block id="de9e7e8f2c463ef15bebdbf8d2d1aa6d" category="inline-link-macro">SAN 드라이버</block>
-  <block id="b49ccad583187aa8103775031d346d4a" category="paragraph">드라이버 세부 정보는 를 참조하십시오 <block ref="94749ac9904f861b1290f2feae976582" category="inline-link-macro-rx"></block> 및 <block ref="5475edaa4f9b7b7cc2309add6d5e3cd5" category="inline-link-macro-rx"></block>.</block>
   <block id="8126e96f64b1a5de24d4cf6e4b09b986" category="section-title">Google Cloud 드라이버 세부 정보입니다</block>
   <block id="9393948ed1be0af0cfb3d99e3248301a" category="paragraph">Astra Trident가 제공하는 것은 다음과 같습니다<block ref="5935ea92cdd7d975b4e764b429f21c01" prefix=" " category="inline-code"></block> 클러스터와 통신하는 드라이버입니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.</block>
   <block id="9aa82da0cffe247b84587c1cc8e32746" category="cell">"기본값"</block>
@@ -3819,4 +3817,6 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
   <block id="1d61f4e1411b6940bc918fb56346f64d" category="list-text">Azure NetApp Files 드라이버를 수정하여 중복된 리소스 이름을 허용하고 단일 위치로 작업을 제한했습니다.</block>
   <block id="409ee85d2342bf416b29a45a7b9c4e59" category="list-text">Azure NetApp Files 볼륨에 'unixPermissions' 옵션 지원이 추가되었습니다. (<block ref="b2ee1a79cce917ad1d60b3bec442914a" category="inline-link-macro-rx"></block>)</block>
   <block id="9f65455ce006fe56e7588e4e14f1edb8" category="paragraph">서비스 클래스를 에뮬레이트하기 위한 가상 풀을 설계할 수 있습니다. Azure NetApp Files용 Cloud Volume Service에 대한 가상 풀 구현을 사용하여 다양한 서비스 클래스를 설정하는 방법을 살펴보겠습니다. 다양한 성능 수준을 나타내는 여러 레이블을 사용하여 Azure NetApp Files 백엔드를 구성합니다. 설정<block ref="28277e44c5db61612accdf326d137e96" prefix=" " category="inline-code"></block> 적절한 성과 수준에 맞게 종횡비를 지정하고 각 레이블 아래에 다른 필요한 요소를 추가합니다. 이제 다른 가상 풀에 매핑할 다른 Kubernetes 스토리지 클래스를 생성합니다. 를 사용합니다<block ref="bed471c4a88e25ac9a7e4a7b980700a8" prefix=" " category="inline-code"></block> 필드에서 각 StorageClass는 볼륨을 호스팅하는 데 사용할 수 있는 가상 풀을 호출합니다.</block>
+  <block id="42f3b65b98b18c792b7b5534e40d2646" category="section-title">FSx for ONTAP 드라이버 세부 정보</block>
+  <block id="9b82ca4e89dcaf4cecf50467b6126909" category="paragraph">드라이버 세부 정보는 를 참조하십시오 <block ref="4093b6d0ce8cf414637a02002d2b0376" category="inline-link-macro-rx"></block> 및 <block ref="276422a40a581e9842304216329765d5" category="inline-link-macro-rx"></block>.</block>
 </blocks>
