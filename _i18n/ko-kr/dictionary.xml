@@ -3819,4 +3819,9 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
   <block id="9f65455ce006fe56e7588e4e14f1edb8" category="paragraph">서비스 클래스를 에뮬레이트하기 위한 가상 풀을 설계할 수 있습니다. Azure NetApp Files용 Cloud Volume Service에 대한 가상 풀 구현을 사용하여 다양한 서비스 클래스를 설정하는 방법을 살펴보겠습니다. 다양한 성능 수준을 나타내는 여러 레이블을 사용하여 Azure NetApp Files 백엔드를 구성합니다. 설정<block ref="28277e44c5db61612accdf326d137e96" prefix=" " category="inline-code"></block> 적절한 성과 수준에 맞게 종횡비를 지정하고 각 레이블 아래에 다른 필요한 요소를 추가합니다. 이제 다른 가상 풀에 매핑할 다른 Kubernetes 스토리지 클래스를 생성합니다. 를 사용합니다<block ref="bed471c4a88e25ac9a7e4a7b980700a8" prefix=" " category="inline-code"></block> 필드에서 각 StorageClass는 볼륨을 호스팅하는 데 사용할 수 있는 가상 풀을 호출합니다.</block>
   <block id="42f3b65b98b18c792b7b5534e40d2646" category="section-title">FSx for ONTAP 드라이버 세부 정보</block>
   <block id="9b82ca4e89dcaf4cecf50467b6126909" category="paragraph">드라이버 세부 정보는 를 참조하십시오 <block ref="4093b6d0ce8cf414637a02002d2b0376" category="inline-link-macro-rx"></block> 및 <block ref="276422a40a581e9842304216329765d5" category="inline-link-macro-rx"></block>.</block>
+  <block id="02882f6e58d1a3adffd9c9e4d0b2cc15" category="cell">클러스터 또는 SVM 관리 LIF의 IP 주소입니다
+
+FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
+
+을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다<block ref="4a4ef9f92e69acc000120379678aadcf" prefix=" " category="inline-code"></block> 깃발. IPv6 주소는 대괄호로 묶어야 합니다(예: [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]).</block>
 </blocks>
