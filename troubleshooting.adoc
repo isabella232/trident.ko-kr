@@ -62,12 +62,7 @@ tridentctl과 함께 설치됩니다::
 * Trident 백엔드가 이전에 작업을 수행했음에도 불구하고 "실패" 상태에 있다고 보고할 경우 백엔드와 연결된 SVM/관리 자격 증명을 변경하면 원인일 수 있습니다. 'tridentctl update backend'를 사용하여 백엔드 정보를 업데이트하거나 Trident POD를 바운딩하면 이 문제가 해결됩니다.
 * Docker를 컨테이너 런타임으로 사용하여 Trident를 설치할 때 권한 문제가 발생하면 '--in cluster=false' 플래그를 사용하여 Trident를 설치해 보십시오. 설치자 포드는 사용하지 않고 설치자 이용으로 인한 권한 문제를 피한다.
 * 실패한 실행 후 정리 작업을 위해 'uninstall parameter <uninstall Trident>'를 사용합니다. 기본적으로 이 스크립트는 Trident에서 만든 CRD를 제거하지 않으므로 실행 중인 구축에서도 안전하게 제거한 후 다시 설치할 수 있습니다.
-* 이전 버전의 Trident로 다운그레이드하려는 경우 먼저 을 실행합니다 `tridentctl uninstall` Trident를 제거하는 명령입니다. 원하는 를 다운로드합니다 https://github.com/NetApp/trident/releases["Trident 버전"] 를 사용하여 를 설치합니다 `tridentctl install` 명령. 새로 생성된 PVS가 없고 기존 PVS/백엔드/스토리지 클래스가 변경되지 않은 경우에만 다운그레이드를 고려하십시오. 이제 Trident는 CRD를 사용하여 상태를 유지하므로 생성된 모든 스토리지 요소(백엔드, 스토리지 클래스, PVS 및 볼륨 스냅샷)에는 가 있습니다 `associated CRD objects <Kubernetes CustomResourceDefinition Objects>` 이전의 설치된 Trident 버전에서 사용한 PV에 기록된 데이터 대신 * 이전 버전으로 되돌릴 때 새로 생성된 PVS를 사용할 수 없습니다. * * 다운그레이드 시 백엔드, PVS, 스토리지 클래스 및 볼륨 스냅샷(생성/업데이트/삭제)과 같은 객체에 대한 변경 사항은 Trident에 표시되지 않습니다 *. 설치된 Trident의 이전 버전에서 사용된 PV는 여전히 Trident에 표시됩니다. 이전 버전으로 돌아가면 업그레이드되지 않은 경우 이전 릴리즈를 사용하여 이미 생성된 PVS에 대한 액세스가 중단되지 않습니다.
-* Trident를 완전히 제거하려면 'tridentctl oblividate CRD' 명령을 실행합니다. 그러면 모든 CRD 객체가 제거되고 CRD의 정의가 해제됩니다. Trident는 이미 프로비저닝한 PVS를 더 이상 관리하지 않습니다.
-+
-
-NOTE: 이 후 Trident를 처음부터 다시 구성해야 합니다.
-
+* Trident의 이전 버전으로 다운그레이드하려면 먼저 를 실행하십시오 `tridentctl uninstall` Trident를 제거하는 명령입니다. 원하는 를 다운로드합니다 https://github.com/NetApp/trident/releases["Trident 버전"] 를 사용하여 를 설치합니다 `tridentctl install` 명령.
 * 설치가 성공적으로 완료된 후 PVC가 보류 단계에 고착되면 kubeck tl t설명해 PVC를 실행하면 Trident가 이 PVC에 대한 PV를 프로비저닝하지 못한 이유에 대한 추가 정보가 제공됩니다.
 
 
@@ -160,3 +155,42 @@ INFO Deleted service account.
 INFO Removed Trident user from security context constraint.
 INFO Trident uninstallation succeeded.
 ----
+
+
+== Astra Trident 및 CRD를 완전히 제거합니다
+
+Astra Trident와 생성된 모든 CRD 및 관련 사용자 지정 리소스를 완전히 제거할 수 있습니다.
+
+
+WARNING: 이 작업은 취소할 수 없습니다. Astra Trident를 완전히 새로 설치하고 싶지 않은 한 이 작업을 수행하지 마십시오. CRD를 제거하지 않고 Astra Trident를 제거하려면 를 참조하십시오 link:../trident-managing-k8s/uninstall-trident.html["Astra Trident를 제거합니다"].
+
+[role="tabbed-block"]
+====
+.Trident 운영자
+--
+Trident 연산자를 사용하여 Astra Trident를 제거하고 CRD를 완전히 제거하려면 다음과 같이 하십시오.
+
+[listing]
+----
+kubectl patch torc <trident-orchestrator-name> --type=merge -p '{"spec":{"wipeout":["crds"],"uninstall":true}}'
+----
+--
+.헬름
+--
+Astra Trident를 제거하고 Helm을 사용하여 CRD를 완전히 제거하려면:
+
+[listing]
+----
+kubectl patch torc trident --type=merge -p '{"spec":{"wipeout":["crds"],"uninstall":true}}'
+----
+--
+.<code>tridentctl</code>
+--
+을 사용하여 Astra Trident를 제거한 후 CRD를 완전히 제거합니다 `tridentctl`
+
+[listing]
+----
+tridentctl obliviate crd
+----
+--
+====

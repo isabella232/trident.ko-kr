@@ -75,7 +75,6 @@
   <block id="8656f6a3d04342ff6248bd7d32949c2a" category="paragraph">Helm을 사용하여 Astra Trident를 설치한 경우 'helm uninstall'을 사용하여 제거할 수 있습니다.</block>
   <block id="c416a70504ae36e8cfbf555ad0d13ab9" category="paragraph">운영자를 사용하여 Astra Trident를 설치한 경우 다음 중 하나를 수행하여 제거할 수 있습니다.</block>
   <block id="245e84de93b9b41f643f9e737c17e702" category="paragraph">'uninstall' 플래그가 'true'로 설정되어 있으면 Trident 운영자가 Trident를 제거하지만 Trident 자체 자체를 제거하지 않습니다. Trident를 다시 설치하려면 해당 Trident를 정리하고 새 AgentOrchestrator를 생성해야 합니다.</block>
-  <block id="1b600643682d5a3280681ef82d7e6ae4" category="paragraph">Astra Trident를 완전히 제거하려면 Astra Trident에서 생성한 CRD의 종료자를 제거하고 CRD를 삭제해야 합니다.</block>
   <block id="ba09ee47d11962c1ccd13d7e1f10e6c5" category="doc">이전 버전의 문서</block>
   <block id="0c141ec81d4107f4c63fb0deb2531c0d" category="inline-link">Astra Trident 21.04</block>
   <block id="193bfae1ebda99fb7289c66fa69395a0" category="list-text"><block ref="193bfae1ebda99fb7289c66fa69395a0" category="inline-link-rx"></block></block>
@@ -1754,8 +1753,6 @@
   <block id="b851cfc28cd6e5cb9aaf87bdb59a68aa" category="list-text">Docker를 컨테이너 런타임으로 사용하여 Trident를 설치할 때 권한 문제가 발생하면 '--in cluster=false' 플래그를 사용하여 Trident를 설치해 보십시오. 설치자 포드는 사용하지 않고 설치자 이용으로 인한 권한 문제를 피한다.</block>
   <block id="6f7d49547ff47cfaf1fd93d134b603be" category="list-text">실패한 실행 후 정리 작업을 위해 'uninstall parameter &lt;uninstall Trident&gt;'를 사용합니다. 기본적으로 이 스크립트는 Trident에서 만든 CRD를 제거하지 않으므로 실행 중인 구축에서도 안전하게 제거한 후 다시 설치할 수 있습니다.</block>
   <block id="f1112223b41fddc71fd6a626582dfb78" category="inline-link">Trident 버전</block>
-  <block id="7dc9f8824c461c84d9bb1563a0615526" category="list-text">Trident를 완전히 제거하려면 'tridentctl oblividate CRD' 명령을 실행합니다. 그러면 모든 CRD 객체가 제거되고 CRD의 정의가 해제됩니다. Trident는 이미 프로비저닝한 PVS를 더 이상 관리하지 않습니다.</block>
-  <block id="e7fc3eac0c0cea530e0f52e3ddf37079" category="admonition">이 후 Trident를 처음부터 다시 구성해야 합니다.</block>
   <block id="51748ba3d16ecfd8c45c7ebf2043b738" category="list-text">설치가 성공적으로 완료된 후 PVC가 보류 단계에 고착되면 kubeck tl t설명해 PVC를 실행하면 Trident가 이 PVC에 대한 PV를 프로비저닝하지 못한 이유에 대한 추가 정보가 제공됩니다.</block>
   <block id="a900bd1dbd5690f78a30ca74d138d0b7" category="section-title">연산자를 사용하여 실패한 Trident 배포 문제 해결</block>
   <block id="0e89989064bf4afdc37fd5a7be4f607d" category="paragraph">연산자를 사용하여 Trident를 배포하는 경우 트리펜터터의 상태가 Installing에서 Installed로 변경됩니다. 'Failed(실패)' 상태를 확인하고 운용자가 자체적으로 복구할 수 없는 경우 다음 명령어를 실행해 운용자의 로그를 확인해야 한다.</block>
@@ -2896,7 +2893,6 @@
   <block id="579b44412770c0d6b65bc3fd9bf7c61c" category="section-title">5단계: 에서 이미지 레지스트리 위치를 업데이트합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block></block>
   <block id="d0ebde94f92d8c1bae0c6660a5847bba" category="paragraph">귀사의 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 업데이트<block ref="7b4b81fb05ca7f2a09fe73526ac95482" prefix=" " category="inline-code"></block> 레지스트리 구성에 따라 추가 위치 사양을 추가하려면 다음을 수행합니다.</block>
   <block id="5295ac8fb520b71deb8a1b57857b2562" category="section-title">6단계: 을 작성합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> Trident를 설치합니다</block>
-  <block id="ea7cc85727ac6a0761c52685cce336be" category="list-text">이전 버전의 Trident로 다운그레이드하려는 경우 먼저 을 실행합니다<block ref="ac8650577d1b744589a6a11b60ac38c7" prefix=" " category="inline-code"></block> Trident를 제거하는 명령입니다. 원하는 를 다운로드합니다<block ref="f3d78353f8dac3e49bbefeb5f6a2383b" category="inline-link-rx"></block> 를 사용하여 를 설치합니다<block ref="430bf77bee6c59d385d4194f84c21b16" prefix=" " category="inline-code"></block> 명령. 새로 생성된 PVS가 없고 기존 PVS/백엔드/스토리지 클래스가 변경되지 않은 경우에만 다운그레이드를 고려하십시오. 이제 Trident는 CRD를 사용하여 상태를 유지하므로 생성된 모든 스토리지 요소(백엔드, 스토리지 클래스, PVS 및 볼륨 스냅샷)에는 가 있습니다<block ref="816158c49c5f4417bf3b0f9c644e722e" prefix=" " category="inline-code"></block> 이전의 설치된 Trident 버전에서 사용한 PV에 기록된 데이터 대신 * 이전 버전으로 되돌릴 때 새로 생성된 PVS를 사용할 수 없습니다. * * 다운그레이드 시 백엔드, PVS, 스토리지 클래스 및 볼륨 스냅샷(생성/업데이트/삭제)과 같은 객체에 대한 변경 사항은 Trident에 표시되지 않습니다 *. 설치된 Trident의 이전 버전에서 사용된 PV는 여전히 Trident에 표시됩니다. 이전 버전으로 돌아가면 업그레이드되지 않은 경우 이전 릴리즈를 사용하여 이미 생성된 PVS에 대한 액세스가 중단되지 않습니다.</block>
   <block id="43e6c0a141c1737a96917c56c7e22a73" category="inline-link-macro">&lt;block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category='inline-code'/&gt;를 사용하여 설치</block>
   <block id="1a2de31d648d8c09e5c2a9257a5ad67b" category="paragraph">업그레이드해야 하는 기존 배포가 있거나 배포를 사용자 지정하려는 경우 고려해야 합니다 <block ref="e214bf159dbaf6573cfe15f1373b92db" category="inline-link-macro-rx"></block>. Astra Trident를 구축하는 기존 방법입니다.</block>
   <block id="19466ff921af5aa01da62b42cdaaf617" category="list-text">SPEC에 지정된 경우 설치에 IPv6 localhost를 사용하도록 고정 Trident Operator가 수정되었습니다.</block>
@@ -3644,13 +3640,8 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
   <block id="2985edaba812b8b31d08cc8513fee0a3" category="section-title">수동 설치를 제거합니다</block>
   <block id="932d8e226d5e26c888990ae2e734feb8" category="list-text">** 편집<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 제거 플래그를 설정하려면: ** 편집할 수 있습니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 그리고 설정합니다<block ref="f41a95848a012f4f1a6550ce79c588aa" prefix=" " category="inline-code"></block>.</block>
   <block id="d7348a31cc49a1353d8a060756d323e4" category="list-text">를 편집합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 를 사용하여 를 설정합니다<block ref="fe98497efedbe156ecc4b953aea77e07" prefix=" " category="inline-code"></block> 아래에 표시된 대로 플래그 지정:</block>
-  <block id="e03d3721a2fe7e82d0d50eaf5ac511a8" category="list-text">** 삭제<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block>: ** 를 제거하여<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> Astra Trident를 배포하는 데 사용된 CR은 작업자에게 Trident를 제거하도록 지시합니다.</block>
-  <block id="46735a6e4a7e7976fed0b7687712a1ee" category="list-text">작업자가 의 제거를 처리합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 그런 다음 Astra Trident 구축과 디멘시작을 제거하고 설치의 일부로 생성한 Trident 포드를 삭제합니다.</block>
-  <block id="b040b629291fec756f4560e3829a2469" category="list-text">Astra Trident를 제거하고 Astra Trident(생성되는 CRD 포함)를 완전히 제거하려면 를 편집합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 을 전달합니다<block ref="c13a52521693f799a16fd56a35c77a04" prefix=" " category="inline-code"></block> 옵션을 선택합니다. 후속 설치는 새 설치로 처리됩니다.</block>
-  <block id="65b181709bf2a6743f68804084833d5c" category="admonition">이 작업은 취소할 수 없습니다. Astra Trident를 새로 설치하려는 경우가 아니라면 CRD를 지우지 마십시오. 예를 들어, 바로 이전 버전이 아닌 다른 버전으로 이동하는 경우를 들 수 있습니다.</block>
   <block id="55f6e2744208ccefe34f3e05ced2c988" category="section-title">Helm 설치를 제거합니다</block>
   <block id="99dec4df69ba043a5eb3118e1e0b364e" category="section-title">를 제거합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 설치</block>
-  <block id="12fcf291c47ed92eb8d494b92dca8fb8" category="paragraph">를 사용합니다<block ref="fe98497efedbe156ecc4b953aea77e07" prefix=" " category="inline-code"></block> 명령을 입력합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> CRD 및 관련 객체를 제외한 Astra Trident와 연결된 모든 리소스를 제거합니다. 이렇게 하면 설치 프로그램을 다시 실행하여 최신 버전으로 간단하게 업데이트할 수 있습니다.</block>
   <block id="7a15e63f1d0efc213151254bbc1b2d0d" category="doc">Trident 운영자 설치를 업그레이드합니다</block>
   <block id="0f443eb922735ce52f2b490ffca00e49" category="paragraph">수동으로 또는 Helm을 사용하여 Trident 연산자를 사용하여 Astra Trident를 업그레이드할 수 있습니다. Trident 운영자 설치에서 다른 Trident 운영자 설치로 업그레이드하거나, 에서 업그레이드할 수 있습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> Trident 운영자 버전에 설치. 검토 <block ref="5cffa5fbe758cc3901f0e33c78b29d1b" category="inline-link-macro-rx"></block> Trident 운영자 설치를 업그레이드하기 전에.</block>
   <block id="3ef75911ec16a9d0ba70cfd4e68dcb71" category="section-title">수동 설치를 업그레이드합니다</block>
@@ -3824,4 +3815,17 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
 FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
 
 을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다<block ref="4a4ef9f92e69acc000120379678aadcf" prefix=" " category="inline-code"></block> 깃발. IPv6 주소는 대괄호로 묶어야 합니다(예: [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]).</block>
+  <block id="629ac35dda697ad18f8fef7094213871" category="list-text">Trident의 이전 버전으로 다운그레이드하려면 먼저 를 실행하십시오<block ref="ac8650577d1b744589a6a11b60ac38c7" prefix=" " category="inline-code"></block> Trident를 제거하는 명령입니다. 원하는 를 다운로드합니다<block ref="f3d78353f8dac3e49bbefeb5f6a2383b" category="inline-link-rx"></block> 를 사용하여 를 설치합니다<block ref="430bf77bee6c59d385d4194f84c21b16" prefix=" " category="inline-code"></block> 명령.</block>
+  <block id="2a1db8dc71dec3264e9155d610575785" category="section-title">Astra Trident 및 CRD를 완전히 제거합니다</block>
+  <block id="de752588132c292a8a12ad2441fbf43c" category="paragraph">Astra Trident와 생성된 모든 CRD 및 관련 사용자 지정 리소스를 완전히 제거할 수 있습니다.</block>
+  <block id="90dc0d986558510d55c898cb62f4f2d5" category="admonition">이 작업은 취소할 수 없습니다. Astra Trident를 완전히 새로 설치하고 싶지 않은 한 이 작업을 수행하지 마십시오. CRD를 제거하지 않고 Astra Trident를 제거하려면 를 참조하십시오 <block ref="6b2eb9a0745ceac90657a4978cb010ca" category="inline-link-macro-rx"></block>.</block>
+  <block id="4f5dbc74e3448e08fe0e7bfd62876fc8" category="open-title">Trident 운영자</block>
+  <block id="f4508049a2ac2bdb5cb9fde92120497a" category="paragraph">Trident 연산자를 사용하여 Astra Trident를 제거하고 CRD를 완전히 제거하려면 다음과 같이 하십시오.</block>
+  <block id="152090ff5e9a05ea7e1cf0c248449638" category="open-title">헬름</block>
+  <block id="96ce7a69bf578e9c3915fb876cad6dd9" category="paragraph">Astra Trident를 제거하고 Helm을 사용하여 CRD를 완전히 제거하려면:</block>
+  <block id="fed6290ac938ca603cf5f4f680802954" category="open-title">&lt;code&gt;tridentctl&lt;/code&gt;</block>
+  <block id="cc40bbe559f5f0b7306a8ae2941647b5" category="paragraph">을 사용하여 Astra Trident를 제거한 후 CRD를 완전히 제거합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block></block>
+  <block id="660807cada2c8061fb92638cfe0568d0" category="list-text">간편한 업그레이드 및 재설치를 위해 Astra Trident를 제거해도 Astra Trident에서 생성된 CRD 또는 관련 개체는 제거되지 않습니다. Astra Trident 및 모든 데이터를 완전히 제거해야 하는 경우 를 참조하십시오 <block ref="9d95a644de0932ac2f909a32a488bd14" category="inline-link-macro-rx"></block>.</block>
+  <block id="3277c9131339b6e3e8b8401d060b2ace" category="list-text">** 삭제<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block>: ** 를 제거하여<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> Astra Trident를 배포하는 데 사용된 CR은 작업자에게 Trident를 제거하도록 지시합니다. 작업자가 의 제거를 처리합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 그런 다음 Astra Trident 구축과 디멘시작을 제거하고 설치의 일부로 생성한 Trident 포드를 삭제합니다.</block>
+  <block id="d92f992bb942ae97af56a9921f1fb6d0" category="paragraph">를 사용합니다<block ref="fe98497efedbe156ecc4b953aea77e07" prefix=" " category="inline-code"></block> 명령을 입력합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> CRD 및 관련 객체를 제외한 Astra Trident와 연결된 모든 리소스를 제거합니다.</block>
 </blocks>
