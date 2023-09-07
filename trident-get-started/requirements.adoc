@@ -188,79 +188,79 @@ link:../trident-reference/ports.html["Astra Trident 포트"]
 
 
 | v1.22.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.07.0
+* Docker.IO/NetApp/트라이덴트:23.07.1
 * Docker.IO/netapp/trident-autosupport:23.07
 * registry.k8s.io/sig-storage/csi-provisioner: v3.5.0
 * 레지스트리.k8s.io/sig-storage/csi-attacher:v4.3.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.8.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.2.2
 * registry.k8s.io/sig-storage/csi-node-driver-register:v2.8.0
-* Docker.IO/netapp/trident-operator:23.07.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:23.07.1 (선택 사항)
 
 
 
 
 | v1.23.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.07.0
+* Docker.IO/NetApp/트라이덴트:23.07.1
 * Docker.IO/netapp/trident-autosupport:23.07
 * registry.k8s.io/sig-storage/csi-provisioner: v3.5.0
 * 레지스트리.k8s.io/sig-storage/csi-attacher:v4.3.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.8.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.2.2
 * registry.k8s.io/sig-storage/csi-node-driver-register:v2.8.0
-* Docker.IO/netapp/trident-operator:23.07.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:23.07.1 (선택 사항)
 
 
 
 
 | v1.24.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.07.0
+* Docker.IO/NetApp/트라이덴트:23.07.1
 * Docker.IO/netapp/trident-autosupport:23.07
 * registry.k8s.io/sig-storage/csi-provisioner: v3.5.0
 * 레지스트리.k8s.io/sig-storage/csi-attacher:v4.3.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.8.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.2.2
 * registry.k8s.io/sig-storage/csi-node-driver-register:v2.8.0
-* Docker.IO/netapp/trident-operator:23.07.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:23.07.1 (선택 사항)
 
 
 
 
 | v1.25.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.07.0
+* Docker.IO/NetApp/트라이덴트:23.07.1
 * Docker.IO/netapp/trident-autosupport:23.07
 * registry.k8s.io/sig-storage/csi-provisioner: v3.5.0
 * 레지스트리.k8s.io/sig-storage/csi-attacher:v4.3.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.8.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.2.2
 * registry.k8s.io/sig-storage/csi-node-driver-register:v2.8.0
-* Docker.IO/netapp/trident-operator:23.07.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:23.07.1 (선택 사항)
 
 
 
 
 | v1.26.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.07.0
+* Docker.IO/NetApp/트라이덴트:23.07.1
 * Docker.IO/netapp/trident-autosupport:23.07
 * registry.k8s.io/sig-storage/csi-provisioner: v3.5.0
 * 레지스트리.k8s.io/sig-storage/csi-attacher:v4.3.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.8.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.2.2
 * registry.k8s.io/sig-storage/csi-node-driver-register:v2.8.0
-* Docker.IO/netapp/trident-operator:23.07.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:23.07.1 (선택 사항)
 
 
 
 
 | v1.27.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.07.0
+* Docker.IO/NetApp/트라이덴트:23.07.1
 * Docker.IO/netapp/trident-autosupport:23.07
 * registry.k8s.io/sig-storage/csi-provisioner: v3.5.0
 * 레지스트리.k8s.io/sig-storage/csi-attacher:v4.3.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.8.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.2.2
 * registry.k8s.io/sig-storage/csi-node-driver-register:v2.8.0
-* Docker.IO/netapp/trident-operator:23.07.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:23.07.1 (선택 사항)
 
 
 |===

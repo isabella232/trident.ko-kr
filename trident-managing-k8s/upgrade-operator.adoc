@@ -52,7 +52,7 @@ kubectl delete -f 23.04/trident-installer/deploy/bundle.yaml -n trident
 +
 [listing]
 ----
-kubectl create -f 23.07.0/trident-installer/deploy/bundle_post_1_25.yaml -n trident
+kubectl create -f 23.07.1/trident-installer/deploy/bundle_post_1_25.yaml -n trident
 ----
 
 
@@ -67,11 +67,11 @@ WARNING: Astra Trident가 설치된 Kubernetes 클러스터를 1.24에서 1.25 �
 
 .단계
 . 최신 Astra Trident 릴리스를 다운로드하십시오.
-. 를 사용합니다 `helm upgrade` 명령 위치 `trident-operator-23.07.0.tgz` 업그레이드하려는 버전을 반영합니다.
+. 를 사용합니다 `helm upgrade` 명령 위치 `trident-operator-23.07.1.tgz` 업그레이드하려는 버전을 반영합니다.
 +
 [listing]
 ----
-helm upgrade <name> trident-operator-23.07.0.tgz
+helm upgrade <name> trident-operator-23.07.1.tgz
 ----
 +
 [NOTE]
@@ -82,7 +82,7 @@ helm upgrade <name> trident-operator-23.07.0.tgz
 
 [listing]
 ----
-helm upgrade <name> trident-operator-23.07.0-custom.tgz --set tridentDebug=true
+helm upgrade <name> trident-operator-23.07.1-custom.tgz --set tridentDebug=true
 ----
 ====
 . 실행 `helm list` 차트와 앱 버전이 모두 업그레이드되었는지 확인합니다. 실행 `tridentctl logs` 디버그 메시지를 검토합니다.
@@ -102,11 +102,11 @@ NOTE: 설치 방법 간에 전환하기 전에 를 참조하십시오 link:../tr
 +
 [listing]
 ----
-# Download the release required [23.07.0]
-mkdir 23.07.0
-cd 23.07.0
-wget https://github.com/NetApp/trident/releases/download/v22.01.1/trident-installer-23.07.0.tar.gz
-tar -xf trident-installer-23.07.0.tar.gz
+# Download the release required [23.07.1]
+mkdir 23.07.1
+cd 23.07.1
+wget https://github.com/NetApp/trident/releases/download/v22.01.1/trident-installer-23.07.1.tar.gz
+tar -xf trident-installer-23.07.1.tar.gz
 cd trident-installer
 ----
 . 매니페스트에서 트라이디오케스트레이터 CRD를 만듭니다.
@@ -163,6 +163,6 @@ kubectl describe torc trident | grep Message -A 3
 Message:                Trident installed
 Namespace:              trident
 Status:                 Installed
-Version:                v23.07.0
+Version:                v23.07.1
 ----
 

@@ -19,7 +19,13 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 
 
 
-== 23.07의 새로운 기능
+== 23.07.1의 새로운 기능
+
+* Kubernetes: * 다운타임 없는 업그레이드를 지원하기 위한 데몬 세트 삭제 수정(link:https://github.com/NetApp/trident/issues/740["문제 #740"^])를 클릭합니다.
+
+
+
+== 23.07의 변경 사항
 
 
 
