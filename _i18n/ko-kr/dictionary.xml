@@ -845,8 +845,6 @@
   <block id="265ab4809f08d248e5045a8638ac7afa" category="paragraph">또한 'tridentctl get backend-n trident' 또는 'tridentctl get backend-o YAML-n trident'를 실행하여 존재하는 모든 백엔드 목록을 확인할 수 있습니다. 이 목록에는 tridentctl로 만든 백엔드 또한 포함됩니다.</block>
   <block id="93700a3ea9dc6d858638cd66cd2f2bfa" category="paragraph">백엔드를 업데이트해야 하는 이유는 여러 가지가 있을 수 있습니다.</block>
   <block id="56cdd71a65518838d73e00276ed6fab1" category="list-text">스토리지 시스템에 대한 자격 증명이 변경되었습니다. 자격 증명을 업데이트하려면 '트리펜엔드구성' 객체에 사용되는 Kubernetes Secret를 업데이트해야 합니다. Astra Trident가 자동으로 백엔드를 제공된 최신 자격 증명으로 업데이트합니다. 다음 명령을 실행하여 Kubernetes Secret를 업데이트하십시오.</block>
-  <block id="6ef0ccb954a07e30d4ff894b5256ae30" category="list-text">매개 변수(예: 사용 중인 ONTAP SVM의 이름)를 업데이트해야 합니다. 이 경우 Kubernetes를 통해 '트리펜엔드구성' 객체를 직접 업데이트할 수 있습니다.</block>
-  <block id="d4609cbe039ed7019e7151718c417bec" category="paragraph">또는 다음 명령을 실행하여 기존 '트리엔백엔드구성' CR을 변경합니다.</block>
   <block id="d38f034e9aa082af3ec19c23caff4b0f" category="paragraph">백엔드 업데이트에 실패하면 백엔드는 마지막으로 알려진 구성으로 계속 유지됩니다. 'kubtl get tbc&lt;tbc-name&gt;-o YAML-n trident' 또는 'kubtl t설명해 tbc&lt;tbc-name&gt;-n trident'를 실행하여 로그를 보고 원인을 확인할 수 있습니다.</block>
   <block id="5878b59fb3a8430928026b63b5ca336f" category="paragraph">구성 파일의 문제를 확인하고 수정한 후 update 명령을 다시 실행할 수 있습니다.</block>
   <block id="821b0ad941ad2559ef18eb8de56a470e" category="summary">Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저닝된 볼륨을 마운트할 수 있어야 합니다. 백엔드 중 하나에 ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup 드라이버를 사용하는 경우 작업자 노드에 NFS 툴이 필요합니다. 그렇지 않으면 iSCSI 도구가 필요합니다.</block>
@@ -2761,8 +2759,6 @@
   <block id="3b84c7b88317953423192c633a83db9f" category="cell">* 를 로 설정해야 합니다<block ref="79e0f325804dafbdaef73b3b17c0fd8d" prefix=" " category="inline-code"></block>. * null인 경우 기본값은 로 설정됩니다<block ref="2521ef5d58fc027d3121662b7d8f9ac2" prefix=" " category="inline-code"></block>.</block>
   <block id="1928bae58ae496b53ef1a163c3dbeeb4" category="cell">모드를 선택합니다. SMB 볼륨에 대해서는 * 를 비워 두어야 합니다. *</block>
   <block id="ded47128219e64b5f24343dab357151b" category="admonition">Astra Trident가 공백을 적용합니다<block ref="7cfbb6f07899c8071ff38e69dca190e2" prefix=" " category="inline-code"></block> 볼륨에 대해 생성할 수 있습니다. iSCSI 백엔드의 경우 적용하는 것이 좋습니다<block ref="01cd995fd9a843d3ca767e057de28873" prefix=" " category="inline-code"></block> StorageClass에 있습니다. 기존 StorageClasses를 삭제하고 를 사용하여 다시 생성해야 합니다<block ref="01cd995fd9a843d3ca767e057de28873" prefix=" " category="inline-code"></block> 지정됨.</block>
-  <block id="5b7532a7b48ec4e7b24ef0f5977589de" category="cell">클러스터 또는 SVM 관리 LIF의 IP 주소 MetroCluster의 원활한 전환을 위해 SVM 관리 LIF를 지정해야 합니다. FQDN(정규화된 도메인 이름)을 지정할 수 있습니다. 을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다<block ref="4a4ef9f92e69acc000120379678aadcf" prefix=" " category="inline-code"></block> 깃발. IPv6 주소는 대괄호로 묶어야 합니다(예: [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]).</block>
-  <block id="dccf51176372af70ec697fc2b11f83d8" category="cell">프로토콜 LIF의 IP 주소입니다. * iSCSI에 대해서는 지정하지 마십시오. * Astra Trident가 사용합니다 <block ref="2de2f329c45219df280af5a70ed7a17c" category="inline-link-macro-rx"></block> 다중 경로 세션을 설정하는 데 필요한 iSCI LIF를 검색하려면 경고 발생 시<block ref="ea76b2438eb5996eb2c347e7341ed59a" prefix=" " category="inline-code"></block> 명시적으로 정의됩니다.</block>
   <block id="3418e818bbbe397a49b7096a5ed87929" category="cell">SVM에서 파생됩니다</block>
   <block id="1545a9d9aae1b8b83497bbe9185d348b" category="cell">CHAP를 사용하여 ONTAP SAN 드라이버에 대한 iSCSI 인증 [Boolean]. 를 로 설정합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> Astra Trident에서 백엔드에 제공된 SVM에 대한 기본 인증으로 양방향 CHAP를 구성하고 사용합니다. 을 참조하십시오 <block ref="866e591dc2a03ecc454dad25a664ca86" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="2da9f60cc5b99a5987580c38e6db0842" category="cell">Base64 - 신뢰할 수 있는 CA 인증서의 인코딩된 값입니다. 선택 사항. 인증서 기반 인증에 사용됩니다.</block>
@@ -2783,7 +2779,6 @@
   <block id="065b7cc24b33be7af1e15f59024402d2" category="paragraph">Astra Trident가 선택한 가상 풀을 결정하고 스토리지 요구 사항을 충족시킵니다.</block>
   <block id="c632eed28bf53466df8b8a33aedab3af" category="list-text">가상 풀(있는 경우)은 원래 백엔드와 동일한 순서를 유지해야 합니다.</block>
   <block id="87a522ecb9df14bf978f6f1da8a654a8" category="list-text">를 제거하여 원본 PVC에 대한 액세스를 취소할 수 없습니다<block ref="287f26e3328f9ac0f3f4da2cdaddd3e2" prefix=" " category="inline-code"></block> 또는<block ref="11650d25d20af47978d85fd6e19c89aa" prefix=" " category="inline-code"></block> 주석 또는 삭제<block ref="d6995f631b22fb3f8e94aad1b40d1280" prefix=" " category="inline-code"></block> 있습니다. 액세스 권한을 취소하려면 하위 PVC를 삭제해야 합니다.</block>
-  <block id="41a45a3b55b7354dab0d81bb0ad06493" category="cell">프로토콜 LIF의 IP 주소입니다. 지정할 것을 권장합니다<block ref="ea76b2438eb5996eb2c347e7341ed59a" prefix=" " category="inline-code"></block>. 제공되지 않는 경우 Astra Trident는 SVM에서 데이터 LIF를 가져옵니다. NFS 마운트 작업에 사용할 FQDN(정규화된 도메인 이름)을 지정하면 여러 데이터 LIF에서 로드 밸런싱을 위해 라운드 로빈 DNS를 생성할 수 있습니다. 초기 설정 후에 변경할 수 있습니다. 을 참조하십시오 <block ref="b2c939cb81e81d99a25f4be74f517f2f" category="inline-xref-macro-rx"></block>. 을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다<block ref="4a4ef9f92e69acc000120379678aadcf" prefix=" " category="inline-code"></block> 깃발. IPv6 주소는 대괄호로 묶어야 합니다(예: [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]).</block>
   <block id="ae8df8316f5c485b7db4e7141e899701" category="cell">지정되지 않은 경우 SVM에서 지정 주소 또는 파생(권장하지 않음)</block>
   <block id="ad898a5f5863162f9c13e958485877d5" category="cell">자동 엑스포트 정책 생성 및 업데이트 [Boolean] 활성화 를 사용합니다<block ref="323e871cfe2e70ead9c713e8f3164f8f" prefix=" " category="inline-code"></block> 및<block ref="b9c40fbe9daa81e40e06509d5bbd5a6c" prefix=" " category="inline-code"></block> 옵션, Astra Trident는 엑스포트 정책을 자동으로 관리할 수 있습니다.</block>
   <block id="82530dd92610570d634788e7fac29c1b" category="cell">사용량이 이 비율을 초과하면 프로비저닝이 실패합니다. ONTAP * 용 아마존 FSx에는 * 가 적용되지 않습니다</block>
@@ -3293,9 +3288,7 @@
   <block id="d0c5a28c77fc4e37f7271d37f7372724" category="list-text">를 누릅니다<block ref="2e63b2ff91d4aeb88b54db5c90b71443" prefix=" " category="inline-code"></block> StorageClass는 의 세 번째 가상 풀에 매핑됩니다<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block> 백엔드. 실버 레벨 보호 및 20,000포인트 적립을 제공하는 유일한 풀입니다.</block>
   <block id="0191eea3640b05213a7522d6581a2fd5" category="list-text">를 클릭합니다<block ref="a96bee9dd30f3ea0af93b4c64ca1e4a4" prefix=" " category="inline-code"></block> StorageClass는 의 세 번째 가상 풀에 매핑됩니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 의 백엔드 및 두 번째 가상 풀입니다<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 백엔드. 5000 크레딧 포인트를 보유한 유일한 풀 서비스입니다.</block>
   <block id="c9410b4405958bba6c2f782b5da4c684" category="admonition">NetApp ONTAP에서 Astra Trident와 함께 Amazon FSx를 사용하는 경우 IP 주소 대신 LIF에 대한 DNS 이름을 지정하는 것이 좋습니다.</block>
-  <block id="69a7d5311f7a48959dd5b1cdbc093cec" category="example-title">ONTAP SAN 최소 구성 예</block>
   <block id="cd5dd52b9f0bba70b1336e13afe05818" category="paragraph">이것은 를 사용하는 기본 구성입니다<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> 드라이버.</block>
-  <block id="2964cdc4ba96fd3e792322682498d593" category="example-title">ONTAP SAN 이코노미 최소 구성 예</block>
   <block id="31089bb4131b18ca65c3d384cdd49644" category="example-title">양방향 CHAP 예</block>
   <block id="17baa03e9287aee400bc2e606d247156" category="paragraph">이 예에서는 를 사용하여 백엔드를 생성합니다<block ref="099cb468880f266cba40b49391fa46bc" prefix=" " category="inline-code"></block> 를 로 설정합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>.</block>
   <block id="7a4c6868ec70d1fbee3cb3a7483e21d0" category="listing-title">ONTAP SAN CHAP의 예</block>
@@ -3327,15 +3320,8 @@
 이 매개 변수는 사내 ONTAP의 경우 선택 사항입니다.
 
 이 매개변수는 ONTAP 백엔드에 대한 아마존 FSx에 필요하며 비워둘 수 없습니다.</block>
-  <block id="8bf31f01da88d12bf642a85ce9b3d644" category="example-title">에 대한 최소 구성 &lt;code&gt;ontap-nas-economy&lt;/code&gt;</block>
-  <block id="a48054bf8652cee4ee1d7dd8f08ffa1f" category="example-title">에 대한 최소 구성 &lt;code&gt;ontap-nas-flexgroup&lt;/code&gt;</block>
-  <block id="7cf30ff82fa389224936afba832f444f" category="example-title">SMB 볼륨을 위한 최소 구성</block>
-  <block id="e7a2472a002479764cade728d64dcd9e" category="example-title">인증서 기반 인증입니다</block>
   <block id="78e5b29e139db71ceb7ca6bc99b5e228" category="paragraph">이는 최소 백엔드 구성의 예입니다.<block ref="79fffaff4013c1e8c508e76646eca77b" prefix=" " category="inline-code"></block>,<block ref="19dce7ac7f5290fc8fa218ad0c858df5" prefix=" " category="inline-code"></block>, 및<block ref="8468461bca00a47ab5ddba2afc45f52c" prefix=" " category="inline-code"></block> (신뢰할 수 있는 CA를 사용하는 경우 선택 사항)는 에 채워집니다<block ref="9c15d32711e9ef8c6f76deda35452e13" prefix=" " category="inline-code"></block> 그리고 각각 클라이언트 인증서, 개인 키 및 신뢰할 수 있는 CA 인증서의 base64로 인코딩된 값을 사용합니다.</block>
-  <block id="30cc3e263c594cde4b2a573283348bb1" category="example-title">자동 엑스포트 정책</block>
   <block id="8c35a9f7d631f51e05811b36617db641" category="paragraph">이 예에서는 Astra Trident가 동적 엑스포트 정책을 사용하여 엑스포트 정책을 자동으로 생성하고 관리하도록 지시하는 방법을 보여 줍니다. 이 기능은 에 대해서도 동일하게 작동합니다<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 및<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block> 드라이버.</block>
-  <block id="85435c5aae5ecdb04ef9ad8f7d48e88a" category="example-title">IPv6 주소 사용</block>
-  <block id="4627b40a8eea6e0ef04368d12d76d239" category="example-title">SMB 볼륨을 사용하는 ONTAP용 Amazon FSx</block>
   <block id="33ef55e82416e2c1c4beb9cba9560b02" category="paragraph">를 클릭합니다<block ref="5910159ef86741f119f7574a9064b5b0" prefix=" " category="inline-code"></block> SMB 볼륨을 사용하는 ONTAP용 FSx에 매개 변수가 필요합니다.</block>
   <block id="ef0e40b987d8b9ad523bdde2bba5157a" category="summary">ONTAP NAS 드라이버를 사용하여 ONTAP 백엔드를 구성하기 위한 요구 사항, 인증 옵션 및 엑스포트 정책을 이해합니다.</block>
   <block id="c63609aba869239be30364b58d99b1a3" category="section-title">ONTAP 백엔드를 인증합니다</block>
@@ -3828,4 +3814,48 @@ FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
   <block id="660807cada2c8061fb92638cfe0568d0" category="list-text">간편한 업그레이드 및 재설치를 위해 Astra Trident를 제거해도 Astra Trident에서 생성된 CRD 또는 관련 개체는 제거되지 않습니다. Astra Trident 및 모든 데이터를 완전히 제거해야 하는 경우 를 참조하십시오 <block ref="9d95a644de0932ac2f909a32a488bd14" category="inline-link-macro-rx"></block>.</block>
   <block id="3277c9131339b6e3e8b8401d060b2ace" category="list-text">** 삭제<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block>: ** 를 제거하여<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> Astra Trident를 배포하는 데 사용된 CR은 작업자에게 Trident를 제거하도록 지시합니다. 작업자가 의 제거를 처리합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 그런 다음 Astra Trident 구축과 디멘시작을 제거하고 설치의 일부로 생성한 Trident 포드를 삭제합니다.</block>
   <block id="d92f992bb942ae97af56a9921f1fb6d0" category="paragraph">를 사용합니다<block ref="fe98497efedbe156ecc4b953aea77e07" prefix=" " category="inline-code"></block> 명령을 입력합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> CRD 및 관련 객체를 제외한 Astra Trident와 연결된 모든 리소스를 제거합니다.</block>
+  <block id="88251b113e3f1da4ba88b0d4283d23ed" category="paragraph">Astra Trident 설치에서 ONTAP SAN 드라이버를 생성하고 사용하는 방법을 알아보십시오. 이 섹션에서는 백엔드 구성 예제 및 Backend를 StorageClasses에 매핑하는 방법에 대한 세부 정보를 제공합니다.</block>
+  <block id="00100eed0a9df5b2142497897b426d44" category="cell">클러스터 또는 SVM 관리 LIF의 IP 주소입니다.
+
+FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
+
+을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다<block ref="4a4ef9f92e69acc000120379678aadcf" prefix=" " category="inline-code"></block> 깃발. IPv6 주소는 과 같이 대괄호로 정의해야 합니다<block ref="33e9328e92e3ef05629093b4693b3925" prefix=" " category="inline-code"></block>.
+
+원활한 MetroCluster 전환은 를 참조하십시오 <block ref="41195e18a4a81a05f5c5a6be365a5602" category="inline-xref-macro-rx"></block>.</block>
+  <block id="53f89913149599078aa2763e20f64db1" category="cell">프로토콜 LIF의 IP 주소입니다.
+
+* iSCSI에 대해서는 지정하지 마십시오. * Astra Trident가 사용합니다 <block ref="2de2f329c45219df280af5a70ed7a17c" category="inline-link-macro-rx"></block> 다중 경로 세션을 설정하는 데 필요한 iSCI LIF를 검색하려면 경고 발생 시<block ref="ea76b2438eb5996eb2c347e7341ed59a" prefix=" " category="inline-code"></block> 명시적으로 정의됩니다.
+
+*MetroCluster의 경우 생략합니다. * 를 참조하십시오 <block ref="41195e18a4a81a05f5c5a6be365a5602" category="inline-xref-macro-rx"></block>.</block>
+  <block id="19611c32e434019e356af9e0da999936" category="cell">사용할 스토리지 가상 머신입니다
+
+*MetroCluster의 경우 생략합니다. * 를 참조하십시오 <block ref="41195e18a4a81a05f5c5a6be365a5602" category="inline-xref-macro-rx"></block>.</block>
+  <block id="16d35233bf6aa04a2ff7b9ec19d64661" category="example-title">MetroCluster 예</block>
+  <block id="fd9313829353096dad83775c55ce66f8" category="paragraph">전환 및 전환 중에 백엔드 정의를 수동으로 업데이트할 필요가 없도록 백엔드를 구성할 수 있습니다 <block ref="6ffda35fd03109cc0d7cf7a1f79d2c30" category="inline-link-macro-rx"></block>.</block>
+  <block id="abc765e949697f25e96670a5cab132f3" category="paragraph">원활한 스위치오버 및 스위치백의 경우 를 사용하여 SVM을 지정합니다<block ref="a6ea6092cb7b9c5f31909eb4be8fa5ea" prefix=" " category="inline-code"></block> 를 생략합니다<block ref="ea76b2438eb5996eb2c347e7341ed59a" prefix=" " category="inline-code"></block> 및<block ref="924ff83ff1e671bacfb07ff12b845703" prefix=" " category="inline-code"></block> 매개 변수. 예를 들면 다음과 같습니다.</block>
+  <block id="d1cc287cede970a7472833938f39b940" category="list-text">매개 변수(예: 사용 중인 ONTAP SVM의 이름)를 업데이트해야 합니다.</block>
+  <block id="bb5c9e20ecc2d96bd9d91107161bf89b" category="list-text">업데이트할 수 있습니다<block ref="913a4b06671d1e04e6582a85afe3abbe" prefix=" " category="inline-code"></block> 다음 명령을 사용하여 Kubernetes를 통해 직접 오브젝트를 탐색합니다.</block>
+  <block id="ccec41e7609b17a7fe58691b5cbf68ea" category="list-text">또는 기존 을 변경할 수 있습니다<block ref="913a4b06671d1e04e6582a85afe3abbe" prefix=" " category="inline-code"></block> 다음 명령을 사용하는 CR:</block>
+  <block id="9c12c9edc9fbb4ee2f0331555cd8de1b" category="paragraph">Astra Trident 설치에 ONTAP NAS 드라이버를 생성하고 사용하는 방법을 알아보십시오. 이 섹션에서는 백엔드 구성 예제 및 Backend를 StorageClasses에 매핑하는 방법에 대한 세부 정보를 제공합니다.</block>
+  <block id="630864bd1af028bd4049fce933eeed43" category="cell">클러스터 또는 SVM 관리 LIF의 IP 주소입니다
+
+FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
+
+을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다<block ref="4a4ef9f92e69acc000120379678aadcf" prefix=" " category="inline-code"></block> 깃발. IPv6 주소는 과 같이 대괄호로 정의해야 합니다<block ref="33e9328e92e3ef05629093b4693b3925" prefix=" " category="inline-code"></block>.
+
+원활한 MetroCluster 전환은 를 참조하십시오 <block ref="41195e18a4a81a05f5c5a6be365a5602" category="inline-xref-macro-rx"></block>.</block>
+  <block id="55ef3b8d4908e1b161b74799585d5b2b" category="cell">프로토콜 LIF의 IP 주소입니다.
+
+지정할 것을 권장합니다<block ref="ea76b2438eb5996eb2c347e7341ed59a" prefix=" " category="inline-code"></block>. 제공되지 않는 경우 Astra Trident는 SVM에서 데이터 LIF를 가져옵니다. NFS 마운트 작업에 사용할 FQDN(정규화된 도메인 이름)을 지정하면 여러 데이터 LIF에서 로드 밸런싱을 위해 라운드 로빈 DNS를 생성할 수 있습니다.
+
+초기 설정 후에 변경할 수 있습니다. 을 참조하십시오 <block ref="b2c939cb81e81d99a25f4be74f517f2f" category="inline-xref-macro-rx"></block>.
+
+을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다<block ref="4a4ef9f92e69acc000120379678aadcf" prefix=" " category="inline-code"></block> 깃발. IPv6 주소는 과 같이 대괄호로 정의해야 합니다<block ref="33e9328e92e3ef05629093b4693b3925" prefix=" " category="inline-code"></block>.
+
+*MetroCluster의 경우 생략합니다. * 를 참조하십시오 <block ref="41195e18a4a81a05f5c5a6be365a5602" category="inline-xref-macro-rx"></block>.</block>
+  <block id="d24ddd1da817847ede47979e6e68c60e" category="example-title">ONTAP NAS FlexGroup 예</block>
+  <block id="8788fe54575b03d9b62dbb1a38a7a277" category="example-title">SMB 볼륨의 예입니다</block>
+  <block id="1ce00ab507a065e4febc57b244e25d18" category="example-title">자동 엑스포트 정책의 예</block>
+  <block id="5ef13a507a243e20eb0469a9d7670527" category="example-title">IPv6 주소 예</block>
+  <block id="ee8af8063e9ea3725931d232730b8a8e" category="example-title">SMB 볼륨을 사용하는 ONTAP용 Amazon FSx의 예</block>
 </blocks>

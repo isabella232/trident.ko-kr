@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/ontap-nas-examples.html 
-keywords: map backends, storage classes, trident backend, ontap-nas, ontap-nas-economy, ontap-nas-flexgroups, options, storageclasses, fsx 
+keywords: map backends, storage classes, trident backend, ontap-nas, ontap-nas-economy, ontap-nas-flexgroups, options, storageclasses, fsx, metrocluster 
 summary: Astra Trident 설치를 통해 ONTAP NAS 드라이버를 생성하고 사용하는 방법에 대해 알아보십시오. 이 섹션에서는 백엔드 구성 예제 및 백엔드를 StorageClasses에 매핑하는 방법에 대한 세부 정보를 제공합니다. 
 ---
 = ONTAP NAS 구성 옵션 및 예
@@ -12,7 +12,7 @@ summary: Astra Trident 설치를 통해 ONTAP NAS 드라이버를 생성하고 �
 
 
 [role="lead"]
-Astra Trident 설치를 통해 ONTAP NAS 드라이버를 생성하고 사용하는 방법에 대해 알아보십시오. 이 섹션에서는 백엔드 구성 예제 및 백엔드를 StorageClasses에 매핑하는 방법에 대한 세부 정보를 제공합니다.
+Astra Trident 설치에 ONTAP NAS 드라이버를 생성하고 사용하는 방법을 알아보십시오. 이 섹션에서는 백엔드 구성 예제 및 Backend를 StorageClasses에 매핑하는 방법에 대한 세부 정보를 제공합니다.
 
 
 
@@ -20,7 +20,7 @@ Astra Trident 설치를 통해 ONTAP NAS 드라이버를 생성하고 사용하�
 
 백엔드 구성 옵션은 다음 표를 참조하십시오.
 
-[cols="3"]
+[cols="1,3,2"]
 |===
 | 매개 변수 | 설명 | 기본값 
 
@@ -34,10 +34,29 @@ Astra Trident 설치를 통해 ONTAP NAS 드라이버를 생성하고 사용하�
 | 백엔드이름 | 사용자 지정 이름 또는 스토리지 백엔드 | 드라이버 이름 + “_” + dataLIF 
 
 
-| 마나멘타LIF | 클러스터 또는 SVM 관리 LIF의 IP 주소 MetroCluster의 원활한 전환을 위해 SVM 관리 LIF를 지정해야 합니다. FQDN(정규화된 도메인 이름)을 지정할 수 있습니다. 을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다 `--use-ipv6` 깃발. IPv6 주소는 대괄호로 묶어야 합니다(예: [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]). | “10.0.0.1”, “[2001:1234:ABCD::fee]” 
+| 마나멘타LIF | 클러스터 또는 SVM 관리 LIF의 IP 주소입니다
+
+FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
+
+을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다 `--use-ipv6` 깃발. IPv6 주소는 과 같이 대괄호로 정의해야 합니다 `[28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]`.
+
+원활한 MetroCluster 전환은 를 참조하십시오 <<mcc-best>>. | “10.0.0.1”, “[2001:1234:ABCD::fee]” 
 
 
-| 다타LIF | 프로토콜 LIF의 IP 주소입니다. 지정할 것을 권장합니다 `dataLIF`. 제공되지 않는 경우 Astra Trident는 SVM에서 데이터 LIF를 가져옵니다. NFS 마운트 작업에 사용할 FQDN(정규화된 도메인 이름)을 지정하면 여러 데이터 LIF에서 로드 밸런싱을 위해 라운드 로빈 DNS를 생성할 수 있습니다. 초기 설정 후에 변경할 수 있습니다. 을 참조하십시오 . 을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다 `--use-ipv6` 깃발. IPv6 주소는 대괄호로 묶어야 합니다(예: [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]). | 지정되지 않은 경우 SVM에서 지정 주소 또는 파생(권장하지 않음) 
+| 다타LIF | 프로토콜 LIF의 IP 주소입니다.
+
+지정할 것을 권장합니다 `dataLIF`. 제공되지 않는 경우 Astra Trident는 SVM에서 데이터 LIF를 가져옵니다. NFS 마운트 작업에 사용할 FQDN(정규화된 도메인 이름)을 지정하면 여러 데이터 LIF에서 로드 밸런싱을 위해 라운드 로빈 DNS를 생성할 수 있습니다.
+
+초기 설정 후에 변경할 수 있습니다. 을 참조하십시오 .
+
+을 사용하여 Astra Trident가 설치된 경우 IPv6 주소를 사용하도록 설정할 수 있습니다 `--use-ipv6` 깃발. IPv6 주소는 과 같이 대괄호로 정의해야 합니다 `[28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]`.
+
+*MetroCluster의 경우 생략합니다. * 를 참조하십시오 <<mcc-best>>. | 지정되지 않은 경우 SVM에서 지정 주소 또는 파생(권장하지 않음) 
+
+
+| 'VM'입니다 | 사용할 스토리지 가상 머신입니다
+
+*MetroCluster의 경우 생략합니다. * 를 참조하십시오 <<mcc-best>>. | SVM 'managementLIF'가 지정된 경우에 파생됩니다 
 
 
 | 자동 내보내기 정책 | 자동 엑스포트 정책 생성 및 업데이트 [Boolean] 활성화 를 사용합니다 `autoExportPolicy` 및 `autoExportCIDRs` 옵션, Astra Trident는 엑스포트 정책을 자동으로 관리할 수 있습니다. | 거짓 
@@ -64,9 +83,6 @@ Astra Trident 설치를 통해 ONTAP NAS 드라이버를 생성하고 사용하�
 
 
 | "암호" | 클러스터/SVM에 연결하는 암호 자격 증명 기반 인증에 사용됩니다 |  
-
-
-| 'VM'입니다 | 사용할 스토리지 가상 머신입니다 | SVM 'managementLIF'가 지정된 경우에 파생됩니다 
 
 
 | '토르agePrefix' | SVM에서 새 볼륨을 프로비저닝할 때 사용되는 접두사 설정한 후에는 업데이트할 수 없습니다 | "삼중류" 
@@ -109,11 +125,11 @@ Astra Trident 설치를 통해 ONTAP NAS 드라이버를 생성하고 사용하�
 |===
 
 
-=== 볼륨 프로비저닝을 위한 백엔드 구성 옵션
+== 볼륨 프로비저닝을 위한 백엔드 구성 옵션
 
 에서 이러한 옵션을 사용하여 기본 프로비저닝을 제어할 수 있습니다 `defaults` 섹션을 참조하십시오. 예를 들어, 아래 구성 예제를 참조하십시오.
 
-[cols="3"]
+[cols="1,3,2"]
 |===
 | 매개 변수 | 설명 | 기본값 
 
@@ -161,7 +177,7 @@ NOTE: Astra Trident와 함께 QoS 정책 그룹을 사용하려면 ONTAP 9.8 이
 
 
 
-==== 볼륨 프로비저닝의 예
+=== 볼륨 프로비저닝의 예
 
 다음은 기본값이 정의된 예입니다.
 
@@ -216,8 +232,8 @@ image::../media/volume-show-nas.png[에는 volume show 명령의 출력이 나�
 
 NOTE: Trident가 있는 NetApp ONTAP에서 Amazon FSx를 사용하는 경우 IP 주소 대신 LIF에 대한 DNS 이름을 지정하는 것이 좋습니다.
 
-.에 대한 최소 구성 <code>ontap-nas-economy</code>
-[%collapsible%open]
+.ONTAP NAS 경제도 예
+[%collapsible]
 ====
 [listing]
 ----
@@ -231,8 +247,8 @@ username: vsadmin
 password: password
 ----
 ====
-.에 대한 최소 구성 <code>ontap-nas-flexgroup</code>
-[%collapsible%open]
+.ONTAP NAS FlexGroup 예
+[%collapsible]
 ====
 [listing]
 ----
@@ -246,8 +262,25 @@ username: vsadmin
 password: password
 ----
 ====
-.SMB 볼륨을 위한 최소 구성
-[%collapsible%open]
+.MetroCluster 예
+[#mcc-best%collapsible]
+====
+전환 및 전환 중에 백엔드 정의를 수동으로 업데이트할 필요가 없도록 백엔드를 구성할 수 있습니다 link:../trident-reco/backup.html#svm-replication-and-recovery["SVM 복제 및 복구"].
+
+원활한 스위치오버 및 스위치백의 경우 를 사용하여 SVM을 지정합니다 `managementLIF` 를 생략합니다 `dataLIF` 및 `svm` 매개 변수. 예를 들면 다음과 같습니다.
+
+[listing]
+----
+---
+version: 1
+storageDriverName: ontap-nas
+managementLIF: 192.168.1.66
+username: vsadmin
+password: password
+----
+====
+.SMB 볼륨의 예입니다
+[%collapsible]
 ====
 [listing]
 ----
@@ -266,8 +299,8 @@ username: vsadmin
 password: password
 ----
 ====
-.인증서 기반 인증입니다
-[%collapsible%open]
+.인증서 기반 인증의 예
+[%collapsible]
 ====
 이는 최소 백엔드 구성의 예입니다. `clientCertificate`, `clientPrivateKey`, 및 `trustedCACertificate` (신뢰할 수 있는 CA를 사용하는 경우 선택 사항)는 에 채워집니다 `backend.json` 그리고 각각 클라이언트 인증서, 개인 키 및 신뢰할 수 있는 CA 인증서의 base64로 인코딩된 값을 사용합니다.
 
@@ -286,8 +319,8 @@ trustedCACertificate: zcyBbaG...b3Igb3duIGNsYXNz
 storagePrefix: myPrefix_
 ----
 ====
-.자동 엑스포트 정책
-[%collapsible%open]
+.자동 엑스포트 정책의 예
+[%collapsible]
 ====
 이 예에서는 Astra Trident가 동적 엑스포트 정책을 사용하여 엑스포트 정책을 자동으로 생성하고 관리하도록 지시하는 방법을 보여 줍니다. 이 기능은 에 대해서도 동일하게 작동합니다 `ontap-nas-economy` 및 `ontap-nas-flexgroup` 드라이버.
 
@@ -310,8 +343,8 @@ password: password
 nfsMountOptions: nfsvers=4
 ----
 ====
-.IPv6 주소 사용
-[%collapsible%open]
+.IPv6 주소 예
+[%collapsible]
 ====
 이 예에서는 를 보여 줍니다 `managementLIF` IPv6 주소 사용.
 
@@ -330,8 +363,8 @@ username: vsadmin
 password: password
 ----
 ====
-.SMB 볼륨을 사용하는 ONTAP용 Amazon FSx
-[%collapsible%open]
+.SMB 볼륨을 사용하는 ONTAP용 Amazon FSx의 예
+[%collapsible]
 ====
 를 클릭합니다 `smbShare` SMB 볼륨을 사용하는 ONTAP용 FSx에 매개 변수가 필요합니다.
 
