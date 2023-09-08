@@ -84,7 +84,7 @@ Astra Control은 로 생성한 볼륨을 위해 원활한 보호, 재해 복구,
 [WARNING]
 ====
 * 사용 `ontap-san-economy` 영구 볼륨 사용 수가 보다 높을 것으로 예상되는 경우에만 link:https://docs.netapp.com/us-en/ontap/volumes/storage-limits-reference.html["지원되는 ONTAP 볼륨 제한"^].
-* 사용 `ontap-nas-economy` 영구적 볼륨 사용량 수가 이보다 높을 것으로 예상되는 경우에만 해당됩니다 link:https://docs.netapp.com/us-en/ontap/volumes/storage-limits-reference.html["지원되는 ONTAP 볼륨 제한"^] 및 `ontap-san-economy` 드라이버를 사용할 수 없습니다.
+* 사용 `ontap-nas-economy` 영구 볼륨 사용 수가 보다 높을 것으로 예상되는 경우에만 link:https://docs.netapp.com/us-en/ontap/volumes/storage-limits-reference.html["지원되는 ONTAP 볼륨 제한"^] 및 `ontap-san-economy` 드라이버를 사용할 수 없습니다.
 * 사용하지 마십시오 `ontap-nas-economy` 데이터 보호, 재해 복구 또는 이동성이 필요할 것으로 예상되는 경우
 
 
