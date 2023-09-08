@@ -3862,4 +3862,7 @@ FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
   <block id="b686eadf7765eed3e9de8f9cbded0fe8" category="section-title">23.07.1의 새로운 기능</block>
   <block id="06918a8f55f386d79e64a70ca217b501" category="paragraph">* Kubernetes: * 다운타임 없는 업그레이드를 지원하기 위한 데몬 세트 삭제 수정(<block ref="6f993c83118cc4a1dd5351c8501e26c9" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
   <block id="ca6a658f1db1af30f178530c90cbe8fc" category="section-title">23.07의 변경 사항</block>
+  <block id="57154d2dcf591aaa3d4dcbfbba196075" category="inline-link-macro">지원되는 ONTAP 볼륨 제한</block>
+  <block id="7fe76f1189ac93d41118f7ba3e36e3ab" category="list-text">사용<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 영구 볼륨 사용 수가 보다 높을 것으로 예상되는 경우에만 <block ref="e5997a58d747f862af8a862cd1b54e31" category="inline-link-macro-rx"></block>.</block>
+  <block id="dd19a3f7646938a74ee3f35605e9c306" category="list-text">사용<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 영구적 볼륨 사용량 수가 이보다 높을 것으로 예상되는 경우에만 해당됩니다 <block ref="e5997a58d747f862af8a862cd1b54e31" category="inline-link-macro-rx"></block> 및<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 드라이버를 사용할 수 없습니다.</block>
 </blocks>
