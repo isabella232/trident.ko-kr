@@ -273,12 +273,12 @@ NOTE: VolumeSnapshot의 생수는 소스 PVC와는 독립적입니다. 소스 PV
 
 Kubernetes의 'VolumeSnapshotContent' 객체는 이미 프로비저닝된 볼륨에서 생성된 스냅샷을 나타냅니다. 이 스냅샷은 "PersistentVolume"과 유사하며 스토리지 클러스터에서 프로비저닝된 스냅샷을 나타냅니다. 스냅샷이 생성될 때 PersistentVolumeClaim 및 PersistentVolume 개체와 마찬가지로 VolumeSnapshotContent 개체는 스냅샷 생성을 요청한 VolumeSnapshot 객체에 대한 일대일 매핑을 유지합니다.
 
-
-NOTE: Trident는 'VolumeSnapshotContent' 객체를 생성한 후 프로비저닝하는 볼륨을 기준으로 Kubernetes 클러스터에 자동으로 등록합니다. 스스로 관리할 수 없습니다.
-
 VolumeSnapshotContent 객체에는 스냅샷 스냅샷(스냅샷 핸들 등)을 고유하게 식별하는 세부 정보가 포함되어 있습니다. 이 나프산Handle은 PV의 이름과 VolumeSnapshotContent 객체의 이름을 조합한 독특한 것이다.
 
 스냅샷 요청이 들어오면 Trident가 백엔드에 스냅샷을 생성합니다. 스냅샷이 생성된 후 Trident는 'VolumeSnapshotContent' 객체를 구성하여 해당 스냅샷을 Kubernetes API에 노출합니다.
+
+
+NOTE: 일반적으로 을 관리할 필요가 없습니다 `VolumeSnapshotContent` 오브젝트. 원하는 경우에는 예외입니다 link:../trident-use/vol-snapshots.html#import-a-volume-snapshot["볼륨 스냅샷을 가져옵니다"] Astra Trident 외부에서 생성됨.
 
 
 

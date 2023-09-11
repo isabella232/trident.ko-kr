@@ -141,21 +141,23 @@ spec:
 
 == 볼륨 스냅샷을 가져옵니다
 
-Astra Trident가 를 지원합니다 link:https://kubernetes.io/docs/concepts/storage/volume-snapshots/#static["Kubernetes 사전 프로비저닝된 스냅샷 프로세스"^] 클러스터 관리자가 을(를) 생성할 수 있도록 하려면 `VolumeSnapshotContent` Astra Trident 외부에서 생성된 스냅샷을 사용할 수 있도록 합니다.
+Astra Trident가 를 지원합니다 link:https://kubernetes.io/docs/concepts/storage/volume-snapshots/#static["Kubernetes 사전 프로비저닝된 스냅샷 프로세스"^] 클러스터 관리자가 을(를) 생성할 수 있도록 하려면 `VolumeSnapshotContent` Astra Trident 외부에 생성된 개체 및 스냅샷 가져오기
 
-볼륨 스냅샷을 가져오기 위해 Astra Trident는 PV 이름과 VolumeSnapshotContent 주석을 사용하여 내부 스냅샷을 찾고 생성된 TridentSnapshot CR 이름을 지정합니다.
-
-
-NOTE: 스냅샷에 상위 볼륨이 있어야 합니다.
+.시작하기 전에
+Astra Trident가 스냅샷의 상위 볼륨을 생성하거나 가져와야 합니다.
 
 .단계
-. * 클러스터 관리자: * 를 생성합니다 `VolumeSnapshotContent` 백엔드 스냅샷을 참조합니다.
+. * 클러스터 관리자: * 를 생성합니다 `VolumeSnapshotContent` 백엔드 스냅샷을 참조하는 객체입니다. 그러면 Astra Trident에서 스냅샷 워크플로우가 시작됩니다.
 +
-** 를 클릭합니다 `VolumeSnapshotContent` 주석은 이어야 합니다 `trident.netapp.io/internalSnapshotName: <backend-snapshot-name>`.
-** 를 클릭합니다 `snapshotHandle` 은(는) 이어야 합니다 `<pv-name>/<VolumeSnapshotContent-name>`. 이 정보는 의 외부 스냅샷 생성자가 Astra Trident에 제공하는 유일한 정보입니다 `ListSnapshots` 통화.
+** 에서 백엔드 스냅샷의 이름을 지정합니다 `annotations` 현재 `trident.netapp.io/internalSnapshotName: <"backend-snapshot-name">`.
+** 를 지정합니다 `<name-of-parent-volume-in-trident>/<volume-snapshot-content-name>` 인치 `snapshotHandle`. 이 정보는 의 외부 스냅샷 생성자가 Astra Trident에 제공하는 유일한 정보입니다 `ListSnapshots` 통화.
++
+
+NOTE: 를 클릭합니다 `<volumeSnapshotContentName>` CR 명명 제한으로 인해 백엔드 스냅샷 이름과 항상 일치할 수 없습니다.
+
 +
 .예
-다음 예제에서는 를 만듭니다 `VolumeSnapshotContent` 백 엔드 스냅샷의 경우 이름이 지정됩니다 `snap-01` 및 `volumeSnapshotRef` 이름 지정 `test-snapshot`.
+다음 예제에서는 을 만듭니다 `VolumeSnapshotContent` 백엔드 스냅샷을 참조하는 객체입니다 `snap-01`.
 
 +
 [listing]
@@ -163,28 +165,21 @@ NOTE: 스냅샷에 상위 볼륨이 있어야 합니다.
 apiVersion: snapshot.storage.k8s.io/v1
 kind: VolumeSnapshotContent
 metadata:
-  name: my-trident-snapshot-content
+  name: import-snap-content
   annotations:
-    trident.netapp.io/internalSnapshotName: snap-01  # This represents the name of the snapshot on the backend
+    trident.netapp.io/internalSnapshotName: "snap-01"  # This is the name of the snapshot on the backend
 spec:
   deletionPolicy: Retain
   driver: csi.trident.netapp.io
   source:
-    snapshotHandle: pvc-3e5cda7a-200b-46ab-b5d0-c9cd8db2cc01/my-trident-snapshot-content  # This is the only information provided to Trident in the ListSnapshots call
-  volumeSnapshotRef:
-    name: test-snapshot
-    namespace: default
+    snapshotHandle: pvc-f71223b5-23b9-4235-bbfe-e269ac7b84b0/import-snap-content # <import PV name or source PV name>/<volume-snapshot-content-name>
 ----
-+
-
-NOTE: 를 클릭합니다 `volumeSnapshotRef` CR 명명 제약 조건으로 인해 이름이 백엔드 스냅샷 이름과 항상 일치할 수 없습니다.
 
 
-
-. * 클러스터 관리자: * 바인딩 `VolumeSnapshot` 를 누릅니다 `VolumeSnapshotContent` 위치 `volumeSnapshotContentName` 에서 지정한 이름입니다 `volumeSnapshotRef`.
+. * 클러스터 관리자: * 를 생성합니다 `VolumeSnapshot` 을 참조하는 CR `VolumeSnapshotContent` 오브젝트. 그러면 를 사용할 수 있는 액세스가 필요합니다 `VolumeSnapshot` 지정된 네임스페이스에서.
 +
 .예
-다음 예에서는 볼륨 스냅샷을 바인딩합니다 `test-snapshot` 를 누릅니다 `VolumeSnapshotContent` 이름 지정 `my-trident-snapshot-content`.
+다음 예제에서는 을 만듭니다 `VolumeSnapshot` CR 이름 `import-snap` 을 참조합니다 `VolumeSnapshotContent` 이름 지정 `import-snap-content`.
 
 +
 [listing]
@@ -192,22 +187,22 @@ NOTE: 를 클릭합니다 `volumeSnapshotRef` CR 명명 제약 조건으로 인�
 apiVersion: snapshot.storage.k8s.io/v1
 kind: VolumeSnapshot
 metadata:
-  name: test-snapshot
-  namespace: default
+  name: import-snap
 spec:
+  # volumeSnapshotClassName: csi-snapclass (not required for pre-provisioned or imported snapshots)
   source:
-    volumeSnapshotContentName: my-trident-snapshot-content
+    volumeSnapshotContentName: import-snap-content
 ----
-. * 내부 처리(작업 필요 없음): * 외부 스냅샷 프로그램은 새로 생성된 VolumeSnapshotContent를 보고 를 실행합니다 `ListSnapshots` 통화. Astra Trident가 을 생성합니다 `TridentSnapshot`.
+. * 내부 처리 (아무 조치 필요 없음) : * 외부 snapshotter가 새로 만든 것을 인식합니다 `VolumeSnapshotContent` 를 실행합니다 `ListSnapshots` 통화. Astra Trident가 을 생성합니다 `TridentSnapshot`.
 +
-** 외부 스냅숏 작성기가 를 설정합니다 `VolumeSnapshotContent` 를 선택합니다 `readyToUse` 볼륨 스냅숏을 에 추가합니다 `true`.
+** 외부 스냅숏 작성기가 를 설정합니다 `VolumeSnapshotContent` 를 선택합니다 `readyToUse` 및 `VolumeSnapshot` 를 선택합니다 `true`.
 ** Trident가 돌아왔습니다 `readyToUse=true`.
 
 
 . * 모든 사용자: * 를 생성합니다 `PersistentVolumeClaim` 를 눌러 새 를 참조합니다 `VolumeSnapshot`, 위치 `spec.dataSource` (또는 `spec.dataSourceRef`) name 은 입니다 `VolumeSnapshot` 이름.
 +
 .예
-다음 예에서는 를 참조하는 PVC를 작성합니다 `test-snapshot` 볼륨 스냅샷
+다음 예에서는 를 참조하는 PVC를 작성합니다 `VolumeSnapshot` 이름 지정 `import-snap`.
 
 +
 [listing]
@@ -224,8 +219,7 @@ spec:
     requests:
       storage: 1Gi
   dataSource:
-    name: test-snapshot
-    namespace: default
+    name: import-snap
     kind: VolumeSnapshot
     apiGroup: snapshot.storage.k8s.io
 ----

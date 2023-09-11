@@ -39,7 +39,6 @@
   <block id="f8cf8c23afb5459dbf7c24b685caf85b" category="cell">위치(동쪽, 서쪽)</block>
   <block id="1a031eecbce49366e550273b9321b909" category="cell">노신입니다</block>
   <block id="b5585f3f9b45f391fee5dd15e6516450" category="cell">성능 노트(실버, 브론즈)</block>
-  <block id="f58e95baa778c9a2bd1a4597fb49d9b7" category="doc">ONTAP 드라이버</block>
   <block id="48cf24486d9a8e65a142b25682f19949" category="cell">드라이버</block>
   <block id="888a77f5ac0748b6c8001822417df8b6" category="cell">프로토콜</block>
   <block id="1b5e109e8afd1f9b7f5bbf951eea3442" category="cell">볼륨 모드</block>
@@ -936,14 +935,12 @@
   <block id="e1e08e40036f927a0e660c22aa837f88" category="inline-link">오염과 내약입니다</block>
   <block id="66b1e0aa9cd6e46c0b85fdf56a15154a" category="list-text"><block ref="66b1e0aa9cd6e46c0b85fdf56a15154a" category="inline-link-rx"></block></block>
   <block id="19ce3b2e7823907e5153f00fe04f64f7" category="doc">구성 옵션 및 예</block>
-  <block id="a85f55a18073767a4945eac810e72cb2" category="cell">"ONTAP-NAS", "ONTAP-NAS-이코노미", "ONTAP-NAS-Flexgroup", "ONTAP-SAN", "ONTAP-SAN-이코노미"</block>
   <block id="237d7a1666794b0937adde704bb4795c" category="cell">드라이버 이름 + “_” + dataLIF</block>
   <block id="07c54fe26be1e43601e99cd9d4fbe262" category="cell">마나멘타LIF</block>
   <block id="c560b8d02093547d93a87c72d8b16eaf" category="cell">“10.0.0.1”, “[2001:1234:ABCD::fee]”</block>
   <block id="bd81db53971fda3e688447b28c747d1a" category="cell">다타LIF</block>
   <block id="a0f3a965c12688befda99da850903dcb" category="cell">자동 내보내기 정책</block>
   <block id="b4ad0dff08149092bc3e4b16572af575" category="cell">자동 내보내기</block>
-  <block id="e537a193eb90bd46a645ce750bb5f3fc" category="cell">["0.0.0.0/0", "::/0"]"</block>
   <block id="eea443d4fcc24d4cd2cab08c2a6c062f" category="cell">'라벨'</block>
   <block id="b5cbbe3dadaab4a036fdb38af67ee936" category="cell">볼륨에 적용할 임의의 JSON 형식 레이블 세트입니다</block>
   <block id="1d76382e861d2df96647216b26d38948" category="cell">“”</block>
@@ -963,45 +960,34 @@
   <block id="3b890f58db76bb3003ada171cd18c4db" category="cell">“인명이름”입니다</block>
   <block id="c08068da3c5d19547544c4bd424a6b76" category="cell">'토르agePrefix'</block>
   <block id="e3f688f3aa653574b3253640aa98f47c" category="cell">SVM에서 새 볼륨을 프로비저닝할 때 사용되는 접두사 설정한 후에는 업데이트할 수 없습니다</block>
-  <block id="a996d2f8e072c583d6cc26aa1e4aba87" category="cell">"삼중류"</block>
   <block id="12d2394af47293b12d6b5f411f99a6d1" category="cell">제한선태사용법</block>
   <block id="7962423206a6704e20fa94085d19b517" category="cell">“”(기본적으로 적용되지 않음)</block>
-  <block id="9d96dfa28e7454a1119de523123a1e05" category="cell">“”(기본적으로 적용되지 않음)</block>
   <block id="c9a303edbc714d051896c3a678e59a8a" category="cell">'오만유연한'</block>
   <block id="79892588cbecd0b88729ea1a55b2a3a4" category="cell">FlexVol당 최대 LUN 수는 범위[50, 200]에 있어야 합니다.</block>
-  <block id="2d782f413944b272c911c548418a18a3" category="cell">“100”</block>
   <block id="ae0784115c8f815d4a2ca170c59f3c99" category="cell">문제 해결 시 사용할 디버그 플래그입니다. 예: {“api”:false, “method”:true}</block>
   <block id="07f6b23cad3d6da54012935ff972affe" category="cell">"케트리스퍼플랙스볼륨"</block>
   <block id="a13306f726fdf72d2d992a7ebdc63b1b" category="cell">FlexVol당 최대 qtree, 범위 [50, 300]에 있어야 함</block>
-  <block id="28326357ec2f8c06e01271c4ee2201f1" category="cell">“200”</block>
   <block id="f703d18584e163e18762e4dc13ad96a0" category="cell">'useREST'</block>
   <block id="88dce60232453383ab0d1c3c59cc931d" category="admonition">문제 해결 및 자세한 로그 덤프가 필요한 경우가 아니면 debugTraceFlags를 사용하지 마십시오.</block>
   <block id="193a49bcfb561fea878daa5efe72cad9" category="section-title">볼륨 프로비저닝을 위한 백엔드 구성 옵션</block>
   <block id="a0ee23c5b4cbd6a28a4143933891f927" category="cell">'팩시배부</block>
   <block id="26161d08a960162cd8633d0e23058aed" category="cell">LUN에 대한 공간 할당</block>
-  <block id="3be488c6a2bc52ceb7e8685ca24927d7" category="cell">"참"</block>
   <block id="a6bddf19eed00dbe2199864dee8454ce" category="cell">'예비공간'</block>
   <block id="3bce5b103341500856287f5347e19f28" category="cell">공간 예약 모드, "없음"(씬) 또는 "볼륨"(일반)</block>
-  <block id="e84c56670c389b09fcad5da7309a165b" category="cell">"없음"</block>
   <block id="0ec3875cf79264e4689a646be2f704b6" category="cell">냅샷정책</block>
   <block id="77f69e470b8766d2dc5df4b7f469ed72" category="cell">사용할 스냅샷 정책입니다</block>
   <block id="84d2c2c768bd1900489bad5fb46b4aac" category="cell">"qosPolicy"</block>
   <block id="54b94bba5d336f4e3d5fd7e88544fad1" category="cell">생성된 볼륨에 할당할 QoS 정책 그룹입니다. 스토리지 풀/백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다</block>
   <block id="952e3a12d35e717bf86a6000b0c08976" category="cell">적응성 QosPolicy</block>
   <block id="11f9fcd55c1d81cf352f86fe4cdfd444" category="cell">스냅샷 "0"에 예약된 볼륨의 백분율</block>
-  <block id="af6626456fa359992271ea88de34094f" category="cell">"스냅샷 정책"이 "없음"이면 "없음"</block>
   <block id="4be01095ce6e500084fc427e5dec61ac" category="cell">'plitOnClone'을 선택합니다</block>
   <block id="6f5c0c94b1a17baffd2c33facaa10db6" category="cell">생성 시 상위 클론에서 클론을 분할합니다</block>
-  <block id="19b4c847405d74614976bd1228f59c9f" category="cell">"거짓"</block>
   <block id="b091cbafedf94db98f17823d044434bd" category="cell">암호화</block>
   <block id="a463baaf6666da7178b6fc6a3c8a3fee" category="cell">'생태성 스타일'을 참조하십시오</block>
   <block id="41da49bdd3fd88b2ddc6be7d6df1b335" category="cell">새로운 볼륨에 대한 보안 스타일</block>
   <block id="31aa018945eb62580d68d360cba8ba54" category="cell">'계층화 정책'</block>
-  <block id="592a5879ac095ef6ca504cc43a9d7939" category="cell">"없음"을 사용하는 계층화 정책</block>
-  <block id="ee6508d5290be6edafccc6e0f471f120" category="cell">ONTAP 9.5 이전 SVM-DR 구성의 경우 "스냅샷 전용</block>
   <block id="c005e78d4bd808038335c32dd84cf7da" category="cell">unixPermissions</block>
   <block id="3e9a232d025270ed6767c385b8291871" category="cell">모드를 선택합니다</block>
-  <block id="2907de5eba980e910513008165ea2c2b" category="cell">'.snapshot' 디렉토리의 가시성을 제어합니다</block>
   <block id="647ce4e5394e2e595e46b4fc50a628e9" category="cell">내보내기 정책</block>
   <block id="c1a0e97f953c948568aed6c134fc9711" category="cell">사용할 엑스포트 정책</block>
   <block id="6522432847a0e6902318a976e5533f62" category="cell">“기본값”</block>
@@ -1352,7 +1338,6 @@
   <block id="f67af493d1fd83b472d5f27307b2f3d9" category="paragraph">볼륨 스냅샷 요청이 들어오면 Trident는 백엔드의 볼륨에 대한 스냅샷 생성을 자동으로 관리하고 고유한 'VolumeSnapshotContent' 객체를 생성하여 스냅샷을 표시합니다. 기존 PVC에서 스냅샷을 생성하고 새 PVC를 생성할 때 스냅샷을 DataSource로 사용할 수 있습니다.</block>
   <block id="53847015682974d066a919b1b45a44a5" category="admonition">VolumeSnapshot의 생수는 소스 PVC와는 독립적입니다. 소스 PVC가 삭제된 후에도 스냅샷이 지속됩니다. 연관된 스냅샷이 있는 PVC를 삭제할 때 Trident는 이 PVC에 대한 백업 볼륨을 * Deleting * 상태로 표시하지만 완전히 제거하지는 않습니다. 연결된 모든 스냅샷이 삭제되면 볼륨이 제거됩니다.</block>
   <block id="e562bdcf97dce6973a736651f45eb054" category="paragraph">Kubernetes의 'VolumeSnapshotContent' 객체는 이미 프로비저닝된 볼륨에서 생성된 스냅샷을 나타냅니다. 이 스냅샷은 "PersistentVolume"과 유사하며 스토리지 클러스터에서 프로비저닝된 스냅샷을 나타냅니다. 스냅샷이 생성될 때 PersistentVolumeClaim 및 PersistentVolume 개체와 마찬가지로 VolumeSnapshotContent 개체는 스냅샷 생성을 요청한 VolumeSnapshot 객체에 대한 일대일 매핑을 유지합니다.</block>
-  <block id="ca8035550d447392debfcaeb62855bd3" category="admonition">Trident는 'VolumeSnapshotContent' 객체를 생성한 후 프로비저닝하는 볼륨을 기준으로 Kubernetes 클러스터에 자동으로 등록합니다. 스스로 관리할 수 없습니다.</block>
   <block id="af741aec1c66e51c00d35a38f92471de" category="paragraph">VolumeSnapshotContent 객체에는 스냅샷 스냅샷(스냅샷 핸들 등)을 고유하게 식별하는 세부 정보가 포함되어 있습니다. 이 나프산Handle은 PV의 이름과 VolumeSnapshotContent 객체의 이름을 조합한 독특한 것이다.</block>
   <block id="b22c73e808eef321ee9941ec2e58b64f" category="paragraph">스냅샷 요청이 들어오면 Trident가 백엔드에 스냅샷을 생성합니다. 스냅샷이 생성된 후 Trident는 'VolumeSnapshotContent' 객체를 구성하여 해당 스냅샷을 Kubernetes API에 노출합니다.</block>
   <block id="7c43d52062b795d2d8e7f33b9dbbf671" category="paragraph">Kubernetes 사용자 지정 리소스는 관리자가 정의하며 비슷한 객체를 그룹화하는 데 사용되는 Kubernetes API의 엔드포인트입니다. Kubernetes에서는 오브젝트 컬렉션을 저장하기 위한 사용자 지정 리소스의 생성을 지원합니다. kubeck Get CRD를 실행하여 이러한 리소스 정의를 얻을 수 있습니다.</block>
@@ -2311,7 +2296,6 @@
   <block id="0d41f8565b8b74a59fc029ccf2becd83" category="list-text">관리 플러그인 시스템을 사용하여 Astra Trident를 시작합니다. 대치<block ref="3d689bd3819ead35ed794427bd12f459" prefix=" " category="inline-code"></block> 사용 중인 플러그인 버전(xxx.xx.x)을 사용합니다.</block>
   <block id="4f0e7dc30ffb3e25e75331c9afb2243a" category="cell">볼륨 모드</block>
   <block id="28c142639a9bbdd526b8eb986c13907d" category="paragraph">파일 시스템이 없습니다. 원시 블록 디바이스입니다</block>
-  <block id="0453a3e06be842b09a9479fe06f0dd13" category="paragraph">파일 시스템 볼륨 모드에서는 rwx를 사용할 수 없습니다.</block>
   <block id="964ea71824e902693c3ef56b57cf78be" category="summary">Astra Trident를 사용하면 기본 네임스페이스에서 볼륨을 생성하고 하나 이상의 보조 네임스페이스에서 공유할 수 있습니다.</block>
   <block id="98f770b0af18ca763421bac22b4b6805" category="section-title">피처</block>
   <block id="8ff961668c6784e84b25c265cbb629d7" category="paragraph">네임스페이스 간 볼륨 액세스에 대한 자세한 내용은 다음을 참조하십시오.</block>
@@ -2767,14 +2751,12 @@
   <block id="a0de2cc0c77c388210e1f48423eea29c" category="cell">SVM에서 새 볼륨을 프로비저닝할 때 사용되는 접두사 나중에 수정할 수 없습니다. 이 매개 변수를 업데이트하려면 새 백엔드를 생성해야 합니다.</block>
   <block id="e54cbd8ca5da26dc7e4be3bbfd23467e" category="cell">사용량이 이 비율을 초과하면 프로비저닝이 실패합니다. NetApp ONTAP 백엔드에 Amazon FSx를 사용하는 경우 를 지정하지 마십시오 <block ref="d57551b1efacf8a7be84b4d10c5a6e99" prefix=" " category="inline-code"></block>. 제공<block ref="679500f227997b45be97e3ca8115c678" prefix=" " category="inline-code"></block> 및<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> 애그리게이트 사용을 검색하고 Astra Trident를 사용하여 제한하는 데 필요한 권한이 포함되어 있지 않습니다.</block>
   <block id="f804cd6668c0728e26448509210268d3" category="cell">요청된 볼륨 크기가 이 값보다 큰 경우 용량 할당에 실패합니다. 또한 qtree 및 LUN에 대해 관리하는 볼륨의 최대 크기도 제한합니다.</block>
-  <block id="b3a74fee006256ec5d63fe251b553f1d" category="cell">문제 해결 시 사용할 디버그 플래그입니다. 예: {“api”:false, “method”:true} 문제 해결 및 자세한 로그 덤프가 필요한 경우가 아니면 사용하지 마십시오.</block>
   <block id="cc30671ec52693851659adb7020e02b1" category="cell">ONTAP REST API를 사용하는 부울 매개 변수입니다. * 기술 미리 보기 *<block ref="14d839191d1ecf387a15b5b0c802a8ae" prefix=" " category="inline-code"></block> 프로덕션 작업 부하가 아닌 테스트 환경에 권장되는** 기술 미리 보기로 제공됩니다**. 를 로 설정한 경우<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>, Astra Trident는 ONTAP REST API를 사용하여 백엔드와 통신합니다. 이 기능을 사용하려면 ONTAP 9.11.1 이상이 필요합니다. 또한 사용되는 ONTAP 로그인 역할에 에 대한 액세스 권한이 있어야 합니다<block ref="a9ba4dc88fa11d44cc7c0c918d174778" prefix=" " category="inline-code"></block> 응용 프로그램. 이는 사전 정의된 에 의해 충족됩니다<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> 및<block ref="fdb6ba311fad29ec53069808f10ebef4" prefix=" " category="inline-code"></block> 역할.<block ref="14d839191d1ecf387a15b5b0c802a8ae" prefix=" " category="inline-code"></block> 는 MetroCluster에서 지원되지 않습니다.</block>
   <block id="c59183b2f668b355e81e7bb1256f92b3" category="paragraph">에서 이러한 옵션을 사용하여 기본 프로비저닝을 제어할 수 있습니다<block ref="a4a918a45181164207929d52aec36aec" prefix=" " category="inline-code"></block> 섹션을 참조하십시오. 예를 들어, 아래 구성 예제를 참조하십시오.</block>
   <block id="d4fbfa2dd496728ba6294eb840ce25eb" category="cell">생성된 볼륨에 할당할 QoS 정책 그룹입니다. 스토리지 풀/백엔드에서 qosPolicy 또는 adapativeQosPolicy 중 하나를 선택합니다. Astra Trident와 함께 QoS 정책 그룹을 사용하려면 ONTAP 9.8 이상이 필요합니다. 비공유 QoS 정책 그룹을 사용하고 정책 그룹이 각 구성요소별로 적용되도록 하는 것이 좋습니다. 공유 QoS 정책 그룹은 모든 워크로드의 총 처리량에 대해 상한을 적용합니다.</block>
   <block id="b71ccf1062cee8c376a7eb37e3c42603" category="cell">LUKS 암호화를 사용합니다. 을 참조하십시오 <block ref="569f9f91cdcc19909b8acbf6f423daf7" category="inline-link-macro-rx"></block>.</block>
   <block id="e62f5d0a5a95571e25197caafe78cd98" category="section-title">볼륨 프로비저닝의 예</block>
   <block id="1b9ef354b22d8a8b125247fd538da4b2" category="section-title">가상 풀의 백엔드 예</block>
-  <block id="dbd1f003df542a684d9c10246dc8a88f" category="paragraph">Astra Trident는 "Comments" 필드에 제공 레이블을 설정합니다. FlexVol에 주석이 설정됩니다. Astra Trident는 프로비저닝할 때 가상 풀에 있는 모든 레이블을 스토리지 볼륨에 복사합니다. 편의를 위해 스토리지 관리자는 가상 풀 및 그룹 볼륨별로 레이블을 레이블별로 정의할 수 있습니다.</block>
   <block id="615c9f89b360c50cfba2b2de02584387" category="paragraph">다음 StorageClass 정의는 위의 가상 풀을 참조합니다. 를 사용합니다<block ref="bed471c4a88e25ac9a7e4a7b980700a8" prefix=" " category="inline-code"></block> 필드에서 각 StorageClass는 볼륨을 호스팅하는 데 사용할 수 있는 가상 풀을 호출합니다. 선택한 가상 풀에 볼륨이 정의되어 있습니다.</block>
   <block id="065b7cc24b33be7af1e15f59024402d2" category="paragraph">Astra Trident가 선택한 가상 풀을 결정하고 스토리지 요구 사항을 충족시킵니다.</block>
   <block id="c632eed28bf53466df8b8a33aedab3af" category="list-text">가상 풀(있는 경우)은 원래 백엔드와 동일한 순서를 유지해야 합니다.</block>
@@ -2785,9 +2767,7 @@
   <block id="9f0e1cc91ea4107261588e8f1bd02d07" category="cell">요청된 볼륨 크기가 이 값보다 큰 경우 용량 할당에 실패합니다. 또한 qtree 및 LUN에 대해 관리하는 볼륨의 최대 크기 및 을 제한합니다<block ref="8b08152c170e621ffcc8bfac7c4d6785" prefix=" " category="inline-code"></block> 옵션을 사용하면 FlexVol당 최대 qtree 수를 사용자 지정할 수 있습니다.</block>
   <block id="5c8b39f8ec19acb1fddb0b5c021f090d" category="cell">문제 해결 시 사용할 디버그 플래그입니다. 예: {“api”:false, “method”:true} 사용하지 마십시오<block ref="effa2d809c72dcb6cce15a1e0b040e63" prefix=" " category="inline-code"></block> 문제 해결 및 자세한 로그 덤프가 필요한 경우를 제외하고</block>
   <block id="b660669829d401dc613c20939ed01e6e" category="cell">쉼표로 구분된 NFS 마운트 옵션 목록입니다. Kubernetes 영구 볼륨의 마운트 옵션은 일반적으로 스토리지 클래스에서 지정되지만, 스토리지 클래스에 마운트 옵션을 지정하지 않으면 Astra Trident가 스토리지 백엔드의 구성 파일에 지정된 마운트 옵션을 사용하여 로 돌아갑니다. 스토리지 클래스 또는 구성 파일에 마운트 옵션이 지정되지 않은 경우 Astra Trident는 연결된 영구 볼륨에 마운트 옵션을 설정하지 않습니다.</block>
-  <block id="a2b63939d1ced2a10bc8dec4d3ef2604" category="cell">NFS 볼륨의 경우 "777", SMB 볼륨의 경우 비어 있음(해당 없음</block>
   <block id="0275de02c3bba722f4540469d23cc535" category="paragraph">이 예에서는 를 보여 줍니다<block ref="a6ea6092cb7b9c5f31909eb4be8fa5ea" prefix=" " category="inline-code"></block> IPv6 주소 사용.</block>
-  <block id="bc0c77920482bbcdc79d8f24445101e0" category="paragraph">Astra Trident는 "Comments" 필드에 제공 레이블을 설정합니다. 설명은 FlexVol for에서 설정됩니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 또는 FlexGroup for<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block>. Astra Trident는 프로비저닝할 때 가상 풀에 있는 모든 레이블을 스토리지 볼륨에 복사합니다. 편의를 위해 스토리지 관리자는 가상 풀 및 그룹 볼륨별로 레이블을 레이블별로 정의할 수 있습니다.</block>
   <block id="0bd54df5242a2a2e9eca045fc695b41f" category="section-title">업데이트<block ref="ea76b2438eb5996eb2c347e7341ed59a" prefix=" " category="inline-code"></block> 초기 구성 후</block>
   <block id="d0b121ba3c5e39bba858ccfcf5a75957" category="paragraph">다음 명령을 실행하여 초기 구성 후에 데이터 LIF를 변경할 수 있으며, 업데이트된 데이터 LIF가 포함된 새 백엔드 JSON 파일을 제공할 수 있습니다.</block>
   <block id="3fa13ec46a3746ee36c97d65fa53f096" category="admonition">PVC가 하나 이상의 포드에 연결된 경우 해당 포드를 모두 내린 다음 다시 불러와서 새 데이터 LIF가 적용되도록 해야 합니다.</block>
@@ -2864,9 +2844,6 @@
   <block id="ea3d51fb2b16acb7cb260f25bc8965b1" category="sidebar">Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 공급자 및 오케스트레이터입니다. Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다.</block>
   <block id="e267c2490c7d73d0ffa909b77267cfaf" category="inline-link-macro">Astra Control 복제 사전 요구 사항</block>
   <block id="9814801b0db6e324ebd72f671418de64" category="paragraph">Astra Control은 로 생성한 볼륨을 위해 원활한 보호, 재해 복구, 이동성(Kubernetes 클러스터 간에 볼륨 이동)을 제공합니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block>,<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block>, 및<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> 드라이버. 을 참조하십시오 <block ref="dfc981ac97be73172a3119f3b831eaf8" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
-  <block id="783c2760a502e1f1537de458c9dceb7a" category="list-text">를 사용해야 합니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 데이터 보호, 재해 복구 및 이동성을 필요로 하는 운영 워크로드에 적합합니다.</block>
-  <block id="a743248a7032cdf1d468935cf180bdee" category="list-text">사용<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 예상되는 볼륨 사용량이 ONTAP가 지원하는 것보다 훨씬 많을 것으로 예상됩니다.</block>
-  <block id="0655cc918eb576b740cfd35bbff9c8ac" category="list-text">사용<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 예상되는 볼륨 사용량이 ONTAP에서 지원하는 것보다 훨씬 많을 것으로 예상되는 경우에만 및 입니다<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 드라이버를 사용할 수 없습니다.</block>
   <block id="df7dec428425115b59101028bbebe58c" category="list-text">사용하지 마십시오<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 데이터 보호, 재해 복구 또는 이동성이 필요할 것으로 예상되는 경우</block>
   <block id="f5d176b3de4662ca3603a69ab08bc166" category="paragraph">프로비저닝된 NFS 볼륨에 액세스하기 위한 NAS 옵션입니다.</block>
   <block id="053b422d907cb55ac105c173adde1080" category="paragraph">NFS를 지원합니다<block ref="1d770934d44de09b0d24f04fd01708ba" prefix=" " category="inline-code"></block> 및<block ref="4913a9178621eadcdf191db17915fbcb" prefix=" " category="inline-code"></block> 보안 스타일. 기본값은 입니다<block ref="4913a9178621eadcdf191db17915fbcb" prefix=" " category="inline-code"></block>.</block>
@@ -3243,11 +3220,7 @@
   <block id="1cfd9b4e20d41cdca62f758d3b0cb58b" category="paragraph-title">Azure NetApp Files의 예</block>
   <block id="bd46b0a8c2c4c89a60ee85052ad2dd0e" category="paragraph">다음 예제에서는 을 가져옵니다<block ref="bc5779a2d33eeb1304bae57f15920cfc" prefix=" " category="inline-code"></block> 백엔드의 볼륨<block ref="d8dd89ab9d39f5487714722f9becb468" prefix=" " category="inline-code"></block> 볼륨 경로 포함<block ref="062b749476713f7b5bbc675159e90bad" prefix=" " category="inline-code"></block>.</block>
   <block id="0b8ca2be5f4fe564fb8e843cbc53703d" category="admonition">GKE 환경에서 필요 시 볼륨 스냅샷을 생성할 경우 스냅샷 컨트롤러를 생성하지 마십시오. GKE는 내장된 숨겨진 스냅샷 컨트롤러를 사용합니다.</block>
-  <block id="1f0c7a14cb87fb29a7346e9b4c770751" category="summary">Astra Trident는 ONTAP 클러스터와 통신할 수 있도록 5개의 고유한 ONTAP 스토리지 드라이버를 제공합니다.</block>
-  <block id="9e5914532c650440b8c559c303ae8e04" category="section-title">ONTAP용 Astra Trident 스토리지 드라이버</block>
-  <block id="bff3ebc4ae5702fb7f811ba9acabc13a" category="paragraph">Astra Trident는 다음 스토리지 드라이버를 제공하여 ONTAP 클러스터와 통신합니다. 지원되는 액세스 모드는 _ReadWriteOnce_(RWO), _ReadOnlyMany_(ROX), _ReadWriteMany_(rwx), _ReadWriteOncePod_(RWOP)입니다.</block>
   <block id="ad90b7d29d0d8a9c746868fe1f38ca90" category="paragraph">RWO, ROX, rwx, RWOP</block>
-  <block id="96b38cb92e67a8f09c2d13169b8bb555" category="paragraph">RWO, ROX, RWOP</block>
   <block id="f28228f84cb57be6c4037bf94a6afbd2" category="paragraph">연결된 스냅샷이 있는 영구 볼륨을 삭제하면 해당 Trident 볼륨이 "삭제 상태"로 업데이트됩니다. Astra Trident 볼륨을 삭제하려면 볼륨 스냅샷을 제거하십시오.</block>
   <block id="f736607140d617c85245dd139003582e" category="list-text">주어진 Kubernetes 클러스터의 모든 네임스페이스에 하나의 Astra Trident 인스턴스만 설치되어야 합니다.</block>
   <block id="69bdd71a77ecd87974ee464a579ebc8f" category="list-text">업그레이드할 때 제공하는 것이 중요합니다<block ref="f6e7f85d8aee15940665bf722f7afac2" prefix=" " category="inline-code"></block> 인치<block ref="f652904c3bfb48fb25a0a75f485f0ff6" prefix=" " category="inline-code"></block> Astra Trident에서 사용 삭제하고 다시 만들 수 있습니다<block ref="f652904c3bfb48fb25a0a75f485f0ff6" prefix=" " category="inline-code"></block> 기존 볼륨을 그대로 사용합니다.</block>
@@ -3343,7 +3316,6 @@
   <block id="7fbe6e40125b7d1b2f5c5c05044e7526" category="section-title">인증서 기반 인증을 사용합니다</block>
   <block id="3262251091b863054cfabf046c0e3493" category="paragraph">NFS 를 참조하십시오
 중소기업</block>
-  <block id="7f4a1ee6a22ce0658ba6215c997ba8d8" category="paragraph">"", NFS, SMB</block>
   <block id="e8a058c8c47f6e4976a9fc5b5c00ec92" category="summary">구성된 Kubernetes StorageClass를 사용하여 PV에 대한 액세스를 요청하는 PersistentVolume(PV) 및 PersistentVolumeClaim(PVC)을 생성합니다. 그런 다음 PV를 포드에 장착할 수 있습니다.</block>
   <block id="a3b7bd8edd528214a68ac3ceb5c9935c" category="doc">볼륨을 프로비저닝합니다</block>
   <block id="5ba2aa62f23a406454c266617a909b2c" category="inline-link-macro">_지속성 볼륨 _</block>
@@ -3399,21 +3371,8 @@
   <block id="8d9f716dc04d23bb9af0a64fef3bbbd9" category="paragraph">다음 예에서는 를 사용하여 PVC를 작성합니다<block ref="2599ab7993e15386327b6345bc1cc4e1" prefix=" " category="inline-code"></block> 를 데이터 소스로 사용합니다.</block>
   <block id="c2d480d58505386b1609d69c842aaf44" category="section-title">볼륨 스냅샷을 가져옵니다</block>
   <block id="868f2cc6f424bbd531c3ac4f053a8125" category="inline-link-macro">Kubernetes 사전 프로비저닝된 스냅샷 프로세스</block>
-  <block id="4310796b4ecbee0387355c47d26e79f6" category="paragraph">Astra Trident가 를 지원합니다 <block ref="a3174ff04e144786ca73f65ec9b76f58" category="inline-link-macro-rx"></block> 클러스터 관리자가 을(를) 생성할 수 있도록 하려면<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> Astra Trident 외부에서 생성된 스냅샷을 사용할 수 있도록 합니다.</block>
-  <block id="1e0e621824f4773df03d972d64c7892c" category="paragraph">볼륨 스냅샷을 가져오기 위해 Astra Trident는 PV 이름과 VolumeSnapshotContent 주석을 사용하여 내부 스냅샷을 찾고 생성된 TridentSnapshot CR 이름을 지정합니다.</block>
-  <block id="861e4c53fb0c4a84065e8b437db9f614" category="admonition">스냅샷에 상위 볼륨이 있어야 합니다.</block>
-  <block id="72aec08b3316c218c1f87677e0a51ed0" category="list-text">* 클러스터 관리자: * 를 생성합니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 백엔드 스냅샷을 참조합니다.</block>
-  <block id="c202fb047149bdb0116d555ea38063d1" category="list-text">를 클릭합니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 주석은 이어야 합니다<block ref="a9a33d21059c79525ad20995b3255379" prefix=" " category="inline-code"></block>.</block>
-  <block id="a2d471e4f64ec00dc1822cec2fd5995b" category="list-text">를 클릭합니다<block ref="39133e4ee9648ecb1a2dae934a22788a" prefix=" " category="inline-code"></block> 은(는) 이어야 합니다<block ref="6ae97f23de0ab758768fc09b1f363e79" prefix=" " category="inline-code"></block>. 이 정보는 의 외부 스냅샷 생성자가 Astra Trident에 제공하는 유일한 정보입니다<block ref="b4dfa9524f461a609ad4726f69b847e9" prefix=" " category="inline-code"></block> 통화.</block>
-  <block id="bddec5d361b469ba15d203f21980b727" category="paragraph">다음 예제에서는 를 만듭니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 백 엔드 스냅샷의 경우 이름이 지정됩니다<block ref="82645407d5a235bd775551b0a8455cd1" prefix=" " category="inline-code"></block> 및<block ref="2348ca4190691eced72fb5d6eeba6ae6" prefix=" " category="inline-code"></block> 이름 지정<block ref="8da549176ef577547f8791c32a1da91a" prefix=" " category="inline-code"></block>.</block>
-  <block id="f2048b2fb4bf379591abc388d9eade66" category="admonition">를 클릭합니다<block ref="2348ca4190691eced72fb5d6eeba6ae6" prefix=" " category="inline-code"></block> CR 명명 제약 조건으로 인해 이름이 백엔드 스냅샷 이름과 항상 일치할 수 없습니다.</block>
-  <block id="e3631e30d03158f2ee7f5abe3814ae2c" category="list-text">* 클러스터 관리자: * 바인딩<block ref="310a3378435f31620fbc3e7831ac7286" prefix=" " category="inline-code"></block> 를 누릅니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 위치<block ref="ac2950be4b8a710dd81ec4c2cff071da" prefix=" " category="inline-code"></block> 에서 지정한 이름입니다<block ref="2348ca4190691eced72fb5d6eeba6ae6" prefix=" " category="inline-code"></block>.</block>
-  <block id="60648a03d093f2a24b63474813c14f83" category="paragraph">다음 예에서는 볼륨 스냅샷을 바인딩합니다<block ref="8da549176ef577547f8791c32a1da91a" prefix=" " category="inline-code"></block> 를 누릅니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 이름 지정<block ref="5509d2df2b7e97b55de9ac8c06cfc6e1" prefix=" " category="inline-code"></block>.</block>
-  <block id="481efebb9fccb590cd87e8ac2f5dec96" category="list-text">* 내부 처리(작업 필요 없음): * 외부 스냅샷 프로그램은 새로 생성된 VolumeSnapshotContent를 보고 를 실행합니다<block ref="b4dfa9524f461a609ad4726f69b847e9" prefix=" " category="inline-code"></block> 통화. Astra Trident가 을 생성합니다<block ref="9a303ae09fee10afe60e5fd9e00e5e45" prefix=" " category="inline-code"></block>.</block>
-  <block id="373ac13882294b603bb64da84dc4fae5" category="list-text">외부 스냅숏 작성기가 를 설정합니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="bdc3aa73b1bbfc0b0212a8f6a8bb2077" prefix=" " category="inline-code"></block> 볼륨 스냅숏을 에 추가합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>.</block>
   <block id="f6e6b6f8bbabf2b4d61efaa16f96f7c7" category="list-text">Trident가 돌아왔습니다<block ref="0253f5e864e2646df8eab03ca4f066ee" prefix=" " category="inline-code"></block>.</block>
   <block id="2fae3f8997b56adf73a63fcf9e10a75d" category="list-text">* 모든 사용자: * 를 생성합니다<block ref="2b3f8e4d49589c4452db0a07d619d824" prefix=" " category="inline-code"></block> 를 눌러 새 를 참조합니다<block ref="310a3378435f31620fbc3e7831ac7286" prefix=" " category="inline-code"></block>, 위치<block ref="be455c19a1930c91806853db05c277d9" prefix=" " category="inline-code"></block> (또는<block ref="43cbd4bd62b601d2f5e0b618220b0f44" prefix=" " category="inline-code"></block>) name 은 입니다<block ref="310a3378435f31620fbc3e7831ac7286" prefix=" " category="inline-code"></block> 이름.</block>
-  <block id="dbb9cfb0687e7c3a92a94550713c8e6d" category="paragraph">다음 예에서는 를 참조하는 PVC를 작성합니다<block ref="8da549176ef577547f8791c32a1da91a" prefix=" " category="inline-code"></block> 볼륨 스냅샷</block>
   <block id="35d57da577b5f55299f7644e8b2de091" category="section-title">연결된 스냅샷이 있는 PV를 삭제합니다</block>
   <block id="b1bc7c11251b98a19ba1fc0ad08275ed" category="section-title">볼륨 스냅샷 컨트롤러를 배포합니다</block>
   <block id="785a74cfc0b587326abdc91a50fc4a95" category="paragraph">Astra Trident를 사용하면 ONTAP 백엔드의 엑스포트 정책을 동적으로 관리할 수 있습니다. 따라서 스토리지 관리자는 명시적 규칙을 수동으로 정의하는 대신 작업자 노드 IP에 허용되는 주소 공간을 지정할 수 있습니다. 엑스포트 정책 관리를 크게 간소화하므로, 엑스포트 정책을 수정하면 더 이상 스토리지 클러스터에 대한 수동 작업이 필요하지 않습니다. 또한 스토리지 클러스터에 대한 액세스를 지정된 범위의 IP가 있는 작업자 노드에만 제한함으로써 세분화된 자동 관리를 지원합니다.</block>
@@ -3500,7 +3459,6 @@
   <block id="fcf85cd17f22ed47dfe9169453e44dc1" category="paragraph">Astra Trident는 새 볼륨을 구성된 액세스 그룹과 연결하지만 액세스 그룹 자체를 생성하거나 관리하지 않습니다. 액세스 그룹은 스토리지 백엔드가 Astra Trident에 추가되기 전에 존재해야 하며, Kubernetes 클러스터의 모든 노드에 있는 iSCSI IQN을 포함해야 하며, 이 백엔드에서 프로비저닝한 볼륨을 잠재적으로 마운트할 수 있습니다. 대부분의 설치에서는 클러스터의 모든 작업자 노드를 포함합니다.</block>
   <block id="ca3c25915a30bef4ec583f6082477acf" category="paragraph">기본값을 사용하는 구성에서 구성을 수정하는 경우<block ref="47cb44be55a0dffa15dfc900a4c687be" prefix=" " category="inline-code"></block> 다른 사람을 사용하는 그룹에 대한 액세스 그룹에는 의 ID도 포함됩니다<block ref="47cb44be55a0dffa15dfc900a4c687be" prefix=" " category="inline-code"></block> 목록에 있는 액세스 그룹.</block>
   <block id="88e4f10ca85b56deb88df953f1b028c9" category="admonition">보호, 복구 및 이동성을 위해 Astra Control을 사용하는 경우 를 참조하십시오 <block ref="655b383e69b0d2ae89ad0b4bf7e37964" category="inline-xref-macro-rx"></block>.</block>
-  <block id="5e5ae25254f91097d911b58f235c0657" category="admonition">ONTAP 백엔드는 보안 역할(사용자 이름/암호)에 대한 로그인 자격 증명 또는 ONTAP 클러스터에 설치된 개인 키 및 인증서에 대해 인증할 수 있습니다. 기존 백엔드를 업데이트하여 를 사용하여 한 인증 모드에서 다른 인증 모드로 이동할 수 있습니다<block ref="defd1e55f93269ac9278afc086951ba8" prefix=" " category="inline-code"></block>.</block>
   <block id="c6891a9678e67fff611982bdd3dc5a4d" category="section-title">Astra Control 드라이버 호환성</block>
   <block id="b2edeceecc054572188ee3b08cd58c64" category="list-text">바이너리를 배치하고 구성 파일을 생성한 후 원하는 구성 파일을 사용하여 Trident 데몬을 시작합니다.</block>
   <block id="ed79382c003eb221606454bd2116c86f" category="summary">Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 공급자 및 오케스트레이터입니다. Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다. ** Astra Trident 23.07 업그레이드에 대한 중요 정보는 릴리스 노트를 참조하십시오.**</block>
@@ -3619,7 +3577,6 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
   <block id="7a15e63f1d0efc213151254bbc1b2d0d" category="doc">Trident 운영자 설치를 업그레이드합니다</block>
   <block id="0f443eb922735ce52f2b490ffca00e49" category="paragraph">수동으로 또는 Helm을 사용하여 Trident 연산자를 사용하여 Astra Trident를 업그레이드할 수 있습니다. Trident 운영자 설치에서 다른 Trident 운영자 설치로 업그레이드하거나, 에서 업그레이드할 수 있습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> Trident 운영자 버전에 설치. 검토 <block ref="5cffa5fbe758cc3901f0e33c78b29d1b" category="inline-link-macro-rx"></block> Trident 운영자 설치를 업그레이드하기 전에.</block>
   <block id="3ef75911ec16a9d0ba70cfd4e68dcb71" category="section-title">수동 설치를 업그레이드합니다</block>
-  <block id="5ed69ef07355e375ad2d6619b584ffe9" category="paragraph">클러스터 범위 Trident 운영자 설치에서 다른 클러스터 범위 Trident 운영자 설치로 를 업그레이드할 수 있습니다. Astra Trident 버전 21.01 이상에서는 클러스터 범위 연산자를 사용합니다.</block>
   <block id="b0e74afe1fdeb605b5c47b501c43b71b" category="inline-link-macro">설치된 버전</block>
   <block id="4642420c93e6091ce8421e89a16fd80d" category="admonition">네임스페이스 범위 운영자(버전 20.07~20.10)를 사용하여 설치된 Astra Trident에서 업그레이드하려면 의 업그레이드 지침을 사용하십시오 <block ref="567dd1ff029f25a404a69ff1e3c8d83b" category="inline-link-macro-rx"></block> 기술입니다.</block>
   <block id="eb7a4fa3d9aff7ec5b23abb8b82d516b" category="paragraph">Trident는 운영자를 설치하고 Kubernetes 버전에 대한 관련 오브젝트를 생성하는 데 사용할 수 있는 번들 파일을 제공합니다.</block>
@@ -3865,4 +3822,42 @@ FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
   <block id="57154d2dcf591aaa3d4dcbfbba196075" category="inline-link-macro">지원되는 ONTAP 볼륨 제한</block>
   <block id="7fe76f1189ac93d41118f7ba3e36e3ab" category="list-text">사용<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 영구 볼륨 사용 수가 보다 높을 것으로 예상되는 경우에만 <block ref="e5997a58d747f862af8a862cd1b54e31" category="inline-link-macro-rx"></block>.</block>
   <block id="a6b18abf4de4d534121b0cca3b164d74" category="list-text">사용<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 영구 볼륨 사용 수가 보다 높을 것으로 예상되는 경우에만 <block ref="e5997a58d747f862af8a862cd1b54e31" category="inline-link-macro-rx"></block> 및<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 드라이버를 사용할 수 없습니다.</block>
+  <block id="aa33f1094363f0d5dc3ca342e19ec6e0" category="paragraph">클러스터 범위 Trident 운영자 설치에서 다른 클러스터 범위 Trident 운영자 설치로 업그레이드할 수 있습니다. Astra Trident 버전 21.01 이상에서는 클러스터 범위 연산자를 사용합니다.</block>
+  <block id="2dd987ed7fd9d4bf9fb445cc7738223b" category="paragraph">Astra Trident가 를 지원합니다 <block ref="a3174ff04e144786ca73f65ec9b76f58" category="inline-link-macro-rx"></block> 클러스터 관리자가 을(를) 생성할 수 있도록 하려면<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> Astra Trident 외부에 생성된 개체 및 스냅샷 가져오기</block>
+  <block id="44028ad7f17b2bd495c04edf7e9e6b36" category="paragraph">Astra Trident가 스냅샷의 상위 볼륨을 생성하거나 가져와야 합니다.</block>
+  <block id="60f1523169568857649514e4ad6e4f40" category="list-text">* 클러스터 관리자: * 를 생성합니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 백엔드 스냅샷을 참조하는 객체입니다. 그러면 Astra Trident에서 스냅샷 워크플로우가 시작됩니다.</block>
+  <block id="44ce6c838becb17913e38bbe2b0096fe" category="list-text">에서 백엔드 스냅샷의 이름을 지정합니다<block ref="4ab6864fc58ecd8b598ee10dfe2ac311" prefix=" " category="inline-code"></block> 현재<block ref="d42b3f1355513faa92e8e6b438dffc73" prefix=" " category="inline-code"></block>.</block>
+  <block id="4f45cf3342acaba38e45ce6b09a79e04" category="list-text">를 지정합니다<block ref="62c99546614b1610927a47ea682b6d63" prefix=" " category="inline-code"></block> 인치<block ref="39133e4ee9648ecb1a2dae934a22788a" prefix=" " category="inline-code"></block>. 이 정보는 의 외부 스냅샷 생성자가 Astra Trident에 제공하는 유일한 정보입니다<block ref="b4dfa9524f461a609ad4726f69b847e9" prefix=" " category="inline-code"></block> 통화.</block>
+  <block id="e0668acdd6b1e131a130998184f4f7fc" category="admonition">를 클릭합니다<block ref="8773ea16ee304585aa1da2afd8f25434" prefix=" " category="inline-code"></block> CR 명명 제한으로 인해 백엔드 스냅샷 이름과 항상 일치할 수 없습니다.</block>
+  <block id="90a9b62f2d9107ff002b3ffcff75c334" category="paragraph">다음 예제에서는 을 만듭니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 백엔드 스냅샷을 참조하는 객체입니다<block ref="82645407d5a235bd775551b0a8455cd1" prefix=" " category="inline-code"></block>.</block>
+  <block id="b385a638aafc60dc851702d7207b1460" category="list-text">* 클러스터 관리자: * 를 생성합니다<block ref="310a3378435f31620fbc3e7831ac7286" prefix=" " category="inline-code"></block> 을 참조하는 CR<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 오브젝트. 그러면 를 사용할 수 있는 액세스가 필요합니다<block ref="310a3378435f31620fbc3e7831ac7286" prefix=" " category="inline-code"></block> 지정된 네임스페이스에서.</block>
+  <block id="4fd027fecd2883c25a41ecd68536b1d6" category="paragraph">다음 예제에서는 을 만듭니다<block ref="310a3378435f31620fbc3e7831ac7286" prefix=" " category="inline-code"></block> CR 이름<block ref="117b36cc8905f43e1ffd580e8b17723b" prefix=" " category="inline-code"></block> 을 참조합니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 이름 지정<block ref="ae79a6ea6405531b451963557819c96a" prefix=" " category="inline-code"></block>.</block>
+  <block id="b44a9af30767857be583043a573285f8" category="list-text">* 내부 처리 (아무 조치 필요 없음) : * 외부 snapshotter가 새로 만든 것을 인식합니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 를 실행합니다<block ref="b4dfa9524f461a609ad4726f69b847e9" prefix=" " category="inline-code"></block> 통화. Astra Trident가 을 생성합니다<block ref="9a303ae09fee10afe60e5fd9e00e5e45" prefix=" " category="inline-code"></block>.</block>
+  <block id="92aa04a2cf75f40187ef422ef48baa9f" category="list-text">외부 스냅숏 작성기가 를 설정합니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="bdc3aa73b1bbfc0b0212a8f6a8bb2077" prefix=" " category="inline-code"></block> 및<block ref="310a3378435f31620fbc3e7831ac7286" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>.</block>
+  <block id="5581736d9cc57d1f1193e52f799c03b2" category="paragraph">다음 예에서는 를 참조하는 PVC를 작성합니다<block ref="310a3378435f31620fbc3e7831ac7286" prefix=" " category="inline-code"></block> 이름 지정<block ref="117b36cc8905f43e1ffd580e8b17723b" prefix=" " category="inline-code"></block>.</block>
+  <block id="a288b0971f8f6c63f5e6510bcebf421b" category="cell">드라이버 이름 + "_" + dataLIF</block>
+  <block id="280a6a6866847c57b1a98bbcdc929268" category="cell">""(기본적으로 적용되지 않음)</block>
+  <block id="3eeb940d8060411516e1578a9fd70a15" category="cell">문제 해결 시 사용할 디버그 플래그입니다. 예: {"api":false, "method":true}
+
+문제 해결 중이지 않고 자세한 로그 덤프가 필요한 경우가 아니면 사용하지 마십시오.</block>
+  <block id="ebc576222020c2a2ae2fc769169f1d2a" category="cell">"참"</block>
+  <block id="c41b872c22969c2098a0056121589349" category="cell">공간 예약 모드, "없음"(씬) 또는 "볼륨"(일반)</block>
+  <block id="f6d62a8e69201d3806ac1ef24ec64c4d" category="cell">"없음"</block>
+  <block id="6b3e1a8dae111668b3e4e13c5949a7c0" category="cell">"0"인 경우<block ref="0a236e7685e50a59df980d0a30929d6c" prefix=" " category="inline-code"></block> "없음"이고, 그렇지 않으면""입니다.</block>
+  <block id="7639141e9ab9cd89ef8bc0b16fd34e6a" category="cell">"없음"을 사용하는 계층화 정책</block>
+  <block id="07b6e78dbb76bc803c585f0e0579de56" category="cell">ONTAP 9.5 SVM-DR 이전 구성의 경우 "스냅샷 전용</block>
+  <block id="472f537653935d084b34d91ce4119f17" category="paragraph">Astra Trident가 "Comments" 필드에 프로비저닝 레이블을 설정합니다. FlexVol에 주석이 설정됩니다. Astra Trident는 프로비저닝할 때 가상 풀에 있는 모든 레이블을 스토리지 볼륨에 복사합니다. 편의를 위해 스토리지 관리자는 가상 풀 및 그룹 볼륨별로 레이블을 레이블별로 정의할 수 있습니다.</block>
+  <block id="a486595fa1d9f349d9f9385ef2cb39f0" category="cell">"ONTAP-NAS", "ONTAP-NAS-Economy", "ONTAP-NAS-flexgroup", "ONTAP-SAN", "ONTAP-SAN-Economy"</block>
+  <block id="e50e8adc0d4818a8ed496eb95b3aea51" category="cell">["0.0.0.0/0",":/0"]'</block>
+  <block id="86780ad6247dfbcd90ca1455ee592852" category="cell">"트리덴트"</block>
+  <block id="e70237f69c6dce25fd2312b8d7f00b1e" category="cell">"100"</block>
+  <block id="7e6a32bd8074b1aa2c8c0d2529140ae4" category="cell">문제 해결 시 사용할 디버그 플래그입니다. 예: {"api":false, "method":true}
+
+사용하지 마십시오<block ref="effa2d809c72dcb6cce15a1e0b040e63" prefix=" " category="inline-code"></block> 문제 해결 및 자세한 로그 덤프가 필요한 경우를 제외하고</block>
+  <block id="89ffa293e05655bd6be9d422345be38a" category="cell">"200"</block>
+  <block id="3eda001907760c018e29ddf4cb7aa3c8" category="cell">NFS 볼륨의 경우 "777", SMB 볼륨의 경우 비어 있음(해당 없음</block>
+  <block id="7e8aabb1dc00b7d4aac6d0876f6507f4" category="cell">에 액세스를 제어합니다<block ref="a15da8cecb1f1192c4d913b8ba676121" prefix=" " category="inline-code"></block> 디렉토리</block>
+  <block id="5f04fbb334c6fb8030146ad8f76a953a" category="paragraph">Astra Trident가 "Comments" 필드에 프로비저닝 레이블을 설정합니다. 설명은 FlexVol for에서 설정됩니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 또는 FlexGroup for<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block>. Astra Trident는 프로비저닝할 때 가상 풀에 있는 모든 레이블을 스토리지 볼륨에 복사합니다. 편의를 위해 스토리지 관리자는 가상 풀 및 그룹 볼륨별로 레이블을 레이블별로 정의할 수 있습니다.</block>
+  <block id="aea10b5a282698ad4477a7113234ae65" category="inline-link-macro">볼륨 스냅샷을 가져옵니다</block>
+  <block id="4999635328ae714b8eb5f24934a24943" category="admonition">일반적으로 을 관리할 필요가 없습니다<block ref="d6a1ae997b76c43d7aaf3b22e620401e" prefix=" " category="inline-code"></block> 오브젝트. 원하는 경우에는 예외입니다 <block ref="0b4cdf17ac3e4123330cb8e51ec533a2" category="inline-link-macro-rx"></block> Astra Trident 외부에서 생성됨.</block>
 </blocks>
