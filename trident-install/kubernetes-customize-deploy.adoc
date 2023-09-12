@@ -35,27 +35,62 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 
 이 표에 자세히 나와 있습니다 `TridentOrchestrator` 속성.
 
-[cols="3"]
+[cols="1,2,1"]
 |===
 | 매개 변수 | 설명 | 기본값 
+
+
+| `namespace` | Astra Trident를 설치할 네임스페이스입니다 | "기본값" 
+
+
+| "버그" | Astra Trident에 대한 디버깅을 활성화합니다 | 거짓 
+
+
+| `enableForceDetach` | `ontap-san` 및 `ontap-san-economy` 만 해당. Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 관리자가 마운트된 볼륨이 있는 워크로드를 노드가 정상 상태가 아닌 경우 새 노드로 안전하게 마이그레이션할 수 있도록 합니다. * 이것은 23.04의 실험 기능입니다. * 를 참조하십시오 <<강제 분리에 대한 세부 정보>> 을 참조하십시오. | 거짓입니다 
+
+
+| `windows` | 를 로 설정합니다 `true` Windows 작업자 노드에 설치할 수 있습니다. | 거짓 
+
+
+| `useIPv6` | IPv6를 통해 Astra Trident를 설치합니다 | 거짓 
+
+
+| `k8sTimeout` | Kubernetes 작업 시간이 초과되었습니다 | 30초 
+
+
+| `silenceAutosupport` | AutoSupport 번들을 NetApp로 보내지 마십시오
+자동으로 계층화 | 거짓 
 
 
 | 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/trident-autosupport:23.07" 
 
 
-| 자동 지원 프록시 | AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다 | "http://proxy.example.com:8888"[] 
+| 자동 지원 프록시 | AutoSupport를 보내는 프록시의 주소/포트입니다
+원격 측정 | "http://proxy.example.com:8888"[] 
 
 
-| 'controllerPluginNodeSelector' | Trident 컨트롤러 CSI 플러그인을 실행하는 Pod용 추가 노드 선택기. 는 와 동일한 형식을 따릅니다 `pod.spec.nodeSelector`. | 기본값 없음, 선택 사항 
+| "제거"를 선택합니다 | Astra Trident를 제거하는 데 사용되는 플래그입니다 | 거짓 
 
 
-| '컨트롤러 PluginTolerations' | Trident 컨트롤러 CSI 플러그인을 실행하는 Pod의 허용 설정을 재정의합니다. 는 와 동일한 형식을 따릅니다 `pod.spec.Tolerations`. | 기본값 없음, 선택 사항 
+| `logFormat` | 사용할 Astra Trident 로깅 형식[text,json] | "텍스트" 
 
 
-| "버그" | Astra Trident에 대한 디버깅을 활성화합니다 | 거짓입니다 
+| 트리덴티이미지 | 설치할 Astra Trident 이미지 | "NetApp/트라이덴트: 23.07" 
 
 
-| `enableForceDetach` | `ontap-san` 및 `ontap-san-economy` 만 해당. Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 관리자가 마운트된 볼륨이 있는 워크로드를 노드가 정상 상태가 아닌 경우 새 노드로 안전하게 마이그레이션할 수 있도록 합니다. * 이것은 23.04의 실험 기능입니다. * 를 참조하십시오 <<강제 분리에 대한 세부 정보>> 을 참조하십시오. | 거짓입니다 
+| 'imageRegistry'입니다 | 형식의 내부 레지스트리 경로입니다
+`<registry FQDN>[:port][/subpath]` | "k8s.gcr.io/sig-storage"(k8s 1.19+)
+또는 "quay.io/k8scsi" 
+
+
+| 쿠벨레트디렉토리 | 호스트의 kubelet 디렉토리에 대한 경로입니다 | "/var/lib/kubelet" 
+
+
+| `wipeout` | 의 전체 제거를 수행하기 위해 삭제할 리소스 목록입니다
+아스트라 트리덴트 |  
+
+
+| 'imagePullSecrets' | 내부 레지스트리에서 이미지를 가져올 수 있는 비밀 |  
 
 
 | `imagePullPolicy` | Trident 운영자의 이미지 풀 정책을 설정합니다. 유효한 값은 다음과 같습니다.
@@ -64,16 +99,16 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 `Never` 이미지를 당기지 않습니다. | `IfNotPresent` 
 
 
-| 'controllerPluginNodeSelector' | Pod용 추가 노드 선택기 pod.spec.nodeSelector 과 동일한 형식을 따릅니다. | 기본값 없음, 선택 사항 
+| 'controllerPluginNodeSelector' | Pod용 추가 노드 선택기	는 와 동일한 형식을 따릅니다 `pod.spec.nodeSelector`. | 기본값 없음, 선택 사항 
 
 
-| '컨트롤러 PluginTolerations' | Pod에 대한 Kubernetes 허용 설정을 재정의합니다. pod.spec.Tolerations와 같은 형식을 따릅니다. | 기본값 없음, 선택 사항 
+| '컨트롤러 PluginTolerations' | Pod에 대한 Kubernetes 허용 설정을 재정의합니다. 는 와 동일한 형식을 따릅니다 `pod.spec.Tolerations`. | 기본값 없음, 선택 사항 
 
 
-| 노드플러거노드 선택기 | Pod용 추가 노드 선택기 pod.spec.nodeSelector 과 동일한 형식을 따릅니다. | 기본값 없음, 선택 사항 
+| 노드플러거노드 선택기 | Pod용 추가 노드 선택기 는 와 동일한 형식을 따릅니다 `pod.spec.nodeSelector`. | 기본값 없음, 선택 사항 
 
 
-| 노드 PluginTolerations | Pod에 대한 Kubernetes 허용 설정을 재정의합니다. pod.spec.Tolerations와 같은 형식을 따릅니다. | 기본값 없음, 선택 사항 
+| 노드 PluginTolerations | Pod에 대한 Kubernetes 허용 설정을 재정의합니다. 는 와 동일한 형식을 따릅니다 `pod.spec.Tolerations`. | 기본값 없음, 선택 사항 
 |===
 
 NOTE: 포드 매개 변수 포맷에 대한 자세한 내용은 을 참조하십시오 link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/["노드에 Pod 할당"^].

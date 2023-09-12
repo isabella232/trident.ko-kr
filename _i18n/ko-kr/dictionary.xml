@@ -2883,9 +2883,6 @@
   <block id="361d997e700d422835e56b644784bb7e" category="list-text">노드 플러그인은 스토리지에 노드를 연결하는 작업을 처리합니다.</block>
   <block id="1736b3823517cc62395e05494b09ddb9" category="admonition"><block ref="b2c66bca748ffde67c7b6817cb8dd795" prefix="" category="inline-code"></block> 에 지정됩니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> Astra Trident가 설치된 네임스페이스를 나타냅니다. Astra Trident가 설치된 후에는 이 매개 변수 * 를 업데이트할 수 없습니다. 이렇게 하려고 하면 가 발생합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 변경할 상태입니다<block ref="d7c8c85bf79bbe1b7188497c32c3b0ca" prefix=" " category="inline-code"></block>. Astra Trident는 네임스페이스 간에 마이그레이션되지 않습니다.</block>
   <block id="a739aa7f082abebdf65f4b114dd3ad7d" category="paragraph">이 표에 자세히 나와 있습니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 속성.</block>
-  <block id="b520e4144a27e0f45e8e22d5ccd8328d" category="cell">Pod용 추가 노드 선택기 pod.spec.nodeSelector 과 동일한 형식을 따릅니다.</block>
-  <block id="e138e2a410035dad85499a3dabe692d5" category="cell">Pod에 대한 Kubernetes 허용 설정을 재정의합니다. pod.spec.Tolerations와 같은 형식을 따릅니다.</block>
-  <block id="d4cc4428c9a6422247c8ff288ea4b5eb" category="cell">Pod용 추가 노드 선택기 pod.spec.nodeSelector 과 동일한 형식을 따릅니다.</block>
   <block id="c350769115c3c8e4132e9c428b166b12" category="doc">Astra Trident 아키텍처</block>
   <block id="d90582d42d65d5af05c3d40ad0eb4987" category="admonition">Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경우 Azure NetApp Files를 설정하고 NFS 볼륨을 생성하려면 몇 가지 초기 구성이 필요합니다. 을 참조하십시오<block ref="b6e93c3bfc36cf835c63e42e55586d97" category="inline-link-rx"></block>.</block>
   <block id="84444089b52eed627a838de74ae8d652" category="section-title">NFS 및 SMB 볼륨의 사전 요구 사항</block>
@@ -3022,9 +3019,6 @@
   <block id="f53514cf8829a41463c245b088ae732e" category="paragraph">Astra Trident를 Windows 노드에서 실행하려면 다음을 수행합니다.</block>
   <block id="a921baa9e8c81f13d59fed4fce57ec88" category="example-title">예 2: 강제 분리 사용</block>
   <block id="c5b5b00ff1b3a892c8694ab932cbf9ca" category="paragraph">강제 분리에 대한 자세한 내용은 을 참조하십시오 <block ref="63cac71755fb6ef1f1fea34cf4037121" category="inline-link-macro-rx"></block>.</block>
-  <block id="85be37285c336ae757f07d58eb0d7ea2" category="cell">AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다</block>
-  <block id="33fb79e5ddc4ef005332c52292e20c59" category="cell">Trident 컨트롤러 CSI 플러그인을 실행하는 Pod용 추가 노드 선택기. 는 와 동일한 형식을 따릅니다<block ref="6ae8be3433bfc36ced79a1271e6ebf11" prefix=" " category="inline-code"></block>.</block>
-  <block id="4a1522be236156dbc873375541a627e1" category="cell">Trident 컨트롤러 CSI 플러그인을 실행하는 Pod의 허용 설정을 재정의합니다. 는 와 동일한 형식을 따릅니다<block ref="f1fa64fcf5077601cb803e995a51fa4f" prefix=" " category="inline-code"></block>.</block>
   <block id="30042512b273723cf2eec336b6576d84" category="cell"><block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix="" category="inline-code"></block> 및<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 만 해당. Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 관리자가 마운트된 볼륨이 있는 워크로드를 노드가 정상 상태가 아닌 경우 새 노드로 안전하게 마이그레이션할 수 있도록 합니다. * 이것은 23.04의 실험 기능입니다. * 를 참조하십시오 <block ref="620ff2552a2d798650bb027eb1271b17" category="inline-xref-macro-rx"></block> 을 참조하십시오.</block>
   <block id="38a0b9f59e6fe23e1617dc0e78498afe" category="section-title">강제 분리에 대한 세부 정보</block>
   <block id="20c0c9efee2da2645ec0eefaf3c75d8c" category="inline-link-macro">Kubernetes: 노드 정상 종료 아님</block>
@@ -3859,4 +3853,35 @@ FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
   <block id="0b5b18e58101a5fdc2d3618c85a04814" category="list-text">** 삭제<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block>**: 를 제거합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> Astra Trident를 배포하는 데 사용된 CR은 작업자에게 Trident를 제거하도록 지시합니다. 작업자가 의 제거를 처리합니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 그런 다음 Astra Trident 구축과 디멘시작을 제거하고 설치의 일부로 생성한 Trident 포드를 삭제합니다.</block>
   <block id="566ef0ea3e228b1c501652e83def2c9d" category="paragraph">를 사용합니다<block ref="fe98497efedbe156ecc4b953aea77e07" prefix=" " category="inline-code"></block> 명령을 입력합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> CRD 및 관련 오브젝트를 제외하고 Astra Trident에 연결된 모든 리소스를 제거하려면 다음과 같이 하십시오.</block>
   <block id="3d11c687c20c6a6a9fec2b3d07f861f0" category="section-title">23.07.1의 새로운 기능</block>
+  <block id="f3f30d479f6e3b393d917a3b2f88c770" category="cell"><block ref="89801e9e98979062e84647433a8ed3e9" prefix="" category="inline-code"></block></block>
+  <block id="c9db68ea6cff44f42ac5acbbfccec399" category="cell">Astra Trident를 설치할 네임스페이스입니다</block>
+  <block id="fbbd7b4b14060c4fdb02f92c4c08e702" category="cell">를 로 설정합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> Windows 작업자 노드에 설치할 수 있습니다.</block>
+  <block id="16e20a5ba5cd6442f3cdd49b16e8a5f3" category="cell"><block ref="8bd1aa960638ccc5869583e34d702ce6" prefix="" category="inline-code"></block></block>
+  <block id="3dd791c4864e77ae6cf11572e2d7b374" category="cell">IPv6를 통해 Astra Trident를 설치합니다</block>
+  <block id="077e99fe42ced522b462656cffffe09c" category="cell"><block ref="d5276bb17ae062102e883a18454c2f1b" prefix="" category="inline-code"></block></block>
+  <block id="4448b73eac083e33b7142f0e5790fac5" category="cell">Kubernetes 작업 시간이 초과되었습니다</block>
+  <block id="e4d71bf2abad047425f4463e27bb83b0" category="cell">30초</block>
+  <block id="42cf123e93ecc5c0297652edbc547fc0" category="cell"><block ref="2fac1659431903a30e063d49b3effb9d" prefix="" category="inline-code"></block></block>
+  <block id="4a213b7c3b997ffb0794b25909381d16" category="cell">AutoSupport 번들을 NetApp로 보내지 마십시오
+자동으로 계층화</block>
+  <block id="7f54ca385f028308d19e228ce0534a47" category="cell">AutoSupport를 보내는 프록시의 주소/포트입니다
+원격 측정</block>
+  <block id="076bc379a24183ce77834bac007ca852" category="cell">Astra Trident를 제거하는 데 사용되는 플래그입니다</block>
+  <block id="cad060d2f14dbf08315c20014ed31daa" category="cell"><block ref="0b19d236934f609fe765b504a36b637e" prefix="" category="inline-code"></block></block>
+  <block id="acfc4a8e6d53bad27d4e2d393bfff61e" category="cell">사용할 Astra Trident 로깅 형식[text,json]</block>
+  <block id="20cd815523e5806aec29a57282b0d49f" category="cell">"텍스트"</block>
+  <block id="20f408a3276af1f7f1bf02ba374786ca" category="cell">설치할 Astra Trident 이미지</block>
+  <block id="0498ee65f9f6b76f08a28e7b6715c963" category="cell">"NetApp/트라이덴트: 23.07"</block>
+  <block id="4f25f4cca5c1939f4a728d2678e719f7" category="cell">형식의 내부 레지스트리 경로입니다<block ref="d2ce1f53a5f0e84f4f1b5e28836eb05b" prefix=" " category="inline-code"></block></block>
+  <block id="fb4feec526f3a24c097c73a5f36af4bd" category="cell">"k8s.gcr.io/sig-storage"(k8s 1.19+)
+또는 "quay.io/k8scsi"</block>
+  <block id="31aad37dce0c28e12908582a0d63736a" category="cell">호스트의 kubelet 디렉토리에 대한 경로입니다</block>
+  <block id="df8f3af91e96fe841267201ed450cd6b" category="cell">"/var/lib/kubelet"</block>
+  <block id="b6e0e2c4168573f0ed61c842470342ba" category="cell"><block ref="c13a52521693f799a16fd56a35c77a04" prefix="" category="inline-code"></block></block>
+  <block id="4e33345575b5a443dec89767624a1ee8" category="cell">의 전체 제거를 수행하기 위해 삭제할 리소스 목록입니다
+아스트라 트리덴트</block>
+  <block id="f73bb4a0bc9913e7fc6db5f9e5f2afeb" category="cell">내부 레지스트리에서 이미지를 가져올 수 있는 비밀</block>
+  <block id="d64d0e5bb5a552ae4986a713f41c8fc3" category="cell">Pod용 추가 노드 선택기	는 와 동일한 형식을 따릅니다<block ref="6ae8be3433bfc36ced79a1271e6ebf11" prefix=" " category="inline-code"></block>.</block>
+  <block id="875ce721843c20d7f9aae240673ed68b" category="cell">Pod에 대한 Kubernetes 허용 설정을 재정의합니다. 는 와 동일한 형식을 따릅니다<block ref="f1fa64fcf5077601cb803e995a51fa4f" prefix=" " category="inline-code"></block>.</block>
+  <block id="00e8e1706119ce5300bdc9141ececc37" category="cell">Pod용 추가 노드 선택기 는 와 동일한 형식을 따릅니다<block ref="6ae8be3433bfc36ced79a1271e6ebf11" prefix=" " category="inline-code"></block>.</block>
 </blocks>
