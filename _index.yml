@@ -5,7 +5,7 @@ indexpage:
   tiles:
   - title: 릴리스 정보
     links:
-    - title: 새로운 소식
+    - title: 새로운 기능
       url: trident-rn.html
     - title: 이전 버전
       url: "/earlier-versions.html"

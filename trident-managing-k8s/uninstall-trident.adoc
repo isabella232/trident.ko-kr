@@ -52,20 +52,18 @@ Astra Trident를 설치할 때 사용한 것과 동일한 방법을 사용하여
 
 === 수동 설치를 제거합니다
 
-운영자를 사용하여 Astra Trident를 설치한 경우 다음 중 하나를 수행하여 제거할 수 있습니다.
+연산자를 사용하여 Astra Trident를 설치한 경우 다음 중 하나를 수행하여 제거할 수 있습니다.
 
-* ** 편집 `TridentOrchestrator` 제거 플래그를 설정하려면: ** 편집할 수 있습니다 `TridentOrchestrator` 그리고 설정합니다 `spec.uninstall=true`.
-+
-** 를 편집합니다 `TridentOrchestrator` 를 사용하여 를 설정합니다 `uninstall` 아래에 표시된 대로 플래그 지정:
+. ** 편집 `TridentOrchestrator` CR 및 제거 플래그 설정**:
 +
 [listing]
 ----
 kubectl patch torc <trident-orchestrator-name> --type=merge -p '{"spec":{"uninstall":true}}'
 ----
-** 'uninstall' 플래그가 'true'로 설정되어 있으면 Trident 운영자가 Trident를 제거하지만 Trident 자체 자체를 제거하지 않습니다. Trident를 다시 설치하려면 해당 Trident를 정리하고 새 AgentOrchestrator를 생성해야 합니다.
++
+를 누릅니다 `uninstall` 플래그가 로 설정되어 있습니다 `true`Trident 운영자가 Trident를 제거하지만 Trident 자체 자체를 제거하지는 않습니다. Trident를 다시 설치하려면 해당 Trident를 정리하고 새 AgentOrchestrator를 생성해야 합니다.
 
-
-* ** 삭제 `TridentOrchestrator`: ** 를 제거하여 `TridentOrchestrator` Astra Trident를 배포하는 데 사용된 CR은 작업자에게 Trident를 제거하도록 지시합니다. 작업자가 의 제거를 처리합니다 `TridentOrchestrator` 그런 다음 Astra Trident 구축과 디멘시작을 제거하고 설치의 일부로 생성한 Trident 포드를 삭제합니다.
+. ** 삭제 `TridentOrchestrator`**: 를 제거합니다 `TridentOrchestrator` Astra Trident를 배포하는 데 사용된 CR은 작업자에게 Trident를 제거하도록 지시합니다. 작업자가 의 제거를 처리합니다 `TridentOrchestrator` 그런 다음 Astra Trident 구축과 디멘시작을 제거하고 설치의 일부로 생성한 Trident 포드를 삭제합니다.
 
 
 
@@ -89,7 +87,7 @@ release "trident" uninstalled
 
 == 를 제거합니다 `tridentctl` 설치
 
-를 사용합니다 `uninstall` 명령을 입력합니다 `tridentctl` CRD 및 관련 객체를 제외한 Astra Trident와 연결된 모든 리소스를 제거합니다.
+를 사용합니다 `uninstall` 명령을 입력합니다 `tridentctl` CRD 및 관련 오브젝트를 제외하고 Astra Trident에 연결된 모든 리소스를 제거하려면 다음과 같이 하십시오.
 
 [listing]
 ----
