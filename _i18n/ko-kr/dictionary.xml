@@ -505,7 +505,6 @@
   <block id="3de05f78e401869f4630ec8cabf339df" category="section-title">이전 버전에서 새 버전으로 직접 업그레이드할 수 있습니까(일부 버전을 건너뛰는 경우)?</block>
   <block id="ce44cbbc54839f39b351c091b0e3caa5" category="paragraph">NetApp은 하나의 주요 릴리즈에서 바로 다음 주요 릴리즈로 Astra Trident를 업그레이드할 수 있도록 지원합니다. 버전 18.xx에서 19.xx, 19.xx에서 20.xx로 업그레이드할 수 있습니다. 운영 구축 전에 연구소에서 업그레이드를 테스트해야 합니다.</block>
   <block id="0399b9e6348e554937a4d65efc97a1b8" category="section-title">Trident를 이전 릴리즈로 다운그레이드할 수 있습니까?</block>
-  <block id="d307563c01953bd90a41ddd049f96d51" category="inline-link-macro">다운그레이드 섹션을 참조하십시오</block>
   <block id="ba9c59aa9d07b25e124dcf6ca88d689a" category="section-title">백엔드 및 볼륨 관리</block>
   <block id="ffe72215dff9a93d62ee68905212025e" category="section-title">ONTAP 백엔드 정의 파일에서 관리 및 데이터 LIF를 모두 정의해야 합니까?</block>
   <block id="f3997f0b9446951754e665cfe7591cef" category="section-title">Astra Trident에서 ONTAP 백엔드에 대한 CHAP를 구성할 수 있습니까?</block>
@@ -1875,7 +1874,6 @@
   <block id="cce5aa9218d4019d57adcf814d7189c1" category="paragraph"><block ref="cce5aa9218d4019d57adcf814d7189c1" category="inline-image-macro-rx" type="image"></block></block>
   <block id="45b09f7cb3dcbe0274eef2b3fce46bea" category="paragraph">예, Astra Trident는 오프라인으로 설치할 수 있습니다. 을 참조하십시오 <block ref="4a2b27d6d4bc3dd7ae85bfd131d50753" category="inline-link-macro-rx"></block>.</block>
   <block id="0f43ba8a9cfc14b033c2c652f53bfcb9" category="paragraph">필요한 경우 설치에 Astra Trident가 사용하는 정확한 매니페스트 파일을 로컬에서 생성하고 수정할 수 있습니다. 을 참조하십시오 <block ref="7a68296d6f600eac17d317743bea0050" category="inline-link-macro-rx"></block>.</block>
-  <block id="72fec731c958562fd09df08eef5fbb89" category="paragraph">다운그레이드를 원할 경우 다양한 요소를 평가해야 합니다. 을 참조하십시오 <block ref="ea621a0de3f004c488ea799d0fd7e41d" category="inline-link-macro-rx"></block>.</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다.</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">저작권</block>
   <block id="126a02652da6de02962cf1b654fd6376" category="section-title">상표</block>
@@ -3884,4 +3882,6 @@ FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
   <block id="d64d0e5bb5a552ae4986a713f41c8fc3" category="cell">Pod용 추가 노드 선택기	는 와 동일한 형식을 따릅니다<block ref="6ae8be3433bfc36ced79a1271e6ebf11" prefix=" " category="inline-code"></block>.</block>
   <block id="875ce721843c20d7f9aae240673ed68b" category="cell">Pod에 대한 Kubernetes 허용 설정을 재정의합니다. 는 와 동일한 형식을 따릅니다<block ref="f1fa64fcf5077601cb803e995a51fa4f" prefix=" " category="inline-code"></block>.</block>
   <block id="00e8e1706119ce5300bdc9141ececc37" category="cell">Pod용 추가 노드 선택기 는 와 동일한 형식을 따릅니다<block ref="6ae8be3433bfc36ced79a1271e6ebf11" prefix=" " category="inline-code"></block>.</block>
+  <block id="7786076739da628161f45de338cd6e69" category="inline-link-macro">Astra Trident를 제거합니다</block>
+  <block id="bc2d347a4b0e30ef46f4d91b07267ca7" category="paragraph">업그레이드, 종속성 문제 또는 성공하지 못하거나 불완전한 업그레이드 후에 발견된 버그에 대한 수정이 필요한 경우 해야 합니다 <block ref="b6be8ee390417a446f993452ffee9585" category="inline-link-macro-rx"></block> 해당 버전에 대한 특정 지침을 사용하여 이전 버전을 다시 설치합니다. 이 방법은 이전 버전으로 다운그레이드하는 유일한 권장 방법입니다.</block>
 </blocks>
