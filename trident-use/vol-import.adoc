@@ -245,7 +245,7 @@ tridentctl import volume gcpcvs_YEppr adroit-jolly-swift -f <path-to-pvc-file> -
 
 === Azure NetApp Files
 
-Astra Trident는 를 사용하여 볼륨 가져오기를 지원합니다 `azure-netapp-files` 및 `azure-netapp-files-subvolume` 드라이버.
+Astra Trident는 를 사용하여 볼륨 가져오기를 지원합니다 `azure-netapp-files` 드라이버.
 
 
 NOTE: Azure NetApp Files 볼륨을 가져오려면 해당 볼륨 경로를 기준으로 볼륨을 식별합니다. 볼륨 경로는 이후 볼륨 내보내기 경로의 일부입니다 `:/`. 예를 들어, 마운트 경로가 인 경우 `10.0.0.2:/importvol1`, 볼륨 경로는 입니다 `importvol1`.
