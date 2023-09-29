@@ -1922,7 +1922,6 @@
   <block id="7335992f174c029a990442aca68aacbd" category="admonition">자격 증명과 인증서 * 를 모두 제공하려고 하면 구성 파일에 둘 이상의 인증 방법이 제공된다는 오류가 발생하여 백엔드 생성이 실패합니다.</block>
   <block id="d1914bc190cdc3bc9eee6db0c81021bc" category="section-title">노드 서비스 검색</block>
   <block id="2b6ab5193160f5eaca51526b15f27e3a" category="admonition">노드 서비스 검색은 검색된 서비스를 식별하지만 서비스가 올바르게 구성된다고 보장하지 않습니다. 반대로 검색된 서비스가 없으면 볼륨 마운트가 실패한다고 보장할 수 없습니다.</block>
-  <block id="66896c99fb06e0b6c86498b249f8217a" category="cell">요청된 볼륨 크기가 이 값보다 큰 경우 용량 할당에 실패합니다.</block>
   <block id="412427d9207c4cc4b01539aff3c50e7c" category="cell">'네트워크 기능'</block>
   <block id="6dc4cb19f2792a3eadfa64d4b4b6d177" category="paragraph">모든 Kubernetes 작업자 노드에 적절한 NFS 툴이 설치되어 있어야 합니다. 을 참조하십시오 <block ref="f1f954e59a21e3ffe189e77dd2ee9f86" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
   <block id="6adbf3424e5de1b4e2baad3b4d632c4a" category="paragraph">다른 인증 방법을 사용하거나 자격 증명을 회전하도록 기존 백엔드를 업데이트할 수 있습니다. 이렇게 하면 사용자 이름/암호를 사용하는 백엔드를 인증서를 사용하도록 업데이트할 수 있고 인증서를 사용하는 백엔드는 사용자 이름/암호 기반으로 업데이트할 수 있습니다. 이렇게 하려면 기존 인증 방법을 제거하고 새 인증 방법을 추가해야 합니다. 그런 다음 필요한 매개 변수가 포함된 업데이트된 backend.json 파일을 사용하여 'tridentctl backend update'를 실행합니다.</block>
@@ -3427,7 +3426,6 @@
   <block id="80f4cfbe493e12651c3514c9481ce1ee" category="admonition">운영 환경에서는 이러한 지침에 따라 구축한 Kubernetes 클러스터를 사용하지 마십시오. 운영 가능 클러스터에 대해 배포에서 제공하는 운영 구축 가이드를 사용하십시오.</block>
   <block id="46e28df17b257e6671b042b98bd37787" category="list-text"><block ref="46e28df17b257e6671b042b98bd37787" category="inline-link-rx"></block></block>
   <block id="fac0082fb8411565f3d5cb3788a17b17" category="doc">Astra Trident를 위한 빠른 시작</block>
-  <block id="4b7a06bf8d901036491a46c6f14175e3" category="paragraph">Astra Trident를 설치하고 몇 단계로 스토리지 리소스 관리를 시작할 수 있습니다. 시작하기 전에 를 검토하십시오 <block ref="a7c0f3baef818cf2a5323d10b9f5ac94" category="inline-link-macro-rx"></block>.</block>
   <block id="9a052cea99f186c7d930a0041b20a79b" category="admonition">Docker의 경우 를 참조하십시오 <block ref="934c01af2efea144da6665bf428d8f6d" category="inline-link-macro-rx"></block>.</block>
   <block id="b0434693308513b990bcffe2314d6fb5" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block> Astra Trident를 설치합니다</block>
   <block id="c8fce1b550592f1b2285ab7a61547927" category="paragraph">Astra Trident는 다양한 환경 및 조직에 최적화된 다양한 설치 방법 및 모드를 제공합니다.</block>
@@ -3882,4 +3880,5 @@ FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
   <block id="7786076739da628161f45de338cd6e69" category="inline-link-macro">Astra Trident를 제거합니다</block>
   <block id="bc2d347a4b0e30ef46f4d91b07267ca7" category="paragraph">업그레이드, 종속성 문제 또는 성공하지 못하거나 불완전한 업그레이드 후에 발견된 버그에 대한 수정이 필요한 경우 해야 합니다 <block ref="b6be8ee390417a446f993452ffee9585" category="inline-link-macro-rx"></block> 해당 버전에 대한 특정 지침을 사용하여 이전 버전을 다시 설치합니다. 이 방법은 이전 버전으로 다운그레이드하는 유일한 권장 방법입니다.</block>
   <block id="5d935b9f26b929d94ae4b4f04c74ee28" category="paragraph">Astra Trident는 를 사용하여 볼륨 가져오기를 지원합니다<block ref="bc5779a2d33eeb1304bae57f15920cfc" prefix=" " category="inline-code"></block> 드라이버.</block>
+  <block id="0ff441b997c776ccd29f05b449a5f4fb" category="paragraph">Astra Trident를 설치하고 몇 단계로 스토리지 리소스 관리를 시작할 수 있습니다. 시작하기 전에 를 검토하십시오 <block ref="a7c0f3baef818cf2a5323d10b9f5ac94" category="inline-link-macro-rx"></block>.</block>
 </blocks>
