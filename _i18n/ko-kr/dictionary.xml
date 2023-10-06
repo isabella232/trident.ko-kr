@@ -2117,7 +2117,6 @@
   <block id="2bc97a247278d92f5552529c55ab7f0d" category="paragraph">새 볼륨에 NVE(NetApp Volume Encryption)를 지원하며 기본값은 'false'입니다. 이 옵션을 사용하려면 NVE 라이센스가 클러스터에서 활성화되어 있어야 합니다.</block>
   <block id="17d79009c5c2bb6bd570bb6f87552a2d" category="paragraph">Astra Trident는 NFS 및 iSCSI PVS 크기를 조정할 수 있도록 지원합니다. 따라서 사용자는 Kubernetes 계층을 통해 직접 볼륨의 크기를 조정할 수 있습니다. ONTAP, SolidFire/NetApp HCI 및 Cloud Volumes Service 백엔드를 포함한 모든 주요 NetApp 스토리지 플랫폼에서 볼륨 확장이 가능합니다. 나중에 확장을 허용하려면 볼륨과 연관된 StorageClass에서 allowVolumeExpansion을 true로 설정합니다. 영구 볼륨의 크기를 조정해야 할 때마다 영구 볼륨 클레임의 'pec.resources.requests.storage' 주석을 필요한 볼륨 크기로 편집합니다. Trident는 스토리지 클러스터의 볼륨 크기를 자동으로 조정합니다.</block>
   <block id="ee3d8ea22d8bf88f2f7fcd6d6dbf26d2" category="paragraph">메트릭 서비스는 관리자에게 OpenShift 클러스터의 상태, 리소스 활용도 및 가용성에 대한 중요한 정보를 제공합니다. 또한 POD 자동 확장 기능도 필요하며, 많은 조직에서 비용 청구 및/또는 애플리케이션 표시를 위해 메트릭 서비스의 데이터를 사용합니다.</block>
-  <block id="f21f22dde0e0692333a7a28cce456b08" category="sidebar">모든 Astra 문서</block>
   <block id="06d5b814514e67e2a36b491b2493aed1" category="paragraph">여기에 나열된 권장 사항을 사용하여 Astra Trident 설치가 안전한지 확인합니다.</block>
   <block id="252ee40ccbd23adc008945e85af83513" category="section-title">NVE와 NAE가 포함된 Astra Trident를 사용하십시오</block>
   <block id="676ad90ce2543d29917d8a5a6fc02e01" category="inline-link-macro">ONTAP NAS 구성 옵션</block>
@@ -3139,12 +3138,10 @@
   <block id="815f28e53ebfb423dfe835a845095bf6" category="inline-link-macro">ONTAP SnapMirror 복제 및 복구</block>
   <block id="a5217e87e9aef874c28773b5774ecf37" category="paragraph">Astra Trident는 SnapMirror 복제 관계를 구성할 수 없지만 스토리지 관리자는 을 사용할 수 있습니다 <block ref="c3487d6df2463efc752acd6f5cc45a1f" category="inline-link-macro-rx"></block> Astra Trident에서 생성한 볼륨을 복제합니다.</block>
   <block id="c3c343b5a84229bd5095fd09f2afc5f5" category="inline-link-macro">Tridentctl 볼륨 가져오기</block>
-  <block id="5b570015a3a6711227cf6a2802ccd0d7" category="paragraph">그런 다음 를 사용하여 복구된 볼륨을 Astra Trident로 가져올 수 있습니다 <block ref="d8ad77887a2224df2faf4f1df578e333" category="inline-link-macro-rx"></block>.</block>
   <block id="d8d9dfeae772da34290b750d0f848a26" category="admonition">에서 가져오기가 지원되지 않습니다<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block>, <block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block>, 또는<block ref="70d5dbddc55e3700ddbc8d21f0de22a3" prefix=" " category="inline-code"></block> 드라이버.</block>
   <block id="b489b293d6cbe8b86835d3cac8c315fb" category="section-title">스냅샷 데이터 보호</block>
   <block id="f332d72a4b78e34e31131f3a98c98053" category="paragraph">다음을 사용하여 데이터를 보호하고 복원할 수 있습니다.</block>
   <block id="97fb495fd3b6672c40bb0092ca102eca" category="list-text">PVS(영구 볼륨)의 Kubernetes 볼륨 스냅샷을 생성하는 외부 스냅샷 컨트롤러 및 CRD</block>
-  <block id="cb55f92ada2ab9103f2202b5e32b90c2" category="paragraph"><block ref="cb55f92ada2ab9103f2202b5e32b90c2" category="inline-link-macro-rx"></block></block>
   <block id="83cd672b9742ba621e93a8b69c4ab2d4" category="list-text">ONTAP 스냅샷 - 볼륨의 전체 내용을 복원하거나 개별 파일 또는 LUN을 복구합니다.</block>
   <block id="ad336d1fccea3e918d07055edac855a3" category="inline-link-macro">ONTAP 스냅샷</block>
   <block id="0cb949d1baa06577db93328185a8f24d" category="paragraph"><block ref="0cb949d1baa06577db93328185a8f24d" category="inline-link-macro-rx"></block></block>
@@ -3881,4 +3878,6 @@ FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
   <block id="bc2d347a4b0e30ef46f4d91b07267ca7" category="paragraph">업그레이드, 종속성 문제 또는 성공하지 못하거나 불완전한 업그레이드 후에 발견된 버그에 대한 수정이 필요한 경우 해야 합니다 <block ref="b6be8ee390417a446f993452ffee9585" category="inline-link-macro-rx"></block> 해당 버전에 대한 특정 지침을 사용하여 이전 버전을 다시 설치합니다. 이 방법은 이전 버전으로 다운그레이드하는 유일한 권장 방법입니다.</block>
   <block id="5d935b9f26b929d94ae4b4f04c74ee28" category="paragraph">Astra Trident는 를 사용하여 볼륨 가져오기를 지원합니다<block ref="bc5779a2d33eeb1304bae57f15920cfc" prefix=" " category="inline-code"></block> 드라이버.</block>
   <block id="0ff441b997c776ccd29f05b449a5f4fb" category="paragraph">Astra Trident를 설치하고 몇 단계로 스토리지 리소스 관리를 시작할 수 있습니다. 시작하기 전에 를 검토하십시오 <block ref="a7c0f3baef818cf2a5323d10b9f5ac94" category="inline-link-macro-rx"></block>.</block>
+  <block id="d055d4dfcb35cd1eea7b3d52e42a8924" category="paragraph">그런 다음 를 사용하여 복구된 볼륨을 Astra Trident로 가져올 수 있습니다 <block ref="b0a81d9cb6f9ea994a428f959b11d3c6" category="inline-link-macro-rx"></block>.</block>
+  <block id="4227c1b28cc9c04bf3552b7aae57fc3c" category="paragraph"><block ref="4227c1b28cc9c04bf3552b7aae57fc3c" category="inline-link-macro-rx"></block></block>
 </blocks>
