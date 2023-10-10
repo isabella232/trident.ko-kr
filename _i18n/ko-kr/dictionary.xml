@@ -3846,7 +3846,6 @@ FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
   <block id="f3f30d479f6e3b393d917a3b2f88c770" category="cell"><block ref="89801e9e98979062e84647433a8ed3e9" prefix="" category="inline-code"></block></block>
   <block id="c9db68ea6cff44f42ac5acbbfccec399" category="cell">Astra Trident를 설치할 네임스페이스입니다</block>
   <block id="fbbd7b4b14060c4fdb02f92c4c08e702" category="cell">를 로 설정합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block> Windows 작업자 노드에 설치할 수 있습니다.</block>
-  <block id="16e20a5ba5cd6442f3cdd49b16e8a5f3" category="cell"><block ref="8bd1aa960638ccc5869583e34d702ce6" prefix="" category="inline-code"></block></block>
   <block id="3dd791c4864e77ae6cf11572e2d7b374" category="cell">IPv6를 통해 Astra Trident를 설치합니다</block>
   <block id="077e99fe42ced522b462656cffffe09c" category="cell"><block ref="d5276bb17ae062102e883a18454c2f1b" prefix="" category="inline-code"></block></block>
   <block id="4448b73eac083e33b7142f0e5790fac5" category="cell">Kubernetes 작업 시간이 초과되었습니다</block>
@@ -3880,4 +3879,5 @@ FQDN(정규화된 도메인 이름)을 지정할 수 있습니다.
   <block id="0ff441b997c776ccd29f05b449a5f4fb" category="paragraph">Astra Trident를 설치하고 몇 단계로 스토리지 리소스 관리를 시작할 수 있습니다. 시작하기 전에 를 검토하십시오 <block ref="a7c0f3baef818cf2a5323d10b9f5ac94" category="inline-link-macro-rx"></block>.</block>
   <block id="d055d4dfcb35cd1eea7b3d52e42a8924" category="paragraph">그런 다음 를 사용하여 복구된 볼륨을 Astra Trident로 가져올 수 있습니다 <block ref="b0a81d9cb6f9ea994a428f959b11d3c6" category="inline-link-macro-rx"></block>.</block>
   <block id="4227c1b28cc9c04bf3552b7aae57fc3c" category="paragraph"><block ref="4227c1b28cc9c04bf3552b7aae57fc3c" category="inline-link-macro-rx"></block></block>
+  <block id="d293f031e5664526b25f3a65012401b7" category="cell"><block ref="fdb7cb8f657426e7c409bfd6d1a36ce4" prefix="" category="inline-code"></block></block>
 </blocks>
