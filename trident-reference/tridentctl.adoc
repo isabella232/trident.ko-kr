@@ -159,23 +159,23 @@ Usage:
 ----
 플래그:
 
-* ``--autosupport-image string`: AutoSupport 원격 측정의 컨테이너 이미지(기본값 "NetApp/trident autosupport:<current-version>").
-* `--autosupport-proxy string': AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다.
-* ''--enable-node-prep': 노드에 필요한 패키지 설치 시도
-* ''--generate-custom-YAML': 아무것도 설치하지 않고 YAML 파일을 생성합니다.
-* ''-h, - 도움말: 설치 도움말.
-* ``--http-request-timeout`: Trident 컨트롤러의 REST API에 대한 HTTP 요청 시간 초과를 재정의합니다(기본값 1m30s).
-* ''--image-registry string': 내부 이미지 레지스트리의 주소/포트입니다.
-* ''--k8s-timeout duration': 모든 Kubernetes 운영(기본값 3m0s)의 시간 초과.
-* ''--kubelet-dir string': kubelet의 내부 상태(기본값 "/var/lib/kubelet")의 호스트 위치입니다.
-* ''--log-format string': Astra Trident 로깅 형식(text, json)(기본 "text").
-* `--pv string ': Astra Trident가 사용한 레거시 PV의 이름이며, 이 이름이 존재하지 않는지 확인합니다(기본 "삼중류").
-* ''--PVC string': Astra Trident에서 사용하는 기존 PVC의 이름인 경우 이 항목이 존재하지 않는지 확인합니다(기본 "삼중류").
-* ``침묵 AutoSupport’’는 AutoSupport 번들을 NetApp에 자동으로 보내지 않습니다(기본값: TRUE).
-* '--silent': 설치 중 대부분의 출력을 비활성화합니다.
-* '--trident-image string': 설치할 Astra Trident 이미지.
-* ''--use-custom-YAML': 설정 디렉토리에 존재하는 기존 YAML 파일을 사용합니다.
-* ''--use-ipv6: Astra Trident의 통신에는 IPv6를 사용합니다.
+* `--autosupport-image string`: AutoSupport 원격 측정의 컨테이너 이미지(기본값 "NetApp/trident autosupport:<current-version>").
+* `--autosupport-proxy string`: AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다.
+* `--enable-node-prep`: 노드에 필요한 패키지 설치를 시도합니다.
+* `--generate-custom-yaml`: 아무 것도 설치하지 않고 YAML 파일을 생성합니다.
+* `-h, --help`: 설치 도움말.
+* `--http-request-timeout`: Trident 컨트롤러의 REST API에 대한 HTTP 요청 시간 초과를 재정의합니다(기본값 1m30s).
+* `--image-registry string`: 내부 이미지 레지스트리의 주소/포트입니다.
+* `--k8s-timeout duration`모든 Kubernetes 작업(기본값 3m0의)의 시간 초과.
+* `--kubelet-dir string`: kubelet의 내부 상태(기본값 "/var/lib/kubelet")의 호스트 위치입니다.
+* `--log-format string`Astra Trident 로깅 형식(text, json)(기본 "text").
+* `--pv string`Astra Trident에서 사용하는 레거시 PV의 이름입니다. 이 이름이 존재하지 않는지 확인합니다(기본 "삼중류").
+* `--pvc string`Astra Trident에서 사용하는 기존 PVC의 이름입니다. 이 이름이 존재하지 않는지 확인합니다(기본 "삼중류").
+* `--silence-autosupport`AutoSupport 번들을 NetApp에 자동으로 보내지 않습니다(기본값: true).
+* `--silent`: 설치하는 동안 대부분의 출력을 비활성화합니다.
+* `--trident-image string`: 설치할 Astra Trident 이미지.
+* `--use-custom-yaml`설정 디렉토리에 있는 기존 YAML 파일을 사용합니다.
+* `--use-ipv6`: Astra Trident의 통신에는 IPv6를 사용합니다.
 
 
 
