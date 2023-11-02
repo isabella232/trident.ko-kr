@@ -108,17 +108,17 @@ kubectl apply -f deploy/namespace.yaml
 ----
 * 를 제외한 네임스페이스에 연산자를 배포합니다 `trident` 네임스페이스, 업데이트 `serviceaccount.yaml`, `clusterrolebinding.yaml` 및 `operator.yaml` 을 사용하여 번들 파일을 생성합니다 `kustomization.yaml`.
 +
-.. 를 생성합니다 `kustomization.yaml` 다음 명령을 사용합니다. 여기서 _<bundle>_는 입니다 `bundle_pre_1_25` 또는 `bundle_post_1_25` Kubernetes 버전을 기반으로 합니다.
+.. 를 생성합니다 `kustomization.yaml` 다음 명령을 사용합니다. 여기서 _<bundle.yaml>_is `bundle_pre_1_25.yaml` 또는 `bundle_post_1_25.yaml` Kubernetes 버전을 기반으로 합니다.
 +
 [listing]
 ----
-cp kustomization_<bundle>.yaml kustomization.yaml
+cp deploy/kustomization_<bundle.yaml> deploy/kustomization.yaml
 ----
-.. Where_<bundle>_is 명령을 사용하여 번들을 컴파일합니다 `bundle_pre_1_25` 또는 `bundle_post_1_25` Kubernetes 버전을 기반으로 합니다.
+.. 다음 명령을 사용하여 번들을 컴파일합니다. 여기서 _<bundle.yaml>_is `bundle_pre_1_25.yaml` 또는 `bundle_post_1_25.yaml` Kubernetes 버전을 기반으로 합니다.
 +
 [listing]
 ----
-kubectl kustomize deploy/ > deploy/<bundle>.yaml
+kubectl kustomize deploy/ > deploy/<bundle.yaml>
 ----
 
 
@@ -129,7 +129,7 @@ kubectl kustomize deploy/ > deploy/<bundle>.yaml
 +
 [listing]
 ----
-kubectl create -f deploy/<bundle>.yaml
+kubectl create -f deploy/<bundle.yaml>
 ----
 . 운영자, 배포 및 복제 생성 여부를 확인합니다.
 +
