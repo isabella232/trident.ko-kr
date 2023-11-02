@@ -162,7 +162,7 @@ INFO Trident uninstallation succeeded.
 Astra Trident와 생성된 모든 CRD 및 관련 사용자 지정 리소스를 완전히 제거할 수 있습니다.
 
 
-WARNING: 이 작업은 취소할 수 없습니다. Astra Trident를 완전히 새로 설치하고 싶지 않은 한 이 작업을 수행하지 마십시오. CRD를 제거하지 않고 Astra Trident를 제거하려면 를 참조하십시오 link:../trident-managing-k8s/uninstall-trident.html["Astra Trident를 제거합니다"].
+WARNING: 이 작업은 취소할 수 없습니다. Astra Trident를 완전히 새로 설치하고 싶지 않은 한 이 작업을 수행하지 마십시오. CRD를 제거하지 않고 Astra Trident를 제거하려면 를 참조하십시오 link:trident-managing-k8s/uninstall-trident.html["Astra Trident를 제거합니다"].
 
 [role="tabbed-block"]
 ====

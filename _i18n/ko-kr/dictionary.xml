@@ -3702,7 +3702,6 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
   <block id="629ac35dda697ad18f8fef7094213871" category="list-text">Trident의 이전 버전으로 다운그레이드하려면 먼저 를 실행하십시오<block ref="ac8650577d1b744589a6a11b60ac38c7" prefix=" " category="inline-code"></block> Trident를 제거하는 명령입니다. 원하는 를 다운로드합니다<block ref="f3d78353f8dac3e49bbefeb5f6a2383b" category="inline-link-rx"></block> 를 사용하여 를 설치합니다<block ref="430bf77bee6c59d385d4194f84c21b16" prefix=" " category="inline-code"></block> 명령.</block>
   <block id="2a1db8dc71dec3264e9155d610575785" category="section-title">Astra Trident 및 CRD를 완전히 제거합니다</block>
   <block id="de752588132c292a8a12ad2441fbf43c" category="paragraph">Astra Trident와 생성된 모든 CRD 및 관련 사용자 지정 리소스를 완전히 제거할 수 있습니다.</block>
-  <block id="90dc0d986558510d55c898cb62f4f2d5" category="admonition">이 작업은 취소할 수 없습니다. Astra Trident를 완전히 새로 설치하고 싶지 않은 한 이 작업을 수행하지 마십시오. CRD를 제거하지 않고 Astra Trident를 제거하려면 를 참조하십시오 <block ref="6b2eb9a0745ceac90657a4978cb010ca" category="inline-link-macro-rx"></block>.</block>
   <block id="4f5dbc74e3448e08fe0e7bfd62876fc8" category="open-title">Trident 운영자</block>
   <block id="f4508049a2ac2bdb5cb9fde92120497a" category="paragraph">Trident 연산자를 사용하여 Astra Trident를 제거하고 CRD를 완전히 제거하려면 다음과 같이 하십시오.</block>
   <block id="152090ff5e9a05ea7e1cf0c248449638" category="open-title">헬름</block>
@@ -3886,4 +3885,5 @@ IPv6 플래그를 사용하여 Astra Trident를 설치한 경우 IPv6 주소를 
   <block id="c739dc3ddc713880b7989d4cb214b126" category="list-text"><block ref="8026926641b283123174e50f80da83de" prefix="" category="inline-code"></block>설정 디렉토리에 있는 기존 YAML 파일을 사용합니다.</block>
   <block id="b4a7a23f7c478405b46b2605053c1b1c" category="list-text"><block ref="4a4ef9f92e69acc000120379678aadcf" prefix="" category="inline-code"></block>: Astra Trident의 통신에는 IPv6를 사용합니다.</block>
   <block id="131adabe09344184458d12d3b2b31dc0" category="list-text">사용자 환경에 적합한 번들 YAML 파일을 사용하여 Astra Trident를 설치합니다<block ref="98f5e7907d122797ada0893820664b60" prefix=" " category="inline-code"></block> 있습니다<block ref="bd2cc8575fe69c7f775292759380c838" prefix=" " category="inline-code"></block> 또는<block ref="5a02ebff4889c2de0379a0fb10bed282" prefix=" " category="inline-code"></block> Kubernetes 버전을 기반으로 합니다. 예를 들어 Astra Trident 23.07을 설치하는 경우 다음 명령을 실행합니다.</block>
+  <block id="c2246b326c72ec59a183d35d55147b05" category="admonition">이 작업은 취소할 수 없습니다. Astra Trident를 완전히 새로 설치하고 싶지 않은 한 이 작업을 수행하지 마십시오. CRD를 제거하지 않고 Astra Trident를 제거하려면 를 참조하십시오 <block ref="3ac8f1f328a77d784290ca23df4860e6" category="inline-link-macro-rx"></block>.</block>
 </blocks>
