@@ -44,14 +44,15 @@ Trident는 운영자를 설치하고 Kubernetes 버전에 대한 관련 오브�
 +
 [listing]
 ----
-kubectl delete -f 23.04/trident-installer/deploy/<bundle-name.yaml> -n trident
+kubectl delete -f 23.04/trident-installer/deploy/<bundle.yaml> -n trident
 ----
 . 를 사용하여 초기 설치를 사용자 지정한 경우 `TridentOrchestrator` 속성을 편집할 수 있습니다 `TridentOrchestrator` 설치 매개 변수를 수정하는 개체입니다. 여기에는 오프라인 모드에 대해 미러링된 Trident 및 CSI 이미지 레지스트리를 지정하는 변경 사항, 디버그 로그 활성화 또는 이미지 풀 비밀을 지정하는 변경 사항이 포함될 수 있습니다.
-. 사용자 환경과 Astra Trident 버전에 맞는 올바른 번들 YAML 파일을 사용하여 Astra Trident를 설치합니다. 예를 들어, Kubernetes 1.27에 Astra Trident 23.07을 설치하는 경우 다음 명령을 실행합니다.
+. 사용자 환경에 적합한 번들 YAML 파일을 사용하여 Astra Trident를 설치합니다 `<bundle.yaml>` 있습니다
+`bundle_pre_1_25.yaml` 또는 `bundle_post_1_25.yaml` Kubernetes 버전을 기반으로 합니다. 예를 들어 Astra Trident 23.07을 설치하는 경우 다음 명령을 실행합니다.
 +
 [listing]
 ----
-kubectl create -f 23.07.1/trident-installer/deploy/bundle_post_1_25.yaml -n trident
+kubectl create -f 23.07.1/trident-installer/deploy/<bundle.yaml> -n trident
 ----
 
 
