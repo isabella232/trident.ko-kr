@@ -52,6 +52,34 @@ xfs, ext3, ext4
 
 
 
+| 'ONTAP-SAN'  a| 
+NVMe/TCP
+
+을 참조하십시오 <<NVMe/TCP에 대한 추가 고려사항>>.
+ a| 
+블록
+ a| 
+RWO, ROX, rwx, RWOP
+ a| 
+파일 시스템이 없습니다. 원시 블록 디바이스입니다
+
+
+
+| 'ONTAP-SAN'  a| 
+NVMe/TCP
+
+을 참조하십시오 <<NVMe/TCP에 대한 추가 고려사항>>.
+ a| 
+파일 시스템
+ a| 
+RWO, 공화당
+
+파일 시스템 볼륨 모드에서는 ROX 및 rwx를 사용할 수 없습니다.
+ a| 
+xfs, ext3, ext4
+
+
+
 | ONTAP-SAN-이코노미  a| 
 iSCSI
  a| 
@@ -99,3 +127,24 @@ Astra Trident는 일반적으로 "admin" 클러스터 사용자 또는 "vsadmin"
 NOTE: 'limitAggregateUsage' 매개 변수를 사용하는 경우 클러스터 관리자 권한이 필요합니다. Astra Trident와 함께 NetApp ONTAP용 Amazon FSx를 사용하는 경우 "limitAggregateUsage" 매개 변수는 "vsadmin" 및 "fsxadmin" 사용자 계정과 작동하지 않습니다. 이 매개 변수를 지정하면 구성 작업이 실패합니다.
 
 Trident 드라이버가 사용할 수 있는 더 제한적인 역할을 ONTAP 내에 만들 수 있지만 권장하지 않습니다. Trident의 대부분의 새로운 릴리즈에서는 추가 API를 호출하므로 업그레이드가 어렵고 오류가 발생하기 쉽습니다.
+
+
+
+== NVMe/TCP에 대한 추가 고려사항
+
+Astra Trident는 를 사용하여 NVMe(비휘발성 메모리 익스프레스) 프로토콜을 지원합니다 `ontap-san` 다음을 포함한 드라이버:
+
+* IPv6
+* NVMe 볼륨의 스냅샷 및 클론
+* NVMe 볼륨 크기 조정
+* Astra Trident 외부에서 생성된 NVMe 볼륨을 가져와 Astra Trident로 라이프사이클을 관리할 수 있음
+* NVMe 네이티브 다중 경로
+* Kubernetes 노드의 정상 또는 비정상적으로 종료(23.10)
+
+
+Astra Trident는 다음을 지원하지 않습니다.
+
+* NVMe에서 기본적으로 지원하는 DH-HMAC-CHAP입니다
+* DM(Device Mapper) 경로 다중화
+* LUKS 암호화
+

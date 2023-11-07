@@ -40,50 +40,53 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 | 매개 변수 | 설명 | 기본값 
 
 
-| `namespace` | Astra Trident를 설치할 네임스페이스입니다 | "기본값" 
+| `namespace` | Astra Trident를 설치할 네임스페이스입니다 | `"default"` 
 
 
-| "버그" | Astra Trident에 대한 디버깅을 활성화합니다 | 거짓 
+| "버그" | Astra Trident에 대한 디버깅을 활성화합니다 | 거짓입니다 
 
 
 | `enableForceDetach` | `ontap-san` 및 `ontap-san-economy` 만 해당. Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 관리자가 마운트된 볼륨이 있는 워크로드를 노드가 정상 상태가 아닌 경우 새 노드로 안전하게 마이그레이션할 수 있도록 합니다. * 이것은 23.04의 실험 기능입니다. * 를 참조하십시오 <<강제 분리에 대한 세부 정보>> 을 참조하십시오. | 거짓입니다 
 
 
-| `windows` | 를 로 설정합니다 `true` Windows 작업자 노드에 설치할 수 있습니다. | 거짓 
+| `windows` | 를 로 설정합니다 `true` Windows 작업자 노드에 설치할 수 있습니다. | 거짓입니다 
+
+
+| `cloudProvider` | 를 로 설정합니다 `"Azure"` AKS 클러스터에서 관리되는 ID를 사용하는 경우 | `""` 
 
 
 | `IPv6` | IPv6를 통해 Astra Trident를 설치합니다 | 거짓 
 
 
-| `k8sTimeout` | Kubernetes 작업 시간이 초과되었습니다 | 30초 
+| `k8sTimeout` | Kubernetes 작업 시간이 초과되었습니다 | `30sec` 
 
 
 | `silenceAutosupport` | AutoSupport 번들을 NetApp로 보내지 마십시오
-자동으로 계층화 | 거짓 
+자동으로 계층화 | 거짓입니다 
 
 
-| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | "NetApp/trident-autosupport:23.07" 
+| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | `"netapp/trident-autosupport:23.10"` 
 
 
 | 자동 지원 프록시 | AutoSupport를 보내는 프록시의 주소/포트입니다
-원격 측정 | "http://proxy.example.com:8888"[] 
+원격 측정 | `"http://proxy.example.com:8888"` 
 
 
-| "제거"를 선택합니다 | Astra Trident를 제거하는 데 사용되는 플래그입니다 | 거짓 
+| "제거"를 선택합니다 | Astra Trident를 제거하는 데 사용되는 플래그입니다 | 거짓입니다 
 
 
-| `logFormat` | 사용할 Astra Trident 로깅 형식[text,json] | "텍스트" 
+| `logFormat` | 사용할 Astra Trident 로깅 형식[text,json] | `"text"` 
 
 
-| 트리덴티이미지 | 설치할 Astra Trident 이미지 | "NetApp/트라이덴트: 23.07" 
+| 트리덴티이미지 | 설치할 Astra Trident 이미지 | `"netapp/trident:23.10"` 
 
 
 | 'imageRegistry'입니다 | 형식의 내부 레지스트리 경로입니다
-`<registry FQDN>[:port][/subpath]` | "k8s.gcr.io/sig-storage"(k8s 1.19+)
-또는 "quay.io/k8scsi" 
+`<registry FQDN>[:port][/subpath]` | `"k8s.gcr.io/sig-storage"` (Kubernetes 1.19 이상)
+또는 `"quay.io/k8scsi"` 
 
 
-| 쿠벨레트디렉토리 | 호스트의 kubelet 디렉토리에 대한 경로입니다 | "/var/lib/kubelet" 
+| 쿠벨레트디렉토리 | 호스트의 kubelet 디렉토리에 대한 경로입니다 | `"/var/lib/kubelet"` 
 
 
 | `wipeout` | 의 전체 제거를 수행하기 위해 삭제할 리소스 목록입니다
@@ -142,12 +145,12 @@ NOTE: Trident 컨트롤러는 노드가 재검증될 때까지(로 표시된 후
 
 == 샘플 구성
 
-정의할 때 위에서 언급한 속성을 사용할 수 있습니다 `TridentOrchestrator` 를 눌러 설치를 사용자 정의합니다.
+에서 속성을 사용할 수 있습니다 <<구성 옵션>> 정의할 때 `TridentOrchestrator` 를 눌러 설치를 사용자 정의합니다.
 
-.예 1: 기본 사용자 정의 구성
-[%collapsible%open]
+.기본 사용자 정의 구성
+[%collapsible]
 ====
-다음은 기본 사용자 지정 구성의 예입니다.
+다음은 기본 사용자 정의 설치의 예입니다.
 
 [listing]
 ----
@@ -163,10 +166,10 @@ spec:
   - thisisasecret
 ----
 ====
-.예 2: 노드 선택기를 사용하여 배포
-[%collapsible%open]
+.노드 선택기
+[%collapsible]
 ====
-이 예제에서는 노드 선택기를 사용하여 Trident를 배포하는 방법을 보여 줍니다.
+이 예에서는 노드 선택기와 함께 Astra Trident를 설치합니다.
 
 [listing]
 ----
@@ -183,10 +186,10 @@ spec:
     storage: netapp
 ----
 ====
-.예 3: Windows 작업자 노드에 배포
-[%collapsible%open]
+.Windows 작업자 노드
+[%collapsible]
 ====
-이 예제에서는 Windows 작업자 노드에 대한 배포를 보여 줍니다.
+이 예에서는 Windows 작업자 노드에 Astra Trident를 설치합니다.
 
 [listing]
 ----
@@ -199,5 +202,22 @@ spec:
   debug: true
   namespace: trident
   windows: true
+----
+====
+.AKS 클러스터에서 관리되는 ID입니다
+[%collapsible]
+====
+이 예에서는 Astra Trident를 설치하여 AKS 클러스터에서 관리되는 ID를 활성화합니다.
+
+[listing]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  cloudProvider: "Azure"
 ----
 ====

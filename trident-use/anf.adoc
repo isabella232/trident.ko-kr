@@ -1,8 +1,8 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/anf.html 
-keywords: trident backend, azure netapp files, smb volumes, smb, windows, drivers, access modes, rwo, rwx, rwp, rwop, file system 
-summary: Azure NetApp Files를 Astra Trident의 백엔드로 구성할 수 있습니다. Azure NetApp Files 백엔드를 사용하여 NAS 및 SMB 볼륨을 연결할 수 있습니다. 
+keywords: trident backend, azure netapp files, smb volumes, smb, windows, drivers, access modes, rwo, rwx, rwp, rwop, file system, aks, managed identities, azure 
+summary: 'Azure NetApp Files를 Astra Trident의 백엔드로 구성할 수 있습니다. Azure NetApp Files 백엔드를 사용하여 NFS 및 SMB 볼륨을 연결할 수 있습니다. 또한 Astra Trident는 Azure Kubernetes Services(AKS) 클러스터에 대한 관리형 ID를 사용하여 자격 증명 관리를 지원합니다.' 
 ---
 = Azure NetApp Files 백엔드를 구성합니다
 :hardbreaks:
@@ -12,7 +12,7 @@ summary: Azure NetApp Files를 Astra Trident의 백엔드로 구성할 수 있�
 
 
 [role="lead"]
-Azure NetApp Files를 Astra Trident의 백엔드로 구성할 수 있습니다. Azure NetApp Files 백엔드를 사용하여 NFS 및 SMB 볼륨을 연결할 수 있습니다.
+Azure NetApp Files를 Astra Trident의 백엔드로 구성할 수 있습니다. Azure NetApp Files 백엔드를 사용하여 NFS 및 SMB 볼륨을 연결할 수 있습니다. 또한 Astra Trident는 Azure Kubernetes Services(AKS) 클러스터에 대한 관리형 ID를 사용하여 자격 증명 관리를 지원합니다.
 
 
 
@@ -38,8 +38,58 @@ RWO, ROX, rwx, RWOP
 |===
 
 
-== 고려 사항
+=== 고려 사항
 
 * Azure NetApp Files 서비스는 100GB 미만의 볼륨을 지원하지 않습니다. Astra Trident는 더 작은 볼륨을 요청하는 경우 100GB 볼륨을 자동으로 생성합니다.
 * Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.
+
+
+
+
+== AKS의 관리되는 ID입니다
+
+Astra Trident가 지원합니다 link:https://learn.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview["관리되는 ID입니다"^] NetApp 프라이빗 클라우드 서비스 클러스터의 경우 관리되는 ID에서 제공하는 효율적인 자격 증명 관리를 활용하려면 다음을 수행해야 합니다.
+
+* AKS를 사용하여 구축된 Kubernetes 클러스터
+* AKS Kubernetes 클러스터에 구성된 관리되는 ID입니다
+* 가 포함된 Astra Trident가 설치되었습니다 `cloudProvider` 지정합니다 `"Azure"`.
++
+[role="tabbed-block"]
+====
+.Trident 운영자
+--
+Trident 연산자를 사용하여 Astra Trident를 설치하려면 편집을 진행합니다 `tridentorchestrator_cr.yaml` 를 눌러 설정합니다 `cloudProvider` 를 선택합니다 `"Azure"`. 예를 들면 다음과 같습니다.
+
+[listing]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  imagePullPolicy: IfNotPresent
+  cloudProvider: "Azure"
+----
+--
+.헬름
+--
+다음 예에서는 Astra Trident 세트를 설치합니다 `cloudProvider` Azure에 연결할 수 있습니다 `$CP`:
+
+[listing]
+----
+helm install trident trident-operator-23.10.0-custom.tgz --create-namespace --namespace <trident-namespace> --set cloudProvider=$CP
+----
+--
+.<code>tridentctl</code>
+--
+다음 예에서는 Astra Trident를 설치하고 를 설정합니다 `cloudProvider` 에 플래그 지정 `Azure`:
+
+[listing]
+----
+tridentctl install --cloud-provider="Azure" -n trident
+----
+--
+====
 

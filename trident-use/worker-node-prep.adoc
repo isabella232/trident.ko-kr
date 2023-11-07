@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/worker-node-prep.html 
-keywords: storage class, manage storage class, storage classes, kubernetes storage classes, worker node, nfs, iscsi, kubernetes clusters, self-healing, healing 
+keywords: storage class, manage storage class, storage classes, kubernetes storage classes, worker node, nfs, iscsi, kubernetes clusters, self-healing, healing, nvme, tcp 
 summary: Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저닝된 볼륨을 마운트할 수 있어야 합니다. 백엔드 중 하나에 ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup 드라이버를 사용하는 경우 작업자 노드에 NFS 툴이 필요합니다. 그렇지 않으면 iSCSI 도구가 필요합니다. 
 ---
 = 작업자 노드를 준비합니다
@@ -12,22 +12,25 @@ summary: Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프�
 
 
 [role="lead"]
-Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저닝된 볼륨을 마운트할 수 있어야 합니다. 작업자 노드를 준비하려면 드라이버 선택에 따라 NFS 또는 iSCSI 도구를 설치해야 합니다.
+Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저닝된 볼륨을 마운트할 수 있어야 합니다. 작업자 노드를 준비하려면 드라이버 선택에 따라 NFS, iSCSI 또는 NVMe/TCP 도구를 설치해야 합니다.
 
 
 
 == 올바른 도구 선택
 
-드라이버를 함께 사용하는 경우 NFS 및 iSCSI 도구를 설치해야 합니다.
+드라이버 조합을 사용하는 경우 드라이버에 필요한 모든 도구를 설치해야 합니다. 최신 버전의 RedHat CoreOS에는 기본적으로 도구가 설치되어 있습니다.
 
 .NFS 툴
-다음을 사용 중인 경우 NFS 툴을 설치합니다. `ontap-nas`, `ontap-nas-economy`, `ontap-nas-flexgroup`, `azure-netapp-files`, `gcp-cvs`
+다음을 사용 중인 경우 NFS 툴을 설치합니다. `ontap-nas`, `ontap-nas-economy`, `ontap-nas-flexgroup`, `azure-netapp-files`, `gcp-cvs`.
 
 .iSCSI 툴
-다음을 사용하는 경우 iSCSI 도구를 설치합니다. `ontap-san`, `ontap-san-economy`, `solidfire-san`
+다음을 사용하는 경우 iSCSI 도구를 설치합니다. `ontap-san`, `ontap-san-economy`, `solidfire-san`.
+
+.NVMe 툴
+를 사용하는 경우 NVMe 툴을 설치합니다 `ontap-san` NVMe/TCP(Nonvolatile Memory Express) 프로토콜을 통한 NVMe(Nonvolatile Memory Express)
 
 
-NOTE: 최신 버전의 RedHat CoreOS에는 기본적으로 NFS 및 iSCSI가 설치되어 있습니다.
+NOTE: NVMe/TCP에 ONTAP 9.12 이상을 사용하는 것이 좋습니다.
 
 
 
@@ -228,3 +231,50 @@ NOTE: Ubuntu 18.04의 경우 iSCSI 데몬이 시작되도록 "open-iscsi"를 시
 ====
 
 WARNING: 컨테이너에 볼륨을 연결할 때 오류가 발생하지 않도록 iSCSI 도구를 설치한 후 작업자 노드를 재부팅합니다.
+
+
+
+== NVMe/TCP 볼륨
+
+운영 체제의 명령을 사용하여 NVMe 툴을 설치합니다.
+
+[NOTE]
+====
+* NVMe에는 RHEL 9 이상이 필요합니다.
+* Kubernetes 노드의 커널 버전이 너무 오래되었거나 NVMe 패키지를 커널 버전에서 사용할 수 없는 경우 노드의 커널 버전을 NVMe 패키지를 사용하여 커널 버전을 업데이트해야 할 수 있습니다.
+
+
+====
+[role="tabbed-block"]
+====
+.RHEL 9 를 참조하십시오
+--
+[listing]
+----
+sudo yum install nvme-cli
+sudo yum install linux-modules-extra-$(uname -r)
+sudo modprobe nvme-tcp
+----
+--
+.우분투
+--
+[listing]
+----
+sudo apt install nvme-cli
+sudo apt -y install linux-modules-extra-$(uname -r)
+sudo modprobe nvme-tcp
+----
+--
+====
+
+
+=== 설치를 확인합니다
+
+설치 후 명령을 사용하여 Kubernetes 클러스터의 각 노드에 고유한 NQN이 있는지 확인합니다.
+
+[listing]
+----
+cat /etc/nvme/hostnqn
+----
+
+WARNING: Astra Trident가 을 수정 한다 `ctrl_device_tmo` NVMe가 중단되더라도 NVMe가 중단되지 않도록 하는 가치 이 설정을 변경하지 마십시오.

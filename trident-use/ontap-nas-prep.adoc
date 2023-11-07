@@ -342,22 +342,24 @@ NOTE: 을 참조하십시오 link:https://docs.netapp.com/us-en/ontap/smb-config
 
 . 백엔드를 생성할 때 SMB 볼륨을 지정하려면 다음을 구성해야 합니다. 모든 ONTAP 백엔드 구성 옵션에 대한 자세한 내용은 을 참조하십시오 link:trident-fsx-examples.html["ONTAP 구성 옵션 및 예제용 FSX"].
 +
-[cols="3"]
+[cols="1,2,1"]
 |===
 | 매개 변수 | 설명 | 예 
 
 
-| `smbShare`
-다음 중 하나를 지정할 수 있습니다. Microsoft 관리 콘솔 또는 ONTAP CLI를 사용하여 생성된 SMB 공유의 이름, Astra Trident가 SMB 공유를 생성할 수 있도록 하는 이름 또는 볼륨에 대한 공통 공유 액세스를 방지하기 위해 매개 변수를 비워 둘 수 있습니다.
+| `smbShare` | 다음 중 하나를 지정할 수 있습니다. Microsoft 관리 콘솔 또는 ONTAP CLI를 사용하여 생성된 SMB 공유의 이름, Astra Trident가 SMB 공유를 생성할 수 있도록 하는 이름 또는 볼륨에 대한 공통 공유 액세스를 방지하기 위해 매개 변수를 비워 둘 수 있습니다.
 
 이 매개 변수는 사내 ONTAP의 경우 선택 사항입니다.
 
-이 매개변수는 ONTAP 백엔드에 대한 아마존 FSx에 필요하며 비워둘 수 없습니다. | `smb-share` | `nasType` 
+이 매개변수는 ONTAP 백엔드에 대한 아마존 FSx에 필요하며 비워둘 수 없습니다. | `smb-share` 
 
 
-| * 를 로 설정해야 합니다 `smb`. * null인 경우 기본값은 로 설정됩니다 `nfs`. | `smb` | '생태성 스타일'을 참조하십시오 
+| `nasType` | * 를 로 설정해야 합니다 `smb`. * null인 경우 기본값은 로 설정됩니다 `nfs`. | `smb` 
 
 
-| 새로운 볼륨에 대한 보안 스타일 * 를 로 설정해야 합니다 `ntfs` 또는 `mixed` SMB 볼륨용. * | `ntfs` 또는 `mixed` SMB 볼륨용 | 유니크권한 
+| '생태성 스타일'을 참조하십시오 | 새로운 볼륨에 대한 보안 스타일 * 를 로 설정해야 합니다 `ntfs` 또는 `mixed` SMB 볼륨용. * | `ntfs` 또는 `mixed` SMB 볼륨용 
+
+
+| 유니크권한 | 모드를 선택합니다. SMB 볼륨에 대해서는 * 를 비워 두어야 합니다. * | "" 
 |===
 

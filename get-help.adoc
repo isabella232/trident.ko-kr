@@ -31,6 +31,11 @@ Astra Trident는 버전에 따라 3가지 수준의 지원을 제공합니다. �
 
 
  a| 
+link:https://docs.netapp.com/us-en/trident/index.html["23.10"^]
+| 2024년 10월 | 2025년 10월 | 2026년 10월 
+
+
+ a| 
 link:https://docs.netapp.com/us-en/trident/index.html["2007년 3월"^]
 | 2024년 7월 | 2025년 7월 | 2026년 7월 
 
@@ -47,7 +52,7 @@ link:https://docs.netapp.com/us-en/trident-2301/index.html["23.01"^]
 
  a| 
 link:https://docs.netapp.com/us-en/trident-2210/index.html["22.10"^]
-| 2023년 10월 | 2024년 10월 | 2025년 10월 
+| -- | 2024년 10월 | 2025년 10월 
 
 
  a| 
@@ -67,7 +72,7 @@ link:https://docs.netapp.com/us-en/trident-2201/index.html["22.01"^]
 
  a| 
 link:https://docs.netapp.com/us-en/trident-2110/index.html["21.10"^]
-| -- | 2023년 10월 | 2024년 10월 
+| -- | -- | 2024년 10월 
 
 
  a| 
@@ -83,11 +88,6 @@ link:https://netapp-trident.readthedocs.io/en/stable-v21.04/["21.04"^]
  a| 
 link:https://netapp-trident.readthedocs.io/en/stable-v21.01/["21.01"^]
 | -- | -- | 2024년 1월 
-
-
- a| 
-link:https://netapp-trident.readthedocs.io/en/stable-v20.11/["20.10"^]
-| -- | -- | 2023년 10월 
 |===
 
 NOTE: 21.07 이전의 릴리스는 기존 문서 사이트로 리디렉션합니다.

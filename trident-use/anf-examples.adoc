@@ -39,22 +39,32 @@ Azure NetApp Files 백엔드는 이러한 구성 옵션을 제공합니다.
 | 백엔드이름 | 사용자 지정 이름 또는 스토리지 백엔드 | 드라이버 이름 + "_" + 임의 문자 
 
 
-| '스크립트 ID'입니다 | Azure 구독의 구독 ID입니다 |  
+| '스크립트 ID'입니다 | Azure 구독의 구독 ID입니다
+
+AKS 클러스터에서 관리되는 ID가 설정된 경우 선택 사항입니다. |  
 
 
-| 텐antID | 앱 등록에서 테넌트 ID입니다 |  
+| 텐antID | 앱 등록에서 테넌트 ID입니다
+
+AKS 클러스터에서 관리되는 ID가 설정된 경우 선택 사항입니다. |  
 
 
-| '클라이언트 ID' | 앱 등록의 클라이언트 ID입니다 |  
+| '클라이언트 ID' | 앱 등록의 클라이언트 ID입니다
+
+AKS 클러스터에서 관리되는 ID가 설정된 경우 선택 사항입니다. |  
 
 
-| 'clientSecret | 앱 등록에서 클라이언트 암호 |  
+| 'clientSecret | 앱 등록에서 클라이언트 암호
+
+AKS 클러스터에서 관리되는 ID가 설정된 경우 선택 사항입니다. |  
 
 
 | '저급' | '초표준', '프리미엄', '울트라' 중 하나 | ""(임의) 
 
 
-| 위치 | 새 볼륨을 생성할 Azure 위치의 이름입니다 |  
+| 위치 | 새 볼륨을 생성할 Azure 위치의 이름입니다
+
+AKS 클러스터에서 관리되는 ID가 설정된 경우 선택 사항입니다. |  
 
 
 | [재치 단체 | 검색된 자원을 필터링하기 위한 자원 그룹 목록입니다 | "[]"(필터 없음) 
@@ -145,8 +155,10 @@ PVC를 생성할 때 "No capacity pool found" 오류가 발생하는 경우 앱 
 
 == 예제 설정
 
-.예 1: 최소 구성
-[%collapsible%open]
+다음 예에서는 대부분의 매개 변수를 기본값으로 두는 기본 구성을 보여 줍니다. 이는 백엔드를 정의하는 가장 쉬운 방법입니다.
+
+.최소 구성
+[%collapsible]
 ====
 이는 절대적인 최소 백엔드 구성입니다. 이 구성을 통해 Astra Trident는 구성된 위치에서 Azure NetApp Files에 위임된 모든 NetApp 계정, 용량 풀 및 서브넷을 검색하고 이러한 풀과 서브넷 중 하나에 무작위로 새 볼륨을 배치합니다. 왜냐하면 `nasType` 생략됩니다 `nfs` 기본값은 NFS 볼륨에 대해 백엔드가 프로비저닝됩니다.
 
@@ -164,8 +176,30 @@ clientSecret: SECRET
 location: eastus
 ----
 ====
-.예 2: 용량 풀 필터를 사용하는 특정 서비스 수준 구성
-[%collapsible%open]
+.AKS의 관리되는 ID입니다
+[%collapsible]
+====
+이 백엔드 구성은 생략됩니다 `subscriptionID`, `tenantID`, `clientID`, 및 `clientSecret`관리되는 ID를 사용할 경우 선택 사항입니다.
+
+[listing]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: backend-tbc-anf-1
+  namespace: trident
+spec:
+  version: 1
+  storageDriverName: azure-netapp-files
+  capacityPools: ["ultra-pool"]
+  resourceGroups: ["aks-ami-eastus-rg"]
+  netappAccounts: ["smb-na"]
+  virtualNetwork: eastus-prod-vnet
+  subnet: eastus-anf-subnet
+----
+====
+.용량 풀 필터를 사용한 특정 서비스 수준 구성
+[%collapsible]
 ====
 이 백엔드 구성은 Azure에 볼륨을 배치합니다 `eastus` 의 위치 `Ultra` 용량 풀. Astra Trident는 해당 위치에서 Azure NetApp Files에 위임된 모든 서브넷을 자동으로 검색하여 이 중 하나에 무작위로 새 볼륨을 배치합니다.
 
@@ -185,8 +219,8 @@ capacityPools:
 - application-group-1/account-1/ultra-2
 ----
 ====
-.예 3: 고급 구성
-[%collapsible%open]
+.고급 구성
+[%collapsible]
 ====
 이 백엔드 구성은 단일 서브넷에 대한 볼륨 배치 범위를 더욱 줄여주고 일부 볼륨 프로비저닝 기본값도 수정합니다.
 
@@ -217,8 +251,8 @@ defaults:
 
 ----
 ====
-.예 4: 가상 풀 구성
-[%collapsible%open]
+.가상 풀 구성
+[%collapsible]
 ====
 이 백엔드 구성은 단일 파일에 여러 스토리지 풀을 정의합니다. 다양한 서비스 수준을 지원하는 여러 용량 풀이 있고 이를 나타내는 Kubernetes의 스토리지 클래스를 생성하려는 경우에 유용합니다. 가상 풀 레이블을 사용하여 에 따라 풀을 구분했습니다 `performance`.
 
@@ -307,8 +341,8 @@ allowVolumeExpansion: true
 
 사용 `nasType`, `node-stage-secret-name`, 및  `node-stage-secret-namespace`, SMB 볼륨을 지정하고 필요한 Active Directory 자격 증명을 제공할 수 있습니다.
 
-.예제 1: 기본 네임스페이스의 기본 구성
-[%collapsible%open]
+.기본 네임스페이스에 대한 기본 구성
+[%collapsible]
 ====
 [listing]
 ----
@@ -325,8 +359,8 @@ parameters:
 
 ----
 ====
-.예제 2: 네임스페이스당 다른 암호 사용
-[%collapsible%open]
+.네임스페이스별로 다른 암호 사용
+[%collapsible]
 ====
 [listing]
 ----
@@ -342,8 +376,8 @@ parameters:
   csi.storage.k8s.io/node-stage-secret-namespace: ${pvc.namespace}
 ----
 ====
-.예 3: 볼륨별로 다른 암호 사용
-[%collapsible%open]
+.볼륨별로 다른 암호 사용
+[%collapsible]
 ====
 [listing]
 ----
@@ -360,7 +394,7 @@ parameters:
 ----
 ====
 
-NOTE: `nasType: `smb` SMB 볼륨을 지원하는 풀에 대한 필터입니다. `nasType: `nfs` 또는 `nasType: `null` NFS 풀에 대한 필터입니다.
+NOTE: `nasType: smb` SMB 볼륨을 지원하는 풀에 대한 필터입니다. `nasType: nfs` 또는 `nasType: null` NFS 풀에 대한 필터입니다.
 
 
 

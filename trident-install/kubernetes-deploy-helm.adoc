@@ -16,7 +16,7 @@ Trident 연산자를 구축하고 Hrom을 사용하여 Astra Trident를 설치�
 
 
 
-== Astra Trident 23.07.1에 대한 중요 정보
+== Astra Trident 23.10에 대한 중요 정보
 
 * Astra Trident * 에 대한 다음 중요 정보를 읽어야 합니다
 
@@ -49,11 +49,11 @@ Trident 사용 link:https://artifacthub.io/packages/helm/netapp-trident/trident-
 ----
 helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
 ----
-. 사용 `helm install` 다음 예제에서와 같이 배포 이름을 지정합니다 `23.07.1` 는 설치 중인 Astra Trident의 버전입니다.
+. 사용 `helm install` 다음 예제에서와 같이 배포 이름을 지정합니다 `23.10.0` 는 설치 중인 Astra Trident의 버전입니다.
 +
 [listing]
 ----
-helm install <name> netapp-trident/trident-operator --version 23.07.1 --create-namespace --namespace <trident-namespace>
+helm install <name> netapp-trident/trident-operator --version 23.10.0 --create-namespace --namespace <trident-namespace>
 ----
 +
 
@@ -83,11 +83,11 @@ NOTE: Trident에 대한 네임스페이스를 이미 만든 경우에는 '--crea
 명령줄에 overrides를 지정합니다.
 
 |===
-예를 들어, 의 기본값을 변경합니다 `debug`에서 다음을 실행합니다 `--set` 명령 위치 `23.07.1` 설치 중인 Astra Trident의 버전입니다.
+예를 들어, 의 기본값을 변경합니다 `debug`에서 다음을 실행합니다 `--set` 명령 위치 `23.10.0` 설치 중인 Astra Trident의 버전입니다.
 
 [listing]
 ----
-helm install <name> netapp-trident/trident-operator --version 23.07.1  --create-namespace --namespace trident --set tridentDebug=true
+helm install <name> netapp-trident/trident-operator --version 23.10.0  --create-namespace --namespace trident --set tridentDebug=true
 ----
 
 
@@ -95,7 +95,7 @@ helm install <name> netapp-trident/trident-operator --version 23.07.1  --create-
 
 이 표와 `values.yaml` 제어 차트의 일부인 파일 에는 키 목록과 해당 기본값이 나와 있습니다.
 
-[cols="3"]
+[cols="1,2,1"]
 |===
 | 옵션을 선택합니다 | 설명 | 기본값 
 
@@ -127,7 +127,7 @@ helm install <name> netapp-trident/trident-operator --version 23.07.1  --create-
 | `tridentNodePluginTolerations` | Pod에 대한 Kubernetes 허용 설정을 재정의합니다. 을 참조하십시오 <<컨트롤러 Pod 및 노드 포드 이해>> 를 참조하십시오. |  
 
 
-| 'imageRegistry'입니다 | 에 대한 레지스트리를 식별합니다 `trident-operator`, `trident`및 기타 이미지. 기본값을 그대로 사용하려면 비워 두십시오. | "" 
+| 'imageRegistry'입니다 | 에 대한 레지스트리를 식별합니다 `trident-operator`, `trident`및 기타 이미지. 기본값을 그대로 사용하려면 비워 두십시오. | `""` 
 
 
 | `imagePullPolicy` | 에 대한 이미지 풀 정책을 설정합니다 `trident-operator`. | `IfNotPresent` 
@@ -136,7 +136,7 @@ helm install <name> netapp-trident/trident-operator --version 23.07.1  --create-
 | 'imagePullSecrets' | 의 이미지 풀 비밀을 설정합니다 `trident-operator`, `trident`및 기타 이미지. |  
 
 
-| 쿠벨레트디렉토리 | kubelet 내부 상태의 호스트 위치를 재정의할 수 있습니다. | '"/var/lib/kubelet"' 
+| 쿠벨레트디렉토리 | kubelet 내부 상태의 호스트 위치를 재정의할 수 있습니다. | `"/var/lib/kubelet"` 
 
 
 | `operatorLogLevel` | Trident 연산자의 로그 수준을 다음으로 설정할 수 있습니다. `trace`, `debug`, `info`, `warn`, `error`, 또는 `fatal`. | `"info"` 
@@ -145,10 +145,10 @@ helm install <name> netapp-trident/trident-operator --version 23.07.1  --create-
 | `operatorDebug` | Trident 연산자의 로그 수준을 디버깅으로 설정할 수 있습니다. | "참"입니다 
 
 
-| `operatorImage` | 에 대한 이미지를 완전히 재정의할 수 있습니다 `trident-operator`. | "" 
+| `operatorImage` | 에 대한 이미지를 완전히 재정의할 수 있습니다 `trident-operator`. | `""` 
 
 
-| `operatorImageTag` | 의 태그를 재정의할 수 있습니다 `trident-operator` 이미지. | "" 
+| `operatorImageTag` | 의 태그를 재정의할 수 있습니다 `trident-operator` 이미지. | `""` 
 
 
 | `tridentIPv6` | Astra Trident가 IPv6 클러스터에서 작동하도록 허용합니다. | 거짓입니다 
@@ -166,7 +166,7 @@ helm install <name> netapp-trident/trident-operator --version 23.07.1  --create-
 | `tridentAutosupportImageTag` | Astra Trident AutoSupport 컨테이너의 이미지 태그를 재정의할 수 있습니다. | `<version>` 
 
 
-| `tridentAutosupportProxy` | Astra Trident AutoSupport 컨테이너가 HTTP 프록시를 통해 집에 전화를 걸 수 있도록 허용합니다. | "" 
+| `tridentAutosupportProxy` | Astra Trident AutoSupport 컨테이너가 HTTP 프록시를 통해 집에 전화를 걸 수 있도록 허용합니다. | `""` 
 
 
 | `tridentLogFormat` | Astra Trident 로깅 형식을 설정합니다 (`text` 또는 `json`)를 클릭합니다. | `"text"` 
@@ -181,19 +181,19 @@ helm install <name> netapp-trident/trident-operator --version 23.07.1  --create-
 | `tridentDebug` | Astra Trident의 로그 수준을 로 설정할 수 있습니다 `debug`. | 거짓입니다 
 
 
-| `tridentLogWorkflows` | 추적 로깅 또는 로그 억제를 위해 특정 Astra Trident 워크플로우를 활성화할 수 있습니다. | "" 
+| `tridentLogWorkflows` | 추적 로깅 또는 로그 억제를 위해 특정 Astra Trident 워크플로우를 활성화할 수 있습니다. | `""` 
 
 
-| `tridentLogLayers` | 추적 로깅 또는 로그 억제를 위해 특정 Astra Trident 계층을 활성화할 수 있습니다. | "" 
+| `tridentLogLayers` | 추적 로깅 또는 로그 억제를 위해 특정 Astra Trident 계층을 활성화할 수 있습니다. | `""` 
 
 
-| 트리덴티이미지 | Astra Trident의 이미지를 완전히 재정의할 수 있습니다. | "" 
+| 트리덴티이미지 | Astra Trident의 이미지를 완전히 재정의할 수 있습니다. | `""` 
 
 
-| `tridentImageTag` | Astra Trident에 대한 이미지 태그를 재정의할 수 있습니다. | "" 
+| `tridentImageTag` | Astra Trident에 대한 이미지 태그를 재정의할 수 있습니다. | `""` 
 
 
-| `tridentProbePort` | Kubernetes 활성/준비 프로브에 사용되는 기본 포트를 재정의할 수 있습니다. | "" 
+| `tridentProbePort` | Kubernetes 활성/준비 프로브에 사용되는 기본 포트를 재정의할 수 있습니다. | `""` 
 
 
 | `windows` | Windows 작업자 노드에 Astra Trident를 설치할 수 있습니다. | 거짓입니다 
@@ -203,6 +203,9 @@ helm install <name> netapp-trident/trident-operator --version 23.07.1  --create-
 
 
 | `excludePodSecurityPolicy` | 운영자 POD 보안 정책을 생성할 수 없습니다. | 거짓입니다 
+
+
+| `cloudProvider` | 를 로 설정합니다 `"Azure"` AKS 클러스터에서 관리되는 ID를 사용하는 경우 | `""` 
 |===
 
 

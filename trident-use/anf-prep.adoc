@@ -1,7 +1,7 @@
 ---
 sidebar: sidebar 
 permalink: trident-use/anf-prep.html 
-keywords: trident backend, azure netapp files, smb volumes, smb, windows, active directory, csi proxy 
+keywords: trident backend, azure netapp files, smb volumes, smb, windows, active directory, csi proxy, aks, managed identities 
 summary: Azure NetApp Files 백엔드를 구성하기 전에 다음 요구 사항이 충족되는지 확인해야 합니다. 
 ---
 = Azure NetApp Files 백엔드를 구성할 준비를 합니다
@@ -18,10 +18,12 @@ Azure NetApp Files 백엔드를 구성하기 전에 다음 요구 사항이 충�
 
 == NFS 및 SMB 볼륨의 사전 요구 사항
 
-
-NOTE: Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경우 Azure NetApp Files를 설정하고 NFS 볼륨을 생성하려면 몇 가지 초기 구성이 필요합니다. 을 참조하십시오 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes["Azure: Azure NetApp Files를 설정하고 NFS 볼륨을 생성합니다"^].
+Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경우 Azure NetApp Files를 설정하고 NFS 볼륨을 생성하려면 몇 가지 초기 구성이 필요합니다. 을 참조하십시오 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-quickstart-set-up-account-create-volumes["Azure: Azure NetApp Files를 설정하고 NFS 볼륨을 생성합니다"^].
 
 를 구성하고 사용합니다 https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^] 백엔드, 다음이 필요합니다.
+
+
+NOTE: `subscriptionID`, `tenantID`, `clientID`, `location`, 및 `clientSecret` AKS 클러스터에서 관리되는 ID를 사용하는 경우 선택 사항입니다.
 
 * 용량 풀입니다. 을 참조하십시오 link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool["Microsoft: Azure NetApp Files에 대한 용량 풀을 생성합니다"^].
 * Azure NetApp Files에 위임된 서브넷. 을 참조하십시오 link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["Microsoft: Azure NetApp Files에 서브넷을 위임합니다"^].
@@ -31,6 +33,9 @@ NOTE: Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는
 ** 소유자 또는 참가자 역할입니다 link:https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles["Azure에서 사전 정의"^].
 ** A link:https://learn.microsoft.com/en-us/azure/role-based-access-control/custom-roles-portal["사용자 지정 참가자 역할"] 구독 레벨입니다 (`assignableScopes`) 다음 사용 권한은 Astra Trident에 필요한 권한만 가집니다. 사용자 지정 역할을 만든 후 link:https://learn.microsoft.com/en-us/azure/role-based-access-control/role-assignments-portal["Azure 포털을 사용하여 역할을 할당합니다"^].
 +
+.사용자 지정 기고자 역할입니다
+[%collapsible]
+====
 [source, JSON]
 ----
 {
@@ -73,6 +78,7 @@ NOTE: Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는
     }
 }
 ----
+====
 
 
 * Azure를 선택합니다 `location` 하나 이상의 항목이 포함되어 있습니다 link:https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["위임된 서브넷"^]. Trident 22.01부터 `location` 매개 변수는 백엔드 구성 파일의 최상위 수준에 있는 필수 필드입니다. 가상 풀에 지정된 위치 값은 무시됩니다.
