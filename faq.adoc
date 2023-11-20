@@ -62,7 +62,7 @@ Astra Trident는 다른 NetApp 소프트웨어 제품에 종속되어 있지 않
 
 === Astra Trident가 개인 레지스트리에서 오프라인 설치를 지원합니까?
 
-예, Astra Trident는 오프라인으로 설치할 수 있습니다. 을 참조하십시오 link:https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-deploy.html["여기"].
+예, Astra Trident는 오프라인으로 설치할 수 있습니다. 을 참조하십시오 link:trident-get-started/kubernetes-deploy.html["여기"].
 
 
 
@@ -86,13 +86,13 @@ Astra Trident가 Kubernetes API Server에서 읽어 애플리케이션에서 새
 
 === Astra Trident에서 사용하는 역할 및 권한은 무엇입니까?
 
-Trident 설치 프로그램은 Kubernetes 클러스터의 PersistentVolume, PersistentVolumeClaim, StorageClass 및 Secret 리소스에 대한 특정 액세스 권한을 가진 Kubernetes ClusterRole을 생성합니다. 을 참조하십시오 link:https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-customize-deploy-tridentctl.html["여기"].
+Trident 설치 프로그램은 Kubernetes 클러스터의 PersistentVolume, PersistentVolumeClaim, StorageClass 및 Secret 리소스에 대한 특정 액세스 권한을 가진 Kubernetes ClusterRole을 생성합니다. 을 참조하십시오 link:trident-get-started/kubernetes-customize-deploy-tridentctl.html["여기"].
 
 
 
 === 설치에 Astra Trident가 사용하는 정확한 매니페스트 파일을 로컬로 생성할 수 있습니까?
 
-필요한 경우 설치에 Astra Trident가 사용하는 정확한 매니페스트 파일을 로컬에서 생성하고 수정할 수 있습니다. 을 참조하십시오 link:https://docs.netapp.com/us-en/trident/trident-get-started/kubernetes-customize-deploy-tridentctl.html["여기"].
+필요한 경우 설치에 Astra Trident가 사용하는 정확한 매니페스트 파일을 로컬에서 생성하고 수정할 수 있습니다. 을 참조하십시오 link:trident-get-started/kubernetes-customize-deploy-tridentctl.html["여기"].
 
 
 
@@ -310,7 +310,7 @@ excludeStoragePools 매개 변수는 Astra Trident가 프로비저닝에 사용�
 
 === ONTAP가 있는 Astra Trident를 통해 볼륨 암호화를 설정하려면 어떻게 해야 합니까?
 
-백엔드 정의 파일의 암호화 매개 변수를 사용하여 Trident에서 프로비저닝한 볼륨에 대한 암호화를 설정할 수 있습니다. 자세한 내용은 다음을 참조하십시오. link:https://docs.netapp.com/us-en/trident/trident-reco/security-reco.html#use-astra-trident-with-nve-and-nae["Astra Trident가 NVE 및 NAE와 연동되는 방식"]
+백엔드 정의 파일의 암호화 매개 변수를 사용하여 Trident에서 프로비저닝한 볼륨에 대한 암호화를 설정할 수 있습니다. 자세한 내용은 다음을 참조하십시오. link:trident-reco/security-reco.html#use-astra-trident-with-nve-and-nae["Astra Trident가 NVE 및 NAE와 연동되는 방식"]
 
 
 

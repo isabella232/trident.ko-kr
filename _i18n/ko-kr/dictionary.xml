@@ -1769,8 +1769,6 @@
   <block id="a10ab8f133704d9a58a1dff179ad7f7d" category="list-text">** 표준 생성** 을 사용하는 경우 자동 백업을 비활성화합니다. 자동 백업을 비활성화하면 Trident는 추가적인 수동 개입 없이 볼륨을 성공적으로 삭제할 수 있습니다.</block>
   <block id="4ef50c481a6113a6276514f572c414d2" category="inline-image-macro">자동 백업을 사용하지 않도록 설정하는 AWS 콘솔 스크린샷</block>
   <block id="cce5aa9218d4019d57adcf814d7189c1" category="paragraph"><block ref="cce5aa9218d4019d57adcf814d7189c1" category="inline-image-macro-rx" type="image"></block></block>
-  <block id="45b09f7cb3dcbe0274eef2b3fce46bea" category="paragraph">예, Astra Trident는 오프라인으로 설치할 수 있습니다. 을 참조하십시오 <block ref="4a2b27d6d4bc3dd7ae85bfd131d50753" category="inline-link-macro-rx"></block>.</block>
-  <block id="0f43ba8a9cfc14b033c2c652f53bfcb9" category="paragraph">필요한 경우 설치에 Astra Trident가 사용하는 정확한 매니페스트 파일을 로컬에서 생성하고 수정할 수 있습니다. 을 참조하십시오 <block ref="7a68296d6f600eac17d317743bea0050" category="inline-link-macro-rx"></block>.</block>
   <block id="e9c44bbfd795a5d63d74c6a77afee70d" category="paragraph">법적 고지 사항은 저작권 선언, 상표, 특허 등에 대한 액세스를 제공합니다.</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="section-title">저작권</block>
   <block id="126a02652da6de02962cf1b654fd6376" category="section-title">상표</block>
@@ -2144,7 +2142,6 @@
   <block id="f18a50f02f48551895d57b81dd288142" category="sidebar">네임스페이스 전체에서 NFS 볼륨을 공유합니다</block>
   <block id="fd1117c82327fbe8671f26e897ceb8f4" category="inline-link-macro">BlueXP를 사용하는 Astra Trident</block>
   <block id="a76a1e164520105317267dc41b95e8ce" category="paragraph">와 함께 <block ref="f8c16e8c21124ccc028d2db7fd32a98f" category="inline-link-macro-rx"></block>Astra Trident의 최신 버전으로 업그레이드하고, 스토리지 클래스를 추가 및 관리하고, 작업 환경에 연결한 다음, Cloud Backup Service를 사용하여 영구 볼륨을 백업할 수 있습니다. BlueXP는 Trident 연산자를 사용하여 수동으로 또는 Helm을 사용하여 Astra Trident 구축을 지원합니다.</block>
-  <block id="6ce33e8f1e198bf1c3583bc5ef789b75" category="paragraph">백엔드 정의 파일의 암호화 매개 변수를 사용하여 Trident에서 프로비저닝한 볼륨에 대한 암호화를 설정할 수 있습니다. 자세한 내용은 다음을 참조하십시오. <block ref="3260a21902518174ce8d9bfef42be276" category="inline-link-macro-rx"></block></block>
   <block id="66f2c42a4ca561f5472459301bc7d096" category="list-text">이제 ONTAP 드라이버에 대한 자동 MetroCluster 전환 감지 기능을 사용할 수 있습니다.</block>
   <block id="e87ded5ef8bc8adbc3c135528636f4f2" category="list-text"><block ref="e87ded5ef8bc8adbc3c135528636f4f2" category="inline-link-macro-rx"></block></block>
   <block id="fce586d9f649fb529d0a1846495ba259" category="list-text"><block ref="fce586d9f649fb529d0a1846495ba259" category="inline-link-macro-rx"></block></block>
@@ -3505,7 +3502,6 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
   <block id="40c7465c2468fd6e890691f6cb612731" category="paragraph">업그레이드된 Trident 설치의 접두사 1.3.2 이전 버전의 Trident를 사용하고 기존 볼륨으로 업그레이드를 수행하는 경우 볼륨 이름 방법을 통해 매핑된 이전 볼륨에 액세스하려면 이 값을 설정해야 합니다.</block>
   <block id="7f86daacf34c67c042470fa9d926ba49" category="paragraph">표준 로깅 수준에서는 대부분의 문제를 진단할 수 있어야 합니다. 이 방법으로는 충분하지 않으면 디버그 로깅을 활성화할 수 있습니다.</block>
   <block id="6bdfdbfc466bb6d93222dbf7b3a374fe" category="list-text">호스트에서 바이너리 자체를 실행하는 경우 호스트의 에서 로그를 사용할 수 있습니다<block ref="849fc2421f236e9c9b49a9d3fed2c404" prefix=" " category="inline-code"></block> 디렉토리. 디버그 로깅을 활성화하려면 를 지정합니다<block ref="9b945915b0cddbee22047fd529d642f6" prefix=" " category="inline-code"></block> 플러그인을 실행할 때</block>
-  <block id="856df87d418b99d5e88b1e337987cad3" category="paragraph">Trident 설치 프로그램은 Kubernetes 클러스터의 PersistentVolume, PersistentVolumeClaim, StorageClass 및 Secret 리소스에 대한 특정 액세스 권한을 가진 Kubernetes ClusterRole을 생성합니다. 을 참조하십시오 <block ref="7a68296d6f600eac17d317743bea0050" category="inline-link-macro-rx"></block>.</block>
   <block id="1a4c36220ae60b6a6a4c2285be05a43a" category="section-title">스토리지 시스템의 암호가 변경되고 Astra Trident가 더 이상 작동하지 않습니다. 어떻게 복구해야 합니까?</block>
   <block id="a988578d4c176cf950a2211099db7d92" category="paragraph">백엔드의 암호를 로 업데이트합니다<block ref="00a81aa9b1d406861879017de885e0fb" prefix=" " category="inline-code"></block>. 대치<block ref="3d9fd17a5232cc24eeeaec2b07af5417" prefix=" " category="inline-code"></block> 백엔드 이름을 포함하는 예에서 및 입니다<block ref="27ab7e8dbd45daf638f3144d4891ef3b" prefix=" " category="inline-code"></block> 올바른 경로를 사용하여<block ref="9c15d32711e9ef8c6f76deda35452e13" prefix=" " category="inline-code"></block> 파일.</block>
   <block id="8cb93d7a514e5569b46cba45dedc7daf" category="paragraph">Trident POD를 제거할 경우 데이터가 손실되지 않습니다. Trident 메타데이터는 CRD 개체에 저장됩니다. Trident에서 프로비저닝한 모든 PVS가 정상적으로 작동합니다.</block>
@@ -4037,4 +4033,8 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="6933dffe806f29980dbedda6aef6fda7" category="inline-link">Astra Trident 23.07</block>
   <block id="5190d8b9f5b246f225722ffa2f20e6b3" category="list-text"><block ref="5190d8b9f5b246f225722ffa2f20e6b3" category="inline-link-rx"></block></block>
   <block id="0cd8d0588cd2b20face3a0379d38f777" category="admonition">동적 내보내기 정책을 사용할 때는 NAT(Network Address Translation)를 사용하지 마십시오. NAT를 사용하면 스토리지 컨트롤러는 실제 IP 호스트 주소가 아니라 프런트엔드 NAT 주소를 인식하므로 내보내기 규칙에 일치하는 항목이 없으면 액세스가 거부됩니다.</block>
+  <block id="11e8ef6c378ba835810fad2cc65ce5b5" category="paragraph">예, Astra Trident는 오프라인으로 설치할 수 있습니다. 을 참조하십시오 <block ref="8b57b68a0e3f8b19c1d735a44663ac45" category="inline-link-macro-rx"></block>.</block>
+  <block id="85d1bf3ede0fe784fd2bd122a9f9488f" category="paragraph">Trident 설치 프로그램은 Kubernetes 클러스터의 PersistentVolume, PersistentVolumeClaim, StorageClass 및 Secret 리소스에 대한 특정 액세스 권한을 가진 Kubernetes ClusterRole을 생성합니다. 을 참조하십시오 <block ref="52b05a1acf0f0f7fbbce1ec1469188fc" category="inline-link-macro-rx"></block>.</block>
+  <block id="5b72286a318e05b9dba4ea3ab28f1892" category="paragraph">필요한 경우 설치에 Astra Trident가 사용하는 정확한 매니페스트 파일을 로컬에서 생성하고 수정할 수 있습니다. 을 참조하십시오 <block ref="52b05a1acf0f0f7fbbce1ec1469188fc" category="inline-link-macro-rx"></block>.</block>
+  <block id="de05556ddd203d92c70611ab918d657a" category="paragraph">백엔드 정의 파일의 암호화 매개 변수를 사용하여 Trident에서 프로비저닝한 볼륨에 대한 암호화를 설정할 수 있습니다. 자세한 내용은 다음을 참조하십시오. <block ref="22dccd9f6b27b25deeed93972d237440" category="inline-link-macro-rx"></block></block>
 </blocks>
