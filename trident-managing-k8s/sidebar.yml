@@ -14,6 +14,8 @@ entries:
       url: "/trident-managing-k8s/upgrade-operator.html"
   - title: tridentctl로 업그레이드하십시오
     url: "/trident-managing-k8s/upgrade-tridentctl.html"
+- title: tridentctl을 사용하여 Astra Trident를 관리합니다
+  url: "/trident-managing-k8s/tridentctl.html"
 - title: Astra Trident를 모니터링합니다
   url: "/trident-use/monitor-trident.html"
 - title: Astra Trident를 제거합니다

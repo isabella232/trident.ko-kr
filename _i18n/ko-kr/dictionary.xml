@@ -1154,33 +1154,15 @@
   <block id="d090b5d97388b77aa02e5d1203c037a0" category="list-text"><block ref="d090b5d97388b77aa02e5d1203c037a0" category="inline-link-rx"></block></block>
   <block id="7d4fab76513c90b603a722620cde60fe" category="doc">명령줄 옵션</block>
   <block id="8db7df66ab1d7ab5f1dc947acdb5fae4" category="section-title">로깅</block>
-  <block id="7e2a14542a2613424ad88206fd2dd9aa" category="list-text">'-debug': 디버깅 출력을 활성화합니다.</block>
-  <block id="55e727716c7f623987be58e50732c01e" category="list-text">'-LogLevel &lt;level&gt;': 로깅 수준(debug, info, warn, error, fatal)을 설정한다. 기본적으로 info(정보) 가 사용됩니다.</block>
   <block id="30136395f01879792198317c11831ea4" category="section-title">쿠버네티스</block>
-  <block id="5700f5ae190580b01f6ed6c031668336" category="list-text">'-k8s_pod': 이 옵션 또는 '-k8s_api_server'를 사용하여 Kubernetes를 지원합니다. 이 설정을 사용하면 Trident에서 포함된 POD의 Kubernetes 서비스 계정 자격 증명을 사용하여 API 서버에 연락합니다. Trident가 서비스 계정이 활성화된 Kubernetes 클러스터에서 POD로 실행되는 경우에만 작동합니다.</block>
-  <block id="24095e7ef85031e99914e2c5298a7ded" category="list-text">"-k8s_api_server &lt;insecure-address:insecure-port&gt;": Kubernetes 지원을 활성화하려면 이 옵션 또는 "-k8s_pod"를 사용하십시오. Trident가 지정된 경우 제공된 비보안 주소 및 포트를 사용하여 Kubernetes API 서버에 연결합니다. 따라서 Trident를 POD 외부에 배포할 수 있지만 API 서버에 대한 비보안 연결만 지원합니다. 안전하게 연결하려면 '-k8s_POD' 옵션을 사용하여 포드에 Trident를 배포합니다.</block>
-  <block id="9d77217a2dfe50f2575ced46f5e661d8" category="list-text">"-k8s_config_path &lt;file&gt;": 필수. KubeConfig 파일에 대한 경로를 지정해야 합니다.</block>
   <block id="c5fd214cdd0d2b3b4272e73b022ba5c2" category="section-title">Docker 를 참조하십시오</block>
-  <block id="1e071a3d810132af1c9f8f6a03ca5609" category="list-text">'-volume_driver&lt;name&gt;': Docker 플러그인을 등록할 때 사용되는 드라이버 이름입니다. 기본값은 'NetApp'입니다.</block>
-  <block id="dfbbfd6bbf6bc798d1cbe8895d1cff22" category="list-text">'-driver_port&lt;port-number&gt;': UNIX 도메인 소켓이 아닌 이 포트에서 수신 대기하십시오.</block>
-  <block id="3874d7b8c9196001f8bfe4c49f43b323" category="list-text">'-config &lt;file&gt;': 필수. 백엔드 구성 파일에 대한 이 경로를 지정해야 합니다.</block>
   <block id="50780f47f6839d47d60bc4555ee00c3f" category="section-title">휴식</block>
-  <block id="bfffd3cb0560af555e57dd6bad52a9be" category="list-text">"-address &lt;ip-or-host&gt;": Trident의 REST 서버가 수신할 주소를 지정합니다. 기본값은 localhost입니다. localhost에서 듣거나 Kubernetes Pod에서 실행 중인 경우, REST 인터페이스는 Pod 외부에서 직접 액세스할 수 없습니다. POD IP 주소를 통해 REST 인터페이스에 액세스할 수 있도록 하려면 "-address""를 사용합니다.</block>
   <block id="433f174b6e54b889696b2efd4ef40dc6" category="admonition">Trident REST 인터페이스는 127.0.0.1(IPv4의 경우) 또는 [::1](IPv6의 경우)에서만 수신 및 서비스하도록 구성할 수 있습니다.</block>
-  <block id="049ad2e7bef322af60013bbdd35ebbe7" category="list-text">'-port&lt;port-number&gt;': Trident의 REST 서버가 수신할 포트를 지정합니다. 기본값은 8000입니다.</block>
-  <block id="188cb756fe8659cb2caf27ca6d1446b4" category="list-text">REST는 REST 인터페이스를 활성화한다. 기본값은 true 입니다.</block>
   <block id="8447c4879970f03c99a2bec36a05c141" category="summary">Astra Trident의 REST API와 상호 작용하려는 경우 REST 엔드포인트를 직접 사용할 수 있습니다.</block>
   <block id="a0ebcf8495639418ba9d4b85dbb67b8b" category="doc">Astra Trident REST API</block>
   <block id="319c1a7b5479ffa2a028b658ad5b7033" category="inline-link-macro">tridentctl 명령 및 옵션</block>
   <block id="8b3c7aa88e751573c842f17535525f19" category="paragraph">API는 다음과 같이 작동합니다.</block>
-  <block id="2fab7aa97b6a2cfae6563e72aac5161e" category="list-text">'&lt;triment-address&gt;/triment/v1/&lt;object-type&gt;': 해당 형식의 모든 개체를 나열합니다.</block>
-  <block id="c34156b367bae1b376f09b89d3be7992" category="list-text">'&lt;trident-address&gt;/trident/v1/&lt;object-type&gt;/&lt;object-name&gt;': 명명된 개체의 세부 정보를 가져옵니다.</block>
-  <block id="6692e2cd6834e6b9b2151799cac2a9f8" category="paragraph">'&lt;triment-address&gt;/triment/v1/&lt;object-type&gt;': 지정된 형식의 개체를 만듭니다.</block>
-  <block id="3d2bacacf0178e742d5abb2abc32d431" category="list-text">생성할 개체의 JSON 구성이 필요합니다. 각 개체 유형의 사양은 을 참조하십시오 <block ref="e87a326653960de9774fcc58ee9fa490" category="inline-link-macro-rx"></block>.</block>
   <block id="5b2f45c3d098b61927afda859c9144f8" category="list-text">개체가 이미 있는 경우 동작이 달라집니다. backends는 기존 개체를 업데이트하지만 다른 모든 개체 형식은 작업에 실패합니다.</block>
-  <block id="ecfc51243c8c28fc234ff87f1f9ddb88" category="paragraph">삭제 &lt;triment-address&gt;/triment/v1/&lt;object-type&gt;/&lt;object-name&gt;': 명명된 리소스를 삭제합니다.</block>
-  <block id="80e4e3d3203325fb6aeb139614fd09f3" category="admonition">백엔드 또는 스토리지 클래스와 연결된 볼륨은 계속 존재하므로 별도로 삭제해야 합니다. 자세한 내용은 을 참조하십시오 <block ref="e87a326653960de9774fcc58ee9fa490" category="inline-link-macro-rx"></block>.</block>
-  <block id="ce94b1f7df7a6a05a559b66f96eff1cc" category="paragraph">이러한 API의 호출 방법에 대한 예제를 보려면 debug("-d") 플래그를 전달하십시오. 자세한 내용은 을 참조하십시오 <block ref="e87a326653960de9774fcc58ee9fa490" category="inline-link-macro-rx"></block>.</block>
   <block id="04333ff788951193122a833ecd614950" category="summary">Kubernetes 및 Trident, Trident 및 스토리지와 Kubernetes 및 스토리지 간의 관계를 결정하는 몇 가지 리소스 개체가 있습니다. 이러한 오브젝트 중 일부는 Kubernetes를 통해 관리되며 나머지는 Trident를 통해 관리됩니다.</block>
   <block id="da1e63dd673a1932cebb48b6a81bbbb1" category="doc">Kubernetes 및 Trident 오브젝트</block>
   <block id="d107eefb0ce66911b186b03b9e9c337e" category="paragraph">REST API를 사용하여 리소스 객체를 읽고 쓰면서 Kubernetes 및 Trident와 상호 작용할 수 있습니다. Kubernetes 및 Trident, Trident 및 스토리지와 Kubernetes 및 스토리지 간의 관계를 결정하는 몇 가지 리소스 개체가 있습니다. 이러한 오브젝트 중 일부는 Kubernetes를 통해 관리되며 나머지는 Trident를 통해 관리됩니다.</block>
@@ -1383,7 +1365,6 @@
   <block id="afe272beb780ad53d441c342bf1c8c77" category="summary">Trident에 대한 간단한 액세스를 제공하는 명령줄 유틸리티인 tridentctl 에 대해 자세히 알아보십시오.</block>
   <block id="1c90ba5cf3791b6148c7887a696911ec" category="paragraph">플래그:</block>
   <block id="a1582c89f8e85f372306a05848eafb68" category="summary">NetApp 스토리지 제품 포트폴리오는 Kubernetes 클러스터의 다양한 측면과 통합되어 고급 데이터 관리 기능을 제공하며, Kubernetes 구축의 기능, 기능, 성능 및 가용성을 향상합니다.</block>
-  <block id="9944b094c4079f770fabc4ae629feb0f" category="doc">Kubernetes와 통합된 NetApp 제품</block>
   <block id="3cce5f3eaf76e098ba8e28f7bbba3f92" category="section-title">아스트라</block>
   <block id="cbb7697b4f6f189240d043ff70ca133c" category="admonition">Trident는 위에 언급된 모든 ONTAP 배포 모델을 지원합니다.</block>
   <block id="5c04ffbd0c110bf7b37d6b95eb756b75" category="paragraph"><block ref="700b45b9fca207b66f675c8d5dfb073b" category="inline-link-rx"></block> 는 클라우드에서 ONTAP 데이터 관리 소프트웨어를 실행하는 소프트웨어 전용 스토리지 어플라이언스입니다. Cloud Volumes ONTAP를 운영 워크로드, 재해 복구, DevOps, 파일 공유 및 데이터베이스 관리에 사용할 수 있습니다. 스토리지 효율성, 고가용성, 데이터 복제, 데이터 계층화, 애플리케이션 정합성을 보장함으로써 엔터프라이즈 스토리지를 클라우드로 확장합니다.</block>
@@ -2208,7 +2189,6 @@
   <block id="3649b15e31d22a1e2210f014d843b9fa" category="section-title"><block ref="099af53f601532dbd31e0ea99ffdeb64" prefix="" category="inline-code"></block></block>
   <block id="a4027ed0f56ae6ac2cbb7605a519932b" category="section-title"><block ref="b5eda0a74558a342cf659187f06f746f" prefix="" category="inline-code"></block></block>
   <block id="7920cf9e1a990d156e390321c1d5efeb" category="section-title"><block ref="59b514174bffe4ae402b3d63aad79fe0" prefix="" category="inline-code"></block></block>
-  <block id="df6d9d5a4c545407095ea4ca424e9457" category="section-title"><block ref="f6c534966bc7687e0c87134d025f8837" prefix="" category="inline-code"></block></block>
   <block id="cc27cfd3259c2299d8dece590d5f6985" category="section-title"><block ref="19ad89bc3e3c9d7ef68b89523eff1987" prefix="" category="inline-code"></block></block>
   <block id="2acfb4ba14a6f33d7e82e8d1dda6542f" category="section-title"><block ref="2165e4fa5bddb65a31f6a0c495c2fa37" prefix="" category="inline-code"></block></block>
   <block id="9ce837bc2492d4ed390bc5d1ea9d1437" category="section-title"><block ref="2541d938b0a58946090d7abdde0d3890" prefix="" category="inline-code"></block></block>
@@ -2223,9 +2203,6 @@
   <block id="65589e383667ac98801982f7e9704f2a" category="section-title">아스트라 트리덴트<block ref="0b79951d94d2a7fc1f7ba55091959bda" prefix=" " category="inline-code"></block> 오브젝트</block>
   <block id="4f89992961c018acecad7b373dcce336" category="section-title">정리<block ref="0b79951d94d2a7fc1f7ba55091959bda" prefix=" " category="inline-code"></block> 설치에 실패한 경우</block>
   <block id="b9984d1eca39b86eb39cedf7db8f8c62" category="section-title">제거<block ref="0b79951d94d2a7fc1f7ba55091959bda" prefix=" " category="inline-code"></block></block>
-  <block id="d3f7afc310875b4ea262305c6d7d6ca2" category="section-title"><block ref="7528035a93ee69cedb1dbddb2f0bfcc8" prefix="" category="inline-code"></block></block>
-  <block id="1713a64319d60f7c9dce75d4e48ee14f" category="section-title"><block ref="a02439ec229d8be0e74b0c1602392310" prefix="" category="inline-code"></block></block>
-  <block id="e4bcff97a02bbf2d15fc5a1c18b2b3dc" category="section-title"><block ref="32f68a60cef40faedbc6af20298c1a1e" prefix="" category="inline-code"></block></block>
   <block id="cc414e256eb2f4bb405602498ece0af6" category="section-title">CVS for GCP에 대한 Astra Trident 지원에 대해 알아보십시오</block>
   <block id="a3edb76d25dfeb8d67e4711eafd2b5ca" category="paragraph">스토리지 시스템에 사용할 백엔드 드라이버를 선택하고 구축합니다.</block>
   <block id="a57628924f909d4edd5cb81ee4f10896" category="section-title">ONTAP 백엔드 드라이버</block>
@@ -3815,7 +3792,6 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="2132f5bed79dd8ecd8d0c512bc60ddb6" category="paragraph">를 클릭합니다<block ref="5a856e83aada9750fe5389f8da94335b" category="inline-link-rx"></block> 에는 가 포함되어 있습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> Astra Trident에 대한 간단한 액세스를 제공하는 명령줄 유틸리티 충분한 권한을 가진 Kubernetes 사용자는 Astra Trident를 설치하거나 Astra Trident Pod가 포함된 네임스페이스를 관리하는 데 사용할 수 있습니다.</block>
   <block id="497769c5c03818fffe81b6190ec47c82" category="section-title">명령 및 글로벌 플래그</block>
   <block id="66fa8a46aff90f5c8507c33a1cdc3e3f" category="paragraph">실행할 수 있습니다<block ref="d7948c15bebd1e81a58fa7c99888c9c6" prefix=" " category="inline-code"></block> 에 사용할 수 있는 명령 목록을 가져옵니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 또는 를 추가합니다<block ref="0c113ca6d57519b559ba5a426be3c6b6" prefix=" " category="inline-code"></block> 특정 명령에 대한 옵션 및 플래그 목록을 가져오려면 임의의 명령에 플래그를 지정합니다.</block>
-  <block id="c64518704ce0c0d5501a45763f464276" category="list-text">사용</block>
   <block id="bc65fa55530131a97d445def1681b8bf" category="paragraph">Astra Trident를 소개합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 유틸리티는 다음 명령 및 글로벌 플래그를 지원합니다.</block>
   <block id="62b14aaaaebc6fa2ec22e0cc8c7ef1cb" category="list-text">Astra Trident에 리소스를 추가합니다.</block>
   <block id="dbc0d6f0c9ce361f817a27fb9b05aefd" category="list-text">Astra Trident에서 하나 이상의 리소스를 제거하십시오.</block>
@@ -3849,104 +3825,20 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="1c36a7e67198ff73665408726652a4c3" category="section-title">명령 옵션 및 플래그</block>
   <block id="ec3361fd829536ea174f7b895c7c718f" category="paragraph">를 사용합니다<block ref="76ea0bebb3c22822b4f0dd9c9fd021c5" prefix=" " category="inline-code"></block> Astra Trident에 리소스를 추가하는 명령입니다.</block>
   <block id="dae8ace18bdcbcc6ae5aece263e14fe8" category="list-text">옵션</block>
-  <block id="b46ea96216eca5291531638a12c4896d" category="list-text"><block ref="b43fdd98b1fd705ae4c3a10cf25aad8a" prefix="" category="inline-code"></block></block>
-  <block id="dd417c7b2c67b3d8feab4e3eae2d40cb" category="list-text">Astra Trident에 백엔드를 추가한다.</block>
   <block id="e61ffe76ccfdc73a94b6aa5f7e2c9956" category="paragraph">를 사용합니다<block ref="099af53f601532dbd31e0ea99ffdeb64" prefix=" " category="inline-code"></block> Astra Trident에서 하나 이상의 리소스를 제거하는 명령입니다.</block>
-  <block id="2bb30ad946c1af3b46cb6a6ec1d6ab56" category="list-text">Astra Trident에서 스토리지 백엔드를 하나 이상 삭제합니다.</block>
-  <block id="4b127d75ad51299bdcd9dd3f66227203" category="list-text"><block ref="c322d3de29d2b0c5e2e011dad5e77df2" prefix="" category="inline-code"></block></block>
-  <block id="81486817353c4b690b0a04869915f36c" category="list-text">Astra Trident에서 볼륨 스냅샷을 하나 이상 삭제합니다.</block>
-  <block id="899a366c28882f84ef1459c741801c46" category="list-text"><block ref="0606cab8952ca875c43a0e15b35aab7c" prefix="" category="inline-code"></block></block>
-  <block id="dd1af43e34bbec7fa513d0c946cf5a1d" category="list-text">Astra Trident에서 하나 이상의 스토리지 클래스를 삭제합니다.</block>
-  <block id="eb41fbac062036c53ee29d94ecb09e5a" category="list-text"><block ref="210ab9e731c9c36c2c38db15c28a8d1c" prefix="" category="inline-code"></block></block>
-  <block id="a647abf8c595548e15ece3f8c6c09536" category="list-text">Astra Trident에서 하나 이상의 스토리지 볼륨을 삭제합니다.</block>
   <block id="457c14f5f39c9b6b6ce9fe07a2e55ace" category="paragraph">를 사용합니다<block ref="b5eda0a74558a342cf659187f06f746f" prefix=" " category="inline-code"></block> Astra Trident에서 하나 이상의 리소스를 제공하는 명령입니다.</block>
-  <block id="a12921cc63f8517fa2c6c5f330bbe149" category="list-text">Astra Trident에서 하나 이상의 스토리지 백엔드를 활용해 보십시오.</block>
-  <block id="aef3630cf26e84373568fe6350e03459" category="list-text">Astra Trident에서 하나 이상의 스냅샷을 생성하십시오.</block>
-  <block id="3386a9d4c4fcaa584dbb247cadb44db3" category="list-text">Astra Trident에서 하나 이상의 스토리지 클래스를 이용하세요.</block>
-  <block id="c6fd4698310cb8506c717b869a628ba6" category="list-text">Astra Trident에서 하나 이상의 볼륨을 생성하십시오.</block>
   <block id="4ea7801f17a4e5485e8b050c052fb443" category="list-text">깃발</block>
-  <block id="3e9ac2a1486a1ce9d1890b783d8fd280" category="list-text">볼륨 도움말.</block>
-  <block id="27a51da926d26dadaf15c5e89f4290cb" category="list-text"><block ref="e3bbbed29599d3e6e29ae22829ad7f13" prefix="" category="inline-code"></block></block>
-  <block id="56d55915328582c3cabf11d94aa07544" category="list-text">하위 소스 볼륨으로 쿼리를 제한합니다.</block>
-  <block id="91cf60d9b4d2246c53245f027793ec59" category="list-text"><block ref="aed2a4a749284f757648f1057abf44cd" prefix="" category="inline-code"></block></block>
-  <block id="6d2378b94d1da7ed22e3e78aaffc1705" category="list-text">쿼리를 볼륨의 부하로 제한합니다.</block>
   <block id="47a87c81b9ad1216f19e68cf38c994bc" category="paragraph">사용<block ref="59b514174bffe4ae402b3d63aad79fe0" prefix=" " category="inline-code"></block> Astra Trident에 필요한 컨테이너 이미지 표를 인쇄하기 위한 플래그</block>
-  <block id="35e8c619ea1ba9de5652056bacdd23c3" category="list-text">이미지 도움말.</block>
-  <block id="4335704edc4a17ba829a7a9f825c67fa" category="list-text"><block ref="47fa03ef5536c5573b137cec5adc2d39" prefix="" category="inline-code"></block>,<block ref="afb81ccdb6e6d78674d516ee32b89981" prefix=" " category="inline-code"></block></block>
-  <block id="9ab93bac99296ce70a5ef0763755b9bf" category="list-text">Kubernetes 클러스터의 시맨틱 버전</block>
   <block id="d5c076c3797412b98be375c1116ce267" category="paragraph">를 사용합니다<block ref="f6c534966bc7687e0c87134d025f8837" prefix=" " category="inline-code"></block> 기존 볼륨을 Astra Trident로 가져오는 명령입니다.</block>
-  <block id="effdb9ce6c5d44df31b89d7069c8e0fb" category="list-text">별칭</block>
-  <block id="2483198e4c3f6a115120eab636a74400" category="list-text"><block ref="66d753d6a3725a886be2c0cbfaaacdda" prefix="" category="inline-code"></block></block>
-  <block id="38a3a9cab0c216fda4945750957ae6fd" category="list-text"><block ref="5338b151154663bac9980b0f044518f2" prefix="" category="inline-code"></block>,<block ref="33781a1644c3eb60bb229660536cb79b" prefix=" " category="inline-code"></block></block>
-  <block id="0241cbc8a0c6b1d81749accc872d39a9" category="list-text">YAML 또는 JSON PVC 파일의 경로입니다.</block>
-  <block id="d2c10c03ce7bbc7286bbc39086fd8a8c" category="list-text">볼륨 도움말.</block>
-  <block id="21f001625dd55c22ab02487190f46920" category="list-text"><block ref="e2b9359adf7cdd62fc784b5090c3c452" prefix="" category="inline-code"></block></block>
-  <block id="fa695bd6999e70b129229e3c2d901c16" category="list-text">PV/PVC만 생성합니다. 볼륨 라이프사이클 관리를 가정하지 마십시오.</block>
   <block id="04a576baa8ce15dc5ae539732102d052" category="paragraph">를 사용합니다<block ref="19ad89bc3e3c9d7ef68b89523eff1987" prefix=" " category="inline-code"></block> Astra Trident를 설치하는 플래그입니다.</block>
-  <block id="803ef00d4a763dade5fabd328d64bc87" category="list-text"><block ref="88e6af50844241df09da1b4f0fed0dc1" prefix="" category="inline-code"></block></block>
-  <block id="b304edbfbb27e0c4c3c2e56485ec4fad" category="list-text">AutoSupport 원격 측정의 컨테이너 이미지(기본값 "NetApp/trident autosupport:&lt;current-version&gt;")</block>
-  <block id="1b86233e01b3b58d314daa50ab77115f" category="list-text"><block ref="21e377b6d1724ef73707d1b42de99ab3" prefix="" category="inline-code"></block></block>
-  <block id="c2ce8ed1ca62838fcb63440e1f263bca" category="list-text">AutoSupport 원격 분석을 보내는 프록시의 주소/포트입니다.</block>
-  <block id="2e47e5982a9396070b3ef877513db57b" category="list-text"><block ref="8ef3d4e948c6061ad15793e3bfd2660f" prefix="" category="inline-code"></block></block>
-  <block id="26ed909546c3f0ec334a17b276a41537" category="list-text">노드에 필요한 패키지를 설치해 봅니다.</block>
-  <block id="1bcd5c3ebc04d3f68ca449f43a1af99e" category="list-text"><block ref="5de93c87952cd098700fb8d46daed4d6" prefix="" category="inline-code"></block></block>
-  <block id="381379a38d004a98798847da2aee5a2e" category="list-text">아무것도 설치하지 않고 YAML 파일을 생성합니다.</block>
-  <block id="d5471233d1e91ca51d891aeb0daef21e" category="list-text">설치 도움말.</block>
-  <block id="bbbcea2e76b50bff5257d52f3eca9e30" category="list-text"><block ref="a6bd80a942dd6d1c4d4b8aa4bd064415" prefix="" category="inline-code"></block></block>
-  <block id="e62993ec2e8d495781bd8fe9b329bb13" category="list-text">Trident 컨트롤러의 REST API에 대한 HTTP 요청 시간 초과를 재정의합니다(기본값 1m30s).</block>
-  <block id="3a1710ae6be7f8958d50768136a924a0" category="list-text"><block ref="22f97752ec243e2f8fb13a584ff48f0d" prefix="" category="inline-code"></block></block>
-  <block id="bc5669ba475bd6a70761937c829d70c9" category="list-text">내부 이미지 레지스트리의 주소/포트입니다.</block>
-  <block id="04bae87c28b467fa0c737f7f75d22fcd" category="list-text"><block ref="af58b91b0e366d67d75550c28c8b73bd" prefix="" category="inline-code"></block></block>
-  <block id="96433b434f55436c14beb369b4155e3c" category="list-text">모든 Kubernetes 작업에서 시간 초과(기본값 3m0s).</block>
-  <block id="45226b75017cf0d0a01399f23c065197" category="list-text"><block ref="931fef57514fa5bc71c5c9784dcb35b2" prefix="" category="inline-code"></block></block>
-  <block id="d88591412aac0d070f1decf5bb323901" category="list-text">kubelet의 내부 상태의 호스트 위치(기본값 "/var/lib/kubelet")</block>
-  <block id="bbf77dbfce7ad554cbca808eabbf0980" category="list-text"><block ref="ad595b91ed4748510a60df1c00ce5bd6" prefix="" category="inline-code"></block></block>
-  <block id="bf8a1588e1936f12f34a51cb047ce992" category="list-text">Astra Trident 로깅 형식(text, json)(기본 "text")</block>
-  <block id="f0d48f5507fcbd158c6289c2edb1e08a" category="list-text"><block ref="120a4fcacf73dd87df1de81c4d7a2526" prefix="" category="inline-code"></block></block>
-  <block id="a845d8b9c02cebea38c91b3128beac81" category="list-text">Astra Trident에서 사용하는 기존 PV의 이름은 이 이름이 존재하지 않는지 확인합니다(기본 "트라이덴트").</block>
-  <block id="81fa29e4e3df01fd8dfa0fcd2dc635ef" category="list-text"><block ref="12ea064968b15f51e1c1a7444fe9f227" prefix="" category="inline-code"></block></block>
-  <block id="c5036d7b386000202306dc965b4e9ce1" category="list-text">Astra Trident에서 사용하는 기존 PVC의 이름은 이것이 존재하지 않는지 확인합니다(기본 "트라이덴트").</block>
-  <block id="fc161c79ceddeef84ed8be1e4c8eecee" category="list-text"><block ref="284e51f7c35ac8708577507873ff928e" prefix="" category="inline-code"></block></block>
-  <block id="dc0ae0557f6fa718432c41b8a0ea2f01" category="list-text">AutoSupport 번들을 NetApp에 자동으로 보내지 않습니다(기본값 true).</block>
-  <block id="dcd00c9f3bbfaaba764463f8df2ed528" category="list-text"><block ref="61bce13717a9d6da0266dbc3e2b1e642" prefix="" category="inline-code"></block></block>
-  <block id="877dd6fbc1ecd61f364aca71ba178005" category="list-text">설치 중에 MOST 출력을 비활성화합니다.</block>
-  <block id="e65da6d7562c21f62e572906ab5e7a5a" category="list-text"><block ref="356c2fa7142c3aee4cd6204d96ea0890" prefix="" category="inline-code"></block></block>
-  <block id="ff750eea12d794390ee4ab140459782c" category="list-text">설치할 Astra Trident 이미지</block>
-  <block id="807726d520870d6db922174af6c62968" category="list-text"><block ref="8026926641b283123174e50f80da83de" prefix="" category="inline-code"></block></block>
-  <block id="50890ff0c55d64cf5f18e3b30f022dba" category="list-text">설치 디렉터리에 있는 기존 YAML 파일을 사용합니다.</block>
-  <block id="799b3edc86ee53b2aa3ccb9052f1c693" category="list-text"><block ref="4a4ef9f92e69acc000120379678aadcf" prefix="" category="inline-code"></block></block>
-  <block id="fb9cf2fcbe71cf57273808cde64cc26d" category="list-text">Astra Trident의 통신에 IPv6 사용</block>
   <block id="c77cc7bebbafc08f65ea0b6a6ccc6a6c" category="paragraph">사용<block ref="2165e4fa5bddb65a31f6a0c495c2fa37" prefix=" " category="inline-code"></block> Astra Trident의 로그를 인쇄할 플래그입니다.</block>
-  <block id="7d113a84ebce74972a669001943c9196" category="list-text"><block ref="37caf0ee262229a9ddc60877eec6883f" prefix="" category="inline-code"></block>,<block ref="33a12b543204974f74acd94de699324e" prefix=" " category="inline-code"></block></block>
-  <block id="2fa73fb9ee91560afbc36d27bbaa87db" category="list-text">별도로 지정하지 않는 한 모든 로그를 사용하여 지원 아카이브를 생성합니다.</block>
-  <block id="379df05d98bab05b9126d5770c40cc17" category="list-text">로그 도움말.</block>
-  <block id="fba6b2fbc56498e8aa67431b40b4f1e4" category="list-text"><block ref="269889131ee4793a82191b78a2eb60e3" prefix="" category="inline-code"></block>,<block ref="e1db966b8a9ad737de7da72be15dcfc3" prefix=" " category="inline-code"></block></block>
-  <block id="b845a03e592635852e4de54a7157bf66" category="list-text">Astra Trident 로그가 표시됩니다. 트리덴트|auto|트리덴트-operator|all 중 하나(기본 "자동").</block>
-  <block id="8c160e763a1f5aaefa81f2838fbdaac3" category="list-text"><block ref="60cfbca684c147d47b652c83c9617370" prefix="" category="inline-code"></block></block>
-  <block id="d12a2ecd8916e1248e240596be752f02" category="list-text">노드 Pod 로그를 수집할 Kubernetes 노드 이름입니다.</block>
-  <block id="43dcbf8a7af6301d765d1eeb71a56951" category="list-text"><block ref="b3868ba70a8f4cf55464dd9926381db1" prefix="" category="inline-code"></block>,<block ref="a29a0e1222e48537fee91cff87dcb786" prefix=" " category="inline-code"></block></block>
-  <block id="39362e98ee37bab265a12efed46ac0d0" category="list-text">이전 컨테이너 인스턴스가 있는 경우 로그를 가져옵니다.</block>
-  <block id="9bf70e96872cef44b4b4fcec20f2fc5e" category="list-text"><block ref="2c82c1731bc7980f276a26037aa42ec1" prefix="" category="inline-code"></block></block>
-  <block id="84a866690909d915b498373b5a0ea93d" category="list-text">사이드카 컨테이너의 로그를 가져옵니다.</block>
   <block id="0b06aeef6e509551128fa11818ac91e5" category="paragraph">를 사용합니다<block ref="2541d938b0a58946090d7abdde0d3890" prefix=" " category="inline-code"></block> Astra Trident에서 리소스를 보내는 명령입니다.</block>
-  <block id="27345852e05b5b737d3480e451a7060a" category="list-text"><block ref="ee64de1ad50d8209e64ee58b23e27986" prefix="" category="inline-code"></block></block>
-  <block id="027b7f192ae50b4039ba0b0a0a4d1633" category="list-text">AutoSupport 아카이브를 NetApp로 전송합니다.</block>
   <block id="c9778d010d6895509410d6cf3c89f758" category="paragraph">사용<block ref="fe98497efedbe156ecc4b953aea77e07" prefix=" " category="inline-code"></block> Astra Trident를 제거하는 플래그입니다.</block>
-  <block id="5ff094a5013d3c8ce1b8983a04683073" category="list-text"><block ref="60072fc2fad0d30fc656850e04c7433f" prefix="" category="inline-code"></block></block>
-  <block id="d6a2da27c27953f6dc79678d551c710a" category="list-text">제거 도움말.</block>
-  <block id="65d0b93d28910370681b4654d66a2c8f" category="list-text">제거 중 MOST 출력을 비활성화합니다.</block>
   <block id="be7828d51b2b3fc57e04a809a90e7888" category="paragraph">를 사용합니다<block ref="3ac340832f29c11538fbe2d6f75e8bcc" prefix=" " category="inline-code"></block> Astra Trident에서 리소스를 수정하는 명령</block>
-  <block id="faf15d08c5bf3d524ca461b52c393781" category="list-text">Astra Trident에서 백엔드를 업데이트합니다.</block>
   <block id="26cdb30fb70d63515b796135d1481235" category="paragraph">를 사용합니다<block ref="2424c0d4857ddcc30f1aabda7294d84f" prefix=" " category="inline-code"></block> 백엔드 작업을 일시 중지하거나 재개하는 명령입니다.</block>
-  <block id="8a114623ea0d13781f27342b16e7d78a" category="list-text"><block ref="2be951e4c83b3373b0b76554fd93bb4a" prefix="" category="inline-code"></block></block>
-  <block id="296657db9cca6ca2660bb64adba882d0" category="list-text">를 로 설정합니다<block ref="735fda5d72b5c650f3f0435195a211bd" prefix=" " category="inline-code"></block> 백엔드 작업을 일시 중지합니다. 를 로 설정합니다<block ref="fea087517c26fadd409bd4b9dc642555" prefix=" " category="inline-code"></block> 백엔드 작업을 재개합니다. 를 로 설정한 경우<block ref="735fda5d72b5c650f3f0435195a211bd" prefix=" " category="inline-code"></block>:</block>
   <block id="7b9bf6a83dc800f52f01b8fe75996d6d" category="list-text"><block ref="befb9ef08cd8fda4bc507ccd6a523a43" prefix="" category="inline-code"></block>,<block ref="c76dd551d0df4615489f4840c234db4e" prefix=" " category="inline-code"></block>,<block ref="301cd7c7419443b2c9c5d87f6865f0cb" prefix=" " category="inline-code"></block>,<block ref="4956c0b34c154301cbe111d75fb939f9" prefix=" " category="inline-code"></block> 일시 중지되었습니다.</block>
   <block id="5b1cf20bcbbf2f4431ef0fbe646eb055" category="list-text"><block ref="37ca7faad054353aadc61e64e55b4dac" prefix="" category="inline-code"></block>,<block ref="9a288381ee12262ef127ccbaeb520730" prefix=" " category="inline-code"></block>,<block ref="db66912e8bdff8f12b8b75883aeb66ef" prefix=" " category="inline-code"></block>,<block ref="752d336f53e6d74a5e509dd00eb2a627" prefix=" " category="inline-code"></block>,<block ref="871b40b0d12fe47d3ce4d2bbfa30ccc5" prefix=" " category="inline-code"></block>,<block ref="4c7dd4b0f1074705d27d812563c98768" prefix=" " category="inline-code"></block>,<block ref="70850d0d4fbd8b67815a4598d5655a4d" prefix=" " category="inline-code"></block>,<block ref="c4e5752b58b7f7b1c92a5302a0940801" prefix=" " category="inline-code"></block>,<block ref="7c976338db43771fa6048705880496ea" prefix=" " category="inline-code"></block> 사용 가능 상태를 유지합니다.</block>
-  <block id="dcebec1acc1e4f4e72a78bcc020ba811" category="list-text">백엔드 상태에 대한 도움말입니다.</block>
   <block id="ff5f39bc4c620c3b1ca6b0811177f14c" category="paragraph">사용<block ref="2af72f100c356273d46284f6fd1dfc08" prefix=" " category="inline-code"></block> 플래그를 사용하여 의 버전을 인쇄합니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 및 실행 중인 Trident 서비스를 제공합니다.</block>
-  <block id="618ee0573323acbc02cc0b6e0f94e217" category="list-text"><block ref="db0e9588c0d46e16e0aea5c50287a54f" prefix="" category="inline-code"></block></block>
-  <block id="99927f0d8d60f452cfe509f7e690bbed" category="list-text">클라이언트 버전만 해당(서버가 필요하지 않음).</block>
-  <block id="7f897e55f5f6824cb2abaa339e043091" category="list-text">버전에 대한 도움말입니다.</block>
   <block id="cfc01756266d8d0e43eb3a9f2753f472" category="paragraph">Trident가 Kubernetes에 맞는 스토리지 클래스를 생성합니다<block ref="e1e2a331ab1d8dccfea06fc8e04e2f5d" prefix=" " category="inline-code"></block> 지정하는 개체입니다<block ref="08044207e9f63bb0fd474dab347a776c" prefix=" " category="inline-code"></block> 그들의 공급자 분야. 스토리지 클래스 이름이 Kubernetes의 클래스 이름과 일치합니다<block ref="e1e2a331ab1d8dccfea06fc8e04e2f5d" prefix=" " category="inline-code"></block> 나타내는 개체입니다.</block>
   <block id="35e81072b264abffa70dd885aca7e585" category="list-text">Kubernetes 1.28이 이제 Trident에서 지원됩니다. Kubernetes를 업그레이드하기 전에 Astra Trident를 업그레이드합니다.</block>
   <block id="0acb661700c6422ee3bfc29c43c715c6" category="paragraph">비 경로 다중화 구성 또는 의 사용<block ref="a3a1d5b95e345a3db24a5a30e349f699" prefix=" " category="inline-code"></block> 또는<block ref="e82e6d155396541f07f7347c984444ea" prefix=" " category="inline-code"></block> multipath.conf 파일의 값으로 인해 마운트 오류가 발생합니다. Astra Trident는 의 사용을 권장했습니다<block ref="db729c5c8df447087e5a84b961df14f6" prefix=" " category="inline-code"></block> 21.07 릴리스 이후.</block>
@@ -3995,7 +3887,6 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="d5999fd61d148b96e54f154a54ffead5" category="example-title">Windows 노드</block>
   <block id="ecb7d1d46da3859c69f45b619ace746a" category="example-title">강제 분리</block>
   <block id="f393555b01f0bafc5bd6a63db97bac1d" category="example-title">AKS 클러스터에서 관리되는 ID입니다</block>
-  <block id="31b8b882a771bc8ac67ad73d313a4407" category="paragraph">이 예에서는 관리되는 ID를 사용하도록 Astra Trident를 설치합니다.</block>
   <block id="28988f0a59f621eb11ed592b70156da2" category="list-text">사용<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> 배포 및 이미지 레지스트리 위치의 이름을 지정합니다. 귀사의 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 예를 들어,<block ref="84976609aebb6439476255d5ef8280bb" prefix=" " category="inline-code"></block> 는 설치 중인 Astra Trident의 버전입니다.</block>
   <block id="90a731f9a8a983f7cf3905960d8146ec" category="cell"><block ref="9aa82da0cffe247b84587c1cc8e32746" prefix="" category="inline-code"></block></block>
   <block id="ff1e5aff28fa6b984ca73f22322bbe5f" category="cell"><block ref="e4d71bf2abad047425f4463e27bb83b0" prefix="" category="inline-code"></block></block>
@@ -4037,4 +3928,92 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="85d1bf3ede0fe784fd2bd122a9f9488f" category="paragraph">Trident 설치 프로그램은 Kubernetes 클러스터의 PersistentVolume, PersistentVolumeClaim, StorageClass 및 Secret 리소스에 대한 특정 액세스 권한을 가진 Kubernetes ClusterRole을 생성합니다. 을 참조하십시오 <block ref="52b05a1acf0f0f7fbbce1ec1469188fc" category="inline-link-macro-rx"></block>.</block>
   <block id="5b72286a318e05b9dba4ea3ab28f1892" category="paragraph">필요한 경우 설치에 Astra Trident가 사용하는 정확한 매니페스트 파일을 로컬에서 생성하고 수정할 수 있습니다. 을 참조하십시오 <block ref="52b05a1acf0f0f7fbbce1ec1469188fc" category="inline-link-macro-rx"></block>.</block>
   <block id="de05556ddd203d92c70611ab918d657a" category="paragraph">백엔드 정의 파일의 암호화 매개 변수를 사용하여 Trident에서 프로비저닝한 볼륨에 대한 암호화를 설정할 수 있습니다. 자세한 내용은 다음을 참조하십시오. <block ref="22dccd9f6b27b25deeed93972d237440" category="inline-link-macro-rx"></block></block>
+  <block id="a1ecdd1c18fca9b85d34242a2e261d90" category="paragraph">이러한 API의 호출 방법에 대한 예제를 보려면 디버그를 전달합니다 <block ref="9b017020b9d48d433ec90c548e6b5c70" prefix="(" category="inline-code"></block>) 깃발. 자세한 내용은 을 참조하십시오 <block ref="397e1725afc9a253baf2479c77d66ced" category="inline-link-macro-rx"></block>.</block>
+  <block id="7528035a93ee69cedb1dbddb2f0bfcc8" category="section-title">가져오기</block>
+  <block id="943c9b081b44587d874271006286d321" category="list-text"><block ref="22b708d2eccf39e1774f3e179bc6aee0" prefix="" category="inline-code"></block></block>
+  <block id="0211fd9d40454137caed274c8b3d6054" category="list-text">해당 형식의 모든 개체를 나열합니다.</block>
+  <block id="a1ed61bb0432fb6b25e4789166744818" category="list-text"><block ref="57e9ee33b6310b193ba789f5dada20cc" prefix="" category="inline-code"></block></block>
+  <block id="aa5aa416edde45fdd91bf4eff5a47d7f" category="list-text">명명된 개체의 세부 정보를 가져옵니다.</block>
+  <block id="a02439ec229d8be0e74b0c1602392310" category="section-title">게시</block>
+  <block id="fe25634ce7a9cad53e5d4b1d7a3039a6" category="list-text"><block ref="bb2b5a5fa2bc8d2525063f1afa7571a5" prefix="" category="inline-code"></block></block>
+  <block id="777bb10b09d21c1e8001a8a8aa5767d8" category="list-text">지정된 형식의 개체를 만듭니다.</block>
+  <block id="e1adad8abaf08f1d1478b5cb9e5817a9" category="list-text">생성할 개체의 JSON 구성이 필요합니다. 각 개체 유형의 사양은 을 참조하십시오 <block ref="397e1725afc9a253baf2479c77d66ced" category="inline-link-macro-rx"></block>.</block>
+  <block id="32f68a60cef40faedbc6af20298c1a1e" category="section-title">삭제</block>
+  <block id="7f43e795c3bf1beb79462cd9164057e4" category="list-text"><block ref="051be5ede889caf3958ca683df6f8d5f" prefix="" category="inline-code"></block></block>
+  <block id="99e18f16be02084849198b503c3e3c29" category="list-text">명명된 리소스를 삭제합니다.</block>
+  <block id="bb3aa0a73fdabadaec1a9057ede1237a" category="admonition">백엔드 또는 스토리지 클래스와 연결된 볼륨은 계속 존재하므로 별도로 삭제해야 합니다. 자세한 내용은 을 참조하십시오 <block ref="397e1725afc9a253baf2479c77d66ced" category="inline-link-macro-rx"></block>.</block>
+  <block id="9b9ef5337f7c7fbad5389e8b34d3fb1f" category="list-text"><block ref="9b945915b0cddbee22047fd529d642f6" prefix="" category="inline-code"></block></block>
+  <block id="f4078e4654ff3cac1121079492b0c3f4" category="list-text">디버깅 출력을 활성화합니다.</block>
+  <block id="ca4acdfba197b4053e99386e85bf4cc4" category="list-text"><block ref="818bc08a4822af612b7904cc24a4d3bf" prefix="" category="inline-code"></block></block>
+  <block id="5c8767809eb386e1ab0473de8292544f" category="list-text">로깅 수준(debug, info, warn, error, fatal)을 설정합니다. 기본적으로 info(정보) 가 사용됩니다.</block>
+  <block id="4da29764ff4997096420f0ae6861b27c" category="list-text"><block ref="4012723fd7948507761ae4f00f8a6ce5" prefix="" category="inline-code"></block></block>
+  <block id="7db7db05fbaa2896d81a59e8f38fc27a" category="list-text">이 옵션 또는 을 사용합니다<block ref="b88c1426ddf914ab0ed819649aed75fc" prefix=" " category="inline-code"></block> Kubernetes 지원을 사용하도록 설정하십시오. 이 설정을 사용하면 Trident에서 포함된 POD의 Kubernetes 서비스 계정 자격 증명을 사용하여 API 서버에 연락합니다. Trident가 서비스 계정이 활성화된 Kubernetes 클러스터에서 POD로 실행되는 경우에만 작동합니다.</block>
+  <block id="1d0a1baeeb99a2ab2b62995cd2ca3fc7" category="list-text"><block ref="b9d0a374603a1c8cc2464bf870d134f0" prefix="" category="inline-code"></block></block>
+  <block id="e7f495e8d7ecb1b679fe990c82ebd24b" category="list-text">이 옵션 또는 을 사용합니다<block ref="4012723fd7948507761ae4f00f8a6ce5" prefix=" " category="inline-code"></block> Kubernetes 지원을 사용하도록 설정하십시오. Trident가 지정된 경우 제공된 비보안 주소 및 포트를 사용하여 Kubernetes API 서버에 연결합니다. 따라서 Trident를 POD 외부에 배포할 수 있지만 API 서버에 대한 비보안 연결만 지원합니다. 를 사용하여 포드에 Trident를 배포하여 안전하게 연결합니다<block ref="4012723fd7948507761ae4f00f8a6ce5" prefix=" " category="inline-code"></block> 옵션을 선택합니다.</block>
+  <block id="4248fc4f101e2b3fe6bdb19065701fa5" category="list-text"><block ref="5cc3c48cd4a7b7c28609e7cad16a63c6" prefix="" category="inline-code"></block></block>
+  <block id="fc3445d927bff3ae43a549a8e6534c5c" category="list-text">Docker 플러그인을 등록할 때 사용되는 드라이버 이름입니다. 기본값은 입니다<block ref="16dfba14481ba8b67fd1c1d9e0f32d2a" prefix=" " category="inline-code"></block>.</block>
+  <block id="fc9918a81547fe43ace70de85a7bebac" category="list-text"><block ref="3c296b703ef0b6971051fafa0adeec00" prefix="" category="inline-code"></block></block>
+  <block id="65ec7391e16f9bd6e659149b86819a17" category="list-text">UNIX 도메인 소켓이 아닌 이 포트에서 수신 대기합니다.</block>
+  <block id="9489e1104464d83e0ce20703b6791e94" category="list-text"><block ref="5fe5cde67e990859d4973ee6fedbf6f0" prefix="" category="inline-code"></block></block>
+  <block id="edd29d0afafb06480d68d40a7a22ffa5" category="list-text">필수 요소로서 백엔드 구성 파일에 대한 이 경로를 지정해야 합니다.</block>
+  <block id="668ae2bb5fbfb42f8d89e94482a4de47" category="list-text"><block ref="786783eafb02594c9668a3cbbc65d473" prefix="" category="inline-code"></block></block>
+  <block id="46fedf27957de15ad13ad14b25adb901" category="list-text">Trident의 REST 서버가 수신해야 하는 주소를 지정합니다. 기본값은 localhost입니다. localhost에서 듣거나 Kubernetes Pod에서 실행 중인 경우, REST 인터페이스는 Pod 외부에서 직접 액세스할 수 없습니다. 사용<block ref="dfbd0635d992733a865e819be2cf08be" prefix=" " category="inline-code"></block> REST 인터페이스를 POD IP 주소에서 액세스할 수 있도록 합니다.</block>
+  <block id="99f1d9ee8daaf03f69217b44950e3442" category="list-text"><block ref="ca77c8464c642146b691455db7a16df6" prefix="" category="inline-code"></block></block>
+  <block id="33be5112b1ca3c0147264576f7d2e571" category="list-text">Trident의 REST 서버가 수신해야 하는 포트를 지정합니다. 기본값은 8000입니다.</block>
+  <block id="a2714fafd1caea03119590a34bc711c6" category="list-text"><block ref="79d400f844e73cb6e88dabddc36edc38" prefix="" category="inline-code"></block></block>
+  <block id="14d37f351bc2789fc70a93a3114308f0" category="list-text">REST 인터페이스를 활성화합니다. 기본값은 true 입니다.</block>
+  <block id="ad989553d20159458528f9cbeec280ac" category="section-title">Kubernetes와 NetApp 제품의 통합</block>
+  <block id="c15968f29ef9905b44c7b9f373e75568" category="paragraph">NetApp 스토리지 제품 포트폴리오는 Kubernetes 클러스터의 다양한 측면과 통합되어 Kubernetes 구축의 기능, 기능, 성능 및 가용성을 향상하는 고급 데이터 관리 기능을 제공합니다.</block>
+  <block id="5051760a43d66d77d01c7a8eb030e7e1" category="paragraph"><block ref="c3736e0f766925817ef4f34af9c72365" category="inline-link-macro-rx"></block> 는 NetApp ONTAP 스토리지 운영 체제에 기반한 파일 시스템을 시작하고 실행할 수 있는 완전 관리형 AWS 서비스입니다.</block>
+  <block id="29ec7bd31b1a1379b78d9898d947d73d" category="paragraph"><block ref="c5e53d3a8d8d3c363071213b1e4da969" category="inline-link-rx"></block> NetApp에서 제공하는 엔터프라이즈급 Azure 파일 공유 서비스입니다. Azure에서 기본적으로 가장 까다로운 파일 기반 워크로드를 실행하고 NetApp에서 기대하는 성능 및 강력한 데이터 관리를 제공할 수 있습니다.</block>
+  <block id="047d03a544a1cc3e86aff90177fbd63a" category="paragraph"><block ref="003ebe68b90d9dc2aab9b61b702f9f9b" category="inline-link-macro-rx"></block> 는 클라우드에서 ONTAP 데이터 관리 소프트웨어를 실행하는 소프트웨어 전용 스토리지 어플라이언스입니다.</block>
+  <block id="3a944a74350e87f8e938623ecf80e572" category="paragraph"><block ref="c18d316df0f1fbd9a217b5ad21b18d50" category="inline-link-macro-rx"></block> 는 NFS 및 SMB를 통해 NAS 볼륨을 All-Flash 성능으로 제공하는 클라우드 네이티브 파일 서비스입니다.</block>
+  <block id="7630fd61eebe4d79cfa82d81963940d7" category="paragraph"><block ref="eca39b018af81e7b5c8e71b5b4aa3790" category="inline-link-rx"></block> 스토리지 관리자가 성능을 보장하고 단순화된 스토리지 설치 공간을 활용하여 워크로드를 통합할 수 있도록 지원합니다.</block>
+  <block id="d2a67136c7c7e990d18b8e71635d0395" category="paragraph"><block ref="59c437b3f3e5b14b78b208acb3b663e2" category="inline-link-macro-rx"></block> 일상적인 작업을 자동화하고 인프라 관리자가 보다 중요한 기능에 집중할 수 있도록 하여 데이터 센터의 관리 및 확장을 단순화합니다.</block>
+  <block id="f13e5b4b9ff9262dc0e77344a13ca3c1" category="paragraph">Astra Trident는 기본 NetApp HCI 스토리지 플랫폼에 대해 컨테이너식 애플리케이션용 스토리지 장치를 직접 프로비저닝하고 관리할 수 있습니다.</block>
+  <block id="7b02ea300aef2e0bff0d7f6111053284" category="example-title">NetApp ONTAP를 참조하십시오</block>
+  <block id="c034280f677ad8e09361e26a1f0d8b2e" category="paragraph"><block ref="8c73590b5c61238f85244f0e29214d94" category="inline-link-macro-rx"></block> 는 모든 애플리케이션에 고급 데이터 관리 기능을 제공하는 NetApp 멀티 프로토콜 유니파이드 스토리지 운영 체제입니다.</block>
+  <block id="f598803e893e89c3e094855a40ab1baa" category="paragraph">ONTAP 시스템은 All-Flash, 하이브리드 또는 All-HDD 구성을 제공하며 엔지니어링 하드웨어(FAS 및 AFF), 화이트박스(ONTAP Select), 클라우드 전용(Cloud Volumes ONTAP) 등 다양한 구축 모델을 제공합니다. Astra Trident는 이러한 ONTAP 구축 모델을 지원합니다.</block>
+  <block id="ee4805b45f3a791791c675c82c73c1b6" category="paragraph"><block ref="081bcd7924bd528b9799fd1b1389158c" prefix="" category="inline-code"></block></block>
+  <block id="301f920ee13f1cef29f1c14dacf94c4b" category="list-text"><block ref="ff2bddd61609f26dc3255408781890ad" prefix="" category="inline-code"></block>,<block ref="a4b374188b5bbba3f37deccc51421bd4" prefix=" " category="inline-code"></block></block>
+  <block id="4927d7c110c03787d6a128bc5245a451" category="list-text">를 지정합니다<block ref="39e7fa5a13dbc25a4aa8c4b323cd657c" prefix=" " category="inline-code"></block> 로컬로 또는 Kubernetes 클러스터 간에 명령을 실행할 수 있는 경로입니다.</block>
+  <block id="9858b15df593f3960e8b74b5eb680bf0" category="admonition">또는 를 내보낼 수 있습니다<block ref="39e7fa5a13dbc25a4aa8c4b323cd657c" prefix=" " category="inline-code"></block> 특정 Kubernetes 클러스터 및 문제를 가리키는 변수<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block> 명령을 제공할 수 있습니다.</block>
+  <block id="76ea0bebb3c22822b4f0dd9c9fd021c5" category="section-title">생성</block>
+  <block id="1183069eacde609c309c6652f2abbc57" category="paragraph"><block ref="4bf60056ad290949d881334e46fe9fc1" prefix="" category="inline-code"></block></block>
+  <block id="8a784632d4ad43e3c226941ed2cc26a5" category="list-text"><block ref="b43fdd98b1fd705ae4c3a10cf25aad8a" prefix="" category="inline-code"></block>Astra Trident에 백엔드를 추가합니다.</block>
+  <block id="099af53f601532dbd31e0ea99ffdeb64" category="section-title">삭제</block>
+  <block id="28b6c04534d74299209efef5ba8ed0e0" category="paragraph"><block ref="f8e353bd7af0b2adee08bd2cfca86ee4" prefix="" category="inline-code"></block></block>
+  <block id="ac40973e88d4217f001ba0c4f6d2f7c8" category="list-text"><block ref="b43fdd98b1fd705ae4c3a10cf25aad8a" prefix="" category="inline-code"></block>Astra Trident에서 하나 이상의 스토리지 백엔드를 삭제합니다.<block ref="c322d3de29d2b0c5e2e011dad5e77df2" prefix=" " category="inline-code"></block>Astra Trident에서 하나 이상의 볼륨 스냅샷을 삭제합니다.<block ref="0606cab8952ca875c43a0e15b35aab7c" prefix=" " category="inline-code"></block>Astra Trident에서 하나 이상의 스토리지 클래스를 삭제합니다.<block ref="210ab9e731c9c36c2c38db15c28a8d1c" prefix=" " category="inline-code"></block>Astra Trident에서 하나 이상의 스토리지 볼륨을 삭제합니다.</block>
+  <block id="b5eda0a74558a342cf659187f06f746f" category="section-title">가져오기</block>
+  <block id="3880097e6e3ace364060bd1a3502034a" category="paragraph"><block ref="5af35d698576fbd6e910714628ae9a91" prefix="" category="inline-code"></block></block>
+  <block id="f97fced97d05d71127f797cfd4843cab" category="list-text"><block ref="b43fdd98b1fd705ae4c3a10cf25aad8a" prefix="" category="inline-code"></block>Astra Trident에서 하나 이상의 스토리지 백엔드를 받으세요.<block ref="c322d3de29d2b0c5e2e011dad5e77df2" prefix=" " category="inline-code"></block>: Astra Trident에서 하나 이상의 스냅샷을 가져옵니다.<block ref="0606cab8952ca875c43a0e15b35aab7c" prefix=" " category="inline-code"></block>Astra Trident에서 하나 이상의 스토리지 클래스를 다운로드하십시오.<block ref="210ab9e731c9c36c2c38db15c28a8d1c" prefix=" " category="inline-code"></block>Astra Trident에서 하나 이상의 볼륨을 가져오십시오.</block>
+  <block id="fbb9ff314555260bd6ce75e7fefe007a" category="list-text"><block ref="914071b8934b1d6035495f1ed02aa5fd" prefix="" category="inline-code"></block>,<block ref="0c113ca6d57519b559ba5a426be3c6b6" prefix=" " category="inline-code"></block>: 볼륨에 대한 도움말입니다.<block ref="e3bbbed29599d3e6e29ae22829ad7f13" prefix=" " category="inline-code"></block>: 하위 원본 볼륨으로 쿼리를 제한합니다.<block ref="aed2a4a749284f757648f1057abf44cd" prefix=" " category="inline-code"></block>: 볼륨 부하로 쿼리 제한.</block>
+  <block id="59b514174bffe4ae402b3d63aad79fe0" category="section-title">이미지</block>
+  <block id="15e57263073fbab8a5c17df2199514fa" category="paragraph"><block ref="1a4565f84c3ef7acc3e88c3af0bf4b12" prefix="" category="inline-code"></block></block>
+  <block id="8373216d773ee6fe75393fa84e1e92c6" category="list-text"><block ref="914071b8934b1d6035495f1ed02aa5fd" prefix="" category="inline-code"></block>,<block ref="0c113ca6d57519b559ba5a426be3c6b6" prefix=" " category="inline-code"></block>이미지 도움말.<block ref="47fa03ef5536c5573b137cec5adc2d39" prefix=" " category="inline-code"></block>,<block ref="afb81ccdb6e6d78674d516ee32b89981" prefix=" " category="inline-code"></block>: Kubernetes 클러스터의 시맨틱 버전입니다.</block>
+  <block id="f6c534966bc7687e0c87134d025f8837" category="section-title">볼륨 가져오기</block>
+  <block id="7627836f99f91110fe4d92a0cf45f490" category="paragraph"><block ref="9fe05f98df27b42476862d09511bd0d7" prefix="" category="inline-code"></block></block>
+  <block id="9ab81f57823f6aeb02362291f23883e6" category="list-text">별칭</block>
+  <block id="501eadc7c3c034b710e1a4d2a417bbce" category="list-text"><block ref="210ab9e731c9c36c2c38db15c28a8d1c" prefix="" category="inline-code"></block>,<block ref="9e3669d19b675bd57058fd4664205d2a" prefix=" " category="inline-code"></block></block>
+  <block id="346218c412dda8bcf2f8fc06030abee5" category="list-text"><block ref="5338b151154663bac9980b0f044518f2" prefix="" category="inline-code"></block>,<block ref="33781a1644c3eb60bb229660536cb79b" prefix=" " category="inline-code"></block>YAML 또는 JSON PVC 파일로 이동합니다.<block ref="914071b8934b1d6035495f1ed02aa5fd" prefix=" " category="inline-code"></block>,<block ref="0c113ca6d57519b559ba5a426be3c6b6" prefix=" " category="inline-code"></block>: 볼륨에 대한 도움말입니다.<block ref="e2b9359adf7cdd62fc784b5090c3c452" prefix=" " category="inline-code"></block>:PV/PVC만 생성 볼륨 라이프사이클 관리를 가정하지 마십시오.</block>
+  <block id="19ad89bc3e3c9d7ef68b89523eff1987" category="section-title">설치합니다</block>
+  <block id="1adc393db1e6b77c875ecd4c669772ec" category="paragraph"><block ref="190ae106b0b18c5bb8b5f3bdc39dacb9" prefix="" category="inline-code"></block></block>
+  <block id="7f79a5652784ee17b5adefee6de0671f" category="list-text"><block ref="88e6af50844241df09da1b4f0fed0dc1" prefix="" category="inline-code"></block>: AutoSupport 원격 측정의 컨테이너 이미지(기본값 "NetApp/trident autosupport:&lt;current-version&gt;").<block ref="21e377b6d1724ef73707d1b42de99ab3" prefix=" " category="inline-code"></block>: AutoSupport 텔레메트리 전송을 위한 프록시의 주소/포트입니다.<block ref="8ef3d4e948c6061ad15793e3bfd2660f" prefix=" " category="inline-code"></block>: 노드에 필요한 패키지 설치를 시도합니다.<block ref="5de93c87952cd098700fb8d46daed4d6" prefix=" " category="inline-code"></block>: 아무 것도 설치하지 않고 YAML 파일을 생성합니다.<block ref="914071b8934b1d6035495f1ed02aa5fd" prefix=" " category="inline-code"></block>,<block ref="0c113ca6d57519b559ba5a426be3c6b6" prefix=" " category="inline-code"></block>: 설치 도움말.<block ref="a6bd80a942dd6d1c4d4b8aa4bd064415" prefix=" " category="inline-code"></block>: Trident 컨트롤러의 REST API에 대한 HTTP 요청 시간 초과를 재정의합니다(기본값 1m30s).<block ref="22f97752ec243e2f8fb13a584ff48f0d" prefix=" " category="inline-code"></block>: 내부 이미지 레지스트리의 주소/포트입니다.<block ref="af58b91b0e366d67d75550c28c8b73bd" prefix=" " category="inline-code"></block>모든 Kubernetes 작업(기본값 3m0의)의 시간 초과.<block ref="931fef57514fa5bc71c5c9784dcb35b2" prefix=" " category="inline-code"></block>: kubelet의 내부 상태(기본값 "/var/lib/kubelet")의 호스트 위치입니다.<block ref="ad595b91ed4748510a60df1c00ce5bd6" prefix=" " category="inline-code"></block>Astra Trident 로깅 형식(text, json)(기본 "text").<block ref="120a4fcacf73dd87df1de81c4d7a2526" prefix=" " category="inline-code"></block>Astra Trident에서 사용하는 레거시 PV의 이름입니다. 이 이름이 존재하지 않는지 확인합니다(기본 "삼중류").<block ref="12ea064968b15f51e1c1a7444fe9f227" prefix=" " category="inline-code"></block>Astra Trident에서 사용하는 기존 PVC의 이름입니다. 이 이름이 존재하지 않는지 확인합니다(기본 "삼중류").<block ref="284e51f7c35ac8708577507873ff928e" prefix=" " category="inline-code"></block>AutoSupport 번들을 NetApp에 자동으로 보내지 않습니다(기본값: true).<block ref="61bce13717a9d6da0266dbc3e2b1e642" prefix=" " category="inline-code"></block>: 설치하는 동안 대부분의 출력을 비활성화합니다.<block ref="356c2fa7142c3aee4cd6204d96ea0890" prefix=" " category="inline-code"></block>: 설치할 Astra Trident 이미지.<block ref="8026926641b283123174e50f80da83de" prefix=" " category="inline-code"></block>설정 디렉토리에 있는 기존 YAML 파일을 사용합니다.<block ref="4a4ef9f92e69acc000120379678aadcf" prefix=" " category="inline-code"></block>: Astra Trident의 통신에는 IPv6를 사용합니다.</block>
+  <block id="2165e4fa5bddb65a31f6a0c495c2fa37" category="section-title">로그</block>
+  <block id="0fc4d21e21006115d42b2d6aa4451ffa" category="paragraph"><block ref="8815a52aa2be7be3d51559b2366dc8e1" prefix="" category="inline-code"></block></block>
+  <block id="794faa9e9c52721685104168b9ae7cdc" category="list-text"><block ref="37caf0ee262229a9ddc60877eec6883f" prefix="" category="inline-code"></block>,<block ref="33a12b543204974f74acd94de699324e" prefix=" " category="inline-code"></block>: 별도로 지정하지 않는 한 모든 로그를 사용하여 지원 아카이브를 생성합니다.<block ref="914071b8934b1d6035495f1ed02aa5fd" prefix=" " category="inline-code"></block>,<block ref="0c113ca6d57519b559ba5a426be3c6b6" prefix=" " category="inline-code"></block>: 로그 도움말.<block ref="269889131ee4793a82191b78a2eb60e3" prefix=" " category="inline-code"></block>,<block ref="e1db966b8a9ad737de7da72be15dcfc3" prefix=" " category="inline-code"></block>: 표시할 Astra Trident 로그. 트리덴트|auto|트리덴트-operator|all 중 하나(기본 "자동").<block ref="60cfbca684c147d47b652c83c9617370" prefix=" " category="inline-code"></block>노드 POD 로그를 수집할 Kubernetes 노드 이름입니다.<block ref="b3868ba70a8f4cf55464dd9926381db1" prefix=" " category="inline-code"></block>,<block ref="a29a0e1222e48537fee91cff87dcb786" prefix=" " category="inline-code"></block>: 이전 컨테이너 인스턴스에 대한 로그가 있으면 가져옵니다.<block ref="2c82c1731bc7980f276a26037aa42ec1" prefix=" " category="inline-code"></block>: 사이드카 컨테이너의 로그를 가져옵니다.</block>
+  <block id="2541d938b0a58946090d7abdde0d3890" category="section-title">전송</block>
+  <block id="6faa54b930cd3447550e2f6a2be621bb" category="paragraph"><block ref="c68774a474a551b5788d1c1e26d3dcd0" prefix="" category="inline-code"></block></block>
+  <block id="48df24d35784c5df52ab82ba6f257549" category="list-text"><block ref="ee64de1ad50d8209e64ee58b23e27986" prefix="" category="inline-code"></block>AutoSupport 아카이브를 NetApp으로 전송합니다.</block>
+  <block id="fe98497efedbe156ecc4b953aea77e07" category="section-title">설치 제거</block>
+  <block id="bab5bdd673e8007bb1451ff83f2d7fbf" category="paragraph"><block ref="f74e9b644f442240b768be80cfac9840" prefix="" category="inline-code"></block></block>
+  <block id="ba491d35780f4d2becc7847117f59c9d" category="list-text"><block ref="60072fc2fad0d30fc656850e04c7433f" prefix="" category="inline-code"></block>: 제거 도움말입니다.<block ref="61bce13717a9d6da0266dbc3e2b1e642" prefix=" " category="inline-code"></block>: 제거 중 대부분의 출력을 비활성화합니다.</block>
+  <block id="3ac340832f29c11538fbe2d6f75e8bcc" category="section-title">업데이트</block>
+  <block id="8020758b80cef903a0b06e0083b2a43b" category="paragraph"><block ref="8894c4db9cf5d5ac9d439434e0994407" prefix="" category="inline-code"></block></block>
+  <block id="7ba1d27fa35494b14e8b8ebe111dd6c3" category="list-text"><block ref="b43fdd98b1fd705ae4c3a10cf25aad8a" prefix="" category="inline-code"></block>Astra Trident에서 백엔드를 업데이트합니다.</block>
+  <block id="2424c0d4857ddcc30f1aabda7294d84f" category="section-title">백엔드 상태를 업데이트합니다</block>
+  <block id="a8692aa823f016402f6459f92e2c343c" category="paragraph"><block ref="1327c48297ec159839f95302f8885592" prefix="" category="inline-code"></block></block>
+  <block id="0e43bd2bbbbfb114e0df26c0544f5608" category="list-text"><block ref="914071b8934b1d6035495f1ed02aa5fd" prefix="" category="inline-code"></block>,<block ref="0c113ca6d57519b559ba5a426be3c6b6" prefix=" " category="inline-code"></block>: 백엔드 상태에 대한 도움말입니다.<block ref="2be951e4c83b3373b0b76554fd93bb4a" prefix=" " category="inline-code"></block>: 로 설정합니다<block ref="735fda5d72b5c650f3f0435195a211bd" prefix=" " category="inline-code"></block> 백엔드 작업을 일시 중지합니다. 를 로 설정합니다<block ref="fea087517c26fadd409bd4b9dc642555" prefix=" " category="inline-code"></block> 백엔드 작업을 재개합니다. 를 로 설정한 경우<block ref="735fda5d72b5c650f3f0435195a211bd" prefix=" " category="inline-code"></block>:</block>
+  <block id="4301e504ec5591a4c51fe93e446a7a35" category="paragraph"><block ref="dca46ba7b3ffeb9b51e10f54acbd826d" prefix="" category="inline-code"></block></block>
+  <block id="e6e32acf4d56921ac92540101fe00fc9" category="list-text"><block ref="db0e9588c0d46e16e0aea5c50287a54f" prefix="" category="inline-code"></block>: 클라이언트 버전만(서버가 필요하지 않음).<block ref="60072fc2fad0d30fc656850e04c7433f" prefix=" " category="inline-code"></block>: 버전에 대한 도움말입니다.</block>
 </blocks>
