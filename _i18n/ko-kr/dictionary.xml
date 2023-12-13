@@ -68,7 +68,6 @@
   <block id="5ff3faebb0ff710340bdbee89a4667ad" category="doc">운영자와 함께 업그레이드하십시오</block>
   <block id="199ed8c975e8bb544d18428ba17adbc3" category="inline-link">GitHub에 대한 발행 세부 정보</block>
   <block id="3002cfcea36b7fb4d87da4d413730851" category="list-text">최신 Astra Trident 릴리스를 다운로드하십시오.</block>
-  <block id="4a6b869a481b52472aa62cfa4d9d255e" category="paragraph">예를 들어, 기본값인 tridentDebug를 변경하려면 다음 명령을 실행합니다.</block>
   <block id="4ab464bddccdcbc36fab4cea802025f9" category="list-text">매니페스트에서 트라이디오케스트레이터 CRD를 만듭니다.</block>
   <block id="06da281bf5e01c3c59892dc886cd0067" category="list-text">Astra Trident를 설치할 '트리젠오케스트레이터' CR을 만듭니다.</block>
   <block id="8656f6a3d04342ff6248bd7d32949c2a" category="paragraph">Helm을 사용하여 Astra Trident를 설치한 경우 'helm uninstall'을 사용하여 제거할 수 있습니다.</block>
@@ -2426,7 +2425,6 @@
   <block id="441b9a0ce7113f17c0021f9922b1c865" category="inline-link-macro">Trident 연산자를 사용하여 업그레이드합니다</block>
   <block id="589143858f045594979d5d3cf5289bf6" category="paragraph">을 사용하여 기존 Astra Trident 설치를 쉽게 업그레이드할 수 있습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>.</block>
   <block id="bdae3121e140e5325fd05919c86dd97f" category="list-text">를 사용하여 초기 설치를 사용자 지정한 경우<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 속성을 편집할 수 있습니다<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 설치 매개 변수를 수정하는 개체입니다. 여기에는 오프라인 모드에 대해 미러링된 Trident 및 CSI 이미지 레지스트리를 지정하는 변경 사항, 디버그 로그 활성화 또는 이미지 풀 비밀을 지정하는 변경 사항이 포함될 수 있습니다.</block>
-  <block id="b0f8c567e856516aabf80f916e995d4f" category="paragraph">초기 설치 중에 기본값이 아닌 옵션을 설정한 경우(예: Trident 및 CSI 이미지에 대한 전용, 미러 레지스트리 지정) 를 사용합니다<block ref="8b5806248570dbb13e7d3bc5e6c0ee37" prefix=" " category="inline-code"></block> 이러한 옵션이 업그레이드 명령에 포함되도록 하려면 값이 기본값으로 재설정됩니다.</block>
   <block id="3d0107bfa0874592e9dc04f9869b604b" category="list-text">실행<block ref="cd4140d3de30b520500459331d08d2bf" prefix=" " category="inline-code"></block> 차트와 앱 버전이 모두 업그레이드되었는지 확인합니다. 실행<block ref="3e725291d4b17065fdcd321172fcfae3" prefix=" " category="inline-code"></block> 디버그 메시지를 검토합니다.</block>
   <block id="3fe5d266a33f137293c314a2e334b611" category="inline-link">Astra Trident 22.10</block>
   <block id="9fefe9ff51badc61edd8a36c8240aa29" category="list-text"><block ref="9fefe9ff51badc61edd8a36c8240aa29" category="inline-link-rx"></block></block>
@@ -4016,4 +4014,8 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="0e43bd2bbbbfb114e0df26c0544f5608" category="list-text"><block ref="914071b8934b1d6035495f1ed02aa5fd" prefix="" category="inline-code"></block>,<block ref="0c113ca6d57519b559ba5a426be3c6b6" prefix=" " category="inline-code"></block>: 백엔드 상태에 대한 도움말입니다.<block ref="2be951e4c83b3373b0b76554fd93bb4a" prefix=" " category="inline-code"></block>: 로 설정합니다<block ref="735fda5d72b5c650f3f0435195a211bd" prefix=" " category="inline-code"></block> 백엔드 작업을 일시 중지합니다. 를 로 설정합니다<block ref="fea087517c26fadd409bd4b9dc642555" prefix=" " category="inline-code"></block> 백엔드 작업을 재개합니다. 를 로 설정한 경우<block ref="735fda5d72b5c650f3f0435195a211bd" prefix=" " category="inline-code"></block>:</block>
   <block id="4301e504ec5591a4c51fe93e446a7a35" category="paragraph"><block ref="dca46ba7b3ffeb9b51e10f54acbd826d" prefix="" category="inline-code"></block></block>
   <block id="e6e32acf4d56921ac92540101fe00fc9" category="list-text"><block ref="db0e9588c0d46e16e0aea5c50287a54f" prefix="" category="inline-code"></block>: 클라이언트 버전만(서버가 필요하지 않음).<block ref="60072fc2fad0d30fc656850e04c7433f" prefix=" " category="inline-code"></block>: 버전에 대한 도움말입니다.</block>
+  <block id="2776a355e79f6256fa8b6a84044ebc66" category="inline-link-macro">Helm을 사용하여 Astra Trident를 설치했습니다</block>
+  <block id="dec90c165180e4428352d04efba76d8b" category="list-text">있다면 <block ref="701383cb184d92daac13becc67e9c1be" category="inline-link-macro-rx"></block>을 사용할 수 있습니다<block ref="00f73970d66f7ceaea7519a201d88dc8" prefix=" " category="inline-code"></block> 한 단계로 업그레이드합니다. Helm repo를 추가하지 않았거나 업그레이드에 사용할 수 없는 경우:</block>
+  <block id="fd55ae3db3b16ceeb447f43dc713fb27" category="list-text">에서 최신 Astra Trident 릴리즈를 다운로드하십시오 <block ref="6a7c34d1e7545bd3ab5abc336e61eb7f" category="inline-link-macro-rx"></block>.</block>
+  <block id="34c5f2f84f16f23213713a6adc11c319" category="admonition">초기 설치 중에 사용자 정의 옵션을 설정하는 경우(예: Trident 및 CSI 이미지에 대한 전용 미러링된 레지스트리 지정) 를 추가합니다<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block> 명령을 사용합니다<block ref="8b5806248570dbb13e7d3bc5e6c0ee37" prefix=" " category="inline-code"></block> 이러한 옵션이 업그레이드 명령에 포함되도록 하려면 값이 기본값으로 재설정됩니다.</block>
 </blocks>
