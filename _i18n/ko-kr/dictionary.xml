@@ -1563,7 +1563,6 @@
   <block id="9d83b6d2e2b099e63bf8e2fc8c870893" category="list-text">ONTAP 버전 9.2 이상이 필요합니다.</block>
   <block id="e7c74973b26ad51b9db42a9c347a8cd4" category="list-text">이번 작부터 FlexGroups는 NFS v3만 지원합니다.</block>
   <block id="02a100b04add3b90fddef64499e825a2" category="list-text">SVM에 대해 64비트 NFSv3 식별자를 사용하는 것이 좋습니다.</block>
-  <block id="496f8625569b787269edab0f3de973da" category="list-text">최소 권장 FlexGroup 크기는 100GB입니다.</block>
   <block id="db78b2a7acf43fa03cd95fb3a77c82f9" category="list-text">FlexGroup 볼륨에 대해서는 클론 생성이 지원되지 않습니다.</block>
   <block id="f5ac1e3c252855373c7f660dbd89699d" category="inline-link">NetApp FlexGroup 볼륨 모범 사례 및 구현 가이드 를 참조하십시오</block>
   <block id="df1a7e79743809601db1d20d6a33ae52" category="paragraph">FlexGroups에 적합한 FlexGroups 및 워크로드에 대한 자세한 내용은 를 참조하십시오<block ref="b8a99695d7979127a1cab07b42e22743" category="inline-link-rx"></block>.</block>
@@ -3165,7 +3164,6 @@
   <block id="a221a060125881c2027807248f8302a2" category="list-text">Kubernetes 오브젝트이므로 를 사용하십시오<block ref="0f12ee5c9f1dd90158580f1c292b0d37" prefix=" " category="inline-code"></block> Kubernetes에서 생성해야 합니다.</block>
   <block id="f31a577daf927c7edc5555c9ceabc983" category="section-title">보관 클래스 샘플</block>
   <block id="64c314ed1bd24115a72a8a4284115a5c" category="inline-link">특정 백엔드에 대한 간단한 스토리지 클래스 정의</block>
-  <block id="cd05956789bea1b8ca185126ede9bfe6" category="paragraph">Astra Trident가 제공하는 정보를 확인할 수 있습니다<block ref="fdffa1e2d88d340a5703a5f7123df6a4" category="inline-link-rx"></block>.</block>
   <block id="d9ab9b10b2101546e16eeab0b981d10c" category="paragraph">또는 편집할 수 있습니다<block ref="9a35c6080acd99f860d0c669b1a980f9" prefix=" " category="inline-code"></block> 설치 프로그램과 함께 제공되는 파일 및 대치<block ref="9c9a0798e59f3f4d7b08e45faef1e131" prefix=" " category="inline-code"></block> 스토리지 드라이버 이름을 사용합니다.</block>
   <block id="ff87ac5778183437377f5f963a3dccac" category="paragraph">StorageClass 정의를 편집하여 를 설정합니다<block ref="6add71a247c8f4513060920be14857bc" prefix=" " category="inline-code"></block> 필드를 눌러 로 이동합니다<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>.</block>
   <block id="efe0663b3e4eed08a4a1b30c3f3a2aac" category="paragraph">PVC 정의를 편집하고 를 업데이트합니다<block ref="02b011e6fe36e26e5f7365ba08bf5a48" prefix=" " category="inline-code"></block> 원래 크기보다 커야 하는 새로 원하는 크기를 반영합니다.</block>
@@ -4018,4 +4016,6 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="dec90c165180e4428352d04efba76d8b" category="list-text">있다면 <block ref="701383cb184d92daac13becc67e9c1be" category="inline-link-macro-rx"></block>을 사용할 수 있습니다<block ref="00f73970d66f7ceaea7519a201d88dc8" prefix=" " category="inline-code"></block> 한 단계로 업그레이드합니다. Helm repo를 추가하지 않았거나 업그레이드에 사용할 수 없는 경우:</block>
   <block id="fd55ae3db3b16ceeb447f43dc713fb27" category="list-text">에서 최신 Astra Trident 릴리즈를 다운로드하십시오 <block ref="6a7c34d1e7545bd3ab5abc336e61eb7f" category="inline-link-macro-rx"></block>.</block>
   <block id="34c5f2f84f16f23213713a6adc11c319" category="admonition">초기 설치 중에 사용자 정의 옵션을 설정하는 경우(예: Trident 및 CSI 이미지에 대한 전용 미러링된 레지스트리 지정) 를 추가합니다<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block> 명령을 사용합니다<block ref="8b5806248570dbb13e7d3bc5e6c0ee37" prefix=" " category="inline-code"></block> 이러한 옵션이 업그레이드 명령에 포함되도록 하려면 값이 기본값으로 재설정됩니다.</block>
+  <block id="92f2a092c8970a9e6a9a8f5829670977" category="paragraph">Astra Trident가 제공하는 정보를 확인할 수 있습니다<block ref="78512e06e40b1d6e7b22821168623dd6" category="inline-link-rx"></block>.</block>
+  <block id="20a385c1dc7ef65425669840055b5330" category="list-text">최소 권장 FlexGroup 구성원/볼륨 크기는 100GiB입니다.</block>
 </blocks>

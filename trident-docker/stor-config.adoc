@@ -280,7 +280,7 @@ ONTAP-SAN-이코노미 드라이버는 자동으로 관리되는 FlexVol의 공�
 * ONTAP 버전 9.2 이상이 필요합니다.
 * 이번 작부터 FlexGroups는 NFS v3만 지원합니다.
 * SVM에 대해 64비트 NFSv3 식별자를 사용하는 것이 좋습니다.
-* 최소 권장 FlexGroup 크기는 100GB입니다.
+* 최소 권장 FlexGroup 구성원/볼륨 크기는 100GiB입니다.
 * FlexGroup 볼륨에 대해서는 클론 생성이 지원되지 않습니다.
 
 
