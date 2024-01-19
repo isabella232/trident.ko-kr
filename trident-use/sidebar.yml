@@ -44,6 +44,8 @@ entries:
       url: "/trident-use/trident-fsx-prep.html"
     - title: 구성 옵션 및 예
       url: "/trident-use/trident-fsx-examples.html"
+    - title: EKS 클러스터에서 Astra Trident EKS 애드온을 구성합니다
+      url: "/trident-use/trident-aws-addon.html"
   - title: kubectl로 백엔드를 만듭니다
     url: "/trident-use/backend-kubectl.html"
   - title: 백엔드 관리
