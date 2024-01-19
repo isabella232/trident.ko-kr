@@ -4019,7 +4019,6 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="92f2a092c8970a9e6a9a8f5829670977" category="paragraph">Astra Trident가 제공하는 정보를 확인할 수 있습니다<block ref="78512e06e40b1d6e7b22821168623dd6" category="inline-link-rx"></block>.</block>
   <block id="20a385c1dc7ef65425669840055b5330" category="list-text">최소 권장 FlexGroup 구성원/볼륨 크기는 100GiB입니다.</block>
   <block id="fd677451fcb2b9e12434f11dd81d463e" category="summary">Kubernetes 클러스터에 Astra Trident EKS 애드온 을 추가합니다.</block>
-  <block id="7300036f416b8655e56df4e850a1edc1" category="doc">EKS cluser에서 Astra Trident EKS 애드온 버전 23.10을 구성합니다</block>
   <block id="fde605b45abe19dca0689ef0eaa6e384" category="paragraph">Astra Trident는 Kubernetes에서 Amazon FSx for NetApp ONTAP 스토리지 관리를 간소화하여 개발자와 관리자가 애플리케이션 구축에 집중할 수 있도록 지원합니다. Astra Trident EKS 애드온에는 최신 보안 패치 및 버그 수정이 포함되어 있으며 AWS에서 Amazon EKS와 함께 사용할 수 있다는 것을 검증했습니다. EKS 애드온을 사용하면 Amazon EKS 클러스터의 보안과 안정성을 지속적으로 보장하고 애드온을 설치, 구성 및 업데이트하는 데 필요한 작업량을 줄일 수 있습니다.</block>
   <block id="ee68e5b99222bbc29a480fcb0d1d6ee2" category="section-title">필수 구성 요소</block>
   <block id="2f2c25cde4f655e64149cdd745b67001" category="paragraph">AWS EKS용 Astra Trident 애드온을 구성하기 전에 다음 사항을 확인하십시오.</block>
@@ -4047,4 +4046,5 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="5fef1c4f3767262a0ef823aaa69e1703" category="paragraph-title">CLI를 사용하여 Astra Trident EKS 애드온을 제거합니다.</block>
   <block id="e1f272eb0b2aaba7b1cb689543f653e0" category="paragraph">다음 명령을 실행하면 Astra Trident EKS 애드온이 제거됩니다.<block ref="09a3e9c644b219341aa6e2e8a8922e59" prefix=" " category="inline-code"></block></block>
   <block id="c6861e88433ccd90f1ce8143d7e5fed0" category="sidebar">EKS 클러스터에서 Astra Trident EKS 애드온을 구성합니다</block>
+  <block id="7ed15597cafdca20d5859b7e394bc0ab" category="doc">EKS 클러스터에서 Astra Trident EKS 애드온 버전 23.10을 구성합니다</block>
 </blocks>

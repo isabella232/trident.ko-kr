@@ -4,7 +4,7 @@ permalink: trident-use/trident-aws-addon.html
 keywords: Trident add-on, Astra Trident EKS add-on, Trident AWS EKS add-on, integrate Trident, Trident 
 summary: Kubernetes 클러스터에 Astra Trident EKS 애드온 을 추가합니다. 
 ---
-= EKS cluser에서 Astra Trident EKS 애드온 버전 23.10을 구성합니다
+= EKS 클러스터에서 Astra Trident EKS 애드온 버전 23.10을 구성합니다
 :hardbreaks:
 :allow-uri-read: 
 :icons: font
