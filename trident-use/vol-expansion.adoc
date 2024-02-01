@@ -229,7 +229,7 @@ pvc-08f3d561-b199-11e9-8d9f-5254004dfdb7   20Mi       RWO            Delete     
 
 === 3단계: PV를 확장합니다
 
-새로 만든 20MiB PV의 크기를 1GiB로 조정하려면 PVC를 편집하여 pec.resources.requests.storage를 1GB로 설정합니다.
+새로 생성된 20MiB PV의 크기를 1GiB로 조정하려면 PVC를 편집하고 설정합니다 `spec.resources.requests.storage` 1GiB 증가:
 
 [listing]
 ----
