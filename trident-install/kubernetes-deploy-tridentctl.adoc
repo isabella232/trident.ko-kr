@@ -16,7 +16,7 @@ summary: '을 사용하여 Astra Trident를 설치할 수 있습니다 `tridentc
 
 
 
-== Astra Trident 23.10에 대한 중요 정보
+== Astra Trident 24.02에 대한 중요 정보
 
 * Astra Trident * 에 대한 다음 중요 정보를 읽어야 합니다
 
@@ -75,8 +75,8 @@ Astra Trident 설치 프로그램 패키지는 Trident Pod를 생성하고 상�
 
 [listing]
 ----
-wget https://github.com/NetApp/trident/releases/download/v23.10.0/trident-installer-23.10.0.tar.gz
-tar -xf trident-installer-23.10.0.tar.gz
+wget https://github.com/NetApp/trident/releases/download/v24.02.0/trident-installer-24.02.0.tar.gz
+tar -xf trident-installer-24.02.0.tar.gz
 cd trident-installer
 ----
 
@@ -98,7 +98,7 @@ cd trident-installer
 --
 [listing]
 ----
-./tridentctl install -n trident --image-registry <your-registry> --autosupport-image <your-registry>/trident-autosupport:23.10 --trident-image <your-registry>/trident:23.10.0
+./tridentctl install -n trident --image-registry <your-registry> --autosupport-image <your-registry>/trident-autosupport:24.02 --trident-image <your-registry>/trident:24.02.0
 ----
 --
 .다른 레지스트리의 이미지
@@ -107,7 +107,7 @@ cd trident-installer
 
 [listing]
 ----
-./tridentctl install -n trident --image-registry <your-registry>/sig-storage --autosupport-image <your-registry>/netapp/trident-autosupport:23.10 --trident-image <your-registry>/netapp/trident:23.10.0
+./tridentctl install -n trident --image-registry <your-registry>/sig-storage --autosupport-image <your-registry>/netapp/trident-autosupport:24.02 --trident-image <your-registry>/netapp/trident:24.02.0
 ----
 --
 ====
@@ -128,7 +128,7 @@ INFO Created Trident daemonset.
 INFO Waiting for Trident pod to start.
 INFO Trident pod started.                          namespace=trident pod=trident-controller-679648bd45-cv2mx
 INFO Waiting for Trident REST interface.
-INFO Trident REST interface is up.                 version=23.10.0
+INFO Trident REST interface is up.                 version=24.02.0
 INFO Trident installation succeeded.
 ....
 ----
@@ -168,7 +168,7 @@ NOTE: 설치 프로그램이 성공적으로 완료되지 않거나 `trident-con
 +----------------+----------------+
 | SERVER VERSION | CLIENT VERSION |
 +----------------+----------------+
-| 23.10.0        | 23.10.0        |
+| 24.02.0        | 24.02.0        |
 +----------------+----------------+
 ----
 

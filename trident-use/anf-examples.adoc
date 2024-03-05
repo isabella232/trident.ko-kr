@@ -46,17 +46,17 @@ AKS 클러스터에서 관리되는 ID가 설정된 경우 선택 사항입니�
 
 | 텐antID | 앱 등록에서 테넌트 ID입니다
 
-AKS 클러스터에서 관리되는 ID가 설정된 경우 선택 사항입니다. |  
+관리 ID 또는 클라우드 ID가 AKS 클러스터에서 사용되는 경우 선택 사항입니다. |  
 
 
 | '클라이언트 ID' | 앱 등록의 클라이언트 ID입니다
 
-AKS 클러스터에서 관리되는 ID가 설정된 경우 선택 사항입니다. |  
+관리 ID 또는 클라우드 ID가 AKS 클러스터에서 사용되는 경우 선택 사항입니다. |  
 
 
 | 'clientSecret | 앱 등록에서 클라이언트 암호
 
-AKS 클러스터에서 관리되는 ID가 설정된 경우 선택 사항입니다. |  
+관리 ID 또는 클라우드 ID가 AKS 클러스터에서 사용되는 경우 선택 사항입니다. |  
 
 
 | '저급' | '초표준', '프리미엄', '울트라' 중 하나 | ""(임의) 
@@ -196,6 +196,30 @@ spec:
   netappAccounts: ["smb-na"]
   virtualNetwork: eastus-prod-vnet
   subnet: eastus-anf-subnet
+----
+====
+.AKS용 클라우드 ID
+[%collapsible]
+====
+이 백엔드 구성은 생략됩니다 `tenantID`, `clientID`, 및 `clientSecret`클라우드 ID를 사용할 경우 선택 사항입니다.
+
+[listing]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: backend-tbc-anf-1
+  namespace: trident
+spec:
+  version: 1
+  storageDriverName: azure-netapp-files
+  capacityPools: ["ultra-pool"]
+  resourceGroups: ["aks-ami-eastus-rg"]
+  netappAccounts: ["smb-na"]
+  virtualNetwork: eastus-prod-vnet
+  subnet: eastus-anf-subnet
+  location: eastus
+  subscriptionID: 9f87c765-4774-fake-ae98-a721add45451
 ----
 ====
 .용량 풀 필터를 사용한 특정 서비스 수준 구성

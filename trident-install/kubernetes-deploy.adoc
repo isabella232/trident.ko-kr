@@ -16,7 +16,7 @@ Astra Trident를 다양한 환경과 조직에 설치할 수 있도록 NetApp은
 
 
 
-== Astra Trident 23.10에 대한 중요 정보
+== Astra Trident 24.02에 대한 중요 정보
 
 * Astra Trident * 에 대한 다음 중요 정보를 읽어야 합니다
 

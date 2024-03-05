@@ -69,7 +69,7 @@ metadata:
 ----
 이 ServiceMonitor 정의는 '삼중상 CSI' 서비스에서 반환된 지표를 검색하고 특히 서비스의 산부인과를 찾습니다. 따라서 이제 Prometheus가 Astra Trident의 메트릭을 이해하도록 구성되었습니다.
 
-kubelet은 Astra Trident에서 직접 제공하는 측정 지표 외에도 자사의 측정 지표를 통해 많은 "kubelet_volume_ *" 측정 지표를 노출합니다. Kubelet는 연결된 볼륨, Pod 및 처리하는 기타 내부 작업에 대한 정보를 제공할 수 있습니다. 을 참조하십시오 https://kubernetes.io/docs/concepts/cluster-administration/monitoring/["여기"^].
+Astra Trident에서 직접 제공하는 메트릭 외에도 kubelet은 많은 정보를 제공합니다 `kubelet_volume_*` 자체 메트릭 엔드포인트를 통해 측정 Kubelet는 연결된 볼륨, Pod 및 처리하는 기타 내부 작업에 대한 정보를 제공할 수 있습니다. 을 참조하십시오 https://kubernetes.io/docs/concepts/cluster-administration/monitoring/["여기"^].
 
 
 

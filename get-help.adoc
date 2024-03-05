@@ -31,12 +31,17 @@ Astra Trident는 버전에 따라 3가지 수준의 지원을 제공합니다. �
 
 
  a| 
-link:https://docs.netapp.com/us-en/trident/index.html["23.10"^]
+link:https://docs.netapp.com/us-en/trident/index.html["24.02"^]
+| 2025년 2월 | 2026년 2월 | 2027년 2월 
+
+
+ a| 
+link:https://docs.netapp.com/us-en/trident-2310/index.html["23.10"^]
 | 2024년 10월 | 2025년 10월 | 2026년 10월 
 
 
  a| 
-link:https://docs.netapp.com/us-en/trident/index.html["2007년 3월"^]
+link:https://docs.netapp.com/us-en/trident-2307/index.html["2007년 3월"^]
 | 2024년 7월 | 2025년 7월 | 2026년 7월 
 
 
@@ -47,7 +52,7 @@ link:https://docs.netapp.com/us-en/trident-2304/index.html["23.04"^]
 
  a| 
 link:https://docs.netapp.com/us-en/trident-2301/index.html["23.01"^]
-| 2024년 1월 | 2025년 1월 | 2026년 1월 
+| -- | 2025년 1월 | 2026년 1월 
 
 
  a| 
@@ -67,7 +72,7 @@ link:https://docs.netapp.com/us-en/trident-2204/index.html["22.04"^]
 
  a| 
 link:https://docs.netapp.com/us-en/trident-2201/index.html["22.01"^]
-| -- | 2024년 1월 | 2025년 1월 
+| -- | -- | 2025년 1월 
 
 
  a| 
@@ -78,16 +83,6 @@ link:https://docs.netapp.com/us-en/trident-2110/index.html["21.10"^]
  a| 
 link:https://docs.netapp.com/us-en/trident-2107/index.html["21.07입니다"^]
 | -- | -- | 2024년 7월 
-
-
- a| 
-link:https://netapp-trident.readthedocs.io/en/stable-v21.04/["21.04"^]
-| -- | -- | 2024년 4월 
-
-
- a| 
-link:https://netapp-trident.readthedocs.io/en/stable-v21.01/["21.01"^]
-| -- | -- | 2024년 1월 
 |===
 
 NOTE: 21.07 이전의 릴리스는 기존 문서 사이트로 리디렉션합니다.
@@ -96,7 +91,7 @@ NOTE: 21.07 이전의 릴리스는 기존 문서 사이트로 리디렉션합니
 
 == 자가 지원
 
-문제 해결 문서의 전체 목록을 보려면 을 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Trident_Kubernetes["NetApp Knowledgebase(로그인 필요)"^]. Astra와 관련된 문제 해결에 대한 정보도 찾을 수 있습니다 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["여기"^].
+전체 문제 해결 문서 목록은 을 참조하십시오 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Trident_Kubernetes["NetApp Knowledgebase(로그인 필요)"^]. Astra와 관련된 문제 해결에 대한 정보도 찾을 수 있습니다 https://kb.netapp.com/Advice_and_Troubleshooting/Cloud_Services/Astra["여기"^].
 
 
 

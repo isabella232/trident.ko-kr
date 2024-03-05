@@ -46,13 +46,18 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 | "버그" | Astra Trident에 대한 디버깅을 활성화합니다 | 거짓입니다 
 
 
-| `enableForceDetach` | `ontap-san` 및 `ontap-san-economy` 만 해당. Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 관리자가 마운트된 볼륨이 있는 워크로드를 노드가 정상 상태가 아닌 경우 새 노드로 안전하게 마이그레이션할 수 있도록 합니다. * 이것은 23.04의 실험 기능입니다. * 를 참조하십시오 <<강제 분리에 대한 세부 정보>> 을 참조하십시오. | 거짓입니다 
+| `enableForceDetach` | `ontap-san` 및 `ontap-san-economy` 만 해당.
+
+Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 관리자가 마운트된 볼륨이 있는 워크로드를 노드가 정상 상태가 아닌 경우 새 노드로 안전하게 마이그레이션할 수 있도록 합니다. | 거짓입니다 
 
 
 | `windows` | 를 로 설정합니다 `true` Windows 작업자 노드에 설치할 수 있습니다. | 거짓입니다 
 
 
-| `cloudProvider` | 를 로 설정합니다 `"Azure"` AKS 클러스터에서 관리되는 ID를 사용하는 경우 | `""` 
+| `cloudProvider` | 를 로 설정합니다 `"Azure"` AKS 클러스터에서 관리되는 ID 또는 클라우드 ID를 사용하는 경우 EKS 클러스터에서 클라우드 ID를 사용하는 경우 "AWS"로 설정합니다. | `""` 
+
+
+| `cloudIdentity` | AKS 클러스터에서 클라우드 ID를 사용할 때 워크로드 ID("Azure.workload.identity/client-id: xxxxxxxxxxxx-xxxx-xxxx-xxxxxxxxxxxxx")로 설정합니다. EKS 클러스터에서 클라우드 ID를 사용할 때 AWS IAM 역할("'eks.amazonaws.com/role-arn: arn:AWS:IAM::123456:role/astratrident-role")으로 설정합니다. | `""` 
 
 
 | `IPv6` | IPv6를 통해 Astra Trident를 설치합니다 | 거짓 
@@ -65,7 +70,7 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 자동으로 계층화 | 거짓입니다 
 
 
-| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | `"netapp/trident-autosupport:23.10"` 
+| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | `"netapp/trident-autosupport:24.02"` 
 
 
 | 자동 지원 프록시 | AutoSupport를 보내는 프록시의 주소/포트입니다
@@ -78,7 +83,7 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 | `logFormat` | 사용할 Astra Trident 로깅 형식[text,json] | `"text"` 
 
 
-| 트리덴티이미지 | 설치할 Astra Trident 이미지 | `"netapp/trident:23.10"` 
+| 트리덴티이미지 | 설치할 Astra Trident 이미지 | `"netapp/trident:24.02"` 
 
 
 | 'imageRegistry'입니다 | 형식의 내부 레지스트리 경로입니다
@@ -114,7 +119,7 @@ WARNING: `spec.namespace` 에 지정됩니다 `TridentOrchestrator` Astra Triden
 | 노드 PluginTolerations | Pod에 대한 Kubernetes 허용 설정을 재정의합니다. 는 와 동일한 형식을 따릅니다 `pod.spec.Tolerations`. | 기본값 없음, 선택 사항 
 |===
 
-NOTE: 포드 매개 변수 포맷에 대한 자세한 내용은 을 참조하십시오 link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/["노드에 Pod 할당"^].
+NOTE: POD 매개 변수 포맷에 대한 자세한 내용은 을 참조하십시오 link:https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/["노드에 Pod 할당"^].
 
 
 
@@ -219,5 +224,42 @@ spec:
   debug: true
   namespace: trident
   cloudProvider: "Azure"
+----
+====
+.AKS 클러스터에서 클라우드 ID입니다
+[%collapsible]
+====
+이 예에서는 AKS 클러스터에서 클라우드 ID와 함께 사용할 Astra Trident를 설치합니다.
+
+[listing]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  cloudProvider: "Azure"
+  cloudIdentity: 'azure.workload.identity/client-id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx'
+
+----
+====
+.EKS 클러스터에서 클라우드 ID입니다
+[%collapsible]
+====
+이 예에서는 AKS 클러스터에서 클라우드 ID와 함께 사용할 Astra Trident를 설치합니다.
+
+[listing]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentOrchestrator
+metadata:
+  name: trident
+spec:
+  debug: true
+  namespace: trident
+  cloudProvider: "AWS"
+  cloudIdentity: "'eks.amazonaws.com/role-arn: arn:aws:iam::123456:role/astratrident-role'"
 ----
 ====

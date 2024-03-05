@@ -223,7 +223,7 @@ ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN
 |===
 [TIP]
 ====
-* 'fsType' 매개 변수는 SAN LUN에 대해 원하는 파일 시스템 유형을 제어하는 데 사용됩니다. 또한 Kubernetes는 스토리지 클래스에 'fsType'이 있음을 사용하여 파일 시스템이 있음을 나타냅니다. fsType이 설정된 경우에만 POD의 fsGroup 보안 컨텍스트를 사용하여 볼륨 소유권을 제어할 수 있습니다. 을 참조하십시오 link:https://kubernetes.io/docs/tasks/configure-pod-container/security-context/["Kubernetes: Pod 또는 컨테이너의 보안 컨텍스트를 구성합니다"^] 'fsGroup' 컨텍스트를 사용하여 볼륨 소유권을 설정하는 방법에 대한 개요를 제공합니다. Kubernetes는 다음과 같은 경우에만 'fsGroup' 값을 적용합니다.
+* 를 클릭합니다 `fsType` 매개 변수는 SAN LUN에 대해 원하는 파일 시스템 유형을 제어하는 데 사용됩니다. 또한 Kubernetes는 의 존재 여부를 사용합니다 `fsType` 파일 시스템이 있음을 나타내는 스토리지 클래스에 있습니다. 볼륨 소유권은 를 사용하여 제어할 수 있습니다 `fsGroup` POD의 보안 컨텍스트는 에만 해당됩니다 `fsType` 가 설정됩니다. 을 참조하십시오 link:https://kubernetes.io/docs/tasks/configure-pod-container/security-context/["Kubernetes: Pod 또는 컨테이너의 보안 컨텍스트를 구성합니다"^] 를 사용하여 볼륨 소유권을 설정하는 방법에 대한 개요를 보려면 를 참조하십시오 `fsGroup` 상황. Kubernetes가 에 적용됩니다 `fsGroup` 다음 경우에만 값:
 +
 ** 스토리지 클래스에 fsType이 설정되어 있습니다.
 ** PVC 액세스 모드는 RWO입니다.
@@ -295,7 +295,7 @@ CRD는 Kubernetes를 구성하는 것입니다. 위에 정의된 리소스의 �
 다음은 Trident의 CRD에 대해 고려해야 할 몇 가지 사항입니다.
 
 * Trident가 설치되면 일련의 CRD가 생성되어 다른 리소스 유형과 마찬가지로 사용할 수 있습니다.
-* tridentctl uninstall 명령을 사용하여 Trident를 제거할 때 Trident Pod는 삭제되지만 생성된 CRD는 정리되지 않습니다. 을 참조하십시오 link:../trident-managing-k8s/uninstall-trident.html["Trident를 제거합니다"] Trident를 완전히 제거하고 처음부터 다시 구성할 수 있는 방법을 이해합니다.
+* 를 사용하여 Trident를 제거하는 경우 `tridentctl uninstall` Command, Trident Pod가 삭제되지만 생성된 CRD는 정리되지 않습니다. 을 참조하십시오 link:../trident-managing-k8s/uninstall-trident.html["Trident를 제거합니다"] Trident를 완전히 제거하고 처음부터 다시 구성할 수 있는 방법을 이해합니다.
 
 
 

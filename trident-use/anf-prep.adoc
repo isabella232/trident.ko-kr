@@ -22,9 +22,13 @@ Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경�
 
 를 구성하고 사용합니다 https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"^] 백엔드, 다음이 필요합니다.
 
+[NOTE]
+====
+* `subscriptionID`, `tenantID`, `clientID`, `location`, 및 `clientSecret` AKS 클러스터에서 관리되는 ID를 사용하는 경우 선택 사항입니다.
+* `tenantID`, `clientID`, 및 `clientSecret` AKS 클러스터에서 클라우드 ID를 사용할 때는 선택 사항입니다.
 
-NOTE: `subscriptionID`, `tenantID`, `clientID`, `location`, 및 `clientSecret` AKS 클러스터에서 관리되는 ID를 사용하는 경우 선택 사항입니다.
 
+====
 * 용량 풀입니다. 을 참조하십시오 link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-set-up-capacity-pool["Microsoft: Azure NetApp Files에 대한 용량 풀을 생성합니다"^].
 * Azure NetApp Files에 위임된 서브넷. 을 참조하십시오 link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["Microsoft: Azure NetApp Files에 서브넷을 위임합니다"^].
 * Azure NetApp Files가 활성화된 Azure 구독의 'SubscriptionID'입니다.
@@ -81,7 +85,8 @@ NOTE: `subscriptionID`, `tenantID`, `clientID`, `location`, 및 `clientSecret` A
 ====
 
 
-* Azure를 선택합니다 `location` 하나 이상의 항목이 포함되어 있습니다 link:https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["위임된 서브넷"^]. Trident 22.01부터 `location` 매개 변수는 백엔드 구성 파일의 최상위 수준에 있는 필수 필드입니다. 가상 풀에 지정된 위치 값은 무시됩니다.
+* Azure를 선택합니다 `location` 하나 이상의 항목이 포함되어 있습니다 https://docs.microsoft.com/en-us/azure/azure-netapp-files/azure-netapp-files-delegate-subnet["위임된 서브넷"^]. Trident 22.01부터 `location` 매개 변수는 백엔드 구성 파일의 최상위 수준에 있는 필수 필드입니다. 가상 풀에 지정된 위치 값은 무시됩니다.
+* 사용합니다 `Cloud Identity`을(를) 다운로드하십시오 `client ID` 에서 https://learn.microsoft.com/en-us/entra/identity/managed-identities-azure-resources/how-manage-user-assigned-managed-identities["사용자가 할당한 관리 ID입니다"^] 에서 해당 ID를 지정합니다 `azure.workload.identity/client-id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxx`.
 
 
 

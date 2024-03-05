@@ -51,7 +51,7 @@ spec:
 ----
 의 예를 살펴볼 수도 있습니다 https://github.com/NetApp/trident/tree/stable/v21.07/trident-installer/sample-input/backends-samples["Trident - 장착 공구"^] 원하는 스토리지 플랫폼/서비스의 샘플 구성을 위한 디렉토리입니다.
 
-이 'pec'은 백엔드 구성 매개 변수를 사용합니다. 이 예에서는 백엔드에서 'ONTAP-SAN' 스토리지 드라이버를 사용하고 여기에 표로 제공된 구성 매개 변수를 사용합니다. 원하는 스토리지 드라이버에 대한 구성 옵션 목록은 를 참조하십시오 link:backends.html["스토리지 드라이버에 대한 백엔드 구성 정보입니다"^].
+를 클릭합니다 `spec` 백엔드 관련 구성 매개 변수를 사용합니다. 이 예에서는 백엔드에서 를 사용합니다 `ontap-san` 여기에 표로 제공된 구성 매개 변수를 사용하여 스토리지 드라이버를 다운로드합니다. 원하는 스토리지 드라이버에 대한 구성 옵션 목록은 을 참조하십시오 link:backends.html["스토리지 드라이버에 대한 백엔드 구성 정보입니다"^].
 
 이번 시기에는 트리젠백엔드Config CR에 새로 도입된 자격 증명과 delitionPolicy 필드가 포함되어 있습니다.
 

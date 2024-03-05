@@ -16,7 +16,7 @@ Trident 연산자를 구축하고 Hrom을 사용하여 Astra Trident를 설치�
 
 
 
-== Astra Trident 23.10에 대한 중요 정보
+== Astra Trident 24.02에 대한 중요 정보
 
 * Astra Trident * 에 대한 다음 중요 정보를 읽어야 합니다
 
@@ -49,11 +49,11 @@ Trident 사용 link:https://artifacthub.io/packages/helm/netapp-trident/trident-
 ----
 helm repo add netapp-trident https://netapp.github.io/trident-helm-chart
 ----
-. 사용 `helm install` 다음 예제에서와 같이 배포 이름을 지정합니다 `23.10.0` 는 설치 중인 Astra Trident의 버전입니다.
+. 사용 `helm install` 다음 예제에서와 같이 배포 이름을 지정합니다 `24.02.0` 는 설치 중인 Astra Trident의 버전입니다.
 +
 [listing]
 ----
-helm install <name> netapp-trident/trident-operator --version 23.10.0 --create-namespace --namespace <trident-namespace>
+helm install <name> netapp-trident/trident-operator --version 24.02.0 --create-namespace --namespace <trident-namespace>
 ----
 +
 
@@ -83,11 +83,11 @@ NOTE: Trident에 대한 네임스페이스를 이미 만든 경우에는 '--crea
 명령줄에 overrides를 지정합니다.
 
 |===
-예를 들어, 의 기본값을 변경합니다 `debug`에서 다음을 실행합니다 `--set` 명령 위치 `23.10.0` 설치 중인 Astra Trident의 버전입니다.
+예를 들어, 의 기본값을 변경합니다 `debug`에서 다음을 실행합니다 `--set` 명령 위치 `24.02.0` 설치 중인 Astra Trident의 버전입니다.
 
 [listing]
 ----
-helm install <name> netapp-trident/trident-operator --version 23.10.0  --create-namespace --namespace trident --set tridentDebug=true
+helm install <name> netapp-trident/trident-operator --version 24.02.0  --create-namespace --namespace trident --set tridentDebug=true
 ----
 
 
@@ -205,7 +205,10 @@ helm install <name> netapp-trident/trident-operator --version 23.10.0  --create-
 | `excludePodSecurityPolicy` | 운영자 POD 보안 정책을 생성할 수 없습니다. | 거짓입니다 
 
 
-| `cloudProvider` | 를 로 설정합니다 `"Azure"` AKS 클러스터에서 관리되는 ID를 사용하는 경우 | `""` 
+| `cloudProvider` | 를 로 설정합니다 `"Azure"` AKS 클러스터에서 관리되는 ID 또는 클라우드 ID를 사용하는 경우 EKS 클러스터에서 클라우드 ID를 사용하는 경우 "AWS"로 설정합니다. | `""` 
+
+
+| `cloudIdentity` | AKS 클러스터에서 클라우드 ID를 사용할 때 워크로드 ID("Azure.workload.identity/client-id: xxxxxxxxxxxx-xxxx-xxxx-xxxxxxxxxxxxx")로 설정합니다. EKS 클러스터에서 클라우드 ID를 사용할 때 AWS IAM 역할("'eks.amazonaws.com/role-arn: arn:AWS:IAM::123456:role/astratrident-role'")으로 설정합니다. | `""` 
 |===
 
 

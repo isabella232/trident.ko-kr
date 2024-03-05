@@ -19,7 +19,48 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 
 
 
-== 23.10의 새로운 기능
+== 24.02의 새로운 기능
+
+
+
+=== 향상된 기능
+
+* 클라우드 ID에 대한 지원이 추가되었습니다.
++
+** ANF-Azure 워크로드 ID가 있는 AKS는 클라우드 ID로 사용됩니다.
+** FSxN-AWS IAM 역할을 가진 EKS가 클라우드 ID로 사용됩니다.
+
+
+* EKS 콘솔에서 EKS 클러스터에 Astra Trident를 애드온으로 설치하기 위한 지원 추가
+* iSCSI 자동 복구(link:https://github.com/NetApp/trident/issues/864["문제 #864"])를 클릭합니다.
+* AWS IAM 및 SecretsManager와의 통합을 지원하고 Astra Trident가 백업을 통해 FSx 볼륨을 삭제할 수 있도록 FSx Personality를 ONTAP 드라이버에 추가했습니다link:https://github.com/NetApp/trident/issues/453["문제 #453"])를 클릭합니다.
+
+
+
+
+==== 쿠버네티스
+
+* Kubernetes 1.29에 대한 지원 추가
+
+
+
+
+=== 수정
+
+* ACP가 활성화되지 않은 경우 ACP 경고 메시지 수정(link:https://github.com/NetApp/trident/issues/866["문제 #866"])를 클릭합니다.
+* 클론이 스냅샷과 연결되어 있을 때 ONTAP 드라이버에 대한 스냅샷 삭제 중에 클론 분할을 수행하기 전에 10초 지연이 추가되었습니다.
+
+
+
+
+=== 사용 중단
+
+* 다중 플랫폼 이미지 매니페스트에서 인토토 증명 프레임워크가 제거되었습니다.
+
+
+
+
+== 23.10의 변경 사항
 
 
 
@@ -367,7 +408,7 @@ IMPORTANT: 이제 Trident에서 Kubernetes 1.27이 지원됩니다. Kubernetes�
 
 == 22.04의 변경
 
-NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다. 이전 릴리스는 를 참조하십시오 https://docs.netapp.com/us-en/trident/earlier-versions.html["이전 버전의 문서"].
+NetApp은 제품과 서비스를 지속적으로 개선 및 개선하고 있습니다. Astra Trident의 최신 기능 몇 가지를 소개합니다. 이전 릴리스는 을 참조하십시오 https://docs.netapp.com/us-en/trident/earlier-versions.html["이전 버전의 문서"].
 
 
 IMPORTANT: 이전 Trident 릴리스에서 업그레이드하고 Azure NetApp Files를 사용하는 경우 이제 ''location'' config 매개 변수는 필수 싱글톤 필드입니다.

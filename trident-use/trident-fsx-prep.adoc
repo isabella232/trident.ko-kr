@@ -58,7 +58,6 @@ NOTE: 파일 시스템에 연결할 수 있는 모든 위치에서 SSH를 사용
 --
 [listing]
 ----
----
 version: 1
 storageDriverName: ontap-san
 backendName: customBackendName
@@ -83,6 +82,62 @@ trustedCACertificate: zcyBbaG...b3Igb3duIGNsYXNz
   "clientPrivateKey": "vciwKIyAgZG...0cnksIGRlc2NyaX",
   "trustedCACertificate": "zcyBbaG...b3Igb3duIGNsYXNz"
  }
+
+----
+--
+====
++
+또는 다음 예와 같이 AWS Secret Manager에 저장된 SVM 자격 증명(사용자 이름 및 암호)을 사용하여 백엔드 파일을 생성할 수 있습니다.
+
++
+[role="tabbed-block"]
+====
+.YAML
+--
+[listing]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: backend-tbc-ontap-nas
+spec:
+  version: 1
+  storageDriverName: ontap-nas
+  backendName: tbc-ontap-nas
+  svm: svm-name
+  aws:
+    fsxFilesystemID: fs-xxxxxxxxxx
+  managementLIF:
+  credentials:
+    name: "arn:aws:secretsmanager:us-west-2:xxxxxxxx:secret:secret-name"
+    type: awsarn
+----
+--
+.JSON을 참조하십시오
+--
+[listing]
+----
+{
+  "apiVersion": "trident.netapp.io/v1",
+  "kind": "TridentBackendConfig",
+  "metadata": {
+    "name": "backend-tbc-ontap-nas"
+  },
+  "spec": {
+    "version": 1,
+    "storageDriverName": "ontap-nas",
+    "backendName": "tbc-ontap-nas",
+    "svm": "svm-name",
+    "aws": {
+      "fsxFilesystemID": "fs-xxxxxxxxxx"
+    },
+    "managementLIF": null,
+    "credentials": {
+      "name": "arn:aws:secretsmanager:us-west-2:xxxxxxxx:secret:secret-name",
+      "type": "awsarn"
+    }
+  }
+}
 
 ----
 --

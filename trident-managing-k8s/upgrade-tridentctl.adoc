@@ -27,7 +27,7 @@ Astra Trident를 제거하고 다시 설치하면 업그레이드 역할을 합�
 ----
 ./tridentctl uninstall -n <namespace>
 ----
-. Astra Trident를 다시 설치합니다. 을 참조하십시오 link:..trident-get-started/kubernetes-deploy-tridentctl.html["tridentctl을 사용하여 Astra Trident를 설치합니다"].
+. Astra Trident를 다시 설치합니다. 을 참조하십시오 link:../trident-get-started/kubernetes-deploy-tridentctl.html["tridentctl을 사용하여 Astra Trident를 설치합니다"].
 
 
 

@@ -57,7 +57,7 @@ tridentctl과 함께 설치됩니다::
 
 * 또한 백엔드 정의에 debugTraceFlags를 포함하여 각 백엔드에 대한 디버그 로그를 얻을 수 있습니다. 예를 들어, debugTraceFlags:{"API":true, "method":true,}"를 포함하여 Trident 로그에 API 호출 및 메서드 트래버스된 메서드를 가져옵니다. 기존 백엔드는 tridentctl 백엔드 업데이트로 debugTraceFlags를 구성할 수 있습니다.
 * RedHat CoreOS를 사용할 때는 작업자 노드에서 iscsid가 활성화되어 있고 기본적으로 시작되는지 확인합니다. 이 작업은 OpenShift MachineConfigs를 사용하거나 점화 템플릿을 수정하여 수행할 수 있습니다.
-* 에서 Trident를 사용할 때 일반적으로 발생할 수 있는 문제입니다 https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"] 테넌트 및 클라이언트 암호가 권한이 부족한 앱 등록에서 나오는 경우 입니다. Trident 요구사항의 전체 목록은 를 참조하십시오 link:trident-use/anf.html["Azure NetApp Files"] 구성.
+* 에서 Trident를 사용할 때 일반적으로 발생할 수 있는 문제입니다 https://azure.microsoft.com/en-us/services/netapp/["Azure NetApp Files"] 테넌트 및 클라이언트 암호가 권한이 부족한 앱 등록에서 나오는 경우 입니다. Trident 요구사항의 전체 목록은 을 참조하십시오 link:trident-use/anf.html["Azure NetApp Files"] 구성.
 * PV를 컨테이너에 마운트하는 데 문제가 있는 경우 rpcbind가 설치되어 실행되고 있는지 확인합니다. 호스트 OS에 필요한 패키지 관리자를 사용하고 rpcbind가 실행 중인지 확인합니다. 'stemctl status rpcbind' 또는 이와 동등한 기능을 실행하여 rpcbind 서비스의 상태를 확인할 수 있습니다.
 * Trident 백엔드가 이전에 작업을 수행했음에도 불구하고 "실패" 상태에 있다고 보고할 경우 백엔드와 연결된 SVM/관리 자격 증명을 변경하면 원인일 수 있습니다. 'tridentctl update backend'를 사용하여 백엔드 정보를 업데이트하거나 Trident POD를 바운딩하면 이 문제가 해결됩니다.
 * Docker를 컨테이너 런타임으로 사용하여 Trident를 설치할 때 권한 문제가 발생하면 '--in cluster=false' 플래그를 사용하여 Trident를 설치해 보십시오. 설치자 포드는 사용하지 않고 설치자 이용으로 인한 권한 문제를 피한다.
@@ -162,7 +162,7 @@ INFO Trident uninstallation succeeded.
 Astra Trident와 생성된 모든 CRD 및 관련 사용자 지정 리소스를 완전히 제거할 수 있습니다.
 
 
-WARNING: 이 작업은 취소할 수 없습니다. Astra Trident를 완전히 새로 설치하고 싶지 않은 한 이 작업을 수행하지 마십시오. CRD를 제거하지 않고 Astra Trident를 제거하려면 를 참조하십시오 link:trident-managing-k8s/uninstall-trident.html["Astra Trident를 제거합니다"].
+WARNING: 이 작업은 취소할 수 없습니다. Astra Trident를 완전히 새로 설치하고 싶지 않은 한 이 작업을 수행하지 마십시오. CRD를 제거하지 않고 Astra Trident를 제거하려면 을 참조하십시오 link:trident-managing-k8s/uninstall-trident.html["Astra Trident를 제거합니다"].
 
 [role="tabbed-block"]
 ====

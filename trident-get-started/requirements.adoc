@@ -23,7 +23,7 @@ Astra Trident를 설치하기 전에 이러한 일반 시스템 요구 사항을
 .<strong> 중요 정보 Astra Trident </strong>
 [%collapsible%open]
 ====
-* Kubernetes 1.28이 이제 Trident에서 지원됩니다. Kubernetes를 업그레이드하기 전에 Astra Trident를 업그레이드합니다.
+* Kubernetes 1.29가 이제 Trident에서 지원됩니다. Kubernetes를 업그레이드하기 전에 Astra Trident를 업그레이드합니다.
 * Astra Trident는 SAN 환경에서 다중 경로 구성을 엄격하게 사용하며 권장 값은 입니다 `find_multipaths: no` 다중 경로 .conf 파일
 +
 비 경로 다중화 구성 또는 의 사용 `find_multipaths: yes` 또는 `find_multipaths: smart` multipath.conf 파일의 값으로 인해 마운트 오류가 발생합니다. Astra Trident는 의 사용을 권장했습니다 `find_multipaths: no` 21.07 릴리스 이후.
@@ -37,23 +37,24 @@ Astra Trident를 설치하기 전에 이러한 일반 시스템 요구 사항을
 
 Astra Trident는 다음을 비롯한 여러 컨테이너 엔진과 오케스트레이터가 지원됩니다.
 
-* Anthos 온프레미스(VMware) 및 Anthos의 Bare Metal 1.12
-* Kubernetes 1.23-1.28
-* Mirantis Kubernetes 엔진 3.5
-* OpenShift 4.10-4.13
+* 베어 메탈 기반 Anthos(VMware) 및 Anthos 1.16
+* Kubernetes 1.23-1.29
+* OpenShift 4.10-4.14
 
 
 Trident 연산자는 다음 릴리즈에서 지원됩니다.
 
-* Anthos 온프레미스(VMware) 및 Anthos의 Bare Metal 1.12
-* Kubernetes 1.23-1.28
-* OpenShift 4.10-4.13
+* 베어 메탈 기반 Anthos(VMware) 및 Anthos 1.16
+* Kubernetes 1.23-1.29
+* OpenShift 4.10-4.14
 
 
-Astra Trident는 GKE(Google Kubernetes Engine), EKS(Amazon Elastic Kubernetes Service), AKS(Azure Kubernetes Service), Rancher, VMware Tanzu Portfolio를 비롯한 기타 완전 관리형 및 자체 관리 Kubernetes 오퍼링과도 작동합니다.
+Astra Trident는 Google Kubernetes Engine(GKE), Amazon Elastic Kubernetes Services(EKS), Azure Kubernetes Service(AKS), Mirantis Kubernetes Engine(MKE), Rancher, VMware Tanzu Portfolio 등 기타 완전 관리형 Kubernetes 오퍼링도 지원합니다.
+
+Astra Trident 및 ONTAP를 의 스토리지 공급자로 사용할 수 있습니다 link:https://kubevirt.io/["KubeVirt"].
 
 
-WARNING: Astra Trident가 설치된 Kubernetes 클러스터를 1.24에서 1.25 이상으로 업그레이드하기 전에 을 참조하십시오 link:../trident-managing-k8s/upgrade-operator.html#upgrade-a-helm-installation["Helm 설치를 업그레이드합니다"].
+WARNING: Astra Trident가 설치된 Kubernetes 클러스터를 1.24에서 1.25 이상으로 업그레이드하기 전에 를 참조하십시오 link:../trident-managing-k8s/upgrade-operator.html#upgrade-a-helm-installation["Helm 설치를 업그레이드합니다"].
 
 
 
@@ -82,56 +83,56 @@ Astra Trident를 사용하려면 다음 중 하나 이상의 지원되는 백엔
 
 
 | 아스트라 트리덴트  a| 
-1.23-1.28
+1.23-1.29
  a| 
 아니요
 
 
 
 | 볼륨 스냅샷  a| 
-1.23-1.28
+1.23-1.29
  a| 
 아니요
 
 
 
 | 체적 스냅샷의 PVC  a| 
-1.23-1.28
+1.23-1.29
  a| 
 아니요
 
 
 
 | iSCSI PV 크기 조정  a| 
-1.23-1.28
+1.23-1.29
  a| 
 아니요
 
 
 
 | ONTAP 양방향 CHAP  a| 
-1.23-1.28
+1.23-1.29
  a| 
 아니요
 
 
 
 | 동적 내보내기 정책  a| 
-1.23-1.28
+1.23-1.29
  a| 
 아니요
 
 
 
 | Trident 연산자  a| 
-1.23-1.28
+1.23-1.29
  a| 
 아니요
 
 
 
 | CSI 토폴로지  a| 
-1.23-1.28
+1.23-1.29
  a| 
 아니요
 
@@ -192,79 +193,92 @@ link:../trident-reference/ports.html["Astra Trident 포트"]
 
 
 | v1.23.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.10.0
-* Docker.IO/netapp/trident-autosupport:23.10
+* Docker.IO/NetApp/트라이덴트:24.02.0
+* Docker.IO/netapp/trident-autosupport:24.02
 * registry.k8s.io/sig-storage/csi-provisioner: v3.6.0
 * registry.k8s.io/sig-storage/csi-attacher:v4.4.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.9.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.3.0
 * 레지스트리.k8s.io/sig-storage/csi-node-driver-register:v2.9.0
-* Docker.IO/netapp/trident-operator:23.10.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:24.02.0 (선택 사항)
 
 
 
 
 | v1.24.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.10.0
-* Docker.IO/netapp/trident-autosupport:23.10
+* Docker.IO/NetApp/트라이덴트:24.02.0
+* Docker.IO/netapp/trident-autosupport:24.02
 * registry.k8s.io/sig-storage/csi-provisioner: v3.6.0
 * registry.k8s.io/sig-storage/csi-attacher:v4.4.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.9.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.3.0
 * 레지스트리.k8s.io/sig-storage/csi-node-driver-register:v2.9.0
-* Docker.IO/netapp/trident-operator:23.10.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:24.02.0 (선택 사항)
 
 
 
 
 | v1.25.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.10.0
-* Docker.IO/netapp/trident-autosupport:23.10
+* Docker.IO/NetApp/트라이덴트:24.02.0
+* Docker.IO/netapp/trident-autosupport:24.02
 * registry.k8s.io/sig-storage/csi-provisioner: v3.6.0
 * registry.k8s.io/sig-storage/csi-attacher:v4.4.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.9.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.3.0
 * 레지스트리.k8s.io/sig-storage/csi-node-driver-register:v2.9.0
-* Docker.IO/netapp/trident-operator:23.10.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:24.02.0 (선택 사항)
 
 
 
 
 | v1.26.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.10.0
-* Docker.IO/netapp/trident-autosupport:23.10
+* Docker.IO/NetApp/트라이덴트:24.02.0
+* Docker.IO/netapp/trident-autosupport:24.02
 * registry.k8s.io/sig-storage/csi-provisioner: v3.6.0
 * registry.k8s.io/sig-storage/csi-attacher:v4.4.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.9.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.3.0
 * 레지스트리.k8s.io/sig-storage/csi-node-driver-register:v2.9.0
-* Docker.IO/netapp/trident-operator:23.10.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:24.02.0 (선택 사항)
 
 
 
 
 | v1.27.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.10.0
-* Docker.IO/netapp/trident-autosupport:23.10
+* Docker.IO/NetApp/트라이덴트:24.02.0
+* Docker.IO/netapp/trident-autosupport:24.02
 * registry.k8s.io/sig-storage/csi-provisioner: v3.6.0
 * registry.k8s.io/sig-storage/csi-attacher:v4.4.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.9.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.3.0
 * 레지스트리.k8s.io/sig-storage/csi-node-driver-register:v2.9.0
-* Docker.IO/netapp/trident-operator:23.10.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:24.02.0 (선택 사항)
 
 
 
 
 | v1.28.0  a| 
-* Docker.IO/NetApp/트라이덴트:23.10.0
-* Docker.IO/netapp/trident-autosupport:23.10
+* Docker.IO/NetApp/트라이덴트:24.02.0
+* Docker.IO/netapp/trident-autosupport:24.02
 * registry.k8s.io/sig-storage/csi-provisioner: v3.6.0
 * registry.k8s.io/sig-storage/csi-attacher:v4.4.0
 * registry.k8s.io/sig-storage/csi-resizer:v1.9.0
 * 레지스트리.k8s.io/sig-storage/csi-shotter:v6.3.0
 * 레지스트리.k8s.io/sig-storage/csi-node-driver-register:v2.9.0
-* Docker.IO/netapp/trident-operator:23.10.0 (선택 사항)
+* Docker.IO/netapp/trident-operator:24.02.0 (선택 사항)
+
+
+
+
+| v1.29.0  a| 
+* Docker.IO/NetApp/트라이덴트:24.02.0
+* Docker.IO/netapp/trident-autosupport:24.02
+* registry.k8s.io/sig-storage/csi-provisioner: v4.0.0
+* 레지스트리.k8s.io/sig-storage/csi-attacher:v4.5.0
+* 레지스트리.k8s.io/sig-storage/csi-resizer:v1.9.3
+* 레지스트리.k8s.io/sig-storage/csi-shotter:v6.3.3
+* registry.k8s.io/sig-storage/csi-node-driver-register: v2.10.0
+* Docker.IO/netapp/trident-operator:24.02.0 (선택 사항)
 
 
 |===

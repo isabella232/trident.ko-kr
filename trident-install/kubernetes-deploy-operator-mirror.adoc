@@ -16,7 +16,7 @@ Trident 연산자를 수동으로 구축하여 Astra Trident를 설치할 수 �
 
 
 
-== Astra Trident 23.10에 대한 중요 정보
+== Astra Trident 24.02에 대한 중요 정보
 
 * Astra Trident * 에 대한 다음 중요 정보를 읽어야 합니다
 
@@ -75,8 +75,8 @@ Astra Trident 설치 프로그램 패키지에는 Trident 운영자를 구축하
 
 [listing]
 ----
-wget https://github.com/NetApp/trident/releases/download/v23.10.0/trident-installer-23.10.0.tar.gz
-tar -xf trident-installer-23.10.0.tar.gz
+wget https://github.com/NetApp/trident/releases/download/v24.02.0/trident-installer-24.02.0.tar.gz
+tar -xf trident-installer-24.02.0.tar.gz
 cd trident-installer
 ----
 
@@ -93,10 +93,10 @@ kubectl create -f deploy/crds/<VERSION>.yaml
 
 === 3단계: 운영자의 레지스트리 위치를 업데이트합니다
 
-인치 `/deploy/operator.yaml`, 업데이트 `image: docker.io/netapp/trident-operator:23.10.0` 이미지 레지스트리의 위치를 반영합니다. 귀사의 link:../trident-get-started/requirements.html#container-images-and-corresponding-kubernetes-versions["Trident 및 CSI 이미지"] 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 예를 들면 다음과 같습니다.
+인치 `/deploy/operator.yaml`, 업데이트 `image: docker.io/netapp/trident-operator:24.02.0` 이미지 레지스트리의 위치를 반영합니다. 귀사의 link:../trident-get-started/requirements.html#container-images-and-corresponding-kubernetes-versions["Trident 및 CSI 이미지"] 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 예를 들면 다음과 같습니다.
 
-* `image: <your-registry>/trident-operator:23.10.0` 이미지가 모두 하나의 레지스트리에 있는 경우
-* `image: <your-registry>/netapp/trident-operator:23.10.0` Trident 이미지가 CSI 이미지와 다른 레지스트리에 있는 경우
+* `image: <your-registry>/trident-operator:24.02.0` 이미지가 모두 하나의 레지스트리에 있는 경우
+* `image: <your-registry>/netapp/trident-operator:24.02.0` Trident 이미지가 CSI 이미지와 다른 레지스트리에 있는 경우
 
 
 
@@ -165,8 +165,8 @@ IMPORTANT: Kubernetes 클러스터에는 운영자의 인스턴스 * 하나가 �
 [listing]
 ----
 imageRegistry: "<your-registry>"
-autosupportImage: "<your-registry>/trident-autosupport:23.10"
-tridentImage: "<your-registry>/trident:23.10.0"
+autosupportImage: "<your-registry>/trident-autosupport:24.02"
+tridentImage: "<your-registry>/trident:24.02.0"
 ----
 --
 .다른 레지스트리의 이미지
@@ -176,8 +176,8 @@ tridentImage: "<your-registry>/trident:23.10.0"
 [listing]
 ----
 imageRegistry: "<your-registry>/sig-storage"
-autosupportImage: "<your-registry>/netapp/trident-autosupport:23.10"
-tridentImage: "<your-registry>/netapp/trident:23.10.0"
+autosupportImage: "<your-registry>/netapp/trident-autosupport:24.02"
+tridentImage: "<your-registry>/netapp/trident:24.02.0"
 ----
 --
 ====
@@ -202,16 +202,16 @@ API Version: trident.netapp.io/v1
 Kind:        TridentOrchestrator
 ...
 Spec:
-  Autosupport Image:  <your-registry>/netapp/trident-autosupport:23.10
+  Autosupport Image:  <your-registry>/netapp/trident-autosupport:24.02
   Debug:              true
   Image Registry:     <your-registry>/sig-storage
   Namespace:          trident
-  Trident Image:      <your-registry>/netapp/trident:23.10.0
+  Trident Image:      <your-registry>/netapp/trident:24.02.0
 Status:
   Current Installation Params:
     IPv6:                       false
     Autosupport Hostname:
-    Autosupport Image:          <your-registry>/netapp/trident-autosupport:23.10
+    Autosupport Image:          <your-registry>/netapp/trident-autosupport:24.02
     Autosupport Proxy:
     Autosupport Serial Number:
     Debug:                      true
@@ -223,11 +223,11 @@ Status:
     Log Format:           text
     Probe Port:           17546
     Silence Autosupport:  false
-    Trident Image:        <your-registry>/netapp/trident:23.10.0
+    Trident Image:        <your-registry>/netapp/trident:24.02.0
   Message:                Trident installed
   Namespace:              trident
   Status:                 Installed
-  Version:                v23.10.0
+  Version:                v24.02.0
 Events:
     Type Reason Age From Message ---- ------ ---- ---- -------Normal
     Installing 74s trident-operator.netapp.io Installing Trident Normal
@@ -300,6 +300,6 @@ trident-operator-766f7b8658-ldzsv          1/1     Running   0           3m
 +----------------+----------------+
 | SERVER VERSION | CLIENT VERSION |
 +----------------+----------------+
-| 23.10.0        | 23.10.0        |
+| 24.02.0        | 24.02.0        |
 +----------------+----------------+
 ----
