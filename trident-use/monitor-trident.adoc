@@ -55,17 +55,17 @@ metadata:
   namespace: monitoring
   labels:
       release: prom-operator
-  spec:
-    jobLabel: trident
-    selector:
-      matchLabels:
-        app: controller.csi.trident.netapp.io
-    namespaceSelector:
-      matchNames:
-      - trident
-    endpoints:
-    - port: metrics
-      interval: 15s
+spec:
+  jobLabel: trident
+  selector:
+    matchLabels:
+      app: controller.csi.trident.netapp.io
+  namespaceSelector:
+    matchNames:
+    - trident
+  endpoints:
+  - port: metrics
+    interval: 15s
 ----
 이 ServiceMonitor 정의는 '삼중상 CSI' 서비스에서 반환된 지표를 검색하고 특히 서비스의 산부인과를 찾습니다. 따라서 이제 Prometheus가 Astra Trident의 메트릭을 이해하도록 구성되었습니다.
 
