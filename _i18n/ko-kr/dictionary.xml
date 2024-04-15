@@ -2391,7 +2391,6 @@
   <block id="3d0107bfa0874592e9dc04f9869b604b" category="list-text">실행<block ref="cd4140d3de30b520500459331d08d2bf" prefix=" " category="inline-code"></block> 차트와 앱 버전이 모두 업그레이드되었는지 확인합니다. 실행<block ref="3e725291d4b17065fdcd321172fcfae3" prefix=" " category="inline-code"></block> 디버그 메시지를 검토합니다.</block>
   <block id="3fe5d266a33f137293c314a2e334b611" category="inline-link">Astra Trident 22.10</block>
   <block id="9fefe9ff51badc61edd8a36c8240aa29" category="list-text"><block ref="9fefe9ff51badc61edd8a36c8240aa29" category="inline-link-rx"></block></block>
-  <block id="55559f520040667d3f8931728b37ef07" category="paragraph">21.07 이전의 릴리스는 기존 문서 사이트로 리디렉션합니다.</block>
   <block id="79126799d841fcc6275e2d0dd60f9d39" category="paragraph">Astra Trident를 통합하려면 다음과 같은 설계 및 아키텍처 요소를 통합해야 합니다. 드라이버 선택 및 배포, 스토리지 클래스 설계, 가상 풀 설계, PVC(Persistent Volume Claim)가 Astra Trident를 사용한 스토리지 프로비저닝, 볼륨 운영, OpenShift 서비스 구축에 미치는 영향</block>
   <block id="d7f3ab8ebe0633127c883b84d0b2bc4a" category="section-title">Cloud Volumes Service on Google Cloud 백엔드 드라이버</block>
   <block id="dbdb93270c6038ae53d21c36a0ec3a06" category="paragraph">Astra Trident가 을 사용합니다<block ref="5935ea92cdd7d975b4e764b429f21c01" prefix=" " category="inline-code"></block> Google Cloud에서 Cloud Volumes Service와 연결할 드라이버.</block>
@@ -3781,7 +3780,6 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="c2b105e6592336c26afd4f39319a222e" category="list-text">ONTAP-NAS-Economy의 FlexVol 이름 변환 고정.</block>
   <block id="a78c2c1c722d3e8b3abc0e050b914850" category="list-text">노드가 재부팅될 때 Windows 노드에서 Astra Trident 초기화 문제 해결</block>
   <block id="b680f5ddc32b78c78329f3f15a836381" category="paragraph">Kubernetes 1.28에 대한 지원 추가</block>
-  <block id="f82695aea6527ed53f785b9c22ba480f" category="list-text">Azure-NetApp-files 스토리지 드라이버와 함께 AMI(Azure Managed Identity)의 사용 지원 추가</block>
   <block id="be1e775eed9a7023c7facbd3f3cd32cd" category="list-text">ONTAP-SAN 드라이버용 NVMe over TCP 지원 추가</block>
   <block id="24a3b687404991a8b5d83740bfde9f9c" category="inline-link-macro">문제 #558</block>
   <block id="86826a04ec735c436222d55949b27e52" category="list-text">사용자가 백엔드를 일시 중단 상태로 설정할 때 볼륨 프로비저닝을 일시 중지하는 기능이 추가되었습니다(<block ref="4ad3a18b49b4979346d26b5940c21a0f" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
@@ -4115,4 +4113,5 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="bf0fdd660f8a7559f356435f0a8efe3e" category="list-text">사용<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> 배포 및 이미지 레지스트리 위치의 이름을 지정합니다. 귀사의 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 있을 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 있어야 합니다. 예를 들어,<block ref="32d61ffcee709121c5ce040022324539" prefix=" " category="inline-code"></block> 는 설치 중인 Astra Trident의 버전입니다.</block>
   <block id="4b1c6f609d27cc18df4b1605f9aa7b1b" category="paragraph">예를 들어, 의 기본값을 변경합니다<block ref="ad42f6697b035b7580e4fef93be20b4d" prefix=" " category="inline-code"></block>에서 다음을 실행합니다<block ref="8b5806248570dbb13e7d3bc5e6c0ee37" prefix=" " category="inline-code"></block> 명령 위치<block ref="32d61ffcee709121c5ce040022324539" prefix=" " category="inline-code"></block> 설치 중인 Astra Trident의 버전입니다.</block>
   <block id="88c15f1888721229de466ebf2206b1c8" category="list-text">사용<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> 다음 예제에서와 같이 배포 이름을 지정합니다<block ref="32d61ffcee709121c5ce040022324539" prefix=" " category="inline-code"></block> 는 설치 중인 Astra Trident의 버전입니다.</block>
+  <block id="2284dc5d4add6f82e5bc0121aa82a816" category="list-text">Azure-NetApp-files 스토리지 드라이버와 함께 AMI(Azure Managed Identity)의 사용 지원 추가</block>
 </blocks>

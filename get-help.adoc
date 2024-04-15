@@ -85,9 +85,6 @@ link:https://docs.netapp.com/us-en/trident-2107/index.html["21.07입니다"^]
 | -- | -- | 2024년 7월 
 |===
 
-NOTE: 21.07 이전의 릴리스는 기존 문서 사이트로 리디렉션합니다.
-
-
 
 == 자가 지원
 
