@@ -62,7 +62,7 @@ NOTE: OpenShift Container Platform에서 Trident 연산자를 사용하여 업�
 ** 운영자 포드가 있는 경우, Trident 연산자를 사용하여 수동으로 또는 Hrom을 사용하여 Astra Trident를 설치했습니다.
 
 
-. 작업자 포드가 있는 경우 를 사용합니다 `kubectl describe tproc trident` Helm을 사용하여 Astra Trident가 설치되었는지 확인합니다.
+. 작업자 포드가 있는 경우 를 사용합니다 `kubectl describe torc` Helm을 사용하여 Astra Trident가 설치되었는지 확인합니다.
 +
 ** H제어 레이블이 있는 경우, Hrom을 사용하여 Astra Trident를 설치했습니다.
 ** H제어 레이블이 없는 경우 Trident 연산자를 사용하여 Astra Trident를 수동으로 설치했습니다.

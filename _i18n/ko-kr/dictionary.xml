@@ -4114,4 +4114,5 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="e5aaee266f7d64bb7199d33750b98122" category="list-text">22.01에서 23.01로 첫 번째 업그레이드.</block>
   <block id="c6070eb192dc90174ef63a85c1f02d5a" category="list-text">그런 다음 23.01에서 24.02로 업그레이드합니다.</block>
   <block id="23c22ef5f35b931bceb1aaeffafcb5f4" category="list-text">있다면 <block ref="701383cb184d92daac13becc67e9c1be" category="inline-link-macro-rx"></block>을 사용할 수 있습니다<block ref="f8055407f6b06e8c86fe98fdbd160c87" prefix=" " category="inline-code"></block> 한 단계로 업그레이드합니다. Helm repo를 추가하지 않았거나 업그레이드에 사용할 수 없는 경우:</block>
+  <block id="fabc0fa737916420805fcbdf1e73d723" category="list-text">작업자 포드가 있는 경우 를 사용합니다<block ref="9ce56b0c50ae80fe754522969b1c96b9" prefix=" " category="inline-code"></block> Helm을 사용하여 Astra Trident가 설치되었는지 확인합니다.</block>
 </blocks>
