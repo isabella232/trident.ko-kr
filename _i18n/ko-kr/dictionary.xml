@@ -3813,7 +3813,6 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="e037ffcaadbce3092a5cf8a87340fd58" category="paragraph">이 예에서는 Windows 작업자 노드에 Astra Trident를 설치합니다.</block>
   <block id="a998f3ed1c2f0acf96000ec18ff8cb4f" category="paragraph">이 예에서는 Astra Trident를 설치하여 AKS 클러스터에서 관리되는 ID를 활성화합니다.</block>
   <block id="b714bb36b0285d040e315c079c326009" category="list-text">현재 Astra Trident 인스턴스를 설치하는 데 사용된 Trident 연산자를 삭제합니다. 예를 들어, 23.07에서 업그레이드하는 경우 다음 명령을 실행합니다.</block>
-  <block id="7b136496fce84f19eb2409b46c46f701" category="list-text">먼저 21.10에서 22.10으로 업그레이드합니다.</block>
   <block id="766995a062c6503acd7ac4752fbb865d" category="inline-link-macro">23.10</block>
   <block id="78c875172f37f031a2632dc008815ee1" category="cell">2026년 10월</block>
   <block id="6933dffe806f29980dbedda6aef6fda7" category="inline-link">Astra Trident 23.07</block>
@@ -4032,9 +4031,6 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="6e3e8fb95db896575313140186e26d07" category="list-text">를 사용합니다<block ref="cd01e1bae83933b9c59c914bc71332ac" prefix=" " category="inline-code"></block> 명령 위치<block ref="2973e53d04f6e3a0c4071821eb468a8f" prefix=" " category="inline-code"></block> 업그레이드하려는 버전을 반영합니다.</block>
   <block id="733aa7fe5deef27d1cb0828cff0f17bd" category="admonition">설치 방법 간에 전환하기 전에 를 참조하십시오 <block ref="d7d87809bc6e1001ccd94c7433d28fd5" category="inline-link-macro-rx"></block>.</block>
   <block id="948c2cbef9ba6f931735e6eef2d86eba" category="list-text">자세한 내용은 을 참조하십시오 <block ref="04cf7258a315ca08f4b436c194fef69d" category="inline-link-macro-rx"></block>.</block>
-  <block id="efb4ad4f97129a41089c72febc546fcc" category="list-text">설치된 버전의 4 릴리스 창 내에 있는 모든 대상 릴리스에 대해 직접 업그레이드를 수행할 수 있습니다. 예를 들어 22.10(또는 22.10 도트 릴리스)에서 24.02로 직접 업그레이드할 수 있습니다.</block>
-  <block id="ff66cf4a4b7b4bc7f3ce15d77bd596a7" category="list-text">릴리스 4개가 아닌 다른 릴리스에서 업그레이드하는 경우 여러 단계로 업그레이드를 수행합니다. 의 업그레이드 지침을 사용합니다 <block ref="a799aa6eaf3a5192b34ea19f24bb716f" category="inline-link-macro-rx"></block> 에서 4개의 릴리즈 윈도우에 맞는 최신 릴리즈로 업그레이드하는 중입니다. 예를 들어 21.10을 실행 중이고 24.02로 업그레이드하려는 경우:</block>
-  <block id="1de8721bcfd911022f2a86e48f4f3d2b" category="list-text">그런 다음 22.10에서 24.02로 업그레이드합니다.</block>
   <block id="1eb921add61b9e1c5fcaf8272bb52ec6" category="admonition">OpenShift Container Platform에서 Trident 연산자를 사용하여 업그레이드할 때는 Trident 21.01.1 이상으로 업그레이드해야 합니다. 21.01.0으로 릴리스된 Trident 연산자에는 21.01.1에서 해결된 알려진 문제가 포함되어 있습니다. 자세한 내용은 를 참조하십시오<block ref="bcebcdd21adcbb3d7c640d63a711c6fb" category="inline-link-rx"></block>.</block>
   <block id="6cf46197d43b0fb353cc1cb55753f51c" category="section-title">Astra Trident 24.02에 대한 중요 정보</block>
   <block id="10e922f2b5adf15b9f182c7c103f326e" category="cell"><block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix="" category="inline-code"></block> 및<block ref="3016c12c1db45f14c80c9c1731b9c26a" prefix=" " category="inline-code"></block> 만 해당.
@@ -4114,4 +4110,8 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="4b1c6f609d27cc18df4b1605f9aa7b1b" category="paragraph">예를 들어, 의 기본값을 변경합니다<block ref="ad42f6697b035b7580e4fef93be20b4d" prefix=" " category="inline-code"></block>에서 다음을 실행합니다<block ref="8b5806248570dbb13e7d3bc5e6c0ee37" prefix=" " category="inline-code"></block> 명령 위치<block ref="32d61ffcee709121c5ce040022324539" prefix=" " category="inline-code"></block> 설치 중인 Astra Trident의 버전입니다.</block>
   <block id="88c15f1888721229de466ebf2206b1c8" category="list-text">사용<block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block> 다음 예제에서와 같이 배포 이름을 지정합니다<block ref="32d61ffcee709121c5ce040022324539" prefix=" " category="inline-code"></block> 는 설치 중인 Astra Trident의 버전입니다.</block>
   <block id="2284dc5d4add6f82e5bc0121aa82a816" category="list-text">Azure-NetApp-files 스토리지 드라이버와 함께 AMI(Azure Managed Identity)의 사용 지원 추가</block>
+  <block id="5186dac2db0dc06e7d296c901a018234" category="list-text">설치된 버전의 4 릴리스 창 내에 있는 모든 대상 릴리스에 대해 직접 업그레이드를 수행할 수 있습니다. 예를 들어 23.01(또는 23.01 도트 릴리스)에서 24.02로 직접 업그레이드할 수 있습니다.</block>
+  <block id="a771c1ff0e805ddbac97ebeb73a070d8" category="list-text">릴리스 4개가 아닌 다른 릴리스에서 업그레이드하는 경우 여러 단계로 업그레이드를 수행합니다. 의 업그레이드 지침을 사용합니다 <block ref="a799aa6eaf3a5192b34ea19f24bb716f" category="inline-link-macro-rx"></block> 에서 4개의 릴리즈 윈도우에 맞는 최신 릴리즈로 업그레이드하는 중입니다. 예를 들어, 22.01을 실행하고 있고 24.02로 업그레이드하려는 경우:</block>
+  <block id="e5aaee266f7d64bb7199d33750b98122" category="list-text">22.01에서 23.01로 첫 번째 업그레이드.</block>
+  <block id="c6070eb192dc90174ef63a85c1f02d5a" category="list-text">그런 다음 23.01에서 24.02로 업그레이드합니다.</block>
 </blocks>
