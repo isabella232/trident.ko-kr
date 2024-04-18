@@ -98,9 +98,9 @@ tridentctl install --cloud-provider="Azure" -n trident
 
 == AKS용 클라우드 ID
 
-클라우드 ID를 사용하면 Kubernetes Pod에서 명시적 AWS 자격 증명을 제공하지 않고 AWS IAM 역할로 인증하여 AWS 리소스에 액세스할 수 있습니다.
+클라우드 ID를 사용하면 Kubernetes Pod에서 명시적 Azure 자격 증명을 제공하지 않고 워크로드 ID로 인증하여 Azure 리소스에 액세스할 수 있습니다.
 
-AWS에서 클라우드 ID를 활용하려면 다음이 필요합니다.
+Azure에서 클라우드 ID를 활용하려면 다음이 필요합니다.
 
 * AKS를 사용하여 구축된 Kubernetes 클러스터
 * AKS Kubernetes 클러스터에 구성된 워크로드 ID 및 oidc-발급자입니다
