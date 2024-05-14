@@ -446,7 +446,6 @@
   <block id="af2a4d2810d86aa0169c117f82682f9a" category="doc">자주 묻는 질문</block>
   <block id="96ab491ef73d5db0cd15f55e1552cc22" category="section-title">일반적인 질문</block>
   <block id="b34c3d20de0f1b2c7a69bdc59002ad47" category="section-title">Astra Trident는 얼마나 자주 출시됩니까?</block>
-  <block id="2f55088c7d055eb361252b15d5d7af10" category="paragraph">Astra Trident는 1월, 4월, 7월, 10월에 3개월마다 출시됩니다. Kubernetes 릴리스 한 달 후입니다.</block>
   <block id="15602d1e4b699ebca549a3d953672d8c" category="section-title">Astra Trident가 특정 버전의 Kubernetes에서 릴리스된 모든 기능을 지원합니까?</block>
   <block id="d860923e20119473e7f7d50683cb0559" category="paragraph">Astra Trident는 일반적으로 Kubernetes의 알파 기능을 지원하지 않습니다. Trident는 Kubernetes 베타 릴리즈를 따르는 두 Trident 릴리스 내에서 베타 기능을 지원할 수 있습니다.</block>
   <block id="52ffcf336df0055235949cf324a8624b" category="section-title">Astra Trident가 작동을 위해 다른 NetApp 제품에 종속되어 있습니까?</block>
@@ -3275,7 +3274,6 @@ Yesfootnote:4[]: 원시 블록 볼륨에서 지원됩니다
   <block id="33ab2c3f94452baf7f17dab03982edfb" category="paragraph">이후<block ref="ae61bf6af1a7406b62c72a4bef1ab62d" prefix=" " category="inline-code"></block> 이 업데이트되면 운영자가 업데이트를 처리하고 기존 설치를 패치합니다. 이 경우 새 Pod가 생성되어 적절히 설치가 수정될 수 있습니다.</block>
   <block id="ac0482b416d6b2d907db760f79e018a7" category="example-title">&lt;strong&gt; Clean &lt;/strong&gt; 재설치</block>
   <block id="ae2cbb250a37c9e09570ff02857e4cbe" category="paragraph">클러스터 범위 Trident 운영자를 사용하면 클러스터 범위 리소스를 깨끗이 제거할 수 있습니다. 사용자는 Astra Trident를 완전히 제거하고 다시 설치할 수 있습니다.</block>
-  <block id="8e2504f56599a577cd2bbee322a41d4e" category="paragraph">Astra Trident는 분기별 릴리스 케이던스를 따르며, 매년 4개의 주요 릴리즈를 제공합니다. 각각의 새 릴리스는 이전 릴리스에서 빌드되며 새로운 기능, 성능 향상, 버그 수정 및 개선 사항을 제공합니다. Astra Trident의 새로운 기능을 이용하려면 1년에 한 번 이상 업그레이드하시기 바랍니다.</block>
   <block id="4aa39142850a8999e9a4e9350f8bfbe9" category="list-text">Astra Trident 23.07 이상에서는 v1 볼륨 스냅샷이 필요하며 알파 또는 베타 스냅샷을 더 이상 지원하지 않습니다.</block>
   <block id="34c1edfb4ac8581528c3791be680aeb3" category="inline-link-macro">CVS 서비스 유형입니다</block>
   <block id="5797c3891863b81173e1bb10d6488a72" category="inline-link-macro">CVS 서비스 유형 샘플</block>
@@ -3767,11 +3765,6 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="0acb661700c6422ee3bfc29c43c715c6" category="paragraph">비 경로 다중화 구성 또는 의 사용<block ref="a3a1d5b95e345a3db24a5a30e349f699" prefix=" " category="inline-code"></block> 또는<block ref="e82e6d155396541f07f7347c984444ea" prefix=" " category="inline-code"></block> multipath.conf 파일의 값으로 인해 마운트 오류가 발생합니다. Astra Trident는 의 사용을 권장했습니다<block ref="db729c5c8df447087e5a84b961df14f6" prefix=" " category="inline-code"></block> 21.07 릴리스 이후.</block>
   <block id="8554748be67b956e550de942edae807d" category="admonition">NVMe/TCP에는 RHEL 9 이상이 필요합니다.</block>
   <block id="e379ebca8f2245b4a0c32803c6d7f845" category="paragraph">Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저닝된 볼륨을 마운트할 수 있어야 합니다. 작업자 노드를 준비하려면 드라이버 선택에 따라 NFS, iSCSI 또는 NVMe 툴을 설치해야 합니다.</block>
-  <block id="f1ddd80e14c81c1d754dfbdb2f850757" category="list-text">registry.k8s.io/sig-storage/csi-provisioner: v3.6.0</block>
-  <block id="9907e74008defde26417cd6b70b41a28" category="list-text">registry.k8s.io/sig-storage/csi-attacher:v4.4.0</block>
-  <block id="0412a949ebb008aa6aa55f27dd6db71c" category="list-text">registry.k8s.io/sig-storage/csi-resizer:v1.9.0</block>
-  <block id="1b18bb70ac8b9e2989b63f692a170f14" category="list-text">레지스트리.k8s.io/sig-storage/csi-shotter:v6.3.0</block>
-  <block id="bfcfde74961d9f3991b8fb27f23b564f" category="list-text">레지스트리.k8s.io/sig-storage/csi-node-driver-register:v2.9.0</block>
   <block id="df935b95f4f5aa4b8cc6b78b9011196d" category="cell">v1.28.0</block>
   <block id="2564a762d021b4beae21f01627773c0f" category="inline-link-macro">문제 #834</block>
   <block id="e53ddb8a6947ad5b93f8c82a86836f16" category="list-text">새 요청된 크기가 ONTAP-NAS 및 ONTAP-NAS-flexgroup 스토리지 드라이버(<block ref="6140c2bc2ecfc555b47da5841f5fd8ae" category="inline-link-macro-rx"></block>)를 클릭합니다.</block>
@@ -4083,7 +4076,6 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="e7afa8f188dd7bf2c172108b10e2e2df" category="list-text">레지스트리.k8s.io/sig-storage/csi-resizer:v1.9.3</block>
   <block id="5268a90435480eab7edcef1c31af78ea" category="list-text">레지스트리.k8s.io/sig-storage/csi-shotter:v6.3.3</block>
   <block id="dc33446faca12c219dd12f5e1c73cf51" category="list-text">registry.k8s.io/sig-storage/csi-node-driver-register: v2.10.0</block>
-  <block id="528d64fadb48dbbc71a3bf878d210988" category="list-text">Docker.IO/netapp/trident-operator:24.02.0 (선택 사항)</block>
   <block id="62f429770359674b482a69dc8eb1c822" category="paragraph">Cloud Volumes Service on Google Cloud 서비스 유형 및 서비스 수준에 대한 자세한 내용은 을 참조하십시오 <block ref="5b5fd03722abab2c395288a6ee42ad11" category="inline-link-macro-rx"></block>.</block>
   <block id="cb1cfaffdbb4cc0c4c444a11e40e3262" category="paragraph">SAN 스토리지 드라이버를 사용하는 ONTAP 백엔드의 경우 Astra Trident는 양방향 CHAP를 설정하고 를 통해 CHAP 사용자 이름 및 암호를 관리할 수 있습니다<block ref="c67fd1b99934afa248dfeb285a9a4191" prefix=" " category="inline-code"></block>.
 을 참조하십시오 <block ref="5cdb093a3afb814148505ae9813b18af" category="inline-link-macro-rx"></block> Astra Trident가 ONTAP 백엔드에서 CHAP를 구성하는 방법을 이해합니다.</block>
@@ -4117,4 +4109,6 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="fabc0fa737916420805fcbdf1e73d723" category="list-text">작업자 포드가 있는 경우 를 사용합니다<block ref="9ce56b0c50ae80fe754522969b1c96b9" prefix=" " category="inline-code"></block> Helm을 사용하여 Astra Trident가 설치되었는지 확인합니다.</block>
   <block id="f77d4be42f8ef9e2474d677786cf6d7a" category="paragraph">클라우드 ID를 사용하면 Kubernetes Pod에서 명시적 Azure 자격 증명을 제공하지 않고 워크로드 ID로 인증하여 Azure 리소스에 액세스할 수 있습니다.</block>
   <block id="088be2b53cfa8710d751578d273c4af0" category="paragraph">Azure에서 클라우드 ID를 활용하려면 다음이 필요합니다.</block>
+  <block id="309d4be2a929a72254d2e0ec91b427b3" category="paragraph">24.02 릴리즈부터 Astra Trident는 2월, 6월, 10월마다 릴리즈됩니다. Kubernetes 릴리스 한 달 후입니다.</block>
+  <block id="d9242a3acb300b393c2167774404ecc0" category="paragraph">24.02 릴리즈부터 Astra Trident는 4개월의 릴리즈 주기를 따릅니다. 매년 3개의 주요 릴리즈를 제공합니다. 각각의 새 릴리스는 이전 릴리스에서 빌드되며 새로운 기능, 성능 향상, 버그 수정 및 개선 사항을 제공합니다. Astra Trident의 새로운 기능을 이용하려면 1년에 한 번 이상 업그레이드하시기 바랍니다.</block>
 </blocks>

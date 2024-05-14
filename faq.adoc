@@ -22,7 +22,7 @@ Astra Trident의 설치, 구성, 업그레이드 및 문제 해결에 대해 자
 
 === Astra Trident는 얼마나 자주 출시됩니까?
 
-Astra Trident는 1월, 4월, 7월, 10월에 3개월마다 출시됩니다. Kubernetes 릴리스 한 달 후입니다.
+24.02 릴리즈부터 Astra Trident는 2월, 6월, 10월마다 릴리즈됩니다. Kubernetes 릴리스 한 달 후입니다.
 
 
 
