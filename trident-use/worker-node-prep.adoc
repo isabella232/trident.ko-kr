@@ -230,9 +230,6 @@ NOTE: Ubuntu 18.04의 경우 iSCSI 데몬이 시작되도록 "open-iscsi"를 시
 --
 ====
 
-WARNING: 컨테이너에 볼륨을 연결할 때 오류가 발생하지 않도록 iSCSI 도구를 설치한 후 작업자 노드를 재부팅합니다.
-
-
 
 == NVMe/TCP 볼륨
 
