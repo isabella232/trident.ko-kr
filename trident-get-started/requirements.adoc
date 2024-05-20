@@ -39,14 +39,14 @@ Astra Trident는 다음을 비롯한 여러 컨테이너 엔진과 오케스트�
 
 * 베어 메탈 기반 Anthos(VMware) 및 Anthos 1.16
 * Kubernetes 1.23-1.29
-* OpenShift 4.10-4.14
+* OpenShift 4.10-4.15
 
 
 Trident 연산자는 다음 릴리즈에서 지원됩니다.
 
 * 베어 메탈 기반 Anthos(VMware) 및 Anthos 1.16
 * Kubernetes 1.23-1.29
-* OpenShift 4.10-4.14
+* OpenShift 4.10-4.15
 
 
 Astra Trident는 Google Kubernetes Engine(GKE), Amazon Elastic Kubernetes Services(EKS), Azure Kubernetes Service(AKS), Mirantis Kubernetes Engine(MKE), Rancher, VMware Tanzu Portfolio 등 기타 완전 관리형 Kubernetes 오퍼링도 지원합니다.
