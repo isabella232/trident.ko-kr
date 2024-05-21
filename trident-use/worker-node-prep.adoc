@@ -231,6 +231,48 @@ NOTE: Ubuntu 18.04의 경우 iSCSI 데몬이 시작되도록 "open-iscsi"를 시
 ====
 
 
+=== iSCSI 자동 복구를 구성하거나 사용하지 않도록 설정합니다
+
+다음 Astra Trident iSCSI 자동 복구 설정을 구성하여 오래된 세션을 수정할 수 있습니다.
+
+* *iscsi 자동 복구 간격*: iSCSI 자동 복구가 호출되는 빈도를 결정합니다(기본값: 5분). 더 큰 숫자를 설정하여 더 적은 숫자를 설정하거나 더 자주 실행되도록 구성할 수 있습니다.
+
+
+[NOTE]
+====
+iSCSI 자동 복구 간격을 0으로 설정하면 iSCSI 자동 복구가 완전히 중지됩니다. iSCSI 자동 복구를 비활성화하는 것은 권장하지 않습니다. iSCSI 자동 복구가 의도된 대로 작동하지 않거나 디버깅 목적으로 작동하지 않는 특정 시나리오에서만 비활성화해야 합니다.
+
+====
+* * iSCSI 자동 복구 대기 시간 *: 비정상 세션에서 로그아웃하고 다시 로그인을 시도하기 전에 iSCSI 자동 복구 대기 시간을 결정합니다(기본값: 7분). 상태가 좋지 않은 것으로 확인된 세션이 로그아웃되기 전에 더 오래 대기해야 하고 다시 로그인하려고 시도하거나 더 적은 수의 숫자를 사용하여 이전에 로그아웃하도록 구성할 수 있습니다.
+
+
+[role="tabbed-block"]
+====
+.헬름
+--
+iSCSI 자동 복구 설정을 구성하거나 변경하려면 를 전달합니다 `iscsiSelfHealingInterval` 및 `iscsiSelfHealingWaitTime` Helm 설치 또는 Helm 업데이트 중 매개변수.
+
+다음 예에서는 iSCSI 자동 복구 간격을 3분으로 설정하고 자동 복구 대기 시간을 6분으로 설정합니다.
+
+[listing]
+----
+helm install trident trident-operator-100.2402.0.tgz --set iscsiSelfHealingInterval=3m0s --set iscsiSelfHealingWaitTime=6m0s -n trident
+----
+--
+.tridentctl 을 선택합니다
+--
+iSCSI 자동 복구 설정을 구성하거나 변경하려면 를 전달합니다 `iscsi-self-healing-interval` 및 `iscsi-self-healing-wait-time` tridentctl 설치 또는 업데이트 중 매개 변수입니다.
+
+다음 예에서는 iSCSI 자동 복구 간격을 3분으로 설정하고 자동 복구 대기 시간을 6분으로 설정합니다.
+
+[listing]
+----
+tridentctl install --iscsi-self-healing-interval=3m0s --iscsi-self-healing-wait-time=6m0s -n trident
+----
+--
+====
+
+
 == NVMe/TCP 볼륨
 
 운영 체제의 명령을 사용하여 NVMe 툴을 설치합니다.

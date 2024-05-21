@@ -4112,4 +4112,19 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="e007fb329975dfac9458f3defd0f7fc1" category="inline-link-macro">NVMe 툴을 설치합니다</block>
   <block id="fd7af40a7e3f81bfb0a51eac257dc730" category="paragraph"><block ref="8ac92b41418caf5b4c74c2a77a0c349a" category="inline-link-macro-rx"></block> 을 사용하는 경우<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> NVMe/TCP(Nonvolatile Memory Express) 프로토콜을 통한 NVMe(Nonvolatile Memory Express)</block>
   <block id="7e757604a320b645d3e338eaa6d9bca2" category="paragraph">를 클릭합니다<block ref="da3f7f170e13df7f56e057fc4226aa85" category="inline-link-rx"></block> Astra Trident를 해당 클래스에 사용되는 프로비저닝으로 식별하고 Astra Trident에 볼륨 프로비저닝 방법을 지시합니다. 예를 들면 다음과 같습니다.</block>
+  <block id="50f9796c3e95f29464ed077bb59ca6a5" category="cell"><block ref="a1edaea62dbed344534369e9668223b1" prefix="" category="inline-code"></block></block>
+  <block id="d3ee0f95ea35db45a8c5d2deb96b4eb9" category="cell">iSCSI 자동 복구가 호출되는 간격입니다.</block>
+  <block id="d2393ee8411e83742fc73a79660d81ba" category="cell"><block ref="48899b1fc217fef67f8c9c11d2af0800" prefix="" category="inline-code"></block></block>
+  <block id="5368476cef8604c12ee3f8a741319473" category="cell"><block ref="85fc372a514da766ce84a222668f8e62" prefix="" category="inline-code"></block></block>
+  <block id="a5c601ef1c412054e22a761067edb9da" category="cell">iSCSI 자체 복구가 로그아웃과 후속 로그인을 수행하여 부실 세션을 해결하려는 시도를 시작한 이후의 기간입니다.</block>
+  <block id="e1bd8a641f8c3114c2698aa76942b621" category="cell"><block ref="4fe853d0c57c2a118a755c207068b052" prefix="" category="inline-code"></block></block>
+  <block id="d03a790fb20fccc8b27cff74c7a10709" category="section-title">iSCSI 자동 복구를 구성하거나 사용하지 않도록 설정합니다</block>
+  <block id="1c804f3ccd207f84562f1fad6c4d35f5" category="paragraph">다음 Astra Trident iSCSI 자동 복구 설정을 구성하여 오래된 세션을 수정할 수 있습니다.</block>
+  <block id="160cc91d68e6399b864fe236e7a6d11e" category="list-text">*iscsi 자동 복구 간격*: iSCSI 자동 복구가 호출되는 빈도를 결정합니다(기본값: 5분). 더 큰 숫자를 설정하여 더 적은 숫자를 설정하거나 더 자주 실행되도록 구성할 수 있습니다.</block>
+  <block id="af6999fe88eb0d5f3cf5f3c7570bf014" category="paragraph">iSCSI 자동 복구 간격을 0으로 설정하면 iSCSI 자동 복구가 완전히 중지됩니다. iSCSI 자동 복구를 비활성화하는 것은 권장하지 않습니다. iSCSI 자동 복구가 의도된 대로 작동하지 않거나 디버깅 목적으로 작동하지 않는 특정 시나리오에서만 비활성화해야 합니다.</block>
+  <block id="fe240a869a7a9e3bdc68d460aa116db2" category="list-text">* iSCSI 자동 복구 대기 시간 *: 비정상 세션에서 로그아웃하고 다시 로그인을 시도하기 전에 iSCSI 자동 복구 대기 시간을 결정합니다(기본값: 7분). 상태가 좋지 않은 것으로 확인된 세션이 로그아웃되기 전에 더 오래 대기해야 하고 다시 로그인하려고 시도하거나 더 적은 수의 숫자를 사용하여 이전에 로그아웃하도록 구성할 수 있습니다.</block>
+  <block id="7c3dfaf40c8f6c1208932661e70ca6b2" category="paragraph">iSCSI 자동 복구 설정을 구성하거나 변경하려면 를 전달합니다<block ref="a1edaea62dbed344534369e9668223b1" prefix=" " category="inline-code"></block> 및<block ref="85fc372a514da766ce84a222668f8e62" prefix=" " category="inline-code"></block> Helm 설치 또는 Helm 업데이트 중 매개변수.</block>
+  <block id="ba53a946a5e7dedfdc75a569107f3a66" category="paragraph">다음 예에서는 iSCSI 자동 복구 간격을 3분으로 설정하고 자동 복구 대기 시간을 6분으로 설정합니다.</block>
+  <block id="c67fd1b99934afa248dfeb285a9a4191" category="open-title">tridentctl 을 선택합니다</block>
+  <block id="03c688458c87383f238f17223a52f7bd" category="paragraph">iSCSI 자동 복구 설정을 구성하거나 변경하려면 를 전달합니다<block ref="95df96489cc6481c74d24c1397e3edd9" prefix=" " category="inline-code"></block> 및<block ref="4ad3b66813348b71002bd232a403581c" prefix=" " category="inline-code"></block> tridentctl 설치 또는 업데이트 중 매개 변수입니다.</block>
 </blocks>

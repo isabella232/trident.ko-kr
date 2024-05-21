@@ -209,6 +209,12 @@ helm install <name> netapp-trident/trident-operator --version 100.2402.0  --crea
 
 
 | `cloudIdentity` | AKS 클러스터에서 클라우드 ID를 사용할 때 워크로드 ID("Azure.workload.identity/client-id: xxxxxxxxxxxx-xxxx-xxxx-xxxxxxxxxxxxx")로 설정합니다. EKS 클러스터에서 클라우드 ID를 사용할 때 AWS IAM 역할("'eks.amazonaws.com/role-arn: arn:AWS:IAM::123456:role/astratrident-role'")으로 설정합니다. | `""` 
+
+
+| `iscsiSelfHealingInterval` | iSCSI 자동 복구가 호출되는 간격입니다. | `5m0s` 
+
+
+| `iscsiSelfHealingWaitTime` | iSCSI 자체 복구가 로그아웃과 후속 로그인을 수행하여 부실 세션을 해결하려는 시도를 시작한 이후의 기간입니다. | `7m0s` 
 |===
 
 
