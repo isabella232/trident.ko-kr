@@ -18,7 +18,7 @@ Kubernetes StorageClass 개체를 구성하고 스토리지 클래스를 생성�
 
 == Kubernetes StorageClass 개체를 구성합니다
 
-를 클릭합니다 https://kubernetes.io/docs/concepts/storage/storage-classes/["Kubernetes StorageClass 객체"^] Astra Trident를 해당 수업에 사용되는 프로비저닝으로 식별하고 Astra Trident에 볼륨 프로비저닝 방법을 지시합니다. 예를 들면 다음과 같습니다.
+를 클릭합니다 https://kubernetes.io/docs/concepts/storage/storage-classes/["Kubernetes StorageClass 객체"^] Astra Trident를 해당 클래스에 사용되는 프로비저닝으로 식별하고 Astra Trident에 볼륨 프로비저닝 방법을 지시합니다. 예를 들면 다음과 같습니다.
 
 [listing]
 ----

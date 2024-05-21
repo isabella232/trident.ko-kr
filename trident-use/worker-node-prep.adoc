@@ -21,13 +21,13 @@ Kubernetes 클러스터의 모든 작업자 노드는 Pod용으로 프로비저�
 드라이버 조합을 사용하는 경우 드라이버에 필요한 모든 도구를 설치해야 합니다. 최신 버전의 RedHat CoreOS에는 기본적으로 도구가 설치되어 있습니다.
 
 .NFS 툴
-다음을 사용 중인 경우 NFS 툴을 설치합니다. `ontap-nas`, `ontap-nas-economy`, `ontap-nas-flexgroup`, `azure-netapp-files`, `gcp-cvs`.
+link:https://docs.netapp.com/us-en/trident/trident-use/worker-node-prep.html#nfs-volumes["NFS 툴을 설치합니다"] 다음을 사용하는 경우: `ontap-nas`, `ontap-nas-economy`, `ontap-nas-flexgroup`, `azure-netapp-files`, `gcp-cvs`.
 
 .iSCSI 툴
-다음을 사용하는 경우 iSCSI 도구를 설치합니다. `ontap-san`, `ontap-san-economy`, `solidfire-san`.
+link:https://docs.netapp.com/us-en/trident/trident-use/worker-node-prep.html#install-the-iscsi-tools["iSCSI 도구를 설치합니다"] 다음을 사용하는 경우: `ontap-san`, `ontap-san-economy`, `solidfire-san`.
 
 .NVMe 툴
-를 사용하는 경우 NVMe 툴을 설치합니다 `ontap-san` NVMe/TCP(Nonvolatile Memory Express) 프로토콜을 통한 NVMe(Nonvolatile Memory Express)
+link:https://docs.netapp.com/us-en/trident/trident-use/worker-node-prep.html#nvmetcp-volumes["NVMe 툴을 설치합니다"] 을 사용하는 경우 `ontap-san` NVMe/TCP(Nonvolatile Memory Express) 프로토콜을 통한 NVMe(Nonvolatile Memory Express)
 
 
 NOTE: NVMe/TCP에 ONTAP 9.12 이상을 사용하는 것이 좋습니다.
