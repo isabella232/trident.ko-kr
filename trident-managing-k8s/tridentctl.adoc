@@ -225,17 +225,74 @@ WARNING: Trident REST 인터페이스는 127.0.0.1(IPv4의 경우) 또는 [::1](
 
 `tridentctl update backend state <backend-name> [flag]`
 
+.고려해야 할 사항
+* TridentBackendConfig(tbc)를 사용하여 백엔드를 생성한 경우 파일을 사용하여 백엔드를 업데이트할 수 `backend.json` 없습니다.
+* 가 tbc에 설정된 경우 `userState` 명령을 사용하여 수정할 수 없습니다 `tridentctl update backend state <backend-name> --user-state suspended/normal` .
+* via tridentctl을 tbc를 통해 설정한 후 다시 설정하려면 `userState` `userState` tbc에서 필드를 제거해야 합니다. 이 작업은 명령을 사용하여 수행할 수 `kubectl edit tbc` 있습니다. 필드가 제거되면 `userState` 명령을 사용하여 백엔드의 을 변경할 수 `tridentctl update backend state` `userState` 있습니다.
+* 를 사용하여 `tridentctl update backend state` 를 `userState`변경합니다. 또는 파일을 사용하여 업데이트할 수도 `userState` `TridentBackendConfig` `backend.json` 있습니다. 이렇게 하면 백엔드의 완전한 재초기화가 트리거되고 시간이 오래 걸릴 수 있습니다.
++
 깃발:: `-h`, `--help`: 백엔드 상태에 대한 도움말입니다.
 `--user-state`: 로 설정합니다 `suspended` 백엔드 작업을 일시 중지합니다. 를 로 설정합니다 `normal` 백엔드 작업을 재개합니다. 를 로 설정한 경우 `suspended`:
+
+
+* `AddVolume` 그리고 `Import Volume` 일시 중지되었습니다.
+* `CloneVolume` `ResizeVolume`, , `PublishVolume`, , , , `UnPublishVolume` `CreateSnapshot` `GetSnapshot` `RestoreSnapshot`, , `DeleteSnapshot`, , , , `RemoveVolume` `GetVolumeExternal` `ReconcileNodeAccess` 사용 가능 상태를 유지합니다.
+
+
+백엔드 구성 파일 또는 의 필드를 사용하여 백엔드 상태를 업데이트할 수도 `userState` `TridentBackendConfig` `backend.json`있습니다. 자세한 내용은 및 을 link:../trident-use/backend_options.html["백엔드 관리 옵션"] link:../trident-use/backend_ops_kubectl.html["kubeck을 사용하여 백엔드 관리 수행"]참조하십시오.
+
+* 예: *
+
+[role="tabbed-block"]
+====
+.JSON을 참조하십시오
+--
+파일을 사용하여 를 업데이트하려면 다음 단계를 `userState` `backend.json` 수행하십시오.
+
+.  `backend.json`값이 'uspended'로 설정된 필드를 포함하도록 파일을 `userState` 편집합니다.
+. 업데이트된 파일의 경로와 명령을 사용하여 백엔드를 `tridentctl backend update` `backend.json` 업데이트합니다.
 +
+* 예 *: `tridentctl backend update -f /<path to backend JSON file>/backend.json`
+
+
+
+[listing]
+----
+{
+    "version": 1,
+    "storageDriverName": "ontap-nas",
+    "managementLIF": "<redacted>",
+    "svm": "nas-svm",
+    "backendName": "customBackend",
+    "username": "<redacted>",
+    "password": "<redacted>",
+    "userState": "suspended",
+}
+
+----
 --
-* `AddVolume`, `CloneVolume`, `Import Volume`, `ResizeVolume` 일시 중지되었습니다.
-* `PublishVolume`, `UnPublishVolume`, `CreateSnapshot`, `GetSnapshot`, `RestoreSnapshot`, `DeleteSnapshot`, `RemoveVolume`, `GetVolumeExternal`, `ReconcileNodeAccess` 사용 가능 상태를 유지합니다.
-
-
+.YAML
 --
+명령을 사용하여 tbc를 적용한 후 편집할 수 `kubectl edit <tbc-name> -n <namespace>` 있습니다. 다음 예에서는 옵션을 사용하여 백엔드 상태를 일시 중단하도록 업데이트합니다 `userState: suspended` .
 
-
+[listing]
+----
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: backend-ontap-nas
+spec:
+  version: 1
+  backendName: customBackend
+  storageDriverName: ontap-nas
+  managementLIF: <redacted>
+  svm: nas-svm
+userState: suspended
+  credentials:
+    name: backend-tbc-ontap-nas-secret
+----
+--
+====
 
 
 === 버전

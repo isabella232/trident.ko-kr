@@ -31,6 +31,11 @@ Astra Trident는 버전에 따라 3가지 수준의 지원을 제공합니다. �
 
 
  a| 
+link:https://docs.netapp.com/us-en/trident/index.html["24.06"^]
+| 2025년 6월 | 2026년 6월 | 2027년 6월 
+
+
+ a| 
 link:https://docs.netapp.com/us-en/trident/index.html["24.02"^]
 | 2025년 2월 | 2026년 2월 | 2027년 2월 
 
@@ -47,7 +52,7 @@ link:https://docs.netapp.com/us-en/trident-2307/index.html["2007년 3월"^]
 
  a| 
 link:https://docs.netapp.com/us-en/trident-2304/index.html["23.04"^]
-| 2024년 4월 | 2025년 4월 | 2026년 4월 
+| -- | 2025년 4월 | 2026년 4월 
 
 
  a| 
@@ -67,7 +72,7 @@ link:https://docs.netapp.com/us-en/trident-2207/index.html["22.07"^]
 
  a| 
 link:https://docs.netapp.com/us-en/trident-2204/index.html["22.04"^]
-| -- | 2024년 4월 | 2025년 4월 
+| -- | -- | 2025년 4월 
 
 
  a| 

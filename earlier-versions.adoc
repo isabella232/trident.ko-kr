@@ -12,8 +12,9 @@ summary: 버전 선택기를 사용하여 최신 버전과 이전 버전 4개를
 
 
 [role="lead"]
-Astra Trident 24.02를 실행하지 않는 경우 를 기반으로 이전 릴리즈에 대한 문서를 사용할 수 있습니다 link:get-help.html["Astra Trident 지원 라이프사이클"].
+Astra Trident 24.06을 실행하지 않는 경우 를 기반으로 이전 릴리즈에 대한 문서를 사용할 수 있습니다 link:get-help.html["Astra Trident 지원 라이프사이클"].
 
+* https://docs.netapp.com/us-en/trident-2402/index.html["Astra Trident 24.02"^]
 * https://docs.netapp.com/us-en/trident-2310/index.html["Astra Trident 23.10"^]
 * https://docs.netapp.com/us-en/trident-2307/index.html["Astra Trident 23.07"^]
 * https://docs.netapp.com/us-en/trident-2304/index.html["Astra Trident 23.04"^]

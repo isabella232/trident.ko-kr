@@ -118,9 +118,7 @@ IPv6 플래그를 사용하여 Astra Trident를 설치한 경우 IPv6 주소를 
 이 매개변수는 ONTAP 백엔드에 대한 아마존 FSx에 필요하며 비워둘 수 없습니다. | `smb-share` 
 
 
-| 'useREST' | ONTAP REST API를 사용하는 부울 매개 변수입니다. * 기술 미리 보기 *
-`useREST` 프로덕션 작업 부하가 아닌 테스트 환경에 권장되는** 기술 미리 보기로 제공됩니다**. 를 로 설정한 경우 `true`, Astra Trident는 ONTAP REST API를 사용하여 백엔드와 통신합니다. 이 기능을 사용하려면 ONTAP 9.11.1 이상이 필요합니다. 또한 사용되는 ONTAP 로그인 역할에 에 대한 액세스 권한이 있어야 합니다 `ontap` 응용 프로그램. 이는 사전 정의된 에 의해 충족됩니다 `vsadmin` 및 `cluster-admin` 역할.
-`useREST` 는 MetroCluster에서 지원되지 않습니다. | 거짓 
+| 'useREST' | ONTAP REST API를 사용하는 부울 매개 변수입니다.  `useREST` 로 설정된 `true`경우 Astra Trident는 ONTAP REST API를 사용하여 백엔드와 통신합니다. 로 설정된 경우 `false`Astra Trident는 ONTAP ZAPI 호출을 사용하여 백엔드와 통신합니다. 이 기능을 사용하려면 ONTAP 9.11.1 이상이 필요합니다. 또한 사용되는 ONTAP 로그인 역할에는 애플리케이션에 대한 액세스 권한이 있어야 `ontap` 합니다. 이는 미리 정의된 역할과 역할에 의해 충족됩니다. `vsadmin` `cluster-admin` Astra Trident 24.06 릴리즈 및 ONTAP 9.15.1 이상부터 는 `userREST` 기본적으로 로 설정되며 `true` , ONTAP ZAPI 호출을 사용하도록 로 변경합니다. `useREST` `false` | `true` ONTAP 9.15.1 이상, 그렇지 않은 경우 `false`. 
 |===
 
 
@@ -170,6 +168,9 @@ IPv6 플래그를 사용하여 Astra Trident를 설치한 경우 IPv6 주소를 
 
 
 | '생태성 스타일'을 참조하십시오 | 새로운 볼륨에 대한 보안 스타일 NFS를 지원합니다 `mixed` 및 `unix` 보안 스타일. SMB 지원 `mixed` 및 `ntfs` 보안 스타일. | NFS 기본값은 입니다 `unix`. SMB 기본값은 입니다 `ntfs`. 
+
+
+| `nameTemplate` | 사용자 지정 볼륨 이름을 생성하는 템플릿입니다. | "" 
 |===
 
 NOTE: Astra Trident와 함께 QoS 정책 그룹을 사용하려면 ONTAP 9.8 이상이 필요합니다. 비공유 QoS 정책 그룹을 사용하고 정책 그룹이 각 구성요소별로 적용되었는지 확인하는 것이 좋습니다. 공유 QoS 정책 그룹은 모든 워크로드의 총 처리량에 대해 상한을 적용합니다.
@@ -382,6 +383,25 @@ clientCertificate: ZXR0ZXJwYXB...ICMgJ3BhcGVyc2
 clientPrivateKey: vciwKIyAgZG...0cnksIGRlc2NyaX
 trustedCACertificate: zcyBbaG...b3Igb3duIGNsYXNz
 storagePrefix: myPrefix_
+----
+====
+.nameTemplate이 포함된 백엔드 구성 예
+[%collapsible]
+====
+[listing]
+----
+---
+version: 1
+storageDriverName: ontap-nas
+backendName: ontap-nas-backend
+managementLIF: <ip address>
+svm: svm0
+username: <admin>
+password: <password>
+defaults: {
+    "nameTemplate": "{{.volume.Name}}_{{.labels.cluster}}_{{.volume.Namespace}}_{{.volume.RequestName}}"
+},
+"labels": {"cluster": "ClusterA", "PVC": "{{.volume.Namespace}}_{{.volume.RequestName}}"}
 ----
 ====
 

@@ -19,7 +19,54 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 
 
 
-== 24.02의 새로운 기능
+== 24.06의 새로운 기능
+
+
+
+=== 향상된 기능
+
+* ** 중요**: `limitVolumeSize` 이제 매개 변수는 ONTAP 이코노미 드라이버에서 qtree/LUN 크기를 제한합니다. 새 매개변수를 사용하여  `limitVolumePoolSize` 해당 드라이버에서 FlexVol 크기를 제어합니다. link:https://github.com/NetApp/trident/issues/341["문제 #341"]().
+* 더 이상 사용되지 않는 igroup이 사용 중인 경우 정확한 LUN ID로 SCSI 검색을 시작하는 iSCSI 자동 복구 기능이 추가되었습니다(link:https://github.com/NetApp/trident/issues/883["문제 #883"]).
+* 백엔드가 일시 중단 모드인 경우에도 볼륨 클론 및 크기 조정 작업에 대한 지원이 추가되었습니다.
+* Trident 컨트롤러에 대한 사용자 구성 로그 설정이 Astra Trident 노드 Pod에 전파될 수 있는 기능이 추가되었습니다.
+* ONTAP 버전 9.15.1 이상용 ZAPI 대신 REST를 기본적으로 사용하도록 Astra Trident에 지원이 추가되었습니다.
+* ONTAP 스토리지 백엔드에서 새로운 영구 볼륨에 대해 맞춤형 볼륨 이름 및 메타데이터에 대한 지원 추가
+*  `azure-netapp-files`NFS 마운트 옵션이 NFS 버전 4.x를 사용하도록 설정된 경우 기본적으로 스냅샷 디렉토리를 자동으로 사용하도록 (ANF) 드라이버를 개선했습니다
+* NFS 볼륨에 대한 Bottlerocket 지원이 추가되었습니다.
+* Google Cloud NetApp 볼륨에 대한 기술 사전 공개 지원 추가
+
+
+
+
+==== 쿠버네티스
+
+* 시작 시 좀비 마운트 및 잔여 추적 파일을 정리하는 Astra Trident DemonSet 기능이 추가되었습니다link:https://github.com/NetApp/trident/issues/883["문제 #883"]().
+* LUKS 볼륨을 동적으로 가져오기 위한 PVC 주석 추가 `trident.netapp.io/luksEncryption`link:https://github.com/NetApp/trident/issues/849["문제 #849"]().
+* ANF 드라이버에 토폴로지 인식이 추가되었습니다.
+
+
+
+
+=== 수정
+
+* 오래된 트랜잭션으로 인한 Astra Trident 설치 실패 수정
+* Kubernetes()의 경고 메시지를 무시하도록 Tridentctl을 수정했습니다link:https://github.com/NetApp/trident/issues/892["문제 #892"].
+* Astra Trident 컨트롤러 우선순위가 ()로 변경되었습니다 `SecurityContextConstraint` `0`link:https://github.com/NetApp/trident/issues/887["문제 #887"].
+* 이제 ONTAP 드라이버에서 20MiB() 미만의 볼륨 크기를 사용할 수link:https://github.com/NetApp/trident/issues/885["문제 [#885"]있습니다.
+* ONTAP-SAN 드라이버에 대한 크기 조정 작업 중에 FlexVol이 축소되지 않도록 Astra Trident를 수정했습니다.
+* NFS v4.1에서 ANF 볼륨 가져오기 실패 수정.
+
+
+
+
+=== 사용 중단
+
+* EOL Windows Server 2019에 대한 지원이 제거되었습니다.
+
+
+
+
+== 24.02의 변경 사항
 
 
 

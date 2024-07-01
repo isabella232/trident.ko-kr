@@ -70,7 +70,7 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
 자동으로 계층화 | 거짓입니다 
 
 
-| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | `"netapp/trident-autosupport:24.02"` 
+| 자동 지원 이미지 | AutoSupport 텔레메트리 컨테이너 이미지입니다 | `"netapp/trident-autosupport:24.06"` 
 
 
 | 자동 지원 프록시 | AutoSupport를 보내는 프록시의 주소/포트입니다
@@ -83,7 +83,7 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
 | `logFormat` | 사용할 Astra Trident 로깅 형식[text,json] | `"text"` 
 
 
-| 트리덴티이미지 | 설치할 Astra Trident 이미지 | `"netapp/trident:24.02"` 
+| 트리덴티이미지 | 설치할 Astra Trident 이미지 | `"netapp/trident:24.06"` 
 
 
 | 'imageRegistry'입니다 | 형식의 내부 레지스트리 경로입니다

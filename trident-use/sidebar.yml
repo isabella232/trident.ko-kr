@@ -70,6 +70,8 @@ entries:
     url: "/trident-use/vol-expansion.html"
   - title: 볼륨 가져오기
     url: "/trident-use/vol-import.html"
+  - title: 볼륨 이름을 사용자 지정합니다
+    url: "/trident-use/vol-custom-name.html"
   - title: 네임스페이스 전체에서 NFS 볼륨을 공유합니다
     url: "/trident-use/volume-share.html"
   - title: CSI 토폴로지를 사용합니다

@@ -95,6 +95,9 @@ AKS 클러스터에서 관리되는 ID가 설정된 경우 선택 사항입니�
 
 
 | `nasType` | NFS 또는 SMB 볼륨 생성을 구성합니다. 옵션은 입니다 `nfs`, `smb` 또는 null입니다. Null로 설정하면 기본적으로 NFS 볼륨이 설정됩니다. | `nfs` 
+
+
+| `supportedTopologies` | 이 백엔드에서 지원하는 영역 및 영역의 목록을 나타냅니다. 자세한 내용은 을 link:../trident-use/csi-topology.html["CSI 토폴로지를 사용합니다"]참조하십시오. |  
 |===
 
 NOTE: 네트워크 기능에 대한 자세한 내용은 을 참조하십시오 link:https://docs.microsoft.com/en-us/azure/azure-netapp-files/configure-network-features["Azure NetApp Files 볼륨에 대한 네트워크 기능을 구성합니다"^].
@@ -316,6 +319,32 @@ storage:
   - standard-1
   - standard-2
 
+----
+====
+.지원되는 토폴로지 구성
+[%collapsible]
+====
+Astra Trident는 지역 및 가용 영역을 기준으로 워크로드에 대한 볼륨을 손쉽게 프로비저닝할 수 있도록 지원합니다.  `supportedTopologies`이 백엔드 구성의 블록은 백엔드당 영역 및 영역 목록을 제공하는 데 사용됩니다. 여기에 지정한 지역 및 영역 값은 각 Kubernetes 클러스터 노드의 레이블에 있는 지역 및 영역 값과 일치해야 합니다. 이러한 영역 및 영역은 스토리지 클래스에서 제공할 수 있는 허용 가능한 값 목록을 나타냅니다. 백엔드에서 제공되는 지역 및 영역의 하위 세트가 포함된 스토리지 클래스의 경우 Astra Trident는 언급한 지역과 영역에서 볼륨을 생성합니다. 자세한 내용은 을 link:../trident-use/csi-topology.html["CSI 토폴로지를 사용합니다"]참조하십시오.
+
+[listing]
+----
+---
+version: 1
+storageDriverName: azure-netapp-files
+subscriptionID: 9f87c765-4774-fake-ae98-a721add45451
+tenantID: 68e4f836-edc1-fake-bff9-b2d865ee56cf
+clientID: dd043f63-bf8e-fake-8076-8de91e5713aa
+clientSecret: SECRET
+location: eastus
+serviceLevel: Ultra
+capacityPools:
+- application-group-1/account-1/ultra-1
+- application-group-1/account-1/ultra-2
+supportedTopologies:
+- topology.kubernetes.io/region: eastus
+  topology.kubernetes.io/zone: eastus-1
+- topology.kubernetes.io/region: eastus
+  topology.kubernetes.io/zone: eastus-2
 ----
 ====
 

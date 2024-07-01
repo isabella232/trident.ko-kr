@@ -139,7 +139,7 @@ Astra Trident는 를 사용하여 NVMe(비휘발성 메모리 익스프레스) �
 * NVMe 볼륨 크기 조정
 * Astra Trident 외부에서 생성된 NVMe 볼륨을 가져와 Astra Trident로 라이프사이클을 관리할 수 있음
 * NVMe 네이티브 다중 경로
-* K8 노드의 정상 또는 비정상적으로 종료 (24.02)
+* K8 노드의 정상 또는 비정상적으로 종료 (24.06)
 
 
 Astra Trident는 다음을 지원하지 않습니다.
