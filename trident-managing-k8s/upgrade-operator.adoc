@@ -66,7 +66,7 @@ Astra Trident Helm 설치를 업그레이드할 수 있습니다.
 WARNING: Astra Trident가 설치된 Kubernetes 클러스터를 1.24에서 1.25 이상으로 업그레이드할 경우 Values.YAML을 업데이트해야 합니다 `excludePodSecurityPolicy` 를 선택합니다 `true` 또는 을 추가합니다 `--set excludePodSecurityPolicy=true` 를 누릅니다 `helm upgrade` 명령을 먼저 실행한 후 클러스터를 업그레이드하십시오.
 
 .단계
-. 있다면 link:../trident-get-started/kubernetes-deploy-helm.html#deploy-the-trident-operator-and-install-astra-trident-using-helm["Helm을 사용하여 Astra Trident를 설치했습니다"]을 사용할 수 있습니다 `helm upgrade trident netapp-trident/trident-operator --version 100.2402.0` 한 단계로 업그레이드합니다. Helm repo를 추가하지 않았거나 업그레이드에 사용할 수 없는 경우:
+. link:../trident-get-started/kubernetes-deploy-helm.html#deploy-the-trident-operator-and-install-astra-trident-using-helm["Helm을 사용하여 Astra Trident를 설치했습니다"]를 사용하여 한 단계로 업그레이드할 수 `helm upgrade trident netapp-trident/trident-operator --version 100.2406.0` 있습니다. Helm repo를 추가하지 않았거나 업그레이드에 사용할 수 없는 경우:
 +
 .. 에서 최신 Astra Trident 릴리즈를 다운로드하십시오 link:https://github.com/NetApp/trident/releases/latest["GitHub의 _Assets_섹션"^].
 ..  `helm upgrade`에서 업그레이드할 버전을 반영하는 명령을 `trident-operator-24.06.0.tgz` 사용합니다.

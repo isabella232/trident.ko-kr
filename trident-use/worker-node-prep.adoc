@@ -256,7 +256,7 @@ iSCSI 자동 복구 설정을 구성하거나 변경하려면 를 전달합니�
 
 [listing]
 ----
-helm install trident trident-operator-100.2402.0.tgz --set iscsiSelfHealingInterval=3m0s --set iscsiSelfHealingWaitTime=6m0s -n trident
+helm install trident trident-operator-100.2406.0.tgz --set iscsiSelfHealingInterval=3m0s --set iscsiSelfHealingWaitTime=6m0s -n trident
 ----
 --
 .tridentctl 을 선택합니다
