@@ -2039,7 +2039,6 @@
   <block id="b0ee19cc46a4fb3df97c1c676c0a5d57" category="inline-link-macro">Azure 포털을 사용하여 역할을 할당합니다</block>
   <block id="993c1a80e778c965961521eeb4afd398" category="list-text">A <block ref="8ad3956583058d3582a7dd1281d1f882" category="inline-link-macro-rx"></block> 구독 레벨입니다 <block ref="e023f2926fb9af676f2809a760efeb14" prefix="(" category="inline-code"></block>) 다음 사용 권한은 Astra Trident에 필요한 권한만 가집니다. 사용자 지정 역할을 만든 후 <block ref="af58105ed429db29198b767444ed6d0d" category="inline-link-macro-rx"></block>.</block>
   <block id="77a4a369d552f7d3be163bda86f9113f" category="section-title">SMB 볼륨에 대한 추가 요구사항</block>
-  <block id="1f43150a13f29c496f07ed4a9750b2ff" category="list-text">Linux 컨트롤러 노드 및 Windows Server 2019를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.</block>
   <block id="7595de66780a622cdd37b4823afebc07" category="inline-link-macro">GitHub:CSI 프록시</block>
   <block id="c680a0c023a6d45186b9752a07e9938c" category="inline-link-macro">GitHub: Windows용 CSI 프록시</block>
   <block id="2d6b406e65ac91f2af09f4228e3efe4f" category="list-text">Windows 서비스로 구성된 CSI 프록시. 를 구성합니다<block ref="0f8126c17871ed45f2a848f15d96a1bb" prefix=" " category="inline-code"></block>를 참조하십시오 <block ref="3ca23c6eadaac7aa23a492aef5e5d012" category="inline-link-macro-rx"></block> 또는 <block ref="0b56a9ad79a8fef177779e7d3d856994" category="inline-link-macro-rx"></block> Windows에서 실행되는 Kubernetes 노드의 경우:</block>
@@ -2798,7 +2797,6 @@
   <block id="362997bacf08e019288e372d8ae1f070" category="list-text">OpenShift Container Platform(AMD64 및 ARM64)에서 지원하는 RedHat CoreOS(RHCOS) 버전</block>
   <block id="a3460163c4a2854c79a419dda57ac917" category="list-text">RHEL 8+(AMD64 및 ARM64)</block>
   <block id="f51a58a0cffb9f9953edce6411578b53" category="list-text">Ubuntu 22.04 이상(AMD64 및 ARM64)</block>
-  <block id="1285a056fd837828136d15f7e76d09cc" category="list-text">Windows Server 2019(AMD64)</block>
   <block id="f53514cf8829a41463c245b088ae732e" category="paragraph">Astra Trident를 Windows 노드에서 실행하려면 다음을 수행합니다.</block>
   <block id="c5b5b00ff1b3a892c8694ab932cbf9ca" category="paragraph">강제 분리에 대한 자세한 내용은 을 참조하십시오 <block ref="63cac71755fb6ef1f1fea34cf4037121" category="inline-link-macro-rx"></block>.</block>
   <block id="38a0b9f59e6fe23e1617dc0e78498afe" category="section-title">강제 분리에 대한 세부 정보</block>
@@ -4196,4 +4194,6 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="154898f748dc50cea11a3146dff4d65e" category="paragraph">예를 들어, 의 기본값을<block ref="ad42f6697b035b7580e4fef93be20b4d" prefix=" " category="inline-code"></block>변경하려면 다음<block ref="8b5806248570dbb13e7d3bc5e6c0ee37" prefix=" " category="inline-code"></block> 명령을 실행합니다. 여기서 는 설치 중인 Astra Trident의 버전입니다.<block ref="c59465995fc272118d0b7650dbcd42b5" prefix=" " category="inline-code"></block></block>
   <block id="d588a6cd560d80c03fbbe7c2df56c53d" category="list-text"><block ref="0562418e6d9a76d0dd22b2f186a2203d" prefix=" " category="inline-code"></block>다음 예제와 같이 구축 이름을 지정하고 합니다. 여기서 는 설치 중인 Astra Trident 버전입니다.<block ref="cfc6108aad8813450ddf86899993aac8" prefix=" " category="inline-code"></block></block>
   <block id="2dd7e74e47b2fea3bc13eda279fe6caa" category="list-text"><block ref="701383cb184d92daac13becc67e9c1be" category="inline-link-macro-rx"></block>를 사용하여 한 단계로 업그레이드할 수<block ref="aa057bb2523e090dc6e3052f2e88741e" prefix=" " category="inline-code"></block> 있습니다. Helm repo를 추가하지 않았거나 업그레이드에 사용할 수 없는 경우:</block>
+  <block id="bd97885496639b0f4498d4131198ac36" category="list-text">Windows Server 2022 노드에 대한 지원이 추가되었습니다.</block>
+  <block id="f0d0d71ad406bc532f207cda7d40e0bf" category="list-text">Linux 컨트롤러 노드 및 Windows Server 2022를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.</block>
 </blocks>

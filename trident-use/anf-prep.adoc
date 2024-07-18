@@ -96,7 +96,7 @@ Azure NetApp Files를 처음 사용하거나 새 위치에서 사용하는 경�
 SMB 볼륨을 생성하려면 다음이 있어야 합니다.
 
 * Active Directory가 구성되어 Azure NetApp Files에 연결되었습니다. 을 참조하십시오 link:https://learn.microsoft.com/en-us/azure/azure-netapp-files/create-active-directory-connections["Microsoft: Azure NetApp Files에 대한 Active Directory 연결을 만들고 관리합니다"^].
-* Linux 컨트롤러 노드 및 Windows Server 2019를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.
+* Linux 컨트롤러 노드 및 Windows Server 2022를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.
 * Azure NetApp Files가 Active Directory에 인증할 수 있도록 Active Directory 자격 증명이 포함된 Astra Trident 암호가 하나 이상 있어야 합니다. 암호를 생성합니다 `smbcreds`:
 +
 [listing]
