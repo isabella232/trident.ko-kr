@@ -4196,4 +4196,5 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="2dd7e74e47b2fea3bc13eda279fe6caa" category="list-text"><block ref="701383cb184d92daac13becc67e9c1be" category="inline-link-macro-rx"></block>를 사용하여 한 단계로 업그레이드할 수<block ref="aa057bb2523e090dc6e3052f2e88741e" prefix=" " category="inline-code"></block> 있습니다. Helm repo를 추가하지 않았거나 업그레이드에 사용할 수 없는 경우:</block>
   <block id="bd97885496639b0f4498d4131198ac36" category="list-text">Windows Server 2022 노드에 대한 지원이 추가되었습니다.</block>
   <block id="f0d0d71ad406bc532f207cda7d40e0bf" category="list-text">Linux 컨트롤러 노드 및 Windows Server 2022를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.</block>
+  <block id="de547bcab0e20f54ec4d5e95ba44b0b1" category="list-text">Windows Server 2022 를 참조하십시오</block>
 </blocks>
