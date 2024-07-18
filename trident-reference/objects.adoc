@@ -213,7 +213,7 @@ ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN
 | 속성 | 유형 | 값 | 설명 | 관련 드라이버 | Kubernetes 버전 
 
 
-| fsType입니다 | 문자열 | ext4, ext3, xfs 등 | 블록 볼륨의 파일 시스템 유형입니다 | solidfire-SAN, ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN - 경제성 | 모두 
+| fsType입니다 | 문자열 | ext4, ext3, xfs | 블록 볼륨의 파일 시스템 유형입니다 | solidfire-SAN, ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN - 경제성 | 모두 
 
 
 | allowVolumeExpansion | 부울 | 참, 거짓 | PVC 크기 증가에 대한 지원을 활성화 또는 비활성화합니다 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, ONTAP-SAN-이코노미, solidfire-SAN, GCP-CV, Azure-NetApp-파일 | 1.11+ 

@@ -1270,7 +1270,6 @@
   <block id="0e6ac0d7fca9c59e6545312a071555b6" category="cell">관련 드라이버</block>
   <block id="ae6b2a160dd2fafdee385c348edee0c1" category="cell">Kubernetes 버전</block>
   <block id="7cfbb6f07899c8071ff38e69dca190e2" category="cell">fsType입니다</block>
-  <block id="64b6d80cc167d5c657b60054dbe396ee" category="cell">ext4, ext3, xfs 등</block>
   <block id="7928a56d4874d982a06a59e3f30f6935" category="cell">블록 볼륨의 파일 시스템 유형입니다</block>
   <block id="b1c94ca2fbc3e78fc30069c8d0f01680" category="cell">모두</block>
   <block id="2435c5eb0d842c13f635d4b1d6667a52" category="paragraph">Trident 설치 프로그램 번들에는 'Sample-input/storage-class- *.YAML'의 Trident와 함께 사용할 수 있는 여러 가지 스토리지 클래스 정의가 포함되어 있습니다. Kubernetes 스토리지 클래스를 삭제하면 해당 Trident 스토리지 클래지도 삭제됩니다.</block>
@@ -4197,4 +4196,5 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="bd97885496639b0f4498d4131198ac36" category="list-text">Windows Server 2022 노드에 대한 지원이 추가되었습니다.</block>
   <block id="f0d0d71ad406bc532f207cda7d40e0bf" category="list-text">Linux 컨트롤러 노드 및 Windows Server 2022를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.</block>
   <block id="de547bcab0e20f54ec4d5e95ba44b0b1" category="list-text">Windows Server 2022 를 참조하십시오</block>
+  <block id="010e61d0b40eeb84b96a1321e8f0bab7" category="cell">ext4, ext3, xfs</block>
 </blocks>
