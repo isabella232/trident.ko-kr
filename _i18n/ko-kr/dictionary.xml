@@ -4046,7 +4046,6 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="fabc0fa737916420805fcbdf1e73d723" category="list-text">작업자 포드가 있는 경우 를 사용합니다<block ref="9ce56b0c50ae80fe754522969b1c96b9" prefix=" " category="inline-code"></block> Helm을 사용하여 Astra Trident가 설치되었는지 확인합니다.</block>
   <block id="f77d4be42f8ef9e2474d677786cf6d7a" category="paragraph">클라우드 ID를 사용하면 Kubernetes Pod에서 명시적 Azure 자격 증명을 제공하지 않고 워크로드 ID로 인증하여 Azure 리소스에 액세스할 수 있습니다.</block>
   <block id="088be2b53cfa8710d751578d273c4af0" category="paragraph">Azure에서 클라우드 ID를 활용하려면 다음이 필요합니다.</block>
-  <block id="21ce5c96d2c133be2c7c77e35247556c" category="list-text">OpenShift 4.10-4.15</block>
   <block id="32427d4abb52de3afcfa06484384e101" category="doc">Trident 운영자 또는 Helm을 사용하여 Astra Trident 설치를 업그레이드합니다</block>
   <block id="33176aeb27c41088051f460946356423" category="inline-link-macro">NFS 툴을 설치합니다</block>
   <block id="a0b90bbc60c78003c8f066892446e127" category="paragraph"><block ref="5dac8bb8705e3a30615e678be90a7f1d" category="inline-link-macro-rx"></block> 다음을 사용하는 경우:<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block>,<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block>,<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block>,<block ref="bc5779a2d33eeb1304bae57f15920cfc" prefix=" " category="inline-code"></block>,<block ref="5935ea92cdd7d975b4e764b429f21c01" prefix=" " category="inline-code"></block>.</block>
@@ -4080,11 +4079,7 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="2f57a6988da045d1c26e2c5016ad0900" category="cell">2027년 6월</block>
   <block id="3cb5107653d42fd909d7ef9362684dca" category="summary">Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 공급자 및 오케스트레이터입니다. Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다. ** Astra Trident 24.06로의 업그레이드에 대한 중요 정보는 릴리스 노트를 참조하십시오.**</block>
   <block id="745a5f126dcf9acea2e952485cadb871" category="doc">Astra Trident 24.06 설명서</block>
-  <block id="5edf3912bc6373594b1fdf83ceb9aaec" category="list-text">Kubernetes 1.29가 이제 Astra Trident에서 지원됩니다. Kubernetes를 업그레이드하기 전에 Astra Trident를 업그레이드합니다.</block>
-  <block id="3bc7dde37f84119b3fad3e8f44feda49" category="list-text">Kubernetes 1.24-1.29</block>
-  <block id="18e3dcaba0c289c58a98d58ad1f29a69" category="paragraph">1.24-1.29</block>
   <block id="7b5dfababf92391b5761944c63b0d3bb" category="cell">Kubernetes 버전</block>
-  <block id="95116584a33b29884bd9bb65f485ac28" category="cell">v1.24.0, v1.25.0, v1.26.0, v1.27.0, v1.28.0, v1.29.0</block>
   <block id="082110ded218ef5f40a2b1598733539c" category="list-text">Docker.IO/NetApp/트라이덴트:24.06.0</block>
   <block id="46eedbd0d2b0f5492c4fc15aaede92ad" category="list-text">Docker.IO/netapp/trident-autosupport:24.06</block>
   <block id="977df580b49e7f3346777be08dfb4bad" category="list-text">registry.k8s.io/sig-storage/csi-provisioner: v4.0.1</block>
@@ -4095,7 +4090,6 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="c60a12fed7285fa1de4f3c7f19be4183" category="cell"><block ref="2355ab85ff878ad8030db28386517486" prefix="" category="inline-code"></block></block>
   <block id="c198906b992d2b95af53bcccaa4164e4" category="cell"><block ref="881e03d5ffd6a83f4e02bef21f4ea3f7" prefix="" category="inline-code"></block></block>
   <block id="aeb1639e94bd68d455845850b0394f3f" category="section-title">Astra Trident 24.06에 대한 중요 정보</block>
-  <block id="d3ff9626f8ab7ec8db130e785084f1e3" category="list-text">Kubernetes 1.29가 이제 Astra Trident에서 지원됩니다. Kubernetes를 업그레이드하기 전에 Trident를 업그레이드하십시오.</block>
   <block id="a2287e64798038da9fba4a6c5dcdc3fd" category="paragraph">에서<block ref="02f3115b006f7541a477d52ea8c0f861" prefix=" " category="inline-code"></block>이미지 레지스트리의 위치를 반영하도록 업데이트합니다<block ref="b5ab85572d9417d38412b7dfa404835c" prefix=" " category="inline-code"></block> . 는 <block ref="57de9a35aeedde82408b1e047030d221" category="inline-link-macro-rx"></block> 하나의 레지스트리 또는 다른 레지스트리에 위치할 수 있지만 모든 CSI 이미지는 동일한 레지스트리에 위치해야 합니다. 예를 들면 다음과 같습니다.</block>
   <block id="cc521566488a10cf8501d9a7e81eea52" category="list-text"><block ref="96ae466a1ed6e4c6cc396947ecee1554" prefix="" category="inline-code"></block> 이미지가 모두 하나의 레지스트리에 있는 경우</block>
   <block id="8fdb8bf29e9c249738db26ee91c289c9" category="list-text"><block ref="726fe283c996ea78fa98760e521a4c5f" prefix="" category="inline-code"></block> Trident 이미지가 CSI 이미지와 다른 레지스트리에 있는 경우</block>
@@ -4197,4 +4191,11 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="f0d0d71ad406bc532f207cda7d40e0bf" category="list-text">Linux 컨트롤러 노드 및 Windows Server 2022를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.</block>
   <block id="de547bcab0e20f54ec4d5e95ba44b0b1" category="list-text">Windows Server 2022 를 참조하십시오</block>
   <block id="010e61d0b40eeb84b96a1321e8f0bab7" category="cell">ext4, ext3, xfs</block>
+  <block id="86b88ff1a66ea55358ae99627ffdf01c" category="list-text">Kubernetes 1.30가 이제 Astra Trident에서 지원됩니다. Kubernetes를 업그레이드하기 전에 Astra Trident를 업그레이드합니다.</block>
+  <block id="7bcc7742161f309a6d9639847cd756b4" category="list-text">Kubernetes 1.24-1.30</block>
+  <block id="c9db4c3d8dc7c24ea723ab5fe1e45fdb" category="list-text">OpenShift 4.10-4.16</block>
+  <block id="7c15363cb005546ae95eb8bf83c3cadd" category="paragraph">1.24-1.30</block>
+  <block id="88a2f4201bf0a82365ef81af5f2afeac" category="cell">v1.24.0, v1.25.0, v1.26.0, v1.27.0, v1.28.0, v1.29.0, v1.30.0</block>
+  <block id="b443358b172ce4f75319c7828483fb8b" category="list-text">Kubernetes 1.30가 이제 Astra Trident에서 지원됩니다. Kubernetes를 업그레이드하기 전에 Trident를 업그레이드하십시오.</block>
+  <block id="e422e290c66eca7f882976f830b781b4" category="list-text">Kubernetes 1.30에 대한 지원 추가</block>
 </blocks>

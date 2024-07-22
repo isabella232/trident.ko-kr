@@ -40,6 +40,7 @@ WARNING: 설치 프로그램 zip 파일에 제공되는 Linux용 tridentctl 바�
 
 ==== 쿠버네티스
 
+* Kubernetes 1.30에 대한 지원 추가
 * 시작 시 좀비 마운트 및 잔여 추적 파일을 정리하는 Astra Trident DemonSet 기능이 추가되었습니다link:https://github.com/NetApp/trident/issues/883["문제 #883"]().
 * LUKS 볼륨을 동적으로 가져오기 위한 PVC 주석 추가 `trident.netapp.io/luksEncryption`link:https://github.com/NetApp/trident/issues/849["문제 #849"]().
 * ANF 드라이버에 토폴로지 인식이 추가되었습니다.
