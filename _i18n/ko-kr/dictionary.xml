@@ -316,7 +316,6 @@
   <block id="65840df7365892d2abe1280cb6cdb1d2" category="paragraph">다음은 몇 가지 모범 사례 문서입니다. 를 검색합니다<block ref="4caccef7312f2c398bfbb419629c1a78" category="inline-link-rx"></block> 최신 버전의 경우.</block>
   <block id="d911b17f4f4cdcca62a04ad77aa9403d" category="paragraph">* ONTAP *</block>
   <block id="f9dd52d280693dc59e53b6e1fb7bd801" category="inline-link">NFS Best Practice and Implementation Guide를 참조하십시오</block>
-  <block id="40bb23d54df7f59219c18f15a346d9e5" category="list-text"><block ref="40bb23d54df7f59219c18f15a346d9e5" category="inline-link-rx"></block></block>
   <block id="a76193f5d9397d9c49ca283a20ccf649" category="inline-link">SAN 관리 가이드를 참조하십시오</block>
   <block id="5bc9b097037d45aff954bf9bd632d4a4" category="list-text"><block ref="c745f55eb0c9991966e63f0608541bb1" category="inline-link-rx"></block> (iSCSI의 경우)</block>
   <block id="5ca34d6ffc2a555b689542e3fbeeb7af" category="inline-link">RHEL용 iSCSI Express 구성</block>
@@ -331,15 +330,11 @@
   <block id="9d0da73b02655dd7861121905db229e2" category="list-text"><block ref="9d0da73b02655dd7861121905db229e2" category="inline-link-rx"></block></block>
   <block id="9aaca8cfd79770bc4944ccc477e37141" category="paragraph">* 응용 프로그램 모범 사례 정보 *</block>
   <block id="27a5e02bc2fadee43ace94805739a0c8" category="inline-link">ONTAP 기반 MySQL의 모범 사례</block>
-  <block id="40d2eaf9adabe99a601c57eabf49e4d3" category="list-text"><block ref="40d2eaf9adabe99a601c57eabf49e4d3" category="inline-link-rx"></block></block>
   <block id="17efdd7d210511985714be299d595292" category="inline-link">SolidFire 기반 MySQL의 모범 사례</block>
   <block id="d03b53d8ec563c37e16ee8c900a75b96" category="list-text"><block ref="d03b53d8ec563c37e16ee8c900a75b96" category="inline-link-rx"></block></block>
   <block id="3aefe1a041af945f1fe8673bf775057b" category="inline-link">NetApp SolidFire 및 Cassandra</block>
-  <block id="7e2b19f6f6bd1332efe1f7a698984670" category="list-text"><block ref="7e2b19f6f6bd1332efe1f7a698984670" category="inline-link-rx"></block></block>
   <block id="6e580111d3a8c12cdcd9522a4d3484c6" category="inline-link">SolidFire에 대한 Oracle 모범 사례</block>
-  <block id="6db96715cefe9c4950ef722865494128" category="list-text"><block ref="6db96715cefe9c4950ef722865494128" category="inline-link-rx"></block></block>
   <block id="6448cf37496207be126495e5b05851de" category="inline-link">SolidFire에 대한 PostgreSQL Best Practice</block>
-  <block id="eb2c92a9d2d39fa7191d6e84d5c33bb5" category="list-text"><block ref="eb2c92a9d2d39fa7191d6e84d5c33bb5" category="inline-link-rx"></block></block>
   <block id="b062996d6ca590abe798d3db75561f79" category="paragraph">모든 애플리케이션에 구체적인 지침이 있는 것은 아니며 NetApp 팀과 함께 을 사용하는 것이 중요합니다<block ref="4caccef7312f2c398bfbb419629c1a78" category="inline-link-rx"></block> 최신 설명서를 참조하십시오.</block>
   <block id="75f3d382f074f14c775efb5cf2f23c30" category="summary">Astra Trident를 배포할 때 여기에 나열된 권장 사항을 사용하십시오.</block>
   <block id="ea355214fd4bc7c57f471bd92918879b" category="doc">구축</block>
@@ -725,7 +720,6 @@
   <block id="63b95d84cf55d169b2592f3ac621055f" category="list-text">지정되지 않은 경우 Astra Trident는 지난 24시간 동안 로그를 가져옵니다.</block>
   <block id="5224919a4ae5ccf610fb0ee74e4e7a94" category="inline-link">Trident AutoSupport를 누릅니다</block>
   <block id="53084cad3d11df800502598c11e2d10b" category="inline-link">EULA</block>
-  <block id="b9a52e8d1e9b14b8825c6ea01c0ce6d6" category="list-text">Trident AutoSupport는 개인 식별 정보(PII) 또는 개인 정보를 수집하거나 전송하지 않습니다. 이 제품은 와 함께 제공됩니다<block ref="173a360b412944768c2ab13e6c8fd1c7" category="inline-link-rx"></block> Trident 컨테이너 이미지 자체에는 적용되지 않습니다. 데이터 보안 및 신뢰에 대한 NetApp의 노력에 대해 자세히 알아볼 수 있습니다<block ref="8470ff535916bda3f4ea4723647a7135" category="inline-link-rx"></block>.</block>
   <block id="89f0f2832f60f480805faf638848c5b7" category="paragraph">Astra Trident에서 보낸 페이로드의 예는 다음과 같습니다.</block>
   <block id="d2ec86f126f845e79aff07e70bf89472" category="list-text">AutoSupport 메시지는 NetApp의 AutoSupport 엔드포인트로 전송됩니다. 개인 레지스트리를 사용하여 컨테이너 이미지를 저장하는 경우 '--image-registry' 플래그를 사용할 수 있습니다.</block>
   <block id="86c5a11fba83815412aec79f67f2d276" category="list-text">또한 설치 YAML 파일을 생성하여 프록시 URL을 구성할 수도 있습니다. 이는 트라이덴트ctl install --generate-custom-YAML을 이용해 YAML 파일을 생성하고 트리덴트 배포(trident-deployment)의 트리덴트 자동 지원 컨테이너에 대한 '--proxy-url' 주장을 추가하는 방식으로 가능하다.</block>
@@ -2113,7 +2107,6 @@
   <block id="f1cfea5f1444de607dfa549b3aa57010" category="inline-link-macro">네임스페이스 간 볼륨 공유: 네임스페이스 간 볼륨 액세스를 위해 hello를 사용합니다</block>
   <block id="2780f690b7670efc296ac19ef3029d0c" category="list-text">를 방문하십시오 <block ref="b0d29f1b2abb2cc552e4cc47177582ef" category="inline-link-macro-rx"></block>.</block>
   <block id="96e1384807331548bf745acde0fe1b73" category="inline-link-macro">NetAppTV를 참조하십시오</block>
-  <block id="414883f8b6ef58c7b3b37e66fbfd482f" category="list-text">데모를 시청해보시기 바랍니다 <block ref="1945a2d4809e81668f29485f6ae1bbc8" category="inline-link-macro-rx"></block>.</block>
   <block id="bd2cc8575fe69c7f775292759380c838" category="inline-link-macro">Bundle_PRE_1_25.YAML</block>
   <block id="5a02ebff4889c2de0379a0fb10bed282" category="inline-link-macro">Bundle_post_1_25.YAML</block>
   <block id="d59db7846bd10b6d60d21543df9faa9e" category="paragraph-title">필요한 것</block>
@@ -4198,4 +4191,11 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="88a2f4201bf0a82365ef81af5f2afeac" category="cell">v1.24.0, v1.25.0, v1.26.0, v1.27.0, v1.28.0, v1.29.0, v1.30.0</block>
   <block id="b443358b172ce4f75319c7828483fb8b" category="list-text">Kubernetes 1.30가 이제 Astra Trident에서 지원됩니다. Kubernetes를 업그레이드하기 전에 Trident를 업그레이드하십시오.</block>
   <block id="e422e290c66eca7f882976f830b781b4" category="list-text">Kubernetes 1.30에 대한 지원 추가</block>
+  <block id="190dbae19c88b1e68bf03f7783c5d5d1" category="list-text"><block ref="190dbae19c88b1e68bf03f7783c5d5d1" category="inline-link-rx"></block></block>
+  <block id="430c6bcb8516befc45fb8173b0ca4e1f" category="list-text"><block ref="430c6bcb8516befc45fb8173b0ca4e1f" category="inline-link-rx"></block></block>
+  <block id="d7d36869f2f4aa1eb99a10008e153f20" category="list-text"><block ref="d7d36869f2f4aa1eb99a10008e153f20" category="inline-link-rx"></block></block>
+  <block id="f8b52d963f246a75dc6c8b78c954a4fd" category="list-text"><block ref="f8b52d963f246a75dc6c8b78c954a4fd" category="inline-link-rx"></block></block>
+  <block id="b6780b7b2561935ff862fe7126cde751" category="list-text"><block ref="b6780b7b2561935ff862fe7126cde751" category="inline-link-rx"></block></block>
+  <block id="b9a641d903e611a87a5e68ac7fdb0b84" category="list-text">Trident AutoSupport는 개인 식별 정보(PII) 또는 개인 정보를 수집하거나 전송하지 않습니다. 에는 Trident 컨테이너 이미지 자체에 적용할 수 없는 가<block ref="173a360b412944768c2ab13e6c8fd1c7" category="inline-link-rx"></block> 포함되어 있습니다. 데이터 보안 및 신뢰에 대한 NetApp의 노력에 대해 더 자세히 알아볼 수<block ref="d3cc55401bc8303e01c6b0c43ba0733f" category="inline-link-rx"></block>있습니다.</block>
+  <block id="5ff83dbc70e496ea22b38ea61bb69f05" category="list-text">데모를 시청해보시기 <block ref="c27441bbbe62adf51ae6ecec41fde8bd" category="inline-link-macro-rx"></block>바랍니다.</block>
 </blocks>

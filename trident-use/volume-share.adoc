@@ -171,5 +171,5 @@ Usage:
 네임스페이스 간 볼륨 액세스에 대한 자세한 내용은 다음을 참조하십시오.
 
 * 를 방문하십시오 link:https://cloud.netapp.com/blog/astra-blg-sharing-volumes-between-namespaces-say-hello-to-cross-namespace-volume-access["네임스페이스 간 볼륨 공유: 네임스페이스 간 볼륨 액세스를 위해 hello를 사용합니다"^].
-* 데모를 시청해보시기 바랍니다 link:http://netapp.tv/cloud/details/29594?playlist_id=81&mcid=63262890210074608700682715883688763007["NetAppTV를 참조하십시오"^].
+* 데모를 시청해보시기 link:https://media.netapp.com/page/9071d19d-1438-5ed3-a7aa-ea4d73c28b7f/solutions-products["NetAppTV를 참조하십시오"^]바랍니다.
 
