@@ -40,10 +40,16 @@ entries:
     entries:
     - title: 개요
       url: "/trident-use/trident-fsx.html"
-    - title: ONTAP용 Amazon FSx를 통합합니다
-      url: "/trident-use/trident-fsx-prep.html"
-    - title: 구성 옵션 및 예
-      url: "/trident-use/trident-fsx-examples.html"
+    - title: IAM 역할 및 AWS 암호를 생성합니다
+      url: "/trident-use/trident-fsx-iam-role.html"
+    - title: Astra Trident를 설치합니다
+      url: "/trident-use/trident-fsx-install-trident.html"
+    - title: 스토리지 백엔드를 구성합니다
+      url: "/trident-use/trident-fsx-storage-backend.html"
+    - title: 스토리지 클래스 및 PVC를 구성합니다
+      url: "/trident-use/trident-fsx-storageclass-pvc.html"
+    - title: 샘플 응용 프로그램을 배포합니다
+      url: "/trident-use/trident-fsx-deploy-sample.html"
     - title: EKS 클러스터에서 Astra Trident EKS 애드온을 구성합니다
       url: "/trident-use/trident-aws-addon.html"
   - title: kubectl로 백엔드를 만듭니다

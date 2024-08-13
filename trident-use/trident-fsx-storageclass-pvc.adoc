@@ -1,0 +1,212 @@
+---
+sidebar: sidebar 
+permalink: trident-use/trident-fsx-storageclass-pvc.html 
+keywords: Amazon FSx for NetApp ONTAP, FSx for ONTAP, deploy Trident, integrate Trident, Trident 
+summary: 'NetApp ONTAP용 Amazon FSx와 Astra Trident를 사용하면 Amazon EKS(Elastic Kubernetes Service)에서 실행되는 Kubernetes 클러스터가 ONTAP에서 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있습니다.' 
+---
+= 저장소 클래스 및 PVC를 구성합니다
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Kubernetes StorageClass 개체를 구성하고 스토리지 클래스를 생성하여 Astra Trident에 볼륨 프로비저닝 방법을 안내합니다. 구성된 Kubernetes StorageClass를 사용하여 PV에 대한 액세스를 요청하는 PersistentVolume(PV) 및 PersistentVolumeClaim(PVC)을 생성합니다. 그런 다음 PV를 포드에 장착할 수 있습니다.
+
+
+
+== 스토리지 클래스를 생성합니다
+
+
+
+=== Kubernetes StorageClass 개체를 구성합니다
+
+ https://kubernetes.io/docs/concepts/storage/storage-classes/["Kubernetes StorageClass 객체"^]Astra Trident를 해당 수업에 사용되는 프로비저닝으로 식별하면 Astra Trident에 볼륨 프로비저닝 방법이 설명됩니다. 예를 들면 다음과 같습니다.
+
+[listing]
+----
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: ontap-gold
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-nas"
+  media: "ssd"
+  provisioningType: "thin"
+  snapshots: "true"
+----
+을 참조하십시오 link:../trident-reference/objects.html["Kubernetes 및 Trident 오브젝트"] 스토리지 클래스가 와 상호 작용하는 방법에 대한 자세한 내용은 을 참조하십시오 `PersistentVolumeClaim` 및 Astra Trident가 볼륨을 프로비저닝하는 방법을 제어하는 매개 변수가 포함됩니다.
+
+
+
+=== 스토리지 클래스를 생성합니다
+
+.단계
+. Kubernetes 오브젝트이므로 를 사용하십시오 `kubectl` Kubernetes에서 생성해야 합니다.
++
+[listing]
+----
+kubectl create -f storage-class-ontapnas.yaml
+----
+. 이제 Kubernetes 및 Astra Trident에 * basic-CSI * 스토리지 클래스가 표시됩니다. Astra Trident는 백엔드에서 풀을 검색했습니다.
++
+[listing]
+----
+kubectl get sc basic-csi
+NAME         PROVISIONER             AGE
+basic-csi    csi.trident.netapp.io   15h
+
+----
+
+
+
+
+== PV 및 PVC를 작성합니다
+
+A link:https://kubernetes.io/docs/concepts/storage/persistent-volumes/["_지속성 볼륨 _"^] (PV)는 Kubernetes 클러스터에서 클러스터 관리자가 프로비저닝한 물리적 스토리지 리소스입니다. 를 클릭합니다 https://kubernetes.io/docs/concepts/storage/persistent-volumes["_PersistentVolumeClaim_"^] (PVC)는 클러스터의 PersistentVolume에 대한 액세스 요청입니다.
+
+PVC는 특정 크기 또는 액세스 모드의 저장을 요청하도록 구성할 수 있습니다. 클러스터 관리자는 연결된 StorageClass를 사용하여 PersistentVolume 크기 및 액세스 모드(예: 성능 또는 서비스 수준)를 제어할 수 있습니다.
+
+PV 및 PVC를 생성한 후 포드에 볼륨을 장착할 수 있습니다.
+
+
+
+=== 샘플 매니페스트
+
+.PersistentVolume 샘플 매니페스트
+[%collapsible]
+====
+이 샘플 매니페스트는 StorageClass와 연결된 10Gi의 기본 PV를 보여 줍니다 `basic-csi`.
+
+[listing]
+----
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-storage
+  labels:
+    type: local
+spec:
+  storageClassName: basic-csi
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteMany
+  hostPath:
+    path: "/my/host/path"
+----
+====
+.PersistentVolumeClaim 샘플 매니페스트
+[%collapsible]
+====
+이러한 예는 기본적인 PVC 구성 옵션을 보여줍니다.
+
+.RWO 액세스 PVC
+이 예에서는 이름이 인 StorageClass와 연결된 rwx 액세스 권한이 있는 기본 PVC를 보여 `basic-csi`줍니다.
+
+[listing]
+----
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pvc-storage
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: basic-csi
+----
+.NVMe/TCP가 있는 PVC
+이 예에서는 이름이 인 StorageClass와 연결된 RWO 액세스 권한이 있는 NVMe/TCP용 기본 PVC를 보여 줍니다 `protection-gold`.
+
+[listing]
+----
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+name: pvc-san-nvme
+spec:
+accessModes:
+  - ReadWriteOnce
+resources:
+  requests:
+    storage: 300Mi
+storageClassName: protection-gold
+----
+====
+
+
+=== PV 및 PVC를 작성합니다
+
+.단계
+. PV를 만듭니다.
++
+[listing]
+----
+kubectl create -f pv.yaml
+----
+. PV 상태를 확인한다.
++
+[listing]
+----
+kubectl get pv
+NAME        CAPACITY  ACCESS MODES  RECLAIM POLICY  STATUS    CLAIM  STORAGECLASS  REASON  AGE
+pv-storage  4Gi       RWO           Retain          Available                              7s
+----
+. PVC를 작성합니다.
++
+[listing]
+----
+kubectl create -f pvc.yaml
+----
+. PVC 상태를 확인합니다.
++
+[listing]
+----
+kubectl get pvc
+NAME        STATUS VOLUME     CAPACITY ACCESS MODES STORAGECLASS AGE
+pvc-storage Bound  pv-name 2Gi      RWO                       5m
+----
+
+
+을 참조하십시오 link:../trident-reference/objects.html["Kubernetes 및 Trident 오브젝트"] 스토리지 클래스가 와 상호 작용하는 방법에 대한 자세한 내용은 을 참조하십시오 `PersistentVolumeClaim` 및 Astra Trident가 볼륨을 프로비저닝하는 방법을 제어하는 매개 변수가 포함됩니다.
+
+
+
+== Astra Trident 특성
+
+이 매개 변수는 특정 유형의 볼륨을 프로비저닝하는 데 사용해야 하는 Astra Trident 관리형 스토리지 풀을 결정합니다.
+
+[cols=",,,,,"]
+|===
+| 속성 | 유형 | 값 | 제공합니다 | 요청하십시오 | 에 의해 지원됩니다 
+
+
+| 미디어 ^1^ | 문자열 | HDD, 하이브리드, SSD | 풀에는 이 유형의 미디어가 포함되어 있으며, 하이브리드는 둘 모두를 의미합니다 | 지정된 미디어 유형입니다 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN 
+
+
+| 프로비저닝 유형 | 문자열 | 얇고 두껍습니다 | 풀은 이 프로비저닝 방법을 지원합니다 | 프로비저닝 방법이 지정되었습니다 | Thick: All ONTAP; Thin: All ONTAP & solidfire-SAN 
+
+
+| 백엔드 유형 | 문자열  a| 
+ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroup, ONTAP-SAN, solidfire-SAN, GCP-CV, Azure-NetApp-파일, ONTAP-SAN-이코노미
+| 풀이 이 백엔드 유형에 속합니다 | 백엔드가 지정되었습니다 | 모든 드라이버 
+
+
+| 스냅샷 수 | 불입니다 | 참, 거짓 | 풀은 스냅샷이 있는 볼륨을 지원합니다 | 스냅샷이 활성화된 볼륨 | ONTAP-NAS, ONTAP-SAN, solidfire-SAN, GCP-CV 
+
+
+| 복제 | 불입니다 | 참, 거짓 | 풀은 볼륨 클론을 지원합니다 | 클론이 활성화된 볼륨 | ONTAP-NAS, ONTAP-SAN, solidfire-SAN, GCP-CV 
+
+
+| 암호화 | 불입니다 | 참, 거짓 | 풀은 암호화된 볼륨을 지원합니다 | 암호화가 활성화된 볼륨입니다 | ONTAP-NAS, ONTAP-NAS-이코노미, ONTAP-NAS-Flexgroups, ONTAP-SAN 
+
+
+| IOPS | 내부 | 양의 정수입니다 | 풀은 이 범위에서 IOPS를 보장할 수 있습니다 | 볼륨은 이러한 IOPS를 보장합니다 | solidfire-SAN 
+|===
+^1^: ONTAP Select 시스템에서 지원되지 않습니다

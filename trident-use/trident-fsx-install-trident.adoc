@@ -1,0 +1,228 @@
+---
+sidebar: sidebar 
+permalink: trident-use/trident-fsx-install-trident.html 
+keywords: Amazon FSx for NetApp ONTAP, FSx for ONTAP, deploy Trident, integrate Trident, Trident add-on, Astra Trident EKS add-on, Trident AWS EKS add-on 
+summary: 'NetApp ONTAP용 Amazon FSx와 Astra Trident를 사용하면 Amazon EKS(Elastic Kubernetes Service)에서 실행되는 Kubernetes 클러스터가 ONTAP에서 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있습니다.' 
+---
+= Astra Trident를 설치합니다
+:hardbreaks:
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Astra Trident는 Kubernetes에서 Amazon FSx for NetApp ONTAP 스토리지 관리를 간소화하여 개발자와 관리자가 애플리케이션 구축에 집중할 수 있도록 지원합니다.
+
+다음 방법 중 하나를 사용하여 Astra Trident를 설치할 수 있습니다.
+
+* 헬름
+* EKS 추가 기능
+
+
+[listing]
+----
+If you want to make use of the snapshot functionality, install the CSI snapshot controller add-on. Refer to https://docs.aws.amazon.com/eks/latest/userguide/csi-snapshot-controller.html.
+----
+
+
+== Helm을 통해 Astra Trident을 설치합니다
+
+다음 환경 변수를 사용하여 * 클라우드 공급자 * 및 * 클라우드 ID * 플래그의 값을 설정합니다.
+
+`export CP="AWS"`
+`export CI="'eks.amazonaws.com/role-arn: arn:aws:iam::<accountID>:role/<AmazonEKS_FSxN_CSI_DriverRole>'"`
+
+다음 예에서는 Astra Trident를 설치하고 를 설정합니다 `cloud-provider` 에 플래그 지정 `$CP`, 및 `cloud-identity` 를 선택합니다 `$CI`:
+
+[listing]
+----
+helm install trident trident-operator-100.2406.0.tgz --set cloudProvider=$CP --set cloudIdentity=$CI -–namespace trident
+----
+
+
+== EKS 애드온을 통해 Astra Trident를 설치합니다
+
+Astra Trident EKS 애드온에는 최신 보안 패치 및 버그 수정이 포함되어 있으며 AWS에서 Amazon EKS와 함께 사용할 수 있다는 것을 검증했습니다. EKS 애드온을 사용하면 Amazon EKS 클러스터의 보안과 안정성을 지속적으로 보장하고 애드온을 설치, 구성 및 업데이트하는 데 필요한 작업량을 줄일 수 있습니다.
+
+
+
+=== 필수 구성 요소
+
+AWS EKS용 Astra Trident 애드온을 구성하기 전에 다음 사항을 확인하십시오.
+
+* 애드온 가입이 있는 Amazon EKS 클러스터 계정입니다
+* AWS 마켓플레이스에 대한 AWS 권한:
+`"aws-marketplace:ViewSubscriptions",
+"aws-marketplace:Subscribe",
+"aws-marketplace:Unsubscribe`
+* AMI 유형: Amazon Linux 2 (AL2_x86_64) 또는 Amazon Linux 2 Arm (AL2_ARM_64)
+* 노드 유형: AMD 또는 ARM
+* 기존 Amazon FSx for NetApp ONTAP 파일 시스템
+
+
+
+
+=== AWS용 Astra Trident 애드온 을 지원합니다
+
+[role="tabbed-block"]
+====
+.EKS 클러스터
+--
+다음 명령 예에서는 Astra Trident EKS 애드온을 설치합니다.
+
+`eksctl create addon --cluster clusterName --name netapp_trident-operator --version v24.02.0-eksbuild.`
+`eksctl create addon --cluster clusterName --name netapp_trident-operator --version v24.02.0-eksbuild.1` (전용 버전 포함)
+
+--
+.관리 콘솔과 직접 연결되어 있습니다
+--
+. 에서 Amazon EKS 콘솔을 엽니다 https://console.aws.amazon.com/eks/home#/clusters[].
+. 왼쪽 탐색 창에서 * 클러스터 * 를 클릭합니다.
+. NetApp Trident CSI 추가 기능을 구성할 클러스터의 이름을 클릭합니다.
+. 추가 기능 * 을 클릭한 다음 * 추가 기능 얻기 * 를 클릭합니다.
+. S * 추가 기능 선택 * 페이지에서 다음을 수행합니다.
++
+.. AWS Marketplace EKS-addons 섹션에서 * Astra Trident by NetApp * 확인란을 선택합니다.
+.. 다음 * 을 클릭합니다.
+
+
+. 선택한 추가 기능 구성 * 설정 페이지에서 다음을 수행합니다.
++
+.. 사용할 * 버전 * 을 선택합니다.
+.. IAM 역할 선택 * 의 경우 * NOT SET * 으로 두십시오.
+.. 선택적 구성 설정 * 을 확장하고 * 추가 기능 구성 스키마 * 를 따라 * 구성 값 * 섹션의 configurationValues 매개 변수를 이전 단계에서 만든 role-arn으로 설정합니다(값은 다음 형식이어야 함 `eks.amazonaws.com/role-arn: arn:aws:iam::464262061435:role/AmazonEKS_FSXN_CSI_DriverRole`). 충돌 해결 방법으로 재정의 를 선택한 경우 기존 애드온에 대한 하나 이상의 설정을 Amazon EKS 애드온 설정으로 덮어쓸 수 있습니다. 이 옵션을 사용하지 않고 기존 설정과 충돌하는 경우 작업이 실패합니다. 결과 오류 메시지를 사용하여 충돌 문제를 해결할 수 있습니다. 이 옵션을 선택하기 전에 Amazon EKS 추가 기능이 자체 관리해야 하는 설정을 관리하지 않는지 확인하십시오.
+
+
+. 다음 * 을 선택합니다.
+. 검토 및 추가 * 페이지에서 * 만들기 * 를 선택합니다.
++
+추가 기능 설치가 완료되면 설치된 추가 기능이 표시됩니다.
+
+
+
+--
+.AWS CLI를 참조하십시오
+--
+. 파일을 만듭니다. `add-on.json`
++
+[listing]
+----
+add-on.json
+{
+
+   "clusterName": "<eks-cluster>",
+   "addonName": "netapp_trident-operator",
+   "addonVersion": "v24.2.0-eksbuild.1",
+   "serviceAccountRoleArn": "arn:aws:iam::123456:role/astratrident-role",
+   "configurationValues": "{"cloudIdentity": "'eks.amazonaws.com/role-arn: arn:aws:iam::123456:role/astratrident-role'"}"
+}
+----
+. Astra Trident EKS 애드온 설치"
++
+`aws eks create-addon --cli-input-json file://add-on.json`
+
+
+
+--
+====
+
+
+=== Astra Trident EKS 애드온을 업데이트합니다
+
+[role="tabbed-block"]
+====
+.EKS 클러스터
+--
+* FSxN Trident CSI 추가 기능의 현재 버전을 확인합니다. 클러스터 이름으로 교체합니다 `my-cluster` .
+`eksctl get addon --name netapp_trident-operator --cluster my-cluster`
++
+* 출력 예: *
+
+
+
+[listing]
+----
+NAME                        VERSION             STATUS    ISSUES    IAMROLE    UPDATE AVAILABLE    CONFIGURATION VALUES
+netapp_trident-operator    v24.2.0-eksbuild.1    ACTIVE    0       {"cloudIdentity":"'eks.amazonaws.com/role-arn: arn:aws:iam::139763910815:role/AmazonEKS_FSXN_CSI_DriverRole'"}
+----
+* 이전 단계의 출력에서 사용할 수 있는 업데이트 아래에 반환된 버전으로 추가 기능을 업데이트합니다.
+`eksctl update addon --name netapp_trident-operator --version v24.2.0-eksbuild.1 --cluster my-cluster --force`
++
+옵션을 제거하고 Amazon EKS 추가 기능 설정이 기존 설정과 충돌하는 경우 `--force` Amazon EKS 추가 기능 업데이트가 실패하고 충돌 문제를 해결하는 데 도움이 되는 오류 메시지가 표시됩니다. 이 옵션을 지정하기 전에 Amazon EKS 애드온이 관리해야 하는 설정을 관리하지 않는지 확인하십시오. 이러한 설정은 이 옵션으로 덮어써지기 때문입니다. 이 설정의 다른 옵션에 대한 자세한 내용은 을 참조하십시오 link:https://eksctl.io/usage/addons/["추가 기능"]. Amazon EKS Kubernetes 필드 관리에 대한 자세한 내용은 를 참조하십시오 link:https://docs.aws.amazon.com/eks/latest/userguide/kubernetes-field-management.html["Kubernetes 현장 관리"].
+
+
+
+--
+.관리 콘솔과 직접 연결되어 있습니다
+--
+. Amazon EKS 콘솔을 https://console.aws.amazon.com/eks/home#/clusters[]엽니다.
+. 왼쪽 탐색 창에서 * 클러스터 * 를 클릭합니다.
+. NetApp Trident CSI 추가 기능을 업데이트할 클러스터의 이름을 클릭합니다.
+. 추가 기능 * 탭을 클릭합니다.
+. Astra Trident by NetApp * 를 클릭한 다음 * 편집 * 을 클릭합니다.
+. Astra Trident by NetApp * 구성 페이지에서 다음을 수행합니다.
++
+.. 사용할 * 버전 * 을 선택합니다.
+.. (선택 사항) * 선택적 구성 설정 * 을 확장하고 필요에 따라 수정할 수 있습니다.
+.. 변경 내용 저장 * 을 클릭합니다.
+
+
+
+
+--
+.AWS CLI를 참조하십시오
+--
+다음 예에서는 EKS 추가 기능을 업데이트합니다.
+
+`aws eks update-addon --cluster-name my-cluster netapp_trident-operator vpc-cni --addon-version v24.2.0-eksbuild.1 \
+    --service-account-role-arn arn:aws:iam::111122223333:role/role-name --configuration-values '{}' --resolve-conflicts --preserve`
+
+--
+====
+
+
+=== Astra Trident EKS 애드온을 제거/제거합니다
+
+Amazon EKS 애드온을 제거하는 두 가지 옵션이 있습니다.
+
+* * 클러스터에 애드온 소프트웨어 유지 * – 이 옵션은 모든 설정의 Amazon EKS 관리를 제거합니다. 또한 업데이트를 시작한 후 Amazon EKS에서 업데이트를 알리고 Amazon EKS 애드온을 자동으로 업데이트하는 기능도 제거합니다. 하지만 클러스터에 애드온 소프트웨어가 보존됩니다. 이 옵션을 사용하면 Amazon EKS 애드온이 아닌 자가 관리형 설치가 됩니다. 이 옵션을 사용하면 애드온에 대한 다운타임이 없습니다.  `--preserve`명령의 옵션을 유지하여 추가 기능을 유지합니다.
+* * 클러스터에서 애드온 소프트웨어 완전히 제거 * – 클러스터에 종속된 리소스가 없는 경우에만 Amazon EKS 애드온을 클러스터에서 제거하는 것이 좋습니다.  `--preserve`추가 기능을 제거하려면 명령에서 옵션을 `delete` 제거하십시오.
+
+
+
+NOTE: 애드온에 IAM 계정이 연결되어 있으면 IAM 계정이 제거되지 않습니다.
+
+[role="tabbed-block"]
+====
+.EKS 클러스터
+--
+다음 명령을 실행하면 Astra Trident EKS 애드온이 제거됩니다.
+`eksctl delete addon --cluster K8s-arm --name netapp_trident-operator`
+
+--
+.관리 콘솔과 직접 연결되어 있습니다
+--
+. 에서 Amazon EKS 콘솔을 엽니다 https://console.aws.amazon.com/eks/home#/clusters[].
+. 왼쪽 탐색 창에서 * 클러스터 * 를 클릭합니다.
+. NetApp Trident CSI 추가 기능을 제거할 클러스터의 이름을 클릭합니다.
+. Add-ons * 탭을 클릭한 다음 * Astra Trident by NetApp * 를 클릭합니다
+. 제거 * 를 클릭합니다.
+. Remove netapp_trident-operator confirmation * 대화 상자에서 다음을 수행합니다.
++
+.. Amazon EKS가 애드온에 대한 설정 관리를 중지하도록 하려면 * 클러스터에서 유지 * 를 선택합니다. 추가 기능의 모든 설정을 직접 관리할 수 있도록 클러스터에 추가 소프트웨어를 유지하려는 경우 이 작업을 수행합니다.
+.. netapp_trident-operator * 를 입력합니다.
+.. 제거 * 를 클릭합니다.
+
+
+
+
+--
+.AWS CLI를 참조하십시오
+--
+클러스터 이름으로 바꾸고 `my-cluster` 다음 명령을 실행합니다.
+
+`aws eks delete-addon --cluster-name my-cluster --addon-name netapp_trident-operator --preserve`
+
+--
+====

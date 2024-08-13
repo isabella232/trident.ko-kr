@@ -1026,17 +1026,12 @@
   <block id="ff27e75635c1ff1e88fbc656b16e56ce" category="section-title">Astra Trident에 대해 자세히 알아보십시오</block>
   <block id="483a5da192f46e3cfe8391d3ef234fc4" category="inline-link-macro">FAQ 를 참조하십시오</block>
   <block id="486632f7d2196e772b742db4a4a0ad7c" category="inline-link-macro">Astra Trident 구축</block>
-  <block id="79a4618bb191cb293c330f8189531a13" category="list-text">'ONTAP-SAN': 프로비저닝되는 각 PV는 NetApp ONTAP 볼륨용 자체 Amazon FSx 내에 있는 LUN입니다.</block>
   <block id="b8f98ceeb9b158e8af3527fce91e9e57" category="list-text">'ONTAP-SAN-이코노미': 프로비저닝되는 각 PV는 NetApp ONTAP 볼륨에 대해 Amazon FSx당 구성 가능한 LUN 수를 가진 LUN입니다.</block>
-  <block id="a5bc2c9e7628ac6c73838f9fea0e6ed6" category="list-text">ONTAP-NAS: 프로비저닝되는 각 PV는 NetApp ONTAP 볼륨용 전체 Amazon FSx입니다.</block>
   <block id="94a834f420b7c21f3a1053e6dc705a31" category="list-text">'ONTAP-NAS-E경제적인': 각 PV 프로비저닝은 qtree이며, NetApp ONTAP 볼륨에 대해 Amazon FSx당 qtree를 구성할 수 있습니다.</block>
   <block id="e42b07a9f050ef51ea1211004a50f223" category="list-text">'ONTAP-NAS-flexgroup': 프로비저닝되는 각 PV는 NetApp ONTAP FlexGroup 볼륨에 대한 전체 Amazon FSx입니다.</block>
   <block id="ed2536bee60113131cf25b2de3ec8734" category="list-text">인증서 기반: Astra Trident는 SVM에 설치된 인증서를 사용하여 FSx 파일 시스템의 SVM과 통신합니다.</block>
   <block id="80d13d3dbe137e8fb646193f275eceeb" category="list-text">kubbtl이 설치된 기존 Amazon EKS 클러스터 또는 자체 관리 Kubernetes 클러스터</block>
   <block id="fe914214000491758957f04647f8da36" category="inline-link">Amazon Machine Images(아마존 머신 이미지)</block>
-  <block id="3e25473814d436a2ebac91120e147b0b" category="admonition">파일 시스템에 연결할 수 있는 모든 위치에서 SSH를 사용하여 파일 시스템(예: 인증서 설치)에 로그인할 수 있습니다. 파일 시스템 생성 시 구성한 fsxadmin 사용자, AWS FSX 기술파일 시스템"의 관리 DNS 이름을 사용합니다.</block>
-  <block id="860958fe641e0edbd80fe522c36d0560" category="list-text">아래 예에 표시된 대로 인증서와 관리 LIF의 DNS 이름을 사용하여 백엔드 파일을 생성합니다.</block>
-  <block id="1584837635038d443115ce4eeb3b33e4" category="paragraph">백엔드 만들기에 대한 자세한 내용은 다음 링크를 참조하십시오.</block>
   <block id="31e8c05beab321d1465fc4c3f77e991a" category="inline-link-macro">ONTAP SAN 드라이버를 사용하여 백엔드를 구성합니다</block>
   <block id="cc788b7e72b2a734dd0985bd1e0e9fe3" category="inline-link">NetApp ONTAP용 Amazon FSx 문서</block>
   <block id="fd570b75466e2daca21a032e6fd5981c" category="list-text"><block ref="fd570b75466e2daca21a032e6fd5981c" category="inline-link-rx"></block></block>
@@ -1754,7 +1749,6 @@
   <block id="086e6c16e3fe8e13c336612ef636aa02" category="sidebar">아스트라 트리덴트</block>
   <block id="5a333b18a215ecfd4457ba0e1732654b" category="section-title">Trident가 로드 공유 미러가 구성된 SVM에서 볼륨을 프로비저닝할 수 있습니까?</block>
   <block id="0e7629426b9d7596800cd5d72f558a7f" category="paragraph">NFS를 통해 데이터를 제공하는 SVM의 루트 볼륨에 로드 공유 미러를 생성할 수 있습니다. ONTAP는 Trident에서 생성한 볼륨의 로드 공유 미러를 자동으로 업데이트합니다. 이로 인해 볼륨 마운팅이 지연될 수 있습니다. Trident를 사용하여 여러 볼륨을 생성할 경우 볼륨 프로비저닝은 ONTAP에서 로드 공유 미러 업데이트에 따라 달라집니다.</block>
-  <block id="d5d195efeafde24a6a22effd3dd39339" category="list-text">자격 증명 기반: 파일 시스템에 대해 'fsxadmin' 사용자를 사용하거나 SVM용으로 구성된 'vsadmin' 사용자를 사용할 수 있습니다.</block>
   <block id="7d3f46589c43a64fd040e4f0e0691a86" category="inline-link-macro">Helm 차트</block>
   <block id="c9ffe59301b588bbc33bb004cfd312ee" category="section-title">Trident 연산자를 구축하고 Hrom을 사용하여 Astra Trident를 설치합니다</block>
   <block id="1ea1b160621872df5909653ebde1bf7f" category="paragraph">자격 증명 기반 방법과 인증서 기반 방법 간에 이동하기 위해 기존 백엔드를 업데이트할 수 있습니다. 그러나 한 번에 하나의 인증 방법만 지원됩니다. 다른 인증 방법으로 전환하려면 백엔드 구성에서 기존 방법을 제거해야 합니다.</block>
@@ -1920,8 +1914,6 @@
   <block id="8f5cc6430613f1c12f36965050bb7197" category="sidebar">불화</block>
   <block id="c53358822905bb04d312060d1cb568af" category="inline-link">Astra Trident 22.04</block>
   <block id="fdd380631ba8063e7b8f842282a01e40" category="list-text"><block ref="fdd380631ba8063e7b8f842282a01e40" category="inline-link-rx"></block></block>
-  <block id="ccb5eb98656346cbfa0b207e7d363bef" category="inline-link-macro">배포 방법</block>
-  <block id="e2bcf5dc117f31569d413bd9b7698bf2" category="list-text">중 하나를 사용하여 Astra Trident를 배포합니다 <block ref="71cad0f2a077aa26894105299bf47b53" category="inline-link-macro-rx"></block>.</block>
   <block id="26798b67dd2e5b4c8d4f03c4c16170c7" category="list-text"><block ref="26798b67dd2e5b4c8d4f03c4c16170c7" category="inline-link-macro-rx"></block></block>
   <block id="85d7b73826973ab07bfe78af69bd85f4" category="list-text"><block ref="85d7b73826973ab07bfe78af69bd85f4" category="inline-link-macro-rx"></block></block>
   <block id="a1142049a82a11e90102d655bb7e234d" category="inline-link-macro">GitHub의 _Assets_섹션</block>
@@ -2442,7 +2434,6 @@
   <block id="867730e819742e7e493081f160c42c61" category="paragraph">다음 드라이버를 사용하여 Astra Trident를 NetApp ONTAP용 Amazon FSx와 통합할 수 있습니다.</block>
   <block id="676f29c1b0b3626bc959bdc6ebc8953b" category="paragraph">Astra Trident는 두 가지 인증 모드를 제공합니다.</block>
   <block id="2dc4717be6b9cdf676df17aa86465f02" category="admonition">Astra Trident는 한 대로 실행될 것으로 예상합니다<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> SVM 사용자 또는 동일한 역할을 가진 다른 이름의 사용자 NetApp ONTAP용 Amazon FSx에는 가 있습니다<block ref="679500f227997b45be97e3ca8115c678" prefix=" " category="inline-code"></block> ONTAP의 제한된 교체인 사용자입니다<block ref="21232f297a57a5a743894a0e4a801fc3" prefix=" " category="inline-code"></block> 클러스터 사용자. 을 사용하는 것이 좋습니다<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> Astra Trident와 함께.</block>
-  <block id="43c502a16d6b21dc6eb26a2067154e11" category="paragraph">자격 증명 기반 방법과 인증서 기반 방법 간에 이동하도록 백엔드를 업데이트할 수 있습니다. 그러나 * 자격 증명 및 인증서 * 를 제공하려고 하면 백엔드 생성이 실패합니다. 다른 인증 방법으로 전환하려면 백엔드 구성에서 기존 방법을 제거해야 합니다.</block>
   <block id="994eaa47aad78cae857818e1655e2800" category="paragraph">인증 활성화에 대한 자세한 내용은 드라이버 유형에 대한 인증을 참조하십시오.</block>
   <block id="57e00ef3eabad47fc79d0ef1319f989c" category="inline-link-macro">ONTAP NAS 인증</block>
   <block id="840db27e4fe9967e908b8b101ca72198" category="list-text"><block ref="840db27e4fe9967e908b8b101ca72198" category="inline-link-macro-rx"></block></block>
@@ -2504,7 +2495,6 @@
   <block id="d1f5fcc31a1c5bb592600c9f986af71c" category="example-title">예 2: 스토리지 풀 구성</block>
   <block id="879b7d1da5135e7d94358584a7245e33" category="paragraph">이 백엔드 구성은 를 사용합니다<block ref="c614017642b6cfd9e6a25c7df122d917" prefix=" " category="inline-code"></block> 스토리지 풀을 구성하려면 다음을 수행합니다.</block>
   <block id="4a9c2b6feb83a77f2806513226f33d05" category="summary">Amazon Elastic Kubernetes Service(EKS)에서 실행되는 Kubernetes 클러스터가 ONTAP에서 지원하는 블록 및 파일 영구 볼륨을 프로비저닝할 수 있도록 NetApp ONTAP 파일 시스템용 Amazon FSx를 Astra Trident와 통합할 수 있습니다.</block>
-  <block id="8373fe009c8ffdbdda12cfedf744172c" category="doc">NetApp ONTAP용 Amazon FSx를 통합합니다</block>
   <block id="0629fb104936d0fb60cc736b6cb01caa" category="inline-link-macro">Astra Trident 요구사항</block>
   <block id="241f2511660937482446bd41efeac638" category="paragraph">또한 <block ref="1615f1c495dc4acc1bb5bea393c7532b" category="inline-link-macro-rx"></block>, ONTAP용 FSx와 Astra Trident를 통합하려면 다음이 필요합니다.</block>
   <block id="288b1cbb87d08c32abf3084c28636e5c" category="inline-link-macro">NFS 또는 iSCSI</block>
@@ -2512,11 +2502,6 @@
   <block id="d0341760d873a30f82a310a6eab0ba9c" category="admonition">Amazon Linux 및 Ubuntu에 필요한 노드 준비 단계를 따라야 합니다<block ref="70013ee128d5437b3d9579d66ece4066" category="inline-link-rx"></block> (AMI) EKS AMI 유형에 따라 다릅니다.</block>
   <block id="8df63c807f3c78b6087ad0d6ee434fb2" category="list-text">Active Directory 자격 증명이 포함된 Astra Trident 암호가 하나 이상 있어야 합니다. 암호를 생성합니다<block ref="e47a193687dde960f6b6f80d394142a3" prefix=" " category="inline-code"></block>:</block>
   <block id="9303b8f40cf82f5e37702c7a6387e725" category="section-title">ONTAP SAN 및 NAS 드라이버 통합</block>
-  <block id="83d1f963158732d2aedc5119f242bcff" category="admonition">SMB 볼륨에 대해 를 구성하는 경우 을 읽어야 합니다 <block ref="688177e6b45c5d27a545463079c58d82" category="inline-xref-macro-rx"></block> 백엔드를 생성하기 전에</block>
-  <block id="c8aecc44e726368f30c6757e9ab5b64b" category="list-text">SVM 관리 LIF DNS 이름을 수집합니다. 예를 들어, AWS CLI를 사용하여 를 찾습니다<block ref="a3c3b30ab91f2501f21058ee87f27a4f" prefix=" " category="inline-code"></block> 에 입력<block ref="b8724da75fb917e992576b17378e66b3" prefix=" " category="inline-code"></block> -&gt;<block ref="fe4dbcab9b910577e5035e97ac068dae" prefix=" " category="inline-code"></block> 다음 명령을 실행한 후:</block>
-  <block id="ed625a73c7dbbe8b3d51e643adb7ddfd" category="inline-link-macro">NAS 백엔드 인증</block>
-  <block id="cac491bba67bb09dddb8fa935c0ed9d6" category="inline-link-macro">SAN 백엔드 인증</block>
-  <block id="2c4646cfa545b727f14a7ee6560b41b8" category="list-text">에 대한 인증서를 만들고 설치합니다 <block ref="e0dfdc1f3574886f1078f7699f0f57f0" category="inline-link-macro-rx"></block> 또는 <block ref="2ba00bd5ff04f92ed7b3b69e76174936" category="inline-link-macro-rx"></block>.</block>
   <block id="fc4e16be02eac62a40d8ba5714cbeda1" category="section-title">SMB 볼륨 프로비저닝을 위한 준비</block>
   <block id="fbf3304d2358758ea71475804b2cbeae" category="paragraph">를 사용하여 SMB 볼륨을 프로비저닝할 수 있습니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block> 드라이버. 를 누릅니다 <block ref="24f26185e00986318dc562523d4edbf6" category="inline-xref-macro-rx"></block> 다음 단계를 완료합니다.</block>
   <block id="d98f239eeb5789a80cb4b247e5be144d" category="inline-link-macro">Microsoft 관리 콘솔</block>
@@ -2619,7 +2604,6 @@
   <block id="301ebdf8067a213d5a55c65fbb488290" category="sidebar">보안 권장 사항</block>
   <block id="58834b137fd6fa7a9ca23468a5c91fd6" category="sidebar">구성 준비</block>
   <block id="6fc0b7515ecca271c88eae4a685da613" category="sidebar">NetApp HCI 또는 SolidFire</block>
-  <block id="60be48bb4b3314965bf50e88e7ae728c" category="sidebar">ONTAP용 Amazon FSx를 통합합니다</block>
   <block id="ea3d51fb2b16acb7cb260f25bc8965b1" category="sidebar">Astra Trident는 NetApp에서 관리하는 오픈 소스 스토리지 공급자 및 오케스트레이터입니다. Docker 및 Kubernetes에서 관리하는 컨테이너식 애플리케이션을 위한 스토리지 볼륨을 생성할 수 있습니다.</block>
   <block id="e267c2490c7d73d0ffa909b77267cfaf" category="inline-link-macro">Astra Control 복제 사전 요구 사항</block>
   <block id="df7dec428425115b59101028bbebe58c" category="list-text">사용하지 마십시오<block ref="caafdf62a2c609bfa5316118231a1007" prefix=" " category="inline-code"></block> 데이터 보호, 재해 복구 또는 이동성이 필요할 것으로 예상되는 경우</block>
@@ -3949,19 +3933,10 @@ NVMe/TCP에 대해서는 LUKS 암호화가 지원되지 않습니다.</block>
   <block id="f9f7341f4c78b6ec6335f739d088a84d" category="list-text">Astra Trident 24.02 이전에는 자동 백업이 활성화된 Amazon FSx 파일 시스템에서 생성된 볼륨을 Trident에서 삭제할 수 없었습니다. Astra Trident 24.02 이상에서 이 문제를 방지하려면 를 지정합니다<block ref="d731d2fecb66f9c4a30253bd316a220f" prefix=" " category="inline-code"></block>있습니다<block ref="1e9c0fd1beef5ff8ed3bef2ae3b7e560" prefix=" " category="inline-code"></block>있습니다<block ref="9af4d8381781baccb0f915e554f8798d" prefix=" " category="inline-code"></block>있습니다<block ref="ce656850400574e9f9cffb285ee8abc0" prefix=" " category="inline-code"></block> AWS FSx for ONTAP의 백엔드 구성 파일에 있습니다.</block>
   <block id="673fab3e95b96286c30129d6bbe2aaf8" category="admonition">Astra Trident에 IAM 역할을 지정하는 경우 를 지정하는 것을 생략할 수 있습니다<block ref="1e9c0fd1beef5ff8ed3bef2ae3b7e560" prefix=" " category="inline-code"></block>,<block ref="c9ff119073ea2567730fb42e3a4fe805" prefix=" " category="inline-code"></block>, 및<block ref="ce656850400574e9f9cffb285ee8abc0" prefix=" " category="inline-code"></block> 필드를 Astra Trident로 명시적으로 전환합니다. 자세한 내용은 을 참조하십시오 <block ref="d3e98810edf44af02b30486ed13bd043" category="inline-link-macro-rx"></block>.</block>
   <block id="fa4eb54eedf6fea69ec183c4e2199a4d" category="paragraph">드라이버에 대한 자세한 내용은 을 참조하십시오 <block ref="4093b6d0ce8cf414637a02002d2b0376" category="inline-link-macro-rx"></block> 및 <block ref="276422a40a581e9842304216329765d5" category="inline-link-macro-rx"></block>.</block>
-  <block id="ae6017ee96edc081a86a61b92babc4b1" category="section-title">EKS용 클라우드 ID</block>
-  <block id="ab60fe09519948e192fd900c463d67cb" category="paragraph">클라우드 ID를 사용하면 Kubernetes Pod에서 명시적 AWS 자격 증명을 제공하지 않고 AWS IAM 역할로 인증하여 AWS 리소스에 액세스할 수 있습니다.</block>
-  <block id="6e2da9a1823323be02d30873748e0b86" category="paragraph">AWS에서 클라우드 ID를 활용하려면 다음이 필요합니다.</block>
-  <block id="8ca805ac27cfdb3ffd1ace2a3c6feb43" category="list-text">EKS를 사용하여 구축된 Kubernetes 클러스터</block>
-  <block id="ac8abfb7e68dbffd71a69e74adb7558c" category="list-text">가 포함된 Astra Trident가 설치되었습니다<block ref="d19f2c0377f3ed7cab9377cf066cb7ef" prefix=" " category="inline-code"></block> 지정<block ref="907695ffaef2806fea589c7d8d044679" prefix=" " category="inline-code"></block> 및<block ref="89abe9fddbe3cf0f9bcd7779fe4aed69" prefix=" " category="inline-code"></block> AWS IAM 역할 지정</block>
-  <block id="bb933c6c21a0e5af4ff3ea8e1fc8a0b8" category="paragraph">Trident 연산자를 사용하여 Astra Trident를 설치하려면 편집을 진행합니다<block ref="244895464fd1d6c7ff5a2044c324c0fc" prefix=" " category="inline-code"></block> 를 눌러 설정합니다<block ref="d19f2c0377f3ed7cab9377cf066cb7ef" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="907695ffaef2806fea589c7d8d044679" prefix=" " category="inline-code"></block> 그리고 설정합니다<block ref="89abe9fddbe3cf0f9bcd7779fe4aed69" prefix=" " category="inline-code"></block> AWS IAM 역할로 이동합니다.</block>
   <block id="506c2c0c7f5b70af3df68c45c46f45a7" category="paragraph">예를 들면 다음과 같습니다.</block>
   <block id="400e51795e42b1bfc94a14aeeeacc04a" category="paragraph">다음 환경 변수를 사용하여 * 클라우드 공급자 * 및 * 클라우드 ID * 플래그의 값을 설정합니다.</block>
-  <block id="b7f7e3a5e64e4cc7db709127d315fbd8" category="paragraph"><block ref="88bff0cbce979a98aecf9182f290f239" prefix="" category="inline-code"></block><block ref="883773d61cc05d438f89f3e98de2ebd2" prefix=" " category="inline-code"></block></block>
-  <block id="fc6a5871b4754f18186f96b19e16f74a" category="paragraph">다음 예에서는 Astra Trident 및 Sets를 설치합니다<block ref="d19f2c0377f3ed7cab9377cf066cb7ef" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="4847e034bb0a55fcbc8a3380d6a3ab80" prefix=" " category="inline-code"></block> 환경 변수를 사용합니다<block ref="e7b51407a2bfaa34b58afce0107e9a5f" prefix=" " category="inline-code"></block> 및 환경 변수를 사용하여 'cloudIdentity'를 설정합니다<block ref="c9d280b28993d1d105c3fbafb5868a15" prefix=" " category="inline-code"></block>:</block>
   <block id="3fc26750f347130146b4c60fe1b7260b" category="paragraph">다음 예에서는 Astra Trident를 설치하고 를 설정합니다<block ref="e33bb4eb32023da4a8ea7a1ba6927067" prefix=" " category="inline-code"></block> 에 플래그 지정<block ref="e7b51407a2bfaa34b58afce0107e9a5f" prefix=" " category="inline-code"></block>, 및<block ref="c5af480af77c330e04a1fce1f6c2b03a" prefix=" " category="inline-code"></block> 를 선택합니다<block ref="c9d280b28993d1d105c3fbafb5868a15" prefix=" " category="inline-code"></block>:</block>
   <block id="f7be25ccd026a013371b7c4961ced8c2" category="paragraph">Astra Control은 로 생성한 볼륨을 위해 원활한 보호, 재해 복구, 이동성(Kubernetes 클러스터 간에 볼륨 이동)을 제공합니다<block ref="8321592ce24c8a122ecf26a63cfca407" prefix=" " category="inline-code"></block>,<block ref="844e84da8e822b4a33c4d8188da97937" prefix=" " category="inline-code"></block>, 및<block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix=" " category="inline-code"></block> 드라이버. 을 참조하십시오 <block ref="dfc981ac97be73172a3119f3b831eaf8" category="inline-link-macro-rx"></block> 를 참조하십시오.</block>
-  <block id="95c49e5db7ea0d365b3b19d3c6b0a9de" category="paragraph">또는 다음 예와 같이 AWS Secret Manager에 저장된 SVM 자격 증명(사용자 이름 및 암호)을 사용하여 백엔드 파일을 생성할 수 있습니다.</block>
   <block id="9cd536ab58110b200219128418a9f72f" category="paragraph">다음 예에서는 Astra Trident를 설치하고 를 설정합니다<block ref="d19f2c0377f3ed7cab9377cf066cb7ef" prefix=" " category="inline-code"></block> 에 플래그 지정<block ref="3a580f142203677f1f0bc30898f63f53" prefix=" " category="inline-code"></block>:</block>
   <block id="c5ac38b2b362dbfd1b55bdb2b7e9375b" category="list-text">AKS Kubernetes 클러스터에 구성된 워크로드 ID 및 oidc-발급자입니다</block>
   <block id="f8f0f3510f8f641d94893bdecf4aab08" category="list-text">가 포함된 Astra Trident가 설치되었습니다<block ref="d19f2c0377f3ed7cab9377cf066cb7ef" prefix=" " category="inline-code"></block> 지정합니다<block ref="71d36c46e340ad9137b2691e267f5ecd" prefix=" " category="inline-code"></block> 및<block ref="89abe9fddbe3cf0f9bcd7779fe4aed69" prefix=" " category="inline-code"></block> 작업 부하 ID 지정</block>
@@ -4198,4 +4173,101 @@ Kubernetes Non-Graceful Node Shutdown(ngns)과 함께 작동하여 클러스터 
   <block id="b6780b7b2561935ff862fe7126cde751" category="list-text"><block ref="b6780b7b2561935ff862fe7126cde751" category="inline-link-rx"></block></block>
   <block id="b9a641d903e611a87a5e68ac7fdb0b84" category="list-text">Trident AutoSupport는 개인 식별 정보(PII) 또는 개인 정보를 수집하거나 전송하지 않습니다. 에는 Trident 컨테이너 이미지 자체에 적용할 수 없는 가<block ref="173a360b412944768c2ab13e6c8fd1c7" category="inline-link-rx"></block> 포함되어 있습니다. 데이터 보안 및 신뢰에 대한 NetApp의 노력에 대해 더 자세히 알아볼 수<block ref="d3cc55401bc8303e01c6b0c43ba0733f" category="inline-link-rx"></block>있습니다.</block>
   <block id="5ff83dbc70e496ea22b38ea61bb69f05" category="list-text">데모를 시청해보시기 <block ref="c27441bbbe62adf51ae6ecec41fde8bd" category="inline-link-macro-rx"></block>바랍니다.</block>
+  <block id="533a7baf9026dddae6baef47ea605b08" category="doc">샘플 응용 프로그램을 배포합니다</block>
+  <block id="fae865e1123e24de7eca1790ec73dc32" category="paragraph">샘플 응용 프로그램을 배포합니다.</block>
+  <block id="c09ee63e688125cf9517a66bb5a0a5a6" category="paragraph">다음 예는 PVC를 포드에 부착하기 위한 기본 구성을 보여줍니다. * 기본 구성 *:</block>
+  <block id="f477db05998ad8420119de646e2ff290" category="doc">IAM 역할 및 AWS Secret을 생성합니다</block>
+  <block id="98c3c9acd444d11890d48438db3c165e" category="paragraph">AWS 자격 증명을 명시적으로 제공하는 대신 AWS IAM 역할로 인증하여 Kubernetes Pod를 구성하여 AWS 리소스에 액세스할 수 있습니다.</block>
+  <block id="3f566b5ded6e7ac8c26dd3c07a2ea056" category="admonition">AWS IAM 역할을 사용하여 인증하려면 EKS를 사용하여 Kubernetes 클러스터를 구축해야 합니다.</block>
+  <block id="3a218e8961578d046aa713039445902b" category="section-title">AWS Secret Manager 암호를 생성합니다</block>
+  <block id="23608ecae11e8bf8dd19cef208ecf80f" category="paragraph">이 예에서는 Astra Trident CSI 자격 증명을 저장하기 위한 AWS Secret Manager 암호를 생성합니다.</block>
+  <block id="6a73f77169c507b4f8a8e33a9180355b" category="paragraph"><block ref="0d1bf1201bf9db7aed15db6de2873c7a" prefix="" category="inline-code"></block></block>
+  <block id="3926fdac6344d565c95f560468946335" category="section-title">IAM 정책을 생성합니다</block>
+  <block id="78edc229f8df1c5e0840f6469bc28454" category="paragraph">다음 예에서는 AWS CLI를 사용하여 IAM 정책을 생성합니다.</block>
+  <block id="96cc21e053acccb273475c8c6744b18e" category="paragraph"><block ref="21a8f9d92c42f5ae09a1d5ac91dbb3c5" prefix="" category="inline-code"></block></block>
+  <block id="e76476464ce5cdc6a38411be3291bbcc" category="paragraph">* 정책 JSON 파일 *:</block>
+  <block id="ecfd2948482294ce3f914902915e5237" category="section-title">서비스 계정에 대한 IAM 역할 생성</block>
+  <block id="1cabe4f570d3f442a5def398488077df" category="paragraph">다음 예에서는 EKS에서 서비스 계정에 대한 IAM 역할을 생성합니다.</block>
+  <block id="b16d284f56650120181b0d48c31a9a02" category="paragraph"><block ref="02068ae6546add80470610cbacdd6443" prefix="" category="inline-code"></block></block>
+  <block id="61ac31e67ac41a505c5226920f11c69b" category="paragraph">Astra Trident는 Kubernetes에서 Amazon FSx for NetApp ONTAP 스토리지 관리를 간소화하여 개발자와 관리자가 애플리케이션 구축에 집중할 수 있도록 지원합니다.</block>
+  <block id="d80675b866d3a3d3f54103565f996f91" category="paragraph">다음 방법 중 하나를 사용하여 Astra Trident를 설치할 수 있습니다.</block>
+  <block id="77f6e3db9b70538186091595d9c8c9e8" category="list-text">EKS 추가 기능</block>
+  <block id="821a0be249c7e2b3f10ce8df4b75e1e0" category="section-title">Helm을 통해 Astra Trident을 설치합니다</block>
+  <block id="954c98092999a4d3abfbd0752ab71c71" category="paragraph"><block ref="88bff0cbce979a98aecf9182f290f239" prefix="" category="inline-code"></block><block ref="2b2461cc41b3726827b2cb5fcb624e2e" prefix=" " category="inline-code"></block></block>
+  <block id="bc98cc711b3772fd9a044dd6fcbd1631" category="section-title">EKS 애드온을 통해 Astra Trident를 설치합니다</block>
+  <block id="0a77764215483fbccc22e1d77abfb50f" category="paragraph">Astra Trident EKS 애드온에는 최신 보안 패치 및 버그 수정이 포함되어 있으며 AWS에서 Amazon EKS와 함께 사용할 수 있다는 것을 검증했습니다. EKS 애드온을 사용하면 Amazon EKS 클러스터의 보안과 안정성을 지속적으로 보장하고 애드온을 설치, 구성 및 업데이트하는 데 필요한 작업량을 줄일 수 있습니다.</block>
+  <block id="7184de869a88c49faff4f6482457e5cb" category="section-title">AWS용 Astra Trident 애드온 을 지원합니다</block>
+  <block id="c630096ceb1c476f438ea2fc958bc665" category="open-title">EKS 클러스터</block>
+  <block id="9ea02e0a94b03561cf2861dcac685125" category="paragraph">다음 명령 예에서는 Astra Trident EKS 애드온을 설치합니다.</block>
+  <block id="a483e3842dfe9b4c2af76a77cf2bb572" category="paragraph"><block ref="e695a6a298f39ac8b903c2a769db6ab4" prefix="" category="inline-code"></block><block ref="cd13c9a7fd0eef9fb0d553b5cac08792" prefix=" " category="inline-code"></block> (전용 버전 포함)</block>
+  <block id="e477faed39be08642267684bb501d931" category="open-title">관리 콘솔과 직접 연결되어 있습니다</block>
+  <block id="e8d532dbf6904e2793dbda6fd0d03818" category="list-text">에서 Amazon EKS 콘솔을 엽니다<block ref="c4765fcd1a0f97cf67c0365ddc45d563" category="inline-link-rx"></block>.</block>
+  <block id="8d1588a59bc508adad8a62ccaaa1c610" category="list-text">왼쪽 탐색 창에서 * 클러스터 * 를 클릭합니다.</block>
+  <block id="32d9b71b3fc3fad1385ba62a9bf6bf46" category="list-text">NetApp Trident CSI 추가 기능을 구성할 클러스터의 이름을 클릭합니다.</block>
+  <block id="91e45a55d3dd23153429aac3c45c53ae" category="list-text">추가 기능 * 을 클릭한 다음 * 추가 기능 얻기 * 를 클릭합니다.</block>
+  <block id="2fd89d18351d32a81158a0ff94206b31" category="list-text">S * 추가 기능 선택 * 페이지에서 다음을 수행합니다.</block>
+  <block id="d6821a378e60f781e319890caff45c30" category="list-text">AWS Marketplace EKS-addons 섹션에서 * Astra Trident by NetApp * 확인란을 선택합니다.</block>
+  <block id="5a378b18f7bf0c4cabc6c655cd2f535e" category="list-text">다음 * 을 클릭합니다.</block>
+  <block id="cacc1ddf612923b1c73b0a9a76659f42" category="list-text">선택한 추가 기능 구성 * 설정 페이지에서 다음을 수행합니다.</block>
+  <block id="149e81257342cd05b0256d010b0b4a37" category="list-text">사용할 * 버전 * 을 선택합니다.</block>
+  <block id="1df543472a35a3acfd632037832987f6" category="list-text">IAM 역할 선택 * 의 경우 * NOT SET * 으로 두십시오.</block>
+  <block id="e873d41466e1383d951643c07a043d80" category="list-text">선택적 구성 설정 * 을 확장하고 * 추가 기능 구성 스키마 * 를 따라 * 구성 값 * 섹션의 configurationValues 매개 변수를 이전 단계에서 만든 role-arn으로 설정합니다(값은 다음 형식이어야 함<block ref="ee1eb31b5aebe5472fc52cb0ae20b077" prefix=" " category="inline-code"></block>). 충돌 해결 방법으로 재정의 를 선택한 경우 기존 애드온에 대한 하나 이상의 설정을 Amazon EKS 애드온 설정으로 덮어쓸 수 있습니다. 이 옵션을 사용하지 않고 기존 설정과 충돌하는 경우 작업이 실패합니다. 결과 오류 메시지를 사용하여 충돌 문제를 해결할 수 있습니다. 이 옵션을 선택하기 전에 Amazon EKS 추가 기능이 자체 관리해야 하는 설정을 관리하지 않는지 확인하십시오.</block>
+  <block id="dfe4bfc5bd8b8d180411468fbdbb4033" category="list-text">다음 * 을 선택합니다.</block>
+  <block id="fbadf292f84bef20d7678936dbe4c4ce" category="list-text">검토 및 추가 * 페이지에서 * 만들기 * 를 선택합니다.</block>
+  <block id="46bfc11fb8f185d278ea910b0052a317" category="paragraph">추가 기능 설치가 완료되면 설치된 추가 기능이 표시됩니다.</block>
+  <block id="7820fdb5d8b3ebe0c69c86cf8bd2d0cf" category="open-title">AWS CLI를 참조하십시오</block>
+  <block id="375fe5880d846c5b389735de8ae80b0a" category="list-text">파일을 만듭니다.<block ref="feef18acfb11dc53b7100577c6d640c4" prefix=" " category="inline-code"></block></block>
+  <block id="dbc0f27a2aa9fd3fbef77c25870f8248" category="list-text">Astra Trident EKS 애드온 설치"</block>
+  <block id="e907c98f301b06586956529abca9e22c" category="paragraph"><block ref="f9c32cfc7736c461770afa4dd4053bda" prefix="" category="inline-code"></block></block>
+  <block id="ee502e3f68953ecace683d05b827a6ae" category="section-title">Astra Trident EKS 애드온을 업데이트합니다</block>
+  <block id="41c9d4e34cce02a882f325b51fa9d2f4" category="list-text">FSxN Trident CSI 추가 기능의 현재 버전을 확인합니다. 클러스터 이름으로 교체합니다<block ref="e2eb89f0ffaf521a0d2eeaffca04d117" prefix=" " category="inline-code"></block> .<block ref="7b5be2809a3021f978155d101cf059cf" prefix=" " category="inline-code"></block></block>
+  <block id="52b5830420efb96c3a91beb52bac3b23" category="paragraph">* 출력 예: *</block>
+  <block id="9d5aa26aaf32741e908c5366c21ca9a5" category="list-text">이전 단계의 출력에서 사용할 수 있는 업데이트 아래에 반환된 버전으로 추가 기능을 업데이트합니다.<block ref="00b585502b38c426d735887171ce6f84" prefix=" " category="inline-code"></block></block>
+  <block id="b3f252777a69b110667756babe83a98f" category="inline-link-macro">추가 기능</block>
+  <block id="25626757a73152ece7fdadb90ede4b7c" category="inline-link-macro">Kubernetes 현장 관리</block>
+  <block id="751f793ade8de1ed590e0f90ac05d8e1" category="paragraph">옵션을 제거하고 Amazon EKS 추가 기능 설정이 기존 설정과 충돌하는 경우<block ref="c23ab3adaec8ca15ff3ffd0971be6152" prefix=" " category="inline-code"></block> Amazon EKS 추가 기능 업데이트가 실패하고 충돌 문제를 해결하는 데 도움이 되는 오류 메시지가 표시됩니다. 이 옵션을 지정하기 전에 Amazon EKS 애드온이 관리해야 하는 설정을 관리하지 않는지 확인하십시오. 이러한 설정은 이 옵션으로 덮어써지기 때문입니다. 이 설정의 다른 옵션에 대한 자세한 내용은 을 참조하십시오 <block ref="aea621f0e078efb8367c5d5e894674cd" category="inline-link-macro-rx"></block>. Amazon EKS Kubernetes 필드 관리에 대한 자세한 내용은 를 참조하십시오 <block ref="97bdcfd76d2ff3e4855f6b36ebad236e" category="inline-link-macro-rx"></block>.</block>
+  <block id="b0c6845b636be8c810182f985c930fed" category="list-text">Amazon EKS 콘솔을<block ref="c4765fcd1a0f97cf67c0365ddc45d563" category="inline-link-rx"></block>엽니다.</block>
+  <block id="69bd32cd7d6c3b5f9de30250cec1b478" category="list-text">NetApp Trident CSI 추가 기능을 업데이트할 클러스터의 이름을 클릭합니다.</block>
+  <block id="a02487427219ab03773fe3c66fa96556" category="list-text">추가 기능 * 탭을 클릭합니다.</block>
+  <block id="1b11ccfac36888509b0b9fb0f99a4bbb" category="list-text">Astra Trident by NetApp * 를 클릭한 다음 * 편집 * 을 클릭합니다.</block>
+  <block id="351442864548fcc84173a68a66b38f2d" category="list-text">Astra Trident by NetApp * 구성 페이지에서 다음을 수행합니다.</block>
+  <block id="f1b1f807d9e1301dcc6fd3e44d5de4bd" category="list-text">(선택 사항) * 선택적 구성 설정 * 을 확장하고 필요에 따라 수정할 수 있습니다.</block>
+  <block id="3dca1b912e3d43e2a746fbcde32a6018" category="list-text">변경 내용 저장 * 을 클릭합니다.</block>
+  <block id="5f06738a5749e735a4681f5c09e2bafc" category="paragraph">다음 예에서는 EKS 추가 기능을 업데이트합니다.</block>
+  <block id="14aac489d4434a82a3f9f97e8fe91694" category="paragraph"><block ref="187beb49762f7fb831051ad42bd762fe" prefix="" category="inline-code"></block></block>
+  <block id="8d995c3ade9702f8b3d41df18d276fc0" category="section-title">Astra Trident EKS 애드온을 제거/제거합니다</block>
+  <block id="d8c918c170a0768203b4c2a6218e22bf" category="paragraph">Amazon EKS 애드온을 제거하는 두 가지 옵션이 있습니다.</block>
+  <block id="d43d72969793ea80734b71e9c2406b2a" category="list-text">* 클러스터에 애드온 소프트웨어 유지 * – 이 옵션은 모든 설정의 Amazon EKS 관리를 제거합니다. 또한 업데이트를 시작한 후 Amazon EKS에서 업데이트를 알리고 Amazon EKS 애드온을 자동으로 업데이트하는 기능도 제거합니다. 하지만 클러스터에 애드온 소프트웨어가 보존됩니다. 이 옵션을 사용하면 Amazon EKS 애드온이 아닌 자가 관리형 설치가 됩니다. 이 옵션을 사용하면 애드온에 대한 다운타임이 없습니다. <block ref="4b4ac0f998920a46fd2015e11d01d3e7" prefix=" " category="inline-code"></block>명령의 옵션을 유지하여 추가 기능을 유지합니다.</block>
+  <block id="4c467d48a00d885ea22b1e685b747492" category="list-text">* 클러스터에서 애드온 소프트웨어 완전히 제거 * – 클러스터에 종속된 리소스가 없는 경우에만 Amazon EKS 애드온을 클러스터에서 제거하는 것이 좋습니다. <block ref="4b4ac0f998920a46fd2015e11d01d3e7" prefix=" " category="inline-code"></block>추가 기능을 제거하려면 명령에서 옵션을<block ref="099af53f601532dbd31e0ea99ffdeb64" prefix=" " category="inline-code"></block> 제거하십시오.</block>
+  <block id="577a7d77fb14f745abf0c5ee04b72879" category="admonition">애드온에 IAM 계정이 연결되어 있으면 IAM 계정이 제거되지 않습니다.</block>
+  <block id="ae7c26e7d90f669e27bf9a36527336ec" category="list-text">왼쪽 탐색 창에서 * 클러스터 * 를 클릭합니다.</block>
+  <block id="99e7173540f126412137b25a0caaf2d1" category="list-text">NetApp Trident CSI 추가 기능을 제거할 클러스터의 이름을 클릭합니다.</block>
+  <block id="8019e0dcd97c1bda9a4283c660df9424" category="list-text">Add-ons * 탭을 클릭한 다음 * Astra Trident by NetApp * 를 클릭합니다</block>
+  <block id="03b194a23dcb353466fbfb7acff64363" category="list-text">제거 * 를 클릭합니다.</block>
+  <block id="c8e9b5ea2470965edac225c56a879d07" category="list-text">Remove netapp_trident-operator confirmation * 대화 상자에서 다음을 수행합니다.</block>
+  <block id="10aba138eb518a0cc15662934a1f6e18" category="list-text">Amazon EKS가 애드온에 대한 설정 관리를 중지하도록 하려면 * 클러스터에서 유지 * 를 선택합니다. 추가 기능의 모든 설정을 직접 관리할 수 있도록 클러스터에 추가 소프트웨어를 유지하려는 경우 이 작업을 수행합니다.</block>
+  <block id="ecca191ac54751ba8120816fbe45777e" category="list-text">netapp_trident-operator * 를 입력합니다.</block>
+  <block id="bb7c6bde1fc26965ada02923bac65350" category="paragraph">클러스터 이름으로 바꾸고<block ref="e2eb89f0ffaf521a0d2eeaffca04d117" prefix=" " category="inline-code"></block> 다음 명령을 실행합니다.</block>
+  <block id="3f0c01bb690234ddb3284c5ce5c26da2" category="paragraph"><block ref="c2f1a783b03bad400b0ebf4321b8a171" prefix="" category="inline-code"></block></block>
+  <block id="23e0e5bfdd7b1fef2ab4d932aae742e5" category="doc">스토리지 백엔드를 구성합니다</block>
+  <block id="8abaad4f18806e469a7b174572013ebf" category="paragraph">다음 예와 같이 AWS Secret Manager에 저장된 SVM 자격 증명(사용자 이름 및 암호)을 사용하여 백엔드 파일을 생성할 수 있습니다.</block>
+  <block id="090cc9ad205965bc3b1c62e3cce08769" category="paragraph">백엔드를 만드는 방법에 대한 자세한 내용은 다음 페이지를 참조하십시오.</block>
+  <block id="c3e86b30fe8148143701324ae1595af8" category="list-text"><block ref="73a3350a1b91aeb6e2836fdf5975672c" prefix="" category="inline-code"></block>: 프로비저닝된 각 PV는 자체 Amazon FSx for NetApp ONTAP 볼륨 내의 LUN입니다. 블록 스토리지에 권장됩니다.</block>
+  <block id="3878a0c92e55dbd3cdd9458330c2f1c3" category="list-text"><block ref="8321592ce24c8a122ecf26a63cfca407" prefix="" category="inline-code"></block>: 프로비저닝된 각 PV는 전체 Amazon FSx for NetApp ONTAP 볼륨입니다. NFS 및 SMB에 권장됩니다.</block>
+  <block id="eadd7f9188e84053efc871a14d0d3bd6" category="section-title">백엔드 고급 구성 및 예</block>
+  <block id="7f0e60d0ce33fb596b81e7eb33f6a793" category="cell">클러스터 또는 SVM 관리 LIF의 IP 주소 정규화된 도메인 이름(FQDN)을 지정할 수 있습니다. IPv6 플래그를 사용하여 Astra Trident를 설치한 경우 IPv6 주소를 사용하도록 설정할 수 있습니다. IPv6 주소는 대괄호로 묶어야 합니다(예: [28e8:d9fb:a825:b7bf:69a8:d02f:9e7b:3555]). <block ref="d731d2fecb66f9c4a30253bd316a220f" prefix=" " category="inline-code"></block><block ref="ac68bbf921d953d1cfab916cb6120864" prefix=" " category="inline-code"></block> Astra Trident이 AWS에서 SVM 정보를 검색하므로 이 필드에 을 제공할 필요가 없습니다<block ref="a6ea6092cb7b9c5f31909eb4be8fa5ea" prefix=" " category="inline-code"></block> .<block ref="a6ea6092cb7b9c5f31909eb4be8fa5ea" prefix=" " category="inline-code"></block> 따라서 SVM에서 사용자에 대한 자격 증명(예: vsadmin)을 제공해야 하며 사용자에게 역할이 있어야 합니다.<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block></block>
+  <block id="ab2e083df601e1b7c7346487158ab13f" category="cell">"'100'"</block>
+  <block id="7a5bbb3c815084605b780e0cd6e810fd" category="cell"><block ref="89ffa293e05655bd6be9d422345be38a" prefix="" category="inline-code"></block></block>
+  <block id="2ab2b81dde76a2ec7ed3798f1538f823" category="cell">ONTAP REST API를 사용하는 부울 매개 변수입니다. * 기술 미리보기 * 는 <block ref="14d839191d1ecf387a15b5b0c802a8ae" prefix=" " category="inline-code"></block> 테스트 환경에 권장되며 프로덕션 작업량이 아닌 ** 기술 미리보기** 로 제공됩니다. 로 설정된<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>경우 Astra Trident는 ONTAP REST API를 사용하여 백엔드와 통신합니다. 이 기능을 사용하려면 ONTAP 9.11.1 이상이 필요합니다. 또한 사용되는 ONTAP 로그인 역할에는 애플리케이션에 대한 액세스 권한이 있어야<block ref="a9ba4dc88fa11d44cc7c0c918d174778" prefix=" " category="inline-code"></block> 합니다. 이는 미리 정의된 역할과 역할에 의해 충족됩니다.<block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block><block ref="fdb6ba311fad29ec53069808f10ebef4" prefix=" " category="inline-code"></block></block>
+  <block id="1f43150a13f29c496f07ed4a9750b2ff" category="list-text">Linux 컨트롤러 노드 및 Windows Server 2019를 실행하는 Windows 작업자 노드가 있는 Kubernetes 클러스터 Astra Trident는 Windows 노드에서 실행되는 Pod에만 마운트된 SMB 볼륨을 지원합니다.</block>
+  <block id="9817ca035dba7bc4123be2c0bf280d66" category="doc">저장소 클래스 및 PVC를 구성합니다</block>
+  <block id="0f69899f9d68f93d2030d9b98790470e" category="paragraph">Kubernetes StorageClass 개체를 구성하고 스토리지 클래스를 생성하여 Astra Trident에 볼륨 프로비저닝 방법을 안내합니다. 구성된 Kubernetes StorageClass를 사용하여 PV에 대한 액세스를 요청하는 PersistentVolume(PV) 및 PersistentVolumeClaim(PVC)을 생성합니다. 그런 다음 PV를 포드에 장착할 수 있습니다.</block>
+  <block id="b92c56f76eb1fd7e747c63e99a829e57" category="paragraph"><block ref="da3f7f170e13df7f56e057fc4226aa85" category="inline-link-rx"></block>Astra Trident를 해당 수업에 사용되는 프로비저닝으로 식별하면 Astra Trident에 볼륨 프로비저닝 방법이 설명됩니다. 예를 들면 다음과 같습니다.</block>
+  <block id="c3d2188822ac025c91b768888f8af01e" category="paragraph">이 예에서는 이름이 인 StorageClass와 연결된 rwx 액세스 권한이 있는 기본 PVC를 보여<block ref="1c62ceba602064183a6346b85fe26c96" prefix=" " category="inline-code"></block>줍니다.</block>
+  <block id="9079a9ed8262f493ba60c3911523cbae" category="section-title">Astra Trident 특성</block>
+  <block id="335c3e1decb27542c24b470670a97381" category="paragraph">이 매개 변수는 특정 유형의 볼륨을 프로비저닝하는 데 사용해야 하는 Astra Trident 관리형 스토리지 풀을 결정합니다.</block>
+  <block id="8067a6840467d2024a341120a4e2440e" category="list-text">자격 증명 기반(권장): 자격 증명을 AWS Secrets Manager에 안전하게 저장합니다. 파일 시스템 또는 SVM에 구성된 사용자를 사용할 수 있습니다<block ref="679500f227997b45be97e3ca8115c678" prefix=" " category="inline-code"></block><block ref="6173aa5206484b5224450952747c7148" prefix=" " category="inline-code"></block> .</block>
+  <block id="53f64465dc89ebfc8f426b3cdf4d1614" category="sidebar">IAM 역할 및 AWS 암호를 생성합니다</block>
+  <block id="0a3c6c3b1b9418c792ec73b934ca8fdd" category="sidebar">스토리지 백엔드를 구성합니다</block>
+  <block id="50399b7d6597b32502708277dd2be03c" category="sidebar">스토리지 클래스 및 PVC를 구성합니다</block>
 </blocks>
